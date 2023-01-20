@@ -1,0 +1,618 @@
+datasrc,model,scenario,model_new,scenario_new,notes1,notes2,round
+emf37_usacanmex.csv,ADAGE v1.0,0by50.CMSG.4.R2,ADAGE,0by50.CMSG4,,,2
+emf37_usacanmex.csv,ADAGE v1.0,0by50.Ref,,,replaced with 0by50.Ref.R1,,1
+emf37_usacanmex.csv,ADAGE v1.0,0by50.Ref.R1,,,,,1
+emf37_usacanmex.csv,ADAGE v1.0,0by50.Ref.R2,ADAGE,0by50.Ref,,,2
+emf37_usacanmex.csv,ADAGE v1.0,0by50.TSG.3.R1,,,,,1
+emf37_usacanmex.csv,ADAGE v1.0,0by50.TSG.3.R2,ADAGE,0by50.TSG3,,,2
+emf37_usacanmex.csv,ADAGE v1.0,0by50.TSG.4.R2,ADAGE,0by50.TSG4,,,2
+emf37_usacanmex.csv,ADAGE v1.0,0by50.TSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,ADAGE v1.0,0by50.TSG.Adv.R2,ADAGE,0by50.TSG.Adv,,,2
+emf37_usacanmex.csv,ADAGE v1.0,0by50.TSG4.R1,,,,,1
+emf37_usacanmex.csv,ADAGE v1.0,0by50.TSGadv.4.R2,,,resubmitted with proper scenario name,,2
+emf37_usacanmex.csv,ADAGE v1.0,0by80.Ref,,,,,1
+emf37_usacanmex.csv,ADAGE v1.0,NT.Ref,,,replaced with NT.REF.R1,,1
+emf37_usacanmex.csv,ADAGE v1.0,NT.Ref.R1,ADAGE,NT.Ref,still named R1 but submitted again for R2,,2
+emf37_usacanmex.csv,ADAGE v1.0,NT.REF.R1,,,,,1
+EIAinEMF37.csv,AEO.2020,REF2020,AEO2020,NT.Ref,,,2
+EIAinEMF37.csv,AEO.2021,REF2021,AEO2021,NT.Ref,,,2
+EIAinEMF37.csv,AEO.2022,REF2022,AEO2022,NT.Ref,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by50.Adv.R1,,,,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by50.Adv.R2,AnyMOD,0by50.Adv,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by50.CMSG.1.R2,AnyMOD,0by50.CMSG1,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by50.CMSG.2.R1,,,,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by50.CMSG.2.R2,AnyMOD,0by50.CMSG2,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by50.CMSG.3.R1,,,,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by50.CMSG.3.R2,AnyMOD,0by50.CMSG3,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by50.CMSG.4.R1,,,,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by50.CMSG.4.R2,AnyMOD,0by50.CMSG4,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by50.CMSG.Adv.R2,AnyMOD,0by50.CMSG.Adv,,,2
+emf37_usa_states.csv,AnyMOD v0.1.6,0by50.Ref,,,resubmitted with proper scenario names,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by50.Ref,,,resubmitted with proper scenario names,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by50.Ref.R1,,,,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by50.Ref.R2,AnyMOD,0by50.Ref,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by60.Adv.R1,,,,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by60.Adv.R2,AnyMOD,0by60.Adv,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by60.CMSG.1.R2,AnyMOD,0by60.CMSG1,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by60.CMSG.2.R1,,,,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by60.CMSG.2.R2,AnyMOD,0by60.CMSG2,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by60.CMSG.3.R1,,,,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by60.CMSG.3.R2,AnyMOD,0by60.CMSG3,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by60.CMSG.4.R1,,,,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by60.CMSG.4.R2,AnyMOD,0by60.CMSG4,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by60.CMSG.Adv.R2,AnyMOD,0by60.CMSG.Adv,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by60.Ref.R1,,,,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by60.Ref.R2,AnyMOD,0by60.Ref,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by80.Adv.R1,,,,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by80.Adv.R2,AnyMOD,0by80.Adv,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by80.CMSG.1.R2,AnyMOD,0by80.CMSG1,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by80.CMSG.2.R1,,,,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by80.CMSG.2.R2,AnyMOD,0by80.CMSG2,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by80.CMSG.3.R1,,,,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by80.CMSG.3.R2,AnyMOD,0by80.CMSG3,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by80.CMSG.4.R1,,,,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by80.CMSG.4.R2,AnyMOD,0by80.CMSG4,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by80.CMSG.Adv.R2,AnyMOD,0by80.CMSG.Adv,,,2
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by80.Ref.R1,,,,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,0by80.Ref.R2,AnyMOD,0by80.Ref,,,2
+emf37_usa_states.csv,AnyMOD v0.1.6,net0by2050,,,resubmitted with proper scenario names,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,net0by2050,,,resubmitted with proper scenario names,,1
+emf37_usa_states.csv,AnyMOD v0.1.6,net0by2060,,,resubmitted with proper scenario names,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,net0by2060,,,resubmitted with proper scenario names,,1
+emf37_usa_states.csv,AnyMOD v0.1.6,net0by2080,,,resubmitted with proper scenario names,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,net0by2080,,,resubmitted with proper scenario names,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,NT.Ref.R1,,,,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,NT.Ref.R2,AnyMOD,NT.Ref,,,2
+emf37_usa_states.csv,AnyMOD v0.1.6,reference,,,resubmitted with proper scenario names,,1
+emf37_usacanmex.csv,AnyMOD v0.1.6,reference,,,resubmitted with proper scenario names,,1
+emf37_usacanmex.csv,CTUS-NEMS v1.0,0by50.CMSG.4.R1,,,,,1
+emf37_usacanmex.csv,CTUS-NEMS v1.0,0by50.CMSG.4.R2,FECM-NEMS,0by50.CMSG4,,,2
+emf37_usacanmex.csv,CTUS-NEMS v1.0,0by50.Ref.R1,,,,,1
+emf37_usacanmex.csv,CTUS-NEMS v1.0,NT.Ref.R1,,,,,1
+emf37_usacanmex.csv,CTUS-NEMS v1.0,NT.Ref.R2,FECM-NEMS,NT.Ref,,,2
+emf37_usacanmex.csv,CTUS-NEMS v2.0,0by50.CMSG.4.R1,,,,,1
+emf37_usacanmex.csv,CTUS-NEMS v2.0,0by50.CMSG.4.R1,,,,,1
+emf37_usacanmex.csv,CTUS-NEMS v2.0,0by50.Ref.R1,FECM-NEMS,0by50.Ref,named R1 but submitted for R2,,2
+emf37_usacanmex.csv,CTUS-NEMS v2.0,NT.Ref.R1,,,,,1
+emf37_usacanmex.csv,CTUS-NEMS v2.0,NT.Ref.R1,,,,,1
+emf37_usacanmex.csv,EC-MSMR v20220805,0by50.ISG.1.R2,EC-MSMR,0by50.ISG1,,,2
+emf37_usacanmex.csv,EC-MSMR v20220805,0by50.ISG.2.R2,EC-MSMR,0by50.ISG2,,,2
+emf37_usacanmex.csv,EC-MSMR v20220805,0by50.ISG.3.R2,EC-MSMR,0by50.ISG3,,,2
+emf37_usacanmex.csv,EC-MSMR v20220805,0by50.ISG.Adv.R2,EC-MSMR,0by50.ISG.Adv,,,2
+emf37_usacanmex.csv,EC-MSMR v20220805,0by50.Ref.R2,EC-MSMR,0by50.Ref,,,2
+emf37_usacanmex.csv,EC-MSMR v20220805,NT_ref,EC-MSMR,NT.Ref,,,2
+EIAinEMF37.csv,EIA_Historic,Historic,EIA_Historic,NT.Ref,,,2
+EIAinEMF37.csv,EIA_STEO,Ref,EIA_STEO,NT.Ref,,,2
+emf37_usacanmex.csv,ENERGY2020 v22,NT.Ref.R1,ENERGY2020,NT.Ref,named R1 but submitted for R2,,2
+EMF37_data_template_R1_v5 Williams.xlsx,EnergyPATHWAYS & RIO,0GHGby50.All_RE,,,,,1
+EMF37_data_template_R1_v5 Williams.xlsx,EnergyPATHWAYS & RIO,0GHGby50.Central,,,,,1
+EMF37_data_template_R1_v5 Williams.xlsx,EnergyPATHWAYS & RIO,0GHGby50.Central_LFFP,,,,,1
+EMF37_data_template_R1_v5 Williams.xlsx,EnergyPATHWAYS & RIO,0GHGby50.Central_LREC,,,,,1
+EMF37_data_template_R1_v5 Williams.xlsx,EnergyPATHWAYS & RIO,0GHGby50.Delay_Elect,,,,,1
+EMF37_data_template_R1_v5 Williams.xlsx,EnergyPATHWAYS & RIO,0GHGby50.Low_Demand,,,,,1
+EMF37_data_template_R1_v5 Williams.xlsx,EnergyPATHWAYS & RIO,0GHGby50.Low_Land,,,,,1
+EMF37_data_template_R1_v5 Williams.xlsx,EnergyPATHWAYS & RIO,0GHGby50.Neg_500Mt,,,,,1
+EMF37_data_template_R1_v5 Williams.xlsx,EnergyPATHWAYS & RIO,NT.Ref.R1,,,,,1
+MER_GHGI_historic.xlsx,EPA_GHGI,Historic,,,NCS-GHGI,NT.Ref,1
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.All.Adv.R1,,,,,1
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.All.ADV.R1,,,resubmitted with different scenario capitalization,,0
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.All.Adv.R2,EPA-TIMES,0by50.Adv,,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.BSG.1.R1,,,,,1
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.BSG.1.R2,EPA-TIMES,0by50.BSG1,,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.BSG.2.R1,,,,,1
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.BSG.2.R2,EPA-TIMES,0by50.BSG2,,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.BSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.BSG.ADV.R1,,,resubmitted with different scenario capitalization,,0
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.BSG.Adv.R2,EPA-TIMES,0by50.BSG.Adv,,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.CMSG.1.R1,,,Infeasible solution - removing from database,,0
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.CMSG.3.R1,,,,,1
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.CMSG.3.R2,EPA-TIMES,0by50.CMSG3,,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.CMSG.4.R1,,,,,1
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.CMSG.4.R2,EPA-TIMES,0by50.CMSG4,,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.CMSG.7.R2,EPA-TIMES,0by50.CMSG7,,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.CMSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.CMSG.ADV.R1,,,resubmitted with different scenario capitalization,,0
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.CMSG.Adv.R2,EPA-TIMES,0by50.CMSG.Adv,,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.ISG.Adv.R1,,,,,1
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.ISG.ADV.R1,,,resubmitted with different scenario capitalization,,0
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.ISG.Adv.R2,EPA-TIMES,0by50.ISG.Adv,,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.Ref,,, ,,0
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.Ref.R1,,,,,1
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.Ref.R1,,,resubmitted with different scenario capitalization,,0
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.Ref.R2,EPA-TIMES,0by50.Ref,,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.TSG.1.R1,,,,,1
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.TSG.1.R2,,,replaced with .TSG1,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.TSG.2.R1,,,,,1
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.TSG.2.R2,,,replaced with .TSG2,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.TSG.3.R1,,,,,1
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.TSG.3.R2,,,replaced with .TSG3,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.TSG.4.R1,,,,,1
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.TSG.4.R2,,,replaced with .TSG4,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.TSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.TSG.ADV.R1,,,renamed scenario,,0
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.TSG.Adv.R2,EPA-TIMES,0by50.TSG.Adv,,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.TSG1.R2,EPA-TIMES,0by50.TSG1,,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.TSG2.R2,EPA-TIMES,0by50.TSG2,,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.TSG3.R2,EPA-TIMES,0by50.TSG3,,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,0by50.TSG4.R2,EPA-TIMES,0by50.TSG4,,,2
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,NT.Ref,,, ,,0
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,NT.Ref.R1,,,,,1
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,NT.Ref.R1,,,resubmitted with different scenario capitalization,,0
+emf37_usacanmex.csv,EPAUS9r-TIMES v20.5.1emf,NT.Ref.R2,EPA-TIMES,NT.Ref,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,(500)GHGby50.NetNegative,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0CO2by50.CO2only,RIO,0by50.Ref,need to double check if this should be .Ref or .Adv,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby45.Central2045,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby50.100%Renewables,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby50.Central,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby50.DACbreakthrough,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby50.DropIn,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby50.HighFlexibleLoad,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby50.HighHydrogen,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby50.LimitedBiomass,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby50.LowDemand,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby50.LowFossilPrices,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby50.LowLand,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby50.LowRenewablePrices,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby50.NoSectorCoupling,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby50.NuclearBreakthough,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby50.SlowConsumerUptake,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby50.TxFriction,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,0GHGby60.Central2060,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,NT.Baseline,RIO,NT.Ref,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,NT.LowFossilPrices,,,,,2
+emf37_usacanmex.csv,EP-RIO.2022.1,Nt.LowRenewablePrices,,,,,2
+emf37_usacanmex.csv,EPS v3.2.1,0by50.All.Adv.R1,,,,,1
+emf37_usacanmex.csv,EPS v3.2.1,0by50.All.Adv.R2,EPS,0by50.Adv,,,2
+emf37_usacanmex.csv,EPS v3.2.1,0by50.BSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,EPS v3.2.1,0by50.BSG.Adv.R2,EPS,0by50.BSG.Adv,,,2
+emf37_usacanmex.csv,EPS v3.2.1,0by50.CMSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,EPS v3.2.1,0by50.CMSG.Adv.R2,EPS,0by50.CMSG.Adv,,,2
+emf37_usacanmex.csv,EPS v3.2.1,0by50.ISG.Adv.R1,,,,,1
+emf37_usacanmex.csv,EPS v3.2.1,0by50.ISG.Adv.R2,EPS,0by50.ISG.Adv,,,2
+emf37_usacanmex.csv,EPS v3.2.1,0by50.Ref,,, ,,0
+emf37_usacanmex.csv,EPS v3.2.1,0by50.Ref.R1,,,,,1
+emf37_usacanmex.csv,EPS v3.2.1,0by50.Ref.R2,EPS,0by50.Ref,,,2
+emf37_usacanmex.csv,EPS v3.2.1,0by50.TSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,EPS v3.2.1,0by50.TSG.Adv.R2,EPS,0by50.TSG.Adv,,,2
+emf37_usacanmex.csv,EPS v3.2.1,NT.Ref,,, ,,0
+emf37_usacanmex.csv,EPS v3.2.1,NT.Ref.R1,,,,,1
+emf37_usacanmex.csv,EPS v3.2.1,NT.Ref.R2,EPS,NT.Ref,,,2
+emf37_usacanmex.csv,FARM 4.1,0by50.All.Adv.R1,,,,,1
+emf37_usacanmex.csv,FARM 4.1,0by50.All.Adv.R2,FARM,0by50.Adv,,,2
+emf37_usacanmex.csv,FARM 4.1,0by50.BSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,FARM 4.1,0by50.BSG.Adv.R2,FARM,0by50.BSG.Adv,,,2
+emf37_usacanmex.csv,FARM 4.1,0by50.CMSG.1.R1,,,,,1
+emf37_usacanmex.csv,FARM 4.1,0by50.CMSG.1.R2,FARM,0by50.CMSG1,,,2
+emf37_usacanmex.csv,FARM 4.1,0by50.CMSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,FARM 4.1,0by50.CMSG.Adv.R2,FARM,0by50.CMSG.Adv,,,2
+emf37_usacanmex.csv,FARM 4.1,0by50.ISG.Adv.R1,,,,,1
+emf37_usacanmex.csv,FARM 4.1,0by50.ISG.Adv.R2,FARM,0by50.ISG.Adv,,,2
+emf37_usacanmex.csv,FARM 4.1,0by50.Ref,,,,,0
+emf37_usacanmex.csv,FARM 4.1,0by50.Ref.R1,,,,,1
+emf37_usacanmex.csv,FARM 4.1,0by50.Ref.R2,FARM,0by50.Ref,,,2
+emf37_usacanmex.csv,FARM 4.1,0by50.TSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,FARM 4.1,0by50.TSG.Adv.R2,FARM,0by50.TSG.Adv,,,2
+emf37_usacanmex.csv,FARM 4.1,0by60.Ref,,,,,0
+emf37_usacanmex.csv,FARM 4.1,0by80.Ref,,,,,0
+emf37_usacanmex.csv,FARM 4.1,NT.Ref,,,,,0
+emf37_usacanmex.csv,FARM 4.1,NT.Ref.R1,,,,,1
+emf37_usacanmex.csv,FARM 4.1,NT.Ref.R2,FARM,NT.Ref,,,2
+emf37_usacanmex.csv,GCAM5.2-EMF37,0by50.Ref,,, ,,0
+emf37_usacanmex.csv,GCAM5.2-EMF37,0by80.Ref,,, ,,0
+emf37_usacanmex.csv,GCAM5.2-EMF37,NT.Ref,,, ,,0
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.All.Adv.R1,,,,,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.All.Adv.R2,GCAM,0by50.Adv,,,2
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.BSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.BSG.Adv.R2,GCAM,0by50.BSG.Adv,,,2
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.CMSG.1.R1,,,GCAM,0by50.CMSG1,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.CMSG.1.R2,GCAM,0by50.CMSG1,,,2
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.CMSG.2.R1,,,GCAM,0by50.CMSG2,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.CMSG.2.R2,GCAM,0by50.CMSG2,,,2
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.CMSG.3.R1,,,GCAM,0by50.CMSG3,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.CMSG.3.R2,GCAM,0by50.CMSG3,,,2
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.CMSG.4.R1,,,GCAM,0by50.CMSG4,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.CMSG.4.R2,GCAM,0by50.CMSG4,,,2
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.CMSG.6.R2,GCAM,0by50.CMSG6,,,2
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.CMSG.7.R2,GCAM,0by50.CMSG7,,,2
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.CMSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.CMSG.Adv.R2,GCAM,0by50.CMSG.Adv,,,2
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.ISG.1.R1,,,GCAM,0by50.ISG1,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.ISG.3.R1,,,GCAM,0by50.ISG3,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.ISG.4.R1,,,GCAM,0by50.ISG4,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.ISG.Adv.R1,,,,,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.ISG.Adv.R2,GCAM,0by50.ISG.Adv,,,2
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.Ref.R1,,,,,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.Ref.R2,GCAM,0by50.Ref,,,2
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.TSG.1.R1,,,,,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.TSG.1.R2,GCAM,0by50.TSG1,,,2
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.TSG.2.R1,,,,,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.TSG.2.R2,GCAM,0by50.TSG2,,,2
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.TSG.3.R1,,,,,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.TSG.3.R2,GCAM,0by50.TSG3,,,2
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.TSG.4.R1,,,,,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.TSG.4.R2,GCAM,0by50.TSG4,,,2
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.TSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,0by50.TSG.Adv.R2,GCAM,0by50.TSG.Adv,,,2
+emf37_usacanmex.csv,GCAM5.3-EMF37,Nt.Ref.R1,,,,,1
+emf37_usacanmex.csv,GCAM5.3-EMF37,Nt.Ref.R2,GCAM,NT.Ref,,,2
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37, 0by50.CMSG.2.R2,GCAM-USA,0by50.CMSG2,,,2
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37, 0by50.CMSG.4.R2,GCAM-USA,0by50.CMSG4,,,2
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37, 0by50.CMSG.6.R2,GCAM-USA,0by50.CMSG6,,,2
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.All.Adv.R1,,,,,1
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.All.Adv.R2,GCAM-USA,0by50.Adv,,,2
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.All-a,,,renamed scenario,,0
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.Bldg-a,,,renamed scenario,,0
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.BSG.Adv.R2,GCAM-USA,0by50.BSG.Adv,,,2
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.BSG.R1,,,,,1
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.CMSG.1.R1,,,,,1
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.CMSG.2.R1,,,,,1
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.CMSG.4.R1,,,,,1
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.CMSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.CMSG.Adv.R2,GCAM-USA,0by50.CMSG.Adv,,,2
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.Ind-a,,,renamed scenario,,0
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.ISG.Adv.R2,GCAM-USA,0by50.ISG.Adv,,,2
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.ISG.R1,,,,,1
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.Ref,,,renamed scenario,,0
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.Ref.R1,,,,,1
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.Ref.R2,GCAM-USA,0by50.Ref,,,2
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.Trans-a,,,renamed scenario,,0
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.TSG.Adv.R2,GCAM-USA,0by50.TSG.Adv,,,2
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,0by50.TSG.R1,,,,,1
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,CMSG-01-2050,,,renamed scenario,,0
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,CMSG-02-2050,,,renamed scenario,,0
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,CMSG-04-2050,,,renamed scenario,,0
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,CMSG-05-2050,,,renamed scenario,,0
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,NT.All.Adv.R1,,,,,1
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,NT.All-a,,,renamed scenario,,0
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,NT.All-Adv.R2,GCAM-USA,NT.Adv,,,2
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,NT.Bldg-a,,,renamed scenario,,0
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,NT.BSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,NT.BSG.Adv.R2,GCAM-USA,NT.BSG.Adv,,,2
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,NT.Ind-a,,,renamed scenario,,0
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,NT.ISG.Adv.R1,,,,,1
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,NT.ISG.Adv.R2,GCAM-USA,NT.ISG.Adv,,,2
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,NT.Ref,,,renamed scenario,,0
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,NT.Ref.R1,,,,,1
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,NT.Ref.R2,GCAM-USA,NT.Ref,,,2
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,NT.Trans-a,,,renamed scenario,,0
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,NT.TSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,GCAM-USA 5.3 EMF37,NT.TSG.Adv.R2,GCAM-USA,NT.TSG.Adv,,,2
+EPA_GHGI_sum.csv,GHGI,NT.Ref,EPA-GHGI,NT.Ref,,,2
+emf37_canada_provinces.csv,gTech.8877,0by50.BSG.1.R2,gTech,0by50.BSG1,,,2
+emf37_usa_states.csv,gTech.8877,0by50.BSG.1.R2,gTech,0by50.BSG1,,,2
+emf37_usacanmex.csv,gTech.8877,0by50.BSG.1.R2,gTech,0by50.BSG1,,,2
+emf37_canada_provinces.csv,gTech.8877,0by50.BSG.2.R1,,,,,1
+emf37_usa_states.csv,gTech.8877,0by50.BSG.2.R1,,,,,1
+emf37_usacanmex.csv,gTech.8877,0by50.BSG.2.R1,,,,,1
+emf37_canada_provinces.csv,gTech.8877,0by50.BSG.2.R2,gTech,0by50.BSG2,,,2
+emf37_usa_states.csv,gTech.8877,0by50.BSG.2.R2,gTech,0by50.BSG2,,,2
+emf37_usacanmex.csv,gTech.8877,0by50.BSG.2.R2,gTech,0by50.BSG2,,,2
+emf37_canada_provinces.csv,gTech.8877,0by50.BSG.3.R1,,,,,1
+emf37_usa_states.csv,gTech.8877,0by50.BSG.3.R1,,,,,1
+emf37_usacanmex.csv,gTech.8877,0by50.BSG.3.R1,,,,,1
+emf37_canada_provinces.csv,gTech.8877,0by50.BSG.3.R2,gTech,0by50.BSG3,,,2
+emf37_usa_states.csv,gTech.8877,0by50.BSG.3.R2,gTech,0by50.BSG3,,,2
+emf37_usacanmex.csv,gTech.8877,0by50.BSG.3.R2,gTech,0by50.BSG3,,,2
+emf37_canada_provinces.csv,gTech.8877,0by50.BSG.4.R1,,,,,1
+emf37_usa_states.csv,gTech.8877,0by50.BSG.4.R1,,,,,1
+emf37_usacanmex.csv,gTech.8877,0by50.BSG.4.R1,,,,,1
+emf37_canada_provinces.csv,gTech.8877,0by50.BSG.5.R1,,,gTech,0by50.BSG5,1
+emf37_usa_states.csv,gTech.8877,0by50.BSG.5.R1,,,gTech,0by50.BSG5,1
+emf37_usacanmex.csv,gTech.8877,0by50.BSG.5.R1,,,gTech,0by50.BSG5,1
+emf37_canada_provinces.csv,gTech.8877,0by50.BSG.6.R2,gTech,0by50.BSG6,,,2
+emf37_usa_states.csv,gTech.8877,0by50.BSG.6.R2,gTech,0by50.BSG6,,,2
+emf37_usacanmex.csv,gTech.8877,0by50.BSG.6.R2,gTech,0by50.BSG6,,,2
+emf37_canada_provinces.csv,gTech.8877,0by50.BSG.Adv.R1,,,,,1
+emf37_usa_states.csv,gTech.8877,0by50.BSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,gTech.8877,0by50.BSG.Adv.R1,,,,,1
+emf37_canada_provinces.csv,gTech.8877,0by50.BSG.Adv.R2,gTech,0by50.BSG.Adv,,,2
+emf37_usa_states.csv,gTech.8877,0by50.BSG.Adv.R2,gTech,0by50.BSG.Adv,,,2
+emf37_usacanmex.csv,gTech.8877,0by50.BSG.Adv.R2,gTech,0by50.BSG.Adv,,,2
+emf37_canada_provinces.csv,gTech.8877,0by50.CMSG.2.R1,,,,,1
+emf37_usa_states.csv,gTech.8877,0by50.CMSG.2.R1,,,,,1
+emf37_usacanmex.csv,gTech.8877,0by50.CMSG.2.R1,,,,,1
+emf37_canada_provinces.csv,gTech.8877,0by50.CMSG.2.R2,gTech,0by50.CMSG2,,,2
+emf37_usa_states.csv,gTech.8877,0by50.CMSG.2.R2,gTech,0by50.CMSG2,,,2
+emf37_usacanmex.csv,gTech.8877,0by50.CMSG.2.R2,gTech,0by50.CMSG2,,,2
+emf37_canada_provinces.csv,gTech.8877,0by50.CMSG.3.R1,,,,,1
+emf37_usa_states.csv,gTech.8877,0by50.CMSG.3.R1,,,,,1
+emf37_usacanmex.csv,gTech.8877,0by50.CMSG.3.R1,,,,,1
+emf37_canada_provinces.csv,gTech.8877,0by50.CMSG.3.R2,gTech,0by50.CMSG3,,,2
+emf37_usa_states.csv,gTech.8877,0by50.CMSG.3.R2,gTech,0by50.CMSG3,,,2
+emf37_usacanmex.csv,gTech.8877,0by50.CMSG.3.R2,gTech,0by50.CMSG3,,,2
+emf37_canada_provinces.csv,gTech.8877,0by50.CMSG.4.R1,,,,,1
+emf37_usa_states.csv,gTech.8877,0by50.CMSG.4.R1,,,,,1
+emf37_usacanmex.csv,gTech.8877,0by50.CMSG.4.R1,,,,,1
+emf37_canada_provinces.csv,gTech.8877,0by50.CMSG.4.R2,gTech,0by50.CMSG4,,,2
+emf37_usa_states.csv,gTech.8877,0by50.CMSG.4.R2,gTech,0by50.CMSG4,,,2
+emf37_usacanmex.csv,gTech.8877,0by50.CMSG.4.R2,gTech,0by50.CMSG4,,,2
+emf37_canada_provinces.csv,gTech.8877,0by50.CMSG.6.R2,gTech,0by50.CMSG6,,,2
+emf37_usa_states.csv,gTech.8877,0by50.CMSG.6.R2,gTech,0by50.CMSG6,,,2
+emf37_usacanmex.csv,gTech.8877,0by50.CMSG.6.R2,gTech,0by50.CMSG6,,,2
+emf37_canada_provinces.csv,gTech.8877,0by50.CMSG.Adv.R1,,,,,1
+emf37_usa_states.csv,gTech.8877,0by50.CMSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,gTech.8877,0by50.CMSG.Adv.R1,,,,,1
+emf37_canada_provinces.csv,gTech.8877,0by50.CMSG.Adv.R2,gTech,0by50.CMSG.Adv,,,2
+emf37_usa_states.csv,gTech.8877,0by50.CMSG.Adv.R2,gTech,0by50.CMSG.Adv,,,2
+emf37_usacanmex.csv,gTech.8877,0by50.CMSG.Adv.R2,gTech,0by50.CMSG.Adv,,,2
+emf37_canada_provinces.csv,gTech.8877,0by50.Ref,,,,0by50,0
+emf37_usa_states.csv,gTech.8877,0by50.Ref,,,,0by50,0
+emf37_usacanmex.csv,gTech.8877,0by50.Ref,,, ,0by50,0
+emf37_canada_provinces.csv,gTech.8877,0by50.Ref.R1,,,gTech,0by50.Ref,1
+emf37_usa_states.csv,gTech.8877,0by50.Ref.R1,,,gTech,0by50.Ref,1
+emf37_usacanmex.csv,gTech.8877,0by50.Ref.R1,,,gTech,0by50.Ref,1
+emf37_canada_provinces.csv,gTech.8877,0by50.Ref.R2,gTech,0by50.Ref,,,2
+emf37_usacanmex.csv,gTech.8877,0by50.Ref.R2,gTech,0by50.Ref,,,2
+emf37_canada_provinces.csv,gTech.8877,0by50.TSG.1.R1,,,,,1
+emf37_usa_states.csv,gTech.8877,0by50.TSG.1.R1,,,,,1
+emf37_usacanmex.csv,gTech.8877,0by50.TSG.1.R1,,,,,1
+emf37_canada_provinces.csv,gTech.8877,0by50.TSG.1.R2,gTech,0by50.TSG1,,,2
+emf37_usa_states.csv,gTech.8877,0by50.TSG.1.R2,gTech,0by50.TSG1,,,2
+emf37_usacanmex.csv,gTech.8877,0by50.TSG.1.R2,gTech,0by50.TSG1,,,2
+emf37_canada_provinces.csv,gTech.8877,0by50.TSG.2.R1,,,,,1
+emf37_usa_states.csv,gTech.8877,0by50.TSG.2.R1,,,,,1
+emf37_usacanmex.csv,gTech.8877,0by50.TSG.2.R1,,,,,1
+emf37_canada_provinces.csv,gTech.8877,0by50.TSG.2.R2,gTech,0by50.TSG2,,,2
+emf37_usa_states.csv,gTech.8877,0by50.TSG.2.R2,gTech,0by50.TSG2,,,2
+emf37_usacanmex.csv,gTech.8877,0by50.TSG.2.R2,gTech,0by50.TSG2,,,2
+emf37_canada_provinces.csv,gTech.8877,0by50.TSG.3.R1,,,,,1
+emf37_usa_states.csv,gTech.8877,0by50.TSG.3.R1,,,,,1
+emf37_usacanmex.csv,gTech.8877,0by50.TSG.3.R1,,,,,1
+emf37_canada_provinces.csv,gTech.8877,0by50.TSG.3.R2,gTech,0by50.TSG3,,,2
+emf37_usa_states.csv,gTech.8877,0by50.TSG.3.R2,gTech,0by50.TSG3,,,2
+emf37_usacanmex.csv,gTech.8877,0by50.TSG.3.R2,gTech,0by50.TSG3,,,2
+emf37_canada_provinces.csv,gTech.8877,0by50.TSG.4.R0,,,not sure what this is?,0by50.TSG.4,0
+emf37_usa_states.csv,gTech.8877,0by50.TSG.4.R0,,,not sure what this is?,0by50.TSG.4,0
+emf37_usacanmex.csv,gTech.8877,0by50.TSG.4.R0,,,not sure what this is?,0by50.TSG.4,0
+emf37_canada_provinces.csv,gTech.8877,0by50.TSG.4.R1,,,,,1
+emf37_usa_states.csv,gTech.8877,0by50.TSG.4.R1,,,,,1
+emf37_usacanmex.csv,gTech.8877,0by50.TSG.4.R1,,,,,1
+emf37_canada_provinces.csv,gTech.8877,0by50.TSG.4.R2,gTech,0by50.TSG4,,,2
+emf37_usa_states.csv,gTech.8877,0by50.TSG.4.R2,gTech,0by50.TSG4,,,2
+emf37_usacanmex.csv,gTech.8877,0by50.TSG.4.R2,gTech,0by50.TSG4,,,2
+emf37_canada_provinces.csv,gTech.8877,0by50.TSG.Adv.R1,,,,,1
+emf37_usa_states.csv,gTech.8877,0by50.TSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,gTech.8877,0by50.TSG.Adv.R1,,,,,1
+emf37_canada_provinces.csv,gTech.8877,0by50.TSG.Adv.R2,gTech,0by50.TSG.Adv,,,2
+emf37_usa_states.csv,gTech.8877,0by50.TSG.Adv.R2,gTech,0by50.TSG.Adv,,,2
+emf37_usacanmex.csv,gTech.8877,0by50.TSG.Adv.R2,gTech,0by50.TSG.Adv,,,2
+emf37_canada_provinces.csv,gTech.8877,0GHGby50.Ref.R2,,,didn’t want to include,,2
+emf37_usa_states.csv,gTech.8877,0GHGby50.Ref.R2,,,didn’t want to include,,2
+emf37_usacanmex.csv,gTech.8877,0GHGby50.Ref.R2,,,didn’t want to include,,2
+emf37_canada_provinces.csv,gTech.8877,NT.Ref,,,,NT,0
+emf37_usa_states.csv,gTech.8877,NT.Ref,,,,NT,0
+emf37_usacanmex.csv,gTech.8877,NT.Ref,,, ,NT,0
+emf37_canada_provinces.csv,gTech.8877,NT.Ref.R1,,,gTech,NT.Ref,1
+emf37_usa_states.csv,gTech.8877,NT.Ref.R1,,,gTech,NT.Ref,1
+emf37_usacanmex.csv,gTech.8877,NT.Ref.R1,,,gTech,NT.Ref,1
+emf37_canada_provinces.csv,gTech.8877,NT.Ref.R2,gTech,NT.Ref,,,2
+emf37_usacanmex.csv,gTech.8877,NT.Ref.R2,gTech,NT.Ref,,,2
+EMF37_data_MA3T cases results.xlsx,MA3T,Ref,MA3T,NT.Ref,,,2
+EMF37_data_MA3T cases results.xlsx,MA3T,TSG All Adv,MA3T,0by50.TSG.Adv,,,2
+EMF37_data_MA3T cases results.xlsx,MA3T,TSG Policy,MA3T,0by50.TSG3,,,2
+EMF37_data_MA3T cases results.xlsx,MA3T,TSG Preferences,MA3T,0by50.TSG4,,,2
+EMF37_data_MA3T cases results.xlsx,MA3T,TSG Tech,MA3T,0by50.TSG1,,,2
+EMF37_data_MA3T cases results.xlsx,MA3T,TSG Tech & Pol,MA3T,0by50.TSG2,,,2
+EMF37_data_template_R1_v5 zl.xlsx,MA3T V20190404,B,,,MA3T,B,1
+EMF37_data_template_R1_v5 zl.xlsx,MA3T V20190404,BI,,,MA3T,BI,1
+EMF37_data_template_R1_v5 zl.xlsx,MA3T V20190404,BIICEO35,,,MA3T,BIICEO35,1
+EMF37_data_template_R1_v5 zl.xlsx,MA3T V20190404,BIP1,,,MA3T,BIP1,1
+EMF37_data_template_R1_v5 zl.xlsx,MA3T V20190404,BIP2,,,MA3T,BIP2,1
+EMF37_data_template_R1_v5 zl.xlsx,MA3T V20190404,BIP5,,,MA3T,BIP5,1
+EMF37_data_template_R1_v5 zl.xlsx,MA3T V20190404,BIP5P35,,,MA3T,BIP5P35,1
+EMF37_data_template_R1_v5 zl.xlsx,MA3T V20190404,Ref,,,,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,0by50.All-a,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,0by50.All-a,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,0by50.Bldg-a,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,0by50.Bldg-a,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,0by50.Ind-a,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,0by50.Ind-a,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,0by50.Ref,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,0by50.Ref,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,0by50.Trans-a,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,0by50.Trans-a,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,0by60.All,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,0by60.All,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,0by60.Ref,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,0by60.Ref,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,0by80.All,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,0by80.All,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,0by80.Ref,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,0by80.Ref,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,CMSG-02-50,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,CMSG-02-50,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,CMSG-02-60,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,CMSG-02-60,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,CMSG-02-80,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,CMSG-02-80,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,CMSG-03-50,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,CMSG-03-50,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,CMSG-03-60,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,CMSG-03-60,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,CMSG-03-80,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,CMSG-03-80,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,CMSG-04-50,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,CMSG-04-50,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,CMSG-04-60,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,CMSG-04-60,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,CMSG-04-80,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,CMSG-04-80,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,CMSG-05-50,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,CMSG-05-50,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,CMSG-05-60,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,CMSG-05-60,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,CMSG-05-80,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,CMSG-05-80,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,NT.All-a,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,NT.All-a,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,NT.Bldg-a,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,NT.Bldg-a,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,NT.Ind-a,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,NT.Ind-a,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,NT.Ref,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,NT.Ref,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2020 v1.0,NT.Trans-a,,, ,,0
+emf37_usacanmex.csv,MARKAL.NETL.2020 v1.0,NT.Trans-a,,, ,,0
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.All.Adv.R1,,,Renamed scenario with all caps ADV,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.All.ADV.R1,,,,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.All.Adv.R1,,,Renamed scenario with all caps ADV,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.All.ADV.R1,,,,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.All.Adv.R2,MARKAL-NETL,0by50.Adv,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.All.Adv.R2,MARKAL-NETL,0by50.Adv,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.BSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.BSG.Adv.R1,,,,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.BSG.Adv.R2,MARKAL-NETL,0by50.BSG.Adv,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.BSG.Adv.R2,MARKAL-NETL,0by50.BSG.Adv,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG.2.R1,,,,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG.2.R1,,,,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG.3.R1,,,,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG.3.R1,,,,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG.4.R1,,,,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG.4.R1,,,,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG.ADV.R1,,,,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG.ADV.R1,,,,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG.Adv.R2,MARKAL-NETL,0by50.CMSG.Adv,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG.Adv.R2,MARKAL-NETL,0by50.CMSG.Adv,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG2.R2,MARKAL-NETL,0by50.CMSG2,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG2.R2,MARKAL-NETL,0by50.CMSG2,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG3.R2,MARKAL-NETL,0by50.CMSG3,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG3.R2,MARKAL-NETL,0by50.CMSG3,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG4.R2,MARKAL-NETL,0by50.CMSG4,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG4.R2,MARKAL-NETL,0by50.CMSG4,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG6.R2,MARKAL-NETL,0by50.CMSG6,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG6.R2,MARKAL-NETL,0by50.CMSG6,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG7.R2,,,MARKAL-NETL,0by50.CMSG7,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.CMSG7.R2,,,MARKAL-NETL,0by50.CMSG7,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.ISG.Adv.R1,,,Renamed scenario with all caps ADV,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.ISG.ADV.R1,,,,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.ISG.Adv.R1,,,Renamed scenario with all caps ADV,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.ISG.ADV.R1,,,,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.ISG.Adv.R2,MARKAL-NETL,0by50.ISG.Adv,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.ISG.Adv.R2,MARKAL-NETL,0by50.ISG.Adv,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.ISG1.R2,MARKAL-NETL,0by50.ISG1,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.ISG1.R2,MARKAL-NETL,0by50.ISG1,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.ISG3.R2,MARKAL-NETL,0by50.ISG3,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.ISG3.R2,MARKAL-NETL,0by50.ISG3,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.ISG4.R2,MARKAL-NETL,0by50.ISG4,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.ISG4.R2,MARKAL-NETL,0by50.ISG4,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.Ref.R1,,,,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.Ref.R1,,,,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.Ref.R2,MARKAL-NETL,0by50.Ref,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.Ref.R2,MARKAL-NETL,0by50.Ref,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.TSG.Adv.R1,,,Renamed scenario with all caps ADV,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.TSG.ADV.R1,,,,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.TSG.Adv.R1,,,Renamed scenario with all caps ADV,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.TSG.ADV.R1,,,,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.TSG.Adv.R2,MARKAL-NETL,0by50.TSG.Adv,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.TSG.Adv.R2,MARKAL-NETL,0by50.TSG.Adv,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.TSG1.R2,MARKAL-NETL,0by50.TSG1,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.TSG1.R2,MARKAL-NETL,0by50.TSG1,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.TSG2.R2,MARKAL-NETL,0by50.TSG2,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.TSG2.R2,MARKAL-NETL,0by50.TSG2,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.TSG3.R2,MARKAL-NETL,0by50.TSG3,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.TSG3.R2,MARKAL-NETL,0by50.TSG3,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,0by50.TSG4.R2,MARKAL-NETL,0by50.TSG4,,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,0by50.TSG4.R2,MARKAL-NETL,0by50.TSG4,,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,NT.Ref.R1,MARKAL-NETL,NT.Ref,still named R1 but submitted again for R2,,2
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,NT.Ref.R1,MARKAL-NETL,NT.Ref,still named R1 but submitted again for R2,,2
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,Oby50.All.Adv.R1,,,resubmitted with different scenario name,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,Oby50.All.Adv.R1,,,resubmitted with different scenario name,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,Oby50.BSG.Adv.R1,,,resubmitted with different scenario name,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,Oby50.BSG.Adv.R1,,,resubmitted with different scenario name,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,Oby50.CMSG.2.R1,,,resubmitted with different scenario name,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,Oby50.CMSG.2.R1,,,resubmitted with different scenario name,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,Oby50.CMSG.3.R1,,,resubmitted with different scenario name,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,Oby50.CMSG.3.R1,,,resubmitted with different scenario name,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,Oby50.CMSG.4.R1,,,resubmitted with different scenario name,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,Oby50.CMSG.4.R1,,,resubmitted with different scenario name,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,Oby50.CMSG.ADV.R1,,,resubmitted with different scenario name,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,Oby50.CMSG.ADV.R1,,,resubmitted with different scenario name,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,Oby50.ISG.Adv.R1,,,resubmitted with different scenario name,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,Oby50.ISG.Adv.R1,,,resubmitted with different scenario name,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,Oby50.Ref.R1,,,resubmitted with different scenario name,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,Oby50.Ref.R1,,,resubmitted with different scenario name,,1
+emf37_usa_census_regions.csv,MARKAL.NETL.2021 v1.0,Oby50.TSG.Adv.R1,,,resubmitted with different scenario name,,1
+emf37_usacanmex.csv,MARKAL.NETL.2021 v1.0,Oby50.TSG.Adv.R1,,,resubmitted with different scenario name,,1
+MER_GHGI_historic.xlsx,MER,Historic,MER,NT.Ref,,,2
+emf37_usacanmex.csv,NATEM v1.0,0by50.All.Adv.R1,,,,,1
+emf37_usacanmex.csv,NATEM v1.0,0by50.All.Adv.R2,NATEM,0by50.Adv,,,2
+emf37_usacanmex.csv,NATEM v1.0,0by50.BSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,NATEM v1.0,0by50.BSG.Adv.R2,NATEM,0by50.BSG.Adv,,,2
+emf37_usacanmex.csv,NATEM v1.0,0by50.CMSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,NATEM v1.0,0by50.CMSG.Adv.R2,NATEM,0by50.CMSG.Adv,,,2
+emf37_usacanmex.csv,NATEM v1.0,0by50.ISG.Adv.R1,,,,,1
+emf37_usacanmex.csv,NATEM v1.0,0by50.ISG.Adv.R2,NATEM,0by50.ISG.Adv,,,2
+emf37_usacanmex.csv,NATEM v1.0,0by50.Ref.R1,,,,,1
+emf37_usacanmex.csv,NATEM v1.0,0by50.Ref.R2,NATEM,0by50.Ref,,,2
+emf37_usacanmex.csv,NATEM v1.0,0by50.TSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,NATEM v1.0,0by50.TSG.Adv.R2,NATEM,0by50.TSG.Adv,,,2
+emf37_usacanmex.csv,NATEM v1.0,0GHGby50.All-Adv.R1,,,,,1
+emf37_usacanmex.csv,NATEM v1.0,0GHGby50.All-Adv.R2,NATEM,0GHGby50.Adv,,,2
+emf37_usacanmex.csv,NATEM v1.0,0GHGby50.Ref.R1,,,,,1
+emf37_usacanmex.csv,NATEM v1.0,0GHGby50.Ref.R2,NATEM,0GHGby50.Ref,,,2
+emf37_usacanmex.csv,NATEM v1.0,NT.Ref.R1,,,,,1
+emf37_usacanmex.csv,NATEM v1.0,NT.Ref.R2,NATEM,NT.Ref,,,2
+emf37_usacanmex.csv,ReEDS.v2021.2035,0by50.BSG.Adv.R2,ReEDS,0by50.BSG.Adv,,,2
+emf37_usacanmex.csv,ReEDS.v2021.2035,0by50.CMSG.1.R2,ReEDS,0by50.CMSG1,,,2
+emf37_usacanmex.csv,ReEDS.v2021.2035,0by50.CMSG.2.R2,ReEDS,0by50.CMSG2,,,2
+emf37_usacanmex.csv,ReEDS.v2021.2035,0by50.CMSG.3.R2,ReEDS,0by50.CMSG3,,,2
+emf37_usacanmex.csv,ReEDS.v2021.2035,0by50.CMSG.4.R2,ReEDS,0by50.CMSG4,,,2
+emf37_usacanmex.csv,ReEDS.v2021.2035,0by50.CMSG.6.R2,ReEDS,0by50.CMSG6,,,2
+emf37_usacanmex.csv,ReEDS.v2021.2035,0by50.CMSG.Adv.R2,ReEDS,0by50.CMSG.Adv,,,2
+emf37_usacanmex.csv,ReEDS.v2021.2035,0by50.Ref.R2,ReEDS,0by50.Ref,,,2
+emf37_usacanmex.csv,ReEDS.v2021.2035,NT.BSG.Adv.R1,ReEDS,NT.BSG.Adv,named R1 but submitted for R2,,2
+emf37_usacanmex.csv,ReEDS.v2021.2035,NT.Ref.R1,ReEDS,NT.Ref,named R1 but submitted for R2,,2
+emf37_usacanmex.csv,Scout v0.8,0by50.BSG.1.R2,Scout,0by50.BSG1,,,2
+emf37_usacanmex.csv,Scout v0.8,0by50.BSG.2.R2,Scout,0by50.BSG2,,,2
+emf37_usacanmex.csv,Scout v0.8,0by50.BSG.Adv.R2,Scout,0by50.BSG.Adv,,,2
+emf37_usacanmex.csv,Scout v0.8,NT.Ref.R2,Scout,NT.Ref,,,2
+emf37_usacanmex.csv,TEMOA v1.0,0by50.CMSG.Adv.R2,TEMOA,0by50.CMSG.Adv, ,,2
+emf37_usacanmex.csv,TEMOA v1.0,0by50.Ref,,, ,,0
+emf37_usacanmex.csv,TEMOA v1.0,0by50.Ref.R2,TEMOA,0by50.Ref, ,,2
+emf37_usacanmex.csv,TEMOA v1.0,0by80.Ref,,, ,,0
+emf37_usacanmex.csv,TEMOA v1.0,CMSG-01-2080,,, ,,0
+emf37_usacanmex.csv,TEMOA v1.0,CMSG-02-2080,,, ,,0
+emf37_usacanmex.csv,TEMOA v1.0,EMF37-01,,, ,,0
+emf37_usacanmex.csv,TEMOA v1.0,EMF37-02,,, ,,0
+emf37_usacanmex.csv,TEMOA v1.0,EMF37-04,,, ,,0
+emf37_usacanmex.csv,TEMOA v1.0,NT.Ref,,, ,,0
+emf37_usacanmex.csv,TEMOA v1.0,NT.Ref.R2,TEMOA,NT.Ref, ,,2
+emf37_usacanmex.csv,TEMPO v1.0,0by50.TSG.1.R1,,,,,1
+emf37_usacanmex.csv,TEMPO v1.0,0by50.TSG.1.R2,TEMPO,0by50.TSG1,,,2
+emf37_usacanmex.csv,TEMPO v1.0,0by50.TSG.2.R1,,,,,1
+emf37_usacanmex.csv,TEMPO v1.0,0by50.TSG.2.R2,TEMPO,0by50.TSG2,,,2
+emf37_usacanmex.csv,TEMPO v1.0,0by50.TSG.3.R2,TEMPO,0by50.TSG3,,,2
+emf37_usacanmex.csv,TEMPO v1.0,0by50.TSG.4.R2,TEMPO,0by50.TSG4,,,2
+emf37_usacanmex.csv,TEMPO v1.0,0by50.TSG.Adv.R1,,,,,1
+emf37_usacanmex.csv,TEMPO v1.0,0by50.TSG.Adv.R1.1,,,0by50.TSG.Adv,,1
+emf37_usacanmex.csv,TEMPO v1.0,0by50.TSG.Adv.R2,TEMPO,0by50.TSG.Adv,,,2
+emf37_usacanmex.csv,TEMPO v1.0,EMF37-01,,,resubmitted with new scenario names,,1
+emf37_usacanmex.csv,TEMPO v1.0,EMF37-05,,,resubmitted with new scenario names,,1
+emf37_usacanmex.csv,TEMPO v1.0,EMF37-07,,,resubmitted with new scenario names,,1
+emf37_usacanmex.csv,TEMPO v1.0,EMF37-08,,,resubmitted with new scenario names,,1
+emf37_usacanmex.csv,TEMPO v1.0,EMF37-08.1,,,resubmitted with new scenario names,,1
+emf37_usacanmex.csv,TEMPO v1.0,EMF37-08.2,,,resubmitted with new scenario names,,1
+emf37_usacanmex.csv,TEMPO v1.0,NT.Ref.R1,,,,,1
+emf37_usacanmex.csv,TEMPO v1.0,NT.Ref.R2,TEMPO,NT.Ref,,,2
+emf37_usacanmex.csv,US-REGEN v5.0,0by50.CMSG.1.R1,,,,,1
+emf37_usacanmex.csv,US-REGEN v5.0,0by50.CMSG.1.R2,US-REGEN,0by50.CMSG1,,,2
+emf37_usacanmex.csv,US-REGEN v5.0,0by50.Ref.R1,,,,,1
+emf37_usacanmex.csv,US-REGEN v5.0,0by50.Ref.R2,US-REGEN,0by50.Ref,,,2
+emf37_usacanmex.csv,US-REGEN v5.0,NT.Ref.R1,,,,,1
+emf37_usacanmex.csv,US-REGEN v5.0,NT.Ref.R2,US-REGEN,NT.Ref,,,2
+emf37_usa_states.csv,USREP-ReEDS v3-19.1.0,r12_ru_net0_2050_econcap,,, ,,0
+emf37_usacanmex.csv,USREP-ReEDS v3-19.1.0,r12_ru_net0_2050_econcap,,, ,,0
+emf37_usa_states.csv,USREP-ReEDS v3-19.1.0,r12_ru_net0_2060_econcap,,, ,,0
+emf37_usacanmex.csv,USREP-ReEDS v3-19.1.0,r12_ru_net0_2060_econcap,,, ,,0
+emf37_usa_states.csv,USREP-ReEDS v3-19.1.0,r12_ru_net0_2080_econcap,,, ,,0
+emf37_usacanmex.csv,USREP-ReEDS v3-19.1.0,r12_ru_net0_2080_econcap,,, ,,0
+emf37_usa_states.csv,USREP-ReEDS v3-19.1.0,r12_ru_ref_endret_gp,,, ,,0
+emf37_usacanmex.csv,USREP-ReEDS v3-19.1.0,r12_ru_ref_endret_gp,,, ,,0
+emf37_usa_states.csv,USREP-ReEDS v3-20.1.0,v20210602_PB1_ru_ref_endret_gp,,, ,,0
+emf37_usacanmex.csv,USREP-ReEDS v3-20.1.0,v20210602_PB1_ru_ref_endret_gp,,, ,,0
+emf37_usacanmex.csv,USREP-ReEDS v4-22.1.0,0by50.Ref.R2,USREP-ReEDS,0by50.Ref,,,2
+emf37_usacanmex.csv,USREP-ReEDS v4-22.1.0,NT.Ref.R2,USREP-ReEDS,NT.Ref,,,2
+emf37_usacanmex.csv,USREP-ReEDS v4-22.1.0,Oby50.Ref.R2,,,USREP-ReEDS,0by50.Ref,2
+,,, ,,,,
+,,, ,,,,
+,,, ,,,,

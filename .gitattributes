@@ -1,0 +1,37 @@
+###############################
+# Git Line Endings            #
+###############################
+
+# Prevent phantom line ending diffs
+
+# Reading:
+# https://www.aleksandrhovhannisyan.com/blog/crlf-vs-lf-normalizing-line-endings-in-git/
+# https://rehansaeed.com/gitattributes-best-practices/#line-endings
+# https://stackoverflow.com/questions/46590142/what-is-the-differrence-between-text-auto-and-text-eol-lf-in-gitattribu
+
+# Possible file type settings:
+# text -> mark as text to check-in w/ LF
+# text=auto -> git will handle the files in whatever what it thinks is best (text files check out as CRLF on windows)
+# text eol=lf -> git will always keep/convert to LF on checkout. Use for files that must keep LF, even on Windows.
+# text eol=crlf -> git will always convert to CRLF on checkout. Use for files that must have CRLF, even on OSX or Linux.
+# binary Git will understand that the files are not text, and it should not try to change thm. The binary setting is also an alias for -text -diff
+
+
+# Force csv to always use LF line endings b/c write_csv defaults to LF
+*.csv text eol=lf
+
+# Make md line endings platform-dependent to match Pandoc defaults. Rstudio respects existing line endings.
+*.md text=auto
+
+# Code files should check in as LF, but it shouldn't matter too much what line endings are locally.
+# Rstudio respects line endings of files. Other editors may require a particular line endings.
+*.R text
+*.Rmd text
+*.Rproj text
+
+# Denote files that are binary and should not be modified or diff.
+*.png binary
+*.jpg binary
+*.pdf binary
+*.xlsx binary
+*.parquet binary

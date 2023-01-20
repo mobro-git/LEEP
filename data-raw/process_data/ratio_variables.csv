@@ -1,0 +1,13 @@
+﻿variable,numerator,denominator,unit
+Final Energy|Percent Electricity,Final Energy|Electricity,Final Energy,%
+Final Energy|Buildings|Percent Electricity,Final Energy|Buildings|Electricity,Final Energy|Buildings,%
+Final Energy|Industry|Percent Electricity,Final Energy|Industry|Electricity,Final Energy|Industry,%
+Final Energy|Transportation|Percent Electricity,Final Energy|Transportation|Electricity,Final Energy|Transportation,%
+Emissions Intensity|CO2|Electricity,Emissions|CO2|Energy|Supply|Electricity,Secondary Energy|Electricity,Mt CO2/EJ
+Emissions Intensity|CO2|Industry,Emissions|CO2|Energy|Demand|Industry,Final Energy|Industry,Mt CO2/EJ
+Final Energy|Per Capita,Final Energy,Population,EJ/million people
+Emissions Intensity|CO2|Final Energy,Emissions|CO2|Energy,Final Energy,Mt CO2/EJ
+Emissions Intensity|CO2|Primary Energy,Emissions|CO2|Energy,Primary Energy,Mt CO2/EJ
+Primary Energy|Per GDP,Primary Energy,GDP|MER,EJ/billion US$2018
+Final Energy|Per GDP,Final Energy,GDP|MER,EJ/billion US$2018
+GDP|Per Capita,GDP|MER,Population,billion US$2018/million people

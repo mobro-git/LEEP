@@ -1,0 +1,175 @@
+---
+title: "Audit Sums"
+output: html_document
+params:
+  mode: NULL
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+```{r}
+if(is.null(params$mode)) {
+  library(targets)
+  library(tidyverse)
+  library(here)
+  library(glue)
+  library(plotly)
+  library(data.table)
+  devtools::load_all(here())
+}
+
+library(DT)
+
+tar_load(config)
+stopifnot(exists("config"))
+
+tar_load(emf_data_long)
+stopifnot(exists("emf_data_long"))
+
+tar_load(audit_sums)
+stopifnot(exists("audit_sums"))
+```
+
+notes on csv:
+
+currently for beta round
+- need to update for round 1 variables
+- check based on first run results if theres stuff amiss
+audit sums workbook only has the exceptions. 
+
+group 0 = excluded
+group 1 = should sum to the same thing
+group 2 = should sum to the same thing
+group 3 = same as 1, 2, ..... n
+
+--> group 1 and group 2 share the same higher level variable but are broken out differently
+
+*** need to use calculated variables in emf_data_long (from make_calculated_variables) 
+
+```{r}
+# TODO: add non/negativity checks for variables
+```
+
+```{r audit}
+## Group the variables by a level up and then calculate the sum and the difference between the sum and the original level
+
+# calculating the # of levels for each variable and figuring out the higher level variable
+df <- emf_data_long %>% 
+  mutate(no_of_level = str_count(variable, "[|]") + 1,
+         higher_level = str_replace_all(dirname(str_replace_all(variable, "\\|", "/")), "/", "\\|"))
+
+df <- full_join(df, audit_sums, by = c("higher_level", "variable" = "lower_level")) %>%
+  mutate(group = replace(group, is.na(group), 1)) %>%
+  filter(higher_level != ".")
+
+
+# calculating sum of sub variables and filtering out group = 0 (from csv)
+audit_table_partial <- df %>%
+  group_by(model, scenario, region, year, unit, higher_level, datasrc, group) %>%
+  summarise(sum = sum(value)) %>%
+  rename("variable" = "higher_level") %>%
+  filter(group != 0)
+
+# calculates difference between actual sum and expected sum
+audit_table <- audit_table_partial %>%
+  left_join(emf_data_long, 
+            by = c("model", "scenario", "region", "year", "unit", "variable", "datasrc")) %>%
+  mutate(diff = value - sum,
+         diff_percent = abs(diff/value), 
+         diff_percent = scales::percent(diff_percent)) %>%
+  filter(!is.na(diff) & diff_percent != 0) %>%
+  arrange(desc(diff_percent))
+
+# writes output to csv
+write_csv(audit_table, "output/round1/audit/audit_sums.csv")
+```
+
+```{r summary stats}
+## check which variable has the largest differences
+
+distribution <- data.frame(
+  "Total cases" = nrow(audit_table),
+  "Number of NA's" = sum(is.na(audit_table$diff_percent)),
+  "Number of cases with diff smaller than or equal to 5 percent" = nrow(audit_table %>% filter(diff_percent <= 5)),
+  "Number of cases with diff larger than 5 percent" = nrow(audit_table %>% filter(diff_percent > 5)))
+
+write_csv(distribution, "output/round1/audit/distribution.csv")
+
+## ranging of % off
+points_of_interests <- audit_table %>%
+  filter(!is.na(diff_percent)) %>%
+  arrange(variable, year, scenario, model, diff_percent) %>%
+  select(model, scenario, year, variable, value, sum, diff, diff_percent)
+
+# 50% off
+vars_of_interests_1 <- points_of_interests %>%
+  group_by(variable, year, scenario) %>%
+  summarize(sum_diff = sum(abs(diff/value))) %>%
+  filter(sum_diff > 0.5)
+
+dat1 <- data.frame("variable" = unique(vars_of_interests_1$variable),
+                   "label1" = "discrepancies across models")
+
+# 10% off
+vars_of_interests_2 <- points_of_interests %>%
+  filter(abs(diff/value) > 0.1)
+
+dat2 <- data.frame("variable" = unique(vars_of_interests_2$variable),
+                   "label2" = "magnitude of differences")
+
+dat <- full_join(dat1, dat2)
+
+write_csv(dat, "output/round1/audit/key_vars_to_check_out.csv")
+```
+
+# Outlier Check          
+
+Mean, min, and max for each submitted variable/year combination across all models
+
+```{r variable means, warning = FALSE}
+var_stats <- emf_data_long %>%
+  filter(year %in% config$stacked_bar_main_years & model %in% config$models_main) %>%
+  group_by(variable,scenario,year) %>%
+  summarise_at(vars(value), list(mean = mean, 
+                                 min = min, 
+                                 max = max,
+                                 median = median,
+                                 sd = sd)) %>%
+  ungroup() %>%
+  mutate(cov = abs(sd/mean)) %>%
+  arrange(desc(cov))
+
+write_csv(df, "output/round1/audit/coeff_of_variation_across_model.csv")
+
+datatable(var_stats, options = list(pageLength = 10))
+```
+
+Percentage off the mean for each submitted variable/year combination per model. Results filtered to show only variables that exceed +/- 200% from the mean 
+
+```{r}
+var_stats_full <- emf_data_long %>%
+  left_join(var_stats, by = c("scenario","year","variable")) %>%
+  filter(year %in% c(2020,2025,2030,2035,2040,2045,2050)) %>%
+  mutate(mean = round(mean,2),
+         min = round(min,2),
+         max = round(max,2),
+         median = round(median,2)) %>%
+  mutate(per_off = round(abs((mean - value)/mean),2)) %>%
+  filter(per_off != Inf & per_off >= 2) %>%
+  select(-datasrc, -region) %>%
+  arrange(desc(per_off)) 
+
+var_stats_full_wide <- var_stats_full %>%
+  pivot_wider(names_from = "year", values_from = "per_off")
+
+var_stats_list <- var_stats_full %>%
+  distinct(model,scenario,variable)
+
+vars_off <- unique(var_stats_full$variable)
+models_off <- unique(var_stats_full$model)
+
+datatable(var_stats_full, options = list(pageLength = 10))
+```

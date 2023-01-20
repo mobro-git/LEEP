@@ -1,0 +1,82 @@
+﻿index,variable,lower_level,unit,flip_sign
+2,Carbon Sequestration|CCS|Biomass|Energy|Supply,Carbon Sequestration|CCS|Biomass|Energy|Supply|Biogas,Mt CO2/yr,1
+2,Carbon Sequestration|CCS|Biomass|Energy|Supply,Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids,Mt CO2/yr,1
+2,Carbon Sequestration|CCS|Biomass|Energy|Supply,Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids,Mt CO2/yr,1
+2,Carbon Sequestration|CCS|Biomass|Energy|Supply,Carbon Sequestration|CCS|Biomass|Energy|Supply|Electricity,Mt CO2/yr,1
+2,Carbon Sequestration|CCS|Biomass|Energy|Supply,Carbon Sequestration|CCS|Biomass|Energy|Supply|Electricity|New Builds,Mt CO2/yr,1
+2,Carbon Sequestration|CCS|Biomass|Energy|Supply,Carbon Sequestration|CCS|Biomass|Energy|Supply|Electricity|Retrofit,Mt CO2/yr,1
+2,Carbon Sequestration|CCS|Biomass|Energy|Supply,Carbon Sequestration|CCS|Biomass|Energy|Supply|Heat,Mt CO2/yr,1
+2,Carbon Sequestration|CCS|Biomass|Energy|Supply,Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen,Mt CO2/yr,1
+2,Carbon Sequestration|CCS|Biomass|Energy|Supply,Carbon Sequestration|CCS|Biomass|Energy|Supply|Petroleum Refining,Mt CO2/yr,1
+2,Carbon Sequestration|CCS|Biomass|Energy|Supply,Carbon Sequestration|CCS|Biomass|Energy|Supply|Synthetic Gas,Mt CO2/yr,1
+2,Carbon Sequestration|CCS|Biomass|Energy|Supply,Carbon Sequestration|CCS|Biomass|Energy|Supply|Synthetic Liquids,Mt CO2/yr,1
+4,Carbon Sequestration|CCS|Energy|Demand,Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry,Mt CO2/yr,1
+4,Carbon Sequestration|CCS|Energy|Demand,Carbon Sequestration|CCS|Fossil|Energy|Demand|Industry,Mt CO2/yr,1
+3,Carbon Sequestration|CCS|Energy|Supply,Carbon Sequestration|CCS|Biomass|Energy|Supply,Mt CO2/yr,1
+3,Carbon Sequestration|CCS|Energy|Supply,Carbon Sequestration|CCS|Fossil|Energy|Supply,Mt CO2/yr,1
+6,Carbon Sequestration|CCS|Energy|Supply|Biogas,Carbon Sequestration|CCS|Biomass|Energy|Supply|Biogas,Mt CO2/yr,1
+6,Carbon Sequestration|CCS|Energy|Supply|Biogas,Carbon Sequestration|CCS|Fossil|Energy|Supply|Biogas,Mt CO2/yr,1
+7,Carbon Sequestration|CCS|Energy|Supply|Biomass Liquids,Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids,Mt CO2/yr,1
+7,Carbon Sequestration|CCS|Energy|Supply|Biomass Liquids,Carbon Sequestration|CCS|Fossil|Energy|Supply|Biomass Liquids,Mt CO2/yr,1
+8,Carbon Sequestration|CCS|Energy|Supply|Biomass Solids,Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids,Mt CO2/yr,1
+8,Carbon Sequestration|CCS|Energy|Supply|Biomass Solids,Carbon Sequestration|CCS|Fossil|Energy|Supply|Biomass Solids,Mt CO2/yr,1
+9,Carbon Sequestration|CCS|Energy|Supply|Electricity,Carbon Sequestration|CCS|Biomass|Energy|Supply|Electricity,Mt CO2/yr,1
+9,Carbon Sequestration|CCS|Energy|Supply|Electricity,Carbon Sequestration|CCS|Fossil|Energy|Supply|Electricity,Mt CO2/yr,1
+10,Carbon Sequestration|CCS|Energy|Supply|Heat,Carbon Sequestration|CCS|Biomass|Energy|Supply|Heat,Mt CO2/yr,1
+10,Carbon Sequestration|CCS|Energy|Supply|Heat,Carbon Sequestration|CCS|Fossil|Energy|Supply|Heat,Mt CO2/yr,1
+11,Carbon Sequestration|CCS|Energy|Supply|Hydrogen,Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen,Mt CO2/yr,1
+11,Carbon Sequestration|CCS|Energy|Supply|Hydrogen,Carbon Sequestration|CCS|Fossil|Energy|Supply|Hydrogen,Mt CO2/yr,1
+12,Carbon Sequestration|CCS|Energy|Supply|Petroleum Refining,Carbon Sequestration|CCS|Biomass|Energy|Supply|Petroleum Refining,Mt CO2/yr,1
+12,Carbon Sequestration|CCS|Energy|Supply|Petroleum Refining,Carbon Sequestration|CCS|Fossil|Energy|Supply|Petroleum Refining,Mt CO2/yr,1
+13,Carbon Sequestration|CCS|Energy|Supply|Synthetic Gas,Carbon Sequestration|CCS|Biomass|Energy|Supply|Synthetic Gas,Mt CO2/yr,1
+13,Carbon Sequestration|CCS|Energy|Supply|Synthetic Gas,Carbon Sequestration|CCS|Fossil|Energy|Supply|Synthetic Gas,Mt CO2/yr,1
+14,Carbon Sequestration|CCS|Energy|Supply|Synthetic Liquids,Carbon Sequestration|CCS|Biomass|Energy|Supply|Synthetic Liquids,Mt CO2/yr,1
+14,Carbon Sequestration|CCS|Energy|Supply|Synthetic Liquids,Carbon Sequestration|CCS|Fossil|Energy|Supply|Synthetic Liquids,Mt CO2/yr,1
+5,Carbon Sequestration|CCS|Industrial Processes,Carbon Sequestration|CCS|Biomass|Industrial Processes,Mt CO2/yr,1
+5,Carbon Sequestration|CCS|Industrial Processes,Carbon Sequestration|CCS|Non-Biomass|Industrial Processes,Mt CO2/yr,1
+19,Emissions Accounting|CO2|CO2 + Fossil CCS,Carbon Sequestration|CCS|Fossil|Energy,Mt CO2/yr,-1
+19,Emissions Accounting|CO2|CO2 + Fossil CCS,Emissions|CO2|Energy,Mt CO2/yr,1
+19,Emissions Accounting|CO2|CO2 + Fossil CCS,Emissions|CO2|Industrial Processes,Mt CO2/yr,1
+19,Emissions Accounting|CO2|CO2 + Fossil CCS,Emissions|CO2|Other,Mt CO2/yr,1
+18,Emissions Accounting|CO2|Gross Positive CO2,Emissions|CO2|Energy,Mt CO2/yr,1
+18,Emissions Accounting|CO2|Gross Positive CO2,Emissions|CO2|Industrial Processes,Mt CO2/yr,1
+18,Emissions Accounting|CO2|Gross Positive CO2,Emissions|CO2|Other,Mt CO2/yr,1
+22,Emissions Accounting|CO2|Negative (BECCS + LULUCF + DAC),Carbon Sequestration|Direct Air Capture|Net,Mt CO2/yr,1
+22,Emissions Accounting|CO2|Negative (BECCS + LULUCF + DAC),Carbon Sequestration|CCS|Biomass|Energy,Mt CO2/yr,1
+22,Emissions Accounting|CO2|Negative (BECCS + LULUCF + DAC),Carbon Sequestration|CCS|Biomass|Industrial Processes,Mt CO2/yr,1
+22,Emissions Accounting|CO2|Negative (BECCS + LULUCF + DAC),Carbon Sequestration|Chemical Feedstocks|Biomass,Mt CO2/yr,1
+22,Emissions Accounting|CO2|Negative (BECCS + LULUCF + DAC),Carbon Sequestration|LULUCF ,Mt CO2/yr,1
+21,Emissions Accounting|CO2|Negative (BECCS + LULUCF),Carbon Sequestration|CCS|Biomass|Energy,Mt CO2/yr,1
+21,Emissions Accounting|CO2|Negative (BECCS + LULUCF),Carbon Sequestration|CCS|Biomass|Industrial Processes,Mt CO2/yr,1
+21,Emissions Accounting|CO2|Negative (BECCS + LULUCF),Carbon Sequestration|Chemical Feedstocks|Biomass,Mt CO2/yr,1
+21,Emissions Accounting|CO2|Negative (BECCS + LULUCF),Carbon Sequestration|LULUCF ,Mt CO2/yr,1
+20,Emissions Accounting|CO2|Negative (BECCS),Carbon Sequestration|CCS|Biomass|Energy,Mt CO2/yr,1
+20,Emissions Accounting|CO2|Negative (BECCS),Carbon Sequestration|CCS|Biomass|Industrial Processes,Mt CO2/yr,1
+20,Emissions Accounting|CO2|Negative (BECCS),Carbon Sequestration|Chemical Feedstocks|Biomass,Mt CO2/yr,1
+23,Emissions|CO2|Energy|Demand,Emissions|CO2|Energy|Demand|Buildings,Mt CO2/yr,1
+23,Emissions|CO2|Energy|Demand,Emissions|CO2|Energy|Demand|Industry,Mt CO2/yr,1
+23,Emissions|CO2|Energy|Demand,Emissions|CO2|Energy|Demand|Transportation,Mt CO2/yr,1
+15,Emissions|CO2|Energy|Demand|Buildings|Calculated,Emissions|CO2|Energy|Demand|Buildings|Commercial,Mt CO2/yr,1
+15,Emissions|CO2|Energy|Demand|Buildings|Calculated,Emissions|CO2|Energy|Demand|Buildings|Residential,Mt CO2/yr,1
+16,Emissions|CO2|Energy|Demand|Buildings|Indirect|Calculated,Emissions|CO2|Energy|Demand|Buildings|Commercial|Indirect,Mt CO2/yr,1
+16,Emissions|CO2|Energy|Demand|Buildings|Indirect|Calculated,Emissions|CO2|Energy|Demand|Buildings|Residential|Indirect,Mt CO2/yr,1
+1,Emissions|CO2|Net Emissions,Emissions|CO2|Energy,Mt CO2/yr,0
+1,Emissions|CO2|Net Emissions,Emissions|CO2|Industrial Processes,Mt CO2/yr,1
+1,Emissions|CO2|Net Emissions,Emissions|CO2|Other,Mt CO2/yr,1
+1,Emissions|CO2|Net Emissions,Carbon Sequestration|Direct Air Capture|Net,Mt CO2/yr,1
+1,Emissions|CO2|Net Emissions,Carbon Sequestration|CCS|Biomass|Energy,Mt CO2/yr,1
+1,Emissions|CO2|Net Emissions,Carbon Sequestration|CCS|Biomass|Industrial Processes,Mt CO2/yr,1
+1,Emissions|CO2|Net Emissions,Carbon Sequestration|Chemical Feedstocks|Biomass,Mt CO2/yr,1
+1,Emissions|CO2|Net Emissions,Carbon Sequestration|LULUCF ,Mt CO2/yr,1
+25,Final Energy|Industry|Non-Electricity,Final Energy|Industry|Electricity,EJ/yr,-1
+25,Final Energy|Industry|Non-Electricity,Final Energy|Industry,EJ/yr,1
+24,Secondary Energy,Secondary Energy|Biogas,EJ/yr,1
+24,Secondary Energy,Secondary Energy|Biomass Liquids,EJ/yr,1
+24,Secondary Energy,Secondary Energy|Electricity,EJ/yr,1
+24,Secondary Energy,Secondary Energy|Hydrogen,EJ/yr,1
+24,Secondary Energy,Secondary Energy|Synthetic Gas,EJ/yr,1
+24,Secondary Energy,Secondary Energy|Synthetic Liquids,EJ/yr,1
+24,Secondary Energy,Secondary Energy|Petroleum Refining,EJ/yr,1
+100,Emissions|CO2|Energy and Industrial Processes,Emissions|CO2|Energy,EJ/yr,1
+100,Emissions|CO2|Energy and Industrial Processes,Emissions|CO2|Industrial Processes,EJ/yr,1
+100,Emissions|CO2|Energy and Industrial Processes,Emissions|CO2|Other,EJ/yr,1

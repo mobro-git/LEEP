@@ -1,0 +1,295 @@
+---
+title: "Benchmark Tables"
+author: "Morgan Browning"
+date: "7/22/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+```{r library}
+library(tidyverse)
+library(targets)
+library(tarchetypes)
+library(scales)
+library(kableExtra)
+library(DT)
+library(readr)
+```
+
+```{r data import}
+eia_all <- read_csv("data-raw/model-runs/round2/EIAinEMF37.csv")
+
+eia_vars <- unique(eia_all$variable)
+
+# ghgi <- read_csv("data-raw/model-runs/round2/EPA_GHGI.csv") %>%
+#   group_by(model, scenario, variable, unit) %>%
+#   summarize(value = sum(`2020`)) %>%
+#   ungroup()
+
+ghgi <- read_csv("data-raw/model-runs/round2/EPA_GHGI_sum.csv") %>%
+  select(-year, -region)
+
+tar_load(emf_data_long)
+```
+
+```{r benchmarks}
+data <- emf_data_long %>%
+  filter(variable %in% eia_vars) %>%
+  filter(year == 2020) %>%
+  filter(region == "United States") %>%
+  select(model, scenario, variable, unit, value) %>%
+  rbind(ghgi)
+
+benchmark_aeo2020 <- data %>%
+  filter(model == "AEO2020") %>%
+  rename(AEO2020 = value) %>%
+  select(variable, AEO2020)
+
+benchmark_aeo2021 <- data %>%
+  filter(model == "AEO2021") %>%
+  rename(AEO2021 = value) %>%
+  select(variable, AEO2021)
+
+benchmark_steo <- data %>%
+  filter(model == "EIA_STEO") %>%
+  rename(STEO = value) %>%
+  select(variable, STEO)
+
+benchmark_historic <- data %>%
+  filter(model == "EIA_Historic") %>%
+  rename(EIA = value) %>%
+  select(variable, EIA)
+
+benchmark_ghgi <- data %>%
+  filter(model == "GHGI") %>%
+  rename(GHGI = value) %>%
+  select(variable, GHGI)
+```
+
+```{r full table}
+all <- data %>%
+
+  full_join(benchmark_aeo2020, by = "variable") %>%
+  mutate(per_dif_aeo2020 = percent((value - AEO2020)/AEO2020, accuracy = 0.1)) %>%
+
+  full_join(benchmark_aeo2021, by = "variable") %>%
+  mutate(per_dif_aeo2021 = percent((value - AEO2021)/AEO2021, accuracy = 0.1)) %>%
+
+  full_join(benchmark_ghgi, by = "variable") %>%
+  mutate(per_dif_ghgi = percent((value - GHGI)/GHGI, accuracy = 0.1)) %>%
+
+  full_join(benchmark_historic, by = "variable") %>%
+  mutate(per_dif_eia = percent((value - EIA)/EIA, accuracy = 0.1)) %>%
+
+  full_join(benchmark_steo, by = "variable") %>%
+  mutate(per_dif_steo = percent((value - STEO)/STEO, accuracy = 0.1)) %>%
+
+  mutate_if(is.numeric, round, digits = 2)
+
+all_aeo2020 <- all %>% select(model, scenario, variable, value, AEO2020, per_dif_aeo2020)
+all_aeo2020_100 <- all_aeo2020 %>% filter(abs(parse_number(per_dif_aeo2020)) > 100)
+all_aeo2020_50 <- all_aeo2020 %>% filter(abs(parse_number(per_dif_aeo2020)) > 50 & abs(parse_number(per_dif_aeo2020)) < 100)
+all_aeo2020_25 <- all_aeo2020 %>% filter(abs(parse_number(per_dif_aeo2020)) > 25 & abs(parse_number(per_dif_aeo2020)) < 50)
+all_aeo2020_5 <- all_aeo2020 %>% filter(abs(parse_number(per_dif_aeo2020)) > 5 & abs(parse_number(per_dif_aeo2020)) < 25)
+
+all_aeo2021 <- all %>% select(model, scenario, variable, value, AEO2021, per_dif_aeo2021)
+all_aeo2021_100 <- all_aeo2021 %>% filter(abs(parse_number(per_dif_aeo2021)) > 100)
+all_aeo2021_50 <- all_aeo2021 %>% filter(abs(parse_number(per_dif_aeo2021)) > 50 & abs(parse_number(per_dif_aeo2021)) < 100)
+all_aeo2021_25 <- all_aeo2021 %>% filter(abs(parse_number(per_dif_aeo2021)) > 25 & abs(parse_number(per_dif_aeo2021)) < 50)
+all_aeo2021_5 <- all_aeo2021 %>% filter(abs(parse_number(per_dif_aeo2021)) > 5 & abs(parse_number(per_dif_aeo2021)) < 25)
+
+all_ghgi <- all %>% select(model, scenario, variable, value, GHGI, per_dif_ghgi)
+all_ghgi_100 <- all_ghgi %>% filter(abs(parse_number(per_dif_ghgi)) > 100)
+all_ghgi_50 <- all_ghgi %>% filter(abs(parse_number(per_dif_ghgi)) > 50 & abs(parse_number(per_dif_ghgi)) < 100)
+all_ghgi_25 <- all_ghgi %>% filter(abs(parse_number(per_dif_ghgi)) > 25 & abs(parse_number(per_dif_ghgi)) < 50)
+all_ghgi_5 <- all_ghgi %>% filter(abs(parse_number(per_dif_ghgi)) > 5 & abs(parse_number(per_dif_ghgi)) < 25)
+
+all_steo <- all %>% select(model, scenario, variable, value, STEO, per_dif_steo)
+all_steo_100 <- all_steo %>% filter(abs(parse_number(per_dif_steo)) > 100)
+all_steo_50 <- all_steo %>% filter(abs(parse_number(per_dif_steo)) > 50 & abs(parse_number(per_dif_steo)) < 100)
+all_steo_25 <- all_steo %>% filter(abs(parse_number(per_dif_steo)) > 25 & abs(parse_number(per_dif_steo)) < 50)
+all_steo_5 <- all_steo %>% filter(abs(parse_number(per_dif_steo)) > 5 & abs(parse_number(per_dif_steo)) < 25)
+
+all_eia <- all %>% select(model, scenario, variable, value, EIA, per_dif_eia)
+all_eia_100 <- all_eia %>% filter(abs(parse_number(per_dif_eia)) > 100)
+all_eia_50 <- all_eia %>% filter(abs(parse_number(per_dif_eia)) > 50 & abs(parse_number(per_dif_eia)) < 100)
+all_eia_25 <- all_eia %>% filter(abs(parse_number(per_dif_eia)) > 25 & abs(parse_number(per_dif_eia)) < 50)
+all_eia_5 <- all_eia %>% filter(abs(parse_number(per_dif_eia)) > 5 & abs(parse_number(per_dif_eia)) < 25)
+
+all_compare <- all %>%
+  filter(model %in% c("AEO2020", "AEO2021", "EIA_Historic", "EIA_STEO", "GHGI")) %>%
+  select(variable, unit, AEO2020, AEO2021, EIA, STEO, GHGI)
+
+```
+
+# Use
+
+This tool can be used to benchmark model reported variables against EIA and EPA data sources. We have mapped EIA and EPA data to the EMF 37 reporting template and provided comparisons to EMF 37 results.
+
+To classify the errors into the different tables, I've used their absolute values as that seemed reasonable (e.g. an error of -120% can be as detrimental as an error of 120% in the predictions)
+
+# Data Source Comparison
+
+```{r}
+datatable(all_compare, options = list(pageLength = 50))
+```
+
+# AEO 2020
+
+```{r aeo2020}
+datatable(all_aeo2020, options = list(pageLength = 50))
+```
+
+# AEO 2020 - Error > 100% (Extra Big Red Flag)
+
+```{r aeo2020_100}
+datatable(all_aeo2020_100, options = list(pageLength = 50))
+```
+
+# AEO 2020 - 100% > Error > 50% (Big Red Flag)
+
+```{r aeo2020_50}
+datatable(all_aeo2020_50, options = list(pageLength = 50))
+```
+
+# AEO 2020 - 50% > Error > 25% (Red Flag)
+
+```{r aeo2020_25}
+datatable(all_aeo2020_25, options = list(pageLength = 50))
+```
+
+# AEO 2020 - 25% > Error > 5% (Minor Red Flag)
+
+```{r aeo2020_5}
+datatable(all_aeo2020_5, options = list(pageLength = 50))
+```
+
+# AEO 2021
+
+```{r aeo2021}
+datatable(all_aeo2021, options = list(pageLength = 50))
+```
+
+# AEO 2021 - Error > 100% (Extra Big Red Flag)
+
+```{r aeo2021_100}
+datatable(all_aeo2021_100, options = list(pageLength = 50))
+```
+
+# AEO 2021 - 100% > Error > 50% (Big Red Flag)
+
+```{r aeo2021_50}
+datatable(all_aeo2021_50, options = list(pageLength = 50))
+```
+
+# AEO 2021 - 50% > Error > 25% (Red Flag)
+
+```{r aeo2021_25}
+datatable(all_aeo2021_25, options = list(pageLength = 50))
+```
+
+# AEO 2021 - 25% > Error > 5% (Minor Red Flag)
+
+```{r aeo2021_5}
+datatable(all_aeo2021_5, options = list(pageLength = 50))
+```
+
+# GHGI
+
+```{r ghgi}
+datatable(all_ghgi, options = list(pageLength = 50))
+```
+
+# GHGI - Error > 100% (Extra Big Red Flag)
+
+```{r ghgi_100}
+datatable(all_ghgi_100, options = list(pageLength = 50))
+```
+
+# GHGI - 100% > Error > 50% (Big Red Flag)
+
+```{r ghgi_50}
+datatable(all_ghgi_50, options = list(pageLength = 50))
+```
+
+# GHGI - 50% > Error > 25% (Red Flag)
+
+```{r ghgi_25}
+datatable(all_ghgi_25, options = list(pageLength = 50))
+```
+
+# GHGI - 25% > Error > 5% (Minor Red Flag)
+
+```{r ghgi_5}
+datatable(all_ghgi_5, options = list(pageLength = 50))
+```
+
+# STEO
+
+```{r steo}
+datatable(all_steo, options = list(pageLength = 50))
+```
+
+# STEO - Error > 100% (Extra Big Red Flag)
+
+```{r steo_100}
+datatable(all_steo_100, options = list(pageLength = 50))
+```
+
+# STEO - 100% > Error > 50% (Big Red Flag)
+
+```{r steo_50}
+datatable(all_steo_50, options = list(pageLength = 50))
+```
+
+# STEO - 50% > Error > 25% (Red Flag)
+
+```{r steo_25}
+datatable(all_steo_25, options = list(pageLength = 50))
+```
+
+# STEO - 25% > Error > 5% (Minor Red Flag)
+
+```{r steo_5}
+datatable(all_steo_5, options = list(pageLength = 50))
+```
+
+# EIA
+
+```{r eia}
+datatable(all_eia, options = list(pageLength = 50))
+```
+
+# EIA - Error > 100% (Extra Big Red Flag)
+
+```{r eia_100}
+datatable(all_eia_100, options = list(pageLength = 50))
+```
+
+# EIA - 100% > Error > 50% (Big Red Flag)
+
+```{r eia_50}
+datatable(all_eia_50, options = list(pageLength = 50))
+```
+
+# EIA - 50% > Error > 25% (Red Flag)
+
+```{r eia_25}
+datatable(all_eia_25, options = list(pageLength = 50))
+```
+
+# EIA - 25% > Error > 5% (Minor Red Flag)
+
+```{r eia_5}
+datatable(all_eia_5, options = list(pageLength = 50))
+```
+
+# All
+
+```{r all}
+datatable(all, options = list(pageLength = 50))
+```

@@ -1,0 +1,404 @@
+---
+title: "Overview Presentation Figures"
+author: "Ruying Gao"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 5
+    theme: cerulean
+    toc_float: 
+      collapsed: true
+      smooth_scroll: true
+params:
+  mode: NULL
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+```{r, warning = FALSE}
+if(is.null(params$mode)) {
+  library(targets)
+  library(tidyverse)
+  library(here)
+  library(glue)
+  library(plotly)
+  library(data.table)
+  devtools::load_all(here())
+}
+```
+
+# Part 0. Basic Setup 
+
+Read in the necessary data
+
+```{r data}
+tar_load(config)
+stopifnot(exists("config"))
+
+tar_load(emf_data_long)
+stopifnot(exists("emf_data_long"))
+
+tar_load(emf_summary_long)
+stopifnot(exists("emf_summary_long"))
+
+tar_load(overview_sb_presentation_figmap)
+stopifnot(exists("overview_sb_presentation_figmap"))
+
+tar_load(overview_db_presentation_figmap)
+stopifnot(exists("overview_db_presentation_figmap"))
+
+tar_load(overview_ts_presentation_figmap)
+stopifnot(exists("overview_ts_presentation_figmap"))
+```
+
+```{r file path setup}
+overall_path = "./output/round1/overview_presentation/"
+subfolders = c("", "stacked_bar", "diff_bar", "time_series")
+create_folders(sapply(subfolders, function(x) {paste(overall_path, x, sep = "")}))
+```
+
+```{r overview plotting functions, echo=FALSE}
+overview_stacked_bar_grid_fn <- function(df, figure, selected_region, sub_palettes) {
+  plot = stacked_bar_grid_plot_fn(df = df, 
+                            x = unique(df$x), y = unique(df$y), 
+                            color = unique(df$color), 
+                            facet1 = unique(df$facet1), facet2 = unique(df$facet2),
+                          mapping_list = list(
+                            xlab = unique(df$x),
+                             ylab= unique(df$unit),
+                             title = paste(figure, selected_region, sep = "-"),
+                            model_color_palette = figure,
+                            palettes = sub_palettes))
+  
+  plot
+  
+}
+
+overview_stacked_bar_wrap_fn <- function(df, figure, selected_region, sub_palettes) {
+  plot = stacked_bar_plot_fn(df = df, 
+                            x = unique(df$x), y = unique(df$y), 
+                            color = unique(df$color), 
+                            facet = unique(df$facet1),
+                          mapping_list = list(
+                            xlab = unique(df$x),
+                             ylab= unique(df$unit),
+                             title = paste(figure, selected_region, sep = "-"),
+                            model_color_palette = figure,
+                            palettes = sub_palettes))
+  
+  plot
+  
+}
+
+overview_time_series_grid_fn <- function(df, figure, selected_region, sub_palettes) {
+  plot = time_series_grid_fn(df = df, 
+                            x = unique(df$x), y = unique(df$y), 
+                            color = unique(df$color), 
+                            facet1 = unique(df$facet1), facet2 = unique(df$facet2),
+                          mapping_list = list(
+                            xlab = unique(df$x),
+                             ylab= unique(df$unit),
+                             title = paste(figure, selected_region, sep = "-"),
+                            model_color_palette = figure,
+                            palettes = sub_palettes))
+  plot
+}
+
+overview_time_series_wrap_fn <- function(df, figure, selected_region, sub_palettes) {
+  plot = time_series_fn(df = df, 
+                            x = unique(df$x), y = unique(df$y), 
+                            color = unique(df$color), 
+                            facet = unique(df$facet1), 
+                          mapping_list = list(
+                            xlab = unique(df$x),
+                             ylab= unique(df$unit),
+                             title = paste(figure, selected_region, sep = "-"),
+                            model_color_palette = figure,
+                            palettes = sub_palettes))
+  plot
+}
+```
+
+# Part I. Stacked Bar
+
+1). Stacked Bar - Load Data, Preliminary Processing, Create Directories, Assign colors 
+ 
+```{r load and check plot list - stacked, echo=FALSE}
+plot_list <- overview_sb_presentation_figmap
+```
+
+```{r preliminary data processing - stacked, echo=FALSE}
+# select the key variables, flip values, and merge with specific figure requests
+df <- preliminary_data_processing_for_plotting(emf_data_long, plot_list)
+```
+
+```{r add color subpalettes - stacked, echo=FALSE}
+figure_titles = unique(plot_list$title_name)
+
+for (figure_title in figure_titles) {
+  temp = plot_list %>% filter(title_name == figure_title) 
+  var_palette = unique(temp$variable_rename)
+  names(var_palette) = var_palette
+  sub_palettes[[figure_title]] = var_palette
+  sub_palettes = sub_palettes %>%
+    map(~find_color(.x, color_map))
+}
+```
+ 
+```{r stacked bar pdf - stacked, echo=FALSE}
+pdf(file=paste(overall_path, "overview_stackbar_presentation.pdf",sep=""), width = 14, height = 6)
+print(paste("There are a total of ", length(unique(df$title_name)), " figures", sep = ""))
+i = 0
+for (figure in unique(df$title_name)) {
+  
+    print(figure)
+    
+    dat = df %>% 
+      filter(title_name == figure) %>%
+      stacked_bar_figure_specific_data_processing()
+    
+    for (selected_region in unique(dat$region)) {
+      dat_filtered = dat %>%
+        filter(region == selected_region)
+    
+      if (check_dat_before_plotting(dat_filtered)) {
+      if (unique(dat_filtered$type) == "grid") {
+          print(overview_stacked_bar_grid_fn(dat_filtered, figure, selected_region, sub_palettes))
+      } else if (unique(dat_filtered$type) == "wrap") {
+          print(overview_stacked_bar_wrap_fn(dat_filtered, figure, selected_region, sub_palettes))
+      } else {
+        print("There is no corresponding graphic function available yet.")
+      }
+    }
+    
+    }
+}
+dev.off()
+  
+```
+
+```{r stacked bar png, echo=FALSE}
+i = 0
+for (figure in unique(df$title_name)) {
+  i = i + 1
+  print(i)
+
+  dat = df %>%
+      filter(title_name == figure) %>%
+      stacked_bar_figure_specific_data_processing()
+  
+  for (selected_region in unique(dat$region)) {
+      dat_filtered = dat %>%
+        filter(region == selected_region)
+    
+      png(filename=paste(overall_path, "stacked_bar/", str_replace(selected_region, " ", "_"), "_",
+                       str_replace_all(unique(dat$title_name), "\\|","_") , ".png", sep = ""), width=1200, height=600)
+
+      if (check_dat_before_plotting(dat_filtered)) {
+      if (unique(dat_filtered$type) == "grid") {
+          print(overview_stacked_bar_grid_fn(dat_filtered, figure, selected_region, sub_palettes))
+      } else if (unique(dat_filtered$type) == "wrap") {
+        print(overview_stacked_bar_wrap_fn(dat_filtered, figure, selected_region, sub_palettes))
+      } else {
+        print("There is no corresponding graphic function available yet.")
+      }
+        
+        dev.off()
+    }
+    
+  }
+}
+```
+
+# Part 2. Difference Bar
+
+1). Difference Bar: Load Data, Preliminary Processing, Create Directories, Assign colors 
+ 
+```{r load and check plot list - diff, echo=FALSE}
+plot_list <- overview_db_presentation_figmap
+```
+
+```{r preliminary data processing - diff, echo=FALSE}
+# select the key variables, flip values, and merge with specific figure requests
+df <- preliminary_data_processing_for_plotting(emf_data_long, plot_list)
+```
+
+```{r add color subpalettes - diff, echo=FALSE}
+figure_titles = unique(plot_list$title_name)
+
+for (figure_title in figure_titles) {
+  temp = plot_list %>% filter(title_name == figure_title) 
+  var_palette = unique(temp$variable_rename)
+  names(var_palette) = var_palette
+  sub_palettes[[figure_title]] = var_palette
+  sub_palettes = sub_palettes %>%
+    map(~find_color(.x, color_map))
+}
+```
+  
+```{r diff bar pdf - diff, echo=FALSE}
+pdf(file=paste(overall_path, "overview_diffbar_presentation.pdf",sep=""), width = 14, height = 6)
+print(paste("There are a total of ", length(unique(df$title_name)), " figures", sep = ""))
+i = 0
+for (figure in unique(df$title_name)) {
+    print(figure)
+    
+    dat = df %>% 
+      filter(title_name == figure) %>%
+      diff_bar_figure_specific_data_processing()
+    
+    for (selected_region in unique(dat$region)) {
+      dat_filtered = dat %>%
+        filter(region == selected_region)
+    
+      if (check_dat_before_plotting(dat_filtered)) {
+        if (unique(dat_filtered$type) == "grid") {
+            bar_plot = overview_stacked_bar_grid_fn(dat_filtered, figure, selected_region, sub_palettes)
+          
+        } else if (unique(dat_filtered$type) == "wrap") {
+            bar_plot = overview_stacked_bar_wrap_fn(dat_filtered, figure, selected_region, sub_palettes)
+        } else {
+          print("There is no corresponding graphic function available yet.")
+        }
+        
+        if (unique(dat_filtered$line_request)) {
+          bar_plot = bar_plot +
+            geom_line(aes(y = .data[["diff_sum"]]))
+        }
+        print(bar_plot)
+      }
+    }
+}
+dev.off()
+```
+
+```{r diff bar png - diff, echo=FALSE}
+
+i = 0
+for (figure in unique(df$title_name)) {
+  i = i + 1
+  print(i)
+
+  dat = df %>%
+      filter(title_name == figure) %>%
+      diff_bar_figure_specific_data_processing()
+  
+  for (selected_region in unique(dat$region)) {
+      dat_filtered = dat %>%
+        filter(region == selected_region)
+    
+      png(filename=paste(overall_path, "diff_bar/", str_replace(selected_region, " ", "_"), "_",
+                       str_replace_all(unique(dat$title_name), "\\|","_") , ".png", sep = ""), width=1200, height=600)
+
+      if (check_dat_before_plotting(dat_filtered)) {
+        if (unique(dat_filtered$type) == "grid") {
+            bar_plot = overview_stacked_bar_grid_fn(dat_filtered, figure, selected_region, sub_palettes)
+  
+        } else if (unique(dat_filtered$type) == "wrap") {
+            bar_plot = overview_stacked_bar_wrap_fn(dat_filtered, figure, selected_region, sub_palettes)
+        } else {
+          print("There is no corresponding graphic function available yet.")
+        }  
+        if (unique(dat_filtered$line_request)) {
+          bar_plot = bar_plot +
+            geom_line(aes(y = .data[["diff_sum"]]))
+        }
+        print(bar_plot)
+    
+        dev.off()
+    }
+        
+    }
+    
+  }
+```
+
+# Part 3. Time Series
+```{r merge - time series}
+plot_list <- overview_ts_presentation_figmap
+df <- preliminary_data_processing_for_plotting(emf_data_long, plot_list)
+```
+
+```{r add color subpalettes - time series, echo=FALSE}
+for (figure_title in unique(plot_list$title_name)) {
+  temp = plot_list %>% filter(title_name == figure_title) 
+  
+  if (unique(temp$color) == "variable_rename") {
+    var_palette = unique(temp$variable_rename)
+  } else if (unique(temp$color) == "model") {
+    var_palette = config[[unique(temp$models)]]
+  }
+  names(var_palette) = var_palette
+  sub_palettes[[figure_title]] = var_palette
+  sub_palettes = sub_palettes %>%
+    map(~find_color(.x, color_map))
+}
+```
+ 
+```{r time series pdf, echo=FALSE}
+pdf(file=paste(overall_path, "overview_time_series_presentation.pdf",sep=""), width = 14, height = 6)
+print(paste("There are a total of ", length(unique(df$title_name)), " figures", sep = ""))
+i = 0
+for (figure in unique(df$title_name)) {
+  
+    print(figure)
+    
+    dat = df %>% 
+      filter(title_name == figure) %>%
+      time_series_figure_specific_data_processing()
+    
+    for (selected_region in unique(dat$region)) {
+      dat_filtered = dat %>%
+        filter(region == selected_region)
+    
+      if (check_dat_before_plotting(dat_filtered)) {
+      if (unique(dat_filtered$type) == "grid") {
+          print(overview_time_series_grid_fn(dat_filtered, figure, selected_region, sub_palettes))
+      } else if (unique(dat_filtered$type) == "wrap") {
+         print(overview_time_series_wrap_fn(dat_filtered, figure, selected_region, sub_palettes))
+      } else {
+        print("There is no corresponding graphic function available yet.")
+      }
+    }
+    
+    }
+}
+dev.off()
+  
+```
+
+```{r time series png, echo=FALSE}
+i = 0
+for (figure in unique(df$title_name)) {
+  i = i + 1
+  print(i)
+
+  dat = df %>%
+      filter(title_name == figure) %>%
+      time_series_figure_specific_data_processing()
+  
+  for (selected_region in unique(dat$region)) {
+      dat_filtered = dat %>%
+        filter(region == selected_region)
+    
+      png(filename=paste(overall_path, "time_series/", str_replace(selected_region, " ", "_"), "_",
+                       str_replace_all(unique(dat$title_name), "\\|","_") , ".png", sep = ""), width=1200, height=600)
+
+      if (check_dat_before_plotting(dat_filtered)) {
+      if (unique(dat_filtered$type) == "grid") {
+          print(overview_time_series_grid_fn(dat_filtered, figure, selected_region, sub_palettes))
+      } else if (unique(dat_filtered$type) == "wrap") {
+         print(overview_time_series_wrap_fn(dat_filtered, figure, selected_region, sub_palettes))
+      } else {
+        print("There is no corresponding graphic function available yet.")
+      }
+        dev.off()
+    }
+    
+  }
+}
+```

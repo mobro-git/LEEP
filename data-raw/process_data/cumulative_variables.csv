@@ -1,0 +1,13 @@
+﻿variable,new_variable,start_yr,end_yr
+Emissions|CO2,Emissions|CO2|Cumulative,2020,2050
+Emissions|CO2|Energy,Emissions|CO2|Energy|Cumulative,2020,2050
+Emissions|CO2|Industrial Processes,Emissions|CO2|Industrial Processes|Cumulative,2020,2050
+Emissions|CH4,Emissions|CH4|Cumulative,2020,2050
+Emissions|CO2|Energy|Demand|Buildings|Commercial,Emissions|CO2|Energy|Demand|Buildings|Commercial|Cumulative,2020,2050
+Emissions|CO2|Energy|Demand|Buildings|Commercial|Indirect,Emissions|CO2|Energy|Demand|Buildings|Commercial|Indirect|Cumulative,2020,2050
+Emissions|CO2|Energy|Demand|Buildings|Residential,Emissions|CO2|Energy|Demand|Buildings|Residential|Cumulative,2020,2050
+Emissions|CO2|Energy|Demand|Buildings|Residential|Indirect,Emissions|CO2|Energy|Demand|Buildings|Residential|Indirect|Cumulative,2020,2050
+Emissions|CO2|Energy|Demand|Buildings|Calculated,Emissions|CO2|Energy|Demand|Buildings|Calculated|Cumulative,2020,2050
+Emissions|CO2|Energy|Demand|Buildings|Indirect|Calculated,Emissions|CO2|Energy|Demand|Buildings|Indirect|Calculated|Cumulative,2020,2050
+Emissions|CO2|Energy|Demand|Buildings,Emissions|CO2|Energy|Demand|Buildings|Cumulative,2020,2050
+Emissions|CO2|Energy|Demand|Buildings|Indirect,Emissions|CO2|Energy|Demand|Buildings|Indirect|Cumulative,2020,2050

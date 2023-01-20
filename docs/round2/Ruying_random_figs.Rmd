@@ -1,0 +1,79 @@
+---
+title: "Ruying_Random_Figs"
+author: "Ruying Gao"
+date: "4/23/2022"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 5
+    theme: cerulean
+    toc_float: 
+      collapsed: true
+      smooth_scroll: true
+params:
+  mode: NULL
+---
+
+```{r setup, include=FALSE}
+library(targets)
+library(tarchetypes)
+library(tidyverse)
+library(here)
+library(glue)
+library(plotly)
+library(data.table)
+library(ggrepel)
+devtools::load_all(here())
+knitr::opts_knit$set(root.dir = here::here())
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r load data}
+targets::tar_load(emf_data_long)
+targets::tar_load(config)
+```
+
+```{r sankey }
+library(networkD3)
+
+plot_list <- read.csv("plot_mapping/round1/overview_sankey_figs_mb.csv")
+
+gcam_test_df <- emf_data_long %>%
+  filter(model == "GCAM") %>%
+  filter(year == "2050") %>%
+  filter(scenario == '0by50.Ref') %>%
+  filter(region == "United States") 
+
+# var_list = c("Emissions|CO2|Energy|Coal", "Emissions|CO2|Energy|Oil", "Emissions|CO2|Energy|Gas")
+gcam_test_df = gcam_test_df %>% 
+  filter(variable %in% plot_list$link_variable) %>%
+  left_join(plot_list, by = c("variable" = "link_variable"))
+
+links <- data.frame(
+  source = gcam_test_df$source,
+  target = gcam_test_df$target,
+  value = gcam_test_df$value
+)
+
+# From these flows we need to create a node data frame: it lists every entities involved in the flow
+nodes <- data.frame(
+  name=c(as.character(links$source), 
+  as.character(links$target)) %>% unique()
+)
+ 
+# With networkD3, connection must be provided using id, not using real name like in the links dataframe.. So we need to reformat it.
+links$IDsource <- match(links$source, nodes$name)-1 
+links$IDtarget <- match(links$target, nodes$name)-1
+ 
+# Make the Network
+p <- sankeyNetwork(Links = links, Nodes = nodes,
+              Source = "IDsource", Target = "IDtarget",
+              Value = "value", NodeID = "name", 
+              sinksRight=FALSE) 
+
+library(htmlwidgets)
+library(htmltools)
+p <- htmlwidgets::prependContent(p, htmltools::tags$h1("Emissions from Fossil Resources in 2050 - Oby50.Ref"))
+ 
+p
+```

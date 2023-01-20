@@ -1,0 +1,162 @@
+---
+title: "Text Results Output"
+author: "Jameel Alsalam"
+output:
+  md_document:
+    variant: markdown
+params:
+  model: "CTUS-NEMS"
+  mode: NULL
+---
+
+# EMF37 QA: Basic Results by Model
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = here::here())
+options(knitr.kable.NA = '', knitr.table.format = "simple")
+
+if(is.null(params[["mode"]])) {
+  library(tidyverse)
+  library(targets)
+  library(readxl)
+  library(here)
+  library(fs)
+  devtools::load_all(here())
+}
+
+is_input_file_ext <- function(x) {
+  fs::path_ext(x) %in% c("xlsx", "xls", "csv")
+}
+
+disp_years <- if(params$model == "EIA_Historic") {
+  c(2015, 2018)
+} else {
+  c(2030, 2040, 2050)
+}
+```
+
+```{r data}
+tar_load("config")
+stopifnot(exists("config"))
+
+model_name_equiv_min <- config$scen_mapping %>%
+  filter(model_new %in% params$model) %>%
+  pull(model) %>% unique()
+
+template_vars <- config$template %>% 
+  mutate(round = factor(round, c("beta", "1", "2", "tbd", "optional"))) %>%
+  distinct(round, variable) %>% arrange(round, variable)
+
+tar_load("emf_summary_long")
+stopifnot(exists("emf_summary_long"))
+data_summary_long <- emf_summary_long %>% filter(model %in% params$model) %>%
+  mutate(datasrc = if_else(is_input_file_ext(datasrc), "file", datasrc))
+
+tar_load("emf_data_long")
+stopifnot(exists("emf_data_long"))
+datasrcs <- emf_data_long %>% filter(model %in% params$model)
+data_long <- emf_data_long %>% filter(model %in% params$model) %>%
+  mutate(datasrc = if_else(is_input_file_ext(datasrc), "file", datasrc))
+this_model_vars_long <- data_long %>% filter(!is.na(value)) %>% 
+  distinct(variable) %>% arrange(variable)
+
+tar_load("emf_data_min")
+stopifnot(exists("emf_data_min"))
+all_model_vars_min <- emf_data_min %>% filter(!is.na(value)) %>% 
+  distinct(variable) %>% arrange(variable)
+data_min <- emf_data_min %>% filter(model %in% model_name_equiv_min) %>%
+  mutate(datasrc = if_else(is_input_file_ext(datasrc), "file", datasrc))
+this_model_vars_min <- data_min %>% filter(!is.na(value)) %>% 
+  distinct(variable) %>% arrange(variable)
+
+stopifnot(params$model %in% emf_data_long$model)
+```
+
+Model: ```r params$model```
+
+
+## Scenarios
+
+```{r scenarios}
+datasrcs %>%
+  distinct(model, scenario, datasrc) %>%
+  filter(!is.na(datasrc)) %>%
+  filter(is_input_file_ext(datasrc)) %>%
+  mutate_if(is.character, clean_text_for_md) %>%
+  arrange_standard() %>%
+  knitr::kable()
+
+```
+
+
+## Reference Scenario
+
+```{r ref}
+data_summary_long %>%
+  filter(scenario %in% c("NT.Ref")) %>%
+  filter(year %in% disp_years) %>%
+  mutate(value = signif(value, digits = 3)) %>%
+  mutate(variable = var) %>%
+  select(-var) %>%
+  pivot_wider(
+    names_from = year,
+    values_from = value
+  ) %>%
+  relocate_standard_col_order() %>%
+  arrange_standard() %>%
+  mutate_if(is.character, clean_text_for_md) %>%
+  knitr::kable(digits = 2, format.args = list(scientific = FALSE, big.mark = ","))
+
+```
+
+List of variables: 
+(of those for beta round in template)
+
+```{r}
+vars_data <- template_vars %>%
+  filter(round == "beta") %>%
+  left_join(mutate(this_model_vars_min, in_min = TRUE), by = "variable") %>%
+  left_join(mutate(this_model_vars_long, in_long = TRUE), by = "variable") %>%
+  mutate(in_min = if_else(in_min  == TRUE, "  XXX  ", "      ")) %>%
+  mutate(in_long = if_else(in_long == TRUE, "  XXX  ", "      "))
+
+vars_data %>%
+  knitr::kable()
+```
+
+Variables included, later rounds:
+
+```{r}
+later_rounds_data <- config$template %>%
+  select(round, variable) %>%
+  filter(round != "beta") %>%
+  arrange(variable, round) %>%
+  left_join(mutate(this_model_vars_min, in_min = TRUE), by = "variable") %>%
+  left_join(mutate(this_model_vars_long, in_long = TRUE), by = "variable") %>%
+  filter(in_min | in_long) %>%
+  mutate(in_min = if_else(in_min  == TRUE, "  XXX  ", "      ")) %>%
+  mutate(in_long = if_else(in_long == TRUE, "  XXX  ", "      "))
+
+
+later_rounds_data %>%
+  knitr::kable()
+  
+```
+
+Variables included, not in template:
+
+```{r}
+off_template_data <- this_model_vars_min %>%
+  anti_join(config$template, by = "variable") %>%
+  left_join(mutate(this_model_vars_min, in_min = TRUE), by = "variable") %>%
+  left_join(mutate(this_model_vars_long, in_long = TRUE), by = "variable") %>%
+  filter(in_min | in_long) %>%
+  mutate(in_min = if_else(in_min  == TRUE, "  XXX  ", "      ")) %>%
+  mutate(in_long = if_else(in_long == TRUE, "  XXX  ", "      "))
+
+
+off_template_data %>%
+  knitr::kable()
+```
+

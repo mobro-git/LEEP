@@ -1,0 +1,52 @@
+﻿variable,ref_value,ref_type,unit
+Carbon Sequestration|CCS|Biomass|Energy,2020,year,Index
+Carbon Sequestration|Chemical Feedstocks|Biomass,2020,year,Index
+Carbon Sequestration|Direct Air Capture|Net,2020,year,Index
+Carbon Sequestration|LULUCF,2020,year,Index
+Emissions|CO2,2020,year,Index
+Emissions|CO2|Energy,2020,year,Index
+Emissions|CO2|Energy|Demand,2020,year,Index
+Emissions|CO2|Energy|Demand|Buildings,2020,year,Index
+Emissions|CO2|Energy|Demand|Buildings|Indirect,2020,year,Index
+Emissions|CO2|Energy|Demand|Industry,2020,year,Index
+Emissions|CO2|Energy|Demand|Industry|Indirect,2020,year,Index
+Emissions|CO2|Energy|Demand|Transportation,2020,year,Index
+Emissions|CO2|Energy|Demand|Transportation|Indirect,2020,year,Index
+Emissions|CO2|Energy|Supply,2020,year,Index
+Emissions|CO2|Energy|Supply|Electricity,2020,year,Index
+Final Energy,2020,year,Index
+Final Energy|Electricity,2020,year,Index
+Final Energy|Industry,2020,year,Index
+Final Energy|Industry|Electricity,2020,year,Index
+Final Energy|Industry|Non-Electricity,2020,year,Index
+Primary Energy|Fossil,2020,year,Index
+Secondary Energy,2020,year,Index
+Emissions|CO2|Energy|Coal,2020,year,Index
+Emissions|CO2|Energy|Gas,2020,year,Index
+Emissions|CO2|Energy|Oil,2020,year,Index
+Primary Energy|Biomass,2020,year,Index
+Primary Energy|Coal,2020,year,Index
+Primary Energy|Gas,2020,year,Index
+Primary Energy|Oil,2020,year,Index
+Secondary Energy|Biogas,2020,year,Index
+Secondary Energy|Biomass Liquids,2020,year,Index
+Secondary Energy|Electricity,2020,year,Index
+Secondary Energy|Hydrogen,2020,year,Index
+Secondary Energy|Petroleum Refining,2020,year,Index
+Emissions|CO2|Net Emissions,2020,year,Index
+Emissions Accounting|CO2|Gross Positive CO2,2020,year,Index
+Emissions Accounting|CO2|CO2 + Fossil CCS,2020,year,Index
+Emissions Accounting|CO2|Negative (BECCS),2020,year,Index
+Emissions Accounting|CO2|Negative (BECCS + LULUCF),2020,year,Index
+Emissions Accounting|CO2|Negative (BECCS + LULUCF + DAC),2020,year,Index
+Price|Carbon,2020,year,Index
+Price|Final Energy|Electricity,2020,year,Index
+Price|Final Energy|Gas,2020,year,Index
+Price|Final Energy|Oil,2020,year,Index
+Price|Final Energy|Hydrogen,2020,year,Index
+Price|Final Energy|Biomass Liquids,2020,year,Index
+Price|Final Energy|Electricity,2020,year,Index
+Price|Final Energy|Commercial|Electricity,2020,year,Index
+Price|Final Energy|Industrial|Electricity,2020,year,Index
+Price|Final Energy|Residential|Electricity,2020,year,Index
+Price|Final Energy|Transportation|Electricity,2020,year,Index

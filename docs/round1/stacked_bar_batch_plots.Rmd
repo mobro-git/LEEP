@@ -1,0 +1,226 @@
+---
+title: "Stacked_Bar_Plots"
+author: "Ruying Gao"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 5
+    theme: cerulean
+    toc_float: 
+      collapsed: true
+      smooth_scroll: true
+params:
+  plot_years: !r c(2020, 2050)
+  mode: NULL       
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+```{r}
+if(is.null(params$mode)) {
+  library(targets)
+  library(tidyverse)
+  library(here)
+  library(glue)
+  library(plotly)
+  library(data.table)
+  devtools::load_all(here())
+}
+```
+
+# Part 0. Basic Setup 
+
+Read in the necessary data
+
+```{r data}
+tar_load(config)
+stopifnot(exists("config"))
+
+tar_load(emf_data_long)
+stopifnot(exists("emf_data_long"))
+
+tar_load(emf_summary_long)
+stopifnot(exists("emf_summary_long"))
+
+tar_load(sb_batch_figmap)
+stopifnot(exists("sb_batch_figmap"))
+```
+
+3. Process Data 
+
+```{r data processing, echo=FALSE}
+# process special cases
+full_df <- sb_batch_figmap
+
+## Reorder the scenarios 
+full_df <- full_df %>%
+  filter(scenario %in% config$main_scenarios) %>%
+  mutate(scenario = factor(scenario, levels = config$main_scenarios))
+
+## Group and rename the variables
+full_df <- full_df %>%
+  group_by(model, scenario, region, year, unit, higher_level, datasrc, group) %>%
+  filter(group != 0) 
+
+full_df <- full_df %>% 
+  mutate(variable = str_replace_all(basename(str_replace_all(variable, "\\|", "/")),
+                                                "/", "\\|"))
+```
+
+# Part I. Batch Graphs
+
+##  1. x = scenario, y = value, color by variable, facet by model
+
+1) Sample graph 
+
+```{r make sample graph 1, fig.align="center", echo = FALSE,fig.width = 6}
+df = full_df
+unique_higher_level = unique(df$higher_level)
+
+dat = df %>% filter(higher_level == unique_higher_level[5], year == params$plot_years[1]) 
+
+print(stacked_bar_batch_plot_fn(df = dat, 
+                          x = "scenario", y = "value", 
+                          color = "variable", facet = "model",
+                        mapping_list = list(xlab = "",
+                           ylab= unique(dat$unit),
+                           title = paste(unique(dat$higher_level)," (",params$plot_years[2],")",sep = ""))))
+```
+
+2) Loop to make all the graphs
+
+```{r make batch graphs 1, echo=FALSE}
+df = full_df
+unique_higher_level = unique(df$higher_level)
+
+for (plot_year in params$plot_years) {
+  pdf(file=paste("output/round1/stacked_bar_batch/", plot_year,"stackbar.pdf",sep=""), width = 12, height = 6)
+  for (level in unique_higher_level) {
+    dat = df %>% filter(higher_level == level, year == plot_year)
+    
+    if (nrow(dat) == 0) {
+      print(paste('there is no observation for ', level, sep = ""))
+    } else if (!(length(unique(dat$unit))==1)) {
+      print(paste('there are multiple units for ', level, sep = ""))
+    } else {
+      
+    print(stacked_bar_batch_plot_fn(df = dat, 
+                            x = "scenario", y = "value", 
+                            color = "variable", facet = "model",
+                          mapping_list = list(xlab = "",
+                             ylab= unique(dat$unit),
+                             title = paste(unique(dat$higher_level), " (",plot_year, ")", sep = ""))))
+    }
+  }
+  
+  dev.off()
+  
+}
+```
+
+##  2. x = year. scenario, y = value, color by variable, facet by model
+
+
+```{r variable selection 2, echo=FALSE}
+df = full_df
+df <- df %>% 
+  filter(scenario %in% config$sm_scenarios,
+         year %in% config$stacked_bar_main_years)  
+
+```
+
+1) Sample graph 
+
+```{r make sample graph 2.1, fig.align="center", echo = FALSE, fig.width = 12}
+unique_higher_level = unique(df$higher_level)
+
+dat = df %>% filter(higher_level == unique_higher_level[1]) 
+
+print(stacked_bar_batch_grid_plot_fn1(df = dat, 
+                          x = "scenario" , y = "value", 
+                          color = "variable", 
+                          facet1 = "model", facet2 = "year",
+                        mapping_list = list(xlab = "",
+                           ylab= unique(dat$unit),
+                           title = unique(dat$higher_level))))
+```
+
+```{r make sample graph 2.2, fig.align="center", echo = FALSE,fig.width = 6}
+print(stacked_bar_batch_grid_plot_fn2(df = dat, 
+                          x1 = "year", x2 = "scenario", y = "value", 
+                          color = "variable", 
+                           facet = "model",
+                        mapping_list = list(xlab = "",
+                           ylab= unique(dat$unit),
+                           title = unique(dat$higher_level))))
+```
+
+2) Loop to make all the graphs
+
+```{r make batch graphs 2, echo=FALSE}
+unique_higher_level = unique(df$higher_level)
+# png(filename="test.png", width=1000, height=600)
+pdf(file=paste("output/round1/stacked_bar_batch/year_scenario_stackbar.pdf",sep=""), width = 10, height = 6)
+i = 0
+for (level in unique_higher_level) {
+  i = i+ 1
+  if (i %% 10 == 0) {
+    print(i)
+  }
+  
+  dat = df %>% filter(higher_level == level) 
+  
+  if (nrow(dat) == 0) {
+    print(paste('there is no observation for ', level, sep = ""))
+  } else if (!(length(unique(dat$unit))==1)) {
+    print(paste('there are multiple units for ', level, sep = ""))
+  } else {
+    print(stacked_bar_batch_grid_plot_fn1(df = dat, 
+                          x = "scenario" , y = "value", 
+                          color = "variable", 
+                          facet1 = "model", facet2 = "year",
+                        mapping_list = list(xlab = "",
+                           ylab= unique(dat$unit),
+                           title = unique(dat$higher_level))))
+  }
+}
+dev.off()
+```
+
+
+##  3. x = year, y = value, color by variable, facet by model + scenario
+
+
+```{r make batch graphs 3, echo=FALSE}
+unique_higher_level = unique(df$higher_level)
+# png(filename="test.png", width=1000, height=600)
+pdf(file=paste("output/round1/stacked_bar_batch/scenario_year_stackbar.pdf",sep=""), width = 10, height = 6)
+i = 0
+for (level in unique_higher_level) {
+  i = i + 1
+  if (i %% 10 == 0) {
+    print(i)
+  }
+  
+  dat = df %>% filter(higher_level == level) 
+  
+  if (nrow(dat) == 0) {
+    print(paste('there is no observation for ', level, sep = ""))
+  } else if (!(length(unique(dat$unit))==1)) {
+    print(paste('there are multiple units for ', level, sep = ""))
+  } else {
+      print(stacked_bar_batch_grid_plot_fn1(df = dat, 
+                          x = "year" , y = "value", 
+                          color = "variable", 
+                          facet1 = "model", facet2 = "scenario",
+                        mapping_list = list(xlab = "",
+                           ylab= unique(dat$unit),
+                           title = unique(dat$higher_level))))
+      }
+    }
+dev.off()
+```

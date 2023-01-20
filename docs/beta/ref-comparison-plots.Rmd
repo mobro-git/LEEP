@@ -1,0 +1,345 @@
+---
+title: "ref-comparison-plots"
+author: "Jameel Alsalam"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 5
+    theme: cerulean
+    toc_float: 
+      collapsed: true
+      smooth_scroll: true
+params:
+  comp_models: all
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+knitr::opts_knit$set(root.dir = here::here())
+library(tidyverse)
+library(here)
+library(glue)
+library(plotly)
+library(targets)
+```
+
+```{r}
+tar_load(config)
+
+nice_plot <- function(p) {
+  name_p <- enquo(p) %>% as_label()
+  filename_p <- here("output","beta", "comp-ref", glue("{name_p}.svg"))
+  
+  ggsave(filename = filename_p,
+         plot = p)
+  knitr::include_graphics(filename_p)
+}
+```
+
+```{r data}
+targets::tar_load(emf_data_long)
+stopifnot(exists("emf_data_long"))
+targets::tar_load(config)
+stopifnot(exists("config"))
+comp_models <- if(params$comp_models == "all") {
+  config$models
+} else {
+  params$comp_models
+}
+ref_long <- emf_data_long %>% 
+  filter(scenario == "NT.Ref", 
+         model %in% comp_models)
+targets::tar_load(emf_summary_long)
+stopifnot(exists("emf_summary_long"))
+ref_summary <- emf_summary_long %>% 
+  filter(scenario == "NT.Ref", 
+         model %in% comp_models)
+           
+```
+
+
+## Comparison of Reference Scenarios Between Models.
+  
+
+### Emissions CO2 Total
+
+```{r}
+# total co2
+ref_co2_plot <- ref_long %>%
+  filter(variable == "Emissions|CO2|Energy") %>%
+  ggplot(aes(x = year, y = value,
+             color = model, linetype = scenario)) +
+  geom_line(size=1) +
+  scale_y_continuous(labels = scales::comma) +
+  coord_cartesian(ylim = c(0, NA)) +
+  labs(
+    title = "CO2 Emissions in Reference Scenario, by Model",
+    x = "Year",
+    y = "CO2 (Mt CO2/yr)",
+    color = "Model"
+  )
+suppressWarnings(nice_plot(ref_co2_plot))
+```
+
+### Emissions CO2 Electricity
+
+```{r}
+# electricity co2
+ref_co2_elec_plot <- ref_long %>%
+  filter(variable == "Emissions|CO2|Energy|Supply|Electricity") %>%
+  ggplot(aes(x = year, y = value,
+             color = model, linetype = scenario)) +
+  geom_line(size=1) +
+  scale_y_continuous(labels = scales::comma) +
+  coord_cartesian(ylim = c(0, NA)) +
+  labs(
+    title = "CO2 Emissions from Electricity in Reference Scenario, by Model",
+    x = "Year",
+    y = "CO2 (Mt CO2/yr)",
+    color = "Model"
+  )
+suppressWarnings(nice_plot(ref_co2_elec_plot))
+```
+
+### Final Energy Electricity
+
+```{r}
+# final energy
+ref_final_energy_elec <- ref_long %>%
+  filter(variable == "Final Energy|Electricity") %>%
+  filter(year >= 2010) %>%
+  ggplot(aes(x = year, y = value,
+             color = model, linetype = scenario)) +
+  geom_line() +
+  scale_y_continuous(labels = scales::comma) +
+  coord_cartesian(ylim = c(0, NA)) +
+  labs(
+    title = "Electricity Consumption",
+    caption = "variable: Final Energy|Electricity",
+    x = "Year",
+    y = "EJ/year",
+    color = "Model",
+    linetype = "Scenario"
+  )
+suppressWarnings(nice_plot(ref_final_energy_elec))
+```
+
+
+### Generation
+
+```{r}
+ref_gen_plot <- ref_long %>%
+  filter(variable == "Secondary Energy|Electricity") %>%
+  ggplot(aes(x = year, y = value,
+             color = model, linetype = scenario)) +
+  geom_line(size = 1) +
+  scale_y_continuous(labels = scales::comma) +
+  #coord_cartesian(ylim = c(0, NA)) +
+  labs(
+    title = "Electricity Generation in Reference Scenario, by Model",
+    x = "Year",
+    y = "Generation (EJ/yr)",
+    color = "Model"
+  )
+suppressWarnings(nice_plot(ref_gen_plot))
+```
+
+```{r}
+# suppressWarnings(nice_plot(ref_gen_by_fuel_facet_plot))
+```
+
+```{r}
+# suppressWarnings(nice_plot(generation_patchwork))
+```
+
+### Capacity
+
+```{r}
+ref_cap_plot <- ref_long %>%
+  filter(variable == "Capacity|Electricity") %>%
+  ggplot(aes(x = year, y = value,
+             color = model, linetype = scenario)) +
+  geom_line(size = 1) +
+  scale_y_continuous(labels = scales::comma) +
+  labs(
+    title = "Electricity Capacity in Reference Scenario, by Model",
+    x = "Year",
+    y = "Capacity (GW)",
+    color = "Model"
+  )
+suppressWarnings(nice_plot(ref_cap_plot))
+```
+
+```{r}
+# suppressWarnings(nice_plot(ref_cap_by_fuel_facet_plot))
+```
+
+
+
+### New Capacity
+
+```{r}
+fuel_types <- c("Biomass", "Coal", "Gas", "Geothermal",
+                   "Hydro", "Nuclear", "Solar", "Wind")
+capacity_additions_by_fuel <- sapply(fuel_types, function(x) 
+  paste("Capacity Additions|Electricity|", x, sep="")) 
+labels = fuel_types
+names(labels) = as.character(capacity_additions_by_fuel)
+ref_new_cap_by_fuel_facet_plot <- ref_long %>% 
+  filter(variable %in% capacity_additions_by_fuel) %>%
+  ggplot(aes(x = year, y = value, 
+             color = model, linetype = scenario)) + 
+  geom_line(size = 1) +
+  facet_wrap(vars(variable), ncol = 3, labeller = labeller(variable = labels)) + 
+  scale_y_continuous(labels = scales::comma) +
+  labs(
+    title = "New Electricity Capacity in Reference Scenario, by Fuel Type and Model",
+    x = "Year",
+    y = "New Capacity (GW)",
+    color = "Model"
+  )
+suppressWarnings(nice_plot(ref_new_cap_by_fuel_facet_plot))
+```
+
+
+```{r}
+sub_fuel_types <- c("Coal", "Gas", "Solar", "Wind")
+capacity_additions_by_sub_fuel <- sapply(sub_fuel_types, function(x)
+  paste("\"\\bCapacity\\sAdditions[|]Electricity[|]", x, "|\"", sep=""))
+combined <- map_dfr(sub_fuel_types, function(fuel) {
+  subplot <- ref_long %>%
+    filter(str_detect(variable, 
+                     paste("Capacity[ ]Additions[|]Electricity[|]", 
+                           fuel, "[|]", sep = ""))) %>% 
+    mutate(fuel = fuel)
+})
+ref_new_cap_by_sub_fuel_plot <- combined %>%
+  ggplot(aes(x = year, y = value,
+             color = model, linetype = scenario)) +
+  geom_col(aes(fill = variable)) +
+  facet_wrap(vars(fuel), ncol = 3) +
+  scale_y_continuous(labels = scales::comma) +
+  labs(
+    title = "New Electricity Capacity in Reference Scenario, by Fuel Type and Model",
+    x = "Year",
+    y = "New Capacity (GW)",
+    color = "Model"
+  )
+suppressWarnings(nice_plot(ref_new_cap_by_sub_fuel_plot))
+```
+
+
+```{r}
+# suppressWarnings(nice_plot(ref_new_cap_stack))
+```
+
+
+### Retirements
+
+```{r}
+# suppressWarnings(nice_plot(ref_retirement_plot))
+```
+
+```{r}
+# suppressWarnings(nice_plot(ref_retired_cap_by_fuel_facet_plot))
+```
+
+```{r}
+# suppressWarnings(nice_plot(ref_retired_cap_stack))
+```
+
+
+### Prices & Costs
+
+```{r}
+ref_final_energy_prices_plot <- ref_long %>%
+  filter(variable == "Price|Final Energy|Electricity") %>% 
+  ggplot(aes(x = year, y = value, 
+             color = model, linetype = scenario)) + 
+  geom_line(size = 1) +
+  scale_y_continuous(labels = scales::comma) +
+  labs(
+    title = "Price for Final Energy in Reference Scenario, by Model",
+    x = "Year",
+    y = "Price (US$2018/GJ)",
+    color = "Model"
+  )
+suppressWarnings(nice_plot(ref_final_energy_prices_plot))
+```
+
+```{r}
+# suppressWarnings(nice_plot(ref_totalcost_plot))
+```
+
+```{r}
+# suppressWarnings(nice_plot(ref_ces_share_plot))
+```
+
+## Comparison of Scenarios Between Models.
+  
+
+### Capacity
+
+```{r}
+emf_cap_plot <- emf_data_long %>%
+  filter(variable == "Capacity|Electricity") %>%
+  ggplot(aes(x = year, y = value,
+             color = model)) +
+  geom_line(size = 1) +
+  facet_wrap(vars(scenario), ncol = 3) + 
+  scale_y_continuous(labels = scales::comma) +
+  labs(
+    title = "Electricity Capacity in Various Scenario, by Model",
+    x = "Year",
+    y = "Capacity (GW)",
+    color = "Model"
+  )
+suppressWarnings(nice_plot(emf_cap_plot))
+```
+
+
+### Prices & Costs
+
+```{r}
+emf_final_energy_prices_plot <- emf_data_long %>%
+  filter(variable == "Price|Final Energy|Electricity") %>% 
+  ggplot(aes(x = year, y = value, 
+             color = model)) + 
+  geom_line(size = 1) +
+  facet_wrap(vars(scenario), ncol = 3) + 
+  scale_y_continuous(labels = scales::comma) +
+  labs(
+    title = "Price for Final Energy in Scenario, by Model",
+    x = "Year",
+    y = "Price (US$2018/GJ)",
+    color = "Model"
+  )
+suppressWarnings(nice_plot(emf_final_energy_prices_plot))
+```
+
+
+### Electricity Percent of Final Energy
+
+```{r}
+elec_percent_gcam <- emf_data_long %>%
+  filter(model == "GCAM") %>%
+  filter(str_detect(variable, "Percent Electricity")) %>%
+  mutate(
+    variable = case_when(
+      variable == "Final Energy|Percent Electricity" ~ "All",
+      variable == "Final Energy|Buildings|Percent Electricity" ~ "Buildings",
+      variable == "Final Energy|Industry|Percent Electricity" ~ "Industry",
+      variable == "Final Energy|Transportation|Percent Electricity" ~ "Transportation",
+      TRUE ~ NA_character_
+    )
+  ) %>%
+  ggplot(aes(x = year, y = value, color = scenario)) +
+    facet_grid(rows = vars(variable)) +
+    geom_line() +
+  labs(
+    title = "Electricity Percent of Final Energy in GCAM",
+    y = "Fraction Electricity"
+  )
+suppressWarnings(nice_plot(elec_percent_gcam))
+```

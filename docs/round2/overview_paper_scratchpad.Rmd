@@ -1,0 +1,372 @@
+---
+title: "Overview Paper Figures"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: yes
+    theme: spacelab
+params:
+  mode: NULL
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, include = TRUE, warning = FALSE, message = FALSE, tidy = TRUE, cache = FALSE)
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+```{r library}
+if(is.null(params$mode)) {
+  library(knitr)
+  library(targets)
+  library(tarchetypes)
+  library(ggplot2)
+  library(tidyverse)
+  source("packages.R")
+  devtools::load_all(here())
+}
+```
+
+```{r tar_load}
+tar_load(config)
+stopifnot(exists("config"))
+
+tar_load(emf_data_long_temp)
+stopifnot(exists("emf_data_long_temp"))
+
+tar_load(emf_data_index)
+stopifnot(exists("emf_data_index"))
+
+tar_load(figmap_overview_ref_stackbar)
+stopifnot(exists("figmap_overview_ref_stackbar"))
+
+tar_load(figmap_op_band)
+stopifnot(exists("figmap_op_band"))
+
+tar_load(figmap_op_diffbar)
+stopifnot(exists("figmap_op_diffbar"))
+
+tar_load(figmap_op_stackbar)
+stopifnot(exists("figmap_op_stackbar"))
+
+tar_load(figmap_op_timeseries)
+stopifnot(exists("figmap_op_timeseries"))
+
+tar_load(figmap_op_cone)
+stopifnot(exists("figmap_op_cone"))
+```
+
+```{r manufactured data}
+lulucf.ntref <- data.frame("model" = c("EPS","gTech","TEMOA"), #,"US-REGEN"
+               "scenario" = rep("NT.Ref",3),
+               "region" = rep("United States",3),
+               "variable" = rep("Carbon Sequestration|LULUCF",3),
+               "unit" = rep("Mt CO2/yr",3),
+               "year" = rep(2050,3),
+               "value" = rep(-800,3),
+               "datasrc" = rep("manufactured",3))
+
+lulucf.50ref <- data.frame("model" = c("EPS","gTech","TEMOA"),
+               "scenario" = rep("0by50.Ref",3),
+               "region" = rep("United States",3),
+               "variable" = rep("Carbon Sequestration|LULUCF",3),
+               "unit" = rep("Mt CO2/yr",3),
+               "year" = rep(2050,3),
+               "value" = rep(-800,3),
+               "datasrc" = rep("manufactured",3))
+
+lulucf.50adv <- data.frame("model" = c("EPS"),
+               "scenario" = rep("0by50.Adv",1),
+               "region" = rep("United States",1),
+               "variable" = rep("Carbon Sequestration|LULUCF",1),
+               "unit" = rep("Mt CO2/yr",1),
+               "year" = rep(2050,1),
+               "value" = rep(-800,1),
+               "datasrc" = rep("manufactured",1))
+
+lulucf_all = rbind(lulucf.ntref, lulucf.50ref, lulucf.50adv)
+
+dac <- data.frame("model" = c("ADAGE","EC-MSMR","EPA-TIMES","GCAM","GCAM-USA","gTech","USREP-ReEDS"),
+               "scenario" = rep("NT.Ref",7),
+               "region" = rep("United States",7),
+               "variable" = rep("Carbon Sequestration|Direct Air Capture|Net",7),
+               "unit" = rep("Mt CO2/yr",7),
+               "year" = rep(2050,7),
+               "value" = rep(0,7),
+               "datasrc" = rep("manufactured",7))
+
+beccs <- data.frame("model" = c("EC-MSMR", "EPA-TIMES", "GCAM-USA", "USREP-ReEDS"),
+               "scenario" = rep("NT.Ref",4),
+               "region" = rep("United States",4),
+               "variable" = rep("Carbon Sequestration|CCS|Biomass|Energy",4),
+               "unit" = rep("Mt CO2/yr",4),
+               "year" = rep(2050,4),
+               "value" = rep(0,4),
+               "datasrc" = rep("manufactured",4))
+
+indccs <- data.frame("model" = c("GCAM", "GCAM-USA"),
+               "scenario" = rep("NT.Ref",2),
+               "region" = rep("United States",2),
+               "variable" = rep("Carbon Sequestration|CCS|Industrial Processes",2),
+               "unit" = rep("Mt CO2/yr",2),
+               "year" = rep(2050,2),
+               "value" = rep(0,2),
+               "datasrc" = rep("manufactured",2))
+
+elc <- data.frame("model" = c("EC-MSMR"),
+               "scenario" = c("0by50.Ref"),
+               "region" = c("United States"),
+               "variable" = c("Emissions|CO2|Energy|Supply|Electricity"),
+               "unit" = c("Mt CO2/yr"),
+               "year" = c(2050),
+               "value" = c(0),
+               "datasrc" = c("manufactured"))
+
+data_final <- rbind(emf_data_long_temp, lulucf_all, dac, beccs, indccs, elc) %>%
+  filter(model != "AEO2021") %>%
+  mutate(value = case_when(
+    (model == "ADAGE" & variable %in% c("Carbon Sequestration|LULUCF",
+                                        "Carbon Sequestration|CCS|Biomass|Energy",
+                                        "Carbon Sequestration|Direct Air Capture|Net",
+                                         "Carbon Sequestration|CCS|Fossil|Energy")) ~ value * -1,
+    TRUE~value))
+```
+
+## Figure 1. Net Zero Scenario CO2 Emissions, 2050
+
+```{r}
+ref_stackbar <- left_join(figmap_overview_ref_stackbar, emf_data_long_temp, by = "variable") %>%
+  mutate(variable = variable_rename) %>%
+  filter(model %in% config$models_op) %>%
+  filter(model != "AEO2021") %>%
+  mutate(value = case_when(
+    (model == "ADAGE" & variable_rename %in% c("DAC","BECCS","LULUCF")) ~ value * -1,
+    TRUE~value)) %>%
+  select(model,scenario,region,variable,unit,year,value,datasrc)
+
+lulucf_fix <- lulucf_all %>% mutate(variable = "LULUCF")
+
+ref_stackbar2 = rbind(ref_stackbar, lulucf_fix)
+
+subpalettes = create_subpalettes(figmap_overview_ref_stackbar, config)
+
+reference <- ref_stackbar %>% 
+  filter(model == "EPA-TIMES" & year == 2020 & scenario == "NT.Ref" & region == "United States") %>%
+  mutate(model = "2020") %>%
+  mutate(type = "ref")
+
+fig1b <- net_zero_bar(c("NT.Ref","0by50.Ref","0by50.Adv"), 
+             "",
+             "op",
+             subpalettes, ref_stackbar2, reference, config, 
+             factor = TRUE,
+             width = 10,
+             height = 6) +
+  theme(axis.text.x = element_text(vjust = .51))
+#fig1b
+ggsave("output/round2/op/finals/other/fig1b.png", width = 10, height = 6)
+```
+
+## Figure 2. Sectoral Emissions, Time Series, Indexed to 2020
+
+```{r}
+noneg = emf_data_index %>% filter(value >= 0)
+
+fig2b <- print_graph("band",config,noneg,figmap_op_band,3,"United States", 
+                    factor = TRUE, 
+                    fac_var = "variable_rename", 
+                    level = c("Electricity","Buildings","Industry","Transportation")) + 
+  labs(title = "Direct Sectoral Emissions, Indexed to 2020",
+       x="") + 
+  geom_hline(yintercept = 1, color = "black", size = .75, alpha = 0.4) +
+  nolegend
+fig2b
+ggsave("output/round2/op/finals/other/fig2b.png", width = 9, height = 5)
+
+fig2bO <- print_graph("band",config,emf_data_long_temp,figmap_op_band,3,"United States", 
+                    factor = TRUE, 
+                    fac_var = "variable_rename", 
+                    level = c("Electricity","Buildings","Industry","Transportation")) + 
+  labs(title = "Direct Sectoral Emissions",
+       x="") + 
+  geom_hline(yintercept = 0, color = "black", size = .75, alpha = 0.4) +
+  nolegend
+fig2bO
+ggsave("output/round2/op/finals/other/fig2bO.png", width = 9, height = 5)
+
+fig2O <- print_graph("band",config,emf_data_long_temp,figmap_op_band,6,"United States", 
+                    factor = TRUE, 
+                    fac_var = "variable_rename", 
+                    level = c("Electricity","Buildings","Industry","Transportation")) + 
+  labs(title = "Direct Sectoral Emissions",
+       x="") + 
+  geom_hline(yintercept = 0, color = "black", size = .75, alpha = 0.4) +
+  nolegend
+#fig2O
+ggsave("output/round2/op/finals/other/fig2O.png", width = 9, height = 5)
+```
+
+## Figure 3. Sectoral Emissions, Difference from No Target Reference, 2050
+
+```{r}
+fig3c <- print_graph("diff_bar",config,data_final,figmap_op_diffbar,2,"United States",
+                    factor = TRUE,
+                    fac_var = "variable_rename",
+                    level = c("Other","Transportation","Industry","Buildings","Petroleum Refining","Hydrogen","Electricity","CDR","LULUCF")) +
+  labs(title = "2050 Sectoral Emissions, Difference from NT.Ref ") +
+  theme(axis.text.x = element_text(vjust = .51))
+#fig3c
+ggsave("output/round2/op/finals/other/fig3c.png", width = 9, height = 5)
+```
+
+```{r}
+noneg = data_final %>% filter(value >= 0)
+
+tester <- print_graph("stacked_bar",config,noneg,figmap_op_stackbar,102,"United States")
+tester
+```
+
+## Figure 4. Carbon Sequestration, 2050
+
+```{r}
+fig4 <- print_graph("stacked_bar",config,data_final,figmap_op_stackbar,4,"United States",
+                    factor = TRUE,
+                    fac_var = "variable_rename",
+                    level = c("CCS","BECCS","DAC","LULUCF")) +
+  labs(title = "") +
+  theme(axis.text.x = element_text(vjust = .51))
+fig4
+ggsave("output/round2/op/finals/fig4.png", width = 9, height = 5)
+```
+
+## Figure 5. Carbon Price
+
+```{r}
+fig5a <- print_graph("cone_uncertainty",config,emf_data_long_temp,figmap_op_cone,2,"United States") +
+  labs(title = "Carbon Price") +
+  nolegend
+#fig5a
+ggsave("output/round2/op/finals/other/fig5a.png", width = 8, height = 6)
+```
+
+## Figure 6. Final Energy Mix, Time Series, Objective Values
+
+```{r}
+noaeo2021 = emf_data_long_temp %>% filter(model != "AEO2021") 
+fig6a = print_graph("diff_bar",config,noaeo2021,figmap_op_diffbar,14,"United States",
+                   factor = TRUE,
+                   fac_var = "variable_rename",
+                   level = c("Synthetic Gas","Synthetic Liquids","Biogas","Biomass Liquids","Coal","Gas","Oil","Hydrogen","Electricity")) +
+  labs(title = "") +
+  theme(strip.text.x = element_text(size = 6, color = "black"))
+fig6a
+ggsave("output/round2/op/finals/other/fig6a.png", width = 10, height = 4)
+```
+
+## Figure 7. Sector Final Energy, Difference from NT.Ref, 2050
+
+```{r}
+fig7a = print_graph("diff_bar",config,emf_data_long_temp,figmap_op_diffbar,9,"United States")
+#fig7a
+ggsave("output/round2/op/finals/other/fig7a.png", width = 8, height = 5)
+fig7b = print_graph("diff_bar",config,emf_data_long_temp,figmap_op_diffbar,10,"United States")
+#fig7b
+ggsave("output/round2/op/finals/other/fig7b.png", width = 8, height = 5)
+fig7c = print_graph("diff_bar",config,emf_data_long_temp,figmap_op_diffbar,11,"United States")
+#fig7c
+ggsave("output/round2/op/finals/other/fig7c.png", width = 8, height = 5)
+```
+
+## Figure 8. Percent Elc of Final Energy, Time Series, Objective Values
+
+```{r}
+elc_percent = emf_data_long_temp %>% mutate(value = value * 100) %>%
+  filter(str_detect(variable, "Percent Electricity"))
+
+fig8a <- print_graph("band",config,elc_percent,figmap_op_band,4,"United States",
+                     factor = TRUE,
+                     fac_var = "variable_rename",
+                     level = c("Buildings","Industry","Transportation","Total")) + 
+  labs(title = "",
+       x="") +
+  nolegend
+fig8a
+ggsave("output/round2/op/finals/other/fig8a.png", width = 8, height = 5)
+
+elc = emf_data_long_temp %>% filter(variable %in% c("Final Energy|Percent Electricity",
+                                              "Final Energy|Buildings|Percent Electricity",
+                                              "Final Energy|Industry|Percent Electricity",
+                                              "Final Energy|Transportation|Percent Electricity")) %>%
+  filter(year==2050 & region == "United States") %>%
+  filter(scenario %in% c("NT.Ref","0by50.Ref","0by50.Adv")) %>%
+  mutate(variable = case_when(
+    variable == "Final Energy|Percent Electricity" ~ "Total",
+    str_detect("Buildings", variable) ~ "Buildings",
+    str_detect("Industry", variable) ~ "Industry",
+    str_detect("Transportation", variable) ~ "Transportation",
+    TRUE~variable
+  )) %>%
+  filter(!model %in% c("AnyMOD","CTUS-NEMS","ENERGY2020","MA3T","RIO","MARKAL-NETL","ReEDS","Scout","TEMPO","AEO2020","AEO2021","AEO2022")) %>%
+  mutate(scenario = factor(scenario, levels = c("NT.Ref","0by50.Ref","0by50.Adv")),
+         variable = factor(variable, levels = c("Total","Transportation","Industry","Buildings")))
+
+sub_palettes = create_subpalettes(figmap_op_band, config)
+
+fig8b <- ggplot(data=elc, aes(x=scenario,y=value)) +
+  geom_point(aes(color=variable)) +
+  geom_line(aes(group = model, color=variable), alpha = .5) +
+  facet_grid(~variable) +
+  labs(title = "",
+       x="Scenario", y = "%") +
+  theme_emf() +
+  scale_subpalette(sub_palettes, "Percent Electricity of Final Energy") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  nolegend
+fig8b
+ggsave("output/round2/op/finals/other/fig8b.png", width = 8, height = 5)
+
+noaeo <- emf_data_long_temp %>% filter(model != "AEO2021")
+fig8c <- print_graph("stacked_bar",config,emf_data_long_temp,figmap_op_stackbar,1,"United States",
+                     factor = TRUE,
+                     fac_var = "variable_rename",
+                     level = c("Buildings","Industry","Transportation","Total")) +
+  theme(strip.text.x = element_text(size = 6, color = "black"))
+fig8c
+ggsave("output/round2/op/finals/supmat/perelc.png", width = 12, height = 5)
+```
+
+## Figure 9. Secondary Energy, Difference from NT.Ref, 2050
+
+```{r}
+fig9 <- print_graph("diff_bar",config,emf_data_long_temp,figmap_op_diffbar,3,"United States",
+                    factor = TRUE,
+                    fac_var = "variable_rename",
+                    level = c("Petroleum Refining","Synthetic Gas","Synthetic Liquids","Hydrogen","Biogas","Biomass Liquids","Electricity")) +
+  geom_hline(yintercept = 0, color = "black", size = .75, alpha = 0.7) +
+  labs(title = "") +
+  theme(axis.text.x = element_text(vjust = .51))
+fig9
+ggsave("output/round2/op/finals/fig9.png", width = 8, height = 5)
+```
+
+## Figure 10. Electricity Generation Mix, Time Series, Difference from NT.Ref
+
+time series, show all years and difference line
+
+```{r}
+# TODO: is there a way to remove the geom_hline from the blank panels?
+nogtech <- emf_data_long_temp %>% filter(model != "gTech") %>%
+  mutate(label = "Net")
+
+fig10 <- print_graph("diff_bar",config,nogtech,figmap_op_diffbar,7,"United States",
+                     factor = TRUE,
+                     fac_var = "variable_rename",
+                     level = c("Wind","Solar","Hydrogen","Hydro","Biomass","Coal","Gas","Oil","Nuclear","Other")) + 
+  labs(title = "",
+       x="") + 
+  geom_hline(yintercept = 0, size = .75, alpha = 0.7, aes(color = label)) +
+  theme(strip.text.x = element_text(size = 6, color = "black")) +
+  theme(axis.text.x = element_text(vjust = .51))
+fig10
+ggsave("output/round2/op/finals/fig10.png", width = 10, height = 4)
+```
+

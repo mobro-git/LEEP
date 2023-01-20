@@ -1,0 +1,540 @@
+---
+title: "Overview Paper Figures"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: yes
+    theme: spacelab
+params:
+  mode: NULL
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, include = TRUE, warning = FALSE, message = FALSE, tidy = TRUE, cache = FALSE)
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+```{r library}
+if(is.null(params$mode)) {
+  library(knitr)
+  library(targets)
+  library(tarchetypes)
+  library(ggplot2)
+  library(tidyverse)
+  source("packages.R")
+  devtools::load_all(here())
+}
+```
+
+```{r tar_load}
+tar_load(config)
+stopifnot(exists("config"))
+
+tar_load(emf_data_long_temp)
+stopifnot(exists("emf_data_long_temp"))
+
+tar_load(emf_data_index)
+stopifnot(exists("emf_data_index"))
+
+tar_load(figmap_overview_ref_stackbar)
+stopifnot(exists("figmap_overview_ref_stackbar"))
+
+tar_load(figmap_op_band)
+stopifnot(exists("figmap_op_band"))
+
+tar_load(figmap_op_diffbar)
+stopifnot(exists("figmap_op_diffbar"))
+
+tar_load(figmap_op_stackbar)
+stopifnot(exists("figmap_op_stackbar"))
+
+tar_load(figmap_op_timeseries)
+stopifnot(exists("figmap_op_timeseries"))
+
+tar_load(figmap_op_cone)
+stopifnot(exists("figmap_op_cone"))
+```
+
+```{r manufactured data}
+lulucf <- data.frame("model" = c("AnyMOD"),
+               "scenario" = rep("0by50.Adv",1),
+               "region" = rep("United States",1),
+               "variable" = rep("Carbon Sequestration|LULUCF",1),
+               "unit" = rep("Mt CO2/yr",1),
+               "year" = rep(2050,1),
+               "value" = rep(-800,1),
+               "datasrc" = rep("manufactured",1))
+
+dac <- data.frame("model" = c("ADAGE","EC-MSMR","EPA-TIMES","GCAM","GCAM-USA","gTech","USREP-ReEDS"),
+               "scenario" = rep("NT.Ref",7),
+               "region" = rep("United States",7),
+               "variable" = rep("Carbon Sequestration|Direct Air Capture|Net",7),
+               "unit" = rep("Mt CO2/yr",7),
+               "year" = rep(2050,7),
+               "value" = rep(0,7),
+               "datasrc" = rep("manufactured",7))
+
+beccs <- data.frame("model" = c("EC-MSMR", "EPA-TIMES", "GCAM-USA", "USREP-ReEDS"),
+               "scenario" = rep("NT.Ref",4),
+               "region" = rep("United States",4),
+               "variable" = rep("Carbon Sequestration|CCS|Biomass|Energy",4),
+               "unit" = rep("Mt CO2/yr",4),
+               "year" = rep(2050,4),
+               "value" = rep(0,4),
+               "datasrc" = rep("manufactured",4))
+
+indccs <- data.frame("model" = c("GCAM", "GCAM-USA"),
+               "scenario" = rep("NT.Ref",2),
+               "region" = rep("United States",2),
+               "variable" = rep("Carbon Sequestration|CCS|Industrial Processes",2),
+               "unit" = rep("Mt CO2/yr",2),
+               "year" = rep(2050,2),
+               "value" = rep(0,2),
+               "datasrc" = rep("manufactured",2))
+
+elc <- data.frame("model" = c("EC-MSMR"),
+               "scenario" = c("0by50.Ref"),
+               "region" = c("United States"),
+               "variable" = c("Emissions|CO2|Energy|Supply|Electricity"),
+               "unit" = c("Mt CO2/yr"),
+               "year" = c(2050),
+               "value" = c(0),
+               "datasrc" = c("manufactured"))
+
+usregen_carbon <- data.frame("model" = rep("US-REGEN",),
+               "scenario" = rep("0by50.Ref",),
+               "region" = rep("United States"),
+               "variable" = rep("Price|Carbon"),
+               "unit" = rep("US$2018/t CO2"),
+               "year" = c(2020,2025,2030,2035,2040,2045,2050),
+               "value" = c(0,0,23.54,30.14,23.44,105.75,170.96),
+               "datasrc" = rep("manufactured"))
+
+data_final <- rbind(emf_data_long_temp, dac, beccs, indccs, elc, lulucf, usregen_carbon) %>% 
+  filter(model != "AEO2021") %>%
+  mutate(value = case_when(
+    (model == "ADAGE" & variable %in% c("Carbon Sequestration|LULUCF",
+                                        "Carbon Sequestration|CCS|Biomass|Energy",
+                                        "Carbon Sequestration|Direct Air Capture|Net",
+                                         "Carbon Sequestration|CCS|Fossil|Energy")) ~ value * -1,
+    TRUE~value))
+
+noaeo = data_final %>% filter(model != "AEO2021")
+noneg_index = emf_data_index %>% filter(value >= 0)
+nontref = emf_data_long_temp %>% filter(scenario != "NT.Ref")
+```
+
+# Overview Paper Figures
+
+### Figure 1. Net Zero Scenario CO2 Emissions, 2050
+
+```{r}
+ref2020 = data_final %>%
+  filter(year == 2020 & scenario == "NT.Ref" & variable == "Emissions|CO2|Energy and Industrial Processes" & region == "United States") %>%
+  filter(model %in% config$models_op) %>%
+  filter(model != "AEO2021") %>%
+  mutate(year = 2050) %>%
+  mutate(scenario = factor(scenario, levels = c("NT.Ref","0by50.Ref","0by50.Adv"))) %>%
+  mutate(label = "2020 Reference")
+
+fig1 <- print_graph("stacked_bar",config,noaeo,figmap_op_stackbar,10,"United States",
+                     factor = TRUE,
+                     fac_var = "variable_rename",
+                     level = c("Industrial Processes", "Other", "BECCS","Biofeedstock","DAC","Energy","LULUCF")) +
+  labs(title = "") +
+  geom_point(data = ref2020, aes(x=model,y=value, shape = label)) +
+  theme(axis.text.x = element_text(vjust = .51)) +
+  geom_hline(yintercept = 0)
+fig1
+ggsave("output/round2/op/finals/fig1.png", width = 10, height = 6)
+```
+
+Statistics:
+
+```{r}
+reduction = data_final %>%
+  filter(variable == "Emissions|CO2|Energy and Industrial Processes|Percent difference from 2020" & 
+           year == 2050 & 
+           region == "United States") %>%
+  filter(model %in% config$models_op) %>%
+  filter(model != "AEO2021")
+
+ref_red = reduction %>% filter(scenario == "NT.Ref")
+nz_ref = reduction %>% filter(scenario == "0by50.Ref")
+nz_adv = reduction %>% filter(scenario == "0by50.Adv")
+```
+
+Range of gross emissions reductions is `r round(max(ref_red$value)*100,1)`-`r round(min(ref_red$value)*100,1)`% in NT.Ref, `r round(max(nz_ref$value)*100,1)`-`r round(min(nz_ref$value)*100,1)`% in 0by50.Ref, and `r round(max(nz_adv$value)*100,1)`-`r round(min(nz_adv$value)*100,1)`%, in 0by50.Adv
+
+### Figure 2. Sectoral Emissions, Time Series, Indexed to 2020
+
+```{r}
+fig2 <- print_graph("band",config,emf_data_index,figmap_op_band,6,"United States", #noneg_index
+                    factor = TRUE, 
+                    fac_var = "variable_rename", 
+                    level = c("Electricity","Buildings","Industry","Transportation")) + 
+  labs(title = "",
+       x="",
+       y="Normalized CO2 Emissions (2020 = 1)") + 
+  geom_hline(yintercept = 1, color = "black", size = .75, alpha = 0.4) +
+  geom_hline(yintercept = 0, color = "red", size = .75, alpha = 0.4) +
+  nolegend
+fig2
+ggsave("output/round2/op/finals/fig2.png", width = 7, height = 5)
+```
+
+Statistics:
+
+```{r}
+diff = emf_data_long_temp %>%
+  filter(scenario %in% config$band_nz50) %>%
+  filter(scenario != "NT.Ref" & year == 2050 & region == "United States" & model %in% config$models_op) %>%
+  mutate(value = value * -100)
+
+elcdiff2020 = diff %>% filter(variable == "Emissions|CO2|Energy|Supply|Electricity|Percent difference from 2020")
+elcdiffntref = diff %>% filter(variable == "Emissions|CO2|Energy|Supply|Electricity|Percent Difference from NT.Ref")
+
+blddiffntref = diff %>% filter(variable == "Emissions|CO2|Energy|Demand|Buildings|Percent Difference from NT.Ref")
+inddiffntref = diff %>% filter(variable == "Emissions|CO2|Energy|Demand|Industry|Percent Difference from NT.Ref")
+trndiffntref = diff %>% filter(variable == "Emissions|CO2|Energy|Demand|Transportation|Percent Difference from NT.Ref")
+```
+
+*** NEED TO REVISIT SOME OF THESE STATS - DONT MATCH UP TO INDEXED VALUES AND NEED VERBAGE FOR DESCRIPTION ****
+
+Net zero scenario power sector emissions are reduced by no less than `r round(min(elcdiff2020$value),2)`% from 2020 to 2050, ranging from `r round(min(elcdiffntref$value),2)`-`r round(max(elcdiffntref$value),2)`% reductions over 2050 emissions in the no target reference scenario. Proportionate to reference scenario 2050 emissions, industrial emissions reduce between `r round(min(inddiffntref$value),2)`-`r round(max(inddiffntref$value),2)`%, buildings emissions reduce between `r round(min(blddiffntref$value),2)`-`r round(max(blddiffntref$value),2)`%, and transportation emissions reduce between `r round(min(trndiffntref$value),2)`-`r round(max(trndiffntref$value),2)`%.
+
+### Figure 3. Sectoral Emissions, Difference from No Target Reference, 2050
+
+```{r}
+fig3a <- print_graph("stacked_bar",config,nontref,figmap_op_stackbar,100,"United States",
+                    factor = TRUE,
+                    fac_var = "variable_rename",
+                    level = c("Other","Petroleum Refining","Hydrogen","Electricity","Buildings","Industry","Transportation")) +
+  labs(title = "") +
+  theme(axis.text.x = element_text(vjust = .51)) +
+  geom_hline(yintercept = 0, alpha = 0.7, color = "black") +
+  nolegend
+fig3a
+ggsave("output/round2/op/finals/fig3a.png", width = 9, height = 5)
+
+fig3b <- print_graph("diff_bar",config,data_final,figmap_op_diffbar,100,"United States",
+                    factor = TRUE,
+                    fac_var = "variable_rename",
+                    level = c("Other","Transportation","Industry","Buildings","Petroleum Refining","Hydrogen","Electricity")) +
+  labs(title = "") +
+  theme(axis.text.x = element_text(vjust = .51)) +
+  #nolegend + 
+  geom_hline(yintercept = 0, alpha = 0.7, color = "black")
+fig3b
+ggsave("output/round2/op/finals/fig3b.png", width = 9, height = 5)
+```
+
+### Figure 4. Carbon Sequestration, 2050
+
+```{r}
+fig4 <- print_graph("stacked_bar",config,data_final,figmap_op_stackbar,4,"United States",
+                    factor = TRUE,
+                    fac_var = "variable_rename",
+                    level = c("CCS","BECCS","DAC","LULUCF")) +
+  labs(title = "") +
+  theme(axis.text.x = element_text(vjust = .51))
+fig4
+ggsave("output/round2/op/finals/fig4.png", width = 9, height = 5)
+```
+
+### Figure 5. Carbon Price
+
+```{r}
+fig5 <- print_graph("time_series",config,data_final,figmap_op_timeseries,8,"United States") +
+  labs(title = "")
+fig5
+ggsave("output/round2/op/finals/fig5.png", width = 8, height = 4)
+```
+
+Statistics:
+
+```{r}
+price_diff <- emf_data_long_temp %>% 
+  filter(variable == "Price|Carbon|Difference from 0by50.Ref" & scenario == "0by50.Adv" & year == 2050 & region == "United States") %>%
+  filter(model %in% config$models_op)
+```
+
+Carbon prices are reduced by `r round(max(price_diff$value)*100,2)`-`r round(min(price_diff$value)*100,2)` with the advanced technology assumptions
+
+### Figure 6. Final Energy Mix, Time Series, Objective Values
+
+```{r}
+fig6 = print_graph("stacked_bar",config,data_final,figmap_op_stackbar,14,"United States",
+                   factor = TRUE,
+                   fac_var = "variable_rename",
+                   level = c("Synthetic Gas","Synthetic Liquids","Biogas","Biomass Liquids","Coal","Gas","Oil","Hydrogen","Electricity")) +
+  labs(title = "") +
+  theme(strip.text.x = element_text(size = 6, color = "black"))
+fig6
+ggsave("output/round2/op/finals/fig6.png", width = 10, height = 4)
+```
+
+Statistics:
+
+```{r}
+finalnrg2020 = emf_data_long_temp %>%
+  filter(variable == "Final Energy|Percent difference from 2020" & 
+           year == 2050 & model %in% config$models_op & scenario %in% config$sm_scenarios & region == "United States") %>%
+  mutate(value = round(value * 100),2)
+diff2020ntref = finalnrg2020 %>% filter(scenario == "NT.Ref" & model != "US-REGEN")
+diff2020ntref_usregen = finalnrg2020 %>% filter(scenario == "NT.Ref") %>% filter(model == "US-REGEN")
+diff2020nzref = finalnrg2020 %>% filter(scenario == "0by50.Ref" & !model %in% c("ADAGE", "EC-MSMR")) %>% mutate(value = value * -1)
+diff2020nzref_adage = finalnrg2020 %>% filter(scenario == "0by50.Ref" & model == "ADAGE")
+diff2020nzref_ecmsmr = finalnrg2020 %>% filter(scenario == "0by50.Ref" & model == "EC-MSMR")
+diff2020nzadv = finalnrg2020 %>% filter(scenario == "0by50.Adv" & model != "GCAM")
+diff2020nzadv_gcam = finalnrg2020 %>% filter(scenario == "0by50.Adv" & model == "GCAM")
+
+finalnrgntref = emf_data_long_temp %>%
+  filter(variable == "Final Energy|Percent difference from NT.Ref" & 
+           year == 2050 & model %in% config$models_op & scenario %in% config$sm_scenarios & region == "United States") %>%
+  mutate(value = round(value * -100,2))
+diffntref_nzref = finalnrgntref %>% filter(scenario == "0by50.Ref" & model != "ADAGE")
+diffntref_nzref_adage = finalnrgntref %>% filter(scenario == "0by50.Ref" & model == "ADAGE")
+diffntref_nzadv = finalnrgntref %>% filter(scenario == "0by50.Adv")
+
+fuels = emf_data_long_temp %>% 
+  filter(year == 2050 & model %in% config$models_op & scenario %in% config$sm_scenarios & region == "United States") %>%
+  mutate(value = round((value * -100)/30,2))
+
+oilnrg = fuels %>% filter(variable == "Final Energy|Oil|Percent difference from 2020" & scenario == "0by50.Ref") 
+
+gasnrg_all = fuels %>% filter(variable == "Final Energy|Gas|Percent difference from 2020" & scenario == "0by50.Ref")
+gasnrg_sm = gasnrg_all %>% filter(!model %in% c("ADAGE","gTech"))
+gasnrg_adage = gasnrg_all %>% filter(model == "ADAGE")
+gasnrg_gtech = gasnrg_all %>% filter(model == "gTech")
+
+elcnrg = emf_data_long_temp %>% 
+  filter(year == 2050 & model %in% config$models_op & scenario %in% config$sm_scenarios & region == "United States") %>%
+  filter(variable == "Final Energy|Electricity|Percent difference from 2020") %>%
+  mutate(value = round((value * 100)/30,2))
+elcnrgnzref = elcnrg %>% filter(scenario == "0by50.Ref")
+elcnrgntref = elcnrg %>% filter(scenario == "NT.Ref")
+```
+
+Final energy demand increases in the reference scenario from 2020 to 2050 for all by one model by `r min(diff2020ntref$value)`-`r max(diff2020ntref$value)`% (US-REGEN, `r diff2020ntref_usregen$value`%) and decreases for most models in the net zero reference and advanced scenarios, `r max(diff2020nzref$value)`-`r min(diff2020nzref$value)`% (except ADAGE, +`r diff2020nzref_adage$value`%, and EC-MSMR, +`r diff2020nzref_ecmsmr$value`%) and `r max(diff2020nzadv$value)`-`r min(diff2020nzadv$value)`% (except GCAM, `r diff2020nzadv_gcam$value`%) respectively. Total final energy demand in 2050 decreases from the reference to the net zero reference scenario in most models by `r min(diffntref_nzref$value)`-`r max(diffntref_nzref$value)`% (except ADAGE, `r diffntref_nzref_adage$value`%), and a similar range to the net zero advanced scenario, `r min(diffntref_nzadv$value)`-`r max(diffntref_nzadv$value)`%. Final demand for gas and oil consumption falls from 2020 to 2050 in the net zero reference scenario for almost all models, by `r min(gasnrg_sm$value)`-`r max(gasnrg_sm$value)`% per year (except ADAGE, `r gasnrg_adage$value`%, and gTech, `r gasnrg_gtech$value`%) and `r min(oilnrg$value)`-`r max(oilnrg$value)`% per year, respectively. Electricity demand in the net zero reference scenarios grows slightly faster, `r min(elcnrgnzref$value)`-`r max(elcnrgnzref$value)`% per year, than in the no target reference, `r min(elcnrgntref$value)`-`r max(elcnrgntref$value)`% per year.
+
+### Figure 7. Sector Final Energy, Difference from NT.Ref, 2050
+
+```{r}
+subset = figmap_op_diffbar %>% filter(figure_no %in% c(9,10,11))
+finalnrg = emf_data_long_temp %>%
+  filter(variable %in% unique(subset$variable)) %>%
+  filter(year == 2050 & region == "United States" & scenario %in% c("NT.Ref", "0by50.Ref", "0by50.Adv")) %>%
+  filter(model %in% config$models_op) %>%
+  mutate(
+    sector = case_when(
+      str_detect(variable, "Industry") ~ "Industry",
+      str_detect(variable, "Buildings") ~ "Buildings",
+      str_detect(variable, "Transportation") ~ "Transportation",
+      TRUE~"huh?"),
+    variable_rename = case_when(
+      str_detect(variable, "Coal") ~ "Coal",
+      str_detect(variable, "Gas") ~ "Gas",
+      str_detect(variable, "Oil") ~ "Oil",
+      str_detect(variable, "Electricity") ~ "Electricity",
+      str_detect(variable, "Hydrogen") ~ "Hydrogen",
+      str_detect(variable, "Biogas") ~ "Biogas",
+      str_detect(variable, "Biomass Liquids") ~ "Biomass Liquids",
+      str_detect(variable, "Biomass Solids") ~ "Biomass Solids",
+      str_detect(variable, "Synthetic Gas") ~ "Synthetic Gas",
+      str_detect(variable, "Synthetic Liquids") ~ "Synthetic Liquids",
+      TRUE~"huh?")) %>%
+  group_by(model, region, year, unit, variable, variable_rename, sector) %>%
+            filter("NT.Ref" %in% unique(scenario)) %>%
+            mutate(diff = value - value[scenario == "NT.Ref"]) %>%
+            ungroup() %>%
+            filter(scenario != "NT.Ref") %>%
+  mutate(scenario = factor(scenario, levels = c("0by50.Ref","0by50.Adv")),
+         variable_rename = factor(variable_rename,
+                                  levels = c("Synthetic Gas","Synthetic Liquids","Biogas","Biomass Liquids",
+                                             "Coal","Gas","Oil","Hydrogen","Electricity")))
+
+sub_palettes = create_subpalettes(figmap_op_diffbar, config)
+
+fig7 = ggplot(finalnrg, aes(x = model, y = diff)) +
+  geom_col(aes(fill = variable_rename)) +
+  facet_grid(scenario~sector,
+               space = "free_x", scales = "fixed") +
+  labs(title = "",
+         x = "",
+         y = "EJ/yr",
+         fill = "") +
+  theme_emf() +
+  theme(axis.text.x = element_text(angle = 90, hjust=1)) +
+  scale_subpalette(sub_palettes, "Industry Final Energy Mix - Difference from NT.Ref") + 
+  theme(axis.text.x = element_text(vjust = .51)) +
+  geom_hline(yintercept = 0, alpha = 0.7, color = "black")
+fig7  
+ggsave("output/round2/op/finals/fig7.png", width = 8, height = 6)
+```
+
+Statistics:
+
+```{r}
+subset = emf_data_long_temp %>% 
+  filter(year == 2050 & model %in% config$models_op & scenario %in% config$nz50_scenarios & 
+           region == "United States") %>%
+  mutate(value = round(value * -100,2))
+
+bld = subset %>% filter(variable == "Final Energy|Buildings|Percent difference from NT.Ref")
+bld_gas = subset %>% filter(variable == "Final Energy|Buildings|Gas|Percent difference from NT.Ref")
+ind_gas = subset %>% filter(variable == "Final Energy|Industry|Gas|Percent difference from NT.Ref")
+```
+
+There is strong consensus between models for buildings to transition away from gas, a `r min(bld$value)`-`r max(bld$value)`% reduction over reference, and significant total final energy demand decreases, a `r min(bld_gas$value)`-`r max(bld_gas$value)`% reduction over reference. All models show reductions in industrial gas demand, `r min(ind_gas$value)`-`r max(ind_gas$value)`% over the reference scenario. 
+
+### Figure 8. Percent Elc of Final Energy, Time Series, Objective Values
+
+```{r}
+elc_percent = emf_data_long_temp %>% mutate(value = value * 100) %>%
+  filter(str_detect(variable, "Percent Electricity"))
+
+fig8 <- print_graph("band",config,elc_percent,figmap_op_band,7,"United States",
+                     factor = TRUE,
+                     fac_var = "variable_rename",
+                     level = c("Buildings","Industry","Transportation","Total")) + 
+  labs(title = "",
+       x="") +
+  nolegend
+fig8
+ggsave("output/round2/op/finals/fig8.png", width = 8, height = 5)
+```
+
+Statistics:
+
+```{r}
+subset = emf_data_long_temp %>% 
+  filter(year == 2050 & model %in% config$models_op & scenario %in% config$band_nz50 & 
+           region == "United States") %>%
+  mutate(value = round(value * 100,2))
+elcbld = subset %>% filter(variable == "Final Energy|Buildings|Percent Electricity")
+elcind = subset %>% filter(variable == "Final Energy|Industry|Percent Electricity")
+elctrn = subset %>% filter(variable == "Final Energy|Transportation|Percent Electricity")
+elctot = subset %>% filter(variable == "Final Energy|Percent Electricity")
+```
+
+Across net zero scenarios, there is a much steeper increase in that proportion from 2020 to 2050, `r min(elcbld$value)`-`r max(elcbld$value)`% for buildings, `r min(elcind$value)`-`r max(elcind$value)`% in industry, and `r min(elctrn$value)`-`r max(elctrn$value)`% in transportation, leading to a total increase of `r min(elctot$value)`-`r max(elctot$value)`%. 
+
+### Figure 9. Secondary Energy, Difference from NT.Ref, 2050
+
+```{r}
+fig9 <- print_graph("diff_bar",config,emf_data_long_temp,figmap_op_diffbar,3,"United States",
+                    factor = TRUE,
+                    fac_var = "variable_rename",
+                    level = c("Petroleum Refining","Synthetic Gas","Synthetic Liquids","Hydrogen","Biogas","Biomass Liquids","Electricity")) +
+  geom_hline(yintercept = 0, color = "black", size = .75, alpha = 0.7) +
+  labs(title = "") +
+  theme(axis.text.x = element_text(vjust = .51))
+fig9
+ggsave("output/round2/op/finals/fig9.png", width = 8, height = 5)
+```
+
+Statistics:
+
+```{r}
+secondary_elc = emf_data_long_temp %>%
+  filter(variable == "Secondary Energy|Electricity|Percent difference from NT.Ref" & model %in% config$models_op & year == 2050 &
+           region == "United States") %>%
+  mutate(value = round(value*100,2))
+secondary_elc_nzref = secondary_elc %>% filter(scenario == "0by50.Ref")
+secondary_elc_nzadv = secondary_elc %>% filter(scenario == "0by50.Adv")
+```
+
+Electricity makes up the majority of secondary energy growth for all but three models, increasing `r min(secondary_elc_nzref$value)`-`r max(secondary_elc_nzref$value)`% over the no target reference scenario in the net zero reference scenario and `r min(secondary_elc_nzadv$value)`-`r max(secondary_elc_nzadv$value)`% in the net zero advanced scenario.
+
+### Figure 10. Electricity Generation Mix, Time Series, Difference from NT.Ref
+
+```{r}
+# TODO: is there a way to remove the geom_hline from the blank panels?
+nogtech <- emf_data_long_temp %>% filter(model != "gTech") %>%
+  mutate(label = "Net")
+
+fig10 <- print_graph("diff_bar",config,nogtech,figmap_op_diffbar,7,"United States",
+                     factor = TRUE,
+                     fac_var = "variable_rename",
+                     level = c("Wind","Solar","Hydrogen","Hydro","Biomass","Coal","Gas","Oil","Nuclear","Other")) + 
+  labs(title = "",
+       x="") + 
+  geom_hline(yintercept = 0, size = .75, alpha = 0.7, aes(color = label)) +
+  theme(strip.text.x = element_text(size = 6, color = "black")) +
+  theme(axis.text.x = element_text(vjust = .51))
+fig10
+ggsave("output/round2/op/finals/fig10.png", width = 10, height = 4)
+```
+
+# Supplementary Materials
+
+### Table SM1. Net Zero Scenarios
+
+```{r}
+scen_mapping_submissions <- config$scen_mapping %>%
+  filter(model_new %in% config$models_main) %>%
+  filter(model_new != "AEO2021") %>%
+  arrange(model_new) %>%
+  select(model_new, scenario_new) %>%
+  rename(model = model_new, scenario = scenario_new) %>%
+  filter(!is.na(scenario)) %>%
+  distinct(model, scenario) %>%
+  mutate(submitted = "x") %>%
+  pivot_wider(names_from = "model", values_from = "submitted") %>%
+  arrange(scenario) %>%
+  rename(` `= scenario)
+
+num = ncol(scen_mapping_submissions)
+
+options(knitr.kable.NA = '')
+
+scen_mapping_submissions %>%
+  kable(align = c('r',rep('c', num))) %>%
+  kable_styling(full_width = F, position = "left", bootstrap_options = "striped") %>%
+  column_spec(1, bold = T) %>%
+  add_header_above(c("Scenario" = 1 ,"Model" = num-1))
+```
+
+### Figure SM1. Sectoral Emissions
+
+```{r}
+figSM1 <- print_graph("band",config,emf_data_long_temp,figmap_op_band,3,"United States", 
+                    factor = TRUE, 
+                    fac_var = "variable_rename", 
+                    level = c("Electricity","Buildings","Industry","Transportation")) + 
+  labs(title = "Direct Sectoral Emissions",
+       x="") + 
+  geom_hline(yintercept = 0, color = "black", size = .75, alpha = 0.4) +
+  nolegend
+figSM1
+ggsave("output/round2/op/finals/supmat/figSM1.png", width = 9, height = 5)
+```
+
+### Figure SM2. Final Energy, Difference from NT.Ref
+
+```{r}
+noaeo2021 = emf_data_long_temp %>% filter(model != "AEO2021") 
+figSM2= print_graph("diff_bar",config,noaeo2021,figmap_op_diffbar,14,"United States",
+                   factor = TRUE,
+                   fac_var = "variable_rename",
+                   level = c("Synthetic Gas","Synthetic Liquids","Biogas","Biomass Liquids","Coal","Gas","Oil","Hydrogen","Electricity")) +
+  labs(title = "") +
+  theme(strip.text.x = element_text(size = 6, color = "black"))
+figSM2
+ggsave("output/round2/op/finals/supmat/figSM2.png", width = 10, height = 4)
+```
+
+### Figure SM3. 2050 Percent Electricity of Final Energy by Sector
+
+```{r}
+noaeo <- emf_data_long_temp %>% filter(model != "AEO2021")
+figSM3 <- print_graph("stacked_bar",config,noaeo,figmap_op_stackbar,1,"United States",
+                     factor = TRUE,
+                     fac_var = "variable_rename",
+                     level = c("Buildings","Industry","Transportation","Total")) +
+  theme(strip.text.x = element_text(size = 6, color = "black"))
+figSM3
+ggsave("output/round2/op/finals/supmat/figSM3.png", width = 12, height = 5)
+```
+

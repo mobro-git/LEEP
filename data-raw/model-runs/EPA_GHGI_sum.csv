@@ -1,0 +1,30 @@
+model,scenario,variable,unit,value,year,region
+GHGI,NT.Ref,Emissions|CO2|Energy,MMTCO2/yr,4342.7,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Buildings|Commercial,MMTCO2/yr,226.8,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Buildings|Residential,MMTCO2/yr,315.8,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Industry,MMTCO2/yr,766.3,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Aluminum,MMTCO2/yr,1.7,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Bulk chemicals,MMTCO2/yr,6,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Bulk chemicals|Ag chemicals,MMTCO2/yr,18,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Bulk chemicals|Organic,MMTCO2/yr,30,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Cement and lime,MMTCO2/yr,52,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Glass,MMTCO2/yr,1.9,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Iron and steel,MMTCO2/yr,37.7,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Oil-gas extraction,MMTCO2/yr,7.8,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Other mining,MMTCO2/yr,4.2,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Transportation,MMTCO2/yr,1572,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Transportation|Freight|Aviation,MMTCO2/yr,29.3,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Transportation|Freight|Rail,MMTCO2/yr,31,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Transportation|Freight|Road,MMTCO2/yr,412.8,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Transportation|Freight|Shipping,MMTCO2/yr,15.1,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Transportation|Passenger|Aviation,MMTCO2/yr,91.3,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Transportation|Passenger|Rail|Indirect,MMTCO2/yr,2.6,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Transportation|Passenger|Road,MMTCO2/yr,921.3,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Transportation|Passenger|Road|Indirect,MMTCO2/yr,2,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Transportation|Passenger|Shipping,MMTCO2/yr,12.5,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Demand|Transportation|Pipeline,MMTCO2/yr,57.1,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Supply|Electricity,MMTCO2/yr,1439,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Supply|Electricity|Coal,MMTCO2/yr,788.2,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Supply|Electricity|Gas,MMTCO2/yr,634.3,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Supply|Electricity|Oil,MMTCO2/yr,16.2,2020,USA
+GHGI,NT.Ref,Emissions|CO2|Energy|Supply|Gas,MMTCO2/yr,25.5,2020,USA
