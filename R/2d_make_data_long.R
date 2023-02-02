@@ -14,7 +14,7 @@
 #' @export
 #'
 #' @examples
-make_emf_data_long <- function(data_long_read, ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var) {
+make_data_long <- function(data_long_read, ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var) {
   data_long <- data_long_read %>% {
     # drop all-zero model-run-variable data
     group_by(., model, scenario, variable) %>%

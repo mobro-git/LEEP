@@ -14,7 +14,7 @@ tar_option_set(
 
 # Plotmapping: plot subject and figure type table. Cannot be used by tar_map unless outside of tar_plan()
 
-figmap_list_csv = "plot_mapping/round2/figmap.csv"
+figmap_list_csv = "plot_mapping/figmap.csv"
 figmap_list = read_csv(figmap_list_csv, col_types = cols()) %>% as_tibble()
 
 # End this file with a list of target objects.
@@ -49,7 +49,7 @@ tar_plan(
   ##### Template and Metadata ---------------------------------------------------
 
   tar_target(template_csv, "data-raw/templates/EMF37_data_template_R2_v2.xlsx", format = "file"),
-  template = read_emf_template_xlsx(template_csv),
+  tar_target(template, read_emf_template_xlsx(template_csv)),
 
   tar_target(scen_mapping_csv, "data-raw/scenario-mapping.csv", format = "file"),
 
@@ -58,13 +58,10 @@ tar_plan(
 
   #### Data Files ----------------------------------------------------------------
 
-  tar_target(extra_data_folder, path("data-raw", "model-runs", "round2"), format = "file"),
-  tar_target(extra_data_files, dir_ls(extra_data_folder), format = "file"),
+  tar_target(data_folder, path("data-raw", "model-runs"), format = "file"),
+  tar_target(data_files, dir_ls(data_folder), format = "file"),
 
-  tar_target(data_files, c(extra_data_files),
-             format = "file"),
-
-  ######################################################################################### -
+  ####################################################################################### -
   ######################################################################################### -
 
   ### Data Processing -----------------------
@@ -105,10 +102,6 @@ tar_plan(
 
   # _Making emf_data_long ----
 
-  data_raw = map_dfr(data_files, read_raw_data_file),
-
-  data_min = map_dfr(data_files, read_process_minimal_from_raw),
-
   unique_submissions = {
     data_min %>%
       select(datasrc,model,scenario) %>%
@@ -120,7 +113,7 @@ tar_plan(
     # map_variable_names() %>%
     arrange_standard()},
 
-  data_long = make_emf_data_long(data_long_read,
+  data_long = make_data_long(data_long_read,
                                      ratio_var,
                                      summation_var,
                                      cumulative_var,
@@ -128,8 +121,6 @@ tar_plan(
                                      per_diff_var),
 
   data_index = index_data_long(data_long, index_var),
-
-  clean_data = write.csv(emf_usacanmex, "output/clean_data.csv"),
 
   ######################################################################################### -
   ######################################################################################### -
@@ -150,22 +141,12 @@ tar_plan(
 
   ### Figures  -------------------
 
-  # tar_render(
-  #   overview_paper,
-  #   "docs/round2/overview_paper_final.Rmd",
-  #   output_dir = "output/round2/op",
-  #   output_file = "overview_paper",
-  #   params = list(
-  #     mode = "targets"),
-  # ),
-  #
-  # op_cu = create_graph("op", "cone_uncertainty", config, emf_data_long_temp, figmap_op_cone),
-  # op_db = create_graph("op", "diff_bar", config, emf_data_long_temp, figmap_op_diffbar),
-  # op_sb = create_graph("op", "stacked_bar", config, emf_data_long_temp, figmap_op_stackbar),
-  # op_band = create_graph("op", "band", config, emf_data_long_temp, figmap_op_band),
-  # op_band_index = create_graph("op", "band", config, emf_data_index, figmap_op_band, sub="_index"),
-  # op_ts = create_graph("op", "time_series", config, emf_data_long_temp, figmap_op_timeseries),
-  # op_ts_index = create_graph("op", "time_series", config, emf_data_index, figmap_op_timeseries, sub="_index"),
-  # op_scatter = create_graph("op", "scatterplot", config, emf_data_long_temp, figmap_op_scatter),
+  op_cu = create_graph("op", "cone_uncertainty", config, emf_data_long_temp, figmap_op_cone),
+  op_db = create_graph("op", "diff_bar", config, emf_data_long_temp, figmap_op_diffbar),
+  op_sb = create_graph("op", "stacked_bar", config, emf_data_long_temp, figmap_op_stackbar),
+  op_band = create_graph("op", "band", config, emf_data_long_temp, figmap_op_band),
+  op_band_index = create_graph("op", "band", config, emf_data_index, figmap_op_band, sub="_index"),
+  op_ts = create_graph("op", "time_series", config, emf_data_long_temp, figmap_op_timeseries),
+  op_scatter = create_graph("op", "scatterplot", config, emf_data_long_temp, figmap_op_scatter)
 
 )
