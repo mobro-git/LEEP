@@ -9,7 +9,7 @@ devtools::load_all(".") # load all function definitions in /R
 # Set target-specific options such as packages.
 tar_option_set(
   packages = c("dplyr","readr","tidyverse","datasets"), # packages to make available to targets
-  imports = "EMF37viz" # watch changes in these functions to invalidate targets
+  imports = "LEEP" # watch changes in these functions to invalidate targets
 )
 
 # Plotmapping: plot subject and figure type table. Cannot be used by tar_map unless outside of tar_plan()
@@ -30,29 +30,15 @@ tar_plan(
     calculated_var = all_calculated,
 
     # models
-    models = c("ADAGE","AEO2020","AEO2021","AEO2022","AnyMOD",
-               "FECM-NEMS", "EC-MSMR",
-               "EIA_Historic","EIA_STEO","EPA-GHGI","NCS-GHGI","ENERGY2020", "EPA-TIMES","EPS",
-               "FARM",
-               "GCAM","GCAM-USA","gTech",
-               "MARKAL-NETL","MER",
-               "NATEM",
-               "ReEDS",
-               "TEMPO",
-               "US-REGEN","USREP-ReEDS"),
+    models = c("AEO2020","AEO2021","AEO2022",
+               "EIA_Historic","EIA_STEO","EPA-GHGI","NCS-GHGI",
+               "NEMS","GCAM","IPM","USREP-ReEDS","Scout"),
 
     # scenarios
-
-    main_scenarios = c("NT.Ref", "0by50.Ref","0by50.Adv",
-                       "0by50.BSG.Adv","0by50.CMSG.Adv","0by50.ISG.Adv","0by50.TSG.Adv"),
+    main_scenarios = c("Reference","IRA"),
 
     # time intervals
-    default10 = seq(2020, 2050, by = 10),
-    default5 = seq(2020, 2050, by = 5),
-    default_2020_2050 = c(2020, 2050),
-    hist_2005 = seq(2005, 2050, by = 5),
-    # regions
-    default_regions = c("United States"),
+    default = seq(2023, 2035, by = 1)
   ),
 
   ######################################################################################### -
