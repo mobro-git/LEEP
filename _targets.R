@@ -34,6 +34,8 @@ tar_plan(
                "EIA_Historic","EIA_STEO","EPA-GHGI","NCS-GHGI",
                "NEMS","GCAM","IPM","USREP-ReEDS","Scout"),
 
+    models_noaeo = c("NEMS","GCAM","IPM","USREP-ReEDS","Scout"),
+
     # scenarios
     main_scenarios = c("Reference","IRA"),
 
