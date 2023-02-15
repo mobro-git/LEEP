@@ -48,7 +48,7 @@ tar_plan(
 
   ##### Template and Metadata ---------------------------------------------------
 
-  tar_target(template_csv, "data-raw/templates/EMF37_data_template_R2_v2.xlsx", format = "file"),
+  tar_target(template_csv, "data-raw/EMF37_data_template_R2_v2.xlsx", format = "file"),
   tar_target(template, read_emf_template_xlsx(template_csv)),
 
   tar_target(scen_mapping_csv, "data-raw/scenario-mapping.csv", format = "file"),
@@ -101,8 +101,11 @@ tar_plan(
     ),
 
   # _Making emf_data_long ----
+  data_raw = map_dfr(data_files, read_raw_data_file),
 
-  unique_submissions = {
+  data_min = map_dfr(data_files, read_process_minimal_from_raw),
+
+    unique_submissions = {
     data_min %>%
       select(datasrc,model,scenario) %>%
       distinct() %>%
@@ -141,12 +144,12 @@ tar_plan(
 
   ### Figures  -------------------
 
-  op_cu = create_graph("op", "cone_uncertainty", config, emf_data_long_temp, figmap_op_cone),
-  op_db = create_graph("op", "diff_bar", config, emf_data_long_temp, figmap_op_diffbar),
-  op_sb = create_graph("op", "stacked_bar", config, emf_data_long_temp, figmap_op_stackbar),
-  op_band = create_graph("op", "band", config, emf_data_long_temp, figmap_op_band),
-  op_band_index = create_graph("op", "band", config, emf_data_index, figmap_op_band, sub="_index"),
-  op_ts = create_graph("op", "time_series", config, emf_data_long_temp, figmap_op_timeseries),
-  op_scatter = create_graph("op", "scatterplot", config, emf_data_long_temp, figmap_op_scatter)
+  # op_cu = create_graph("op", "cone_uncertainty", config, emf_data_long_temp, figmap_op_cone),
+  # op_db = create_graph("op", "diff_bar", config, emf_data_long_temp, figmap_op_diffbar),
+  # op_sb = create_graph("op", "stacked_bar", config, emf_data_long_temp, figmap_op_stackbar),
+  # op_band = create_graph("op", "band", config, emf_data_long_temp, figmap_op_band),
+  # op_band_index = create_graph("op", "band", config, emf_data_index, figmap_op_band, sub="_index"),
+  # op_scatter = create_graph("op", "scatterplot", config, emf_data_long_temp, figmap_op_scatter),
+  op_ts = create_graph("op", "time_series", config, emf_data_long_temp, figmap_op_timeseries)
 
 )

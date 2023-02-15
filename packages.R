@@ -15,14 +15,12 @@ library(data.table)
 library(tidyverse)
 library(patchwork)
 library(ggrepel)
+library(dplyr)
+library(readr)
+library(datasets)
+library(units)
 
 library(kableExtra)
 library(DT)
+library(visNetwork)
 
-# devtools::install_github("coolbutuseless/ggpattern")
-# library(ggpattern)
-
-if(FALSE) {
-  # explicitly mention packages needed to assist renv::snapshot discovery
-  library(visNetwork) # used for targets::tar_visnetwork()
-}
