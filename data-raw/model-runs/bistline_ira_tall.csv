@@ -1,0 +1,1783 @@
+"scenario","model","variable","unit","year","value"
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",549.436
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",562.901
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",500.227143316201
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",542.161635214387
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",334.04
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",327.8
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",572.610223999999
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",576.099250999999
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",523.336552379761
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",536.178882727117
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",641.5
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2025",649
+"IRA","EPS-EI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1189.66
+"Reference","EPS-EI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1350.69
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1001.23988404397
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1325.31758286476
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1026.90270194765
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1342.17940570156
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1176.7889391169
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1109.41619281777
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1414.48
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1377.84
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1194.8452781805
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1090.61392148052
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1288.91053546785
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1522.18997177879
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1325.90851008344
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1338.36588810703
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1462
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2025",1437.5
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",886.708559
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",850.86988
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",1072.28115139338
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",1180.17816204515
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",1054.69
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",1063.06
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",813.925096343283
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",813.895126709715
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",923.515706821811
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",933.812450317082
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",777
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2025",815.5
+"IRA","EPS-EI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",322.448421
+"Reference","EPS-EI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",381.55262
+"IRA","GCAM-CGS","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",30.9565667802826
+"Reference","GCAM-CGS","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",34.0158540176269
+"IRA","Haiku-RFF","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",NA
+"Reference","Haiku-RFF","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",NA
+"IRA","IPM-NRDC","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",NA
+"Reference","IPM-NRDC","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",22.32
+"Reference","MARKAL-NETL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",22.29
+"IRA","NEMS-RHG","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",399.476955431099
+"Reference","NEMS-RHG","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",399.764056821303
+"IRA","ReEDS-NREL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",NA
+"Reference","REGEN-EPRI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",NA
+"IRA","RIO-REPEAT","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",NA
+"Reference","RIO-REPEAT","Emissions|CO2|Industrial Processes","Mt CO2/yr","2025",NA
+"IRA","EPS-EI","Emissions|CO2|Other","Mt CO2/yr","2025",10.12312
+"Reference","EPS-EI","Emissions|CO2|Other","Mt CO2/yr","2025",68.7182
+"IRA","GCAM-CGS","Emissions|CO2|Other","Mt CO2/yr","2025",NA
+"Reference","GCAM-CGS","Emissions|CO2|Other","Mt CO2/yr","2025",NA
+"IRA","Haiku-RFF","Emissions|CO2|Other","Mt CO2/yr","2025",NA
+"Reference","Haiku-RFF","Emissions|CO2|Other","Mt CO2/yr","2025",NA
+"IRA","IPM-NRDC","Emissions|CO2|Other","Mt CO2/yr","2025",NA
+"Reference","IPM-NRDC","Emissions|CO2|Other","Mt CO2/yr","2025",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Other","Mt CO2/yr","2025",0
+"Reference","MARKAL-NETL","Emissions|CO2|Other","Mt CO2/yr","2025",0
+"IRA","NEMS-RHG","Emissions|CO2|Other","Mt CO2/yr","2025",NA
+"Reference","NEMS-RHG","Emissions|CO2|Other","Mt CO2/yr","2025",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Other","Mt CO2/yr","2025",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Other","Mt CO2/yr","2025",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Other","Mt CO2/yr","2025",NA
+"Reference","REGEN-EPRI","Emissions|CO2|Other","Mt CO2/yr","2025",NA
+"IRA","RIO-REPEAT","Emissions|CO2|Other","Mt CO2/yr","2025",NA
+"Reference","RIO-REPEAT","Emissions|CO2|Other","Mt CO2/yr","2025",NA
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",1570.042984
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",1573.981449
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",1538.6165656608
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",1596.66956680078
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",1494.42
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",1493.47
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",1636.8052259969
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",1636.61752751504
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",1686.79559783655
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",1692.79635567194
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",1790.5
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2025",1805.5
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",525.176
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",557.617
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",454.815277598077
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",533.537214700852
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",286.58
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",278.08
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",571.073624999999
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",571.501766999999
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",491.903054886779
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",516.524291760345
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",590
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2030",638
+"IRA","EPS-EI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",602.7
+"Reference","EPS-EI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",1201.47
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",679.659054813217
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",1274.91028267317
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",750.56867651652
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",1238.94513602116
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",827.389198560903
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",1075.92232861268
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",1310.53
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",1379.59
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",482.81984665288
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",979.598572044581
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",524.455517672244
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",1384.13260094904
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",999.666254194768
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",1125.0574146029
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",743
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2030",981
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",838.782358
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",845.24494
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",1015.73661606983
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",1208.99411915652
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",1096.26
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",1090.35
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",815.411926078259
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",822.693681875426
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",929.877799699341
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",945.371637378423
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",737
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2030",833
+"IRA","EPS-EI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",301.967622
+"Reference","EPS-EI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",369.25816
+"IRA","GCAM-CGS","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",27.7605816743108
+"Reference","GCAM-CGS","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",33.403067220462
+"IRA","Haiku-RFF","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",NA
+"Reference","Haiku-RFF","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",NA
+"IRA","IPM-NRDC","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",NA
+"Reference","IPM-NRDC","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",29.76
+"Reference","MARKAL-NETL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",29.54
+"IRA","NEMS-RHG","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",369.457170834849
+"Reference","NEMS-RHG","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",382.344377211282
+"IRA","ReEDS-NREL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",NA
+"Reference","REGEN-EPRI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",NA
+"IRA","RIO-REPEAT","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",NA
+"Reference","RIO-REPEAT","Emissions|CO2|Industrial Processes","Mt CO2/yr","2030",NA
+"IRA","EPS-EI","Emissions|CO2|Other","Mt CO2/yr","2030",11.99862
+"Reference","EPS-EI","Emissions|CO2|Other","Mt CO2/yr","2030",71.0221
+"IRA","GCAM-CGS","Emissions|CO2|Other","Mt CO2/yr","2030",NA
+"Reference","GCAM-CGS","Emissions|CO2|Other","Mt CO2/yr","2030",NA
+"IRA","Haiku-RFF","Emissions|CO2|Other","Mt CO2/yr","2030",NA
+"Reference","Haiku-RFF","Emissions|CO2|Other","Mt CO2/yr","2030",NA
+"IRA","IPM-NRDC","Emissions|CO2|Other","Mt CO2/yr","2030",NA
+"Reference","IPM-NRDC","Emissions|CO2|Other","Mt CO2/yr","2030",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Other","Mt CO2/yr","2030",0
+"Reference","MARKAL-NETL","Emissions|CO2|Other","Mt CO2/yr","2030",0
+"IRA","NEMS-RHG","Emissions|CO2|Other","Mt CO2/yr","2030",NA
+"Reference","NEMS-RHG","Emissions|CO2|Other","Mt CO2/yr","2030",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Other","Mt CO2/yr","2030",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Other","Mt CO2/yr","2030",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Other","Mt CO2/yr","2030",NA
+"Reference","REGEN-EPRI","Emissions|CO2|Other","Mt CO2/yr","2030",NA
+"IRA","RIO-REPEAT","Emissions|CO2|Other","Mt CO2/yr","2030",NA
+"Reference","RIO-REPEAT","Emissions|CO2|Other","Mt CO2/yr","2030",NA
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",1380.345127
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",1401.480757
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",1357.17964232201
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",1464.78688682719
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",1404.46
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",1403.91
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",1492.66084764101
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",1511.19953267439
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",1499.1674052122
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",1532.15158500712
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",1520
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2030",1598
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",511.954
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",550.902
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",446.248934102666
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",504.038720770186
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",273.55
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",274.45
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",561.914415999999
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",565.663975999999
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",468.540959764836
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",494.918715702622
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",531
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2035",630
+"IRA","EPS-EI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",336.702
+"Reference","EPS-EI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",1198.69
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",445.580298326782
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",1293.1152861035
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",720.812522721885
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",1101.89628561313
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",772.508012550513
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",1079.88005163251
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",824.71
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",1430.05
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",588.535589412373
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",906.244227830616
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",395.154240897733
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",1342.37740003184
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",500.03751964597
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",1097.15035473422
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",368
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2035",775
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",753.265733
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",835.90834
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",1063.6926035448
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",1222.12174799319
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",1111.22
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",1134.03
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",702.814265742925
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",827.112770846044
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",863.950637741897
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",912.419258683739
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",610
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2035",847
+"IRA","EPS-EI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",288.726267
+"Reference","EPS-EI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",355.00466
+"IRA","GCAM-CGS","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",26.65
+"Reference","GCAM-CGS","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",32.7641897262034
+"IRA","Haiku-RFF","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",NA
+"Reference","Haiku-RFF","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",NA
+"IRA","IPM-NRDC","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",NA
+"Reference","IPM-NRDC","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",29.28
+"Reference","MARKAL-NETL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",29.53
+"IRA","NEMS-RHG","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",373.269324980151
+"Reference","NEMS-RHG","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",385.064880722302
+"IRA","ReEDS-NREL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",NA
+"Reference","REGEN-EPRI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",NA
+"IRA","RIO-REPEAT","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",NA
+"Reference","RIO-REPEAT","Emissions|CO2|Industrial Processes","Mt CO2/yr","2035",NA
+"IRA","EPS-EI","Emissions|CO2|Other","Mt CO2/yr","2035",71.9144
+"Reference","EPS-EI","Emissions|CO2|Other","Mt CO2/yr","2035",72.4701
+"IRA","GCAM-CGS","Emissions|CO2|Other","Mt CO2/yr","2035",NA
+"Reference","GCAM-CGS","Emissions|CO2|Other","Mt CO2/yr","2035",NA
+"IRA","Haiku-RFF","Emissions|CO2|Other","Mt CO2/yr","2035",NA
+"Reference","Haiku-RFF","Emissions|CO2|Other","Mt CO2/yr","2035",NA
+"IRA","IPM-NRDC","Emissions|CO2|Other","Mt CO2/yr","2035",NA
+"Reference","IPM-NRDC","Emissions|CO2|Other","Mt CO2/yr","2035",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Other","Mt CO2/yr","2035",0
+"Reference","MARKAL-NETL","Emissions|CO2|Other","Mt CO2/yr","2035",0
+"IRA","NEMS-RHG","Emissions|CO2|Other","Mt CO2/yr","2035",NA
+"Reference","NEMS-RHG","Emissions|CO2|Other","Mt CO2/yr","2035",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Other","Mt CO2/yr","2035",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Other","Mt CO2/yr","2035",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Other","Mt CO2/yr","2035",NA
+"Reference","REGEN-EPRI","Emissions|CO2|Other","Mt CO2/yr","2035",NA
+"IRA","RIO-REPEAT","Emissions|CO2|Other","Mt CO2/yr","2035",NA
+"Reference","RIO-REPEAT","Emissions|CO2|Other","Mt CO2/yr","2035",NA
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",1195.014895
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",1234.004451
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",1282.9675605035
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",1306.29323674977
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",1304.67
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",1322.3
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",1346.04203961727
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",1385.12927513821
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",1325.66303477685
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",1378.55316880469
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",1141
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2035",1348
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",512.601
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",547.564
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",NA
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",271.21
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",276.65
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",NA
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",450.703496990792
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",475.501140554583
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",492
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2040",626
+"IRA","EPS-EI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",242.487
+"Reference","EPS-EI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",1212.21
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",NA
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",698.08684987045
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",1122.93204290636
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",581.149594028222
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",772.011396021653
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",704.1
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",1440.31
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",NA
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",460.028509962669
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",1321.96701467538
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",581.589897148429
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",1231.51108818555
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",548
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2040",742
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",773.541269
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",851.49551
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",NA
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",1130.2
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",1188.41
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",NA
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",810.552480080971
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",890.088843222627
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",653
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2040",875
+"IRA","EPS-EI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",307.682031
+"Reference","EPS-EI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",373.61139
+"IRA","GCAM-CGS","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",NA
+"Reference","GCAM-CGS","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",NA
+"IRA","Haiku-RFF","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",NA
+"Reference","Haiku-RFF","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",NA
+"IRA","IPM-NRDC","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",NA
+"Reference","IPM-NRDC","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",29.24
+"Reference","MARKAL-NETL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",29.78
+"IRA","NEMS-RHG","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",NA
+"Reference","NEMS-RHG","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",NA
+"Reference","REGEN-EPRI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",NA
+"IRA","RIO-REPEAT","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",NA
+"Reference","RIO-REPEAT","Emissions|CO2|Industrial Processes","Mt CO2/yr","2040",NA
+"IRA","EPS-EI","Emissions|CO2|Other","Mt CO2/yr","2040",73.4377
+"Reference","EPS-EI","Emissions|CO2|Other","Mt CO2/yr","2040",73.8535
+"IRA","GCAM-CGS","Emissions|CO2|Other","Mt CO2/yr","2040",NA
+"Reference","GCAM-CGS","Emissions|CO2|Other","Mt CO2/yr","2040",NA
+"IRA","Haiku-RFF","Emissions|CO2|Other","Mt CO2/yr","2040",NA
+"Reference","Haiku-RFF","Emissions|CO2|Other","Mt CO2/yr","2040",NA
+"IRA","IPM-NRDC","Emissions|CO2|Other","Mt CO2/yr","2040",NA
+"Reference","IPM-NRDC","Emissions|CO2|Other","Mt CO2/yr","2040",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Other","Mt CO2/yr","2040",0
+"Reference","MARKAL-NETL","Emissions|CO2|Other","Mt CO2/yr","2040",0
+"IRA","NEMS-RHG","Emissions|CO2|Other","Mt CO2/yr","2040",NA
+"Reference","NEMS-RHG","Emissions|CO2|Other","Mt CO2/yr","2040",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Other","Mt CO2/yr","2040",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Other","Mt CO2/yr","2040",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Other","Mt CO2/yr","2040",NA
+"Reference","REGEN-EPRI","Emissions|CO2|Other","Mt CO2/yr","2040",NA
+"IRA","RIO-REPEAT","Emissions|CO2|Other","Mt CO2/yr","2040",NA
+"Reference","RIO-REPEAT","Emissions|CO2|Other","Mt CO2/yr","2040",NA
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",1091.650744
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",1122.167789
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",NA
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",1238.49
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",1254.73
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",NA
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",1155.41666866631
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",1223.08444983404
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",853
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2040",1141
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",513.65
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",544.832
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",NA
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",275.28
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",283.31
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",NA
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",425.513637603932
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",454.505111356332
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",485.5
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2045",632.5
+"IRA","EPS-EI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",290.312
+"Reference","EPS-EI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",1222.54
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",NA
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",697.992680635347
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",1159.14989628169
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",44.9672999357221
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",663.411076291029
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",561.29
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",1473.6
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",NA
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",399.141531247754
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",1135.10388619948
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",661
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2045",737.5
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",794.322404
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",866.28559
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",NA
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",1141.13
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",1227.2
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",NA
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",736.99812683476
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",855.104053650892
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",684.5
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2045",902.5
+"IRA","EPS-EI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",329.333596
+"Reference","EPS-EI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",391.79891
+"IRA","GCAM-CGS","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",NA
+"Reference","GCAM-CGS","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",NA
+"IRA","Haiku-RFF","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",NA
+"Reference","Haiku-RFF","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",NA
+"IRA","IPM-NRDC","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",NA
+"Reference","IPM-NRDC","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",30.01
+"Reference","MARKAL-NETL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",31.41
+"IRA","NEMS-RHG","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",NA
+"Reference","NEMS-RHG","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",NA
+"Reference","REGEN-EPRI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",NA
+"IRA","RIO-REPEAT","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",NA
+"Reference","RIO-REPEAT","Emissions|CO2|Industrial Processes","Mt CO2/yr","2045",NA
+"IRA","EPS-EI","Emissions|CO2|Other","Mt CO2/yr","2045",74.2917
+"Reference","EPS-EI","Emissions|CO2|Other","Mt CO2/yr","2045",74.9434
+"IRA","GCAM-CGS","Emissions|CO2|Other","Mt CO2/yr","2045",NA
+"Reference","GCAM-CGS","Emissions|CO2|Other","Mt CO2/yr","2045",NA
+"IRA","Haiku-RFF","Emissions|CO2|Other","Mt CO2/yr","2045",NA
+"Reference","Haiku-RFF","Emissions|CO2|Other","Mt CO2/yr","2045",NA
+"IRA","IPM-NRDC","Emissions|CO2|Other","Mt CO2/yr","2045",NA
+"Reference","IPM-NRDC","Emissions|CO2|Other","Mt CO2/yr","2045",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Other","Mt CO2/yr","2045",0
+"Reference","MARKAL-NETL","Emissions|CO2|Other","Mt CO2/yr","2045",0
+"IRA","NEMS-RHG","Emissions|CO2|Other","Mt CO2/yr","2045",NA
+"Reference","NEMS-RHG","Emissions|CO2|Other","Mt CO2/yr","2045",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Other","Mt CO2/yr","2045",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Other","Mt CO2/yr","2045",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Other","Mt CO2/yr","2045",NA
+"Reference","REGEN-EPRI","Emissions|CO2|Other","Mt CO2/yr","2045",NA
+"IRA","RIO-REPEAT","Emissions|CO2|Other","Mt CO2/yr","2045",NA
+"Reference","RIO-REPEAT","Emissions|CO2|Other","Mt CO2/yr","2045",NA
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",1062.508582
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",1063.247165
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",NA
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",1222.73
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",1235.58
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",NA
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",1020.35094247386
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",1092.98366133921
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",704
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2045",976
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",513.735
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",542.001
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",NA
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",276.94
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",281.81
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",NA
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",400.860830861328
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",430.568173121259
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",479
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","2050",639
+"IRA","EPS-EI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",395.069
+"Reference","EPS-EI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",1247.84
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",NA
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",62.070147930754
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",598.254323447492
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",502.46
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",1528.36
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",NA
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",415.695339350015
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",1000.42380319466
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",774
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr","2050",733
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",821.72209
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",887.55632
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",NA
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",1167.05
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",1280.84
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",NA
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",685.154808224993
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",810.217005598698
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",716
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Industry","Mt CO2/yr","2050",930
+"IRA","EPS-EI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",348.92211
+"Reference","EPS-EI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",407.80138
+"IRA","GCAM-CGS","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",NA
+"Reference","GCAM-CGS","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",NA
+"IRA","Haiku-RFF","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",NA
+"Reference","Haiku-RFF","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",NA
+"IRA","IPM-NRDC","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",NA
+"Reference","IPM-NRDC","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",29.9
+"Reference","MARKAL-NETL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",32.06
+"IRA","NEMS-RHG","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",NA
+"Reference","NEMS-RHG","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",NA
+"Reference","REGEN-EPRI","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",NA
+"IRA","RIO-REPEAT","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",NA
+"Reference","RIO-REPEAT","Emissions|CO2|Industrial Processes","Mt CO2/yr","2050",NA
+"IRA","EPS-EI","Emissions|CO2|Other","Mt CO2/yr","2050",75.736
+"Reference","EPS-EI","Emissions|CO2|Other","Mt CO2/yr","2050",76.2819
+"IRA","GCAM-CGS","Emissions|CO2|Other","Mt CO2/yr","2050",NA
+"Reference","GCAM-CGS","Emissions|CO2|Other","Mt CO2/yr","2050",NA
+"IRA","Haiku-RFF","Emissions|CO2|Other","Mt CO2/yr","2050",NA
+"Reference","Haiku-RFF","Emissions|CO2|Other","Mt CO2/yr","2050",NA
+"IRA","IPM-NRDC","Emissions|CO2|Other","Mt CO2/yr","2050",NA
+"Reference","IPM-NRDC","Emissions|CO2|Other","Mt CO2/yr","2050",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Other","Mt CO2/yr","2050",0
+"Reference","MARKAL-NETL","Emissions|CO2|Other","Mt CO2/yr","2050",0
+"IRA","NEMS-RHG","Emissions|CO2|Other","Mt CO2/yr","2050",NA
+"Reference","NEMS-RHG","Emissions|CO2|Other","Mt CO2/yr","2050",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Other","Mt CO2/yr","2050",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Other","Mt CO2/yr","2050",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Other","Mt CO2/yr","2050",NA
+"Reference","REGEN-EPRI","Emissions|CO2|Other","Mt CO2/yr","2050",NA
+"IRA","RIO-REPEAT","Emissions|CO2|Other","Mt CO2/yr","2050",NA
+"Reference","RIO-REPEAT","Emissions|CO2|Other","Mt CO2/yr","2050",NA
+"IRA","EPS-EI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",1041.915197
+"Reference","EPS-EI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",1030.043452
+"IRA","GCAM-CGS","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",NA
+"Reference","GCAM-CGS","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",1084.3
+"Reference","MARKAL-NETL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",1097.25
+"IRA","NEMS-RHG","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",NA
+"Reference","NEMS-RHG","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",900.046390196416
+"Reference","REGEN-EPRI","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",969.800716631165
+"IRA","RIO-REPEAT","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",555
+"Reference","RIO-REPEAT","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr","2050",811
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",29.813845
+"Reference","EPS-EI","Carbon Sequestration|Other","Mt CO2/yr","2025",0
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",0
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",0
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",10.4340694333333
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",3.080253
+"Reference","GCAM-CGS","Carbon Sequestration|Other","Mt CO2/yr","2025",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",0
+"Reference","Haiku-RFF","Carbon Sequestration|Other","Mt CO2/yr","2025",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",0
+"Reference","IPM-NRDC","Carbon Sequestration|Other","Mt CO2/yr","2025",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",0
+"Reference","MARKAL-NETL","Carbon Sequestration|Other","Mt CO2/yr","2025",0
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",NA
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",0
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",0
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",0
+"Reference","NEMS-RHG","Carbon Sequestration|Other","Mt CO2/yr","2025",1.35
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",0
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",0
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",0
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",0
+"Reference","ReEDS-NREL","Carbon Sequestration|Other","Mt CO2/yr","2025",0
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",0
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",0.0583
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",0
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",0
+"Reference","REGEN-EPRI","Carbon Sequestration|Other","Mt CO2/yr","2025",0
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",0
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",7.8
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",6.5
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",0.15
+"Reference","RIO-REPEAT","Carbon Sequestration|Other","Mt CO2/yr","2025",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",29.594995
+"IRA","EPS-EI","Carbon Sequestration|Other","Mt CO2/yr","2025",0
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",0
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",0
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",28.5063960096667
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",18.206821633
+"IRA","GCAM-CGS","Carbon Sequestration|Other","Mt CO2/yr","2025",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",0
+"IRA","Haiku-RFF","Carbon Sequestration|Other","Mt CO2/yr","2025",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",0
+"IRA","IPM-NRDC","Carbon Sequestration|Other","Mt CO2/yr","2025",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",0
+"IRA","MARKAL-NETL","Carbon Sequestration|Other","Mt CO2/yr","2025",0
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",NA
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",0
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",0
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",1.561300149
+"IRA","NEMS-RHG","Carbon Sequestration|Other","Mt CO2/yr","2025",1.35
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",NA
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",NA
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",NA
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",NA
+"IRA","ReEDS-NREL","Carbon Sequestration|Other","Mt CO2/yr","2025",NA
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",0.09
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",0.06
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",0
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",0
+"IRA","REGEN-EPRI","Carbon Sequestration|Other","Mt CO2/yr","2025",0
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2025",0
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2025",71.9
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2025",6.7
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2025",2.9
+"IRA","RIO-REPEAT","Carbon Sequestration|Other","Mt CO2/yr","2025",5.5
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",74.15254
+"Reference","EPS-EI","Carbon Sequestration|Other","Mt CO2/yr","2030",0
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",0
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",0
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",28.5558049333333
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",3.50475766666667
+"Reference","GCAM-CGS","Carbon Sequestration|Other","Mt CO2/yr","2030",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",0
+"Reference","Haiku-RFF","Carbon Sequestration|Other","Mt CO2/yr","2030",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",0
+"Reference","IPM-NRDC","Carbon Sequestration|Other","Mt CO2/yr","2030",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",10.28
+"Reference","MARKAL-NETL","Carbon Sequestration|Other","Mt CO2/yr","2030",0
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",NA
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",0
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",0
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",58.7163836665102
+"Reference","NEMS-RHG","Carbon Sequestration|Other","Mt CO2/yr","2030",2.25
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",0
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",0
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",0
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",0
+"Reference","ReEDS-NREL","Carbon Sequestration|Other","Mt CO2/yr","2030",0
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",0
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",0.0588
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",0
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",0
+"Reference","REGEN-EPRI","Carbon Sequestration|Other","Mt CO2/yr","2030",0
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",0
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",10.8
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",9.9
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",0.7
+"Reference","RIO-REPEAT","Carbon Sequestration|Other","Mt CO2/yr","2030",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",92.06339
+"IRA","EPS-EI","Carbon Sequestration|Other","Mt CO2/yr","2030",0
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",0
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",0
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",57.0224545366667
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",36.2043839593333
+"IRA","GCAM-CGS","Carbon Sequestration|Other","Mt CO2/yr","2030",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",0
+"IRA","Haiku-RFF","Carbon Sequestration|Other","Mt CO2/yr","2030",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",0
+"IRA","IPM-NRDC","Carbon Sequestration|Other","Mt CO2/yr","2030",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",10.43317
+"IRA","MARKAL-NETL","Carbon Sequestration|Other","Mt CO2/yr","2030",0
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",NA
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",0
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",0
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",79.6885514835102
+"IRA","NEMS-RHG","Carbon Sequestration|Other","Mt CO2/yr","2030",4.95
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",0
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",0
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",0
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",0
+"IRA","ReEDS-NREL","Carbon Sequestration|Other","Mt CO2/yr","2030",0
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",6.41
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",0.06
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",0
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",0
+"IRA","REGEN-EPRI","Carbon Sequestration|Other","Mt CO2/yr","2030",0
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2030",0
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2030",83.2
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2030",11
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2030",22.8
+"IRA","RIO-REPEAT","Carbon Sequestration|Other","Mt CO2/yr","2030",12.3
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",133.99532
+"Reference","EPS-EI","Carbon Sequestration|Other","Mt CO2/yr","2035",0
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",0
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",0
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",28.0265666999999
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",0
+"Reference","GCAM-CGS","Carbon Sequestration|Other","Mt CO2/yr","2035",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",0
+"Reference","Haiku-RFF","Carbon Sequestration|Other","Mt CO2/yr","2035",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",0
+"Reference","IPM-NRDC","Carbon Sequestration|Other","Mt CO2/yr","2035",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",26.95
+"Reference","MARKAL-NETL","Carbon Sequestration|Other","Mt CO2/yr","2035",0
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",NA
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",0
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",0
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",58.8091734190729
+"Reference","NEMS-RHG","Carbon Sequestration|Other","Mt CO2/yr","2035",2.25
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",0
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",0
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",0
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",0
+"Reference","ReEDS-NREL","Carbon Sequestration|Other","Mt CO2/yr","2035",0
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",4.4328
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",0.0588
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",0
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",0
+"Reference","REGEN-EPRI","Carbon Sequestration|Other","Mt CO2/yr","2035",0
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",0
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",14.2
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",12.7
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",0.7
+"Reference","RIO-REPEAT","Carbon Sequestration|Other","Mt CO2/yr","2035",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",231.95186
+"IRA","EPS-EI","Carbon Sequestration|Other","Mt CO2/yr","2035",0
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",0
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",0
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",57.3346183666667
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",36.1780939556667
+"IRA","GCAM-CGS","Carbon Sequestration|Other","Mt CO2/yr","2035",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",0
+"IRA","Haiku-RFF","Carbon Sequestration|Other","Mt CO2/yr","2035",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",0
+"IRA","IPM-NRDC","Carbon Sequestration|Other","Mt CO2/yr","2035",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",26.7217
+"IRA","MARKAL-NETL","Carbon Sequestration|Other","Mt CO2/yr","2035",0
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",NA
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",0
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",0
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",192.739028763073
+"IRA","NEMS-RHG","Carbon Sequestration|Other","Mt CO2/yr","2035",36.45
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",0
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",0
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",0
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",0
+"IRA","ReEDS-NREL","Carbon Sequestration|Other","Mt CO2/yr","2035",0
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",6.41
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",0.06
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",0
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",0
+"IRA","REGEN-EPRI","Carbon Sequestration|Other","Mt CO2/yr","2035",0
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2035",0
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2035",102.6
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2035",15.9
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2035",122.8
+"IRA","RIO-REPEAT","Carbon Sequestration|Other","Mt CO2/yr","2035",21.8
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",133.99532
+"Reference","EPS-EI","Carbon Sequestration|Other","Mt CO2/yr","2040",0
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",NA
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",NA
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",NA
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",NA
+"Reference","GCAM-CGS","Carbon Sequestration|Other","Mt CO2/yr","2040",NA
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",0
+"Reference","Haiku-RFF","Carbon Sequestration|Other","Mt CO2/yr","2040",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",0
+"Reference","IPM-NRDC","Carbon Sequestration|Other","Mt CO2/yr","2040",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",27.32
+"Reference","MARKAL-NETL","Carbon Sequestration|Other","Mt CO2/yr","2040",0
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",NA
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",NA
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",NA
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",NA
+"Reference","NEMS-RHG","Carbon Sequestration|Other","Mt CO2/yr","2040",NA
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",0
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",0
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",0
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",0
+"Reference","ReEDS-NREL","Carbon Sequestration|Other","Mt CO2/yr","2040",0
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",7.0658
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",0.1176
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",0
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",0
+"Reference","REGEN-EPRI","Carbon Sequestration|Other","Mt CO2/yr","2040",0
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",0
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",17.2
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",3.2
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",0.7
+"Reference","RIO-REPEAT","Carbon Sequestration|Other","Mt CO2/yr","2040",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",231.69372
+"IRA","EPS-EI","Carbon Sequestration|Other","Mt CO2/yr","2040",0
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",NA
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",NA
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",NA
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",NA
+"IRA","GCAM-CGS","Carbon Sequestration|Other","Mt CO2/yr","2040",NA
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",0
+"IRA","Haiku-RFF","Carbon Sequestration|Other","Mt CO2/yr","2040",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",0
+"IRA","IPM-NRDC","Carbon Sequestration|Other","Mt CO2/yr","2040",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",26.83226
+"IRA","MARKAL-NETL","Carbon Sequestration|Other","Mt CO2/yr","2040",0
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",NA
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",NA
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",NA
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",NA
+"IRA","NEMS-RHG","Carbon Sequestration|Other","Mt CO2/yr","2040",NA
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",0
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",0
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",0
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",0
+"IRA","ReEDS-NREL","Carbon Sequestration|Other","Mt CO2/yr","2040",0
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",6.73
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",0.06
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",0
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",0
+"IRA","REGEN-EPRI","Carbon Sequestration|Other","Mt CO2/yr","2040",0
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2040",0
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2040",104.7
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2040",10.5
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2040",122.2
+"IRA","RIO-REPEAT","Carbon Sequestration|Other","Mt CO2/yr","2040",21.7
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",133.99529
+"Reference","EPS-EI","Carbon Sequestration|Other","Mt CO2/yr","2045",0
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",NA
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",NA
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",NA
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",NA
+"Reference","GCAM-CGS","Carbon Sequestration|Other","Mt CO2/yr","2045",NA
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",0
+"Reference","Haiku-RFF","Carbon Sequestration|Other","Mt CO2/yr","2045",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",0
+"Reference","IPM-NRDC","Carbon Sequestration|Other","Mt CO2/yr","2045",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",29.04
+"Reference","MARKAL-NETL","Carbon Sequestration|Other","Mt CO2/yr","2045",0
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",NA
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",NA
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",NA
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",NA
+"Reference","NEMS-RHG","Carbon Sequestration|Other","Mt CO2/yr","2045",NA
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",0
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",0
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",0
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",0
+"Reference","ReEDS-NREL","Carbon Sequestration|Other","Mt CO2/yr","2045",0
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",7.918
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",0.5818
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",0
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",0
+"Reference","REGEN-EPRI","Carbon Sequestration|Other","Mt CO2/yr","2045",0
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",0
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",19.45
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",1.7
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",0.75
+"Reference","RIO-REPEAT","Carbon Sequestration|Other","Mt CO2/yr","2045",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",233.37292
+"IRA","EPS-EI","Carbon Sequestration|Other","Mt CO2/yr","2045",0
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",NA
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",NA
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",NA
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",NA
+"IRA","GCAM-CGS","Carbon Sequestration|Other","Mt CO2/yr","2045",NA
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",0
+"IRA","Haiku-RFF","Carbon Sequestration|Other","Mt CO2/yr","2045",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",0
+"IRA","IPM-NRDC","Carbon Sequestration|Other","Mt CO2/yr","2045",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",27.7159
+"IRA","MARKAL-NETL","Carbon Sequestration|Other","Mt CO2/yr","2045",0
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",NA
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",NA
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",NA
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",NA
+"IRA","NEMS-RHG","Carbon Sequestration|Other","Mt CO2/yr","2045",NA
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",NA
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",NA
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",NA
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",NA
+"IRA","ReEDS-NREL","Carbon Sequestration|Other","Mt CO2/yr","2045",NA
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",7.56
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",0.09
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",0
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",0
+"IRA","REGEN-EPRI","Carbon Sequestration|Other","Mt CO2/yr","2045",0
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2045",0
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2045",104.65
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2045",5.55
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2045",122.1
+"IRA","RIO-REPEAT","Carbon Sequestration|Other","Mt CO2/yr","2045",25.7
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",0
+"Reference","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",133.99526
+"Reference","EPS-EI","Carbon Sequestration|Other","Mt CO2/yr","2050",0
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",NA
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",NA
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",NA
+"Reference","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",NA
+"Reference","GCAM-CGS","Carbon Sequestration|Other","Mt CO2/yr","2050",NA
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",0
+"Reference","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",0
+"Reference","Haiku-RFF","Carbon Sequestration|Other","Mt CO2/yr","2050",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",0
+"Reference","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",0
+"Reference","IPM-NRDC","Carbon Sequestration|Other","Mt CO2/yr","2050",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",0
+"Reference","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",29.75
+"Reference","MARKAL-NETL","Carbon Sequestration|Other","Mt CO2/yr","2050",0
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",NA
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",NA
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",NA
+"Reference","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",NA
+"Reference","NEMS-RHG","Carbon Sequestration|Other","Mt CO2/yr","2050",NA
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",NA
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",NA
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",NA
+"Reference","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",NA
+"Reference","ReEDS-NREL","Carbon Sequestration|Other","Mt CO2/yr","2050",NA
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",8.4642
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",1.3368
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",0
+"Reference","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",0
+"Reference","REGEN-EPRI","Carbon Sequestration|Other","Mt CO2/yr","2050",0
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",0
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",21.7
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",0.2
+"Reference","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",0.8
+"Reference","RIO-REPEAT","Carbon Sequestration|Other","Mt CO2/yr","2050",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",0
+"IRA","EPS-EI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",234.85301
+"IRA","EPS-EI","Carbon Sequestration|Other","Mt CO2/yr","2050",0
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",NA
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",NA
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",NA
+"IRA","GCAM-CGS","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",NA
+"IRA","GCAM-CGS","Carbon Sequestration|Other","Mt CO2/yr","2050",NA
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",0
+"IRA","Haiku-RFF","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",0
+"IRA","Haiku-RFF","Carbon Sequestration|Other","Mt CO2/yr","2050",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",0
+"IRA","IPM-NRDC","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",0
+"IRA","IPM-NRDC","Carbon Sequestration|Other","Mt CO2/yr","2050",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",0
+"IRA","MARKAL-NETL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",27.6978
+"IRA","MARKAL-NETL","Carbon Sequestration|Other","Mt CO2/yr","2050",0
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",NA
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",NA
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",NA
+"IRA","NEMS-RHG","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",NA
+"IRA","NEMS-RHG","Carbon Sequestration|Other","Mt CO2/yr","2050",NA
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",NA
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",NA
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",NA
+"IRA","ReEDS-NREL","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",NA
+"IRA","ReEDS-NREL","Carbon Sequestration|Other","Mt CO2/yr","2050",NA
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",8.27
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",0.03
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",0
+"IRA","REGEN-EPRI","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",0
+"IRA","REGEN-EPRI","Carbon Sequestration|Other","Mt CO2/yr","2050",0
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Solids","Mt CO2/yr","2050",0
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen","Mt CO2/yr","2050",104.6
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Supply|Biomass Liquids","Mt CO2/yr","2050",0.6
+"IRA","RIO-REPEAT","Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry","Mt CO2/yr","2050",122
+"IRA","RIO-REPEAT","Carbon Sequestration|Other","Mt CO2/yr","2050",29.7
+"Reference","EPS-EI","Final Energy|Industry","TWh","2025",1060.27085
+"Reference","EPS-EI","Final Energy|Buildings","TWh","2025",2950.3059
+"Reference","GCAM-CGS","Final Energy|Industry","TWh","2025",871.930775951515
+"Reference","GCAM-CGS","Final Energy|Buildings","TWh","2025",3065.58829775557
+"Reference","Haiku-RFF","Final Energy|Industry","TWh","2025",977.722067321777
+"Reference","Haiku-RFF","Final Energy|Buildings","TWh","2025",2870.41801102448
+"Reference","IPM-NRDC","Final Energy|Industry","TWh","2025",1040.120239
+"Reference","IPM-NRDC","Final Energy|Buildings","TWh","2025",2869.248168
+"Reference","MARKAL-NETL","Final Energy|Industry","TWh","2025",833.77288924
+"Reference","MARKAL-NETL","Final Energy|Buildings","TWh","2025",3403.76105634
+"Reference","NEMS-RHG","Final Energy|Industry","TWh","2025",991.586243
+"Reference","NEMS-RHG","Final Energy|Buildings","TWh","2025",2840.601929
+"Reference","ReEDS-NREL","Final Energy|Industry","TWh","2025",NA
+"Reference","ReEDS-NREL","Final Energy|Buildings","TWh","2025",NA
+"Reference","REGEN-EPRI","Final Energy|Industry","TWh","2025",1368.3979101827
+"Reference","REGEN-EPRI","Final Energy|Buildings","TWh","2025",2403.89294011593
+"Reference","RIO-REPEAT","Final Energy|Industry","TWh","2025",1009
+"Reference","RIO-REPEAT","Final Energy|Buildings","TWh","2025",2911.5
+"IRA","EPS-EI","Final Energy|Industry","TWh","2025",1057.24001
+"IRA","EPS-EI","Final Energy|Buildings","TWh","2025",2982.4117
+"IRA","GCAM-CGS","Final Energy|Industry","TWh","2025",933.254243390884
+"IRA","GCAM-CGS","Final Energy|Buildings","TWh","2025",3076.11639083937
+"IRA","Haiku-RFF","Final Energy|Industry","TWh","2025",977.722067321777
+"IRA","Haiku-RFF","Final Energy|Buildings","TWh","2025",2870.41801102448
+"IRA","IPM-NRDC","Final Energy|Industry","TWh","2025",1040.120239
+"IRA","IPM-NRDC","Final Energy|Buildings","TWh","2025",2869.248168
+"IRA","MARKAL-NETL","Final Energy|Industry","TWh","2025",835.57844624
+"IRA","MARKAL-NETL","Final Energy|Buildings","TWh","2025",3360.28602156
+"IRA","NEMS-RHG","Final Energy|Industry","TWh","2025",990.434753
+"IRA","NEMS-RHG","Final Energy|Buildings","TWh","2025",2816.295898
+"IRA","ReEDS-NREL","Final Energy|Industry","TWh","2025",NA
+"IRA","ReEDS-NREL","Final Energy|Buildings","TWh","2025",NA
+"IRA","REGEN-EPRI","Final Energy|Industry","TWh","2025",1389.16899133125
+"IRA","REGEN-EPRI","Final Energy|Buildings","TWh","2025",2426.0679009723
+"IRA","RIO-REPEAT","Final Energy|Industry","TWh","2025",1014.5
+"IRA","RIO-REPEAT","Final Energy|Buildings","TWh","2025",2914.5
+"Reference","EPS-EI","Final Energy|Industry","TWh","2030",1069.63909
+"Reference","EPS-EI","Final Energy|Buildings","TWh","2030",3021.4427
+"Reference","GCAM-CGS","Final Energy|Industry","TWh","2030",971.435577575226
+"Reference","GCAM-CGS","Final Energy|Buildings","TWh","2030",3176.08667382262
+"Reference","Haiku-RFF","Final Energy|Industry","TWh","2030",1023.82505487823
+"Reference","Haiku-RFF","Final Energy|Buildings","TWh","2030",2923.41487414551
+"Reference","IPM-NRDC","Final Energy|Industry","TWh","2030",1069.250244
+"Reference","IPM-NRDC","Final Energy|Buildings","TWh","2030",2911.92749
+"Reference","MARKAL-NETL","Final Energy|Industry","TWh","2030",858.35624224
+"Reference","MARKAL-NETL","Final Energy|Buildings","TWh","2030",3559.3361808
+"Reference","NEMS-RHG","Final Energy|Industry","TWh","2030",992.346985
+"Reference","NEMS-RHG","Final Energy|Buildings","TWh","2030",2838.684082
+"Reference","ReEDS-NREL","Final Energy|Industry","TWh","2030",NA
+"Reference","ReEDS-NREL","Final Energy|Buildings","TWh","2030",NA
+"Reference","REGEN-EPRI","Final Energy|Industry","TWh","2030",1399.28469898497
+"Reference","REGEN-EPRI","Final Energy|Buildings","TWh","2030",2337.896475645
+"Reference","RIO-REPEAT","Final Energy|Industry","TWh","2030",1039
+"Reference","RIO-REPEAT","Final Energy|Buildings","TWh","2030",2986
+"IRA","EPS-EI","Final Energy|Industry","TWh","2030",1065.44182
+"IRA","EPS-EI","Final Energy|Buildings","TWh","2030",3075.9634
+"IRA","GCAM-CGS","Final Energy|Industry","TWh","2030",1158.90269950854
+"IRA","GCAM-CGS","Final Energy|Buildings","TWh","2030",3208.19791002166
+"IRA","Haiku-RFF","Final Energy|Industry","TWh","2030",1023.82505487823
+"IRA","Haiku-RFF","Final Energy|Buildings","TWh","2030",2923.41487414551
+"IRA","IPM-NRDC","Final Energy|Industry","TWh","2030",1069.250244
+"IRA","IPM-NRDC","Final Energy|Buildings","TWh","2030",2911.92749
+"IRA","MARKAL-NETL","Final Energy|Industry","TWh","2030",861.6812449
+"IRA","MARKAL-NETL","Final Energy|Buildings","TWh","2030",3529.6972682
+"IRA","NEMS-RHG","Final Energy|Industry","TWh","2030",993.410522
+"IRA","NEMS-RHG","Final Energy|Buildings","TWh","2030",2799.821167
+"IRA","ReEDS-NREL","Final Energy|Industry","TWh","2030",NA
+"IRA","ReEDS-NREL","Final Energy|Buildings","TWh","2030",NA
+"IRA","REGEN-EPRI","Final Energy|Industry","TWh","2030",1435.16488009129
+"IRA","REGEN-EPRI","Final Energy|Buildings","TWh","2030",2379.63128973072
+"IRA","RIO-REPEAT","Final Energy|Industry","TWh","2030",1050
+"IRA","RIO-REPEAT","Final Energy|Buildings","TWh","2030",3025
+"Reference","EPS-EI","Final Energy|Industry","TWh","2035",1087.55248
+"Reference","EPS-EI","Final Energy|Buildings","TWh","2035",3122.64
+"Reference","GCAM-CGS","Final Energy|Industry","TWh","2035",1109.04251215245
+"Reference","GCAM-CGS","Final Energy|Buildings","TWh","2035",3296.1133303818
+"Reference","Haiku-RFF","Final Energy|Industry","TWh","2035",1056.58920437241
+"Reference","Haiku-RFF","Final Energy|Buildings","TWh","2035",3008.40813898468
+"Reference","IPM-NRDC","Final Energy|Industry","TWh","2035",1097.661743
+"Reference","IPM-NRDC","Final Energy|Buildings","TWh","2035",2977.466186
+"Reference","MARKAL-NETL","Final Energy|Industry","TWh","2035",891.90071352
+"Reference","MARKAL-NETL","Final Energy|Buildings","TWh","2035",3679.96961064
+"Reference","NEMS-RHG","Final Energy|Industry","TWh","2035",995.172607
+"Reference","NEMS-RHG","Final Energy|Buildings","TWh","2035",2882.704101
+"Reference","ReEDS-NREL","Final Energy|Industry","TWh","2035",NA
+"Reference","ReEDS-NREL","Final Energy|Buildings","TWh","2035",NA
+"Reference","REGEN-EPRI","Final Energy|Industry","TWh","2035",1475.79224846789
+"Reference","REGEN-EPRI","Final Energy|Buildings","TWh","2035",2288.33008439295
+"Reference","RIO-REPEAT","Final Energy|Industry","TWh","2035",1066
+"Reference","RIO-REPEAT","Final Energy|Buildings","TWh","2035",3093
+"IRA","EPS-EI","Final Energy|Industry","TWh","2035",1092.57398
+"IRA","EPS-EI","Final Energy|Buildings","TWh","2035",3165.4467
+"IRA","GCAM-CGS","Final Energy|Industry","TWh","2035",1192.37746774899
+"IRA","GCAM-CGS","Final Energy|Buildings","TWh","2035",3294.53533579812
+"IRA","Haiku-RFF","Final Energy|Industry","TWh","2035",1056.58920437241
+"IRA","Haiku-RFF","Final Energy|Buildings","TWh","2035",3008.40813898468
+"IRA","IPM-NRDC","Final Energy|Industry","TWh","2035",1097.661743
+"IRA","IPM-NRDC","Final Energy|Buildings","TWh","2035",2977.466186
+"IRA","MARKAL-NETL","Final Energy|Industry","TWh","2035",910.88683982
+"IRA","MARKAL-NETL","Final Energy|Buildings","TWh","2035",3674.35293948
+"IRA","NEMS-RHG","Final Energy|Industry","TWh","2035",993.868774
+"IRA","NEMS-RHG","Final Energy|Buildings","TWh","2035",2839.391113
+"IRA","ReEDS-NREL","Final Energy|Industry","TWh","2035",NA
+"IRA","ReEDS-NREL","Final Energy|Buildings","TWh","2035",NA
+"IRA","REGEN-EPRI","Final Energy|Industry","TWh","2035",1561.17345219178
+"IRA","REGEN-EPRI","Final Energy|Buildings","TWh","2035",2331.97048722953
+"IRA","RIO-REPEAT","Final Energy|Industry","TWh","2035",1072
+"IRA","RIO-REPEAT","Final Energy|Buildings","TWh","2035",3184
+"Reference","EPS-EI","Final Energy|Industry","TWh","2040",1103.2887
+"Reference","EPS-EI","Final Energy|Buildings","TWh","2040",3278.0868
+"Reference","GCAM-CGS","Final Energy|Industry","TWh","2040",NA
+"Reference","GCAM-CGS","Final Energy|Buildings","TWh","2040",NA
+"Reference","Haiku-RFF","Final Energy|Industry","TWh","2040",1085.94393711472
+"Reference","Haiku-RFF","Final Energy|Buildings","TWh","2040",3126.4013918457
+"Reference","IPM-NRDC","Final Energy|Industry","TWh","2040",1134.64209
+"Reference","IPM-NRDC","Final Energy|Buildings","TWh","2040",3086.309082
+"Reference","MARKAL-NETL","Final Energy|Industry","TWh","2040",941.5979755
+"Reference","MARKAL-NETL","Final Energy|Buildings","TWh","2040",3681.89461218
+"Reference","NEMS-RHG","Final Energy|Industry","TWh","2040",NA
+"Reference","NEMS-RHG","Final Energy|Buildings","TWh","2040",NA
+"Reference","ReEDS-NREL","Final Energy|Industry","TWh","2040",NA
+"Reference","ReEDS-NREL","Final Energy|Buildings","TWh","2040",NA
+"Reference","REGEN-EPRI","Final Energy|Industry","TWh","2040",1556.67661223053
+"Reference","REGEN-EPRI","Final Energy|Buildings","TWh","2040",2241.96176521396
+"Reference","RIO-REPEAT","Final Energy|Industry","TWh","2040",1115
+"Reference","RIO-REPEAT","Final Energy|Buildings","TWh","2040",3256
+"IRA","EPS-EI","Final Energy|Industry","TWh","2040",1109.07108
+"IRA","EPS-EI","Final Energy|Buildings","TWh","2040",3307.161
+"IRA","GCAM-CGS","Final Energy|Industry","TWh","2040",NA
+"IRA","GCAM-CGS","Final Energy|Buildings","TWh","2040",NA
+"IRA","Haiku-RFF","Final Energy|Industry","TWh","2040",1085.94393711472
+"IRA","Haiku-RFF","Final Energy|Buildings","TWh","2040",3126.4013918457
+"IRA","IPM-NRDC","Final Energy|Industry","TWh","2040",1134.64209
+"IRA","IPM-NRDC","Final Energy|Buildings","TWh","2040",3086.309082
+"IRA","MARKAL-NETL","Final Energy|Industry","TWh","2040",983.61467578
+"IRA","MARKAL-NETL","Final Energy|Buildings","TWh","2040",3709.4751898
+"IRA","NEMS-RHG","Final Energy|Industry","TWh","2040",NA
+"IRA","NEMS-RHG","Final Energy|Buildings","TWh","2040",NA
+"IRA","ReEDS-NREL","Final Energy|Industry","TWh","2040",NA
+"IRA","ReEDS-NREL","Final Energy|Buildings","TWh","2040",NA
+"IRA","REGEN-EPRI","Final Energy|Industry","TWh","2040",1709.96147643692
+"IRA","REGEN-EPRI","Final Energy|Buildings","TWh","2040",2281.58693061728
+"IRA","RIO-REPEAT","Final Energy|Industry","TWh","2040",1122
+"IRA","RIO-REPEAT","Final Energy|Buildings","TWh","2040",3357
+"Reference","EPS-EI","Final Energy|Industry","TWh","2045",1122.7718
+"Reference","EPS-EI","Final Energy|Buildings","TWh","2045",3456.8854
+"Reference","GCAM-CGS","Final Energy|Industry","TWh","2045",NA
+"Reference","GCAM-CGS","Final Energy|Buildings","TWh","2045",NA
+"Reference","Haiku-RFF","Final Energy|Industry","TWh","2045",1129.97749017334
+"Reference","Haiku-RFF","Final Energy|Buildings","TWh","2045",3266.96520179749
+"Reference","IPM-NRDC","Final Energy|Industry","TWh","2045",1178.787476
+"Reference","IPM-NRDC","Final Energy|Buildings","TWh","2045",3209.587769
+"Reference","MARKAL-NETL","Final Energy|Industry","TWh","2045",1034.60082768
+"Reference","MARKAL-NETL","Final Energy|Buildings","TWh","2045",3655.28625756
+"Reference","NEMS-RHG","Final Energy|Industry","TWh","2045",NA
+"Reference","NEMS-RHG","Final Energy|Buildings","TWh","2045",NA
+"Reference","ReEDS-NREL","Final Energy|Industry","TWh","2045",NA
+"Reference","ReEDS-NREL","Final Energy|Buildings","TWh","2045",NA
+"Reference","REGEN-EPRI","Final Energy|Industry","TWh","2045",1630.6721483851
+"Reference","REGEN-EPRI","Final Energy|Buildings","TWh","2045",2194.40718328961
+"Reference","RIO-REPEAT","Final Energy|Industry","TWh","2045",1155
+"Reference","RIO-REPEAT","Final Energy|Buildings","TWh","2045",3412.5
+"IRA","EPS-EI","Final Energy|Industry","TWh","2045",1128.78197
+"IRA","EPS-EI","Final Energy|Buildings","TWh","2045",3483.64432
+"IRA","GCAM-CGS","Final Energy|Industry","TWh","2045",NA
+"IRA","GCAM-CGS","Final Energy|Buildings","TWh","2045",NA
+"IRA","Haiku-RFF","Final Energy|Industry","TWh","2045",1129.97749017334
+"IRA","Haiku-RFF","Final Energy|Buildings","TWh","2045",3266.96520179749
+"IRA","IPM-NRDC","Final Energy|Industry","TWh","2045",1178.787476
+"IRA","IPM-NRDC","Final Energy|Buildings","TWh","2045",3209.587769
+"IRA","MARKAL-NETL","Final Energy|Industry","TWh","2045",1112.26755648
+"IRA","MARKAL-NETL","Final Energy|Buildings","TWh","2045",3699.62518192
+"IRA","NEMS-RHG","Final Energy|Industry","TWh","2045",NA
+"IRA","NEMS-RHG","Final Energy|Buildings","TWh","2045",NA
+"IRA","ReEDS-NREL","Final Energy|Industry","TWh","2045",NA
+"IRA","ReEDS-NREL","Final Energy|Buildings","TWh","2045",NA
+"IRA","REGEN-EPRI","Final Energy|Industry","TWh","2045",1944.64538907641
+"IRA","REGEN-EPRI","Final Energy|Buildings","TWh","2045",2248.79426985729
+"IRA","RIO-REPEAT","Final Energy|Industry","TWh","2045",1160
+"IRA","RIO-REPEAT","Final Energy|Buildings","TWh","2045",3521.5
+"Reference","EPS-EI","Final Energy|Industry","TWh","2050",1146.4998
+"Reference","EPS-EI","Final Energy|Buildings","TWh","2050",3677.2675
+"Reference","GCAM-CGS","Final Energy|Industry","TWh","2050",NA
+"Reference","GCAM-CGS","Final Energy|Buildings","TWh","2050",NA
+"Reference","Haiku-RFF","Final Energy|Industry","TWh","2050",NA
+"Reference","Haiku-RFF","Final Energy|Buildings","TWh","2050",NA
+"Reference","IPM-NRDC","Final Energy|Industry","TWh","2050",1217.495972
+"Reference","IPM-NRDC","Final Energy|Buildings","TWh","2050",3352.814331
+"Reference","MARKAL-NETL","Final Energy|Industry","TWh","2050",1072.63696922
+"Reference","MARKAL-NETL","Final Energy|Buildings","TWh","2050",3695.07795606
+"Reference","NEMS-RHG","Final Energy|Industry","TWh","2050",NA
+"Reference","NEMS-RHG","Final Energy|Buildings","TWh","2050",NA
+"Reference","ReEDS-NREL","Final Energy|Industry","TWh","2050",NA
+"Reference","ReEDS-NREL","Final Energy|Buildings","TWh","2050",NA
+"Reference","REGEN-EPRI","Final Energy|Industry","TWh","2050",1672.69450990427
+"Reference","REGEN-EPRI","Final Energy|Buildings","TWh","2050",2140.95803010167
+"Reference","RIO-REPEAT","Final Energy|Industry","TWh","2050",1195
+"Reference","RIO-REPEAT","Final Energy|Buildings","TWh","2050",3569
+"IRA","EPS-EI","Final Energy|Industry","TWh","2050",1156.87004
+"IRA","EPS-EI","Final Energy|Buildings","TWh","2050",3735.30895
+"IRA","GCAM-CGS","Final Energy|Industry","TWh","2050",NA
+"IRA","GCAM-CGS","Final Energy|Buildings","TWh","2050",NA
+"IRA","Haiku-RFF","Final Energy|Industry","TWh","2050",NA
+"IRA","Haiku-RFF","Final Energy|Buildings","TWh","2050",NA
+"IRA","IPM-NRDC","Final Energy|Industry","TWh","2050",1217.495972
+"IRA","IPM-NRDC","Final Energy|Buildings","TWh","2050",3352.814331
+"IRA","MARKAL-NETL","Final Energy|Industry","TWh","2050",1219.59542012
+"IRA","MARKAL-NETL","Final Energy|Buildings","TWh","2050",3758.52800682
+"IRA","NEMS-RHG","Final Energy|Industry","TWh","2050",NA
+"IRA","NEMS-RHG","Final Energy|Buildings","TWh","2050",NA
+"IRA","ReEDS-NREL","Final Energy|Industry","TWh","2050",NA
+"IRA","ReEDS-NREL","Final Energy|Buildings","TWh","2050",NA
+"IRA","REGEN-EPRI","Final Energy|Industry","TWh","2050",2057.61949484417
+"IRA","REGEN-EPRI","Final Energy|Buildings","TWh","2050",2201.21855326186
+"IRA","RIO-REPEAT","Final Energy|Industry","TWh","2050",1198
+"IRA","RIO-REPEAT","Final Energy|Buildings","TWh","2050",3686
+"Reference","EPS-EI","Final Energy|Gas","quads","2021",31.342617
+"Reference","EPS-EI","Final Energy|Oil","quads","2021",35.242737
+"Reference","EPS-EI","Final Energy|Coal","quads","2021",10.547282
+"Reference","GCAM-CGS","Final Energy|Gas","quads","2021",31.342617
+"Reference","GCAM-CGS","Final Energy|Oil","quads","2021",35.242737
+"Reference","GCAM-CGS","Final Energy|Coal","quads","2021",10.547282
+"Reference","Haiku-RFF","Final Energy|Gas","quads","2021",NA
+"Reference","Haiku-RFF","Final Energy|Oil","quads","2021",NA
+"Reference","Haiku-RFF","Final Energy|Coal","quads","2021",NA
+"Reference","IPM-NRDC","Final Energy|Gas","quads","2021",NA
+"Reference","IPM-NRDC","Final Energy|Oil","quads","2021",NA
+"Reference","IPM-NRDC","Final Energy|Coal","quads","2021",NA
+"Reference","MARKAL-NETL","Final Energy|Gas","quads","2021",31.342617
+"Reference","MARKAL-NETL","Final Energy|Oil","quads","2021",35.242737
+"Reference","MARKAL-NETL","Final Energy|Coal","quads","2021",10.547282
+"Reference","NEMS-RHG","Final Energy|Gas","quads","2021",31.342617
+"Reference","NEMS-RHG","Final Energy|Oil","quads","2021",35.242737
+"Reference","NEMS-RHG","Final Energy|Coal","quads","2021",10.547282
+"Reference","ReEDS-NREL","Final Energy|Gas","quads","2021",NA
+"Reference","ReEDS-NREL","Final Energy|Oil","quads","2021",NA
+"Reference","ReEDS-NREL","Final Energy|Coal","quads","2021",NA
+"Reference","REGEN-EPRI","Final Energy|Gas","quads","2021",31.342617
+"Reference","REGEN-EPRI","Final Energy|Oil","quads","2021",35.242737
+"Reference","REGEN-EPRI","Final Energy|Coal","quads","2021",10.547282
+"Reference","RIO-REPEAT","Final Energy|Gas","quads","2021",31.342617
+"Reference","RIO-REPEAT","Final Energy|Oil","quads","2021",35.242737
+"Reference","RIO-REPEAT","Final Energy|Coal","quads","2021",10.547282
+"IRA","EPS-EI","Final Energy|Gas","quads","2021",31.342617
+"IRA","EPS-EI","Final Energy|Oil","quads","2021",35.242737
+"IRA","EPS-EI","Final Energy|Coal","quads","2021",10.547282
+"IRA","GCAM-CGS","Final Energy|Gas","quads","2021",31.342617
+"IRA","GCAM-CGS","Final Energy|Oil","quads","2021",35.242737
+"IRA","GCAM-CGS","Final Energy|Coal","quads","2021",10.547282
+"IRA","Haiku-RFF","Final Energy|Gas","quads","2021",NA
+"IRA","Haiku-RFF","Final Energy|Oil","quads","2021",NA
+"IRA","Haiku-RFF","Final Energy|Coal","quads","2021",NA
+"IRA","IPM-NRDC","Final Energy|Gas","quads","2021",NA
+"IRA","IPM-NRDC","Final Energy|Oil","quads","2021",NA
+"IRA","IPM-NRDC","Final Energy|Coal","quads","2021",NA
+"IRA","MARKAL-NETL","Final Energy|Gas","quads","2021",31.342617
+"IRA","MARKAL-NETL","Final Energy|Oil","quads","2021",35.242737
+"IRA","MARKAL-NETL","Final Energy|Coal","quads","2021",10.547282
+"IRA","NEMS-RHG","Final Energy|Gas","quads","2021",31.342617
+"IRA","NEMS-RHG","Final Energy|Oil","quads","2021",35.242737
+"IRA","NEMS-RHG","Final Energy|Coal","quads","2021",10.547282
+"IRA","ReEDS-NREL","Final Energy|Gas","quads","2021",NA
+"IRA","ReEDS-NREL","Final Energy|Oil","quads","2021",NA
+"IRA","ReEDS-NREL","Final Energy|Coal","quads","2021",NA
+"IRA","REGEN-EPRI","Final Energy|Gas","quads","2021",31.342617
+"IRA","REGEN-EPRI","Final Energy|Oil","quads","2021",35.242737
+"IRA","REGEN-EPRI","Final Energy|Coal","quads","2021",10.547282
+"IRA","RIO-REPEAT","Final Energy|Gas","quads","2021",31.342617
+"IRA","RIO-REPEAT","Final Energy|Oil","quads","2021",35.242737
+"IRA","RIO-REPEAT","Final Energy|Coal","quads","2021",10.547282
+"Reference","EPS-EI","Final Energy|Gas","quads","2025",33.3021
+"Reference","EPS-EI","Final Energy|Oil","quads","2025",32.344332
+"Reference","EPS-EI","Final Energy|Coal","quads","2025",7.973332
+"Reference","GCAM-CGS","Final Energy|Gas","quads","2025",26.5103317535545
+"Reference","GCAM-CGS","Final Energy|Oil","quads","2025",32.6646161137441
+"Reference","GCAM-CGS","Final Energy|Coal","quads","2025",8.25755450236967
+"Reference","Haiku-RFF","Final Energy|Gas","quads","2025",NA
+"Reference","Haiku-RFF","Final Energy|Oil","quads","2025",NA
+"Reference","Haiku-RFF","Final Energy|Coal","quads","2025",NA
+"Reference","IPM-NRDC","Final Energy|Gas","quads","2025",NA
+"Reference","IPM-NRDC","Final Energy|Oil","quads","2025",NA
+"Reference","IPM-NRDC","Final Energy|Coal","quads","2025",NA
+"Reference","MARKAL-NETL","Final Energy|Gas","quads","2025",27.25371
+"Reference","MARKAL-NETL","Final Energy|Oil","quads","2025",36.38583
+"Reference","MARKAL-NETL","Final Energy|Coal","quads","2025",14.70105
+"Reference","NEMS-RHG","Final Energy|Gas","quads","2025",29.396254
+"Reference","NEMS-RHG","Final Energy|Oil","quads","2025",36.829132
+"Reference","NEMS-RHG","Final Energy|Coal","quads","2025",6.958665
+"Reference","ReEDS-NREL","Final Energy|Gas","quads","2025",NA
+"Reference","ReEDS-NREL","Final Energy|Oil","quads","2025",NA
+"Reference","ReEDS-NREL","Final Energy|Coal","quads","2025",NA
+"Reference","REGEN-EPRI","Final Energy|Gas","quads","2025",28.71
+"Reference","REGEN-EPRI","Final Energy|Oil","quads","2025",30.91
+"Reference","REGEN-EPRI","Final Energy|Coal","quads","2025",10.27
+"Reference","RIO-REPEAT","Final Energy|Gas","quads","2025",11.77
+"Reference","RIO-REPEAT","Final Energy|Oil","quads","2025",34.36
+"Reference","RIO-REPEAT","Final Energy|Coal","quads","2025",0.74
+"IRA","EPS-EI","Final Energy|Gas","quads","2025",31.7765
+"IRA","EPS-EI","Final Energy|Oil","quads","2025",32.297993
+"IRA","EPS-EI","Final Energy|Coal","quads","2025",7.0045945
+"IRA","GCAM-CGS","Final Energy|Gas","quads","2025",26.1789573459716
+"IRA","GCAM-CGS","Final Energy|Oil","quads","2025",30.7022085308057
+"IRA","GCAM-CGS","Final Energy|Coal","quads","2025",5.81909952606635
+"IRA","Haiku-RFF","Final Energy|Gas","quads","2025",NA
+"IRA","Haiku-RFF","Final Energy|Oil","quads","2025",NA
+"IRA","Haiku-RFF","Final Energy|Coal","quads","2025",NA
+"IRA","IPM-NRDC","Final Energy|Gas","quads","2025",NA
+"IRA","IPM-NRDC","Final Energy|Oil","quads","2025",NA
+"IRA","IPM-NRDC","Final Energy|Coal","quads","2025",NA
+"IRA","MARKAL-NETL","Final Energy|Gas","quads","2025",27.91746
+"IRA","MARKAL-NETL","Final Energy|Oil","quads","2025",36.3141
+"IRA","MARKAL-NETL","Final Energy|Coal","quads","2025",16.52544
+"IRA","NEMS-RHG","Final Energy|Gas","quads","2025",30.772776
+"IRA","NEMS-RHG","Final Energy|Oil","quads","2025",36.850273
+"IRA","NEMS-RHG","Final Energy|Coal","quads","2025",7.250609
+"IRA","ReEDS-NREL","Final Energy|Gas","quads","2025",NA
+"IRA","ReEDS-NREL","Final Energy|Oil","quads","2025",NA
+"IRA","ReEDS-NREL","Final Energy|Coal","quads","2025",NA
+"IRA","REGEN-EPRI","Final Energy|Gas","quads","2025",29.1
+"IRA","REGEN-EPRI","Final Energy|Oil","quads","2025",30.84
+"IRA","REGEN-EPRI","Final Energy|Coal","quads","2025",10.4
+"IRA","RIO-REPEAT","Final Energy|Gas","quads","2025",11.69
+"IRA","RIO-REPEAT","Final Energy|Oil","quads","2025",34.34
+"IRA","RIO-REPEAT","Final Energy|Coal","quads","2025",0.74
+"Reference","EPS-EI","Final Energy|Gas","quads","2030",34.2141
+"Reference","EPS-EI","Final Energy|Oil","quads","2030",30.263352
+"Reference","EPS-EI","Final Energy|Coal","quads","2030",5.970195
+"Reference","GCAM-CGS","Final Energy|Gas","quads","2030",26.0158293838863
+"Reference","GCAM-CGS","Final Energy|Oil","quads","2030",31.7774691943128
+"Reference","GCAM-CGS","Final Energy|Coal","quads","2030",8.01789573459716
+"Reference","Haiku-RFF","Final Energy|Gas","quads","2030",NA
+"Reference","Haiku-RFF","Final Energy|Oil","quads","2030",NA
+"Reference","Haiku-RFF","Final Energy|Coal","quads","2030",NA
+"Reference","IPM-NRDC","Final Energy|Gas","quads","2030",NA
+"Reference","IPM-NRDC","Final Energy|Oil","quads","2030",NA
+"Reference","IPM-NRDC","Final Energy|Coal","quads","2030",NA
+"Reference","MARKAL-NETL","Final Energy|Gas","quads","2030",27.68256
+"Reference","MARKAL-NETL","Final Energy|Oil","quads","2030",35.92809
+"Reference","MARKAL-NETL","Final Energy|Coal","quads","2030",13.70016
+"Reference","NEMS-RHG","Final Energy|Gas","quads","2030",29.697172
+"Reference","NEMS-RHG","Final Energy|Oil","quads","2030",35.155521
+"Reference","NEMS-RHG","Final Energy|Coal","quads","2030",5.814916
+"Reference","ReEDS-NREL","Final Energy|Gas","quads","2030",NA
+"Reference","ReEDS-NREL","Final Energy|Oil","quads","2030",NA
+"Reference","ReEDS-NREL","Final Energy|Coal","quads","2030",NA
+"Reference","REGEN-EPRI","Final Energy|Gas","quads","2030",29.31
+"Reference","REGEN-EPRI","Final Energy|Oil","quads","2030",27.87
+"Reference","REGEN-EPRI","Final Energy|Coal","quads","2030",8.05
+"Reference","RIO-REPEAT","Final Energy|Gas","quads","2030",11.75
+"Reference","RIO-REPEAT","Final Energy|Oil","quads","2030",32.02
+"Reference","RIO-REPEAT","Final Energy|Coal","quads","2030",0.75
+"IRA","EPS-EI","Final Energy|Gas","quads","2030",27.1079
+"IRA","EPS-EI","Final Energy|Oil","quads","2030",30.030463
+"IRA","EPS-EI","Final Energy|Coal","quads","2030",3.00406881
+"IRA","GCAM-CGS","Final Energy|Gas","quads","2030",25.9707109004739
+"IRA","GCAM-CGS","Final Energy|Oil","quads","2030",28.2274502369668
+"IRA","GCAM-CGS","Final Energy|Coal","quads","2030",3.30327962085308
+"IRA","Haiku-RFF","Final Energy|Gas","quads","2030",NA
+"IRA","Haiku-RFF","Final Energy|Oil","quads","2030",NA
+"IRA","Haiku-RFF","Final Energy|Coal","quads","2030",NA
+"IRA","IPM-NRDC","Final Energy|Gas","quads","2030",NA
+"IRA","IPM-NRDC","Final Energy|Oil","quads","2030",NA
+"IRA","IPM-NRDC","Final Energy|Coal","quads","2030",NA
+"IRA","MARKAL-NETL","Final Energy|Gas","quads","2030",27.62928
+"IRA","MARKAL-NETL","Final Energy|Oil","quads","2030",35.85825
+"IRA","MARKAL-NETL","Final Energy|Coal","quads","2030",17.09739
+"IRA","NEMS-RHG","Final Energy|Gas","quads","2030",26.415442
+"IRA","NEMS-RHG","Final Energy|Oil","quads","2030",34.782028
+"IRA","NEMS-RHG","Final Energy|Coal","quads","2030",2.351188
+"IRA","ReEDS-NREL","Final Energy|Gas","quads","2030",NA
+"IRA","ReEDS-NREL","Final Energy|Oil","quads","2030",NA
+"IRA","ReEDS-NREL","Final Energy|Coal","quads","2030",NA
+"IRA","REGEN-EPRI","Final Energy|Gas","quads","2030",29.68
+"IRA","REGEN-EPRI","Final Energy|Oil","quads","2030",27.44
+"IRA","REGEN-EPRI","Final Energy|Coal","quads","2030",8.6
+"IRA","RIO-REPEAT","Final Energy|Gas","quads","2030",11.21
+"IRA","RIO-REPEAT","Final Energy|Oil","quads","2030",31.9
+"IRA","RIO-REPEAT","Final Energy|Coal","quads","2030",0.75
+"Reference","EPS-EI","Final Energy|Gas","quads","2035",34.7359
+"Reference","EPS-EI","Final Energy|Oil","quads","2035",28.234024
+"Reference","EPS-EI","Final Energy|Coal","quads","2035",5.691516
+"Reference","GCAM-CGS","Final Energy|Gas","quads","2035",27.1805687203791
+"Reference","GCAM-CGS","Final Energy|Oil","quads","2035",28.8819810426539
+"Reference","GCAM-CGS","Final Energy|Coal","quads","2035",7.67855924170616
+"Reference","Haiku-RFF","Final Energy|Gas","quads","2035",NA
+"Reference","Haiku-RFF","Final Energy|Oil","quads","2035",NA
+"Reference","Haiku-RFF","Final Energy|Coal","quads","2035",NA
+"Reference","IPM-NRDC","Final Energy|Gas","quads","2035",NA
+"Reference","IPM-NRDC","Final Energy|Oil","quads","2035",NA
+"Reference","IPM-NRDC","Final Energy|Coal","quads","2035",NA
+"Reference","MARKAL-NETL","Final Energy|Gas","quads","2035",28.47249
+"Reference","MARKAL-NETL","Final Energy|Oil","quads","2035",35.47944
+"Reference","MARKAL-NETL","Final Energy|Coal","quads","2035",12.96378
+"Reference","NEMS-RHG","Final Energy|Gas","quads","2035",29.13835
+"Reference","NEMS-RHG","Final Energy|Oil","quads","2035",33.686859
+"Reference","NEMS-RHG","Final Energy|Coal","quads","2035",5.392011
+"Reference","ReEDS-NREL","Final Energy|Gas","quads","2035",NA
+"Reference","ReEDS-NREL","Final Energy|Oil","quads","2035",NA
+"Reference","ReEDS-NREL","Final Energy|Coal","quads","2035",NA
+"Reference","REGEN-EPRI","Final Energy|Gas","quads","2035",30.54
+"Reference","REGEN-EPRI","Final Energy|Oil","quads","2035",24.82
+"Reference","REGEN-EPRI","Final Energy|Coal","quads","2035",7.22
+"Reference","RIO-REPEAT","Final Energy|Gas","quads","2035",11.71
+"Reference","RIO-REPEAT","Final Energy|Oil","quads","2035",29.14
+"Reference","RIO-REPEAT","Final Energy|Coal","quads","2035",0.76
+"IRA","EPS-EI","Final Energy|Gas","quads","2035",25.4354
+"IRA","EPS-EI","Final Energy|Oil","quads","2035",27.771552
+"IRA","EPS-EI","Final Energy|Coal","quads","2035",1.18407137
+"IRA","GCAM-CGS","Final Energy|Gas","quads","2035",25.7437914691943
+"IRA","GCAM-CGS","Final Energy|Oil","quads","2035",27.7364170616114
+"IRA","GCAM-CGS","Final Energy|Coal","quads","2035",1.39549763033175
+"IRA","Haiku-RFF","Final Energy|Gas","quads","2035",NA
+"IRA","Haiku-RFF","Final Energy|Oil","quads","2035",NA
+"IRA","Haiku-RFF","Final Energy|Coal","quads","2035",NA
+"IRA","IPM-NRDC","Final Energy|Gas","quads","2035",NA
+"IRA","IPM-NRDC","Final Energy|Oil","quads","2035",NA
+"IRA","IPM-NRDC","Final Energy|Coal","quads","2035",NA
+"IRA","MARKAL-NETL","Final Energy|Gas","quads","2035",24.28578
+"IRA","MARKAL-NETL","Final Energy|Oil","quads","2035",35.41131
+"IRA","MARKAL-NETL","Final Energy|Coal","quads","2035",19.1826
+"IRA","NEMS-RHG","Final Energy|Gas","quads","2035",27.023724
+"IRA","NEMS-RHG","Final Energy|Oil","quads","2035",32.928078
+"IRA","NEMS-RHG","Final Energy|Coal","quads","2035",2.975357
+"IRA","ReEDS-NREL","Final Energy|Gas","quads","2035",NA
+"IRA","ReEDS-NREL","Final Energy|Oil","quads","2035",NA
+"IRA","ReEDS-NREL","Final Energy|Coal","quads","2035",NA
+"IRA","REGEN-EPRI","Final Energy|Gas","quads","2035",25.84
+"IRA","REGEN-EPRI","Final Energy|Oil","quads","2035",24.02
+"IRA","REGEN-EPRI","Final Energy|Coal","quads","2035",5.2
+"IRA","RIO-REPEAT","Final Energy|Gas","quads","2035",10.73
+"IRA","RIO-REPEAT","Final Energy|Oil","quads","2035",28.92
+"IRA","RIO-REPEAT","Final Energy|Coal","quads","2035",0.76
+"Reference","EPS-EI","Final Energy|Gas","quads","2040",35.3432
+"Reference","EPS-EI","Final Energy|Oil","quads","2040",26.866662
+"Reference","EPS-EI","Final Energy|Coal","quads","2040",5.599193
+"Reference","GCAM-CGS","Final Energy|Gas","quads","2040",NA
+"Reference","GCAM-CGS","Final Energy|Oil","quads","2040",NA
+"Reference","GCAM-CGS","Final Energy|Coal","quads","2040",NA
+"Reference","Haiku-RFF","Final Energy|Gas","quads","2040",NA
+"Reference","Haiku-RFF","Final Energy|Oil","quads","2040",NA
+"Reference","Haiku-RFF","Final Energy|Coal","quads","2040",NA
+"Reference","IPM-NRDC","Final Energy|Gas","quads","2040",NA
+"Reference","IPM-NRDC","Final Energy|Oil","quads","2040",NA
+"Reference","IPM-NRDC","Final Energy|Coal","quads","2040",NA
+"Reference","MARKAL-NETL","Final Energy|Gas","quads","2040",28.63629
+"Reference","MARKAL-NETL","Final Energy|Oil","quads","2040",35.03907
+"Reference","MARKAL-NETL","Final Energy|Coal","quads","2040",12.46329
+"Reference","NEMS-RHG","Final Energy|Gas","quads","2040",NA
+"Reference","NEMS-RHG","Final Energy|Oil","quads","2040",NA
+"Reference","NEMS-RHG","Final Energy|Coal","quads","2040",NA
+"Reference","ReEDS-NREL","Final Energy|Gas","quads","2040",NA
+"Reference","ReEDS-NREL","Final Energy|Oil","quads","2040",NA
+"Reference","ReEDS-NREL","Final Energy|Coal","quads","2040",NA
+"Reference","REGEN-EPRI","Final Energy|Gas","quads","2040",NA
+"Reference","REGEN-EPRI","Final Energy|Oil","quads","2040",NA
+"Reference","REGEN-EPRI","Final Energy|Coal","quads","2040",NA
+"Reference","RIO-REPEAT","Final Energy|Gas","quads","2040",11.8
+"Reference","RIO-REPEAT","Final Energy|Oil","quads","2040",26.34
+"Reference","RIO-REPEAT","Final Energy|Coal","quads","2040",0.77
+"IRA","EPS-EI","Final Energy|Gas","quads","2040",24.3343
+"IRA","EPS-EI","Final Energy|Oil","quads","2040",26.504823
+"IRA","EPS-EI","Final Energy|Coal","quads","2040",0.9795380815
+"IRA","GCAM-CGS","Final Energy|Gas","quads","2040",NA
+"IRA","GCAM-CGS","Final Energy|Oil","quads","2040",NA
+"IRA","GCAM-CGS","Final Energy|Coal","quads","2040",NA
+"IRA","Haiku-RFF","Final Energy|Gas","quads","2040",NA
+"IRA","Haiku-RFF","Final Energy|Oil","quads","2040",NA
+"IRA","Haiku-RFF","Final Energy|Coal","quads","2040",NA
+"IRA","IPM-NRDC","Final Energy|Gas","quads","2040",NA
+"IRA","IPM-NRDC","Final Energy|Oil","quads","2040",NA
+"IRA","IPM-NRDC","Final Energy|Coal","quads","2040",NA
+"IRA","MARKAL-NETL","Final Energy|Gas","quads","2040",22.5135
+"IRA","MARKAL-NETL","Final Energy|Oil","quads","2040",34.97256
+"IRA","MARKAL-NETL","Final Energy|Coal","quads","2040",22.35105
+"IRA","NEMS-RHG","Final Energy|Gas","quads","2040",NA
+"IRA","NEMS-RHG","Final Energy|Oil","quads","2040",NA
+"IRA","NEMS-RHG","Final Energy|Coal","quads","2040",NA
+"IRA","ReEDS-NREL","Final Energy|Gas","quads","2040",NA
+"IRA","ReEDS-NREL","Final Energy|Oil","quads","2040",NA
+"IRA","ReEDS-NREL","Final Energy|Coal","quads","2040",NA
+"IRA","REGEN-EPRI","Final Energy|Gas","quads","2040",NA
+"IRA","REGEN-EPRI","Final Energy|Oil","quads","2040",NA
+"IRA","REGEN-EPRI","Final Energy|Coal","quads","2040",NA
+"IRA","RIO-REPEAT","Final Energy|Gas","quads","2040",10.5
+"IRA","RIO-REPEAT","Final Energy|Oil","quads","2040",26.07
+"IRA","RIO-REPEAT","Final Energy|Coal","quads","2040",0.77
+"Reference","EPS-EI","Final Energy|Gas","quads","2045",36.018
+"Reference","EPS-EI","Final Energy|Oil","quads","2045",26.164177
+"Reference","EPS-EI","Final Energy|Coal","quads","2045",5.473935
+"Reference","GCAM-CGS","Final Energy|Gas","quads","2045",NA
+"Reference","GCAM-CGS","Final Energy|Oil","quads","2045",NA
+"Reference","GCAM-CGS","Final Energy|Coal","quads","2045",NA
+"Reference","Haiku-RFF","Final Energy|Gas","quads","2045",NA
+"Reference","Haiku-RFF","Final Energy|Oil","quads","2045",NA
+"Reference","Haiku-RFF","Final Energy|Coal","quads","2045",NA
+"Reference","IPM-NRDC","Final Energy|Gas","quads","2045",NA
+"Reference","IPM-NRDC","Final Energy|Oil","quads","2045",NA
+"Reference","IPM-NRDC","Final Energy|Coal","quads","2045",NA
+"Reference","MARKAL-NETL","Final Energy|Gas","quads","2045",28.97091
+"Reference","MARKAL-NETL","Final Energy|Oil","quads","2045",34.60779
+"Reference","MARKAL-NETL","Final Energy|Coal","quads","2045",12.13794
+"Reference","NEMS-RHG","Final Energy|Gas","quads","2045",NA
+"Reference","NEMS-RHG","Final Energy|Oil","quads","2045",NA
+"Reference","NEMS-RHG","Final Energy|Coal","quads","2045",NA
+"Reference","ReEDS-NREL","Final Energy|Gas","quads","2045",NA
+"Reference","ReEDS-NREL","Final Energy|Oil","quads","2045",NA
+"Reference","ReEDS-NREL","Final Energy|Coal","quads","2045",NA
+"Reference","REGEN-EPRI","Final Energy|Gas","quads","2045",NA
+"Reference","REGEN-EPRI","Final Energy|Oil","quads","2045",NA
+"Reference","REGEN-EPRI","Final Energy|Coal","quads","2045",NA
+"Reference","RIO-REPEAT","Final Energy|Gas","quads","2045",11.99
+"Reference","RIO-REPEAT","Final Energy|Oil","quads","2045",24.24
+"Reference","RIO-REPEAT","Final Energy|Coal","quads","2045",0.78
+"IRA","EPS-EI","Final Energy|Gas","quads","2045",25.6518
+"IRA","EPS-EI","Final Energy|Oil","quads","2045",26.298224
+"IRA","EPS-EI","Final Energy|Coal","quads","2045",0.97756265
+"IRA","GCAM-CGS","Final Energy|Gas","quads","2045",NA
+"IRA","GCAM-CGS","Final Energy|Oil","quads","2045",NA
+"IRA","GCAM-CGS","Final Energy|Coal","quads","2045",NA
+"IRA","Haiku-RFF","Final Energy|Gas","quads","2045",NA
+"IRA","Haiku-RFF","Final Energy|Oil","quads","2045",NA
+"IRA","Haiku-RFF","Final Energy|Coal","quads","2045",NA
+"IRA","IPM-NRDC","Final Energy|Gas","quads","2045",NA
+"IRA","IPM-NRDC","Final Energy|Oil","quads","2045",NA
+"IRA","IPM-NRDC","Final Energy|Coal","quads","2045",NA
+"IRA","MARKAL-NETL","Final Energy|Gas","quads","2045",20.84634
+"IRA","MARKAL-NETL","Final Energy|Oil","quads","2045",34.5429
+"IRA","MARKAL-NETL","Final Energy|Coal","quads","2045",26.75538
+"IRA","NEMS-RHG","Final Energy|Gas","quads","2045",NA
+"IRA","NEMS-RHG","Final Energy|Oil","quads","2045",NA
+"IRA","NEMS-RHG","Final Energy|Coal","quads","2045",NA
+"IRA","ReEDS-NREL","Final Energy|Gas","quads","2045",NA
+"IRA","ReEDS-NREL","Final Energy|Oil","quads","2045",NA
+"IRA","ReEDS-NREL","Final Energy|Coal","quads","2045",NA
+"IRA","REGEN-EPRI","Final Energy|Gas","quads","2045",NA
+"IRA","REGEN-EPRI","Final Energy|Oil","quads","2045",NA
+"IRA","REGEN-EPRI","Final Energy|Coal","quads","2045",NA
+"IRA","RIO-REPEAT","Final Energy|Gas","quads","2045",10.54
+"IRA","RIO-REPEAT","Final Energy|Oil","quads","2045",23.95
+"IRA","RIO-REPEAT","Final Energy|Coal","quads","2045",0.78
+"Reference","EPS-EI","Final Energy|Gas","quads","2050",36.8102
+"Reference","EPS-EI","Final Energy|Oil","quads","2050",25.9096
+"Reference","EPS-EI","Final Energy|Coal","quads","2050",5.475931
+"Reference","GCAM-CGS","Final Energy|Gas","quads","2050",NA
+"Reference","GCAM-CGS","Final Energy|Oil","quads","2050",NA
+"Reference","GCAM-CGS","Final Energy|Coal","quads","2050",NA
+"Reference","Haiku-RFF","Final Energy|Gas","quads","2050",NA
+"Reference","Haiku-RFF","Final Energy|Oil","quads","2050",NA
+"Reference","Haiku-RFF","Final Energy|Coal","quads","2050",NA
+"Reference","IPM-NRDC","Final Energy|Gas","quads","2050",NA
+"Reference","IPM-NRDC","Final Energy|Oil","quads","2050",NA
+"Reference","IPM-NRDC","Final Energy|Coal","quads","2050",NA
+"Reference","MARKAL-NETL","Final Energy|Gas","quads","2050",30.14271
+"Reference","MARKAL-NETL","Final Energy|Oil","quads","2050",34.18524
+"Reference","MARKAL-NETL","Final Energy|Coal","quads","2050",11.8809
+"Reference","NEMS-RHG","Final Energy|Gas","quads","2050",NA
+"Reference","NEMS-RHG","Final Energy|Oil","quads","2050",NA
+"Reference","NEMS-RHG","Final Energy|Coal","quads","2050",NA
+"Reference","ReEDS-NREL","Final Energy|Gas","quads","2050",NA
+"Reference","ReEDS-NREL","Final Energy|Oil","quads","2050",NA
+"Reference","ReEDS-NREL","Final Energy|Coal","quads","2050",NA
+"Reference","REGEN-EPRI","Final Energy|Gas","quads","2050",NA
+"Reference","REGEN-EPRI","Final Energy|Oil","quads","2050",NA
+"Reference","REGEN-EPRI","Final Energy|Coal","quads","2050",NA
+"Reference","RIO-REPEAT","Final Energy|Gas","quads","2050",12.16
+"Reference","RIO-REPEAT","Final Energy|Oil","quads","2050",22.95
+"Reference","RIO-REPEAT","Final Energy|Coal","quads","2050",0.76
+"IRA","EPS-EI","Final Energy|Gas","quads","2050",28.137
+"IRA","EPS-EI","Final Energy|Oil","quads","2050",26.315341
+"IRA","EPS-EI","Final Energy|Coal","quads","2050",0.95728172
+"IRA","GCAM-CGS","Final Energy|Gas","quads","2050",NA
+"IRA","GCAM-CGS","Final Energy|Oil","quads","2050",NA
+"IRA","GCAM-CGS","Final Energy|Coal","quads","2050",NA
+"IRA","Haiku-RFF","Final Energy|Gas","quads","2050",NA
+"IRA","Haiku-RFF","Final Energy|Oil","quads","2050",NA
+"IRA","Haiku-RFF","Final Energy|Coal","quads","2050",NA
+"IRA","IPM-NRDC","Final Energy|Gas","quads","2050",NA
+"IRA","IPM-NRDC","Final Energy|Oil","quads","2050",NA
+"IRA","IPM-NRDC","Final Energy|Coal","quads","2050",NA
+"IRA","MARKAL-NETL","Final Energy|Gas","quads","2050",18.74106
+"IRA","MARKAL-NETL","Final Energy|Oil","quads","2050",34.12197
+"IRA","MARKAL-NETL","Final Energy|Coal","quads","2050",32.81526
+"IRA","NEMS-RHG","Final Energy|Gas","quads","2050",NA
+"IRA","NEMS-RHG","Final Energy|Oil","quads","2050",NA
+"IRA","NEMS-RHG","Final Energy|Coal","quads","2050",NA
+"IRA","ReEDS-NREL","Final Energy|Gas","quads","2050",NA
+"IRA","ReEDS-NREL","Final Energy|Oil","quads","2050",NA
+"IRA","ReEDS-NREL","Final Energy|Coal","quads","2050",NA
+"IRA","REGEN-EPRI","Final Energy|Gas","quads","2050",NA
+"IRA","REGEN-EPRI","Final Energy|Oil","quads","2050",NA
+"IRA","REGEN-EPRI","Final Energy|Coal","quads","2050",NA
+"IRA","RIO-REPEAT","Final Energy|Gas","quads","2050",10.66
+"IRA","RIO-REPEAT","Final Energy|Oil","quads","2050",22.66
+"IRA","RIO-REPEAT","Final Energy|Coal","quads","2050",0.76
