@@ -1,28 +1,28 @@
 datasrc,model,scenario,model_new,scenario_new,notes
-ira_comparisons.csv,EPS-EI,IRA,EPS-EI,IRA,Bistline IRA comparison paper
-ira_comparisons.csv,EPS-EI,Reference,EPS-EI,Reference,Bistline IRA comparison paper
-ira_comparisons.csv,GCAM-CGS,IRA,GCAM-CGS,IRA,Bistline IRA comparison paper
-ira_comparisons.csv,GCAM-CGS,Reference,GCAM-CGS,Reference,Bistline IRA comparison paper
-ira_comparisons.csv,Haiku-RFF,IRA,Haiku-RFF,IRA,Bistline IRA comparison paper
-ira_comparisons.csv,Haiku-RFF,Reference,Haiku-RFF,Reference,Bistline IRA comparison paper
-ira_comparisons.csv,IPM-NRDC,IRA,IPM-NRDC,IRA,Bistline IRA comparison paper
-ira_comparisons.csv,IPM-NRDC,Reference,IPM-NRDC,Reference,Bistline IRA comparison paper
-ira_comparisons.csv,MARKAL-NETL,IRA,MARKAL-NETL,IRA,Bistline IRA comparison paper
-ira_comparisons.csv,MARKAL-NETL,Reference,MARKAL-NETL,Reference,Bistline IRA comparison paper
-ira_comparisons.csv,NEMS-RHG,IRA,NEMS-RHG,IRA,Bistline IRA comparison paper
-ira_comparisons.csv,NEMS-RHG,Reference,NEMS-RHG,Reference,Bistline IRA comparison paper
-ira_comparisons.csv,ReEDS-NREL,IRA,ReEDS-NREL,IRA,Bistline IRA comparison paper
-ira_comparisons.csv,ReEDS-NREL,Reference,ReEDS-NREL,Reference,Bistline IRA comparison paper
-ira_comparisons.csv,REGEN-EPRI,IRA,REGEN-EPRI,IRA,Bistline IRA comparison paper
-ira_comparisons.csv,REGEN-EPRI,Reference,REGEN-EPRI,Reference,Bistline IRA comparison paper
-ira_comparisons.csv,RIO-REPEAT,IRA,RIO-REPEAT,IRA,Bistline IRA comparison paper
-ira_comparisons.csv,RIO-REPEAT,Reference,RIO-REPEAT,Reference,Bistline IRA comparison paper
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
+bistline_ira_tall.csv,EPS-EI,IRA,EPS-EI,IRA,Bistline IRA comparison paper
+bistline_ira_tall.csv,EPS-EI,Reference,EPS-EI,Reference,Bistline IRA comparison paper
+bistline_ira_tall.csv,GCAM-CGS,IRA,GCAM-CGS,IRA,Bistline IRA comparison paper
+bistline_ira_tall.csv,GCAM-CGS,Reference,GCAM-CGS,Reference,Bistline IRA comparison paper
+bistline_ira_tall.csv,Haiku-RFF,IRA,Haiku-RFF,IRA,Bistline IRA comparison paper
+bistline_ira_tall.csv,Haiku-RFF,Reference,Haiku-RFF,Reference,Bistline IRA comparison paper
+bistline_ira_tall.csv,IPM-NRDC,IRA,IPM-NRDC,IRA,Bistline IRA comparison paper
+bistline_ira_tall.csv,IPM-NRDC,Reference,IPM-NRDC,Reference,Bistline IRA comparison paper
+bistline_ira_tall.csv,MARKAL-NETL,IRA,MARKAL-NETL,IRA,Bistline IRA comparison paper
+bistline_ira_tall.csv,MARKAL-NETL,Reference,MARKAL-NETL,Reference,Bistline IRA comparison paper
+bistline_ira_tall.csv,NEMS-RHG,IRA,NEMS-RHG,IRA,Bistline IRA comparison paper
+bistline_ira_tall.csv,NEMS-RHG,Reference,NEMS-RHG,Reference,Bistline IRA comparison paper
+bistline_ira_tall.csv,ReEDS-NREL,IRA,ReEDS-NREL,IRA,Bistline IRA comparison paper
+bistline_ira_tall.csv,ReEDS-NREL,Reference,ReEDS-NREL,Reference,Bistline IRA comparison paper
+bistline_ira_tall.csv,REGEN-EPRI,IRA,REGEN-EPRI,IRA,Bistline IRA comparison paper
+bistline_ira_tall.csv,REGEN-EPRI,Reference,REGEN-EPRI,Reference,Bistline IRA comparison paper
+bistline_ira_tall.csv,RIO-REPEAT,IRA,RIO-REPEAT,IRA,Bistline IRA comparison paper
+bistline_ira_tall.csv,RIO-REPEAT,Reference,RIO-REPEAT,Reference,Bistline IRA comparison paper
+EIAinEMF37.csv,AEO.2020,REF2020,AEO2020,Reference,From EIA in EMF37 Repo
+EIAinEMF37.csv,AEO.2021,REF2021,AEO2021,Reference,From EIA in EMF37 Repo
+EIAinEMF37.csv,AEO.2022,REF2022,AEO2022,Reference,From EIA in EMF37 Repo
+EIAinEMF37.csv,EIA_Historic,Historic,EIA,Historic,From EIA in EMF37 Repo
+EIAinEMF37.csv,EIA_STEO,Ref,EIA-STEO,Historic,From EIA in EMF37 Repo
+MER_GHGI_historic.xlsx,MER,Historic,MER,Historic,Manually mapped MER data from LTS work
 ,,,,,
 ,,,,,
 ,,,,,

@@ -136,9 +136,6 @@ tar_plan(
     tar_target(figmap, import_figure_csv(figmap_csv, fig_type, config))
   ),
 
-  # create_list_of_graphs
-  graph_list = create_graph_list(config),
-
   ######################################################################################### -
   ######################################################################################### -
 
@@ -150,6 +147,6 @@ tar_plan(
   # op_band = create_graph("op", "band", config, emf_data_long_temp, figmap_op_band),
   # op_band_index = create_graph("op", "band", config, emf_data_index, figmap_op_band, sub="_index"),
   # op_scatter = create_graph("op", "scatterplot", config, emf_data_long_temp, figmap_op_scatter),
-  op_ts = create_graph("op", "time_series", config, emf_data_long_temp, figmap_op_timeseries)
+  # op_ts = create_graph("op", "time_series", config, emf_data_long_temp, figmap_op_timeseries)
 
 )

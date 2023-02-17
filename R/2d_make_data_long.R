@@ -176,7 +176,7 @@ make_summation_variables <- function(data_long, summation_var) {
     data_long_join <- var_list %>%
       select(lower_level, flip_sign) %>%
       rename(variable = lower_level) %>%
-      full_join(data_long)
+      full_join(data_long, by = "variable")
 
     summation[[i]] <- data_long_join %>%
       filter(variable %in% var_list$lower_level) %>%
