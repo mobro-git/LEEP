@@ -20,6 +20,7 @@ library(readr)
 library(datasets)
 library(units)
 
+library(janitor)
 library(kableExtra)
 library(DT)
 library(visNetwork)
