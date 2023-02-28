@@ -43,7 +43,7 @@ tar_plan(
 
     # time intervals
     usa = "United States",
-    bistline_yrs = c(2021,2025, 2030, 2035, 2040, 2045, 2050)
+    bistline_yrs = c(seq(2021,2050,by=1))
   ),
 
   ######################################################################################### -
@@ -146,4 +146,5 @@ tar_plan(
 
   ts = create_graph("overivew", "time_series", config, data_long, figmap_overview_timeseries, pngGraphs = TRUE),
   cone = create_graph("overivew", "cone_uncertainty", config, data_long, figmap_overview_cone, pngGraphs = TRUE)
+
 )
