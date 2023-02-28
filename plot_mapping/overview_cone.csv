@@ -1,0 +1,4 @@
+figure_type,figure_no,title_name,variable,variable_rename,flip_sign,regions,models,years,scenarios,type,x,y,range,facet1,facet2,page_filter,color,scales
+coneplot,1,Final Energy,Final Energy|Coal,Coal,0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,model,variable_rename,scenario,region,variable_rename,fixed
+coneplot,1,Final Energy,Final Energy|Gas,Gas,0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,model,variable_rename,scenario,region,variable_rename,fixed
+coneplot,1,Final Energy,Final Energy|Oil,Oil,0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,model,variable_rename,scenario,region,variable_rename,fixed

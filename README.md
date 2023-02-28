@@ -1,10 +1,10 @@
-# EMF37viz
+# LEEP
 
 Code for interactive exploration, QA, and visualization of EMF37 data.
 
 ## Files and Folders:
 
-Model-scenario data are in /data-raw/model-runs and pulled from IIASA database api.
+Model-scenario data are in /data-raw/model-runs
 templates are in /data-raw/templates
 Control files are in /data-raw
 /R -- contains package-like functions only supporting the data pipeline
@@ -12,7 +12,7 @@ Control files are in /data-raw
 
 ## Getting Started:
 
-The data pipeline is managed via targets. The overall plan is listed in _targets.R. To run the project, from the console run: ```targets::tar_make()``` from the project working directory. (e.g., via opening the EMF37.Rproj file). Final results are html and text in /outputs. 
+The data pipeline is managed via targets. The overall plan is listed in _targets.R. To run the project, from the console run: ```targets::tar_make()``` from the project working directory. (e.g., via opening the LEEP.Rproj file). Final results are html and text in /outputs. 
 
 TO run the project interactively:
 1) Load packages: ```source("packages.R")```
@@ -27,7 +27,7 @@ To use the pipeline to create necessary statistics and graphics, users should fo
 
 ## Step 1. Activate the Virtual Environment
 
-Click on the `EMF37viz.Rproj` file to enter the virtual environment for the project, which captures all the required versions of the packages used in the pipeline. 
+Click on the `LEEP.Rproj` file to enter the virtual environment for the project, which captures all the required versions of the packages used in the pipeline. 
 
 ## Step 2. Run the pipeline 
 
@@ -154,7 +154,7 @@ After adding the necessary plot mapping files and create_graph commands, you can
 
 ## Step 4. Check the outputs
 
-Figure PDFs and PNGs are saved in the `output/roundxxx/subject/` folders. Within each subject folder should be all of the PDFs (one for each figure type) and a folder for each figure type containing the PNGs of each figure.
+Figure PDFs and PNGs are saved in the `output/subject/` folders. Within each subject folder should be all of the PDFs (one for each figure type) and a folder for each figure type containing the PNGs of each figure.
 
 
 ## Important: Function Design Logic and Troubleshooting

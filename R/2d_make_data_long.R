@@ -1,6 +1,6 @@
 # centralized variable processing here for emf_data_long
 
-#' make_emf_data_long
+#' make_data_long
 #'
 #' @param data_long_read
 #'
@@ -41,9 +41,22 @@ make_data_long <- function(data_long_read, ratio_var, summation_var, cumulative_
 
   fixed_long4 <- fixed_long3 %>% filter(!is.na(value))
 
-# DUPLICATE EIA_Historic and EIA_STEO for all of the following scenarios
-# "NT.Ref", "0by50.Ref","0by50.Adv","0by50.BSG.Adv","0by50.CMSG.Adv","0by50.ISG.Adv","0by50.TSG.Adv")
-# AKA I want all variables reported for the EIA_Historic and EIA_STEO to be reported as NT.Ref as well as all of the scenarios above
+}
+
+#' temp_make_data_long - removes calculated variables until they're needed
+
+temp_make_data_long <- function(data_long_read, ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var) {
+  data_long <- data_long_read %>% {
+    # drop all-zero model-run-variable data
+    group_by(., model, scenario, variable) %>%
+      filter(!all(value == 0)) %>%
+      ungroup()} %>%
+    relocate_standard_col_order() %>%
+    arrange_standard()
+
+  fixed_long <- country_abbr(data_long)
+
+  fixed_long4 <- fixed_long %>% filter(!is.na(value))
 
 }
 

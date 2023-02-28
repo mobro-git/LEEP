@@ -36,11 +36,14 @@ tar_plan(
 
     models_noaeo = c("NEMS","GCAM","IPM","USREP-ReEDS","Scout"),
 
+    models_bistline = c("GCAM-CGS","EPS-EI","Haiky-RFF","IPM-NRDC","MARKAL-NETL","NEMS-RHG","ReEDS-NREL","REGEN-EPRI","RIO-REPEAT"),
+
     # scenarios
     main_scenarios = c("Reference","IRA"),
 
     # time intervals
-    default = seq(2023, 2035, by = 1)
+    usa = "United States",
+    bistline_yrs = c(2021,2025, 2030, 2035, 2040, 2045, 2050)
   ),
 
   ######################################################################################### -
@@ -116,14 +119,14 @@ tar_plan(
     # map_variable_names() %>%
     arrange_standard()},
 
-  data_long = make_data_long(data_long_read,
+  data_long = temp_make_data_long(data_long_read,
                                      ratio_var,
                                      summation_var,
                                      cumulative_var,
                                      annual_growth_rate_var,
                                      per_diff_var),
 
-  data_index = index_data_long(data_long, index_var),
+  #data_index = index_data_long(data_long, index_var),
 
   ######################################################################################### -
   ######################################################################################### -
@@ -132,7 +135,7 @@ tar_plan(
 
   tar_map(
     values = figmap_list,
-    tar_target(figmap_csv, figmap_csv_path(fig_subject, fig_type, config), format = "file"),
+    tar_target(figmap_csv, figmap_csv_path(fig_subject, fig_type), format = "file"),
     tar_target(figmap, import_figure_csv(figmap_csv, fig_type, config))
   ),
 
@@ -141,12 +144,6 @@ tar_plan(
 
   ### Figures  -------------------
 
-  # op_cu = create_graph("op", "cone_uncertainty", config, emf_data_long_temp, figmap_op_cone),
-  # op_db = create_graph("op", "diff_bar", config, emf_data_long_temp, figmap_op_diffbar),
-  # op_sb = create_graph("op", "stacked_bar", config, emf_data_long_temp, figmap_op_stackbar),
-  # op_band = create_graph("op", "band", config, emf_data_long_temp, figmap_op_band),
-  # op_band_index = create_graph("op", "band", config, emf_data_index, figmap_op_band, sub="_index"),
-  # op_scatter = create_graph("op", "scatterplot", config, emf_data_long_temp, figmap_op_scatter),
-  # op_ts = create_graph("op", "time_series", config, emf_data_long_temp, figmap_op_timeseries)
-
+  ts = create_graph("overivew", "time_series", config, data_long, figmap_overview_timeseries, pngGraphs = TRUE),
+  cone = create_graph("overivew", "cone_uncertainty", config, data_long, figmap_overview_cone, pngGraphs = TRUE)
 )

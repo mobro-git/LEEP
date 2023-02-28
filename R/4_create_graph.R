@@ -2,7 +2,7 @@
 create_graph <- function(presentation_title, presentation_plot_type, config, emf_data_long, figmap,
                          pdfGraphs = TRUE, pngGraphs = FALSE, sub = "", debug = FALSE) {
   #  create folders
-  overall_path = paste("./output/round",config$round_num,"/", presentation_title, "/", sep = "")
+  overall_path = paste("./output/", presentation_title, "/", sep = "")
   subfolders = c("", presentation_plot_type)
   create_folders(sapply(subfolders, function(x) {paste(overall_path, x, sep = "")}))
 
