@@ -38,7 +38,7 @@ tar_plan(
 
     models_noaeo = c("NEMS","GCAM","IPM","USREP-ReEDS","Scout"),
 
-    models_bistline = c("GCAM-CGS","EPS-EI","Haiky-RFF","IPM-NRDC","MARKAL-NETL","NEMS-RHG","ReEDS-NREL","REGEN-EPRI","RIO-REPEAT"),
+    models_bistline = c("GCAM-CGS","EPS-EI","Haiku-RFF","IPM-NRDC","MARKAL-NETL","NEMS-RHG","ReEDS-NREL","REGEN-EPRI","RIO-REPEAT"),
 
     models_emf = c("GCAM-EMF"),
 
