@@ -86,7 +86,8 @@ combined.data.2 <- left_join(combined.data, var.mapping, by = "Bistline Variable
     )
   ) %>%
   rename(variable = "Template Variable") %>%
-  select(-table, -Notes, -"Bistline Variable")
+  select(-table, -Notes, -"Bistline Variable") %>%
+  mutate(region = "United States")
 
 
 write.csv(combined.data.2, "data-raw/model-runs/bistline_ira_tall.csv", row.names = FALSE)
