@@ -32,11 +32,15 @@ tar_plan(
     # models
     models = c("AEO2020","AEO2021","AEO2022",
                "EIA_Historic","EIA_STEO","EPA-GHGI","NCS-GHGI",
-               "NEMS","GCAM","IPM","USREP-ReEDS","Scout"),
+               "GCAM-CGS","EPS-EI","Haiky-RFF","IPM-NRDC","MARKAL-NETL","NEMS-RHG","ReEDS-NREL","REGEN-EPRI","RIO-REPEAT", #bistline paper
+               "GCAM-EMF" # emf
+               ),
 
     models_noaeo = c("NEMS","GCAM","IPM","USREP-ReEDS","Scout"),
 
     models_bistline = c("GCAM-CGS","EPS-EI","Haiky-RFF","IPM-NRDC","MARKAL-NETL","NEMS-RHG","ReEDS-NREL","REGEN-EPRI","RIO-REPEAT"),
+
+    models_emf = c("GCAM-EMF"),
 
     # scenarios
     main_scenarios = c("Reference","IRA"),
