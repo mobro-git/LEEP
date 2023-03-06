@@ -81,6 +81,7 @@ combined.data.2 <- left_join(combined.data, var.mapping, by = "Bistline Variable
     unit = case_when(
       unit == "Mt-CO2e/yr" ~ "Mt CO2/yr",
       unit == "Mt-CO2/yr" ~ "Mt CO2/yr",
+      unit == "Mt-NOx/yr" ~ "Mt NOx/yr",
       TRUE ~ unit
     )
   ) %>%

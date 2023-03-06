@@ -2753,111 +2753,111 @@
 "IRA","RIO-REPEAT","EJ/yr","2050",11.2468953889292,"Final Energy|Gas"
 "IRA","RIO-REPEAT","EJ/yr","2050",23.9075656203692,"Final Energy|Oil"
 "IRA","RIO-REPEAT","EJ/yr","2050",0.8018424479912,"Final Energy|Coal"
-"Reference","EPS-EI","Mt-NOx/yr","2025",8.8638968,"Emissions|NOx"
-"Reference","GCAM-CGS","Mt-NOx/yr","2025",NA,"Emissions|NOx"
-"Reference","Haiku-RFF","Mt-NOx/yr","2025",NA,"Emissions|NOx"
-"Reference","IPM-NRDC","Mt-NOx/yr","2025",NA,"Emissions|NOx"
-"Reference","MARKAL-NETL","Mt-NOx/yr","2025",5.47,"Emissions|NOx"
-"Reference","NEMS-RHG","Mt-NOx/yr","2025",NA,"Emissions|NOx"
-"Reference","ReEDS-NREL","Mt-NOx/yr","2025",NA,"Emissions|NOx"
-"Reference","REGEN-EPRI","Mt-NOx/yr","2025",7.77823126461498,"Emissions|NOx"
-"Reference","RIO-REPEAT","Mt-NOx/yr","2025",NA,"Emissions|NOx"
-"IRA","EPS-EI","Mt-NOx/yr","2025",8.681365,NA
-"IRA","GCAM-CGS","Mt-NOx/yr","2025",NA,NA
-"IRA","Haiku-RFF","Mt-NOx/yr","2025",NA,NA
-"IRA","IPM-NRDC","Mt-NOx/yr","2025",NA,NA
-"IRA","MARKAL-NETL","Mt-NOx/yr","2025",5.32,NA
-"IRA","NEMS-RHG","Mt-NOx/yr","2025",NA,NA
-"IRA","ReEDS-NREL","Mt-NOx/yr","2025",NA,NA
-"IRA","REGEN-EPRI","Mt-NOx/yr","2025",7.69247,NA
-"IRA","RIO-REPEAT","Mt-NOx/yr","2025",NA,NA
-"Reference","EPS-EI","Mt-NOx/yr","2030",8.398892,"Emissions|NOx"
-"Reference","GCAM-CGS","Mt-NOx/yr","2030",NA,"Emissions|NOx"
-"Reference","Haiku-RFF","Mt-NOx/yr","2030",NA,"Emissions|NOx"
-"Reference","IPM-NRDC","Mt-NOx/yr","2030",NA,"Emissions|NOx"
-"Reference","MARKAL-NETL","Mt-NOx/yr","2030",5.1,"Emissions|NOx"
-"Reference","NEMS-RHG","Mt-NOx/yr","2030",NA,"Emissions|NOx"
-"Reference","ReEDS-NREL","Mt-NOx/yr","2030",NA,"Emissions|NOx"
-"Reference","REGEN-EPRI","Mt-NOx/yr","2030",7.18209867996099,"Emissions|NOx"
-"Reference","RIO-REPEAT","Mt-NOx/yr","2030",NA,"Emissions|NOx"
-"IRA","EPS-EI","Mt-NOx/yr","2030",7.9324507,NA
-"IRA","GCAM-CGS","Mt-NOx/yr","2030",NA,NA
-"IRA","Haiku-RFF","Mt-NOx/yr","2030",NA,NA
-"IRA","IPM-NRDC","Mt-NOx/yr","2030",NA,NA
-"IRA","MARKAL-NETL","Mt-NOx/yr","2030",4.75,NA
-"IRA","NEMS-RHG","Mt-NOx/yr","2030",NA,NA
-"IRA","ReEDS-NREL","Mt-NOx/yr","2030",NA,NA
-"IRA","REGEN-EPRI","Mt-NOx/yr","2030",7.00608,NA
-"IRA","RIO-REPEAT","Mt-NOx/yr","2030",NA,NA
-"Reference","EPS-EI","Mt-NOx/yr","2035",8.0738525,"Emissions|NOx"
-"Reference","GCAM-CGS","Mt-NOx/yr","2035",NA,"Emissions|NOx"
-"Reference","Haiku-RFF","Mt-NOx/yr","2035",NA,"Emissions|NOx"
-"Reference","IPM-NRDC","Mt-NOx/yr","2035",NA,"Emissions|NOx"
-"Reference","MARKAL-NETL","Mt-NOx/yr","2035",4.86,"Emissions|NOx"
-"Reference","NEMS-RHG","Mt-NOx/yr","2035",NA,"Emissions|NOx"
-"Reference","ReEDS-NREL","Mt-NOx/yr","2035",NA,"Emissions|NOx"
-"Reference","REGEN-EPRI","Mt-NOx/yr","2035",6.70164650622222,"Emissions|NOx"
-"Reference","RIO-REPEAT","Mt-NOx/yr","2035",NA,"Emissions|NOx"
-"IRA","EPS-EI","Mt-NOx/yr","2035",7.443172,NA
-"IRA","GCAM-CGS","Mt-NOx/yr","2035",NA,NA
-"IRA","Haiku-RFF","Mt-NOx/yr","2035",NA,NA
-"IRA","IPM-NRDC","Mt-NOx/yr","2035",NA,NA
-"IRA","MARKAL-NETL","Mt-NOx/yr","2035",4.04,NA
-"IRA","NEMS-RHG","Mt-NOx/yr","2035",NA,NA
-"IRA","ReEDS-NREL","Mt-NOx/yr","2035",NA,NA
-"IRA","REGEN-EPRI","Mt-NOx/yr","2035",6.23599,NA
-"IRA","RIO-REPEAT","Mt-NOx/yr","2035",NA,NA
-"Reference","EPS-EI","Mt-NOx/yr","2040",7.9339584,"Emissions|NOx"
-"Reference","GCAM-CGS","Mt-NOx/yr","2040",NA,"Emissions|NOx"
-"Reference","Haiku-RFF","Mt-NOx/yr","2040",NA,"Emissions|NOx"
-"Reference","IPM-NRDC","Mt-NOx/yr","2040",NA,"Emissions|NOx"
-"Reference","MARKAL-NETL","Mt-NOx/yr","2040",4.89,"Emissions|NOx"
-"Reference","NEMS-RHG","Mt-NOx/yr","2040",NA,"Emissions|NOx"
-"Reference","ReEDS-NREL","Mt-NOx/yr","2040",NA,"Emissions|NOx"
-"Reference","REGEN-EPRI","Mt-NOx/yr","2040",6.50647521934738,"Emissions|NOx"
-"Reference","RIO-REPEAT","Mt-NOx/yr","2040",NA,"Emissions|NOx"
-"IRA","EPS-EI","Mt-NOx/yr","2040",7.3147267,NA
-"IRA","GCAM-CGS","Mt-NOx/yr","2040",NA,NA
-"IRA","Haiku-RFF","Mt-NOx/yr","2040",NA,NA
-"IRA","IPM-NRDC","Mt-NOx/yr","2040",NA,NA
-"IRA","MARKAL-NETL","Mt-NOx/yr","2040",3.99,NA
-"IRA","NEMS-RHG","Mt-NOx/yr","2040",NA,NA
-"IRA","ReEDS-NREL","Mt-NOx/yr","2040",NA,NA
-"IRA","REGEN-EPRI","Mt-NOx/yr","2040",5.90332,NA
-"IRA","RIO-REPEAT","Mt-NOx/yr","2040",NA,NA
-"Reference","EPS-EI","Mt-NOx/yr","2045",7.9007297,"Emissions|NOx"
-"Reference","GCAM-CGS","Mt-NOx/yr","2045",NA,"Emissions|NOx"
-"Reference","Haiku-RFF","Mt-NOx/yr","2045",NA,"Emissions|NOx"
-"Reference","IPM-NRDC","Mt-NOx/yr","2045",NA,"Emissions|NOx"
-"Reference","MARKAL-NETL","Mt-NOx/yr","2045",4.94,"Emissions|NOx"
-"Reference","NEMS-RHG","Mt-NOx/yr","2045",NA,"Emissions|NOx"
-"Reference","ReEDS-NREL","Mt-NOx/yr","2045",NA,"Emissions|NOx"
-"Reference","REGEN-EPRI","Mt-NOx/yr","2045",6.19688793910381,"Emissions|NOx"
-"Reference","RIO-REPEAT","Mt-NOx/yr","2045",NA,"Emissions|NOx"
-"IRA","EPS-EI","Mt-NOx/yr","2045",7.3923227,NA
-"IRA","GCAM-CGS","Mt-NOx/yr","2045",NA,NA
-"IRA","Haiku-RFF","Mt-NOx/yr","2045",NA,NA
-"IRA","IPM-NRDC","Mt-NOx/yr","2045",NA,NA
-"IRA","MARKAL-NETL","Mt-NOx/yr","2045",3.89,NA
-"IRA","NEMS-RHG","Mt-NOx/yr","2045",NA,NA
-"IRA","ReEDS-NREL","Mt-NOx/yr","2045",NA,NA
-"IRA","REGEN-EPRI","Mt-NOx/yr","2045",5.4031,NA
-"IRA","RIO-REPEAT","Mt-NOx/yr","2045",NA,NA
-"Reference","EPS-EI","Mt-NOx/yr","2050",7.9449733,"Emissions|NOx"
-"Reference","GCAM-CGS","Mt-NOx/yr","2050",NA,"Emissions|NOx"
-"Reference","Haiku-RFF","Mt-NOx/yr","2050",NA,"Emissions|NOx"
-"Reference","IPM-NRDC","Mt-NOx/yr","2050",NA,"Emissions|NOx"
-"Reference","MARKAL-NETL","Mt-NOx/yr","2050",4.89,"Emissions|NOx"
-"Reference","NEMS-RHG","Mt-NOx/yr","2050",NA,"Emissions|NOx"
-"Reference","ReEDS-NREL","Mt-NOx/yr","2050",NA,"Emissions|NOx"
-"Reference","REGEN-EPRI","Mt-NOx/yr","2050",5.84160289533301,"Emissions|NOx"
-"Reference","RIO-REPEAT","Mt-NOx/yr","2050",NA,"Emissions|NOx"
-"IRA","EPS-EI","Mt-NOx/yr","2050",7.5111489,NA
-"IRA","GCAM-CGS","Mt-NOx/yr","2050",NA,NA
-"IRA","Haiku-RFF","Mt-NOx/yr","2050",NA,NA
-"IRA","IPM-NRDC","Mt-NOx/yr","2050",NA,NA
-"IRA","MARKAL-NETL","Mt-NOx/yr","2050",3.87,NA
-"IRA","NEMS-RHG","Mt-NOx/yr","2050",NA,NA
-"IRA","ReEDS-NREL","Mt-NOx/yr","2050",NA,NA
-"IRA","REGEN-EPRI","Mt-NOx/yr","2050",5.14907,NA
-"IRA","RIO-REPEAT","Mt-NOx/yr","2050",NA,NA
+"Reference","EPS-EI","Mt NOx/yr","2025",8.8638968,"Emissions|NOx"
+"Reference","GCAM-CGS","Mt NOx/yr","2025",NA,"Emissions|NOx"
+"Reference","Haiku-RFF","Mt NOx/yr","2025",NA,"Emissions|NOx"
+"Reference","IPM-NRDC","Mt NOx/yr","2025",NA,"Emissions|NOx"
+"Reference","MARKAL-NETL","Mt NOx/yr","2025",5.47,"Emissions|NOx"
+"Reference","NEMS-RHG","Mt NOx/yr","2025",NA,"Emissions|NOx"
+"Reference","ReEDS-NREL","Mt NOx/yr","2025",NA,"Emissions|NOx"
+"Reference","REGEN-EPRI","Mt NOx/yr","2025",7.77823126461498,"Emissions|NOx"
+"Reference","RIO-REPEAT","Mt NOx/yr","2025",NA,"Emissions|NOx"
+"IRA","EPS-EI","Mt NOx/yr","2025",8.681365,NA
+"IRA","GCAM-CGS","Mt NOx/yr","2025",NA,NA
+"IRA","Haiku-RFF","Mt NOx/yr","2025",NA,NA
+"IRA","IPM-NRDC","Mt NOx/yr","2025",NA,NA
+"IRA","MARKAL-NETL","Mt NOx/yr","2025",5.32,NA
+"IRA","NEMS-RHG","Mt NOx/yr","2025",NA,NA
+"IRA","ReEDS-NREL","Mt NOx/yr","2025",NA,NA
+"IRA","REGEN-EPRI","Mt NOx/yr","2025",7.69247,NA
+"IRA","RIO-REPEAT","Mt NOx/yr","2025",NA,NA
+"Reference","EPS-EI","Mt NOx/yr","2030",8.398892,"Emissions|NOx"
+"Reference","GCAM-CGS","Mt NOx/yr","2030",NA,"Emissions|NOx"
+"Reference","Haiku-RFF","Mt NOx/yr","2030",NA,"Emissions|NOx"
+"Reference","IPM-NRDC","Mt NOx/yr","2030",NA,"Emissions|NOx"
+"Reference","MARKAL-NETL","Mt NOx/yr","2030",5.1,"Emissions|NOx"
+"Reference","NEMS-RHG","Mt NOx/yr","2030",NA,"Emissions|NOx"
+"Reference","ReEDS-NREL","Mt NOx/yr","2030",NA,"Emissions|NOx"
+"Reference","REGEN-EPRI","Mt NOx/yr","2030",7.18209867996099,"Emissions|NOx"
+"Reference","RIO-REPEAT","Mt NOx/yr","2030",NA,"Emissions|NOx"
+"IRA","EPS-EI","Mt NOx/yr","2030",7.9324507,NA
+"IRA","GCAM-CGS","Mt NOx/yr","2030",NA,NA
+"IRA","Haiku-RFF","Mt NOx/yr","2030",NA,NA
+"IRA","IPM-NRDC","Mt NOx/yr","2030",NA,NA
+"IRA","MARKAL-NETL","Mt NOx/yr","2030",4.75,NA
+"IRA","NEMS-RHG","Mt NOx/yr","2030",NA,NA
+"IRA","ReEDS-NREL","Mt NOx/yr","2030",NA,NA
+"IRA","REGEN-EPRI","Mt NOx/yr","2030",7.00608,NA
+"IRA","RIO-REPEAT","Mt NOx/yr","2030",NA,NA
+"Reference","EPS-EI","Mt NOx/yr","2035",8.0738525,"Emissions|NOx"
+"Reference","GCAM-CGS","Mt NOx/yr","2035",NA,"Emissions|NOx"
+"Reference","Haiku-RFF","Mt NOx/yr","2035",NA,"Emissions|NOx"
+"Reference","IPM-NRDC","Mt NOx/yr","2035",NA,"Emissions|NOx"
+"Reference","MARKAL-NETL","Mt NOx/yr","2035",4.86,"Emissions|NOx"
+"Reference","NEMS-RHG","Mt NOx/yr","2035",NA,"Emissions|NOx"
+"Reference","ReEDS-NREL","Mt NOx/yr","2035",NA,"Emissions|NOx"
+"Reference","REGEN-EPRI","Mt NOx/yr","2035",6.70164650622222,"Emissions|NOx"
+"Reference","RIO-REPEAT","Mt NOx/yr","2035",NA,"Emissions|NOx"
+"IRA","EPS-EI","Mt NOx/yr","2035",7.443172,NA
+"IRA","GCAM-CGS","Mt NOx/yr","2035",NA,NA
+"IRA","Haiku-RFF","Mt NOx/yr","2035",NA,NA
+"IRA","IPM-NRDC","Mt NOx/yr","2035",NA,NA
+"IRA","MARKAL-NETL","Mt NOx/yr","2035",4.04,NA
+"IRA","NEMS-RHG","Mt NOx/yr","2035",NA,NA
+"IRA","ReEDS-NREL","Mt NOx/yr","2035",NA,NA
+"IRA","REGEN-EPRI","Mt NOx/yr","2035",6.23599,NA
+"IRA","RIO-REPEAT","Mt NOx/yr","2035",NA,NA
+"Reference","EPS-EI","Mt NOx/yr","2040",7.9339584,"Emissions|NOx"
+"Reference","GCAM-CGS","Mt NOx/yr","2040",NA,"Emissions|NOx"
+"Reference","Haiku-RFF","Mt NOx/yr","2040",NA,"Emissions|NOx"
+"Reference","IPM-NRDC","Mt NOx/yr","2040",NA,"Emissions|NOx"
+"Reference","MARKAL-NETL","Mt NOx/yr","2040",4.89,"Emissions|NOx"
+"Reference","NEMS-RHG","Mt NOx/yr","2040",NA,"Emissions|NOx"
+"Reference","ReEDS-NREL","Mt NOx/yr","2040",NA,"Emissions|NOx"
+"Reference","REGEN-EPRI","Mt NOx/yr","2040",6.50647521934738,"Emissions|NOx"
+"Reference","RIO-REPEAT","Mt NOx/yr","2040",NA,"Emissions|NOx"
+"IRA","EPS-EI","Mt NOx/yr","2040",7.3147267,NA
+"IRA","GCAM-CGS","Mt NOx/yr","2040",NA,NA
+"IRA","Haiku-RFF","Mt NOx/yr","2040",NA,NA
+"IRA","IPM-NRDC","Mt NOx/yr","2040",NA,NA
+"IRA","MARKAL-NETL","Mt NOx/yr","2040",3.99,NA
+"IRA","NEMS-RHG","Mt NOx/yr","2040",NA,NA
+"IRA","ReEDS-NREL","Mt NOx/yr","2040",NA,NA
+"IRA","REGEN-EPRI","Mt NOx/yr","2040",5.90332,NA
+"IRA","RIO-REPEAT","Mt NOx/yr","2040",NA,NA
+"Reference","EPS-EI","Mt NOx/yr","2045",7.9007297,"Emissions|NOx"
+"Reference","GCAM-CGS","Mt NOx/yr","2045",NA,"Emissions|NOx"
+"Reference","Haiku-RFF","Mt NOx/yr","2045",NA,"Emissions|NOx"
+"Reference","IPM-NRDC","Mt NOx/yr","2045",NA,"Emissions|NOx"
+"Reference","MARKAL-NETL","Mt NOx/yr","2045",4.94,"Emissions|NOx"
+"Reference","NEMS-RHG","Mt NOx/yr","2045",NA,"Emissions|NOx"
+"Reference","ReEDS-NREL","Mt NOx/yr","2045",NA,"Emissions|NOx"
+"Reference","REGEN-EPRI","Mt NOx/yr","2045",6.19688793910381,"Emissions|NOx"
+"Reference","RIO-REPEAT","Mt NOx/yr","2045",NA,"Emissions|NOx"
+"IRA","EPS-EI","Mt NOx/yr","2045",7.3923227,NA
+"IRA","GCAM-CGS","Mt NOx/yr","2045",NA,NA
+"IRA","Haiku-RFF","Mt NOx/yr","2045",NA,NA
+"IRA","IPM-NRDC","Mt NOx/yr","2045",NA,NA
+"IRA","MARKAL-NETL","Mt NOx/yr","2045",3.89,NA
+"IRA","NEMS-RHG","Mt NOx/yr","2045",NA,NA
+"IRA","ReEDS-NREL","Mt NOx/yr","2045",NA,NA
+"IRA","REGEN-EPRI","Mt NOx/yr","2045",5.4031,NA
+"IRA","RIO-REPEAT","Mt NOx/yr","2045",NA,NA
+"Reference","EPS-EI","Mt NOx/yr","2050",7.9449733,"Emissions|NOx"
+"Reference","GCAM-CGS","Mt NOx/yr","2050",NA,"Emissions|NOx"
+"Reference","Haiku-RFF","Mt NOx/yr","2050",NA,"Emissions|NOx"
+"Reference","IPM-NRDC","Mt NOx/yr","2050",NA,"Emissions|NOx"
+"Reference","MARKAL-NETL","Mt NOx/yr","2050",4.89,"Emissions|NOx"
+"Reference","NEMS-RHG","Mt NOx/yr","2050",NA,"Emissions|NOx"
+"Reference","ReEDS-NREL","Mt NOx/yr","2050",NA,"Emissions|NOx"
+"Reference","REGEN-EPRI","Mt NOx/yr","2050",5.84160289533301,"Emissions|NOx"
+"Reference","RIO-REPEAT","Mt NOx/yr","2050",NA,"Emissions|NOx"
+"IRA","EPS-EI","Mt NOx/yr","2050",7.5111489,NA
+"IRA","GCAM-CGS","Mt NOx/yr","2050",NA,NA
+"IRA","Haiku-RFF","Mt NOx/yr","2050",NA,NA
+"IRA","IPM-NRDC","Mt NOx/yr","2050",NA,NA
+"IRA","MARKAL-NETL","Mt NOx/yr","2050",3.87,NA
+"IRA","NEMS-RHG","Mt NOx/yr","2050",NA,NA
+"IRA","ReEDS-NREL","Mt NOx/yr","2050",NA,NA
+"IRA","REGEN-EPRI","Mt NOx/yr","2050",5.14907,NA
+"IRA","RIO-REPEAT","Mt NOx/yr","2050",NA,NA
