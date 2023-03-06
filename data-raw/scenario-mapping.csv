@@ -23,8 +23,8 @@ EIAinEMF37.csv,AEO.2022,REF2022,AEO2022,Reference,From EIA in EMF37 Repo
 EIAinEMF37.csv,EIA_Historic,Historic,EIA,Historic,From EIA in EMF37 Repo
 EIAinEMF37.csv,EIA_STEO,Ref,EIA-STEO,Historic,From EIA in EMF37 Repo
 MER_GHGI_historic.xlsx,MER,Historic,MER,Historic,Manually mapped MER data from LTS work
-,,,,,
-,,,,,
+gcam_ira.csv,GCAM-EMF,NT.Ref,GCAM-EMF,Reference,from EMF 37 IRA scenario submission
+gcam_ira.csv,GCAM-EMF,NT.IRA.Ref,GCAM-EMF,IRA,from EMF 37 IRA scenario submission
 ,,,,,
 ,,,,,
 ,,,,,

@@ -148,7 +148,7 @@ tar_plan(
 
   ### Figures  -------------------
 
-  ts = create_graph("overivew", "time_series", config, data_long, figmap_overview_timeseries, pngGraphs = TRUE),
-  cone = create_graph("overivew", "cone_uncertainty", config, data_long, figmap_overview_cone, pngGraphs = TRUE)
+  ts = create_graph("leep", "time_series", config, data_long, figmap_leep_timeseries, pngGraphs = TRUE),
+  cone = create_graph("leep", "cone_uncertainty", config, data_long, figmap_leep_cone, pngGraphs = TRUE)
 
 )
