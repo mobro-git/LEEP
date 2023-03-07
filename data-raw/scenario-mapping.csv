@@ -25,10 +25,10 @@ EIAinEMF37.csv,EIA_STEO,Ref,EIA-STEO,Historic,From EIA in EMF37 Repo
 MER_GHGI_historic.xlsx,MER,Historic,MER,Historic,Manually mapped MER data from LTS work
 gcam_ira.csv,GCAM-EMF,NT.Ref,GCAM-EMF,Reference,from EMF 37 IRA scenario submission
 gcam_ira.csv,GCAM-EMF,NT.IRA.Ref,GCAM-EMF,IRA,from EMF 37 IRA scenario submission
-,,,,,
-,,,,,
-,,,,,
-,,,,,
+2023-03-02_data_IAMC_format-IRA.xlsx,Scout v0.8,Baseline,Scout-LEEP,Reference,preliminary data - NOT FINAL
+2023-03-02_data_IAMC_format-IRA.xlsx,Scout v0.8,IRA.Central,Scout-LEEP,IRA,preliminary data - NOT FINAL
+2023-03-02_data_IAMC_format-IRA.xlsx,Scout v0.8,IRA.High,Scout-LEEP,IRA.High,preliminary data - NOT FINAL
+2023-03-02_data_IAMC_format-IRA.xlsx,Scout v0.8,IRA.Low,Scout-LEEP,IRA.Low,preliminary data - NOT FINAL
 ,,,,,
 ,,,,,
 ,,,,,
