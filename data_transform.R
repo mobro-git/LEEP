@@ -60,10 +60,15 @@ data.ffconsump <- read_xlsx("data-extra/ira_comparison_raw/ira_comparison.xlsx",
       unit == "quads" ~ "EJ/yr",
       TRUE ~ "unit"))
 
+data.transport <- read_xlsx("data-extra/ira_comparison_raw/ira_comparison.xlsx", sheet = "Transport") %>%
+  mutate(unit = '%') %>%
+  gather("year", "value", 4:7)
+
 combined.data <- full_join(data.emissions, data.co2captured) %>%
   full_join(data.elecdemand) %>%
   full_join(data.ffconsump) %>%
   full_join(data.nox) %>%
+  full_join(data.transport) %>%
   rename("Bistline Variable" = variable)
 
 
