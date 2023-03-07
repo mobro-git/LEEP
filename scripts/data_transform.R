@@ -5,7 +5,6 @@
 ##
 #####
 
-
 library(tidyverse)
 library(readxl)
 library(xlsx)
@@ -17,7 +16,7 @@ library(xlsx)
 #####
 
 data.emissions <- read_xlsx("data-extra/ira_comparison_raw/ira_comparison.xlsx", sheet = "Emissions") %>%
-  gather("year", "value", 4:9) %>%
+  gather("year", "value", 4:11) %>%
   mutate(table = "emissions")
 
 data.co2captured <- read_xlsx("data-extra/ira_comparison_raw/ira_comparison.xlsx", sheet = "CO2 Captured") %>%
