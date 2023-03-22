@@ -3,3 +3,6 @@ coneplot,1,Final Energy,Final Energy|Coal,Coal,0,usa,models_bistline,bistline_yr
 coneplot,1,Final Energy,Final Energy|Gas,Gas,0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,model,variable_rename,scenario,region,variable_rename,fixed
 coneplot,1,Final Energy,Final Energy|Oil,Oil,0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,model,variable_rename,scenario,region,variable_rename,fixed
 coneplot,2,Power Sector Emissions,Emissions|CO2|Energy|Supply|Electricity,Electricity,0,usa,models_bistline,bistline_yrs,main_scenarios,single,year,value,model,,,region,scenario,fixed
+coneplot,3,Transportation Sector Emissions,Emissions|CO2|Energy|Demand|Transportation,Transportation,0,usa,models_bistline,bistline_yrs,main_scenarios,single,year,value,model,,,region,scenario,fixed
+coneplot,4,Building Sector Emissions,Emissions|CO2|Energy|Demand|Buildings,Buildings,0,usa,models_bistline,bistline_yrs,main_scenarios,single,year,value,model,,,region,scenario,fixed
+coneplot,5,Building Sector Final Energy - Electricity,Final Energy|Buildings|Electricity,Buildings_Electricity,0,usa,models_bistline,bistline_yrs,main_scenarios,single,year,value,model,,,region,scenario,fixed

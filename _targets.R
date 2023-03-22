@@ -149,6 +149,8 @@ tar_plan(
   ### Figures  -------------------
 
   ts = create_graph("leep", "time_series", config, data_long, figmap_leep_timeseries, pngGraphs = TRUE),
-  cone = create_graph("leep", "cone_uncertainty", config, data_long, figmap_leep_cone, pngGraphs = TRUE)
+  cone = create_graph("leep", "cone_uncertainty", config, data_long, figmap_leep_cone, pngGraphs = TRUE),
+  stackbar = create_graph("leep", "stacked_bar", config, data_long, figmap_leep_stackbar, pngGraphs = TRUE),
+  diffbar = create_graph("leep", "diff_bar", config, data_long, figmap_leep_diffbar, pngGraphs = TRUE)
 
 )
