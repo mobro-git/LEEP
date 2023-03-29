@@ -287,6 +287,11 @@ color_map <- c(
   "DAC" = "very dark blue",
   "Net-GHG" = "#B2B3BD",
 
+  #IRA_scenario
+
+  "Reference" = "teal blue",
+  "IRA" = "dark salmon",
+
   # welfare
   "Welfare" = "teal blue",
   "Quintile 1" = "hue1",

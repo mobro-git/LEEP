@@ -2,7 +2,7 @@ name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iterat
 "%|||%"|function|28bdb9a1b5a6acc2|||||||||||||||
 %forwhich%|function|a6473add327ac854|||||||||||||||
 .__DEVTOOLS__|object|4da1907b175080ea|||||||||||||||
-.Random.seed|object|e0132f9db17041b3|||||||||||||||
+.Random.seed|object|327f0612f4434955|||||||||||||||
 all_blank_or_zero|function|8a29bb3328acf8f3|||||||||||||||
 all_calculated|stem|390ec02d9dbd3437|3bab5870f004d48e|6a01ebe516ba25f3|677961423||t19416.6379281395s|4d19982602e132ae|599|rds|local|vector|||0||
 all_calculated_var|stem|3ca85237e6d5d021|7b3f535b03d0e0d2|54efde2e562806f7|738427922||t19416.6379296441s|0b52c5847220add9|82|rds|local|vector|||0||
@@ -29,13 +29,13 @@ check_dat_before_plotting|function|a42198367af938f9|||||||||||||||
 check_figure_specification|function|0d0d78e7a57bd609|||||||||||||||
 clean_text_for_filename|function|6dd0b58802c7735b|||||||||||||||
 clean_text_for_md|function|d6603a7ab6c9a0de|||||||||||||||
-color_map|object|fd9f58324bc4a008|||||||||||||||
-cone|stem|794be3614d98cc38|237faaf0dfc76191|6d1b6654426a9e22|1799025940||t19438.8059059463s|a1c456b03adbfbf8|44|rds|local|vector|||13.59|Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. 1m22mReturning more or less than 1 row per summarise group was deprecated indplyr 1.1.0.36mℹ39m Please use reframe instead.36mℹ39m When switching from summarise to reframe, remember that reframe  always returns an ungrouped data frame and adjust accordingly.36mℹ39m The deprecated feature was likely used in the 34mLEEP39m package.  Please report the issue to the authors.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length|
+color_map|object|3efa13168c900be6|||||||||||||||
+cone|object|9193875023f1d307|||||||||||||||
 cone_uncertainty_figure_specific_data_processing|function|15ef96323bb79e08|||||||||||||||
 cone_uncertainty_grid_fn|function|5101bae4ec5349f6|||||||||||||||
 cone_uncertainty_single_fn|function|b547bf08925debe9|||||||||||||||
 cone_uncertainty_wrap_fn|function|f456d2f6a160bad0|||||||||||||||
-config|stem|134ab703f1b5cc6b|00432c237f4e2b83|fa5c090315e3b18e|1264390909||t19423.684440161s|71275f0dd43bc536|30041|rds|local|vector|||0.02||
+config|stem|8e73a54a17873119|59a7a460eee76dea|fa5c090315e3b18e|1264390909||t19443.5951012976s|549a80e97f5aee77|30116|rds|local|vector|||0.01||
 conv_units_case|function|2f5df7cef2e056ad|||||||||||||||
 convert_units|function|4fe7079ce3a837bb|||||||||||||||
 corrplot|object|937a2188c51d5076|||||||||||||||
@@ -44,16 +44,16 @@ corrplot_fn|function|720316acae51e0ba|||||||||||||||
 corrplot_fn_tmp|function|75805d0c36b63547|||||||||||||||
 country_abbr|function|ae7f831619664f2d|||||||||||||||
 create_folders|function|c7b5dfe8e8c38aaf|||||||||||||||
-create_graph|function|9621e4fb2a64dbbb|||||||||||||||
+create_graph|function|7cac2607a972a3c5|||||||||||||||
 create_graph_list|function|de7bb7ecae37005e|||||||||||||||
-create_subpalettes|function|545e9b295726b88f|||||||||||||||
+create_subpalettes|function|a370bafcc1c4c050|||||||||||||||
 cumulate|function|d2a32fcd881895a9|||||||||||||||
 cumulative_var|stem|84636b355f19017b|6f568addbab17bb7|09392411ea5794a6|-802968985||t19423.6843282996s|f2a5e99bcf184b36|287|rds|local|vector|||0.03||
 cumulative_var_list|stem|39b4d641c82afebe|3f5dd26ad0381bb4|ef46db3751d8e999|-232057156|data-raw/process_data/cumulative_variables.csv|t19416.5835221284s|499521698191e4a4|41|file|local|vector|||0||
 data_files|stem|59cedc12afba35b9|ea2c63a76a444ff2|18f6cdb108990512|31038078|data-raw/model-runs/2023-03-02_data_IAMC_format-IRA.xlsx*data-raw/model-runs/bistline_ira_tall.csv*data-raw/model-runs/EIAinEMF37.csv*data-raw/model-runs/gcam_ira.csv|t19438.8037049188s|f7010d008264d8ba|4878699|file|local|vector|||0.03||
 data_folder|stem|59cedc12afba35b9|97416003d6084b3e|79bb15b6a98b2097|-1589943188|data-raw/model-runs|t19438.8046601639s|a75e104011428481|4096|file|local|vector|||0.01||
 data_long|stem|5f5af1afba4a70b1|99c2eed552e44ecf|b1f4b871df3efaa9|1053362806||t19423.68451781s|ab957b3c9ccca4b5|1112625|rds|local|vector|||0.42||
-data_long_read|stem|2e054e375cae9ed9|bccb3a0cb7aaa375|8a0eaa52acdadc95|1127857077||t19438.8053004396s|c5a49b2e26b2ef6d|1114888|rds|local|vector|||4.32||
+data_long_read|stem|2e054e375cae9ed9|bccb3a0cb7aaa375|bd3a5e59c271b9ac|1127857077||t19443.5951721411s|c5a49b2e26b2ef6d|1114888|rds|local|vector|||5.3||
 data_min|stem|f840e3e74f7b7a11|cc98cc8428be0606|dfe16eb24943001c|818268966||t19438.805202443s|83c6c5aec16552b1|1262762|rds|local|vector|||3.25||
 data_raw|stem|6ac69c43ac6bb09c|e68cfe4970eb113f|35e0c2fe06dbdfd2|648730325||t19438.8052359729s|d7349fd3f394ee45|832717|rds|local|vector|||2.11||
 def_from_variable|function|a5bdc8a40c061104|||||||||||||||
@@ -61,20 +61,20 @@ def_from_variable_factory|function|3d4b34e942400071|||||||||||||||
 def_var_from_variable|function|6aecc0579a5f70af|||||||||||||||
 def_x_from_variable_factory|function|558bdc79a17c46b1|||||||||||||||
 diff_bar_figure_specific_data_processing|function|738fdd2bd119c37e|||||||||||||||
-diffbar|stem|794be3614d98cc38|2f193dbcf157cdea|307120d87988b1e0|347903424||t19423.7074418675s|a1c456b03adbfbf8|44|rds|local|vector|||10.08|Unknown or uninitialised column shape.. Unknown or uninitialised column shape.|
+diffbar|object|cd21c69edc622281|||||||||||||||
 distinct_models_in_data|function|89a0baa99e36321b|||||||||||||||
 fig_type_obj|object|7878d816c0ecaf3c|||||||||||||||
 figmap_csv_leep_cone|stem|623b6661b776043c|e009ef1c328e2e8b|f831698a771cebac|309168147|plot_mapping/leep_cone.csv|t19438.7831466077s|0e7cb3ed2d36bfb5|1451|file|local|vector|||0||
 figmap_csv_leep_diffbar|stem|4025716dc5c388b4|dec383c2759c8e69|f831698a771cebac|1941850072|plot_mapping/leep_diffbar.csv|t19423.7063541976s|0b575e4744178968|1201|file|local|vector|||0||
 figmap_csv_leep_scatter|stem|438fc03d59c2f390|9064b7dad1841693|f831698a771cebac|1783385308|plot_mapping/leep_scatter.csv|t19419.6476649676s|5f7abfc828666f2f|15627|file|local|vector|||0||
 figmap_csv_leep_stackbar|stem|b90f3e879fb42964|64105042bb9b38d4|f831698a771cebac|-1557044331|plot_mapping/leep_stackbar.csv|t19423.693615617s|a147417cf14a9968|965|file|local|vector|||0||
-figmap_csv_leep_timeseries|stem|03f5eb3699d132d1|27eca4a16d6560ce|f831698a771cebac|1645029888|plot_mapping/leep_timeseries.csv|t19419.6476669699s|7e5949761d67f501|620|file|local|vector|||0||
+figmap_csv_leep_timeseries|stem|361a781ce70a4299|27eca4a16d6560ce|f831698a771cebac|1645029888|plot_mapping/leep_timeseries.csv|t19443.5967019178s|3f1f1656ca1ed597|3237|file|local|vector|||0.01||
 figmap_csv_path|function|5fe106840baf4097|||||||||||||||
 figmap_leep_cone|stem|e065dfbddfced4ee|98a978302db70f23|223f5e7beb7f4837|-1722128459||t19438.7838186327s|bee7c7e7a2a497ec|750|rds|local|vector|||0.15||
 figmap_leep_diffbar|stem|271e14bcc77d4557|e3d219ffe84971d3|f1d529d098697079|-1548579252||t19423.7066966678s|d0b9d98c9fb8d82e|727|rds|local|vector|||0.08||
 figmap_leep_scatter|stem||0f725a664bcc5540|52fa35457581470a|1774327599||t19438.625446563s||0|rds|local|vector|||0.13||Variable Final EnergyPercent Electricity NOT in the template or calculated variable list.36m39m Variable Final EnergyElectricityPercent of 2020 NOT in the template or calculated variable list.36m39m Variable Emissions IntensityCO2Electricity NOT in the template or calculated variable list.36m39m Variable EmissionsCO2Percent difference from 2020 NOT in the template or calculated variable list.36m39m Variable Final EnergyPer Capita NOT in the template or calculated variable list.36m39m Variable Primary EnergyFossilPercent difference from 2020 NOT in the template or calculated variable list.36m39m Variable EmissionsCO2EnergyDemandTransportationPercent difference from 2020 NOT in the template or calculated variable list.36m39m Variable EmissionsCO2EnergyDemandBuildingsPercent difference from 2020 NOT in the template or calculated variable list.36m39m Variable EmissionsCO2EnergyDemandIndustryPercent difference from 2020 NOT in the template or calculated variable list.36m39m Variable EmissionsCO2EnergySupplyElectricityPercent difference from 2020 NOT in the template or calculated variable list.36m39m Variable EmissionsCO2EnergyDemandBuildingsIndirectPercent difference from 2020 NOT in the template or calculated variable list.36m39m Variable EmissionsCO2EnergyDemandIndustryIndirectPercent difference from 2020 NOT in the template or calculated variable list.36m39m Variable EmissionsCO2EnergyDemandTransportationIndirectPercent difference from 2020 NOT in the template or calculated variable list.36m39m Variable Final EnergyPercent difference from 2020 NOT in the template or calculated variable list.36m39m Variable EmissionsCO2EnergyDemandPercent difference from 2020 NOT in the template or calculated variable list.
 figmap_leep_stackbar|stem|f4e562935e2c7411|288d62734245b8f0|bf5f46afa0364cf4|1923386432||t19423.6956576536s|22b4442571f78ea6|657|rds|local|vector|||0.08||
-figmap_leep_timeseries|stem|3bbf0826a3b2537a|e43d7a33a8e7d10c|63a9dba0484c9a50|1324003666||t19423.684502058s|be91d6af8b5b13e0|579|rds|local|vector|||0.09||
+figmap_leep_timeseries|stem|e36d782959e2221b|e43d7a33a8e7d10c|feedf7916e23d630|1324003666||t19443.5969960898s|f1fe2878fbf4bdd1|764|rds|local|vector|||0.14||
 figmap_list|object|fb86dbc29008625c|||||||||||||||
 figmap_list_csv|object|1ac2e8083fb79ae2|||||||||||||||
 find_color|function|fed7e9254fdc80a8|||||||||||||||
@@ -110,7 +110,7 @@ plotly_sankey_fn|function|214ced2b8a1f2db2|||||||||||||||
 plotly_sankey_fn_v2|function|26fc44acb94a62fc|||||||||||||||
 png_plots|function|a7caf25a5188d024|||||||||||||||
 preliminary_data_processing_for_plotting|function|c105a9060ecaaa98|||||||||||||||
-print_graph|function|8fa346801b6218ce|||||||||||||||
+print_graph|function|0a1686148812261b|||||||||||||||
 process_data_file|function|7623e7ce9e9c301f|||||||||||||||
 process_minimal_from_raw|function|211bef39d92c9438|||||||||||||||
 process_special_cases|function|769a11f3181de215|||||||||||||||
@@ -143,7 +143,7 @@ scenario_filter|function|dc68d5024f63d800|||||||||||||||
 set_default_page_filter|function|0bc6a32a0b7240ad|||||||||||||||
 slantx|object|9fad8cd5ffeac321|||||||||||||||
 smyr_filter|function|48ceb3094bb39a84|||||||||||||||
-stackbar|stem|794be3614d98cc38|7c7d42ae652a6111|d97274161dd5c56a|-450720414||t19423.6963826414s|a1c456b03adbfbf8|44|rds|local|vector|||6.37|Unknown or uninitialised column shape.. Unknown or uninitialised column shape.|
+stackbar|object|7878d816c0ecaf3c|||||||||||||||
 stacked_bar_batch_grid_plot_fn1|function|cc7994bfcb749536|||||||||||||||
 stacked_bar_batch_grid_plot_fn2|function|36834078d6f8f20c|||||||||||||||
 stacked_bar_batch_plot_fn|function|02fe238c044f4b17|||||||||||||||
@@ -180,7 +180,7 @@ timeseries|object|7878d816c0ecaf3c|||||||||||||||
 transform_emf_to_long|function|5df42d4326a14cb4|||||||||||||||
 transform_long_to_tidy|function|dbaae86bcd43a5c6|||||||||||||||
 transform_to_national|function|3d51467cc7de5a1d|||||||||||||||
-ts|stem|794be3614d98cc38|e5b531b6ea333622|c685ae8cc9c335e5|657409939||t19423.6845616981s|a1c456b03adbfbf8|44|rds|local|vector|||3.72|Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.|
+ts|stem|794be3614d98cc38|e5b531b6ea333622|628a3c4a079eb681|657409939||t19443.5972856329s|a1c456b03adbfbf8|44|rds|local|vector|||24.47|Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.|
 unique_submissions|stem|794be3614d98cc38|17d4c8b29dc3e4ce|fd2cf74e7ca48fff|-1741985978||t19438.8052383455s|a1c456b03adbfbf8|44|rds|local|vector|||0.03||
 unit_name_standardize|function|34b48f4b1ff4674f|||||||||||||||
 units_package_name_aliases|object|662e8fcdea98b646|||||||||||||||

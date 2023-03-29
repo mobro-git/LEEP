@@ -47,7 +47,8 @@ tar_plan(
 
     # time intervals
     usa = "United States",
-    bistline_yrs = c(seq(2021,2050,by=1))
+    bistline_yrs = c(seq(2021,2050,by=1)),
+    beg2005_end2050_yrs = c(seq(2005,2050,by=1))
   ),
 
   ######################################################################################### -
