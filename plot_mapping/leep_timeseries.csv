@@ -1,16 +1,16 @@
 figure_type,figure_no,title_name,variable,variable_rename,flip_sign,regions,models,years,scenarios,type,x,y,facet1,facet2,color,page_filter,scales
-timeseries,1,Final Energy,Final Energy|Coal,Coal,0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
-timeseries,1,Final Energy,Final Energy|Gas,Gas,0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
-timeseries,1,Final Energy,Final Energy|Oil,Oil,0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
-timeseries,2,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Buildings,Economy-Wide Emissions (CO2),0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
-timeseries,2,Economy-Wide Emissions,Emissions|CO2|Energy|Supply|Electricity,Economy-Wide Emissions (CO2),0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
-timeseries,2,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Industry,Economy-Wide Emissions (CO2),0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
-timeseries,2,Economy-Wide Emissions,Emissions|CO2|Industrial Processes,Economy-Wide Emissions (CO2),0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
-timeseries,2,Economy-Wide Emissions,Emissions|CO2|Other,Economy-Wide Emissions (CO2),0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
-timeseries,2,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Transportation,Economy-Wide Emissions (CO2),0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
-timeseries,3,Emissions|CO2|Energy|Demand|Buildings,Emissions|CO2|Energy|Demand|Buildings,Economy-Wide Emissions (CO2),0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
-timeseries,4,Emissions|CO2|Energy|Supply|Electricity,Emissions|CO2|Energy|Supply|Electricity,Economy-Wide Emissions (CO2),0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
-timeseries,5,Emissions|CO2|Energy|Demand|Industry,Emissions|CO2|Energy|Demand|Industry,Economy-Wide Emissions (CO2),0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
-timeseries,6,Emissions|CO2|Industrial Processes,Emissions|CO2|Industrial Processes,Economy-Wide Emissions (CO2),0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
-timeseries,7,Emissions|CO2|Other,Emissions|CO2|Other,Economy-Wide Emissions (CO2),0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
-timeseries,8,Emissions|CO2|Energy|Demand|Transportation,Emissions|CO2|Energy|Demand|Transportation,Economy-Wide Emissions (CO2),0,usa,models_bistline,bistline_yrs,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,1,Final Energy,Final Energy|Coal,Coal,0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,1,Final Energy,Final Energy|Gas,Gas,0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,1,Final Energy,Final Energy|Oil,Oil,0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,2,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Buildings,Economy-Wide Emissions (CO2),0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,2,Economy-Wide Emissions,Emissions|CO2|Energy|Supply|Electricity,Economy-Wide Emissions (CO2),0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,2,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Industry,Economy-Wide Emissions (CO2),0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,2,Economy-Wide Emissions,Emissions|CO2|Industrial Processes,Economy-Wide Emissions (CO2),0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,2,Economy-Wide Emissions,Emissions|CO2|Other,Economy-Wide Emissions (CO2),0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,2,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Transportation,Economy-Wide Emissions (CO2),0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,3,Emissions|CO2|Energy|Demand|Buildings,Emissions|CO2|Energy|Demand|Buildings,Economy-Wide Emissions (CO2),0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,4,Emissions|CO2|Energy|Supply|Electricity,Emissions|CO2|Energy|Supply|Electricity,Economy-Wide Emissions (CO2),0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,5,Emissions|CO2|Energy|Demand|Industry,Emissions|CO2|Energy|Demand|Industry,Economy-Wide Emissions (CO2),0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,6,Emissions|CO2|Industrial Processes,Emissions|CO2|Industrial Processes,Economy-Wide Emissions (CO2),0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,7,Emissions|CO2|Other,Emissions|CO2|Other,Economy-Wide Emissions (CO2),0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,8,Emissions|CO2|Energy|Demand|Transportation,Emissions|CO2|Energy|Demand|Transportation,Economy-Wide Emissions (CO2),0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed

@@ -1,5 +1,5 @@
 figure_type,figure_no,title_name,variable,flip_sign,variable_rename,regions,models,years,scenarios,type,position,x,y,facet1,facet2,color,page_filter,scales
-stackbar,2,Sectoral CO2 Emissions,Emissions|CO2|Energy|Demand|Buildings,0,Buildings,usa,models_bistline,bistline_yrs,main_scenarios,grid,stack,year,value,scenario,model,variable_rename,region,fixed
-stackbar,2,Sectoral CO2 Emissions,Emissions|CO2|Energy|Demand|Industry,0,Industry,usa,models_bistline,bistline_yrs,main_scenarios,grid,stack,year,value,scenario,model,variable_rename,region,fixed
-stackbar,2,Sectoral CO2 Emissions,Emissions|CO2|Energy|Demand|Transportation,0,Transportation,usa,models_bistline,bistline_yrs,main_scenarios,grid,stack,year,value,scenario,model,variable_rename,region,fixed
-stackbar,2,Sectoral CO2 Emissions,Emissions|CO2|Energy|Supply|Electricity,0,Electricity,usa,models_bistline,bistline_yrs,main_scenarios,grid,stack,year,value,scenario,model,variable_rename,region,fixed
+stackbar,2,Sectoral CO2 Emissions,Emissions|CO2|Energy|Demand|Buildings,0,Buildings,usa,models_bistline,ira_2035,main_scenarios,grid,stack,year,value,scenario,model,variable_rename,region,fixed
+stackbar,2,Sectoral CO2 Emissions,Emissions|CO2|Energy|Demand|Industry,0,Industry,usa,models_bistline,ira_2035,main_scenarios,grid,stack,year,value,scenario,model,variable_rename,region,fixed
+stackbar,2,Sectoral CO2 Emissions,Emissions|CO2|Energy|Demand|Transportation,0,Transportation,usa,models_bistline,ira_2035,main_scenarios,grid,stack,year,value,scenario,model,variable_rename,region,fixed
+stackbar,2,Sectoral CO2 Emissions,Emissions|CO2|Energy|Supply|Electricity,0,Electricity,usa,models_bistline,ira_2035,main_scenarios,grid,stack,year,value,scenario,model,variable_rename,region,fixed

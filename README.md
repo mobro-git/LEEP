@@ -1,6 +1,6 @@
 # LEEP
 
-Code for interactive exploration, QA, and visualization of EMF37 data.
+Code for interactive exploration, QA, and visualization of LEEP data.
 
 ## Files and Folders:
 
@@ -9,6 +9,7 @@ templates are in /data-raw/templates
 Control files are in /data-raw
 /R -- contains package-like functions only supporting the data pipeline
 /scripts -- contains top-level scripts/code
+/docs -- contains r markdowns and quarto reports
 
 ## Getting Started:
 
@@ -232,8 +233,5 @@ Use the plot function above as a guideline to determine what information we need
 3) change `R/4c_figure_data_processing.R` file: Add figure specific processing function. Make sure to use consistent naming convention. 
 
 4) change the `approved_plot_type` and the `call_plot_fn` functions in the `R/4c_figure_plotting_fn.R` file to support the new capability.
-
-**************************************************
-JEFFS NOTES
 
 

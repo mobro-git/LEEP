@@ -47,8 +47,8 @@ tar_plan(
 
     # time intervals
     usa = "United States",
-    bistline_yrs = c(seq(2021,2050,by=1)),
-    beg2005_end2050_yrs = c(seq(2005,2050,by=1))
+    ira_2035 = c(seq(2021,2035,by=1)),
+    ira_2050 = c(seq(2021,2050,by=1))
   ),
 
   ######################################################################################### -
@@ -113,7 +113,7 @@ tar_plan(
 
   data_min = map_dfr(data_files, read_process_minimal_from_raw),
 
-    unique_submissions = {
+  unique_submissions = {
     data_min %>%
       select(datasrc,model,scenario) %>%
       distinct() %>%
@@ -149,9 +149,11 @@ tar_plan(
 
   ### Figures  -------------------
 
-  ts = create_graph("leep", "time_series", config, data_long, figmap_leep_timeseries, pngGraphs = TRUE),
-  cone = create_graph("leep", "cone_uncertainty", config, data_long, figmap_leep_cone, pngGraphs = TRUE),
-  stackbar = create_graph("leep", "stacked_bar", config, data_long, figmap_leep_stackbar, pngGraphs = TRUE),
-  diffbar = create_graph("leep", "diff_bar", config, data_long, figmap_leep_diffbar, pngGraphs = TRUE)
+  ts = create_graph("leep", "time_series", config, data_long, figmap_leep_timeseries),
+  cone = create_graph("leep", "cone_uncertainty", config, data_long, figmap_leep_cone),
+  stackbar = create_graph("leep", "stacked_bar", config, data_long, figmap_leep_stackbar),
+  diffbar = create_graph("leep", "diff_bar", config, data_long, figmap_leep_diffbar),
+
+  test_diffbar = create_graph("test", "diff_bar",config,data_long,figmap_test_diffbar)
 
 )

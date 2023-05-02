@@ -25,18 +25,18 @@ EIAinEMF37.csv,EIA_STEO,Ref,EIA-STEO,Historic,From EIA in EMF37 Repo
 MER_GHGI_historic.xlsx,MER,Historic,MER,Historic,Manually mapped MER data from LTS work
 gcam_ira.csv,GCAM-EMF,NT.Ref,GCAM-EMF,Reference,from EMF 37 IRA scenario submission
 gcam_ira.csv,GCAM-EMF,NT.IRA.Ref,GCAM-EMF,IRA,from EMF 37 IRA scenario submission
-2023-03-02_data_IAMC_format-IRA.xlsx,Scout v0.8,Baseline,Scout-LEEP,Reference,preliminary data - NOT FINAL
-2023-03-02_data_IAMC_format-IRA.xlsx,Scout v0.8,IRA.Central,Scout-LEEP,IRA,preliminary data - NOT FINAL
-2023-03-02_data_IAMC_format-IRA.xlsx,Scout v0.8,IRA.High,Scout-LEEP,IRA.High,preliminary data - NOT FINAL
-2023-03-02_data_IAMC_format-IRA.xlsx,Scout v0.8,IRA.Low,Scout-LEEP,IRA.Low,preliminary data - NOT FINAL
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
+2023-03-30_data_IAMC_format-IRA_withEPAedits.xlsx,Scout v0.8,Baseline,Scout-LEEP,Reference,preliminary data - NOT FINAL
+2023-03-30_data_IAMC_format-IRA_withEPAedits.xlsx,Scout v0.8,IRA.Central,Scout-LEEP,IRA,preliminary data - NOT FINAL
+2023-03-30_data_IAMC_format-IRA_withEPAedits.xlsx,Scout v0.8,IRA.High,Scout-LEEP,IRA.High,preliminary data - NOT FINAL
+2023-03-30_data_IAMC_format-IRA_withEPAedits.xlsx,Scout v0.8,IRA.Low,Scout-LEEP,IRA.Low,preliminary data - NOT FINAL
+GCAM-USA-v6-IRA-national-04132023.csv,GCAM-USA v6.0,IRA,GCAM-USA,IRA,
+GCAM-USA-v6-IRA-national-04132023.csv,GCAM-USA v6.0,Ref,GCAM-USA,Reference,
+GCAM-USA-v6-IRA-states-04142023.csv,GCAM-USA v6.0,IRA,GCAM-USA,IRA,
+GCAM-USA-v6-IRA-states-04142023.csv,GCAM-USA v6.0,Ref,GCAM-USA,Reference,
+usrep_ira.csv,USREP-ReEDS,0by50.IRA.Ref,,,"net zero runs from EMF, don’t need to include"
+usrep_ira.csv,USREP-ReEDS,0by50.Ref,,,"net zero runs from EMF, don’t need to include"
+usrep_ira.csv,USREP-ReEDS,NT.IRA.Ref,USREP-ReEDS,IRA,
+usrep_ira.csv,USREP-ReEDS,NT.Ref,USREP-ReEDS,Reference,
 ,,,,,
 ,,,,,
 ,,,,,
