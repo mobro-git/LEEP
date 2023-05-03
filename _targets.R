@@ -42,6 +42,8 @@ tar_plan(
 
     models_emf = c("GCAM-EMF"),
 
+    models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-EMF", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "MARKAL-NETL", "NEMS-RHG", "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP"),
+
     # scenarios
     main_scenarios = c("Reference","IRA"),
 
