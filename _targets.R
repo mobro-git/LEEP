@@ -42,6 +42,7 @@ tar_plan(
 
     models_emf = c("GCAM-EMF"),
 
+    # Use models_leep for all initial plots
     models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-EMF", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "MARKAL-NETL", "NEMS-RHG", "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP"),
 
     # scenarios
@@ -159,3 +160,6 @@ tar_plan(
   test_diffbar = create_graph("test", "diff_bar",config,data_long,figmap_test_diffbar)
 
 )
+
+# view Targets pipeline in flow-chart style with dependency links
+# tar_visnetwork(targets_only=TRUE)

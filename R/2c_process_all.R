@@ -12,6 +12,7 @@
 
 read_process_minimal_from_raw <- function(filepath) {
 
+  print(filepath)
   read_raw_data_file(filepath) %>%
     process_minimal_from_raw() %>%
     standardize_col_names()

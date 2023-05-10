@@ -23,25 +23,18 @@ EIAinEMF37.csv,AEO.2022,REF2022,AEO2022,Reference,From EIA in EMF37 Repo
 EIAinEMF37.csv,EIA_Historic,Historic,EIA,Historic,From EIA in EMF37 Repo
 EIAinEMF37.csv,EIA_STEO,Ref,EIA-STEO,Historic,From EIA in EMF37 Repo
 MER_GHGI_historic.xlsx,MER,Historic,MER,Historic,Manually mapped MER data from LTS work
-gcam_ira.csv,GCAM-EMF,NT.Ref,GCAM-EMF,Reference,from EMF 37 IRA scenario submission
-gcam_ira.csv,GCAM-EMF,NT.IRA.Ref,GCAM-EMF,IRA,from EMF 37 IRA scenario submission
 2023-03-30_data_IAMC_format-IRA_withEPAedits.xlsx,Scout v0.8,Baseline,Scout-LEEP,Reference,preliminary data - NOT FINAL
 2023-03-30_data_IAMC_format-IRA_withEPAedits.xlsx,Scout v0.8,IRA.Central,Scout-LEEP,IRA,preliminary data - NOT FINAL
 2023-03-30_data_IAMC_format-IRA_withEPAedits.xlsx,Scout v0.8,IRA.High,Scout-LEEP,IRA.High,preliminary data - NOT FINAL
 2023-03-30_data_IAMC_format-IRA_withEPAedits.xlsx,Scout v0.8,IRA.Low,Scout-LEEP,IRA.Low,preliminary data - NOT FINAL
-GCAM-USA-v6-IRA-national-04132023.csv,GCAM-USA v6.0,IRA,GCAM-USA,IRA,
-GCAM-USA-v6-IRA-national-04132023.csv,GCAM-USA v6.0,Ref,GCAM-USA,Reference,
-GCAM-USA-v6-IRA-states-04142023.csv,GCAM-USA v6.0,IRA,GCAM-USA,IRA,
-GCAM-USA-v6-IRA-states-04142023.csv,GCAM-USA v6.0,Ref,GCAM-USA,Reference,
-usrep_ira.csv,USREP-ReEDS,0by50.IRA.Ref,,,"net zero runs from EMF, don’t need to include"
-usrep_ira.csv,USREP-ReEDS,0by50.Ref,,,"net zero runs from EMF, don’t need to include"
-usrep_ira.csv,USREP-ReEDS,NT.IRA.Ref,USREP-ReEDS,IRA,
-usrep_ira.csv,USREP-ReEDS,NT.Ref,USREP-ReEDS,Reference,
+GCAM-USA-v6-IRA-national-05042023.csv,GCAM-USA v6.0,base IRA,GCAM-PNNL,IRA,
+GCAM-USA-v6-IRA-national-05042023.csv,GCAM-USA v6.0,no IRA,GCAM-PNNL,Reference,
+GCAM-USA-v6-IRA-national-05042023.csv,GCAM-USA v6.0,optimistic IRA,GCAM-PNNL,IRA.High,
 OP-NEMS Mod scenario template draft 04-27-23.xlsx,OP-NEMS,OP IRA Moderate,OP-NEMS,IRA,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
+usrep_reeds_allscen.csv,USREP-ReEDS,reference-noIRA,USREP-ReEDS,Reference,
+usrep_reeds_allscen.csv,USREP-ReEDS,ira_mid,USREP-ReEDS,IRA,
+usrep_reeds_allscen.csv,USREP-ReEDS,ira_max,USREP-ReEDS,IRA.High,
+usrep_reeds_allscen.csv,USREP-ReEDS,ira_base,USREP-ReEDS,IRA.Low,
 ,,,,,
 ,,,,,
 ,,,,,
