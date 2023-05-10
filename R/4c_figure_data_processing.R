@@ -23,6 +23,7 @@
   # create a dataframe with only variables that are going to be plotted
   df <- df_input %>%
     filter(variable %in% unique(plot_list$variable)) %>%
+    # complete_implicit_na() %>%
     left_join(plot_list, by = ("variable" = "variable")) %>%
     distinct()
 
@@ -250,6 +251,7 @@ diff_bar_figure_specific_data_processing <- function(df, config) {
   df <- smyr_filter(df, config)
 
   if (!is.null(df)) {
+
     # compute relevant numbers
     # year as reference
     if (unique(df$ref_type) == "year") {

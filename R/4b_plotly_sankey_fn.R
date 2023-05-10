@@ -1,7 +1,22 @@
 library(plotly)
 library(htmlwidgets)
 
-plotly_sankey_fn <- function(presentation_title, presentation_plot_type, config, emf_data_long, plot_list) {
+plotly_sankey_fn <- function(presentation_title, presentation_plot_type, config, emf_data_long, plot_list, figmap) {
+
+  # print(plot_list)
+  # print("1")
+  # head(plot_list)
+  # print("2")
+  #
+  # # (From create_graph, NOT with the figmap variable replaced with plot_list for this function)
+  # # select the key variables, flip values, and merge with specific figure requests
+  # # df <- preliminary_data_processing_for_plotting(emf_data_long, figmap)
+  # print("3")
+  # # Now applying smyr_filter
+  # df <- smyr_filter(emf_data_long, config)
+  # print("4")
+  # print(df)
+  # head(df)
 
   plot_list <- read_csv(plot_list)
 
@@ -65,15 +80,47 @@ plotly_sankey_fn <- function(presentation_title, presentation_plot_type, config,
               # With networkD3, connection must be provided using id, not using real name like in the links dataframe.. So we need to reformat it.
               links$IDsource <- match(links$source, nodes$name)-1
               links$IDtarget <- match(links$target, nodes$name)-1
-              linksColors <- character()
+
               # print(length(links$value))
-              for (i in length(links$value)) {
-                linksColors <- c(linksColors, paste(sample(155:255,replace=TRUE)))
-              }
+
+              # Commenting out for now on 2/9/23
+
+              # linksColors <- character()
+              # for (i in length(links$value)) {
+              #   linksColors <- c(linksColors, paste(sample(155:255,replace=TRUE)))
+              # }
 
               # links$color <- sub(' .*', '',nodes[links$source + 1, 'name'])
 
               # Make the Network
+
+              my_color <- color_map
+              # print(typeof(my_color))
+              node_colors <- c()
+              link_colors <- c()
+              # node_colors <- find_color(nodes$name, color_map)
+              # link_colors <- find_color(links$IDsource, color_map)
+
+              for (name in nodes) {
+                  # print(color_map[nodes$name])
+                node_colors <- append(node_colors, color_map[nodes$name])
+              }
+              # print(node_colors)
+              # print(links$source)
+
+              for (name in links$source) {
+                # print(color_map[nodes$name])
+                link_colors <- append(link_colors, color_map[name])
+              }
+
+              # print(links$IDsource)
+              # print("###")
+              # print(links$IDtarget)
+              # print("***")
+              # print(links$value)
+              # print("$$$")
+
+              # print(nodes$name)
 
               fig <- plot_ly(
                 type = "sankey",
@@ -84,7 +131,7 @@ plotly_sankey_fn <- function(presentation_title, presentation_plot_type, config,
 
                 node = list(
                   label = nodes$name,
-                  color = c("blue", "red", "green", "blue", "purple", "blue"),
+                  color = node_colors,
                   pad = 15,
                   thickness = 20,
                   line = list(
@@ -97,7 +144,7 @@ plotly_sankey_fn <- function(presentation_title, presentation_plot_type, config,
                   source = links$IDsource,
                   target = links$IDtarget,
                   value =  links$value,
-                  color = linksColors
+                  color = link_colors
                 )
               )
               fig <- fig %>% plotly::layout(

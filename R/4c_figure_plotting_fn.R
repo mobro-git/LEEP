@@ -12,8 +12,10 @@ approved_plot_type <- function(type) {
 
 
 approved_facet_type <- function(dat_filtered) {
+  if (unique(dat_filtered$figure_type) != "corrplot") {
   if (! ((length(unique(dat_filtered$type)) == 1) && (unique(dat_filtered$type) %in% c("grid", "wrap", "single")))) {
     rlang::abort("Invalid facet type. Please select grid, wrap, or single.")
+    }
   }
 
   TRUE
@@ -41,7 +43,7 @@ check_dat_before_plotting <- function(dat) {
       figure = unique(dat$title_name)
       rlang::abort(message = paste("There are multiple figures corresponding to figure", figure,
                                    ".Please recheck the code.", sep = ""))
-    } else if (((length(unique(dat$unit))!=1) && (dat$figure_type != "scatterplot"))) {
+    } else if (((length(unique(dat$unit))!=1) && (!unique(dat$figure_type) %in% c("scatterplot", "corrplot")))) {
       # multiple units
       rlang::warn(paste('there are multiple units for ', unique(dat$title_name), ". Figure not printed.", sep = ""))
       FALSE
@@ -67,9 +69,13 @@ check_dat_before_plotting <- function(dat) {
 #' @param type
 #'
 #' @return
-pdf_plots <- function(overall_path, df, presentation_name, type, sub_palettes, config, sub, debug = FALSE) {
+pdf_plots <- function(overall_path, df, presentation_name, type, sub_palettes, config, sub, saveData = FALSE) {
   pdf(file=paste(overall_path, presentation_name, "_", type, sub, ".pdf",sep=""), width = 14, height = 6)
   print(paste("There are a total of ", length(unique(df$title_name)), " figures", sep = ""))
+
+  if (saveData) {
+    data_wb <- createWorkbook()
+  }
 
   if(approved_plot_type(type)) {
 
@@ -90,8 +96,18 @@ pdf_plots <- function(overall_path, df, presentation_name, type, sub_palettes, c
 
         if (approved_facet_type(dat_filtered) & check_dat_before_plotting(dat_filtered)) {
           plot_fn = get_plot_fn(type, unique(dat_filtered$type))
+
+          if (saveData) {
+            addWorksheet(data_wb, figure_num)
+            writeData(wb = data_wb, sheet = as.character(figure_num), x = dat_filtered)
+          }
+
+          if(type != "corrplot") {
           plot = call_plot_fn(dat_filtered, figure, selected, sub_palettes, type, plot_fn)
           print(plot)
+          } else {
+            call_plot_fn(dat_filtered, figure, selected, sub_palettes, type, plot_fn)
+          }
         }
 
       # for (selected_region in unique(dat$region)) {
@@ -105,6 +121,12 @@ pdf_plots <- function(overall_path, df, presentation_name, type, sub_palettes, c
       }
     }
   }
+
+  if (saveData) {
+    saveWorkbook(data_wb, file = paste(overall_path, presentation_name, "_", type, sub, ".xlsx",sep=""), overwrite = TRUE)
+  }
+
+
   dev.off()
 }
 
@@ -119,7 +141,7 @@ pdf_plots <- function(overall_path, df, presentation_name, type, sub_palettes, c
 #'
 #' @return
 
-png_plots <- function(overall_path, df, presentation_name, type, sub_palettes, config, sub) {
+png_plots <- function(overall_path, df, presentation_name, type, sub_palettes, config, sub, saveData = FALSE) {
 
   # Make sure plot type is sound; abort if not named correctly
   if(approved_plot_type(type)) {
@@ -139,6 +161,9 @@ png_plots <- function(overall_path, df, presentation_name, type, sub_palettes, c
           filter(!!sym(unique(dat$page_filter)) == selected)
 
         if (approved_facet_type(dat_filtered) & check_dat_before_plotting(dat_filtered)) {
+
+          write.xlsx(dat_filtered, paste(overall_path, presentation_name, "_", type, sub, ".xlsx",sep=""))
+
           plot_fn = get_plot_fn(type, unique(dat_filtered$type))
           png(filename=paste(overall_path, type, "/",
                              str_replace_all(unique(dat$title_name), "\\|","_") , "_",
@@ -194,6 +219,7 @@ get_plot_fn <- function(graph_type, graph_arrangement) {
 
 call_plot_fn <- function(df, figure, selected, sub_palettes, graph_type, plot_fn) {
 
+  if (graph_type != "corrplot") {
   data_list = list(
     x = unique(df$x), y = unique(df$y),
     color = unique(df$color),
@@ -208,9 +234,26 @@ call_plot_fn <- function(df, figure, selected, sub_palettes, graph_type, plot_fn
     scales = unique(df$scales),
     position = unique(df$position))
 
+  } else {
+
+    data_list = NULL
+
+    mapping_list = list(
+      use = unique(df$use),
+      method_cor = unique(df$method_cor),
+      method_corrplot = unique(df$method_corrplot),
+      diag = unique(df$diag)
+    )
+  }
+
+
+  # corrplot
+  if (graph_type == "corrplot") {
+    plot = plot_fn(df = df, data_list = data_list, mapping_list = mapping_list)
+  }
 
   # stacked bar
-  if (graph_type == "stacked_bar") {
+  else if (graph_type == "stacked_bar") {
     plot = plot_fn(df = df, data_list = data_list, mapping_list = mapping_list)
   }
 
@@ -220,7 +263,7 @@ call_plot_fn <- function(df, figure, selected, sub_palettes, graph_type, plot_fn
     plot = plot_fn(df = df, data_list = data_list, mapping_list = mapping_list)
     if (unique(df$line_request)) {
       plot = plot +
-        geom_line(aes(y = .data[["diff_sum"]]))
+        geom_line(aes(y = .data[["diff_sum"]], linetype = "Net"))
     }
 
   }

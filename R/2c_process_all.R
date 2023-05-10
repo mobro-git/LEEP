@@ -12,7 +12,6 @@
 
 read_process_minimal_from_raw <- function(filepath) {
 
-  print(filepath)
   read_raw_data_file(filepath) %>%
     process_minimal_from_raw() %>%
     standardize_col_names()
@@ -168,7 +167,7 @@ map_scenario_names <- function(data,
 
   if(nrow(preflight) > 0) {
     print(glue::glue_data(preflight, "{datasrc}, {model}, {scenario}"))
-    rlang::abort("Combinations not in scenario cleaning crosswalk (above)")
+    rlang::abort("Combinations not in scenario cleaning crosswalk (above). Please add to data-raw/scen-map")
   }
 
   # change model and scenario names in data to standardized names in scen_mapping file

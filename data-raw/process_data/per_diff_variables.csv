@@ -1,1 +1,4 @@
 ﻿variable,new_variable,per_type,ref_type,ref_value,unit
+Emissions|CO2,Emissions|CO2|Percent difference from 2020,difference,year,2020,%
+Emissions|CO2,Emissions|CO2|Percent of Reference,of,scenario,Reference,%
+Emissions|CO2|Energy,Emissions|CO2|Energy|Percent difference from 2020,difference,year,2020,%

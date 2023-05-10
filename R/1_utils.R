@@ -26,15 +26,34 @@ clean_text_for_filename <- function(x) {
 }
 
 
+#' #' Return the scalar of a vector
+#' #'
+#' #' @export
+#' one <- function(x) {
+#'   if (length(x) == 1) x else
+#'     if (length(x) == 0) dplyr:::default_missing(x) else
+#'       stop("Input `x` to `one` function must not have length > 1")
+#'
+#' }
+
 #' Return the scalar of a vector
 #'
+#' @examples
+#' one(c(1))
+#' one(numeric(0))
+#' typeof(one(numeric(0)))
+#' \dontrun {
+#' one(c(1, 2))
+#' }
 #' @export
+#'
 one <- function(x) {
   if (length(x) == 1) x else
-    if (length(x) == 0) dplyr:::default_missing(x) else
+    # NA value typed the same as x
+    if (length(x) == 0) x[NA] else
       stop("Input `x` to `one` function must not have length > 1")
-
 }
+
 
 #' Return a single value from a vector, for which a different condition holds
 #'
@@ -86,5 +105,13 @@ tar_meta_stable <- function(
     command = command,
     cue = cue
   )
+}
+
+
+#' check_stop()
+#'
+#'
+check_stop <- function(string) {
+  stopifnot(exists(string))
 }
 

@@ -1,2 +1,5 @@
 ﻿variable,numerator,denominator,unit
-Emissions Intensity|Buildings,Emissions|CO2|Energy|Demand|Buildings,Final Energy|Buildings,Mt CO2/EJ
+Final Energy|Percent Electricity,Final Energy|Electricity,Final Energy,%
+Final Energy|Buildings|Percent Electricity,Final Energy|Buildings|Electricity,Final Energy|Buildings,%
+Final Energy|Industry|Percent Electricity,Final Energy|Industry|Electricity,Final Energy|Industry,%
+Final Energy|Transportation|Percent Electricity,Final Energy|Transportation|Electricity,Final Energy|Transportation,%

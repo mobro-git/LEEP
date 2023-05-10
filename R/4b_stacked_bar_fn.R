@@ -18,7 +18,7 @@ stacked_bar_single_fn <- function(df, data_list, mapping_list) {
 
 stacked_bar_wrap_fn <- function(df, data_list, mapping_list) {
   p <- ggplot(df, aes(x = .data[[data_list$x]], y = .data[[data_list$y]])) +
-    geom_bar(aes(fill = .data[[data_list$color]]), position = mapping_list$position, stat="identity", width = 0.7) +
+    geom_bar(aes(fill = .data[[data_list$color]]), position = mapping_list$position, stat="identity") +
     facet_wrap(vars(.data[[data_list$facet]]), ncol = 4, drop = FALSE, scales = mapping_list$scales) +
     labs(title = mapping_list$title,
          #x = mapping_list$xlab,

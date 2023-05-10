@@ -43,15 +43,19 @@ tar_plan(
     models_emf = c("GCAM-EMF"),
 
     # Use models_leep for all initial plots
-    models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-EMF", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "MARKAL-NETL", "NEMS-RHG", "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP"),
+    models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-EMF", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "MARKAL-NETL", "NEMS-RHG",
+                    "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP"),
 
     # scenarios
     main_scenarios = c("Reference","IRA"),
 
+    hist_mod_scenarios = c("Historic","Reference","IRA"),
+
     # time intervals
     usa = "United States",
     ira_2035 = c(seq(2021,2035,by=1)),
-    ira_2050 = c(seq(2021,2050,by=1))
+    ira_2050 = c(seq(2021,2050,by=1)),
+    historic = c(seq(2010,2035,by=1))
   ),
 
   ######################################################################################### -
@@ -127,14 +131,16 @@ tar_plan(
     # map_variable_names() %>%
     arrange_standard()},
 
-  data_long = temp_make_data_long(data_long_read,
-                                     ratio_var,
-                                     summation_var,
-                                     cumulative_var,
-                                     annual_growth_rate_var,
-                                     per_diff_var),
+  data_long = make_data_long(data_long_read),
 
-  #data_index = index_data_long(data_long, index_var),
+  # emf_data_long but can add in transformations or filter out models/variables
+  clean_data = {
+    data_long %>%
+      complete_implicit_na() %>%
+      make_calculated_vars(ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var)},
+
+  # indexed version of clean_data. index_var determines which variables are indexed, only these are included
+  clean_data_index = index_data_long(clean_data, index_var),
 
   ######################################################################################### -
   ######################################################################################### -
@@ -152,12 +158,12 @@ tar_plan(
 
   ### Figures  -------------------
 
-  ts = create_graph("leep", "time_series", config, data_long, figmap_leep_timeseries),
-  cone = create_graph("leep", "cone_uncertainty", config, data_long, figmap_leep_cone),
-  stackbar = create_graph("leep", "stacked_bar", config, data_long, figmap_leep_stackbar),
-  diffbar = create_graph("leep", "diff_bar", config, data_long, figmap_leep_diffbar),
+  ts = create_graph("leep", "time_series", config, clean_data, figmap_leep_timeseries),
+  cone = create_graph("leep", "cone_uncertainty", config, clean_data, figmap_leep_cone),
+  stackbar = create_graph("leep", "stacked_bar", config, clean_data, figmap_leep_stackbar),
+  diffbar = create_graph("leep", "diff_bar", config, clean_data, figmap_leep_diffbar),
 
-  test_diffbar = create_graph("test", "diff_bar",config,data_long,figmap_test_diffbar)
+  test_diffbar = create_graph("test", "diff_bar",config,clean_data,figmap_test_diffbar)
 
 )
 

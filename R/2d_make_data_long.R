@@ -1,6 +1,6 @@
 # centralized variable processing here for emf_data_long
 
-#' make_data_long
+#' make_emf_data_long
 #'
 #' @param data_long_read
 #'
@@ -14,49 +14,42 @@
 #' @export
 #'
 #' @examples
-make_data_long <- function(data_long_read, ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var) {
+make_data_long <- function(data_long_read) {
   data_long <- data_long_read %>% {
     # drop all-zero model-run-variable data
     group_by(., model, scenario, variable) %>%
       filter(!all(value == 0)) %>%
       ungroup()} %>%
     relocate_standard_col_order() %>%
-    arrange_standard()
+    arrange_standard() %>%
+    country_abbr() %>%
+    filter(!is.na(value))
+}
 
-  fixed_long <- country_abbr(data_long)
+make_calculated_vars <- function(data_long, ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var) {
 
-  fixed_long2 <- bind_rows(
-    fixed_long,
-    make_ratio_variables(fixed_long, ratio_var),
-    make_summation_variables(fixed_long, summation_var)
+  print("Creating summation variables")
+  summation <- bind_rows(
+    data_long,
+    make_summation_variables(data_long, summation_var)
+  )
+
+  print("Creating ratio variables")
+  summation_ratio <- bind_rows(
+    summation,
+    make_ratio_variables(summation, ratio_var)
   )
 
   # cumulative and annual growth rate vars may use some calculated vars and have to come last
-  fixed_long3 <- bind_rows(
-    fixed_long2,
-    make_cumulative_variables(fixed_long2, cumulative_var),
-    make_agr_variables(fixed_long2, annual_growth_rate_var),
-    make_per_diff_variables(fixed_long2, per_diff_var)
+  print("Creating cumulative, annual growth rate, and percent difference variables")
+  all_vars <- bind_rows(
+    summation_ratio,
+    make_cumulative_variables(summation_ratio, cumulative_var),
+    make_agr_variables(summation_ratio, annual_growth_rate_var),
+    make_per_diff_variables(summation_ratio, per_diff_var)
   )
 
-  fixed_long4 <- fixed_long3 %>% filter(!is.na(value))
-
-}
-
-#' temp_make_data_long - removes calculated variables until they're needed
-
-temp_make_data_long <- function(data_long_read, ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var) {
-  data_long <- data_long_read %>% {
-    # drop all-zero model-run-variable data
-    group_by(., model, scenario, variable) %>%
-      filter(!all(value == 0)) %>%
-      ungroup()} %>%
-    relocate_standard_col_order() %>%
-    arrange_standard()
-
-  fixed_long <- country_abbr(data_long)
-
-  fixed_long4 <- fixed_long %>% filter(!is.na(value))
+  full_vars <- all_vars %>% filter(!is.na(value))
 
 }
 
@@ -186,10 +179,15 @@ make_summation_variables <- function(data_long, summation_var) {
     var_list <- summation_var %>%
       filter(index == i)
 
-    data_long_join <- var_list %>%
+    pre_join <- var_list %>%
       select(lower_level, flip_sign) %>%
-      rename(variable = lower_level) %>%
-      full_join(data_long, by = "variable")
+      rename(variable = lower_level)
+
+    data_long_pre_join <- data_long %>%
+      filter(variable %in% pre_join$variable)
+
+    data_long_join <- pre_join %>%
+      full_join(data_long_pre_join, by = "variable")
 
     summation[[i]] <- data_long_join %>%
       filter(variable %in% var_list$lower_level) %>%
@@ -199,7 +197,8 @@ make_summation_variables <- function(data_long, summation_var) {
         value = sum(value),
         variable = unique(var_list$variable),
         unit = unique(var_list$unit),
-        datasrc = "make_summation_variables") %>%
+        datasrc = "make_summation_variables",
+        .groups = "drop") %>%
       ungroup()
   }
 
@@ -207,6 +206,7 @@ make_summation_variables <- function(data_long, summation_var) {
     filter(!is.na(variable)) %>%
     arrange_standard()
 }
+
 
 #' cumulate
 #'
@@ -285,7 +285,7 @@ make_agr_variables <- function(data, annual_growth_rate_var) {
     group_by(model,scenario,region,new_variable,unit,datasrc) %>%
     summarise(value_num = log((value %forwhich% (range == "end_yr")) / (value %forwhich% (range == "start_yr"))),
               value_den = ((year %forwhich% (range == "end_yr")) - (year %forwhich% (range == "start_yr"))),
-              value = value_num/value_den,
+              value = (value_num/value_den)*100,
               year = year %forwhich% (range == "end_yr")) %>%
     ungroup() %>%
     rename(variable = new_variable) %>%
@@ -346,11 +346,11 @@ make_per_diff_variables <- function(data_long, per_diff_var) {
 
     if (new_record$per_type == "of") {
       new_vars[[i]] = new_vars[[i]] %>%
-        mutate(value = value/value[!!sym(new_record$ref_type) == new_record$ref_value])
+        mutate(value = (value/value[!!sym(new_record$ref_type) == new_record$ref_value])*100)
     }
     else {
       new_vars[[i]] = new_vars[[i]] %>%
-        mutate(value = value/value[!!sym(new_record$ref_type) == new_record$ref_value] - 1)
+        mutate(value = (value/value[!!sym(new_record$ref_type) == new_record$ref_value] - 1)*100)
     }
 
     new_vars[[i]] = new_vars[[i]] %>%

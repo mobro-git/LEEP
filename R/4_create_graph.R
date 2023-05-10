@@ -1,10 +1,15 @@
 
 create_graph <- function(presentation_title, presentation_plot_type, config, emf_data_long, figmap,
-                         pdfGraphs = TRUE, pngGraphs = FALSE, sub = "", debug = FALSE) {
+                         pdfGraphs = TRUE, pngGraphs = FALSE, sub = "", saveData = FALSE) {
   #  create folders
   overall_path = paste("./output/", presentation_title, "/", sep = "")
-  subfolders = c("", presentation_plot_type)
-  create_folders(sapply(subfolders, function(x) {paste(overall_path, x, sep = "")}))
+
+  if (pngGraphs) {
+    subfolders = c("", presentation_plot_type)
+    create_folders(sapply(subfolders, function(x) {paste(overall_path, x, sep = "")}))
+  } else {
+    create_folders(overall_path)
+  }
 
   #  graphs
 
@@ -20,12 +25,12 @@ create_graph <- function(presentation_title, presentation_plot_type, config, emf
 
   if (pdfGraphs) {
     # full processing based on figure requests + create pdf of plots
-    pdf_plots(overall_path, df, presentation_title, presentation_plot_type, subpalettes, config, sub)
+    pdf_plots(overall_path, df, presentation_title, presentation_plot_type, subpalettes, config, sub, saveData)
   }
 
   if (pngGraphs) {
     # full processing based on figure requests + create png of plots
-    png_plots(overall_path, df, presentation_title, presentation_plot_type, subpalettes, config, sub)
+    png_plots(overall_path, df, presentation_title, presentation_plot_type, subpalettes, config, sub, saveData)
   }
 
 }

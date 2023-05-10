@@ -1,0 +1,29 @@
+---
+title: "Figure Examples"
+output: html_document
+date: "2023-05-10"
+params:
+  mode: NULL
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+if(params$mode=NULL) {
+  source("packages.R")
+  devtools::load_all(.)
+}
+```
+
+```{r}
+tar_load(config)
+tar_load(clean_data)
+tar_load(clean_data_index)
+tar_load(figmap_leep_timeseries)
+```
+
+```{r}
+
+```

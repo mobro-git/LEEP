@@ -9,9 +9,10 @@ create_graph_list <- function(config) {
 
   ### Everything except for Sankey ###
   files <- data.frame(files = files) %>%
-    filter(str_starts(files, "overview") | str_starts(files, "tsg") |
-             str_starts(files, "bsg") | str_starts(files, "h2")) %>%
     filter(!str_detect(files, "sankey")) %>%
+    filter(!str_detect(files, "figmap")) %>%
+    filter(!str_detect(files, "audit_sum")) %>%
+    filter(!str_detect(files, "special_cases")) %>%
     pull(files)
 
 

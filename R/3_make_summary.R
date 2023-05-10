@@ -1,5 +1,5 @@
 
-make_emf_summary_long <- function(data_long, variable_info_lookup) {
+make_summary_long <- function(data_long, variable_info_lookup) {
 
   summary_long <- data_long %>%
     mutate(var = def_from_variable(variable, "var", variable_info_lookup)) %>%
@@ -9,7 +9,7 @@ make_emf_summary_long <- function(data_long, variable_info_lookup) {
 
 }
 
-make_emf_summary <- function(summary_long, variable_info_lookup) {
+make_summary <- function(summary_long, variable_info_lookup) {
 
   summary_long <- summary_long %>%
     filter(!is.na(var)) %>%

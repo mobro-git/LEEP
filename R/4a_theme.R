@@ -12,10 +12,11 @@ theme_emf <- function(fig_size = "auto") {
             plot.margin = margin(8,10,8,8),
             axis.text.y = element_text(size=11),
             axis.text.x = element_text(size=9),
+            #axis.line = element_line(color="black"),
             axis.title.y = element_text(face="bold",vjust=2),
-            strip.text.x = element_text(size = 10, color = "black"),
-            strip.text.y = element_text(size = 9, color = "black"),
-            strip.background = element_rect(fill="#C5CFE3", size=1))
+            strip.text.x = element_text(size = 10, color = "black",face = "bold"),
+            strip.text.y = element_text(size = 9, color = "black",face = "bold"),
+            strip.background = element_rect(fill=NA, size=1))#C5CFE3
   }
   else if(fig_size == "small") {
     theme <- theme_light() +
@@ -77,6 +78,7 @@ master_palette <- c(
   "brown" = "#BC8F73",
   "dark brown" = "#825335",
   "slate" = "#767684",
+  "light slate" = "#9A9AB5",
   "dark slate" = "#36363B",
   "brown red" = "#733D3D",
   "dark brown red" = "#481B1B",
@@ -93,6 +95,8 @@ master_palette <- c(
   "mid gray green" = "#357238",
   "mid gray blue" = "#353B72",
   "mid gray yellow" = "#6F7235",
+  "light gray" = "#DEDEDE",
+  "normal gray" = "#A1A1A1",
   "bright yellow" = "#FFF362",
   "darker yellow" = "#FFEB00",
   "dark dark yellow" = "#D5C500",
@@ -113,52 +117,139 @@ master_palette <- c(
   "hue2" = "#5B7C93",
   "hue3" = "#5A9DCB",
   "hue4" = "#40A4EA",
-  "hue5" = "#0097FF")
+  "hue5" = "#0097FF",
+
+  "maroonD" = "#800000",
+  "brownD" = "#9a6324",
+  "oliveD" = "#808000",
+  "tealD" = "#469990",
+  "navyD" = "#000075",
+  "redD" = '#e6194b',
+  "orangeD" = '#f58231',
+  "yellowD" = '#ffe119',
+  "limeD" = '#bfef45',
+  "greenD" = '#3cb44b',
+  "cyanD" = '#42d4f4',
+  "blueD" = '#4363d8',
+  "purpleD" = "#911eb4",
+  "magentaD" = '#f032e6',
+  "pinkD" = "#fabed4",
+  "apricotD" = "#ffd8b1",
+  "beigeD" = "#fffac8",
+  "mintD" = "#9FEDB6",
+  "lavenderD" = "#dcbeff"
+  )
 
 # Color Mapping - labels matched to hex codes
 
 color_map <- c(
   # scenarios
-  "Reference" = "m.burnorange",
-  "IRA" = "m.teal",
+  ## no target
+  "NT.Ref" = "dark cornflower",
+  "NT.Adv" = "dark gray red",
+  "NT.BSG.Adv" = "dark gray purple",
+  "NT.ISG.Adv" = "dark gray green",
+  "NT.TSG.Adv" = "dark gray blue",
+  "NT.CMSG.Adv" = "dark gray yellow",
+  ## 0by50
+  "0by50.Ref" = "mid gray",
+  "0by50.Adv" = "mid gray red",
+  "0by50.BSG.Adv" = "mid gray purple",
+  "0by50.ISG.Adv" = "mid gray green",
+  "0by50.TSG.Adv" = "mid gray blue",
+  "0by50.CMSG.Adv" = "mid gray yellow",
+  ### CMSG
+  "0by50.CMSG1" = "bright yellow",
+  "0by50.CMSG2" = "darker yellow",
+  "0by50.CMSG3" = "dark dark yellow",
+  "0by50.CMSG4" = "darkest yellow",
+  ### ISG
+  "0by50.ISG1" = "bright green",
+  "0by50.ISG2" = "darker green",
+  "0by50.ISG3" = "dark dark green",
+  "0by50.ISG4" = "darkest green",
+  ### TSG
+  "0by50.TSG1" = "bright blue",
+  "0by50.TSG2" = "darker blue",
+  "0by50.TSG3" = "dark dark blue",
+  "0by50.TSG4" = "darkest blue",
+  ### BSG
+  "0by50.BSG1" = "bright purple",
+  "0by50.BSG2" = "dark dark purple",
+  ## 0GHGby50
+  "0GHGby50.Ref" = "mid gray",
+  "0GHGby50.Adv" = "mid gray red",
+  ## 0by60
+  "0by60.Ref" = "mid gray",
+  "0by60.Adv" = "mid gray red",
+  "0by60.CMSG2" = "darker yellow",
+  "0by60.CMSG3" = "dark dark yellow",
+  "0by60.CMSG4" = "darkest yellow",
+  ## 0by80
+  "0by80.Ref" = "mid gray",
+  "0by80.Adv" = "mid gray red",
+  "0by80.CMSG2" = "darker yellow",
+  "0by80.CMSG3" = "dark dark yellow",
+  "0by80.CMSG4" = "darkest yellow",
+
+  "NT.IRA.Ref" = "bright yellow",
 
   # models
-  "ADAGE" = "m.teal",
+  # "ADAGE" = "m.teal",
   "AEO2020" = "black",
   "AEO2021" = "black",
-  "AnyMOD" = "dark gray blue",
-  "CTUS-NEMS" = "m.green",
-  "EC-MSMR" = "m.cobalt",
+  "AEO2022" = "black",
+  # "AnyMOD" = "dark gray blue",
+  # "EC-MSMR" = "m.cobalt",
   "ENERGY2020" = "purple",
   "EIA_Historic" = "black",
   "EIA_STEO" = "black",
   "EPA_GHGI" = "black",
-  "EPA-TIMES" = "m.red",
-  "EPS" = "m.yellow",
-  "FARM" = "m.pink",
-  "GCAM" = "copper",
-  "GCAM-USA" = "m.burnorange",
-  "gTech" = "light purple",
+  # "EP-RIO" = "darker purple",
+  # "EPA-TIMES" = "m.red",
+  # "EPS" = "m.yellow",
+  # "FARM" = "m.pink",
+  # "FECM-NEMS" = "m.green",
+  # "GCAM" = "copper",
+  # "GCAM-USA" = "m.burnorange",
+  # "gTech" = "light purple",
   "MA3T" = "bright purple",
-  "MARKAL-NETL" = "m.violet",
+  # "MARKAL-NETL" = "m.violet",
   "MER" = "black",
-  "NATEM" = "light blue",
+  # "NATEM" = "light blue",
   "Pathways" = "bright green",
   "ReEDS" = "darkest yellow",
-  "RIO" = "darker purple",
   "Scout" = "teal green",
   "TEMPO" = "bright blue",
-  "TEMOA" = "pink",
-  "US-REGEN" = "m.neongreen",
-  "USREP-ReEDS" = "bright yellow",
+  # "TEMOA" = "pink",
+  # "US-REGEN" = "m.neongreen",
+  # "USREP-ReEDS" = "bright yellow",
+
+  "ADAGE" = "yellowD",
+  "AnyMOD" = "mintD",
+  "EC-MSMR" = "oliveD",
+  "EP-RIO" = "tealD",
+  "EPA-TIMES" = "maroonD",
+  "EPS" = "redD",
+  "FARM" = "orangeD",
+  "FECM-NEMS" = "navyD",
+  "GCAM" = "limeD",
+  "GCAM-USA" = "greenD",
+  "gTech" = "cyanD",
+  "MARKAL-NETL" = "blueD",
+  "NATEM" = "magentaD",
+  "TEMOA" = "apricotD",
+  "US-REGEN" = "pinkD",
+  "USREP-ReEDS" = "brownD",
 
   # fuels
   "Fossil" = "very dark blue",
-  "Biogas" = "teal green",
+  "Non-Electricity" = "teal green",
+  "Biogas" = "apricotD",
   "Biomass" = "m.violet",
   "Biomass Liquids" = "m.violet",
   "Biomass Solids" = "m.indigo",
-  "Coal" = "slate",
+  "Coal" = "very dark blue",
   "Gas" = "brown",
   "Oil" = "brown red",
   "Solar" = "m.yellow",
@@ -227,14 +318,16 @@ color_map <- c(
   "Thermochemical w/o CCS" = "m.yellow",
 
   #sectors
+  "Total" = "black",
   "AFOLU" = "m.green",
   "LULUCF" = "dark dark green",
   "Biofeedstock" = "teal green",
   "Biofuels" = "teal green",
   "BECCS" = "m.violet",
+  "Fossil CCS" = "brown",
   "Chemical Feedstocks" = "very dark teal",
   "Refining" = "very dark teal",
-  "Petroleum Refining" = "slate",
+  "Petroleum Refining" = "very dark blue",
   "Industrial Processes" = "slate",
   "Energy" = "teal blue",
   "Energy & Industrial Processes" = "teal blue",
@@ -251,6 +344,12 @@ color_map <- c(
   "EInt Mfg" = "light orange",
   "NonEInt Mfg" = "teal blue",
   "Non Mfg" = "m.green",
+
+  "Total Energy Demand" = "teal green",
+  "Fossil Energy Demand" = "light slate",
+  "Electricity Demand" = "teal blue",
+  "CO2 Emissions" = "dark salmon",
+  "Residual Emissions" = "teal blue",
 
   #emissions accounting
   "Net CO2" = "very dark teal",
@@ -287,10 +386,15 @@ color_map <- c(
   "DAC" = "very dark blue",
   "Net-GHG" = "#B2B3BD",
 
-  #IRA_scenario
-
-  "Reference" = "teal blue",
-  "IRA" = "dark salmon",
+  # geography
+  "Asia*" = "dark m.yellow",
+  "Canada*" = "very dark teal",
+  "EU*" = "m.green",
+  "Latin America*" = "m.indigo",
+  "OECD: IPCC SR15" = "normal gray",
+  "US: IPCC AR6" = "light gray",
+  "US: EMF 37" = "dark salmon",
+  "US/Canada*" = "teal blue",
 
   # welfare
   "Welfare" = "teal blue",
@@ -302,20 +406,22 @@ color_map <- c(
   find_color(master_palette)
 
 sub_palettes <- list(
-  `test` = c("ADAGE"  = "ADAGE" ,
-                    "AnyMOD" = "AnyMOD",
-                    "CTUS-NEMS" = "CTUS-NEMS",
-                    "EPA-TIMES" = "EPA-TIMES",
-                    "EPS" = "EPS",
-                    "FARM" = "FARM",
-                    "GCAM" = "GCAM",
-                    "GCAM-USA" = "GCAM-USA",
-                    "gTech" = "gTech",
-                    "MARKAL-NETL" = "MARKAL-NETL",
-                    "NATEM" = "NATEM",
-                    "TEMPO" = "TEMPO",
-                    "US-REGEN" = "US-REGEN")
+  `test` = c(
+    "ADAGE"  = "ADAGE" ,
+    "AnyMOD" = "AnyMOD",
+    "CTUS-NEMS" = "CTUS-NEMS",
+    "EPA-TIMES" = "EPA-TIMES",
+    "EPS" = "EPS",
+    "FARM" = "FARM",
+    "GCAM" = "GCAM",
+    "GCAM-USA" = "GCAM-USA",
+    "gTech" = "gTech",
+    "MARKAL-NETL" = "MARKAL-NETL",
+    "NATEM" = "NATEM",
+    "TEMPO" = "TEMPO",
+    "US-REGEN" = "US-REGEN"
+  )
 ) %>%
-  map(~find_color(.x, color_map))
+  map( ~ find_color(.x, color_map))
 
 
