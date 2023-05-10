@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 if(params$mode=NULL) {
   source("packages.R")
-  devtools::load_all(.)
+  devtools::load_all()
 }
 ```
 
@@ -25,5 +25,33 @@ tar_load(figmap_leep_timeseries)
 ```
 
 ```{r}
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 1, "United States")
+fig
+
+df = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 1, "United States")
+view(df)
+```
+
+```{r}
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 5, "United States")
+fig
+
+df = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 5, "United States") %>%
+  filter(year %in% c(2030, 2035))
+df_stat = df %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+         median = median(value))
+
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+dots = ggplot() +
+  geom_point(data = df, aes(x = year, y = value, color = scenario), size = 1) +
+  geom_point(data = df_stat, aes(x = year, y = mean, color = scenario), size = 2, shape = 8) +
+  theme_emf() +
+  scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+  labs(y = "")
+
+library(patchwork)
+fig + dots
 
 ```

@@ -144,55 +144,10 @@ master_palette <- c(
 
 color_map <- c(
   # scenarios
-  ## no target
-  "NT.Ref" = "dark cornflower",
-  "NT.Adv" = "dark gray red",
-  "NT.BSG.Adv" = "dark gray purple",
-  "NT.ISG.Adv" = "dark gray green",
-  "NT.TSG.Adv" = "dark gray blue",
-  "NT.CMSG.Adv" = "dark gray yellow",
-  ## 0by50
-  "0by50.Ref" = "mid gray",
-  "0by50.Adv" = "mid gray red",
-  "0by50.BSG.Adv" = "mid gray purple",
-  "0by50.ISG.Adv" = "mid gray green",
-  "0by50.TSG.Adv" = "mid gray blue",
-  "0by50.CMSG.Adv" = "mid gray yellow",
-  ### CMSG
-  "0by50.CMSG1" = "bright yellow",
-  "0by50.CMSG2" = "darker yellow",
-  "0by50.CMSG3" = "dark dark yellow",
-  "0by50.CMSG4" = "darkest yellow",
-  ### ISG
-  "0by50.ISG1" = "bright green",
-  "0by50.ISG2" = "darker green",
-  "0by50.ISG3" = "dark dark green",
-  "0by50.ISG4" = "darkest green",
-  ### TSG
-  "0by50.TSG1" = "bright blue",
-  "0by50.TSG2" = "darker blue",
-  "0by50.TSG3" = "dark dark blue",
-  "0by50.TSG4" = "darkest blue",
-  ### BSG
-  "0by50.BSG1" = "bright purple",
-  "0by50.BSG2" = "dark dark purple",
-  ## 0GHGby50
-  "0GHGby50.Ref" = "mid gray",
-  "0GHGby50.Adv" = "mid gray red",
-  ## 0by60
-  "0by60.Ref" = "mid gray",
-  "0by60.Adv" = "mid gray red",
-  "0by60.CMSG2" = "darker yellow",
-  "0by60.CMSG3" = "dark dark yellow",
-  "0by60.CMSG4" = "darkest yellow",
-  ## 0by80
-  "0by80.Ref" = "mid gray",
-  "0by80.Adv" = "mid gray red",
-  "0by80.CMSG2" = "darker yellow",
-  "0by80.CMSG3" = "dark dark yellow",
-  "0by80.CMSG4" = "darkest yellow",
-
-  "NT.IRA.Ref" = "bright yellow",
+  "Historic" = "black",
+  "IRA" = "light salmon",
+  "Reference" = "teal blue",
+  "Pre-IRA" = "teal blue",
 
   # models
   # "ADAGE" = "m.teal",
