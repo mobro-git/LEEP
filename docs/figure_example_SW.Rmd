@@ -1,0 +1,113 @@
+---
+title: "Figure Examples"
+output: html_document
+date: "2023-05-10"
+params:
+  mode: NULL
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+```{r}
+if(is.null(params$mode)) {
+  source("./packages.R")
+  library(patchwork)
+  library(egg)
+  library(ggbreak)
+  devtools::load_all()
+}
+```
+
+```{r}
+tar_load(config)
+tar_load(clean_data)
+tar_load(clean_data_index)
+tar_load(figmap_leep_timeseries)
+```
+
+```{r}
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 1, "United States")
+fig
+
+df = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 1, "United States")
+view(df)
+```
+
+```{r}
+dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric) {
+  fig = print_graph(plot_type, config, emf_data_long, figmap, figure_num, reg)
+  fig = fig + scale_y_continuous(limits = c(ymin, ymax))
+  
+  df_30 = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
+    filter(year %in% c(2030))
+  df_stat_30 = df_30 %>%
+    group_by(scenario,year,variable_rename) %>%
+    summarise(mean = mean(value),
+           median = median(value))
+  df_35 = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
+    filter(year %in% c(2035))
+  df_stat_35 = df_35 %>%
+    group_by(scenario,year,variable_rename) %>%
+    summarise(mean = mean(value),
+           median = median(value))
+
+  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+  
+  if (metric == "mean") {
+    segment_code_30 = geom_segment(data = df_stat_30, aes(x = year - 0.04, xend = year + 0.04, y = mean, yend = mean, color = scenario), size = 1)
+    segment_code_35 = geom_segment(data = df_stat_35, aes(x = year - 0.04, xend = year + 0.04, y = mean, yend = mean, color = scenario), size = 1)
+    text_code = geom_text(data = df_stat_30, aes(x = year - 0.08, y = mean, color = scenario), label = "Avg", size = 3, hjust = 0.5, angle = 90)
+  } else if (metric == "median") {
+    segment_code_30 = geom_segment(data = df_stat_30, aes(x = year - 0.04, xend = year + 0.04, y = median, yend = median, color = scenario), size = 1)
+    segment_code_35 = geom_segment(data = df_stat_35, aes(x = year - 0.04, xend = year + 0.04, y = median, yend = median, color = scenario), size = 1)
+    text_code = geom_text(data = df_stat_30, aes(x = year - 0.08, y = median, color = scenario), label = "Med", size = 3, hjust = 0.5, angle = 90)
+  }
+  
+  dots_30 = ggplot() +
+    geom_point(data = df_30, aes(x = year, y = value, color = scenario), shape = 1, size = 1.5) +
+    segment_code_30 +
+    text_code +
+    scale_x_continuous(breaks = c(2030), labels = c("2030"), limits = c(2029.9, 2030.1)) +
+    scale_y_continuous(limits = c(ymin, ymax)) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(panel.grid = element_blank(), plot.title = element_blank(),
+          axis.text.y = element_blank(),
+          axis.title.y = element_blank(), axis.title.x = element_blank(),
+          axis.ticks = element_blank(), panel.border = element_blank(),
+          legend.position = "none", plot.margin = margin(0,0,0,0))
+  
+  dots_35 = ggplot() +
+    geom_point(data = df_35, aes(x = year, y = value, color = scenario), shape = 1, size = 1.5) +
+    segment_code_35 +
+    scale_x_continuous(breaks = c(2035), labels = c("2035"), limits = c(2034.9, 2035.1)) +
+    scale_y_continuous(limits = c(ymin,ymax)) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(panel.grid = element_blank(), plot.title = element_blank(),
+          axis.text.y = element_blank(),
+          axis.title.y = element_blank(), axis.title.x = element_blank(),
+          axis.ticks = element_blank(), panel.border = element_blank(),
+          legend.position = "none", plot.margin = margin(0,0,0,0))
+  
+  
+  final = fig + dots_30 + dots_35 + 
+    plot_annotation(title = plot_title, theme = theme(plot.title = element_text(hjust = 0.5))) +
+    plot_layout(guides = "collect", widths = c(10,1,1)) +
+    theme(plot.margin = margin(0,0,0,0))
+  
+  return(list(
+    full = final,
+    line = fig,
+    dot1 = dots_30,
+    dot2 = dots_35
+  ))
+}
+
+p = dot_plots("time_series", config, clean_data, figmap_leep_timeseries, 4, "United States", 0, 2500, "Emissions|CO2|Energy|Demand|Electricity", metric = "mean")
+print(p$full)
+
+```
