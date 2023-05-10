@@ -37,10 +37,20 @@ view(df)
 ```
 
 ```{r}
+# This function does a bunch of stuff
+# Calls the main functions to print a spagetti plot
+# Then makes some dot plots to show the distributions: one for 2030, one for 2035
+# The inputs are the same as for the print_graph() function, plus some new ones:
+#   ymin and ymax: to manually set the y axis limits so that the axes line up across plots
+#   plot_title: manually set the plot title of the combined plot
+#   metric: what centrality metric to show on the dot plots: "mean" or "median"
 dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric) {
+  # make the spagetti plot
   fig = print_graph(plot_type, config, emf_data_long, figmap, figure_num, reg)
+  # update the axis range
   fig = fig + scale_y_continuous(limits = c(ymin, ymax))
   
+  # pull the data from the graph and filter/summarize for 2030/2035
   df_30 = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
     filter(year %in% c(2030))
   df_stat_30 = df_30 %>%
@@ -53,21 +63,39 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
     group_by(scenario,year,variable_rename) %>%
     summarise(mean = mean(value),
            median = median(value))
+  
+  # these are the summary stats we'll eventually want to overlay on the plot to highlight the efficacy of the IRA
+  mean_diff_30 = df_stat_30[df_stat_30$scenario == "Reference","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+  mean_diff_35 = df_stat_35[df_stat_35$scenario == "Reference","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+  median_diff_30 = df_stat_30[df_stat_30$scenario == "Reference","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+  median_diff_35 = df_stat_35[df_stat_35$scenario == "Reference","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+  # stick em all in a data frame
+  stats = data.frame("year" = c(2030,2035,2030,2035), "metric" = c("mean","mean","median","median"), 
+                     "difference" = c(mean_diff_30, mean_diff_35, median_diff_30, median_diff_35))
 
+  # still not entirely sure what this does...
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
   
+  # a few of the ggplot lines of code vary based on the year or on the metric chosen, so conditionally choose the right one here
   if (metric == "mean") {
-    segment_code_30 = geom_segment(data = df_stat_30, aes(x = year - 0.04, xend = year + 0.04, y = mean, yend = mean, color = scenario), size = 1)
-    segment_code_35 = geom_segment(data = df_stat_35, aes(x = year - 0.04, xend = year + 0.04, y = mean, yend = mean, color = scenario), size = 1)
-    text_code = geom_text(data = df_stat_30, aes(x = year - 0.08, y = mean, color = scenario), label = "Avg", size = 3, hjust = 0.5, angle = 90)
+    segment_code_30 = geom_segment(data = df_stat_30, aes(x = year - 0.04, xend = year + 0.04, y = mean, yend = mean, color = scenario), 
+                                   size = 1, position = position_dodge(width = 0.05))
+    segment_code_35 = geom_segment(data = df_stat_35, aes(x = year - 0.04, xend = year + 0.04, y = mean, yend = mean, color = scenario),
+                                   size = 1, position = position_dodge(width = 0.05))
+    text_code = geom_text(data = df_stat_30, aes(x = year - 0.08, y = mean, color = scenario), 
+                          label = "Avg", size = 3, hjust = 0.5, angle = 90, position = position_dodge(width = 0.05))
   } else if (metric == "median") {
-    segment_code_30 = geom_segment(data = df_stat_30, aes(x = year - 0.04, xend = year + 0.04, y = median, yend = median, color = scenario), size = 1)
-    segment_code_35 = geom_segment(data = df_stat_35, aes(x = year - 0.04, xend = year + 0.04, y = median, yend = median, color = scenario), size = 1)
-    text_code = geom_text(data = df_stat_30, aes(x = year - 0.08, y = median, color = scenario), label = "Med", size = 3, hjust = 0.5, angle = 90)
+    segment_code_30 = geom_segment(data = df_stat_30, aes(x = year - 0.04, xend = year + 0.04, y = median, yend = median, color = scenario), 
+                                   size = 1, position = position_dodge(width = 0.05))
+    segment_code_35 = geom_segment(data = df_stat_35, aes(x = year - 0.04, xend = year + 0.04, y = median, yend = median, color = scenario), 
+                                   size = 1, position = position_dodge(width = 0.05))
+    text_code = geom_text(data = df_stat_30, aes(x = year - 0.08, y = median, color = scenario), 
+                          label = "Med", size = 3, hjust = 0.5, angle = 90, position = position_dodge(width = 0.05))
   }
   
+  # dot plot for 2030
   dots_30 = ggplot() +
-    geom_point(data = df_30, aes(x = year, y = value, color = scenario), shape = 1, size = 1.5) +
+    geom_point(data = df_30, aes(x = year, y = value, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = 0.05)) +
     segment_code_30 +
     text_code +
     scale_x_continuous(breaks = c(2030), labels = c("2030"), limits = c(2029.9, 2030.1)) +
@@ -80,8 +108,9 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
           axis.ticks = element_blank(), panel.border = element_blank(),
           legend.position = "none", plot.margin = margin(0,0,0,0))
   
+  # dot plot for 2035
   dots_35 = ggplot() +
-    geom_point(data = df_35, aes(x = year, y = value, color = scenario), shape = 1, size = 1.5) +
+    geom_point(data = df_35, aes(x = year, y = value, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = 0.05)) +
     segment_code_35 +
     scale_x_continuous(breaks = c(2035), labels = c("2035"), limits = c(2034.9, 2035.1)) +
     scale_y_continuous(limits = c(ymin,ymax)) +
@@ -93,21 +122,24 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
           axis.ticks = element_blank(), panel.border = element_blank(),
           legend.position = "none", plot.margin = margin(0,0,0,0))
   
-  
+  # combine all the plots
   final = fig + dots_30 + dots_35 + 
     plot_annotation(title = plot_title, theme = theme(plot.title = element_text(hjust = 0.5))) +
     plot_layout(guides = "collect", widths = c(10,1,1)) +
     theme(plot.margin = margin(0,0,0,0))
   
+  # return the full plot + the components + the summary stats
   return(list(
     full = final,
     line = fig,
     dot1 = dots_30,
-    dot2 = dots_35
+    dot2 = dots_35,
+    stats = stats
   ))
 }
 
-p = dot_plots("time_series", config, clean_data, figmap_leep_timeseries, 4, "United States", 0, 2500, "Emissions|CO2|Energy|Demand|Electricity", metric = "mean")
+p = dot_plots("time_series", config, clean_data, figmap_leep_timeseries, 4, "United States", 0, 2500, "Emissions|CO2|Energy|Demand|Electricity", metric = "median")
 print(p$full)
+print(p$stats)
 
 ```
