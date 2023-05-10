@@ -10,6 +10,14 @@ library(xlsx)
 
 tableau_input <- data_long
 
+elec_emissions <- read.xlsx("data-extra/ira_comparison_raw/Bistline IRA Comparison - Emissions.xlsx", sheetName = "Data for R and Tableau") %>%
+  rename("2025" = "X2025") %>%
+  rename("2030" = "X2030") %>%
+  rename("2035" = "X2035") %>%
+  rename("2040" = "X2040") %>%
+  rename("2045" = "X2045") %>%
+  rename("2050" = "X2050")
+
 
 write.csv(tableau_input, "data-extra/data_long_tableau.csv", row.names = FALSE)
 
