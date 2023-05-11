@@ -53,6 +53,33 @@ make_calculated_vars <- function(data_long, ratio_var, summation_var, cumulative
 
 }
 
+duplicate_historical_data <- function(data_long, hist_model, hist_year) {
+  # short circuit
+  if (hist_model == "none") {
+    return(data_long)
+  }
+
+  # this is the data we'll stamp for every model
+  copy_data = data_long %>% filter(model == hist_model, year == hist_year)
+  # this is all the historical data, don't lose it
+  hist_data = data_long %>% filter(model == hist_model)
+  # temporary data_long which will be appended many times
+  data_in = data_long %>% filter(year > hist_year)
+
+  # for each model, add a copy of the historical data and append
+  models = unique(data_long$model)
+  for (m in models) {
+    if (m != hist_model) {
+      temp = copy_data %>% mutate(model = m)
+      data_in = rbind(data_in, temp)
+    }
+  }
+  # add back in the other historical data
+  data_in = rbind(data_in, hist_data)
+  # the end
+  return(data_in)
+}
+
 #' relocate_standard_col_order
 #' @param data
 #'
