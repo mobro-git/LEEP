@@ -34,8 +34,5 @@ make_clean_data = function(df) {
 
   df = clean_data
 
-
-
-
 }
 

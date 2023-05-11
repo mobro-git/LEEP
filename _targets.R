@@ -55,7 +55,7 @@ tar_plan(
     usa = "United States",
     ira_2035 = c(seq(2021,2035,by=1)),
     ira_2050 = c(seq(2021,2050,by=1)),
-    historic = c(seq(2010,2035,by=1))
+    historic = c(seq(2005,2035,by=1))
   ),
 
   ######################################################################################### -
@@ -137,8 +137,7 @@ tar_plan(
   clean_data = {
     data_long %>%
       complete_implicit_na() %>%
-      make_calculated_vars(ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var) %>%
-      make_clean_data()},
+      make_calculated_vars(ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var)},
 
   # indexed version of clean_data. index_var determines which variables are indexed, only these are included
   clean_data_index = index_data_long(clean_data, index_var),

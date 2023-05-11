@@ -85,7 +85,7 @@ combined.data <- full_join(data.emissions, data.co2captured) %>%
 #####
 
 
-var.mapping <- read_excel("data-extra/VariableMapping.xlsx")
+var.mapping <- read_excel("data-extra/ira_comparison_raw/VariableMapping.xlsx")
 
 combined.data.2 <- left_join(combined.data, var.mapping, by = "Bistline Variable") %>%
   mutate(
