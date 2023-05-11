@@ -24,8 +24,8 @@ if(is.null(params$mode)) {
 ```{r}
 tar_load(config)
 tar_load(clean_data)
-tar_load(clean_data_index)
-tar_load(figmap_leep_timeseries)
+# tar_load(clean_data_index)
+tar_load(figmap_leep_cone)
 ```
 
 ```{r}
@@ -141,5 +141,75 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
 p = dot_plots("time_series", config, clean_data, figmap_leep_timeseries, 4, "United States", 0, 2500, "Emissions|CO2|Energy|Demand|Electricity", metric = "median")
 print(p$full)
 print(p$stats)
+
+```
+
+```{r}
+fig1 = print_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 1, "United States") +
+  scale_y_continuous(limits = c(0, 20))
+fig1
+
+fig2 = print_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 2, "United States") +
+  scale_y_continuous(limits = c(0, 20))
+fig2
+
+final = fig1 + fig2 +
+    plot_annotation(title = "test", theme = theme(plot.title = element_text(hjust = 0.5))) +
+    plot_layout(guides = "collect", widths = c(1,1)) +
+    theme(plot.margin = margin(0,0,0,0))
+final
+
+```
+```{r}
+fig3 = print_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 3, "United States") +
+  scale_y_continuous(limits = c(0, 2500))
+fig3
+df3 = data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 3, "United States")
+
+fig4 = print_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 4, "United States") +
+  scale_y_continuous(limits = c(0, 2500))
+fig4
+df4 = data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 4, "United States")
+
+final2 = fig3 + fig4 +
+    plot_annotation(title = "test", theme = theme(plot.title = element_text(hjust = 0.5))) +
+    plot_layout(guides = "collect", widths = c(1,1)) +
+    theme(plot.margin = margin(0,0,0,0))
+final2
+
+```
+
+
+```{r}
+fig5 = print_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 5, "United States") +
+  scale_y_continuous(limits = c(0, 30))
+fig5
+
+fig6 = print_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 6, "United States") +
+  scale_y_continuous(limits = c(0, 30))
+fig6
+
+final3 = fig5 + fig6 +
+    plot_annotation(title = "test", theme = theme(plot.title = element_text(hjust = 0.5))) +
+    plot_layout(guides = "collect", widths = c(1,1)) +
+    theme(plot.margin = margin(0,0,0,0))
+final3
+
+```
+
+```{r}
+fig7 = print_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 7, "United States") +
+  scale_y_continuous(limits = c(0, 12))
+fig7
+
+fig8 = print_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 8, "United States") +
+  scale_y_continuous(limits = c(0, 12))
+fig8
+
+final4 = fig7 + fig8 +
+    plot_annotation(title = "test", theme = theme(plot.title = element_text(hjust = 0.5))) +
+    plot_layout(guides = "collect", widths = c(1,1)) +
+    theme(plot.margin = margin(0,0,0,0))
+final4
 
 ```
