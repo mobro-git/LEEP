@@ -44,18 +44,35 @@ tar_plan(
 
     # Use models_leep for all initial plots
     models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-EMF", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "MARKAL-NETL", "NEMS-RHG",
-                    "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA", "EIA-STEO"),
+                    "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA-LTS"),
+
+    # models_lts = c("EIA-LTS", "GCAM 5.3", "OP-NEMS-LTS"),
+    models_lts = c("GCAM 5.3", "OP-NEMS-LTS", "EIA-LTS"),
+    # models_ltsplus = c("GCAM 5.3", "OP-NEMS-LTS", "EIA-LTS","USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-EMF",
+    #                    "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "MARKAL-NETL", "NEMS-RHG",
+    #                    "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA", "EIA-STEO"),
 
     # scenarios
     main_scenarios = c("Reference","IRA"),
+    ira_only = c("IRA", "Historic"),
 
-    hist_mod_scenarios = c("Historic","Reference","IRA"),
+    hist_mod_scenarios = c("Reference","IRA"),
+
+    scenarios_lts = c("Historic", "LTS.High", "LTS.Low", "LTS.Mid1", "LTS.Mid2", "LTS.Mid3", "LTS.Mid4",
+                      "LTS.Mid5", "LTS.Mid6", "LTS.Mid7", "LTS.Mid8", "LTS.Mid9", "LTS.Mid10"),
+    # scenarios_ltsplus = c("Historic", "LTS.High", "LTS.Low", "LTS.Mid1", "LTS.Mid2", "LTS.Mid3", "LTS.Mid4",
+    #                   "LTS.Mid5", "LTS.Mid6", "LTS.Mid7", "LTS.Mid8", "LTS.Mid9", "LTS.Mid10", "IRA"),
+
+
 
     # time intervals
     usa = "United States",
     ira_2035 = c(seq(2021,2035,by=1)),
     ira_2050 = c(seq(2021,2050,by=1)),
+
+    fives = c(seq(2005,2020,by = 1),seq(2025,2035,by = 5)),
     historic = c(seq(2005,2035,by=1))
+
   ),
 
   ######################################################################################### -
@@ -137,7 +154,9 @@ tar_plan(
   clean_data = {
     data_long %>%
       complete_implicit_na() %>%
-      make_calculated_vars(ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var)},
+      make_calculated_vars(ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var)},# %>%
+      # duplicate_hist_data("EIA-LTS",2020)},# %>%
+#      filter((model == "EIA-LTS" & year <= 2020) | (model != "EIA-LTS" & year >= 2020))},
 
   # indexed version of clean_data. index_var determines which variables are indexed, only these are included
   clean_data_index = index_data_long(clean_data, index_var),

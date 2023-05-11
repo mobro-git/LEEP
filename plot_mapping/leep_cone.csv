@@ -1,9 +1,33 @@
 figure_type,figure_no,title_name,variable,variable_rename,flip_sign,regions,models,years,scenarios,type,x,y,range,facet1,facet2,page_filter,color,scales
-coneplot,1,Final Energy,Final Energy|Coal,Coal,0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,model,variable_rename,scenario,region,variable_rename,fixed
-coneplot,1,Final Energy,Final Energy|Gas,Gas,0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,model,variable_rename,scenario,region,variable_rename,fixed
-coneplot,1,Final Energy,Final Energy|Oil,Oil,0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,model,variable_rename,scenario,region,variable_rename,fixed
-coneplot,2,Power Sector Emissions,Emissions|CO2|Energy|Supply|Electricity,Electricity,0,usa,models_bistline,ira_2035,main_scenarios,single,year,value,model,,,region,scenario,fixed
-coneplot,3,Transportation Sector Emissions,Emissions|CO2|Energy|Demand|Transportation,Transportation,0,usa,models_bistline,ira_2035,main_scenarios,single,year,value,model,,,region,scenario,fixed
-coneplot,4,Building Sector Emissions,Emissions|CO2|Energy|Demand|Buildings,Buildings,0,usa,models_bistline,ira_2035,main_scenarios,single,year,value,model,,,region,scenario,fixed
-coneplot,5,Building Sector Final Energy - Electricity,Final Energy|Buildings|Electricity,Buildings_Electricity,0,usa,models_bistline,ira_2035,main_scenarios,single,year,value,model,,,region,scenario,fixed
-coneplot,6,Power Sector Emissions by Model,Emissions|CO2|Energy|Supply|Electricity,Electricity,0,usa,models_bistline,ira_2035,main_scenarios,grid,year,value,model,model,region,region,model,fixed
+coneplot,1,Buildings Energy,Final Energy|Buildings|Electricity,Electricity,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,1,Buildings Energy,Final Energy|Buildings|NonElectric,NonElectric,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,2,Buildings Energy IRA,Final Energy|Buildings|Electricity,Electricity,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,2,Buildings Energy IRA,Final Energy|Buildings|NonElectric,NonElectric,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,3,Energy Emissions,Emissions|CO2|Energy|Demand|Buildings,Buildings,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,3,Energy Emissions,Emissions|CO2|Energy|Demand|Industry,Industry,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,3,Energy Emissions,Emissions|CO2|Energy|Demand|Transportation,Transportation,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,3,Energy Emissions,Emissions|CO2|Energy|Supply|Electricity,Electricity,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,3,Energy Emissions,Emissions|CO2|CDR,CDR,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,4,Energy Emissions IRA,Emissions|CO2|Energy|Demand|Buildings,Buildings,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,4,Energy Emissions IRA,Emissions|CO2|Energy|Demand|Industry,Industry,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,4,Energy Emissions IRA,Emissions|CO2|Energy|Demand|Transportation,Transportation,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,4,Energy Emissions IRA,Emissions|CO2|Energy|Supply|Electricity,Electricity,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,4,Energy Emissions IRA,Emissions|CO2|CDR,CDR,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,5,Transportation Energy,Final Energy|Transportation|Fossil,Fossil,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,5,Transportation Energy,Final Energy|Transportation|Alternative Fuels,Alternative Fuels,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,5,Transportation Energy,Final Energy|Transportation|Electricity,Electricity,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,6,Transportation Energy IRA,Final Energy|Transportation|Fossil,Fossil,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,6,Transportation Energy IRA,Final Energy|Transportation|Alternative Fuels,Alternative Fuels,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,6,Transportation Energy IRA,Final Energy|Transportation|Electricity,Electricity,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,7,Industrial Energy,Final Energy|Industry|Electricity,Electricity,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,7,Industrial Energy,Final Energy|Industry|Hydrogen,Hydrogen,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,7,Industrial Energy,Final Energy|Industry|Biomass w/ CCS,Biomass w/ CCS,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,7,Industrial Energy,Final Energy|Industry|Biomass w/o CCS,Biomass w/o CCS,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,7,Industrial Energy,Final Energy|Industry|Fossil w/o CCS,Fossil w/ CCS,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,7,Industrial Energy,Final Energy|Industry|Fossil w/ CCS,Fossil w/o CCS,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,8,Industrial Energy,Final Energy|Industry|Electricity,Electricity,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,8,Industrial Energy,Final Energy|Industry|Hydrogen,Hydrogen,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,8,Industrial Energy,Final Energy|Industry|Biomass w/ CCS,Biomass w/ CCS,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,8,Industrial Energy,Final Energy|Industry|Biomass w/o CCS,Biomass w/o CCS,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,8,Industrial Energy,Final Energy|Industry|Fossil w/o CCS,Fossil w/ CCS,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,8,Industrial Energy,Final Energy|Industry|Fossil w/ CCS,Fossil w/o CCS,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed

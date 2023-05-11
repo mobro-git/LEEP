@@ -7,7 +7,7 @@ ribbonize <- function(df, range) {
 
   } else if (range == "scenario") {
     sen_ribbon = df %>%
-      group_by(year, model, variable, unit)
+      group_by(year, variable, unit)
 
   } else if (range == "model") {
     sen_ribbon = df %>%
@@ -24,6 +24,7 @@ ribbonize <- function(df, range) {
               color = color,
               .groups = "drop") %>%
     ungroup()
+  write.csv(sen_ribbon,"test1.csv")
   return(sen_ribbon)
 }
 
@@ -95,7 +96,7 @@ cone_uncertainty_single_fn <- function(df, data_list, mapping_list) {
   p <- ggplot() +
     geom_line(df, mapping = aes(x = .data[[data_list$x]], y = .data[[data_list$y]],
                       color = .data[[data_list$color]],
-                      group = interaction(.data[[data_list$range]], .data[[data_list$color]])),
+                      group = interaction(.data[[data_list$range]], .data[[data_list$color]], model)),
               size = 1, alpha = 0.4) +
     geom_ribbon(data = sen_ribbon,
                 mapping = aes(x= .data[[data_list$x]],
