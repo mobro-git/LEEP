@@ -17,6 +17,8 @@ bistline_ira_tall.csv,REGEN-EPRI,IRA,REGEN-EPRI,IRA,Bistline IRA comparison pape
 bistline_ira_tall.csv,REGEN-EPRI,Reference,REGEN-EPRI,Reference,Bistline IRA comparison paper
 bistline_ira_tall.csv,RIO-REPEAT,IRA,RIO-REPEAT,IRA,Bistline IRA comparison paper
 bistline_ira_tall.csv,RIO-REPEAT,Reference,RIO-REPEAT,Reference,Bistline IRA comparison paper
+bistline_ira_tall.csv,IPM-EPA,Reference,IPM-EPA,Reference,From 2nd Bistline paper - but same IPM runs
+bistline_ira_tall.csv,IPM-EPA,IRA,IPM-EPA,IRA,From 2nd Bistline paper - but same IPM runs
 EIAinEMF37.csv,AEO.2020,REF2020,AEO2020,Reference,From EIA in EMF37 Repo
 EIAinEMF37.csv,AEO.2021,REF2021,AEO2021,Reference,From EIA in EMF37 Repo
 EIAinEMF37.csv,AEO.2022,REF2022,AEO2022,Reference,From EIA in EMF37 Repo
@@ -35,7 +37,7 @@ usrep_reeds_allscen.csv,USREP-ReEDS,reference-noIRA,USREP-ReEDS,Reference,
 usrep_reeds_allscen.csv,USREP-ReEDS,ira_mid,USREP-ReEDS,IRA,
 usrep_reeds_allscen.csv,USREP-ReEDS,ira_max,USREP-ReEDS,IRA.High,
 usrep_reeds_allscen.csv,USREP-ReEDS,ira_base,USREP-ReEDS,IRA.Low,
-,,,,,
+GHGI_data_bistline.xlsx,EPA-GHGI,Historic,EPA-GHGI,Historic,
 ,,,,,
 ,,,,,
 ,,,,,

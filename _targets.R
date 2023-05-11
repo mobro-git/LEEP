@@ -137,7 +137,8 @@ tar_plan(
   clean_data = {
     data_long %>%
       complete_implicit_na() %>%
-      make_calculated_vars(ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var)},
+      make_calculated_vars(ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var) %>%
+      make_clean_data()},
 
   # indexed version of clean_data. index_var determines which variables are indexed, only these are included
   clean_data_index = index_data_long(clean_data, index_var),
