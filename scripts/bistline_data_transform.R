@@ -39,6 +39,12 @@ data.elecdemand <- read_xlsx("data-extra/ira_comparison_raw/ira_comparison.xlsx"
       unit == "TWh" ~ "EJ/yr",
       TRUE ~ "unit"))
 
+data.trnelcdemand <- data.elecdemand %>%
+  filter(variable %in% c("Electricity Demand - Light-Duty Vehicles", "Electricity Demand - Other Transport")) %>%
+  mutate(variable = "Electricity Demand - Transportation") %>%
+  group_by(scenario,model,variable,unit,year,table) %>%
+  summarise(value = sum(value))
+
 data.nox <- read_xlsx("data-extra/ira_comparison_raw/ira_comparison.xlsx", sheet = "NOx") %>%
   gather("year", "value", 4:9) %>%
   mutate(table = "nox")
@@ -68,6 +74,7 @@ combined.data <- full_join(data.emissions, data.co2captured) %>%
   full_join(data.ffconsump) %>%
   full_join(data.nox) %>%
   full_join(data.transport) %>%
+  full_join(data.trnelcdemand) %>%
   rename("Bistline Variable" = variable)
 
 
@@ -78,7 +85,7 @@ combined.data <- full_join(data.emissions, data.co2captured) %>%
 #####
 
 
-var.mapping <- read_excel("data-extra/VariableMapping.xlsx")
+var.mapping <- read_excel("data-extra/ira_comparison_raw/VariableMapping.xlsx")
 
 combined.data.2 <- left_join(combined.data, var.mapping, by = "Bistline Variable") %>%
   mutate(
@@ -91,8 +98,9 @@ combined.data.2 <- left_join(combined.data, var.mapping, by = "Bistline Variable
   ) %>%
   rename(variable = "Template Variable") %>%
   select(-table, -Notes, -"Bistline Variable") %>%
-  mutate(region = "United States")
-
+  mutate(region = "United States") %>%
+  filter(!is.na(variable)) %>%
+  filter(!year < 2025)
 
 write.csv(combined.data.2, "data-raw/model-runs/bistline_ira_tall.csv", row.names = FALSE)
 
