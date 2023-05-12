@@ -132,7 +132,7 @@ tar_plan(
     unique(all_calculated$per_diff_var$new_variable))
     ),
 
-  # _Making emf_data_long ----
+  # _Making data_long ----
   data_raw = map_dfr(data_files, read_raw_data_file),
 
   data_min = map_dfr(data_files, read_process_minimal_from_raw),
@@ -153,10 +153,14 @@ tar_plan(
   # emf_data_long but can add in transformations or filter out models/variables
   clean_data = {
     data_long %>%
-      complete_implicit_na() %>%
+      # complete_implicit_na() %>%
       make_calculated_vars(ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var)},# %>%
       # duplicate_hist_data("EIA-LTS",2020)},# %>%
 #      filter((model == "EIA-LTS" & year <= 2020) | (model != "EIA-LTS" & year >= 2020))},
+
+  data_wide = {clean_data %>% pivot_wider(names_from = "year", values_from = "value")},
+
+  data_output = write_csv(data_wide, "output/data/leep_data_output.csv"),
 
   # indexed version of clean_data. index_var determines which variables are indexed, only these are included
   clean_data_index = index_data_long(clean_data, index_var),
@@ -181,6 +185,8 @@ tar_plan(
   cone = create_graph("leep", "cone_uncertainty", config, clean_data, figmap_leep_cone),
   stackbar = create_graph("leep", "stacked_bar", config, clean_data, figmap_leep_stackbar),
   diffbar = create_graph("leep", "diff_bar", config, clean_data, figmap_leep_diffbar),
+
+  bld_ts = create_graph("bld","time_series", config, clean_data, figmap_bld_timeseries),
 
   test_diffbar = create_graph("test", "diff_bar",config,clean_data,figmap_test_diffbar)
 
