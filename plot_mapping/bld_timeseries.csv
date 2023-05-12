@@ -1,0 +1,2 @@
+figure_type,figure_no,title_name,variable,variable_rename,flip_sign,regions,models,years,scenarios,type,x,y,facet1,facet2,color,page_filter,scales
+timeseries,3,Emissions|CO2|Energy|Demand|Buildings,Emissions|CO2|Energy|Demand|Buildings,CO2,0,usa,models_leep,historic,hist_mod_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed

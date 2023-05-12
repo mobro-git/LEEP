@@ -75,6 +75,8 @@ combined.data <- full_join(data.emissions, data.co2captured) %>%
   full_join(data.nox) %>%
   full_join(data.transport) %>%
   full_join(data.trnelcdemand) %>%
+  group_by(scenario,model,variable,unit,year,table) %>%
+  summarise(value = sum(value)) %>%
   rename("Bistline Variable" = variable)
 
 
@@ -100,7 +102,9 @@ combined.data.2 <- left_join(combined.data, var.mapping, by = "Bistline Variable
   select(-table, -Notes, -"Bistline Variable") %>%
   mutate(region = "United States") %>%
   filter(!is.na(variable)) %>%
-  filter(!year < 2025)
+  filter(!year < 2025) %>%
+  group_by(scenario,model,variable,unit,year,region) %>%
+  summarise(value = sum(value))
 
 write.csv(combined.data.2, "data-raw/model-runs/bistline_ira_tall.csv", row.names = FALSE)
 

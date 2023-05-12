@@ -11,7 +11,7 @@ time_series_wrap_fn <- function(df, data_list, mapping_list) {
     scale_y_continuous(labels = scales::comma)  +
     theme_emf() +
     theme(axis.text.x = element_text(angle = 45, hjust=1)) +
-    theme(panel.spacing.x = unit(4, "mm"), plot.title = element_blank())
+    theme(panel.spacing.x = unit(4, "mm"))
 
   return(p)
 }
@@ -30,7 +30,7 @@ time_series_grid_fn <- function(df, data_list, mapping_list) {
     scale_y_continuous(labels = scales::comma)  +
     theme_emf() +
     theme(axis.text.x = element_text(angle = 45, hjust=1)) +
-    theme(panel.spacing.x = unit(4, "mm"), plot.title = element_blank())
+    theme(panel.spacing.x = unit(4, "mm"))
 
   return(p)
 }
@@ -48,7 +48,7 @@ time_series_single_fn <- function(df, data_list, mapping_list) {
     scale_y_continuous(labels = scales::comma)  +
     theme_emf() +
     theme(axis.text.x = element_text(angle = 45, hjust=1)) +
-    theme(panel.spacing.x = unit(4, "mm"), plot.title = element_blank())
+    theme(panel.spacing.x = unit(4, "mm"))
 
   return(p)
 }
