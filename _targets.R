@@ -153,10 +153,8 @@ tar_plan(
   # emf_data_long but can add in transformations or filter out models/variables
   clean_data = {
     data_long %>%
-      # complete_implicit_na() %>%
-      make_calculated_vars(ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var)},# %>%
-      # duplicate_hist_data("EIA-LTS",2020)},# %>%
-#      filter((model == "EIA-LTS" & year <= 2020) | (model != "EIA-LTS" & year >= 2020))},
+      complete_implicit_na() %>%
+      make_calculated_vars(ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var)},
 
   data_wide = {clean_data %>% pivot_wider(names_from = "year", values_from = "value")},
 

@@ -1,3 +1,6 @@
+devtools::load_all()
+library(targets)
+library(tidyverse)
 tar_load(data_raw)
 glimpse(data_raw)
 
