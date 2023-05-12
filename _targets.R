@@ -46,11 +46,7 @@ tar_plan(
     models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-EMF", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "MARKAL-NETL", "NEMS-RHG",
                     "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA-LTS"),
 
-    # models_lts = c("EIA-LTS", "GCAM 5.3", "OP-NEMS-LTS"),
-    models_lts = c("GCAM 5.3", "OP-NEMS-LTS", "EIA-LTS"),
-    # models_ltsplus = c("GCAM 5.3", "OP-NEMS-LTS", "EIA-LTS","USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-EMF",
-    #                    "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "MARKAL-NETL", "NEMS-RHG",
-    #                    "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA", "EIA-STEO"),
+    models_lts = c("GCAM-LTS", "OP-NEMS-LTS", "EIA-LTS"),
 
     # scenarios
     main_scenarios = c("Reference","IRA"),
@@ -154,9 +150,7 @@ tar_plan(
   clean_data = {
     data_long %>%
       complete_implicit_na() %>%
-      make_calculated_vars(ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var)},# %>%
-      # duplicate_hist_data("EIA-LTS",2020)},# %>%
-#      filter((model == "EIA-LTS" & year <= 2020) | (model != "EIA-LTS" & year >= 2020))},
+      make_calculated_vars(ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var)},
 
   # indexed version of clean_data. index_var determines which variables are indexed, only these are included
   clean_data_index = index_data_long(clean_data, index_var),
