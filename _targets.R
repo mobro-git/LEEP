@@ -46,11 +46,7 @@ tar_plan(
     models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-EMF", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "MARKAL-NETL", "NEMS-RHG",
                     "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA-LTS"),
 
-    # models_lts = c("EIA-LTS", "GCAM 5.3", "OP-NEMS-LTS"),
-    models_lts = c("GCAM 5.3", "OP-NEMS-LTS", "EIA-LTS"),
-    # models_ltsplus = c("GCAM 5.3", "OP-NEMS-LTS", "EIA-LTS","USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-EMF",
-    #                    "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "MARKAL-NETL", "NEMS-RHG",
-    #                    "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA", "EIA-STEO"),
+    models_lts = c("GCAM-LTS", "OP-NEMS-LTS", "EIA-LTS"),
 
     # scenarios
     main_scenarios = c("Reference","IRA"),

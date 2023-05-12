@@ -14,20 +14,19 @@
 5,Final Energy|Buildings|NonElectric,Final Energy|Buildings|Biomass,EJ/yr,1
 5,Final Energy|Buildings|NonElectric,Final Energy|Buildings|Biogas,EJ/yr,1
 5,Final Energy|Buildings|NonElectric,Final Energy|Buildings|Biomass liquids,EJ/yr,1
-6,Emissions|CO2|CDR,Carbon Sequestration|LULUCF,Gt CO2/yr,1
-6,Emissions|CO2|CDR,Carbon Sequestration|CCS|Biomass|Energy – BECCS,Gt CO2/yr,1
-6,Emissions|CO2|CDR,Emissions|CO2|LTSCDR,Gt CO2/yr,1
+6,Emissions|CO2|CDR,Carbon Sequestration|LULUCF,Mt CO2/yr,1
+6,Emissions|CO2|CDR,Carbon Sequestration|CCS|Biomass|Energy – BECCS,Mt CO2/yr,1
 7,Final Energy|Transportation|Fossil,Final Energy|Transportation|Oil,EJ/yr,1
 7,Final Energy|Transportation|Fossil,Final Energy|Transportation|Gas,EJ/yr,1
 8,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Biogas,EJ/yr,1
 8,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Biomass Liquids,EJ/yr,1
 8,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Hydrogen,EJ/yr,1
-9,Final Energy|Industry|Fossil w/ CCS,Final Energy|Industry|Coal|w/ CCS,EJ/yr,1
-9,Final Energy|Industry|Fossil w/ CCS,Final Energy|Industry|Gas|w/ CCS,EJ/yr,1
-9,Final Energy|Industry|Fossil w/ CCS,Final Energy|Industry|Oil|w/ CCS,EJ/yr,1
-10,Final Energy|Industry|Fossil w/o CCS,Final Energy|Industry|Coal|w/o CCS,EJ/yr,1
-10,Final Energy|Industry|Fossil w/o CCS,Final Energy|Industry|Gas|w/o CCS,EJ/yr,1
-10,Final Energy|Industry|Fossil w/o CCS,Final Energy|Industry|Oil|w/o CCS,EJ/yr,1
+9,Final Energy|Industry|Fossil|w/ CCS,Final Energy|Industry|Coal|w/ CCS,EJ/yr,1
+9,Final Energy|Industry|Fossil|w/ CCS,Final Energy|Industry|Gas|w/ CCS,EJ/yr,1
+9,Final Energy|Industry|Fossil|w/ CCS,Final Energy|Industry|Oil|w/ CCS,EJ/yr,1
+10,Final Energy|Industry|Fossil|w/o CCS,Final Energy|Industry|Coal|w/o CCS,EJ/yr,1
+10,Final Energy|Industry|Fossil|w/o CCS,Final Energy|Industry|Gas|w/o CCS,EJ/yr,1
+10,Final Energy|Industry|Fossil|w/o CCS,Final Energy|Industry|Oil|w/o CCS,EJ/yr,1
 11,Final Energy|Industry|Biomass w/o CCS,Final Energy|Industry|Biomass|w/o CCS,EJ/yr,1
 11,Final Energy|Industry|Biomass w/o CCS,Final Energy|Industry|Biomass Liquids,EJ/yr,1
 11,Final Energy|Industry|Biomass w/o CCS,Final Energy|Industry|Biogas,EJ/yr,1
