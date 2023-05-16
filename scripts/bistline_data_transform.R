@@ -174,12 +174,13 @@ historic_data = rbind(hist_generation,hist_capacity_change)
 ##
 #####
 
-all_variables = rbind(
+all_reported = rbind(
   fuel_emissions,
   historic_data,
   modeled_data
 ) %>%
-  ungroup()
+  ungroup() %>%
+  arrange(variable)
 
 
 #####
@@ -188,13 +189,10 @@ all_variables = rbind(
 ##
 #####
 
-indirect = all_variables %>%
+indirect = all_reported %>%
   filter(
     variable %in% c(
       "Emissions|CO2|Energy|Supply|Electricity",
-      "Emissions|CO2|Energy|Demand|Buildings",
-      "Emissions|CO2|Energy|Demand|Industry",
-      "Emissions|CO2|Energy|Demand|Transportation",
       "Final Energy|Electricity",
       "Final Energy|Buildings|Electricity",
       "Final Energy|Industry|Electricity",
@@ -204,12 +202,37 @@ indirect = all_variables %>%
   select(-unit) %>%
   pivot_wider(names_from = "variable", values_from = "value")
 
+calc_indirect = indirect %>%
+  # end-use percent consumption of total electricity
+  mutate(
+    bld_per_elc = `Final Energy|Buildings|Electricity`/`Final Energy|Electricity`,
+    ind_per_elc = `Final Energy|Industry|Electricity`/`Final Energy|Electricity`,
+    trn_per_elc = `Final Energy|Transportation|Electricity`/`Final Energy|Electricity`) %>%
+  # end-use apportionment of electricity emissions based on consmption of electricity
+  mutate(
+    `Emissions|CO2|Energy|Demand|Buildings|Indirect` = `bld_per_elc` * `Emissions|CO2|Energy|Supply|Electricity`,
+    `Emissions|CO2|Energy|Demand|Industry|Indirect` = `ind_per_elc` * `Emissions|CO2|Energy|Supply|Electricity`,
+    `Emissions|CO2|Energy|Demand|Transportation|Indirect` = `trn_per_elc` * `Emissions|CO2|Energy|Supply|Electricity`
+    ) %>%
+  mutate(unit = "Mt CO2/yr") %>%
+  select(
+    scenario,model,unit,year,region,
+    `Emissions|CO2|Energy|Demand|Buildings|Indirect`,
+    `Emissions|CO2|Energy|Demand|Industry|Indirect`,
+    `Emissions|CO2|Energy|Demand|Transportation|Indirect`
+  )
 
+indirect_long = calc_indirect %>%
+  pivot_longer(cols = 6:8, names_to = "variable", values_to = "value") %>%
+  select(scenario,model,variable,unit,year,region,value)
 
+#####
+##
+## all variables
+##
+#####
 
-
-
-
+all_variables = rbind(all_reported, indirect_long)
 
 write.csv(all_variables, "data-raw/model-runs/bistline_ira_tall.csv", row.names = FALSE)
 
