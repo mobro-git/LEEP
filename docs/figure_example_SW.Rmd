@@ -243,16 +243,19 @@ lts_coneplot_with_dots = function(config, data, figmap, lts_fignum, leep_fignum,
 ```{r}
   p = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 1, 2, "United States", 0, 15, "mean", facet = FALSE)
   p
-  p2 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 3, 4, "United States", -1000, 2500, "mean", facet = FALSE)
-  p2
+  ggsave(filename = "output/leep/cone_uncertainty/LTS_cone_buildings.svg",p, width = 7, height = 5, units = "in")
+  # p2 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 3, 4, "United States", -1000, 2500, "mean", facet = FALSE)
+  # p2
+  # ggsave(filename = "output/leep/cone_uncertainty/LTS_cone_emissions_old.svg",p2, width = 7, height = 5, units = "in")
   p3 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 5, 6, "United States", 0, 30, "mean", facet = FALSE)
   p3
+  ggsave(filename = "output/leep/cone_uncertainty/LTS_cone_transport.svg",p3, width = 7, height = 5, units = "in")
   p4 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 7, 8, "United States", 0, 25, "mean", facet = FALSE)
   p4
+  ggsave(filename = "output/leep/cone_uncertainty/LTS_cone_industry.svg",p4, width = 7, height = 5, units = "in")
   p5 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 9, 10, "United States", -1000, 2500, "mean", facet = TRUE)
   p5
-  
-x=data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone,9,"United States")
+  ggsave(filename = "output/leep/cone_uncertainty/LTS_cone_emissions_new.svg",p5, width = 7, height = 5, units = "in")
 ```
 
 
@@ -263,4 +266,5 @@ clean_data2 = clean_data %>% duplicate_historical_data("EIA-STEO",2020)
 fig = print_graph("time_series", config, clean_data2, figmap_leep_timeseries, 16, "United States")
 dta = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
 fig
+ggsave(filename = "output/leep/time_series/emis_sensitivity.svg",fig, width = 7, height = 5, units = "in")
 ```
