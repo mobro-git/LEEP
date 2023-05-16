@@ -26,6 +26,7 @@ tar_plan(
   ##### Config -----------------
   config = list(
     scen_mapping = read_scen_mapping(scen_mapping_csv),
+    template_original = template_original,
     template = template,
     calculated_var = all_calculated,
 
@@ -76,8 +77,13 @@ tar_plan(
 
   ##### Template and Metadata ---------------------------------------------------
 
-  tar_target(template_csv, "data-raw/EMF37_data_template_R2_v2.xlsx", format = "file"),
-  tar_target(template, read_emf_template_xlsx(template_csv)),
+  tar_target(template_original_csv, "data-raw/EMF37_data_template_R2_v2.xlsx", format = "file"),
+  tar_target(template_original, read_emf_template_xlsx(template_original_csv)),
+
+  tar_target(template_additions_csv, "data-raw/template_additions.xlsx", format = "file"),
+  tar_target(template_additions, read_emf_template_xlsx(template_additions_csv)),
+
+  tar_target(template, rbind(template_original,template_additions)),
 
   tar_target(scen_mapping_csv, "data-raw/scenario-mapping.csv", format = "file"),
 

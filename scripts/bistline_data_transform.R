@@ -143,7 +143,7 @@ capacity_change <- read_xlsx("data-extra/ira_comparison_raw/ira_comparison.xlsx"
   mutate(region = "United States") %>%
   select(scenario,model,variable,unit,year,region,value)
 
-modeled_data = rbind(generation,capacity,capacity_change) %>%
+modeled_generation_capacity = rbind(generation,capacity,capacity_change) %>%
   mutate(year = as.character(year))
 
 ### historic data
@@ -165,8 +165,7 @@ hist_capacity_change <- read_xlsx("data-extra/ira_comparison_raw/ira_comparison.
   mutate(region = "United States") %>%
   select(scenario,model,variable,unit,year,region,value)
 
-historic_data = rbind(hist_generation,hist_capacity_change)
-
+historic_generation_capacity = rbind(hist_generation,hist_capacity_change) %>% mutate(model = "EIA")
 
 #####
 ##
@@ -174,14 +173,9 @@ historic_data = rbind(hist_generation,hist_capacity_change)
 ##
 #####
 
-all_reported = rbind(
-  fuel_emissions,
-  historic_data,
-  modeled_data
-) %>%
+all_reported = rbind(fuel_emissions, modeled_generation_capacity) %>%
   ungroup() %>%
   arrange(variable)
-
 
 #####
 ##
@@ -228,15 +222,51 @@ indirect_long = calc_indirect %>%
 
 #####
 ##
-## all variables
+## ev shares
 ##
 #####
 
-all_variables = rbind(all_reported, indirect_long)
+ev_shares = read_xlsx("data-extra/ira_comparison_raw/energyservice_transportation.xlsx") %>%
+  pivot_longer(cols = 6:21, names_to = "year", values_to = "value") %>%
+  select(scenario,model,variable,unit,year,region,value)
+
+ev_modeled = ev_shares %>% filter(model != "IEA")
+ev_historic = ev_shares %>% filter(model == "IEA")
+
+#####
+##
+## all reported variables
+##
+#####
+
+all_variables = rbind(all_reported, indirect_long, ev_modeled)
 
 write.csv(all_variables, "data-raw/model-runs/bistline_ira_tall.csv", row.names = FALSE)
 
+#####
+##
+## all historic variables
+##
+#####
 
+primarynrg_historic = readxl::read_xlsx("data-extra/ira_comparison_raw/historic_primary_energy.xlsx") %>%
+  mutate(model = "EIA",
+         scenario = "Historic") %>%
+  pivot_longer(cols = c("coal","gas","oil"), names_to = "var", values_to = "quads") %>%
+  mutate(variable = case_when(
+    var == "coal" ~ "Primary Energy|Coal",
+    var == "gas" ~ "Primary Energy|Gas",
+    var == "oil" ~ "Primary Energy|Oil"
+  )) %>%
+  # converting from quads to EJ/Yr
+  mutate(value = quads*1.05505585262,
+         unit = "EJ/yr",
+         region = "United States") %>%
+  select(scenario,model,variable,unit,year,region,value)
+
+historic_data = rbind(primarynrg_historic, historic_generation_capacity, ev_historic)
+
+write.csv(historic_data, "data-raw/model-runs/EIA-IEA-bistline_historic.csv", row.names = FALSE)
 
 
 
