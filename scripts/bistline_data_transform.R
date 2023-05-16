@@ -8,6 +8,7 @@
 library(tidyverse)
 library(readxl)
 library(xlsx)
+devtools::load_all()
 
 #####
 ##
@@ -69,7 +70,7 @@ data.transport <- read_xlsx("data-extra/ira_comparison_raw/ira_comparison.xlsx",
   mutate(unit = '%') %>%
   gather("year", "value", 4:7)
 
-combined.data <- full_join(data.emissions, data.co2captured) %>%
+fuel_emissions_oldname <- full_join(data.emissions, data.co2captured) %>%
   full_join(data.elecdemand) %>%
   full_join(data.ffconsump) %>%
   full_join(data.nox) %>%
@@ -79,17 +80,15 @@ combined.data <- full_join(data.emissions, data.co2captured) %>%
   summarise(value = sum(value)) %>%
   rename("Bistline Variable" = variable)
 
-
 #####
 ##
 ## Renaming variables to match EMF Formatting structure
 ##
 #####
 
-
 var.mapping <- read_excel("data-extra/ira_comparison_raw/VariableMapping.xlsx")
 
-combined.data.2 <- left_join(combined.data, var.mapping, by = "Bistline Variable") %>%
+fuel_emissions <- left_join(fuel_emissions_oldname, var.mapping, by = "Bistline Variable") %>%
   mutate(
     unit = case_when(
       unit == "Mt-CO2e/yr" ~ "Mt CO2/yr",
@@ -106,7 +105,113 @@ combined.data.2 <- left_join(combined.data, var.mapping, by = "Bistline Variable
   group_by(scenario,model,variable,unit,year,region) %>%
   summarise(value = sum(value))
 
-write.csv(combined.data.2, "data-raw/model-runs/bistline_ira_tall.csv", row.names = FALSE)
+#####
+##
+## generation, capacity, and capacity change sheets
+##
+#####
+
+### modeled data
+
+generation <- read_xlsx("data-extra/ira_comparison_raw/ira_comparison.xlsx", sheet = "generation") %>%
+  mutate(`Secondary Energy|Electricity|Nuclear` = `Secondary Energy|Electricity|Nuclear1`+`Secondary Energy|Electricity|Nuclear2`) %>%
+  select(-`Secondary Energy|Electricity|Nuclear1`, -`Secondary Energy|Electricity|Nuclear2`) %>%
+  mutate(`Secondary Energy|Electricity|Gas|w/o CCS` = `Secondary Energy|Electricity|Gas|w/o CCS1`+`Secondary Energy|Electricity|Gas|w/o CCS2`) %>%
+  select(-`Secondary Energy|Electricity|Gas|w/o CCS1`, -`Secondary Energy|Electricity|Gas|w/o CCS2`) %>%
+  mutate(`Secondary Energy|Electricity|Solar` = `Secondary Energy|Electricity|Solar1`+`Secondary Energy|Electricity|Solar2`) %>%
+  select(-`Secondary Energy|Electricity|Solar1`, -`Secondary Energy|Electricity|Solar2`) %>%
+  pivot_longer(cols = 5:16, names_to = "variable", values_to = "value") %>%
+  mutate(value = value*0.0036,
+         unit = "EJ/yr")  %>% # conversion from TWh to EJ/yr
+  mutate(region = "United States") %>%
+  select(scenario,model,variable,unit,year,region,value)
+
+capacity <- read_xlsx("data-extra/ira_comparison_raw/ira_comparison.xlsx", sheet = "capacity") %>%
+  mutate(`Capacity|Electricity|Nuclear` = `Capacity|Electricity|Nuclear`+`Capacity|Electricity|Nuclear2`) %>%
+  select(-`Capacity|Electricity|Nuclear2`) %>%
+  mutate(`Capacity|Electricity|Gas|w/o CCS` = `Capacity|Electricity|Gas|w/o CCS`+`Capacity|Electricity|Gas|w/o CCS2`) %>%
+  select(-`Capacity|Electricity|Gas|w/o CCS2`) %>%
+  mutate(`Capacity|Electricity|Solar` = `Capacity|Electricity|Solar`+`Capacity|Electricity|Solar2`) %>%
+  select(-`Capacity|Electricity|Solar2`) %>%
+  pivot_longer(cols = 5:17, names_to = "variable", values_to = "value") %>%
+  mutate(region = "United States") %>%
+  select(scenario,model,variable,unit,year,region,value)
+
+capacity_change <- read_xlsx("data-extra/ira_comparison_raw/ira_comparison.xlsx", sheet = "capacity change") %>%
+  pivot_longer(cols = 4:12, names_to = "model", values_to = "value") %>%
+  mutate(year = 2035) %>%
+  mutate(region = "United States") %>%
+  select(scenario,model,variable,unit,year,region,value)
+
+modeled_data = rbind(generation,capacity,capacity_change) %>%
+  mutate(year = as.character(year))
+
+### historic data
+
+hist_generation <- read_xlsx("data-extra/ira_comparison_raw/ira_comparison.xlsx", sheet = "historic generation") %>%
+  mutate(`Secondary Energy|Electricity|Other` = `Secondary Energy|Electricity|Other`+`Secondary Energy|Electricity|Other2`) %>%
+  select(-`Secondary Energy|Electricity|Other2`) %>%
+  pivot_longer(cols = 5:15, names_to = "variable", values_to = "value") %>%
+  mutate(value = value/1000,
+         unit = "TWh") %>% # conversion milltion kWh to TWh
+  mutate(value = value*0.0036,
+         unit = "EJ/yr")  %>% # conversion from TWh to EJ/yr
+  mutate(model = "EIA",
+         region = "United States") %>%
+  select(scenario,model,variable,unit,year,region,value)
+
+hist_capacity_change <- read_xlsx("data-extra/ira_comparison_raw/ira_comparison.xlsx", sheet = "historic capacity change") %>%
+  pivot_longer(cols = 5:77, names_to = "year", values_to = "value") %>%
+  mutate(region = "United States") %>%
+  select(scenario,model,variable,unit,year,region,value)
+
+historic_data = rbind(hist_generation,hist_capacity_change)
+
+
+#####
+##
+## add capacity/generation to other workbooks
+##
+#####
+
+all_variables = rbind(
+  fuel_emissions,
+  historic_data,
+  modeled_data
+) %>%
+  ungroup()
+
+
+#####
+##
+## apportion power sector emissions to sectors based on electricity use
+##
+#####
+
+indirect = all_variables %>%
+  filter(
+    variable %in% c(
+      "Emissions|CO2|Energy|Supply|Electricity",
+      "Emissions|CO2|Energy|Demand|Buildings",
+      "Emissions|CO2|Energy|Demand|Industry",
+      "Emissions|CO2|Energy|Demand|Transportation",
+      "Final Energy|Electricity",
+      "Final Energy|Buildings|Electricity",
+      "Final Energy|Industry|Electricity",
+      "Final Energy|Transportation|Electricity"
+    )
+  ) %>%
+  select(-unit) %>%
+  pivot_wider(names_from = "variable", values_from = "value")
+
+
+
+
+
+
+
+
+write.csv(all_variables, "data-raw/model-runs/bistline_ira_tall.csv", row.names = FALSE)
 
 
 

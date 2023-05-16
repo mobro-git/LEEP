@@ -9,10 +9,8 @@ bistline_ira_tall.csv,GCAM-CGS,IRA,GCAM-CGS,IRA,Bistline IRA comparison paper,
 bistline_ira_tall.csv,GCAM-CGS,Reference,GCAM-CGS,Reference,Bistline IRA comparison paper,
 bistline_ira_tall.csv,Haiku-RFF,IRA,Haiku-RFF,IRA,Bistline IRA comparison paper,
 bistline_ira_tall.csv,Haiku-RFF,Reference,Haiku-RFF,Reference,Bistline IRA comparison paper,
-bistline_ira_tall.csv,IPM-EPA,Reference,IPM-EPA,Reference,From 2nd Bistline paper - but same IPM runs,x
-bistline_ira_tall.csv,IPM-EPA,IRA,IPM-EPA,IRA,From 2nd Bistline paper - but same IPM runs,x
-bistline_ira_tall.csv,IPM-EPA,IRA,IPM-ERA,IRA,Bistline IRA comparison paper,x
-bistline_ira_tall.csv,IPM-EPA,Reference,IPM-ERA,Reference,Bistline IRA comparison paper,x
+bistline_ira_tall.csv,IPM-EPA,Reference,IPM-EPA,Reference,From 2nd Bistline paper - but same IPM runs,
+bistline_ira_tall.csv,IPM-EPA,IRA,IPM-EPA,IRA,From 2nd Bistline paper - but same IPM runs,
 bistline_ira_tall.csv,IPM-NRDC,IRA,IPM-NRDC,IRA,Bistline IRA comparison paper,
 bistline_ira_tall.csv,IPM-NRDC,Reference,IPM-NRDC,Reference,Bistline IRA comparison paper,
 bistline_ira_tall.csv,MARKAL-NETL,IRA,MARKAL-NETL,IRA,Bistline IRA comparison paper,
@@ -59,4 +57,3 @@ usrep_reeds_allscen.csv,USREP-ReEDS,reference-noIRA,USREP-ReEDS,Reference,,
 usrep_reeds_allscen.csv,USREP-ReEDS,ira_mid,USREP-ReEDS,IRA,,
 usrep_reeds_allscen.csv,USREP-ReEDS,ira_max,USREP-ReEDS,IRA.High,,
 usrep_reeds_allscen.csv,USREP-ReEDS,ira_base,USREP-ReEDS,IRA.Low,,
-
