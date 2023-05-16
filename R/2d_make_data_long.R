@@ -40,14 +40,25 @@ make_calculated_vars <- function(data_long, ratio_var, summation_var, cumulative
     make_ratio_variables(summation, ratio_var)
   )
 
-  # cumulative and annual growth rate vars may use some calculated vars and have to come last
-  print("Creating cumulative, annual growth rate, and percent difference variables")
-  all_vars <- bind_rows(
+  print("Creating percent difference variables")
+  summation_ratio_perdiff <- bind_rows(
     summation_ratio,
-    make_cumulative_variables(summation_ratio, cumulative_var),
-    make_agr_variables(summation_ratio, annual_growth_rate_var),
     make_per_diff_variables(summation_ratio, per_diff_var)
   )
+
+  # cumulative and annual growth rate vars may use some calculated vars and have to come last
+
+  print("Creating cumulative variables")
+  summation_ratio_perdiff_cumulative <- bind_rows(
+    summation_ratio_perdiff,
+    make_cumulative_variables(summation_ratio_perdiff, cumulative_var)
+  )
+
+  print("Creating annual growth rate variables")
+  all_vars <- bind_rows(
+    summation_ratio_perdiff_cumulative,
+    make_agr_variables(summation_ratio_perdiff_cumulative, annual_growth_rate_var)
+    )
 
   full_vars <- all_vars %>% filter(!is.na(value))
 

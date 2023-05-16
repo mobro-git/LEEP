@@ -1,17 +1,3 @@
 ﻿variable,new_variable,start_yr,end_yr
-Emissions|CO2,Emissions|CO2|Annual Growth Rate 2020-2050,2020,2050
-Emissions|CO2|Energy|Demand|Industry,Emissions|CO2|Energy|Demand|Industry|Annual Growth Rate 2020-2035,2020,2035
-Emissions|CO2|Energy|Demand|Industry,Emissions|CO2|Energy|Demand|Industry|Annual Growth Rate 2020-2050,2020,2050
-Emissions|CO2|Energy|Demand|Industry,Emissions|CO2|Energy|Demand|Industry|Annual Growth Rate 2035-2050,2035,2050
 Emissions|CO2|Energy|Demand|Industry|Indirect,Emissions|CO2|Energy|Demand|Industry|Indirect|Annual Growth Rate 2020-2035,2020,2035
-Emissions|CO2|Energy|Demand|Industry|Indirect,Emissions|CO2|Energy|Demand|Industry|Indirect|Annual Growth Rate 2020-2050,2020,2050
-Emissions|CO2|Energy|Demand|Industry|Indirect,Emissions|CO2|Energy|Demand|Industry|Indirect|Annual Growth Rate 2035-2050,2035,2050
-Final Energy|Electricity,Final Energy|Electricity|Annual Growth Rate 2020-2050,2020,2050
-Final Energy|Industry,Final Energy|Industry|Annual Growth Rate 2020-2035,2020,2035
-Final Energy|Industry,Final Energy|Industry|Annual Growth Rate 2020-2050,2020,2050
-Final Energy|Industry,Final Energy|Industry|Annual Growth Rate 2035-2050,2035,2050
-Final Energy|Industry|Electricity,Final Energy|Industry|Electricity|Annual Growth Rate 2020-2035,2020,2035
-Final Energy|Industry|Electricity,Final Energy|Industry|Electricity|Annual Growth Rate 2020-2050,2020,2050
-Final Energy|Industry|Electricity,Final Energy|Industry|Electricity|Annual Growth Rate 2035-2050,2035,2050
-Final Energy|Transportation,Final Energy|Transportation|Annual Growth Rate 2020-2050,2020,2050
-Final Energy|Transportation|Electricity,Final Energy|Transportation|Electricity|Annual Growth Rate 2020-2050,2020,2050
+Final Energy|Electricity,Final Energy|Electricity|Annual Growth Rate 2020-2035,2020,2035
