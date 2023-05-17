@@ -21,14 +21,29 @@
 8,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Biogas,EJ/yr,1
 8,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Biomass Liquids,EJ/yr,1
 8,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Hydrogen,EJ/yr,1
-9,Final Energy|Industry|Fossil|w/ CCS,Final Energy|Industry|Coal|w/ CCS,EJ/yr,1
-9,Final Energy|Industry|Fossil|w/ CCS,Final Energy|Industry|Gas|w/ CCS,EJ/yr,1
-9,Final Energy|Industry|Fossil|w/ CCS,Final Energy|Industry|Oil|w/ CCS,EJ/yr,1
-10,Final Energy|Industry|Fossil|w/o CCS,Final Energy|Industry|Coal|w/o CCS,EJ/yr,1
-10,Final Energy|Industry|Fossil|w/o CCS,Final Energy|Industry|Gas|w/o CCS,EJ/yr,1
-10,Final Energy|Industry|Fossil|w/o CCS,Final Energy|Industry|Oil|w/o CCS,EJ/yr,1
-11,Final Energy|Industry|Biomass w/o CCS,Final Energy|Industry|Biomass|w/o CCS,EJ/yr,1
-11,Final Energy|Industry|Biomass w/o CCS,Final Energy|Industry|Biomass Liquids,EJ/yr,1
-11,Final Energy|Industry|Biomass w/o CCS,Final Energy|Industry|Biogas,EJ/yr,1
-11,Final Energy|Industry|Biomass w/o CCS,Final Energy|Industry|Biomass Liquids feedstocks,EJ/yr,1
-12,Final Energy|Industry|Biomass w/ CCS,Final Energy|Industry|Biomass|w/ CCS,EJ/yr,1
+9,Final Energy|Industry|Fossil,Final Energy|Industry|Coal,EJ/yr,1
+9,Final Energy|Industry|Fossil,Final Energy|Industry|Gas,EJ/yr,1
+9,Final Energy|Industry|Fossil,Final Energy|Industry|Oil,EJ/yr,1
+10,Final Energy|Industry|Fossil,Final Energy|Industry|Coal|w/ CCS,EJ/yr,1
+10,Final Energy|Industry|Fossil,Final Energy|Industry|Gas|w/ CCS,EJ/yr,1
+10,Final Energy|Industry|Fossil,Final Energy|Industry|Oil|w/ CCS,EJ/yr,1
+10,Final Energy|Industry|Fossil,Final Energy|Industry|Coal|w/o CCS,EJ/yr,1
+10,Final Energy|Industry|Fossil,Final Energy|Industry|Gas|w/o CCS,EJ/yr,1
+10,Final Energy|Industry|Fossil,Final Energy|Industry|Oil|w/o CCS,EJ/yr,1
+11,Final Energy|Industry|Alternative Energy,Final Energy|Industry|Biomass Liquids,EJ/yr,1
+11,Final Energy|Industry|Alternative Energy,Final Energy|Industry|Biogas,EJ/yr,1
+11,Final Energy|Industry|Alternative Energy,Final Energy|Industry|Biomass Liquids feedstocks,EJ/yr,1
+11,Final Energy|Industry|Alternative Energy,Final Energy|Industry|Hydrogen,EJ/yr,1
+11,Final Energy|Industry|Alternative Energy,Final Energy|Industry|Biomass,EJ/yr,1
+12,Final Energy|Industry|Alternative Energy,Final Energy|Industry|Biomass Liquids,EJ/yr,1
+12,Final Energy|Industry|Alternative Energy,Final Energy|Industry|Biogas,EJ/yr,1
+12,Final Energy|Industry|Alternative Energy,Final Energy|Industry|Biomass Liquids feedstocks,EJ/yr,1
+12,Final Energy|Industry|Alternative Energy,Final Energy|Industry|Hydrogen,EJ/yr,1
+12,Final Energy|Industry|Alternative Energy,Final Energy|Industry|Biomass|w/ CCS,EJ/yr,1
+12,Final Energy|Industry|Alternative Energy,Final Energy|Industry|Biomass|w/o CCS,EJ/yr,1
+13,Energy Service|Transportation|EV|Sales Share,Energy Service|Transportation|Passenger|BEV|Sales Share,%,1
+13,Energy Service|Transportation|EV|Sales Share,Energy Service|Transportation|Passenger|FCEV|Sales Share,%,1
+13,Energy Service|Transportation|EV|Sales Share,Energy Service|Transportation|Passenger|HEV|Sales Share,%,1
+13,Energy Service|Transportation|EV|Sales Share,Energy Service|Transportation|Freight|BEV|Sales Share,%,1
+13,Energy Service|Transportation|EV|Sales Share,Energy Service|Transportation|Freight|FCEV|Sales Share,%,1
+13,Energy Service|Transportation|EV|Sales Share,Energy Service|Transportation|Passenger|PHEV|Sales Share,%,1

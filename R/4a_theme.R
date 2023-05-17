@@ -306,6 +306,16 @@ color_map <- c(
   "Diesel" = "dark m.yellow",
   "Gasoline" = "m.neongreen",
   "Jet Fuel" = "m.burnorange",
+  "Aircraft" = "light orange",
+  "LD Trucks" = "dark m.yellow",
+  "MHD Trucks" = "m.red",
+  "Motorcycles" = "teal green",
+  "Passenger Cars" = "teal blue",
+  "Pipelines" = "very dark teal",
+  "Water" = "m.green",
+  "Buses" = "m.neongreen",
+  "Lubricants" = "m.burnorange",
+
 
   # emissions
   "Direct" = "teal blue",
