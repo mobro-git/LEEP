@@ -28,3 +28,4 @@ timeseries,15,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Transportation,
 timeseries,15,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Industry,Industry,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,variable_rename,region,scenario,region,fixed
 timeseries,15,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Buildings,Buildings,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,variable_rename,region,scenario,region,fixed
 timeseries,16,Emissions Sensitivity,Emissions|CO2|Energy,Emissions,0,usa,models_leep,historic,leep_sens,single,year,value,,,scenario,region,fixed
+timeseries,18,EV Share,Energy Service|Transportation|EV|Sales Share,EV Share,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed

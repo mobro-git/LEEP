@@ -1,5 +1,56 @@
 figure_type,figure_no,title_name,variable,flip_sign,variable_rename,regions,models,years,scenarios,type,position,x,y,facet1,facet2,color,page_filter,scales
-stackbar,2,Sectoral CO2 Emissions,Emissions|CO2|Energy|Demand|Buildings,0,Buildings,usa,models_leep,ira_2035,main_scenarios,grid,stack,year,value,scenario,model,variable_rename,region,fixed
-stackbar,2,Sectoral CO2 Emissions,Emissions|CO2|Energy|Demand|Industry,0,Industry,usa,models_leep,ira_2035,main_scenarios,grid,stack,year,value,scenario,model,variable_rename,region,fixed
-stackbar,2,Sectoral CO2 Emissions,Emissions|CO2|Energy|Demand|Transportation,0,Transportation,usa,models_leep,ira_2035,main_scenarios,grid,stack,year,value,scenario,model,variable_rename,region,fixed
-stackbar,2,Sectoral CO2 Emissions,Emissions|CO2|Energy|Supply|Electricity,0,Electricity,usa,models_leep,ira_2035,main_scenarios,grid,stack,year,value,scenario,model,variable_rename,region,fixed
+stackbar,1,Sectoral CO2 Emissions,Emissions|CO2|Energy|Demand|Buildings,0,Buildings,usa,models_leep,ira_2035,main_scenarios,grid,stack,year,value,scenario,model,variable_rename,region,fixed
+stackbar,1,Sectoral CO2 Emissions,Emissions|CO2|Energy|Demand|Industry,0,Industry,usa,models_leep,ira_2035,main_scenarios,grid,stack,year,value,scenario,model,variable_rename,region,fixed
+stackbar,1,Sectoral CO2 Emissions,Emissions|CO2|Energy|Demand|Transportation,0,Transportation,usa,models_leep,ira_2035,main_scenarios,grid,stack,year,value,scenario,model,variable_rename,region,fixed
+stackbar,1,Sectoral CO2 Emissions,Emissions|CO2|Energy|Supply|Electricity,0,Electricity,usa,models_leep,ira_2035,main_scenarios,grid,stack,year,value,scenario,model,variable_rename,region,fixed
+stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Passenger Cars,0,Passenger Cars,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Light-Duty Trucks,0,LD Trucks,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Medium- and Heavy-Duty Trucks,0,MHD Trucks,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Buses,0,Buses,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Mortorcycles,0,Motorcycles,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Commerical Aircraft,0,Aircraft,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Other Aircraft,0,Aircraft,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Ships and Boats,0,Water,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Rail,0,Rail,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Pipelines,0,Pipelines,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Lubricants,0,Lubricants,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Additions|Electricity|Coal|w/o CCS,0,Coal,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Additions|Electricity|Gas|w/o CCS,0,Gas,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Additions|Electricity|Hydro,0,Hydro,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Additions|Electricity|Other,0,Other,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Additions|Electricity|Solar,0,Solar,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Additions|Electricity|Nuclear,0,Nuclear,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Additions|Electricity|Wind,0,Wind,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Additions|Electricity|Gas|w/ CCS,0,Gas CCS,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Additions|Electricity|Coal|w/ CCS,0,Coal CCS,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Additions|Electricity|Storage Capacity,0,Storage,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Retirements|Electricity|Coal|w/o CCS,0,Coal,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Retirements|Electricity|Gas|w/o CCS,0,Gas,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Retirements|Electricity|Hydro,0,Hydro,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Retirements|Electricity|Other,0,Other,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Retirements|Electricity|Solar,0,Solar,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Retirements|Electricity|Nuclear,0,Nuclear,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Retirements|Electricity|Wind,0,Wind,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Retirements|Electricity|Gas|w/ CCS,0,Gas CCS,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Retirements|Electricity|Coal|w/ CCS,0,Coal CCS,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,4,Capacity Additions,Capacity Retirements|Electricity|Storage Capacity,0,Storage,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Additions|Electricity|Coal|w/o CCS,0,Coal,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Additions|Electricity|Gas|w/o CCS,0,Gas,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Additions|Electricity|Hydro,0,Hydro,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Additions|Electricity|Other,0,Other,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Additions|Electricity|Solar,0,Solar,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Additions|Electricity|Nuclear,0,Nuclear,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Additions|Electricity|Wind,0,Wind,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Additions|Electricity|Gas|w/ CCS,0,Gas CCS,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Additions|Electricity|Coal|w/ CCS,0,Coal CCS,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Additions|Electricity|Storage Capacity,0,Storage,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Retirements|Electricity|Coal|w/o CCS,0,Coal,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Retirements|Electricity|Gas|w/o CCS,0,Gas,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Retirements|Electricity|Hydro,0,Hydro,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Retirements|Electricity|Other,0,Other,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Retirements|Electricity|Solar,0,Solar,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Retirements|Electricity|Nuclear,0,Nuclear,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Retirements|Electricity|Wind,0,Wind,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Retirements|Electricity|Gas|w/ CCS,0,Gas CCS,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Retirements|Electricity|Coal|w/ CCS,0,Coal CCS,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,5,Capacity Additions2,Capacity Retirements|Electricity|Storage Capacity,0,Storage,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed

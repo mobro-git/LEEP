@@ -42,19 +42,23 @@ tar_plan(
     models_bistline = c("GCAM-CGS","EPS-EI","Haiku-RFF","IPM-NRDC","MARKAL-NETL","NEMS-RHG","ReEDS-NREL","REGEN-EPRI","RIO-REPEAT"),
 
     models_emf = c("GCAM-EMF"),
+    models_ghgi = c("EPA-GHGI"),
 
     # Use models_leep for all initial plots
-    models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL",
-                    "NEMS-RHG", "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA-LTS", "EIA-STEO"),
+    models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
+                    "NEMS-RHG"OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA-LTS", "EIA-STEO", "IEA"),
 
     #models_leep_sens = c("USREP-ReEDS", "ReEDS", "Scout v0.8", "GCAM-USA v6.0", "OP-NEMS"),
     models_lts = c("GCAM-LTS", "OP-NEMS-LTS", "EIA-LTS"),
+    models_eia_only = c("EIA"),
 
     # scenarios
     main_scenarios = c("Reference","IRA"),
     ira_only = c("IRA", "Historic"),
+    historic_only = c("Historic"),
 
     hist_mod_scenarios = c("Reference","IRA"),
+    hist_mod_scenarios2 = c("Historic", "Reference", "IRA"),
 
     leep_sens = c("IRA.Low","IRA.High", "Historic"),
 
@@ -69,7 +73,9 @@ tar_plan(
     ira_2050 = c(seq(2021,2050,by=1)),
 
     fives = c(seq(2005,2020,by = 1),seq(2025,2050,by = 5)),
-    historic = c(seq(2005,2035,by=1))
+    historic = c(seq(2005,2035,by = 1)),
+    ghgi_yrs = c(seq(1990,2021,by = 1)),
+    long_history = c(seq(1950,2020,by = 1))
 
   ),
 
