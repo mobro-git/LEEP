@@ -24,7 +24,6 @@ ribbonize <- function(df, range) {
               color = color,
               .groups = "drop") %>%
     ungroup()
-  write.csv(sen_ribbon,"test1.csv")
   return(sen_ribbon)
 }
 

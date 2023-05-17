@@ -26,20 +26,25 @@ tar_load(config)
 tar_load(clean_data)
 # tar_load(clean_data_index)
 tar_load(figmap_leep_cone)
+tar_load(figmap_leep_timeseries)
 
-data_cdr = data.frame("model" = rep("EIA-LTS",16), "year" = seq(2005,2020,by = 1), "unit" = rep("Mt CO2/yr",16), "scenario" = rep("Historic",16),
-                        "datasrc" = rep("LTS_data_small.xlsx",16), variable = rep("Emissions|CO2|CDR",16), region = "United States",
-                        "value" = rep(0,16))
-clean_data = rbind(clean_data,data_cdr)
+clean_data = clean_data %>% mutate(value = case_when(
+    (model == "OP-NEMS-LTS" & scenario == "LTS.High" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Buildings") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Buildings"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Buildings"),"value"]$value) / 2,
+    (model == "OP-NEMS-LTS" & scenario == "LTS.High" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Industry") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Industry"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Industry"),"value"]$value) / 2,
+    (model == "OP-NEMS-LTS" & scenario == "LTS.High" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Transportation") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Transportation"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Transportation"),"value"]$value) / 2,
+    
+    (model == "OP-NEMS-LTS" & scenario == "LTS.Low" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Buildings") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Buildings"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Buildings"),"value"]$value) / 2,
+    (model == "OP-NEMS-LTS" & scenario == "LTS.Low" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Industry") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Industry"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Industry"),"value"]$value) / 2,
+    (model == "OP-NEMS-LTS" & scenario == "LTS.Low" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Transportation") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Transportation"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Transportation"),"value"]$value) / 2,
+  TRUE ~ value
+))
+
+# data_cdr = data.frame("model" = rep("EIA-LTS",16), "year" = seq(2005,2020,by = 1), "unit" = rep("Mt CO2/yr",16), "scenario" = rep("Historic",16),
+#                         "datasrc" = rep("LTS_data_small.xlsx",16), variable = rep("Emissions|CO2|CDR",16), region = "United States",
+#                         "value" = rep(0,16))
+# clean_data = rbind(clean_data,data_cdr)
 ```
 
-```{r}
-fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 1, "United States")
-fig
-
-df = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 1, "United States")
-view(df)
-```
 
 ```{r}
 # This function does a bunch of stuff
@@ -158,9 +163,9 @@ duplicate_historical_data <- function(data_long, hist_model, hist_year) {
   # this is the data we'll stamp for every model
   copy_data = data_long %>% filter(model == hist_model, year == hist_year)
   # this is all the historical data, don't lose it
-  hist_data = data_long %>% filter(model == hist_model)
+  hist_data = data_long %>% filter(model == hist_model & year <= hist_year)
   # temporary data_long which will be appended many times
-  data_in = data_long %>% filter(year >= hist_year)
+  data_in = data_long %>% filter(year >= hist_year & model != hist_model)
   
   data_wide = data_in %>% left_join(select(copy_data,c(value,year,variable,region)), by = c("year", "variable","region")) %>%
     mutate(value = case_when(
@@ -169,14 +174,14 @@ duplicate_historical_data <- function(data_long, hist_model, hist_year) {
     )) %>%
     select(-c(value.x,value.y))
   
-  data_final = rbind(data_wide, hist_data, data_cdr)                        
+  data_final = rbind(data_wide, hist_data)                        
 
   # the end
   return(data_final)
 }
 
 # remove all historical data and replace with EIA-LTS 2020 data for connectivity purposes
-clean_data2 = clean_data %>% duplicate_historical_data("EIA-LTS",2020)
+# clean_data2 = clean_data %>% duplicate_historical_data("EIA-LTS",2020)
 ```
 
 
@@ -238,70 +243,28 @@ lts_coneplot_with_dots = function(config, data, figmap, lts_fignum, leep_fignum,
 ```{r}
   p = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 1, 2, "United States", 0, 15, "mean", facet = FALSE)
   p
-  p2 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 3, 4, "United States", -1000, 2500, "mean", facet = FALSE)
-  p2
+  ggsave(filename = "output/leep/cone_uncertainty/LTS_cone_buildings.svg",p, width = 7, height = 5, units = "in")
+  # p2 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 3, 4, "United States", -1000, 2500, "mean", facet = FALSE)
+  # p2
+  # ggsave(filename = "output/leep/cone_uncertainty/LTS_cone_emissions_old.svg",p2, width = 7, height = 5, units = "in")
   p3 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 5, 6, "United States", 0, 30, "mean", facet = FALSE)
   p3
+  ggsave(filename = "output/leep/cone_uncertainty/LTS_cone_transport.svg",p3, width = 7, height = 5, units = "in")
   p4 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 7, 8, "United States", 0, 25, "mean", facet = FALSE)
   p4
+  ggsave(filename = "output/leep/cone_uncertainty/LTS_cone_industry.svg",p4, width = 7, height = 5, units = "in")
   p5 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 9, 10, "United States", -1000, 2500, "mean", facet = TRUE)
   p5
+  ggsave(filename = "output/leep/cone_uncertainty/LTS_cone_emissions_new.svg",p5, width = 7, height = 5, units = "in")
 ```
 
 
-```{r}
-# fig3 = print_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 3, "United States") +
-#   scale_y_continuous(limits = c(-1000, 2500)) + ggtitle("LTS")
-# fig3
-# df3 = data_from_graph("cone_uncertainty", config, clean_data2, figmap_leep_cone, 3, "United States")
-# 
-# fig4 = print_graph("cone_uncertainty", config, clean_data2, figmap_leep_cone, 4, "United States") +
-#   scale_y_continuous(limits = c(-1000, 2500)) + ggtitle("IRA") +
-#   theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank())
-# fig4
-# df4 = data_from_graph("cone_uncertainty", config, clean_data2, figmap_leep_cone, 4, "United States")
-# 
-# final2 = fig3 + fig4 +
-#     plot_annotation(title = "Energy Emissions", theme = theme(plot.title = element_text(hjust = 0.5))) +
-#     plot_layout(guides = "collect", widths = c(1,1)) +
-#     theme(plot.margin = margin(0,0,0,0))
-# final2
-
-```
-
 
 ```{r}
-# fig5 = print_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 5, "United States") +
-#   scale_y_continuous(limits = c(0, 30)) + ggtitle("LTS")
-# fig5
-# 
-# fig6 = print_graph("cone_uncertainty", config, clean_data2, figmap_leep_cone, 6, "United States") +
-#   scale_y_continuous(limits = c(0, 30)) + ggtitle("IRA") +
-#   theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank())
-# fig6
-# 
-# final3 = fig5 + fig6 +
-#     plot_annotation(title = "Transportation Energy", theme = theme(plot.title = element_text(hjust = 0.5))) +
-#     plot_layout(guides = "collect", widths = c(1,1)) +
-#     theme(plot.margin = margin(0,0,0,0))
-# final3
-
-```
-
-```{r}
-# fig7 = print_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 7, "United States") +
-#   scale_y_continuous(limits = c(0, 25)) + ggtitle("LTS")
-# fig7
-# 
-# fig8 = print_graph("cone_uncertainty", config, clean_data2, figmap_leep_cone, 9, "United States") +
-#   scale_y_continuous(limits = c(0, 25)) + ggtitle("IRA") +
-#   theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank())
-# fig8
-# 
-# final4 = fig7 + fig8 +
-#     plot_annotation(title = "Industrial Energy", theme = theme(plot.title = element_text(hjust = 0.5))) +
-#     plot_layout(guides = "collect", widths = c(1,1)) +
-#     theme(plot.margin = margin(0,0,0,0))
-# final4
-
+# uncertainty plot
+clean_data2 = clean_data %>% duplicate_historical_data("EIA-STEO",2020)
+fig = print_graph("time_series", config, clean_data2, figmap_leep_timeseries, 16, "United States")
+dta = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+fig
+ggsave(filename = "output/leep/time_series/emis_sensitivity.svg",fig, width = 7, height = 5, units = "in")
 ```

@@ -45,8 +45,9 @@ tar_plan(
 
     # Use models_leep for all initial plots
     models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-EMF", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "MARKAL-NETL", "NEMS-RHG",
-                    "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA-LTS"),
+                    "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA-LTS", "EIA-STEO"),
 
+    #models_leep_sens = c("USREP-ReEDS", "ReEDS", "Scout v0.8", "GCAM-USA v6.0", "OP-NEMS"),
     models_lts = c("GCAM-LTS", "OP-NEMS-LTS", "EIA-LTS"),
 
     # scenarios
@@ -54,6 +55,8 @@ tar_plan(
     ira_only = c("IRA", "Historic"),
 
     hist_mod_scenarios = c("Reference","IRA"),
+
+    leep_sens = c("IRA.Low","IRA.High", "Historic"),
 
     scenarios_lts = c("Historic", "LTS.High", "LTS.Low", "LTS.Mid1", "LTS.Mid2", "LTS.Mid3", "LTS.Mid4",
                       "LTS.Mid5", "LTS.Mid6", "LTS.Mid7", "LTS.Mid8", "LTS.Mid9", "LTS.Mid10"),

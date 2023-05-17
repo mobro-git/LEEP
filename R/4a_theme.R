@@ -148,6 +148,8 @@ color_map <- c(
   "IRA" = "light salmon",
   "Reference" = "teal blue",
   "Pre-IRA" = "teal blue",
+  "IRA.High" = "normal gray",
+  "IRA.Low" = "light gray",
 
   # models
   "AEO2020" = "black",
