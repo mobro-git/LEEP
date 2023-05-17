@@ -230,7 +230,7 @@ ev_shares = read_xlsx("data-extra/ira_comparison_raw/energyservice_transportatio
   pivot_longer(cols = 6:21, names_to = "year", values_to = "value") %>%
   select(scenario,model,variable,unit,year,region,value)
 
-ev_modeled = ev_shares %>% filter(model != "IEA")
+# ev_modeled = ev_shares %>% filter(model != "IEA") # Data is already brought in above in data.transport
 ev_historic = ev_shares %>% filter(model == "IEA")
 
 #####
@@ -239,7 +239,7 @@ ev_historic = ev_shares %>% filter(model == "IEA")
 ##
 #####
 
-all_variables = rbind(all_reported, indirect_long, ev_modeled)
+all_variables = rbind(all_reported, indirect_long)
 
 write.csv(all_variables, "data-raw/model-runs/bistline_ira_tall.csv", row.names = FALSE)
 
@@ -267,8 +267,4 @@ primarynrg_historic = readxl::read_xlsx("data-extra/ira_comparison_raw/historic_
 historic_data = rbind(primarynrg_historic, historic_generation_capacity, ev_historic)
 
 write.csv(historic_data, "data-raw/model-runs/EIA-IEA-bistline_historic.csv", row.names = FALSE)
-
-
-
-
 

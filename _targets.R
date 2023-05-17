@@ -60,8 +60,6 @@ tar_plan(
     # scenarios_ltsplus = c("Historic", "LTS.High", "LTS.Low", "LTS.Mid1", "LTS.Mid2", "LTS.Mid3", "LTS.Mid4",
     #                   "LTS.Mid5", "LTS.Mid6", "LTS.Mid7", "LTS.Mid8", "LTS.Mid9", "LTS.Mid10", "IRA"),
 
-
-
     # time intervals
     usa = "United States",
     ira_2035 = c(seq(2021,2035,by=1)),
