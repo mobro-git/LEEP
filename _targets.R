@@ -184,9 +184,7 @@ tar_plan(
   stackbar = create_graph("leep", "stacked_bar", config, clean_data, figmap_leep_stackbar),
   diffbar = create_graph("leep", "diff_bar", config, clean_data, figmap_leep_diffbar),
 
-  bld_ts = create_graph("bld","time_series", config, clean_data, figmap_bld_timeseries),
-
-  test_diffbar = create_graph("test", "diff_bar",config,clean_data,figmap_test_diffbar)
+  bld_ts = create_graph("bld","time_series", config, clean_data, figmap_bld_timeseries)
 
 )
 
