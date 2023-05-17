@@ -37,3 +37,25 @@ vars_data_long = data_long %>% filter(datasrc == workbook)
 
 
 
+
+
+
+
+
+#####################################
+
+bev = clean_data %>% filter(variable == "Energy Service|Transportation|Passenger|BEV|Sales Share") #datasrc == "bistline_ira_tall.csv" & 7y
+bev_raw = data_raw %>% filter(variable == "Energy Service|Transportation|Passenger|BEV|Sales Share")
+bev_min = data_min %>% filter(variable == "Energy Service|Transportation|Passenger|BEV|Sales Share")
+
+
+
+
+
+
+
+
+
+
+
+

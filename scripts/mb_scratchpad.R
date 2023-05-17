@@ -43,4 +43,8 @@ duplicates = test[duplicated(test$concat),]
 unique(duplicates$model)
 unique(duplicates$datasrc)
 
+################## ghgi wide to long
+ghgi = read_xlsx("data-extra/EPA-GHGI_wide.xlsx") %>%
+  pivot_longer(cols = 6:37, names_to = "year", values_to = "value")
 
+write.csv(ghgi, "data-raw/model-runs/EPA-GHGI.csv", row.names = FALSE)

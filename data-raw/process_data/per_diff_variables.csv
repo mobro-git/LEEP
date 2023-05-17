@@ -2,3 +2,6 @@
 Emissions|CO2,Emissions|CO2|Percent difference from 2020,difference,year,2020,%
 Emissions|CO2,Emissions|CO2|Percent of Reference,of,scenario,Reference,%
 Emissions|CO2|Energy,Emissions|CO2|Energy|Percent difference from 2020,difference,year,2020,%
+Emissions|CO2|Energy|Demand|Buildings,Emissions|CO2|Energy|Demand|Buildings|Percent difference from Reference,difference,scenario,Reference,%
+Emissions|CO2|Energy|Demand|Buildings|Indirect,Emissions|CO2|Energy|Demand|Buildings|Indirect|Percent difference from Reference,difference,scenario,Reference,%
+Emissions|CO2|Energy|Demand|Buildings|Total,Emissions|CO2|Energy|Demand|Buildings|Total|Percent difference from Reference,difference,scenario,Reference,%

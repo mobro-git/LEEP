@@ -169,6 +169,19 @@ historic_generation_capacity = rbind(hist_generation,hist_capacity_change) %>% m
 
 #####
 ##
+## ev shares
+##
+#####
+
+ev_shares = read_xlsx("data-extra/ira_comparison_raw/energyservice_transportation.xlsx") %>%
+  pivot_longer(cols = 6:21, names_to = "year", values_to = "value") %>%
+  select(scenario,model,variable,unit,year,region,value)
+
+# ev_modeled = ev_shares %>% filter(model != "IEA") # Data is already brought in above in data.transport
+ev_historic = ev_shares %>% filter(model == "IEA")
+
+#####
+##
 ## add capacity/generation to other workbooks
 ##
 #####
@@ -222,16 +235,30 @@ indirect_long = calc_indirect %>%
 
 #####
 ##
-## ev shares
+## emissions sums
 ##
 #####
 
-ev_shares = read_xlsx("data-extra/ira_comparison_raw/energyservice_transportation.xlsx") %>%
-  pivot_longer(cols = 6:21, names_to = "year", values_to = "value") %>%
-  select(scenario,model,variable,unit,year,region,value)
+nrg_co2_var = c("Emissions|CO2|Energy|Demand|Buildings",
+                "Emissions|CO2|Energy|Demand|Industry",
+                "Emissions|CO2|Energy|Demand|Transportation",
+                "Emissions|CO2|Energy|Supply|Electricity")
 
-ev_modeled = ev_shares %>% filter(model != "IEA")
-ev_historic = ev_shares %>% filter(model == "IEA")
+nrg_co2 = all_reported %>%
+  filter(variable %in% nrg_co2_var) %>%
+  mutate(variable = "Emissions|CO2|Energy") %>%
+  group_by(scenario,model,variable,unit,year,region) %>%
+  summarise(value = sum(value)) %>%
+  ungroup()
+
+all_co2 = all_reported %>%
+  filter(variable %in% nrg_co2_var | variable == "Emissions|CO2|Industrial Processes" | variable == "Emissions|CO2|Other") %>%
+  mutate(variable = "Emissions|CO2") %>%
+  group_by(scenario,model,variable,unit,year,region) %>%
+  summarise(value = sum(value)) %>%
+  ungroup()
+
+summed_emissions = rbind(nrg_co2, all_co2)
 
 #####
 ##
@@ -239,7 +266,7 @@ ev_historic = ev_shares %>% filter(model == "IEA")
 ##
 #####
 
-all_variables = rbind(all_reported, indirect_long, ev_modeled)
+all_variables = rbind(all_reported, indirect_long, summed_emissions)
 
 write.csv(all_variables, "data-raw/model-runs/bistline_ira_tall.csv", row.names = FALSE)
 
@@ -267,8 +294,4 @@ primarynrg_historic = readxl::read_xlsx("data-extra/ira_comparison_raw/historic_
 historic_data = rbind(primarynrg_historic, historic_generation_capacity, ev_historic)
 
 write.csv(historic_data, "data-raw/model-runs/EIA-IEA-bistline_historic.csv", row.names = FALSE)
-
-
-
-
 

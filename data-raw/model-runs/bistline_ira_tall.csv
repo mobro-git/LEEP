@@ -2951,6 +2951,126 @@
 "Reference","ReEDS-NREL","Final Energy|Transportation|Electricity","EJ/yr","2040","United States",NA
 "Reference","ReEDS-NREL","Final Energy|Transportation|Electricity","EJ/yr","2045","United States",NA
 "Reference","ReEDS-NREL","Final Energy|Transportation|Electricity","EJ/yr","2050","United States",NA
+"IRA","EPS-EI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",0.14183741988
+"IRA","EPS-EI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0.4416466824
+"IRA","EPS-EI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0.6893166636
+"IRA","EPS-EI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",0.7910189352
+"IRA","EPS-EI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",0.7940234124
+"IRA","EPS-EI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",0.8719999128
+"IRA","GCAM-CGS","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",0.123208311816409
+"IRA","GCAM-CGS","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0.286941573921557
+"IRA","GCAM-CGS","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0.216138171700021
+"IRA","GCAM-CGS","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",NA
+"IRA","GCAM-CGS","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",NA
+"IRA","GCAM-CGS","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",NA
+"IRA","Haiku-RFF","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",0.0261984002109647
+"IRA","Haiku-RFF","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0.0283277237052441
+"IRA","Haiku-RFF","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0.030217737528491
+"IRA","Haiku-RFF","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",0.0320020828756571
+"IRA","Haiku-RFF","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",0.0340017476159334
+"IRA","Haiku-RFF","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",NA
+"IRA","IPM-EPA","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",NA
+"IRA","IPM-EPA","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0
+"IRA","IPM-EPA","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0
+"IRA","IPM-EPA","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",0
+"IRA","IPM-EPA","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",0
+"IRA","IPM-EPA","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",0
+"IRA","IPM-NRDC","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",0
+"IRA","IPM-NRDC","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0
+"IRA","IPM-NRDC","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0
+"IRA","IPM-NRDC","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",0
+"IRA","IPM-NRDC","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",0
+"IRA","IPM-NRDC","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",0
+"IRA","MARKAL-NETL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",0
+"IRA","MARKAL-NETL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0
+"IRA","MARKAL-NETL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0
+"IRA","MARKAL-NETL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",0
+"IRA","MARKAL-NETL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",0
+"IRA","MARKAL-NETL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",0
+"IRA","NEMS-RHG","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",0.0407097818039859
+"IRA","NEMS-RHG","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0.15539587475592
+"IRA","NEMS-RHG","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0.356879291347245
+"IRA","NEMS-RHG","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",NA
+"IRA","NEMS-RHG","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",NA
+"IRA","NEMS-RHG","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",NA
+"IRA","REGEN-EPRI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",0.267499901738556
+"IRA","REGEN-EPRI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0.410190088507607
+"IRA","REGEN-EPRI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0.517668195680942
+"IRA","REGEN-EPRI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",0.686537388402063
+"IRA","REGEN-EPRI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",0.891919992725366
+"IRA","REGEN-EPRI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",1.0446674437647
+"IRA","RIO-REPEAT","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",0.081
+"IRA","RIO-REPEAT","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0.3744
+"IRA","RIO-REPEAT","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0.8928
+"IRA","RIO-REPEAT","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",1.2996
+"IRA","RIO-REPEAT","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",1.5876
+"IRA","RIO-REPEAT","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",1.8756
+"IRA","ReEDS-NREL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",NA
+"IRA","ReEDS-NREL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",NA
+"IRA","ReEDS-NREL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",NA
+"IRA","ReEDS-NREL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",NA
+"IRA","ReEDS-NREL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",NA
+"IRA","ReEDS-NREL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",NA
+"Reference","EPS-EI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",0.08854001784
+"Reference","EPS-EI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0.2265857334
+"Reference","EPS-EI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0.3994581744
+"Reference","EPS-EI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",0.5573702376
+"Reference","EPS-EI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",0.691805736
+"Reference","EPS-EI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",0.8094050892
+"Reference","GCAM-CGS","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",0.0608006797484467
+"Reference","GCAM-CGS","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0.0936040784798222
+"Reference","GCAM-CGS","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0.151523573567782
+"Reference","GCAM-CGS","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",NA
+"Reference","GCAM-CGS","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",NA
+"Reference","GCAM-CGS","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",NA
+"Reference","Haiku-RFF","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",0.0261984002109647
+"Reference","Haiku-RFF","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0.0283277237052441
+"Reference","Haiku-RFF","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0.030217737528491
+"Reference","Haiku-RFF","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",0.0320020828756571
+"Reference","Haiku-RFF","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",0.0340017476159334
+"Reference","Haiku-RFF","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",NA
+"Reference","IPM-EPA","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",NA
+"Reference","IPM-EPA","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0
+"Reference","IPM-EPA","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0
+"Reference","IPM-EPA","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",0
+"Reference","IPM-EPA","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",0
+"Reference","IPM-EPA","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",0
+"Reference","IPM-NRDC","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",0
+"Reference","IPM-NRDC","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0
+"Reference","IPM-NRDC","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0
+"Reference","IPM-NRDC","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",0
+"Reference","IPM-NRDC","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",0
+"Reference","IPM-NRDC","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",0
+"Reference","MARKAL-NETL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",0
+"Reference","MARKAL-NETL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0
+"Reference","MARKAL-NETL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0
+"Reference","MARKAL-NETL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",0
+"Reference","MARKAL-NETL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",0
+"Reference","MARKAL-NETL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",0
+"Reference","NEMS-RHG","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",0.0258827567254396
+"Reference","NEMS-RHG","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0.0288073546143025
+"Reference","NEMS-RHG","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0.0309954632665886
+"Reference","NEMS-RHG","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",NA
+"Reference","NEMS-RHG","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",NA
+"Reference","NEMS-RHG","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",NA
+"Reference","REGEN-EPRI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",0.224060651117199
+"Reference","REGEN-EPRI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0.338816149816693
+"Reference","REGEN-EPRI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0.486889708285891
+"Reference","REGEN-EPRI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",0.662974581719569
+"Reference","REGEN-EPRI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",0.84920465416694
+"Reference","REGEN-EPRI","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",0.994238706625263
+"Reference","RIO-REPEAT","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",0.0522
+"Reference","RIO-REPEAT","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",0.1368
+"Reference","RIO-REPEAT","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",0.3744
+"Reference","RIO-REPEAT","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",0.7344
+"Reference","RIO-REPEAT","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",1.0242
+"Reference","RIO-REPEAT","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",1.314
+"Reference","ReEDS-NREL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2025","United States",NA
+"Reference","ReEDS-NREL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2030","United States",NA
+"Reference","ReEDS-NREL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2035","United States",NA
+"Reference","ReEDS-NREL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2040","United States",NA
+"Reference","ReEDS-NREL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2045","United States",NA
+"Reference","ReEDS-NREL","Final Energy|Transportation|Electricity|Other Transport","EJ/yr","2050","United States",NA
 "IRA","EPS-EI","Final Energy|Transportation|Passenger|Road|Electricity","EJ/yr","2025","United States",0.16612488
 "IRA","EPS-EI","Final Energy|Transportation|Passenger|Road|Electricity","EJ/yr","2030","United States",0.6150528
 "IRA","EPS-EI","Final Energy|Transportation|Passenger|Road|Electricity","EJ/yr","2035","United States",1.1715192
@@ -4403,163 +4523,243 @@
 "Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","2050","United States",NA
 "Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Industry|Indirect","Mt CO2/yr","2050","United States",NA
 "Reference","ReEDS-NREL","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr","2050","United States",NA
-"IRA","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2010","United States",NA
-"IRA","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2011","United States",NA
-"IRA","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2012","United States",NA
-"IRA","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2013","United States",NA
-"IRA","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2014","United States",NA
-"IRA","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2015","United States",NA
-"IRA","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2016","United States",NA
-"IRA","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2017","United States",NA
-"IRA","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2018","United States",NA
-"IRA","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2019","United States",NA
-"IRA","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2020","United States",NA
-"IRA","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2021","United States",NA
-"IRA","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2022","United States",0.0643718032140392
-"IRA","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2025","United States",0.152719
-"IRA","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2030","United States",0.3412818
-"IRA","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2035","United States",0.361236
-"IRA","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2010","United States",NA
-"IRA","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2011","United States",NA
-"IRA","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2012","United States",NA
-"IRA","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2013","United States",NA
-"IRA","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2014","United States",NA
-"IRA","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2015","United States",NA
-"IRA","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2016","United States",NA
-"IRA","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2017","United States",NA
-"IRA","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2018","United States",NA
-"IRA","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2019","United States",NA
-"IRA","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2020","United States",NA
-"IRA","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2021","United States",NA
-"IRA","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2022","United States",0.0643718032140392
-"IRA","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2025","United States",0.189
-"IRA","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2030","United States",0.427
-"IRA","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2035","United States",0.308
-"IRA","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2010","United States",NA
-"IRA","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2011","United States",NA
-"IRA","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2012","United States",NA
-"IRA","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2013","United States",NA
-"IRA","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2014","United States",NA
-"IRA","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2015","United States",NA
-"IRA","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2016","United States",NA
-"IRA","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2017","United States",NA
-"IRA","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2018","United States",NA
-"IRA","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2019","United States",NA
-"IRA","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2020","United States",NA
-"IRA","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2021","United States",NA
-"IRA","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2022","United States",0.0643718032140392
-"IRA","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2025","United States",0.0979210740211663
-"IRA","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2030","United States",0.316982365735866
-"IRA","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2035","United States",0.300622746670768
-"IRA","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2010","United States",NA
-"IRA","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2011","United States",NA
-"IRA","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2012","United States",NA
-"IRA","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2013","United States",NA
-"IRA","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2014","United States",NA
-"IRA","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2015","United States",NA
-"IRA","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2016","United States",NA
-"IRA","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2017","United States",NA
-"IRA","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2018","United States",NA
-"IRA","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2019","United States",NA
-"IRA","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2020","United States",NA
-"IRA","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2021","United States",NA
-"IRA","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2022","United States",0.0643718032140392
-"IRA","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2025","United States",0.1797
-"IRA","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2030","United States",0.4431
-"IRA","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2035","United States",0.5353
-"IRA","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2010","United States",NA
-"IRA","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2011","United States",NA
-"IRA","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2012","United States",NA
-"IRA","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2013","United States",NA
-"IRA","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2014","United States",NA
-"IRA","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2015","United States",NA
-"IRA","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2016","United States",NA
-"IRA","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2017","United States",NA
-"IRA","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2018","United States",NA
-"IRA","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2019","United States",NA
-"IRA","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2020","United States",NA
-"IRA","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2021","United States",NA
-"IRA","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2022","United States",0.0643718032140392
-"IRA","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2025","United States",0.2005
-"IRA","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2030","United States",0.5236
-"IRA","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2035","United States",0.8145
-"Reference","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2010","United States",NA
-"Reference","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2011","United States",NA
-"Reference","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2012","United States",NA
-"Reference","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2013","United States",NA
-"Reference","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2014","United States",NA
-"Reference","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2015","United States",NA
-"Reference","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2016","United States",NA
-"Reference","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2017","United States",NA
-"Reference","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2018","United States",NA
-"Reference","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2019","United States",NA
-"Reference","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2020","United States",NA
-"Reference","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2021","United States",NA
-"Reference","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2022","United States",0.0643718032140392
-"Reference","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2025","United States",0.1484036
-"Reference","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2030","United States",0.292927
-"Reference","EPS-EI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2035","United States",0.3540566
-"Reference","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2010","United States",NA
-"Reference","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2011","United States",NA
-"Reference","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2012","United States",NA
-"Reference","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2013","United States",NA
-"Reference","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2014","United States",NA
-"Reference","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2015","United States",NA
-"Reference","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2016","United States",NA
-"Reference","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2017","United States",NA
-"Reference","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2018","United States",NA
-"Reference","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2019","United States",NA
-"Reference","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2020","United States",NA
-"Reference","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2021","United States",NA
-"Reference","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2022","United States",0.0643718032140392
-"Reference","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2025","United States",0.114
-"Reference","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2030","United States",0.24
-"Reference","GCAM-CGS","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2035","United States",0.267
-"Reference","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2010","United States",NA
-"Reference","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2011","United States",NA
-"Reference","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2012","United States",NA
-"Reference","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2013","United States",NA
-"Reference","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2014","United States",NA
-"Reference","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2015","United States",NA
-"Reference","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2016","United States",NA
-"Reference","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2017","United States",NA
-"Reference","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2018","United States",NA
-"Reference","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2019","United States",NA
-"Reference","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2020","United States",NA
-"Reference","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2021","United States",NA
-"Reference","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2022","United States",0.0643718032140392
-"Reference","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2025","United States",0.114630334399917
-"Reference","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2030","United States",0.220978858901878
-"Reference","NEMS-RHG","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2035","United States",0.294284095212395
-"Reference","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2010","United States",NA
-"Reference","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2011","United States",NA
-"Reference","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2012","United States",NA
-"Reference","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2013","United States",NA
-"Reference","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2014","United States",NA
-"Reference","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2015","United States",NA
-"Reference","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2016","United States",NA
-"Reference","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2017","United States",NA
-"Reference","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2018","United States",NA
-"Reference","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2019","United States",NA
-"Reference","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2020","United States",NA
-"Reference","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2021","United States",NA
-"Reference","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2022","United States",0.0643718032140392
-"Reference","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2025","United States",0.1648
-"Reference","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2030","United States",0.3235
-"Reference","REGEN-EPRI","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2035","United States",0.4326
-"Reference","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2010","United States",NA
-"Reference","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2011","United States",NA
-"Reference","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2012","United States",NA
-"Reference","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2013","United States",NA
-"Reference","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2014","United States",NA
-"Reference","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2015","United States",NA
-"Reference","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2016","United States",NA
-"Reference","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2017","United States",NA
-"Reference","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2018","United States",NA
-"Reference","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2019","United States",NA
-"Reference","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2020","United States",NA
-"Reference","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2021","United States",NA
-"Reference","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2022","United States",0.0643718032140392
-"Reference","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2025","United States",0.1775
-"Reference","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2030","United States",0.4274
-"Reference","RIO-REPEAT","Energy Service|Transportation|Passenger|BEV|Sales Share","%","2035","United States",0.5861
+"IRA","EPS-EI","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",4195.847543
+"IRA","EPS-EI","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",3347.003485
+"IRA","EPS-EI","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",2796.936628
+"IRA","EPS-EI","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",2620.280013
+"IRA","EPS-EI","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",2660.792986
+"IRA","EPS-EI","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",2772.441287
+"IRA","GCAM-CGS","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",4112.36474441435
+"IRA","GCAM-CGS","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",3507.39059080313
+"IRA","GCAM-CGS","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",3238.48939647775
+"IRA","GCAM-CGS","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",NA
+"IRA","GCAM-CGS","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",NA
+"IRA","GCAM-CGS","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",NA
+"IRA","Haiku-RFF","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",NA
+"IRA","IPM-EPA","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",NA
+"IRA","IPM-EPA","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",971.719363965523
+"IRA","IPM-EPA","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",608.299102727081
+"IRA","IPM-EPA","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",481.366117766822
+"IRA","IPM-EPA","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",405.705813250121
+"IRA","IPM-EPA","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",356.716845100328
+"IRA","IPM-NRDC","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",NA
+"IRA","IPM-NRDC","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",NA
+"IRA","MARKAL-NETL","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",4297.63
+"IRA","MARKAL-NETL","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",4097.83
+"IRA","MARKAL-NETL","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",3514.15
+"IRA","MARKAL-NETL","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",3344
+"IRA","MARKAL-NETL","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",3200.43
+"IRA","MARKAL-NETL","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",3030.75
+"IRA","NEMS-RHG","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",4218.18582452069
+"IRA","NEMS-RHG","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",3361.96624537214
+"IRA","NEMS-RHG","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",3199.30631077256
+"IRA","NEMS-RHG","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",NA
+"IRA","NEMS-RHG","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",NA
+"IRA","NEMS-RHG","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",NA
+"IRA","REGEN-EPRI","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",4459.55636712156
+"IRA","REGEN-EPRI","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",3920.61451399309
+"IRA","REGEN-EPRI","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",3158.19215192956
+"IRA","REGEN-EPRI","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",2998.26254288651
+"IRA","REGEN-EPRI","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",2582.00423816031
+"IRA","REGEN-EPRI","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",2401.75736863275
+"IRA","RIO-REPEAT","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",4671
+"IRA","RIO-REPEAT","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",3590
+"IRA","RIO-REPEAT","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",2650
+"IRA","RIO-REPEAT","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",2546
+"IRA","RIO-REPEAT","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",2535
+"IRA","RIO-REPEAT","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",2524
+"IRA","ReEDS-NREL","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",NA
+"IRA","ReEDS-NREL","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",NA
+"Reference","EPS-EI","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",4338.442329
+"Reference","EPS-EI","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",4005.812697
+"Reference","EPS-EI","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",3819.504791
+"Reference","EPS-EI","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",3733.437299
+"Reference","EPS-EI","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",3696.904755
+"Reference","EPS-EI","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",3707.440772
+"Reference","GCAM-CGS","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",4644.32694692508
+"Reference","GCAM-CGS","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",4482.22850335773
+"Reference","GCAM-CGS","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",4325.56899161665
+"Reference","GCAM-CGS","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",NA
+"Reference","GCAM-CGS","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",NA
+"Reference","GCAM-CGS","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",NA
+"Reference","Haiku-RFF","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",NA
+"Reference","IPM-EPA","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",NA
+"Reference","IPM-EPA","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",1303.58284422178
+"Reference","IPM-EPA","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",1247.28769086048
+"Reference","IPM-EPA","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",1078.21522990129
+"Reference","IPM-EPA","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",974.786625335472
+"Reference","IPM-EPA","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",844.162060196773
+"Reference","IPM-NRDC","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",NA
+"Reference","IPM-NRDC","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",NA
+"Reference","MARKAL-NETL","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",4262.17
+"Reference","MARKAL-NETL","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",4151.93
+"Reference","MARKAL-NETL","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",4160.83
+"Reference","MARKAL-NETL","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",4160.1
+"Reference","MARKAL-NETL","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",4219.69
+"Reference","MARKAL-NETL","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",4188.26
+"Reference","NEMS-RHG","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",4117.22582670527
+"Reference","NEMS-RHG","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",3884.9935535944
+"Reference","NEMS-RHG","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",3684.15024981487
+"Reference","NEMS-RHG","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",NA
+"Reference","NEMS-RHG","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",NA
+"Reference","NEMS-RHG","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",NA
+"Reference","REGEN-EPRI","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",4501.15357682317
+"Reference","REGEN-EPRI","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",4119.10492874878
+"Reference","REGEN-EPRI","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",3883.04149792527
+"Reference","REGEN-EPRI","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",3820.1855217968
+"Reference","REGEN-EPRI","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",3537.69671254591
+"Reference","REGEN-EPRI","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",3211.00969854578
+"Reference","RIO-REPEAT","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",4707.5
+"Reference","RIO-REPEAT","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",4050
+"Reference","RIO-REPEAT","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",3600
+"Reference","RIO-REPEAT","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",3384
+"Reference","RIO-REPEAT","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",3248.5
+"Reference","RIO-REPEAT","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",3113
+"Reference","ReEDS-NREL","Emissions|CO2|Energy","Mt CO2/yr","2025","United States",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy","Mt CO2/yr","2030","United States",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy","Mt CO2/yr","2035","United States",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy","Mt CO2/yr","2040","United States",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy","Mt CO2/yr","2045","United States",NA
+"Reference","ReEDS-NREL","Emissions|CO2|Energy","Mt CO2/yr","2050","United States",NA
+"IRA","EPS-EI","Emissions|CO2","Mt CO2/yr","2025","United States",4528.419084
+"IRA","EPS-EI","Emissions|CO2","Mt CO2/yr","2030","United States",3660.969727
+"IRA","EPS-EI","Emissions|CO2","Mt CO2/yr","2035","United States",3157.577295
+"IRA","EPS-EI","Emissions|CO2","Mt CO2/yr","2040","United States",3001.399744
+"IRA","EPS-EI","Emissions|CO2","Mt CO2/yr","2045","United States",3064.418282
+"IRA","EPS-EI","Emissions|CO2","Mt CO2/yr","2050","United States",3197.099397
+"IRA","GCAM-CGS","Emissions|CO2","Mt CO2/yr","2025","United States",NA
+"IRA","GCAM-CGS","Emissions|CO2","Mt CO2/yr","2030","United States",NA
+"IRA","GCAM-CGS","Emissions|CO2","Mt CO2/yr","2035","United States",NA
+"IRA","GCAM-CGS","Emissions|CO2","Mt CO2/yr","2040","United States",NA
+"IRA","GCAM-CGS","Emissions|CO2","Mt CO2/yr","2045","United States",NA
+"IRA","GCAM-CGS","Emissions|CO2","Mt CO2/yr","2050","United States",NA
+"IRA","Haiku-RFF","Emissions|CO2","Mt CO2/yr","2025","United States",NA
+"IRA","Haiku-RFF","Emissions|CO2","Mt CO2/yr","2030","United States",NA
+"IRA","Haiku-RFF","Emissions|CO2","Mt CO2/yr","2035","United States",NA
+"IRA","Haiku-RFF","Emissions|CO2","Mt CO2/yr","2040","United States",NA
+"IRA","Haiku-RFF","Emissions|CO2","Mt CO2/yr","2045","United States",NA
+"IRA","Haiku-RFF","Emissions|CO2","Mt CO2/yr","2050","United States",NA
+"IRA","IPM-EPA","Emissions|CO2","Mt CO2/yr","2025","United States",NA
+"IRA","IPM-EPA","Emissions|CO2","Mt CO2/yr","2030","United States",971.719363965523
+"IRA","IPM-EPA","Emissions|CO2","Mt CO2/yr","2035","United States",608.299102727081
+"IRA","IPM-EPA","Emissions|CO2","Mt CO2/yr","2040","United States",481.366117766822
+"IRA","IPM-EPA","Emissions|CO2","Mt CO2/yr","2045","United States",405.705813250121
+"IRA","IPM-EPA","Emissions|CO2","Mt CO2/yr","2050","United States",356.716845100328
+"IRA","IPM-NRDC","Emissions|CO2","Mt CO2/yr","2025","United States",NA
+"IRA","IPM-NRDC","Emissions|CO2","Mt CO2/yr","2030","United States",NA
+"IRA","IPM-NRDC","Emissions|CO2","Mt CO2/yr","2035","United States",NA
+"IRA","IPM-NRDC","Emissions|CO2","Mt CO2/yr","2040","United States",NA
+"IRA","IPM-NRDC","Emissions|CO2","Mt CO2/yr","2045","United States",NA
+"IRA","IPM-NRDC","Emissions|CO2","Mt CO2/yr","2050","United States",NA
+"IRA","MARKAL-NETL","Emissions|CO2","Mt CO2/yr","2025","United States",4319.95
+"IRA","MARKAL-NETL","Emissions|CO2","Mt CO2/yr","2030","United States",4127.59
+"IRA","MARKAL-NETL","Emissions|CO2","Mt CO2/yr","2035","United States",3543.43
+"IRA","MARKAL-NETL","Emissions|CO2","Mt CO2/yr","2040","United States",3373.24
+"IRA","MARKAL-NETL","Emissions|CO2","Mt CO2/yr","2045","United States",3230.44
+"IRA","MARKAL-NETL","Emissions|CO2","Mt CO2/yr","2050","United States",3060.65
+"IRA","NEMS-RHG","Emissions|CO2","Mt CO2/yr","2025","United States",NA
+"IRA","NEMS-RHG","Emissions|CO2","Mt CO2/yr","2030","United States",NA
+"IRA","NEMS-RHG","Emissions|CO2","Mt CO2/yr","2035","United States",NA
+"IRA","NEMS-RHG","Emissions|CO2","Mt CO2/yr","2040","United States",NA
+"IRA","NEMS-RHG","Emissions|CO2","Mt CO2/yr","2045","United States",NA
+"IRA","NEMS-RHG","Emissions|CO2","Mt CO2/yr","2050","United States",NA
+"IRA","REGEN-EPRI","Emissions|CO2","Mt CO2/yr","2025","United States",NA
+"IRA","REGEN-EPRI","Emissions|CO2","Mt CO2/yr","2030","United States",NA
+"IRA","REGEN-EPRI","Emissions|CO2","Mt CO2/yr","2035","United States",NA
+"IRA","REGEN-EPRI","Emissions|CO2","Mt CO2/yr","2040","United States",NA
+"IRA","REGEN-EPRI","Emissions|CO2","Mt CO2/yr","2045","United States",NA
+"IRA","REGEN-EPRI","Emissions|CO2","Mt CO2/yr","2050","United States",NA
+"IRA","RIO-REPEAT","Emissions|CO2","Mt CO2/yr","2025","United States",NA
+"IRA","RIO-REPEAT","Emissions|CO2","Mt CO2/yr","2030","United States",NA
+"IRA","RIO-REPEAT","Emissions|CO2","Mt CO2/yr","2035","United States",NA
+"IRA","RIO-REPEAT","Emissions|CO2","Mt CO2/yr","2040","United States",NA
+"IRA","RIO-REPEAT","Emissions|CO2","Mt CO2/yr","2045","United States",NA
+"IRA","RIO-REPEAT","Emissions|CO2","Mt CO2/yr","2050","United States",NA
+"IRA","ReEDS-NREL","Emissions|CO2","Mt CO2/yr","2025","United States",NA
+"IRA","ReEDS-NREL","Emissions|CO2","Mt CO2/yr","2030","United States",NA
+"IRA","ReEDS-NREL","Emissions|CO2","Mt CO2/yr","2035","United States",NA
+"IRA","ReEDS-NREL","Emissions|CO2","Mt CO2/yr","2040","United States",NA
+"IRA","ReEDS-NREL","Emissions|CO2","Mt CO2/yr","2045","United States",NA
+"IRA","ReEDS-NREL","Emissions|CO2","Mt CO2/yr","2050","United States",NA
+"Reference","EPS-EI","Emissions|CO2","Mt CO2/yr","2025","United States",4788.713149
+"Reference","EPS-EI","Emissions|CO2","Mt CO2/yr","2030","United States",4446.092957
+"Reference","EPS-EI","Emissions|CO2","Mt CO2/yr","2035","United States",4246.979551
+"Reference","EPS-EI","Emissions|CO2","Mt CO2/yr","2040","United States",4180.902189
+"Reference","EPS-EI","Emissions|CO2","Mt CO2/yr","2045","United States",4163.647065
+"Reference","EPS-EI","Emissions|CO2","Mt CO2/yr","2050","United States",4191.524052
+"Reference","GCAM-CGS","Emissions|CO2","Mt CO2/yr","2025","United States",NA
+"Reference","GCAM-CGS","Emissions|CO2","Mt CO2/yr","2030","United States",NA
+"Reference","GCAM-CGS","Emissions|CO2","Mt CO2/yr","2035","United States",NA
+"Reference","GCAM-CGS","Emissions|CO2","Mt CO2/yr","2040","United States",NA
+"Reference","GCAM-CGS","Emissions|CO2","Mt CO2/yr","2045","United States",NA
+"Reference","GCAM-CGS","Emissions|CO2","Mt CO2/yr","2050","United States",NA
+"Reference","Haiku-RFF","Emissions|CO2","Mt CO2/yr","2025","United States",NA
+"Reference","Haiku-RFF","Emissions|CO2","Mt CO2/yr","2030","United States",NA
+"Reference","Haiku-RFF","Emissions|CO2","Mt CO2/yr","2035","United States",NA
+"Reference","Haiku-RFF","Emissions|CO2","Mt CO2/yr","2040","United States",NA
+"Reference","Haiku-RFF","Emissions|CO2","Mt CO2/yr","2045","United States",NA
+"Reference","Haiku-RFF","Emissions|CO2","Mt CO2/yr","2050","United States",NA
+"Reference","IPM-EPA","Emissions|CO2","Mt CO2/yr","2025","United States",NA
+"Reference","IPM-EPA","Emissions|CO2","Mt CO2/yr","2030","United States",1303.58284422178
+"Reference","IPM-EPA","Emissions|CO2","Mt CO2/yr","2035","United States",1247.28769086048
+"Reference","IPM-EPA","Emissions|CO2","Mt CO2/yr","2040","United States",1078.21522990129
+"Reference","IPM-EPA","Emissions|CO2","Mt CO2/yr","2045","United States",974.786625335472
+"Reference","IPM-EPA","Emissions|CO2","Mt CO2/yr","2050","United States",844.162060196773
+"Reference","IPM-NRDC","Emissions|CO2","Mt CO2/yr","2025","United States",NA
+"Reference","IPM-NRDC","Emissions|CO2","Mt CO2/yr","2030","United States",NA
+"Reference","IPM-NRDC","Emissions|CO2","Mt CO2/yr","2035","United States",NA
+"Reference","IPM-NRDC","Emissions|CO2","Mt CO2/yr","2040","United States",NA
+"Reference","IPM-NRDC","Emissions|CO2","Mt CO2/yr","2045","United States",NA
+"Reference","IPM-NRDC","Emissions|CO2","Mt CO2/yr","2050","United States",NA
+"Reference","MARKAL-NETL","Emissions|CO2","Mt CO2/yr","2025","United States",4284.46
+"Reference","MARKAL-NETL","Emissions|CO2","Mt CO2/yr","2030","United States",4181.47
+"Reference","MARKAL-NETL","Emissions|CO2","Mt CO2/yr","2035","United States",4190.36
+"Reference","MARKAL-NETL","Emissions|CO2","Mt CO2/yr","2040","United States",4189.88
+"Reference","MARKAL-NETL","Emissions|CO2","Mt CO2/yr","2045","United States",4251.1
+"Reference","MARKAL-NETL","Emissions|CO2","Mt CO2/yr","2050","United States",4220.32
+"Reference","NEMS-RHG","Emissions|CO2","Mt CO2/yr","2025","United States",NA
+"Reference","NEMS-RHG","Emissions|CO2","Mt CO2/yr","2030","United States",NA
+"Reference","NEMS-RHG","Emissions|CO2","Mt CO2/yr","2035","United States",NA
+"Reference","NEMS-RHG","Emissions|CO2","Mt CO2/yr","2040","United States",NA
+"Reference","NEMS-RHG","Emissions|CO2","Mt CO2/yr","2045","United States",NA
+"Reference","NEMS-RHG","Emissions|CO2","Mt CO2/yr","2050","United States",NA
+"Reference","REGEN-EPRI","Emissions|CO2","Mt CO2/yr","2025","United States",NA
+"Reference","REGEN-EPRI","Emissions|CO2","Mt CO2/yr","2030","United States",NA
+"Reference","REGEN-EPRI","Emissions|CO2","Mt CO2/yr","2035","United States",NA
+"Reference","REGEN-EPRI","Emissions|CO2","Mt CO2/yr","2040","United States",NA
+"Reference","REGEN-EPRI","Emissions|CO2","Mt CO2/yr","2045","United States",NA
+"Reference","REGEN-EPRI","Emissions|CO2","Mt CO2/yr","2050","United States",NA
+"Reference","RIO-REPEAT","Emissions|CO2","Mt CO2/yr","2025","United States",NA
+"Reference","RIO-REPEAT","Emissions|CO2","Mt CO2/yr","2030","United States",NA
+"Reference","RIO-REPEAT","Emissions|CO2","Mt CO2/yr","2035","United States",NA
+"Reference","RIO-REPEAT","Emissions|CO2","Mt CO2/yr","2040","United States",NA
+"Reference","RIO-REPEAT","Emissions|CO2","Mt CO2/yr","2045","United States",NA
+"Reference","RIO-REPEAT","Emissions|CO2","Mt CO2/yr","2050","United States",NA
+"Reference","ReEDS-NREL","Emissions|CO2","Mt CO2/yr","2025","United States",NA
+"Reference","ReEDS-NREL","Emissions|CO2","Mt CO2/yr","2030","United States",NA
+"Reference","ReEDS-NREL","Emissions|CO2","Mt CO2/yr","2035","United States",NA
+"Reference","ReEDS-NREL","Emissions|CO2","Mt CO2/yr","2040","United States",NA
+"Reference","ReEDS-NREL","Emissions|CO2","Mt CO2/yr","2045","United States",NA
+"Reference","ReEDS-NREL","Emissions|CO2","Mt CO2/yr","2050","United States",NA
