@@ -222,6 +222,19 @@ indirect_long = calc_indirect %>%
 
 #####
 ##
+## emissions sums
+##
+#####
+
+nrg_co2_var = c("Emissions|CO2|Energy|Demand|Buildings",
+                "Emissions|CO2|Energy|Demand|Industry",
+                "Emissions|CO2|Energy|Demand|Transportation",
+                "Emissions|CO2|Energy|Supply|Electricity")
+
+nrg_co2 =
+
+#####
+##
 ## ev shares
 ##
 #####

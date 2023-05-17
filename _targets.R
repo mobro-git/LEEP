@@ -44,8 +44,8 @@ tar_plan(
     models_emf = c("GCAM-EMF"),
 
     # Use models_leep for all initial plots
-    models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-EMF", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "MARKAL-NETL", "NEMS-RHG",
-                    "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA-LTS", "EIA-STEO"),
+    models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL",
+                    "NEMS-RHG", "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA-LTS", "EIA-STEO"),
 
     #models_leep_sens = c("USREP-ReEDS", "ReEDS", "Scout v0.8", "GCAM-USA v6.0", "OP-NEMS"),
     models_lts = c("GCAM-LTS", "OP-NEMS-LTS", "EIA-LTS"),
@@ -161,7 +161,7 @@ tar_plan(
 
   data_wide = {clean_data %>% pivot_wider(names_from = "year", values_from = "value")},
 
-  data_output = write_csv(data_wide, "output/data/leep_data_output.csv"),
+  data_output = write_csv(clean_data, "output/data/leep_data_output.csv"),
 
   # indexed version of clean_data. index_var determines which variables are indexed, only these are included
   clean_data_index = index_data_long(clean_data, index_var),

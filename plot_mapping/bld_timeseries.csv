@@ -1,2 +1,5 @@
 figure_type,figure_no,title_name,variable,variable_rename,flip_sign,regions,models,years,scenarios,type,x,y,facet1,facet2,color,page_filter,scales
-timeseries,3,Emissions|CO2|Energy|Demand|Buildings,Emissions|CO2|Energy|Demand|Buildings,CO2,0,usa,models_leep,historic,hist_mod_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,1,Emissions|CO2|Energy|Demand|Buildings,Emissions|CO2|Energy|Demand|Buildings,CO2,0,usa,models_leep,historic,hist_mod_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,2,"Direct, indirect, and total emissions",Emissions|CO2|Energy|Demand|Buildings|Percent difference from Reference,direct,0,usa,models_leep,historic,hist_mod_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,2,"Direct, indirect, and total emissions",Emissions|CO2|Energy|Demand|Buildings|Indirect|Percent difference from Reference,indirect,0,usa,models_leep,historic,hist_mod_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
+timeseries,2,"Direct, indirect, and total emissions",Emissions|CO2|Energy|Demand|Buildings|Total|Percent difference from Reference,total,0,usa,models_leep,historic,hist_mod_scenarios,grid,year,value,scenario,variable_rename,model,region,fixed
