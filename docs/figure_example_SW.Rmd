@@ -61,7 +61,12 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
   # make the spagetti plot
   fig = print_graph(plot_type, config, emf_data_long, figmap, figure_num, reg)
   # update the axis range
-  fig = fig + scale_y_continuous(limits = c(ymin, ymax))
+  fig = fig + scale_y_continuous(limits = c(ymin, ymax)) +
+      scale_alpha(range = c(0.6, 1), guide = "none") + 
+      annotate("text", x = 2015, y = 8, label = "Historic", color = "black", alpha = 1) +
+      annotate("text", x = 2030, y = 16, label = "Pre-IRA", color = "#0388B3", alpha = 1) +
+      annotate("text", x = 2027, y = 45, label = "IRA", color = "#F28063", alpha = 1) +
+      theme(legend.position = "none")
   
   # pull the data from the graph and filter/summarize for 2030/2035
   df_30 = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
@@ -142,7 +147,7 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
   # combine all the plots
   final = fig + dots_30 + dots_35 + 
     plot_annotation(title = plot_title, theme = theme(plot.title = element_text(hjust = 0.5))) +
-    plot_layout(guides = "collect", widths = c(10,1,1)) +
+    plot_layout(widths = c(10,1,1)) +
     theme(plot.margin = margin(0,0,0,0))
   
   # return the full plot + the components + the summary stats
@@ -334,11 +339,7 @@ clean_data4 = rbind(raw, iea_2022) %>% filter(unit != "thousands") %>% mutate(va
     TRUE ~ 0.8)
   )
 
-fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 18, "United States") +
-  scale_alpha(range = c(0.6, 1), guide = "none") + 
-  annotate("text", x = 2015, y = 59, label = "Historic", color = "black") +
-  annotate("text", x = 2027, y = 55, label = "Pre-IRA", color = "#0388B3") +
-  annotate("text", x = 2025, y = 20, label = "IRA", color = "#F28063")
+fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 18, "United States")
 dta = data_from_graph("time_series", config, clean_data4, figmap_leep_timeseries, 18, "United States")
 fig
 
