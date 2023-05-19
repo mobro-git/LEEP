@@ -48,7 +48,10 @@ make_clean_data = function(df) {
     ungroup() %>%
     mutate(datasrc = "calculated")
 
-  all = rbind(ind_emissions, df)
+  ind_emissions_indirect = ind_emissions %>%
+    filter(variable = "Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect")
+
+  all = rbind(ind_emissions, ind_emissions_indirect, df)
 
   all
 
