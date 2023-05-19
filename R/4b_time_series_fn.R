@@ -37,9 +37,12 @@ time_series_grid_fn <- function(df, data_list, mapping_list) {
 
 
 time_series_single_fn <- function(df, data_list, mapping_list) {
+  if (!("alpha" %in% colnames(df))) {
+    df$alpha = 1
+  }
   p <- ggplot(df, aes(x = .data[[data_list$x]], y = .data[[data_list$y]],
                       color = .data[[data_list$color]])) +
-    geom_line(size = 1, aes(group = interaction(model,scenario))) +
+    geom_line(size = 1, aes(alpha = alpha, group = interaction(model,scenario))) +
     labs(title = mapping_list$title,
          x = "",
          y = mapping_list$ylab,

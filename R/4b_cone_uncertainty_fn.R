@@ -36,14 +36,14 @@ band_grid_fn <- function(df, data_list, mapping_list) {
     geom_line(df, mapping = aes(x = .data[[data_list$x]], y = .data[[data_list$y]],
                                 color = .data[[data_list$color]],
                                 group = interaction(model, scenario, .data[[data_list$color]])),
-              size = 1, alpha = 0.4) +
+              size = 1, alpha = 0.2) +
     facet_grid(rows = vars(.data[[data_list$facet2]]), cols = vars(.data[[data_list$facet1]]),
                scales = mapping_list$scales) +
     geom_ribbon(data = sen_ribbon,
                 mapping = aes(x= .data[[data_list$x]],
                               ymin= catmin, ymax= catmax,
                               fill= .data[[data_list$color]], color= .data[[data_list$color]]),
-                alpha = 0.2) +
+                alpha = 0.1) +
     labs(title = mapping_list$title,
          x = mapping_list$xlab,
          y = mapping_list$ylab,
@@ -66,13 +66,13 @@ band_wrap_fn <- function(df, data_list, mapping_list) {
     geom_line(df, mapping = aes(x = .data[[data_list$x]], y = .data[[data_list$y]],
                                 color = .data[[data_list$color]],
                                 group = interaction(model, scenario, .data[[data_list$color]])),
-              size = 1, alpha = 0.4) +
+              size = 1, alpha = 0.2) +
     facet_wrap(vars(.data[[data_list$facet]]), ncol = 4, scales = mapping_list$scales) +
     geom_ribbon(data = sen_ribbon,
                 mapping = aes(x= .data[[data_list$x]],
                               ymin= catmin, ymax= catmax,
                               fill= .data[[data_list$color]], color= .data[[data_list$color]]),
-                alpha = 0.2) +
+                alpha = 0.1) +
     labs(title = mapping_list$title,
          x = mapping_list$xlab,
          y = mapping_list$ylab,
@@ -96,12 +96,12 @@ cone_uncertainty_single_fn <- function(df, data_list, mapping_list) {
     geom_line(df, mapping = aes(x = .data[[data_list$x]], y = .data[[data_list$y]],
                       color = .data[[data_list$color]],
                       group = interaction(.data[[data_list$range]], .data[[data_list$color]], model)),
-              size = 1, alpha = 0.4) +
+              size = 1, alpha = 0.2) +
     geom_ribbon(data = sen_ribbon,
                 mapping = aes(x= .data[[data_list$x]],
                               ymin= catmin, ymax= catmax,
                               fill= .data[[data_list$color]], color= .data[[data_list$color]]),
-                alpha = 0.2) +
+                alpha = 0.1) +
     labs(title = mapping_list$title,
          x = mapping_list$xlab,
          y = mapping_list$ylab,
@@ -124,14 +124,14 @@ cone_uncertainty_grid_fn <- function(df, data_list, mapping_list) {
     geom_line(df, mapping = aes(x = .data[[data_list$x]], y = .data[[data_list$y]],
                                 color = .data[[data_list$color]],
                                 group = interaction(.data[[data_list$range]], .data[[data_list$color]], model)),
-              size = 1, alpha = 0.4) +
+              size = 1, alpha = 0.2) +
     facet_grid(rows = vars(.data[[data_list$facet1]]), cols = vars(.data[[data_list$facet2]]),
                scales = mapping_list$scales) +
     geom_ribbon(data = sen_ribbon,
                 mapping = aes(x= .data[[data_list$x]],
                               ymin= catmin, ymax= catmax,
                               fill= .data[[data_list$color]], color= .data[[data_list$color]]),
-                alpha = 0.2) +
+                alpha = 0.1) +
     labs(title = mapping_list$title,
          x = mapping_list$xlab,
          y = mapping_list$ylab,
@@ -155,13 +155,13 @@ cone_uncertainty_wrap_fn <- function(df, data_list, mapping_list) {
     geom_line(df, mapping = aes(x = .data[[data_list$x]], y = .data[[data_list$y]],
                                 color = .data[[data_list$color]],
                                 group = interaction(.data[[data_list$range]], .data[[data_list$color]])),
-              size = 1, alpha = 0.4) +
+              size = 1, alpha = 0.2) +
     facet_wrap(vars(.data[[data_list$facet]]), ncol = 4, scales = mapping_list$scales) +
     geom_ribbon(data = sen_ribbon,
                 mapping = aes(x = .data[[data_list$x]],
                               ymin = catmin, ymax = catmax,
                               fill = .data[[data_list$color]], color = .data[[data_list$color]]),
-                alpha = 0.2) +
+                alpha = 0.1) +
     labs(title = mapping_list$title,
          x = mapping_list$xlab,
          y = mapping_list$ylab,

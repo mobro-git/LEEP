@@ -68,14 +68,14 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
     filter(year %in% c(2030))
   df_stat_30 = df_30 %>%
     group_by(scenario,year,variable_rename) %>%
-    summarise(mean = mean(value),
-           median = median(value))
+    summarise(mean = mean(value, na.rm = TRUE),
+           median = median(value, na.rm = TRUE))
   df_35 = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
     filter(year %in% c(2035))
   df_stat_35 = df_35 %>%
     group_by(scenario,year,variable_rename) %>%
-    summarise(mean = mean(value),
-           median = median(value))
+    summarise(mean = mean(value, na.rm = TRUE),
+           median = median(value, na.rm = TRUE))
   
   # these are the summary stats we'll eventually want to overlay on the plot to highlight the efficacy of the IRA
   mean_diff_30 = df_stat_30[df_stat_30$scenario == "Reference","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
@@ -155,9 +155,9 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
   ))
 }
 
-p = dot_plots("time_series", config, clean_data, figmap_leep_timeseries, 4, "United States", 0, 2500, "Emissions|CO2|Energy|Demand|Electricity", metric = "median")
-print(p$full)
-print(p$stats)
+# p = dot_plots("time_series", config, clean_data, figmap_leep_timeseries, 4, "United States", 0, 2500, "Emissions|CO2|Energy|Demand|Electricity", metric = "median")
+# print(p$full)
+# print(p$stats)
 
 ```
 ```{r}
@@ -306,32 +306,43 @@ ggsave(filename = "output/leep/time_series/Fig3.1_emis_sensitivity.svg",fig, wid
 # EV share plot
 scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)
 
-
 raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
   left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
   select(-c(model, scenario)) %>%
   rename(model = model_new) %>%
   rename(scenario = scenario_new) %>%
-  filter(unit != "thousands")
+  filter(unit != "thousands") %>%
+  filter(!(model == "IEA" & year >= 2022))
 
 iea_2022 = raw %>% filter(model == "IEA", year == 2021) %>% mutate(year = 2022)
-clean_data3 = rbind(raw, iea_2022) %>%
+clean_data4 = rbind(raw, iea_2022) %>% filter(unit != "thousands") %>% mutate(value = 100 * value) %>%
   filter(model != "EIA-LTS") %>% 
-  duplicate_historical_data("IEA",2022) #%>% 
-  # mutate(value = 1 * value)
-  
-# clean_data4 = clean_data %>% left_join(clean_data3, by = c("model", "scenario", "variable", "unit" , "datasrc", "year", "region"))
+  duplicate_historical_data("IEA",2022) %>% mutate(
+    variable = case_when(
+      variable %in% c("Energy Service|Transportation|Passenger|BEV|Sales Share",
+                      "Energy Service|Transportation|Passenger|FCEV|Sales Share",
+                      "Energy Service|Transportation|Passenger|HEV|Sales Share",
+                      "Energy Service|Transportation|Freight|BEV|Sales Share",
+                      "Energy Service|Transportation|Freight|FCEV|Sales Share",
+                      "Energy Service|Transportation|Passenger|PHEV|Sales Share") ~ 
+        "Energy Service|Transportation|EV|Sales Share")) %>%
+  mutate(alpha = case_when(
+    model == "USREP-ReEDS" ~ 1,
+    model == "GCAM-PNNL" ~ 1,
+    model == "IPM-EPA" ~ 1,
+    scenario == "Historic" ~ 1,
+    TRUE ~ 0.8)
+  )
 
-iea_2022 = clean_data %>% filter(model == "IEA", year == 2021) %>% mutate(year = 2022)
-clean_data4 = rbind(clean_data, iea_2022) %>% filter(unit != "thousands") %>% mutate(value = 1000 * value) %>%
-  filter(model != "EIA-LTS") %>% 
-  duplicate_historical_data("IEA",2022)
-
-fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 18, "United States")
+fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 18, "United States") +
+  scale_alpha(range = c(0.6, 1), guide = "none") + 
+  annotate("text", x = 2015, y = 59, label = "Historic", color = "black") +
+  annotate("text", x = 2027, y = 55, label = "Pre-IRA", color = "#0388B3") +
+  annotate("text", x = 2025, y = 20, label = "IRA", color = "#F28063")
 dta = data_from_graph("time_series", config, clean_data4, figmap_leep_timeseries, 18, "United States")
 fig
 
-p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 18, "United States", 0, 18, "EV Share", metric = "mean")
+p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 18, "United States", 0, 100, "EV Share", metric = "mean")
 print(p$full)
 print(p$stats)
 
@@ -375,95 +386,114 @@ dta
 ggsave(filename = "output/leep/stacked_bar/Fig6_trans_co2.svg",fig, width = 7, height = 5, units = "in")
 ```
 
+
 ```{r}
 # capacity addition plot
 
 ymin = -25
-ymax = 75
+ymax = 125
 plot_title = "Capacity Additions Temp"
 
 fig = print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States") +
+  scale_subpalette(subpalettes, "Capacity Additions2") +
   scale_y_continuous(limits = c(ymin, ymax)) +
-  bottom1 + 
-  theme(plot.title = element_blank())
+  theme(plot.title = element_blank(), legend.position = "none")
 
 fig
 
-dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States")
-dta
-dta2 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 5, "United States") %>%
-  mutate(unit = "GW/yr") %>%
-  group_by(model, scenario, variable, region, datasrc, unit) %>%
-  summarize(value = mean(value)) %>%
-  mutate(value = case_when(
-    grepl("Retire",variable) ~ -1 * value,
-    TRUE ~ value
-  ))
-totals = dta2 %>% group_by(model, scenario, region, datasrc, unit) %>%
-  summarize(value = sum(value))
+# var_map = data.frame("variable" = c("Capacity Additions|Electricity|Coal|w/ CCS",
+#                                     "Capacity Additions|Electricity|Coal|w/o CCS",
+#                                     "Capacity Additions|Electricity|Gas|w/ CCS",
+#                                     "Capacity Additions|Electricity|Gas|w/o CCS",
+#                                     "Capacity Additions|Electricity|Hydro",
+#                                     "Capacity Additions|Electricity|Nuclear",
+#                                     "Capacity Additions|Electricity|Solar",
+#                                     "Capacity Additions|Electricity|Wind",
+#                                     "Capacity Additions|Electricity|Storage Capacity",
+#                                     "Capacity Retirements|Electricity|Coal|w/ CCS",
+#                                     "Capacity Retirements|Electricity|Coal|w/o CCS",
+#                                     "Capacity Retirements|Electricity|Gas|w/ CCS",
+#                                     "Capacity Retirements|Electricity|Gas|w/o CCS",
+#                                     "Capacity Retirements|Electricity|Hydro",
+#                                     "Capacity Retirements|Electricity|Nuclear",
+#                                     "Capacity Retirements|Electricity|Solar",
+#                                     "Capacity Retirements|Electricity|Wind",
+#                                     "Capacity Retirements|Electricity|Storage Capacity"),
+#                      "variable_rename" = c("Coal CCS", "Coal", "Gas CCS", "Gas", "Hydro", "Nuclear",
+#                                       "Solar", "Wind", "Storage",
+#                                       "Coal CCS", "Coal", "Gas CCS", "Gas", "Hydro", "Nuclear",
+#                                       "Solar", "Wind", "Storage"))
+# 
+# dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States")
+# dta
+# dta2 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 5, "United States") %>%
+#   mutate(unit = "GW/yr") %>%
+#   group_by(model, scenario, variable, region, datasrc, unit) %>%
+#   summarize(value = mean(value)) %>%
+#   mutate(value = case_when(
+#     grepl("Retire",variable) ~ -1 * value,
+#     TRUE ~ value
+#   )) %>% left_join(var_map, by = "variable") %>%
+#   group_by(model, scenario, region, datasrc, unit, variable_rename) %>%
+#   summarize(value = sum(value))
+# 
+# dta_ttl = dta2 %>% group_by(model, scenario, region, datasrc, unit) %>%
+#   summarize(value = sum(value)) %>% 
+#   mutate(variable_rename = "Total")
+# 
+# dta3 = rbind(dta2, dta_ttl) %>%
+#   mutate(variable_rename = factor(variable_rename, levels = c("Total", "Solar", "Wind", "Nuclear", "Hydro", "Storage", "Coal", "Coal CCS", "Gas", "Gas CCS")))
+# 
+# stats = dta3 %>% group_by(variable_rename) %>% summarize(mean = mean(value), median = median(value))
 
-cap_dotplot = function(data, label, dot_color, var_list, ymin, ymax) {
-  p = data %>% filter(variable %in% var_list) %>%
-    group_by(model, scenario) %>% 
-    summarize(value = sum(value)) %>% 
-  ggplot() +
-  geom_point(aes(x = 1, y = value, color = dot_color), shape = 1, size = 2) +
-  scale_x_continuous(breaks = c(1), labels = c(label), limits = c(0.9, 1.1)) +
-    scale_y_continuous(limits = c(ymin, ymax)) +
-    theme_emf() +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(panel.grid = element_blank(), plot.title = element_blank(),
-          axis.text.y = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1),
-          axis.title.y = element_blank(), axis.title.x = element_blank(),
-          axis.ticks = element_blank(), panel.border = element_blank(),
-          legend.position = "none", plot.margin = margin(0,0,0,0))
-}
+subpalettes = create_subpalettes(figmap_leep_stackbar, config)
 
+# dotplot = dta3 %>% ggplot() +
+#   geom_point(aes(x = variable_rename, y = value, color = variable_rename), shape = 1, size = 2) + 
+#   #geom_point(data = stats, aes(x = variable_rename, y = median, color = variable_rename), shape = 3, size = 2) +
+#   geom_segment(data = stats, aes(x = as.numeric(variable_rename) - 0.2, xend = as.numeric(variable_rename) + 0.2, y = median, yend = median, color = variable_rename), linewidth = 0.5) +
+#   scale_y_continuous(limits = c(ymin, ymax)) +
+#   scale_subpalette(subpalettes, "Capacity Additions2") +
+#   theme_emf() +
+#   theme(plot.title = element_blank(), axis.text.y = element_blank(),
+#         axis.title.y = element_blank(), axis.ticks = element_blank(),
+#         axis.title.x = element_blank(),
+#         axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "None")
+# dotplot
 
-dot_total = totals %>% ggplot() +
-  geom_point(aes(x = 1, y = value, color = "black"), shape = 1, size = 2) +
-  scale_x_continuous(breaks = c(1), labels = c("Total"), limits = c(0.9, 1.1)) +
-    scale_y_continuous(limits = c(ymin, ymax)) +
-    theme_emf() +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(panel.grid = element_blank(), plot.title = element_blank(),
-          axis.text.y = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1),
-          axis.title.y = element_blank(), axis.title.x = element_blank(),
-          axis.ticks = element_blank(), panel.border = element_blank(),
-          legend.position = "none", plot.margin = margin(0,0,0,0))
-dot_total
+dta4 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 6, "United States")
+dta_ttl = dta4 %>% group_by(model, scenario, region, datasrc, unit) %>%
+  summarize(value = sum(value)) %>% 
+  mutate(variable_rename = "Total")
 
-dot_solar = cap_dotplot(dta2, label = "Solar", dot_color = "yellow", 
-                        var_list = c("Capacity Additions|Electricity|Solar", "Capacity Retirements|Electricity|Solar"),
-                        ymin = ymin, ymax = ymax)
-dot_wind = cap_dotplot(dta2, label = "Wind", dot_color = "yellow", 
-                        var_list = c("Capacity Additions|Electricity|Wind", "Capacity Retirements|Electricity|Wind"),
-                        ymin = ymin, ymax = ymax)
-dot_coal = cap_dotplot(dta2, label = "Coal", dot_color = "yellow", 
-                        var_list = c("Capacity Additions|Electricity|Coal|w/o CCS", "Capacity Retirements|Electricity|Coal|w/o CCS"),
-                        ymin = ymin, ymax = ymax)
-dot_gas = cap_dotplot(dta2, label = "Gas", dot_color = "yellow", 
-                        var_list = c("Capacity Additions|Electricity|Gas|w/o CCS", "Capacity Retirements|Electricity|Gas|w/o CCS"),
-                        ymin = ymin, ymax = ymax)
-dot_nuclear = cap_dotplot(dta2, label = "Nuclear", dot_color = "yellow", 
-                        var_list = c("Capacity Additions|Electricity|Nuclear", "Capacity Retirements|Electricity|Nuclear"),
-                        ymin = ymin, ymax = ymax)
-dot_hydro = cap_dotplot(dta2, label = "Hydro", dot_color = "yellow", 
-                        var_list = c("Capacity Additions|Electricity|Hydro", "Capacity Retirements|Electricity|Hydro"),
-                        ymin = ymin, ymax = ymax)
-dot_storage = cap_dotplot(dta2, label = "Storage", dot_color = "yellow", 
-                        var_list = c("Capacity Additions|Electricity|Storage Capacity", "Capacity Retirements|Electricity|Storage Capacity"),
-                        ymin = ymin, ymax = ymax)
-dot_coalccs = cap_dotplot(dta2, label = "Coal w/ CCS", dot_color = "yellow", 
-                        var_list = c("Capacity Additions|Electricity|Coal|w/ CCS", "Capacity Retirements|Electricity|Coal|w/ CCS"),
-                        ymin = ymin, ymax = ymax)
-dot_gasccs = cap_dotplot(dta2, label = "Gas w/ CCS", dot_color = "yellow", 
-                        var_list = c("Capacity Additions|Electricity|Gas|w/ CCS", "Capacity Retirements|Electricity|Gas|w/ CCS"),
-                        ymin = ymin, ymax = ymax)
+dta4 = rbind(dta4,dta_ttl) %>% mutate(variable_rename = factor(variable_rename, 
+                                  levels = c("Total", "Solar", "Wind", "Nuclear", "Hydro", "Storage", "Coal", "Coal CCS", "Gas", "Gas CCS")))
+stats = dta4 %>% group_by(variable_rename) %>% summarize(mean = mean(value), median = median(value))
 
+dotplot2 = dta4 %>% ggplot() + 
+  geom_point(aes(x = variable_rename, y = value, color = variable_rename), shape = 1, size = 2) + 
+  #geom_point(data = stats, aes(x = variable_rename, y = median, color = variable_rename), shape = 3, size = 2) +
+  geom_segment(data = stats, aes(x = as.numeric(variable_rename) - 0.2, xend = as.numeric(variable_rename) + 0.2, 
+                                 y = median, yend = median, color = variable_rename), linewidth = 0.5) +
+  scale_y_continuous(limits = c(ymin, ymax)) +
+  scale_subpalette(subpalettes, "Capacity Additions2") +
+  theme_emf() +
+  theme(plot.title = element_blank(), axis.text.y = element_blank(),
+        axis.title.y = element_blank(), axis.ticks = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "none")
+dotplot2
+  
 
+combined = 
+  fig + dotplot2 + 
+  plot_annotation(title = "Capacity Additions", theme = theme(plot.title = element_text(hjust = 0.5))) +
+    plot_layout(widths = c(1,1)) +
+    theme(plot.margin = margin(0,0,0,0))
+    # bottom1
 combined
 
 
 ggsave(filename = "output/leep/stacked_bar/Fig5_capacity.svg",combined, width = 7, height = 5, units = "in")
+print(stats)
 ```
