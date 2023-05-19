@@ -32,7 +32,25 @@ complete_implicit_na = function(df) {
 
 make_clean_data = function(df) {
 
-  df = clean_data
+  ind_emissions = df %>% filter(model %in% c("USREP-ReEDS","GCAM-PNNL", "ReEDS-NREL", "OP-NEMS")) %>%
+    filter(variable %in% c("Emissions|CO2|Energy|Demand|Industry",
+                           "Emissions|CO2|Energy|Supply|Biogas",
+                           "Emissions|CO2|Energy|Supply|Biomass Liqids",
+                           "Emissions|CO2|Energy|Supply|Gas",
+                           "Emissions|CO2|Energy|Supply|Heat",
+                           "Emissions|CO2|Energy|Supply|Hydrogen",
+                           "Emissions|CO2|Energy|Supply|Petroleum Refining",
+                           "Emissions|CO2|Energy|Supply|Synthetic Gas",
+                           "Emissions|CO2|Energy|Supply|Synthetic Liquids")) %>%
+    mutate(variable = "Emissions|CO2|Energy|Demand|Industry and Fuel Production") %>%
+    group_by(scenario,model,region,unit,year,variable) %>%
+    summarise(value = sum(value)) %>%
+    ungroup() %>%
+    mutate(datasrc = "calculated")
+
+  all = rbind(ind_emissions, df)
+
+  all
 
 }
 
