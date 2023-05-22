@@ -57,15 +57,15 @@ clean_data = clean_data %>% mutate(value = case_when(
 #   ymin and ymax: to manually set the y axis limits so that the axes line up across plots
 #   plot_title: manually set the plot title of the combined plot
 #   metric: what centrality metric to show on the dot plots: "mean" or "median"
-dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric) {
+dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0)) {
   # make the spagetti plot
   fig = print_graph(plot_type, config, emf_data_long, figmap, figure_num, reg)
   # update the axis range
   fig = fig + scale_y_continuous(limits = c(ymin, ymax)) +
       scale_alpha(range = c(0.6, 1), guide = "none") + 
-      annotate("text", x = 2015, y = 8, label = "Historic", color = "black", alpha = 1) +
-      annotate("text", x = 2030, y = 16, label = "Pre-IRA", color = "#0388B3", alpha = 1) +
-      annotate("text", x = 2027, y = 45, label = "IRA", color = "#F28063", alpha = 1) +
+      annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historic", color = "black", alpha = 1) +
+      annotate("text", x = preira_coord[1], y = preira_coord[2], label = "Pre-IRA", color = "#0388B3", alpha = 1) +
+      annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#F28063", alpha = 1) +
       theme(legend.position = "none")
   
   # pull the data from the graph and filter/summarize for 2030/2035
@@ -279,6 +279,70 @@ Faceted Versions
   p5
   ggsave(filename = "output/leep/cone_uncertainty/Fig17_LTS_cone_emissions_facet_Fig17.svg",p5, width = 7, height = 5, units = "in")
 ```
+```{r}
+# data table for LTS plots
+models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC",
+                "IPM-EPA", "MARKAL-NETL", "NEMS-RHG", "NEMS-RHG", "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT",
+                "ReEDS-NREL", "Scout-LEEP", "EIA-LTS", "EIA-STEO", "IEA")
+
+lts_data_table = function(focus, leep_models) {
+  dta_lts = clean_data %>% 
+    filter(variable == focus, model == "GCAM-LTS", scenario == "LTS.Mid1", year %in% c(2030, 2035)) %>%
+    group_by(year, unit) %>%
+    summarize(median = median(value), mean = mean(value)) %>%
+    mutate(scenario = "NZ2050")
+  
+  dta_leep = clean_data %>% 
+    filter(variable == focus, model %in% models_leep, year %in% c(2030, 2035), scenario != "Reference") %>%
+    group_by(year, unit) %>%
+    summarize(median = median(value), mean = mean(value)) %>%
+    mutate(scenario = "IRA")
+  
+  dta_combo = rbind(dta_lts, dta_leep) %>%
+    mutate(variable = focus) %>%
+    select(scenario, variable, year, unit, median, mean) %>%
+    pivot_wider(names_from = scenario, values_from = c(mean, median)) %>%
+    data.frame() %>%
+    mutate(diff_median = median_IRA - median_NZ2050) %>%
+    mutate(diff_mean = mean_IRA - mean_NZ2050) %>%
+    mutate(pct_diff_median = diff_median / median_NZ2050) %>%
+    mutate(pct_diff_mean = diff_mean / mean_NZ2050)
+  return(dta_combo)
+}
+
+t = lts_data_table("Final Energy|Buildings|NonElectric", leep_models)
+
+# Emissions
+tab = rbind(lts_data_table("Emissions|CO2|Energy|Demand|Buildings", leep_models), 
+      lts_data_table("Emissions|CO2|Energy|Demand|Industry", leep_models),
+      lts_data_table("Emissions|CO2|Energy|Demand|Transportation", leep_models), 
+      lts_data_table("Emissions|CO2|Energy|Supply|Electricity", leep_models))
+print(tab)
+write.csv(tab, "output/Emissions_LTS_table.csv", row.names = FALSE)
+
+# Final Energy Transport
+tab = rbind(lts_data_table("Final Energy|Transportation|Fossil", leep_models),
+            lts_data_table("Final Energy|Transportation|Alternative Fuels", leep_models),
+            lts_data_table("Final Energy|Transportation|Electricity", leep_models))
+print(tab)
+write.csv(tab, "output/Transportation_Energy_LTS_table.csv", row.names = FALSE)
+
+# Final Energy Buildings
+tab = rbind(lts_data_table("Final Energy|Buildings|Electricity", leep_models),
+      lts_data_table("Final Energy|Buildings|NonElectric", leep_models))
+print(tab)
+write.csv(tab, "output/Buildings_Energy_LTS_table.csv", row.names = FALSE)
+
+# Final Energy Industry
+tab = rbind(lts_data_table("Final Energy|Industry|Fossil", leep_models),
+            lts_data_table("Final Energy|Industry|Alternative Energy", leep_models), 
+            lts_data_table("Final Energy|Industry|Electricity", leep_models))
+print(tab)
+write.csv(tab, "output/Industrial_Energy_LTS_table.csv", row.names = FALSE)
+
+
+```
+
 Overlaid Versions
 ```{r}
   p = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 1, 2, "United States", 0, 15, "mean", facet = FALSE)
@@ -301,8 +365,9 @@ Overlaid Versions
 
 ```{r}
 # uncertainty plot
-clean_data2 = clean_data %>% duplicate_historical_data("EIA-STEO",2020)
-fig = print_graph("time_series", config, clean_data2, figmap_leep_timeseries, 16, "United States")
+clean_data2 = clean_data %>% duplicate_historical_data("EIA-STEO",2020) %>% mutate(alpha = 1)
+fig = print_graph("time_series", config, clean_data2, figmap_leep_timeseries, 16, "United States") +
+   scale_alpha(range = c(0.6, 1), guide = "none")
 dta = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
 fig
 ggsave(filename = "output/leep/time_series/Fig3.1_emis_sensitivity.svg",fig, width = 7, height = 5, units = "in")
@@ -343,7 +408,10 @@ fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 18
 dta = data_from_graph("time_series", config, clean_data4, figmap_leep_timeseries, 18, "United States")
 fig
 
-p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 18, "United States", 0, 100, "EV Share", metric = "mean")
+      # annotate("text", x = 2015, y = 8, label = "Historic", color = "black", alpha = 1) +
+      # annotate("text", x = 2030, y = 16, label = "Pre-IRA", color = "#0388B3", alpha = 1) +
+      # annotate("text", x = 2027, y = 45, label = "IRA", color = "#F28063", alpha = 1) +
+p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 18, "United States", 0, 100, "EV Share", metric = "mean", historic_coord = c(2015,8), preira_coord = c(2030, 16), ira_coord = c(2027, 45))
 print(p$full)
 print(p$stats)
 
@@ -399,6 +467,8 @@ fig = print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "U
   scale_subpalette(subpalettes, "Capacity Additions2") +
   scale_y_continuous(limits = c(ymin, ymax)) +
   theme(plot.title = element_blank(), legend.position = "none")
+
+dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States")
 
 fig
 
@@ -468,11 +538,11 @@ dta_ttl = dta4 %>% group_by(model, scenario, region, datasrc, unit) %>%
   mutate(variable_rename = "Total")
 
 dta4 = rbind(dta4,dta_ttl) %>% mutate(variable_rename = factor(variable_rename, 
-                                  levels = c("Total", "Solar", "Wind", "Nuclear", "Hydro", "Storage", "Coal", "Coal CCS", "Gas", "Gas CCS")))
+                                  levels = c("Total", "Solar", "Wind", "Storage", "Coal CCS", "Gas CCS", "Gas", "Hydro", "Nuclear", "Coal")))
 stats = dta4 %>% group_by(variable_rename) %>% summarize(mean = mean(value), median = median(value))
 
 dotplot2 = dta4 %>% ggplot() + 
-  geom_point(aes(x = variable_rename, y = value, color = variable_rename), shape = 1, size = 2) + 
+  geom_point(aes(x = variable_rename, y = value, color = variable_rename), shape = 16, size = 2) + 
   #geom_point(data = stats, aes(x = variable_rename, y = median, color = variable_rename), shape = 3, size = 2) +
   geom_segment(data = stats, aes(x = as.numeric(variable_rename) - 0.2, xend = as.numeric(variable_rename) + 0.2, 
                                  y = median, yend = median, color = variable_rename), linewidth = 0.5) +
@@ -497,4 +567,27 @@ combined
 
 ggsave(filename = "output/leep/stacked_bar/Fig5_capacity.svg",combined, width = 7, height = 5, units = "in")
 print(stats)
+```
+```{r}
+# industrial final energy plots
+
+clean_data6 = clean_data %>% duplicate_historical_data("EIA-LTS", 2020) %>%
+  filter(model != "GCAM-PNNL")
+
+p1 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 19, "United States", 0, 30, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,15), preira_coord = c(2030, 16), ira_coord = c(2027, 25))
+print(p1$full)
+print(p1$stats)
+
+p2 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 20, "United States", 0, 5, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,3.2), preira_coord = c(2030, 3), ira_coord = c(2027, 4))
+print(p2$full)
+print(p2$stats)
+
+p3 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 21, "United States", 0, 5, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,3.2), preira_coord = c(2032, .75), ira_coord = c(2027, .6))
+print(p3$full)
+print(p3$stats)
+
+
+dta = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 19, "United States")
+View(dta)
+
 ```

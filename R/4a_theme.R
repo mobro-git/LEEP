@@ -216,7 +216,7 @@ color_map <- c(
   "Coal CCS" = "slate",
   "Gas w/ CCS" = "brown",
   "Gas w/o CCS" = "dark brown",
-  "Gas CCS" = "brown",
+  "Gas CCS" = "mid gray red",
   "Oil w/ CCS" = "brown red",
   "Oil w/o CCS" = "dark brown red",
   "Solar CSP" = "dark m.yellow",
