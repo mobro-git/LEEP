@@ -81,6 +81,12 @@ ccs <- read_xlsx(bistline_wrkbk, sheet = "ccs") %>%
 
 co2 = rbind(emissions, ccs)
 
+nox_so2 = read_xlsx(bistline_wrkbk, sheet = "non-co2") %>%
+  pivot_longer(cols = 6:11, names_to = "year", values_to = "value") %>%
+  relocate_standard_col_order()
+
+emissions = rbind(co2, nox_so2)
+
 #####
 ##
 ## electricity demand
@@ -137,7 +143,7 @@ fossil <- read_xlsx(bistline_wrkbk, sheet = "fossil") %>%
 ##
 #############################
 
-all_modeled = rbind(gen_cap, co2, elc, ev_share, fossil) %>%
+all_modeled = rbind(gen_cap, emissions, elc, ev_share, fossil) %>%
   filter(!is.na(value))
 
 #############################
