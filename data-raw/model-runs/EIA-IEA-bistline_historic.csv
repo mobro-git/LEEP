@@ -876,7 +876,6 @@
 "EIA","Historic","United States","Capacity Additions|Electricity|Gas|w/o CCS","GW/yr","2019",8.2216
 "EIA","Historic","United States","Capacity Additions|Electricity|Gas|w/o CCS","GW/yr","2020",6.9029
 "EIA","Historic","United States","Capacity Additions|Electricity|Gas|w/o CCS","GW/yr","2021",6.8704
-"EIA","Historic","United States","Capacity Additions|Electricity|Gas|w/o CCS","GW/yr","2022",9.1941
 "EIA","Historic","United States","Capacity Additions|Electricity|Nuclear","GW/yr","1950",NA
 "EIA","Historic","United States","Capacity Additions|Electricity|Nuclear","GW/yr","1951",NA
 "EIA","Historic","United States","Capacity Additions|Electricity|Nuclear","GW/yr","1952",NA
@@ -949,7 +948,6 @@
 "EIA","Historic","United States","Capacity Additions|Electricity|Nuclear","GW/yr","2019",NA
 "EIA","Historic","United States","Capacity Additions|Electricity|Nuclear","GW/yr","2020",NA
 "EIA","Historic","United States","Capacity Additions|Electricity|Nuclear","GW/yr","2021",NA
-"EIA","Historic","United States","Capacity Additions|Electricity|Nuclear","GW/yr","2022",NA
 "EIA","Historic","United States","Capacity Additions|Electricity|Other","GW/yr","1950",0.5188
 "EIA","Historic","United States","Capacity Additions|Electricity|Other","GW/yr","1951",0.2892
 "EIA","Historic","United States","Capacity Additions|Electricity|Other","GW/yr","1952",0.3056
@@ -1022,7 +1020,6 @@
 "EIA","Historic","United States","Capacity Additions|Electricity|Other","GW/yr","2019",0.2766
 "EIA","Historic","United States","Capacity Additions|Electricity|Other","GW/yr","2020",0.1109
 "EIA","Historic","United States","Capacity Additions|Electricity|Other","GW/yr","2021",0.0477
-"EIA","Historic","United States","Capacity Additions|Electricity|Other","GW/yr","2022",0.0788
 "EIA","Historic","United States","Capacity Additions|Electricity|Wind","GW/yr","1950",NA
 "EIA","Historic","United States","Capacity Additions|Electricity|Wind","GW/yr","1951",NA
 "EIA","Historic","United States","Capacity Additions|Electricity|Wind","GW/yr","1952",NA
@@ -1095,7 +1092,6 @@
 "EIA","Historic","United States","Capacity Additions|Electricity|Wind","GW/yr","2019",9.267
 "EIA","Historic","United States","Capacity Additions|Electricity|Wind","GW/yr","2020",14.653
 "EIA","Historic","United States","Capacity Additions|Electricity|Wind","GW/yr","2021",14.2818
-"EIA","Historic","United States","Capacity Additions|Electricity|Wind","GW/yr","2022",11.1894
 "EIA","Historic","United States","Capacity Additions|Electricity|Hydro","GW/yr","1950",1.196
 "EIA","Historic","United States","Capacity Additions|Electricity|Hydro","GW/yr","1951",1.4092
 "EIA","Historic","United States","Capacity Additions|Electricity|Hydro","GW/yr","1952",1.7084
@@ -1168,7 +1164,6 @@
 "EIA","Historic","United States","Capacity Additions|Electricity|Hydro","GW/yr","2019",0.0382
 "EIA","Historic","United States","Capacity Additions|Electricity|Hydro","GW/yr","2020",0.2016
 "EIA","Historic","United States","Capacity Additions|Electricity|Hydro","GW/yr","2021",0.0897
-"EIA","Historic","United States","Capacity Additions|Electricity|Hydro","GW/yr","2022",0.0686
 "EIA","Historic","United States","Capacity Additions|Electricity|Coal|w/o CCS","GW/yr","1950",1.5491
 "EIA","Historic","United States","Capacity Additions|Electricity|Coal|w/o CCS","GW/yr","1951",1.7801
 "EIA","Historic","United States","Capacity Additions|Electricity|Coal|w/o CCS","GW/yr","1952",2.7279
@@ -1241,7 +1236,6 @@
 "EIA","Historic","United States","Capacity Additions|Electricity|Coal|w/o CCS","GW/yr","2019",NA
 "EIA","Historic","United States","Capacity Additions|Electricity|Coal|w/o CCS","GW/yr","2020",0.017
 "EIA","Historic","United States","Capacity Additions|Electricity|Coal|w/o CCS","GW/yr","2021",NA
-"EIA","Historic","United States","Capacity Additions|Electricity|Coal|w/o CCS","GW/yr","2022",NA
 "EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1950",0
 "EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1951",0
 "EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1952",0
@@ -1276,13 +1270,13 @@
 "EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1981",0
 "EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1982",0
 "EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1983",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1984",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1985",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1986",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1987",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1988",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1989",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1990",0
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1984",0.0148
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1985",0.03
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1986",0.073
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1987",0.036
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1988",0.0724
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1989",0.08
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1990",0.064
 "EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1991",0
 "EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1992",0
 "EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1993",0
@@ -1290,31 +1284,30 @@
 "EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1995",0
 "EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1996",0
 "EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1997",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1998",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1999",0
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1998",1e-04
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","1999",1e-04
 "EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2000",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2001",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2002",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2003",0
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2001",0.0046
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2002",0.003
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2003",2e-04
 "EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2004",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2005",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2006",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2007",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2008",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2009",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2010",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2011",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2012",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2013",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2014",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2015",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2016",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2017",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2018",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2019",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2020",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2021",0
-"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2022",17.771
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2005",0.0028
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2006",0.0018
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2007",0.0707
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2008",0.0329
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2009",0.1069
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2010",0.2313
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2011",0.778
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2012",1.6085
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2013",3.5374
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2014",3.6645
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2015",5.921
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2016",10.8818
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2017",8.4904
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2018",8.286
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2019",9.2073
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2020",14.9397
+"EIA","Historic","United States","Capacity Additions|Electricity|Solar","GW/yr","2021",18.6065
 "EIA","Historic","United States","Capacity Additions|Electricity|Storage Capacity","GW/yr","1950",NA
 "EIA","Historic","United States","Capacity Additions|Electricity|Storage Capacity","GW/yr","1951",NA
 "EIA","Historic","United States","Capacity Additions|Electricity|Storage Capacity","GW/yr","1952",NA
@@ -1387,7 +1380,6 @@
 "EIA","Historic","United States","Capacity Additions|Electricity|Storage Capacity","GW/yr","2019",0.1695
 "EIA","Historic","United States","Capacity Additions|Electricity|Storage Capacity","GW/yr","2020",0.4906
 "EIA","Historic","United States","Capacity Additions|Electricity|Storage Capacity","GW/yr","2021",3.2245
-"EIA","Historic","United States","Capacity Additions|Electricity|Storage Capacity","GW/yr","2022",6.1792
 "EIA","Historic","United States","Capacity Additions|Electricity|Gas|w/ CCS","GW/yr","1950",NA
 "EIA","Historic","United States","Capacity Additions|Electricity|Gas|w/ CCS","GW/yr","1951",NA
 "EIA","Historic","United States","Capacity Additions|Electricity|Gas|w/ CCS","GW/yr","1952",NA
@@ -1460,7 +1452,6 @@
 "EIA","Historic","United States","Capacity Additions|Electricity|Gas|w/ CCS","GW/yr","2019",NA
 "EIA","Historic","United States","Capacity Additions|Electricity|Gas|w/ CCS","GW/yr","2020",NA
 "EIA","Historic","United States","Capacity Additions|Electricity|Gas|w/ CCS","GW/yr","2021",NA
-"EIA","Historic","United States","Capacity Additions|Electricity|Gas|w/ CCS","GW/yr","2022",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Gas|w/o CCS","GW/yr","1950",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Gas|w/o CCS","GW/yr","1951",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Gas|w/o CCS","GW/yr","1952",NA
@@ -1533,7 +1524,6 @@
 "EIA","Historic","United States","Capacity Retirements|Electricity|Gas|w/o CCS","GW/yr","2019",-4.2305
 "EIA","Historic","United States","Capacity Retirements|Electricity|Gas|w/o CCS","GW/yr","2020",-2.7493
 "EIA","Historic","United States","Capacity Retirements|Electricity|Gas|w/o CCS","GW/yr","2021",-0.9538
-"EIA","Historic","United States","Capacity Retirements|Electricity|Gas|w/o CCS","GW/yr","2022",-1.0931
 "EIA","Historic","United States","Capacity Retirements|Electricity|Nuclear","GW/yr","1950",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Nuclear","GW/yr","1951",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Nuclear","GW/yr","1952",NA
@@ -1606,7 +1596,6 @@
 "EIA","Historic","United States","Capacity Retirements|Electricity|Nuclear","GW/yr","2019",-1.4764
 "EIA","Historic","United States","Capacity Retirements|Electricity|Nuclear","GW/yr","2020",-1.6129
 "EIA","Historic","United States","Capacity Retirements|Electricity|Nuclear","GW/yr","2021",-1.0394
-"EIA","Historic","United States","Capacity Retirements|Electricity|Nuclear","GW/yr","2022",-0.7685
 "EIA","Historic","United States","Capacity Retirements|Electricity|Other","GW/yr","1950",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Other","GW/yr","1951",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Other","GW/yr","1952",NA
@@ -1679,7 +1668,6 @@
 "EIA","Historic","United States","Capacity Retirements|Electricity|Other","GW/yr","2019",-1.1569
 "EIA","Historic","United States","Capacity Retirements|Electricity|Other","GW/yr","2020",-1.342
 "EIA","Historic","United States","Capacity Retirements|Electricity|Other","GW/yr","2021",-0.9314
-"EIA","Historic","United States","Capacity Retirements|Electricity|Other","GW/yr","2022",-0.2881
 "EIA","Historic","United States","Capacity Retirements|Electricity|Wind","GW/yr","1950",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Wind","GW/yr","1951",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Wind","GW/yr","1952",NA
@@ -1752,7 +1740,6 @@
 "EIA","Historic","United States","Capacity Retirements|Electricity|Wind","GW/yr","2019",-0.1663
 "EIA","Historic","United States","Capacity Retirements|Electricity|Wind","GW/yr","2020",-0.2559
 "EIA","Historic","United States","Capacity Retirements|Electricity|Wind","GW/yr","2021",-0.2343
-"EIA","Historic","United States","Capacity Retirements|Electricity|Wind","GW/yr","2022",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Hydro","GW/yr","1950",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Hydro","GW/yr","1951",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Hydro","GW/yr","1952",NA
@@ -1825,7 +1812,6 @@
 "EIA","Historic","United States","Capacity Retirements|Electricity|Hydro","GW/yr","2019",-0.1574
 "EIA","Historic","United States","Capacity Retirements|Electricity|Hydro","GW/yr","2020",-0.0255
 "EIA","Historic","United States","Capacity Retirements|Electricity|Hydro","GW/yr","2021",-0.0088
-"EIA","Historic","United States","Capacity Retirements|Electricity|Hydro","GW/yr","2022",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Coal|w/o CCS","GW/yr","1950",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Coal|w/o CCS","GW/yr","1951",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Coal|w/o CCS","GW/yr","1952",NA
@@ -1898,7 +1884,6 @@
 "EIA","Historic","United States","Capacity Retirements|Electricity|Coal|w/o CCS","GW/yr","2019",-12.9776
 "EIA","Historic","United States","Capacity Retirements|Electricity|Coal|w/o CCS","GW/yr","2020",-10.4567
 "EIA","Historic","United States","Capacity Retirements|Electricity|Coal|w/o CCS","GW/yr","2021",-5.5723
-"EIA","Historic","United States","Capacity Retirements|Electricity|Coal|w/o CCS","GW/yr","2022",-6.6503
 "EIA","Historic","United States","Capacity Retirements|Electricity|Solar","GW/yr","1950",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Solar","GW/yr","1951",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Solar","GW/yr","1952",NA
@@ -1971,7 +1956,6 @@
 "EIA","Historic","United States","Capacity Retirements|Electricity|Solar","GW/yr","2019",-0.008
 "EIA","Historic","United States","Capacity Retirements|Electricity|Solar","GW/yr","2020",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Solar","GW/yr","2021",-0.27
-"EIA","Historic","United States","Capacity Retirements|Electricity|Solar","GW/yr","2022",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Storage Capacity","GW/yr","1950",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Storage Capacity","GW/yr","1951",NA
 "EIA","Historic","United States","Capacity Retirements|Electricity|Storage Capacity","GW/yr","1952",NA
@@ -2044,223 +2028,222 @@
 "EIA","Historic","United States","Capacity Retirements|Electricity|Storage Capacity","GW/yr","2019",-0.0018
 "EIA","Historic","United States","Capacity Retirements|Electricity|Storage Capacity","GW/yr","2020",-0.0052
 "EIA","Historic","United States","Capacity Retirements|Electricity|Storage Capacity","GW/yr","2021",-0.012
-"EIA","Historic","United States","Capacity Retirements|Electricity|Storage Capacity","GW/yr","2022",NA
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1949",12.64052
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1949",5.428412
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1949",12.52245
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1950",13.02689
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1950",6.296965
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1950",14.03043
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1951",13.24411
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1951",7.43658
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1951",15.2009
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1952",11.92897
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1952",7.965272
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1952",15.75609
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1953",11.99882
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1953",8.341952
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1953",16.38708
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1954",10.24952
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1954",8.788828
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1954",16.68395
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1955",11.78208
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1955",9.493324
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1955",18.17362
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1956",11.97459
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1956",10.14328
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1956",18.89075
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1957",11.41637
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1957",10.75181
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1957",18.8838
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1958",10.05815
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1958",11.25027
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1958",19.50924
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1959",10.04239
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1959",12.36253
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1959",20.34137
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1960",10.37941
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1960",13.06725
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1960",20.96766
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1961",10.15317
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1961",13.63807
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1961",21.27977
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1962",10.45186
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1962",14.4868
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1962",22.15363
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1963",10.98581
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1963",15.19629
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1963",22.83696
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1964",11.56804
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1964",16.12954
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1964",23.46644
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1965",12.21819
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1965",16.63682
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1965",24.46031
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1966",12.81163
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1966",17.93102
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1966",25.67516
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1967",12.56967
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1967",18.93275
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1967",26.66544
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1968",13.00955
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1968",20.26726
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1968",28.45108
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1969",13.06322
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1969",21.81643
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1969",29.87979
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1970",12.93976
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1970",22.99463
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1970",31.1233
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1971",12.23697
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1971",23.7061
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1971",32.22005
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1972",12.74182
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1972",23.94786
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1972",34.73128
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1973",13.68565
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1973",23.75184
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1973",36.7223
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1974",13.36004
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1974",22.92899
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1974",35.26061
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1975",13.35995
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1975",21.04613
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1975",34.49904
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1976",14.33195
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1976",21.46556
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1976",37.07676
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1977",14.6886
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1977",21.0278
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1977",39.12426
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1978",14.52345
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1978",21.10154
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1978",40.00679
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1979",15.8676
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1979",21.80359
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1979",39.1167
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1980",16.27192
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1980",21.34954
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1980",36.03962
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1981",16.78333
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1981",20.83451
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1981",33.639
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1982",16.16512
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1982",19.36684
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1982",31.84077
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1983",16.76952
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1983",18.16894
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1983",31.64856
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1984",18.01046
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1984",19.40629
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1984",32.69854
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1985",18.44072
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1985",18.67816
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1985",32.56586
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1986",18.21069
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1986",17.50482
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1986",33.9202
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1987",18.99992
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1987",18.61098
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1987",34.62427
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1988",19.88391
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1988",19.46409
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1988",36.0542
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1989",20.11966
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1989",20.68079
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1989",36.04488
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1990",20.2282
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1990",20.68254
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1990",35.34428
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1991",20.03727
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1991",21.13589
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1991",34.59433
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1992",20.17527
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1992",21.85404
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1992",35.31025
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1993",20.92719
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1993",22.39778
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1993",35.43678
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1994",21.0056
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1994",22.92432
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1994",36.35028
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1995",21.19473
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1995",23.91932
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1995",36.2318
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1996",22.15819
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1996",24.35559
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1996",37.54831
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1997",22.62611
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1997",24.50126
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1997",38.05071
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1998",22.84802
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1998",24.08716
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1998",38.74144
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1999",22.81299
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1999",24.17051
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1999",39.80951
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2000",23.82266
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2000",25.13563
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2000",40.25204
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2001",23.12078
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2001",24.02632
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2001",40.1804
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2002",23.10993
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2002",24.80445
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2002",40.21601
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2003",23.54983
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2003",24.0876
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2003",40.83805
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2004",23.70309
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2004",24.18511
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2004",42.34915
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2005",24.05163
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2005",23.80772
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2005",42.43073
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2006",23.68301
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2006",23.46311
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2006",41.91791
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2007",24.00196
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2007",24.96553
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2007",41.53503
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2008",23.62
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2008",25.15565
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2008",38.79375
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2009",20.77532
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2009",24.70512
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2009",36.69395
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2010",21.981
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2010",25.92774
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2010",37.26511
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2011",20.74006
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2011",26.32843
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2011",36.54626
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2012",18.33501
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2012",27.52491
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2012",35.69579
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2013",19.03177
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2013",28.28091
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2013",36.29173
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2014",18.98851
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2014",28.89042
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2014",36.56594
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2015",16.40493
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2015",29.74318
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2015",37.31535
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2016",15.00912
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2016",29.96396
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2016",37.67805
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2017",14.5993
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2017",29.59969
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2017",38.02754
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2018",13.98111
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2018",32.87853
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2018",38.92293
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2019",11.93858
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2019",34.04
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2019",38.89609
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2020",9.686583
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2020",33.28757
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2020",34.11115
-"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2021",11.12797
-"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2021",33.06821
-"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2021",37.18306
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1949",12.6405239399342
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1949",5.42841217966097
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1949",12.5224515844117
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1950",13.0268896133871
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1950",6.29696475415748
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1950",14.0304313089471
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1951",13.2441118977155
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1951",7.43658016819742
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1951",15.200900776341
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1952",11.9289668414751
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1952",7.96527182111286
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1952",15.7560933221626
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1953",11.9988168141978
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1953",8.34195208183866
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1953",16.3870842456039
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1954",10.2495162746044
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1954",8.78882837360683
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1954",16.6839505861348
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1955",11.7820819656734
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1955",9.49332398324434
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1955",18.1736208714039
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1956",11.9745916767658
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1956",10.1432805906924
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1956",18.8907518299323
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1957",11.4163700655914
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1957",10.7518135952548
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1957",18.8838011219753
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1958",10.0581502440562
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1958",11.2502705126017
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1958",19.5092382314084
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1959",10.0423940399531
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1959",12.3625346587183
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1959",20.3413650025932
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1960",10.3794126410672
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1960",13.0672528851408
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1960",20.9676598724345
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1961",10.1531727943665
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1961",13.6380655328603
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1961",21.2797728250917
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1962",10.4518622714108
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1962",14.4868041584447
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1962",22.153631275471
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1963",10.9858091575281
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1963",15.1962922923768
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1963",22.8369635197608
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1964",11.5680385646289
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1964",16.1295356164767
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1964",23.4664404380537
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1965",12.218188247298
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1965",16.6368244063659
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1965",24.4603093815568
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1966",12.8116276228329
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1966",17.93102449382
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1966",25.6751618835029
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1967",12.5696716641515
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1967",18.9327536034251
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1967",26.6654383618279
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1968",13.0095529356168
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1968",20.2672599896169
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1968",28.4510781901532
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1969",13.0632162414486
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1969",21.8164280395827
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1969",29.8797873482578
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1970",12.9397620460219
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1970",22.9946331764881
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1970",31.1233014974962
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1971",12.2369714066422
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1971",23.7061048154231
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1971",32.2200531574117
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1972",12.741821962456
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1972",23.9478582033808
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1972",34.7312844371476
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1973",13.6856464417018
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1973",23.7518383214666
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1973",36.722300382688
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1974",13.360043544913
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1974",22.9289886563939
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1974",35.2606133437981
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1975",13.3599464797746
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1975",21.046130706529
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1975",34.4990402675897
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1976",14.3319493907322
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1976",21.4655607753471
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1976",37.0767569469342
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1977",14.6885962509285
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1977",21.027804386369
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1977",39.1242584727122
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1978",14.5234504684296
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1978",21.101539074741
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1978",40.0067884271442
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1979",15.8676032302818
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1979",21.8035911750239
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1979",39.1167000525841
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1980",16.2719248992904
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1980",21.3495394484021
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1980",36.0396159426917
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1981",16.7833284070048
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1981",20.8345149890015
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1981",33.6389956634887
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1982",16.1651237054414
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1982",19.366839453092
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1982",31.8407732390651
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1983",16.7695240562291
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1983",18.1689438088092
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1983",31.6485568334997
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1984",18.0104596489637
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1984",19.4062890464773
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1984",32.6985357573569
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1985",18.4407177559973
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1985",18.6781622958528
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1985",32.5658624838899
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1986",18.2106913138415
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1986",17.5048156911488
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1986",33.9201965347199
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1987",18.9999216241705
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1987",18.6109752841021
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1987",34.6242732871839
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1988",19.8839117759025
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1988",19.4640850060838
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1988",36.0542041999659
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1989",20.1196640061705
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1989",20.6807891310513
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1989",36.0448775062288
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1990",20.2282007668971
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1990",20.6825415788225
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1990",35.3442845481901
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1991",20.0372725845277
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1991",21.1358895831907
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1991",34.5943329121983
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1992",20.1752749451062
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1992",21.8540386706169
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1992",35.3102516115521
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1993",20.9271889849839
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1993",22.39778069527
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1993",35.4367802397334
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1994",21.0055954606713
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1994",22.9243242544695
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1994",36.350282413775
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1995",21.1947289930354
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1995",23.9193178875115
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1995",36.2317964763582
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1996",22.1581922819219
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1996",24.3555919230167
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1996",37.5483057198159
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1997",22.6261063873913
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1997",24.5012624295321
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1997",38.0507106561634
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1998",22.8480194500404
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1998",24.0871635579373
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1998",38.7414356768125
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","1999",22.8129915957335
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","1999",24.1705140253501
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","1999",39.8095098635979
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2000",23.8226631657972
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2000",25.1356263665343
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2000",40.252041435365
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2001",23.1207767092832
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2001",24.0263205970284
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2001",40.1804020879163
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2002",23.1099317901741
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2002",24.8044485546203
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2002",40.2160091678863
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2003",23.5498257223096
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2003",24.087602461172
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2003",40.8380479424182
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2004",23.7030905208522
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2004",24.1851096680153
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2004",42.3491537974449
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2005",24.0516261116535
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2005",23.8077193547007
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2005",42.4307254406902
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2006",23.6830075326976
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2006",23.4631106817828
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2006",41.9179092131891
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2007",24.0019572472797
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2007",24.9655323720866
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2007",41.5350326094409
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2008",23.6199964320115
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2008",25.1556471063936
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2008",38.7937527313763
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2009",20.7753210803902
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2009",24.7051245415988
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2009",36.6939457566489
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2010",21.9809998716978
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2010",25.9277380343968
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2010",37.2651118480791
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2011",20.7400600587398
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2011",26.328432421384
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2011",36.5462632586225
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2012",18.3350074898999
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2012",27.5249111256568
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2012",35.6957922313282
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2013",19.0317653199143
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2013",28.2809135069634
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2013",36.2917320892338
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2014",18.988506974901
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2014",28.8904182179661
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2014",36.5659432154415
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2015",16.4049262951275
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2015",29.7431797715164
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2015",37.3153493875574
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2016",15.0091243290661
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2016",29.9639575940681
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2016",37.6780522683477
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2017",14.5992984336744
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2017",29.5996900654484
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2017",38.0275426846957
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2018",13.9811063927812
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2018",32.8785303959255
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2018",38.9229306048036
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2019",11.9385847306276
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2019",34.0399970717291
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2019",38.8960910389688
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2020",9.68658278399215
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2020",33.2875681645953
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2020",34.1111521485415
+"EIA","Historic","United States","Primary Energy|Coal","EJ/yr","2021",11.1279716033336
+"EIA","Historic","United States","Primary Energy|Gas","EJ/yr","2021",33.0682115022771
+"EIA","Historic","United States","Primary Energy|Oil","EJ/yr","2021",37.1830559341974

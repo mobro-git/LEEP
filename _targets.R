@@ -53,12 +53,12 @@ tar_plan(
     models_eia_only = c("EIA"),
 
     # scenarios
-    main_scenarios = c("Reference","IRA"),
+    main_scenarios = c("Pre-IRA","IRA"),
     ira_only = c("IRA", "Historic"),
     historic_only = c("Historic"),
 
-    hist_mod_scenarios = c("Reference","IRA"),
-    hist_mod_scenarios2 = c("Historic", "Reference", "IRA"),
+    hist_mod_scenarios = c("Pre-IRA","IRA"),
+    hist_mod_scenarios2 = c("Historic", "Pre-IRA", "IRA"),
 
     leep_sens = c("IRA.Low","IRA.High", "Historic"),
 
