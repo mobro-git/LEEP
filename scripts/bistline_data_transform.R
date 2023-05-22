@@ -234,6 +234,7 @@ all_data = rbind(all_modeled, indirect_long, summed_emissions) %>%
 write.csv(all_data, "data-raw/model-runs/bistline_ira_tall.csv", row.names = FALSE)
 
 
+########################################################### Historic
 
 #############################
 ##
@@ -258,7 +259,7 @@ hist_generation <- read_xlsx(historic_wrkbk, sheet = "generation") %>%
   relocate_standard_col_order()
 
 hist_capacity_change <- read_xlsx(historic_wrkbk, sheet = "capacity change") %>%
-  pivot_longer(cols = 5:77, names_to = "year", values_to = "value") %>%
+  pivot_longer(cols = 5:76, names_to = "year", values_to = "value") %>%
   mutate(region = "United States") %>%
   mutate(model = "EIA") %>%
   relocate_standard_col_order()
