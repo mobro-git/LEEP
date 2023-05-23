@@ -72,3 +72,22 @@ stackbar,6,Capacity Additions Alt,Capacity Additions|Electricity|Wind|Average 20
 stackbar,6,Capacity Additions Alt,Capacity Retirements|Electricity|Wind|Average 2021-2035,0,Wind,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,6,Capacity Additions Alt,Capacity Additions|Electricity|Storage Capacity|Average 2021-2035,0,Storage,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,6,Capacity Additions Alt,Capacity Retirements|Electricity|Storage Capacity|Average 2021-2035,0,Storage,usa,models_leep,fives,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,7,Emissions Direct,Emissions|CO2|Energy|Demand|Transportation|Oil,0,Oil,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,7,Emissions Direct,Emissions|CO2|Energy|Demand|Transportation|Gas,0,Gas,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,7,Emissions Direct,Emissions|CO2|Energy|Demand|Industry|Oil,0,Oil,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,7,Emissions Direct,Emissions|CO2|Energy|Demand|Industry|Gas,0,Gas,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,7,Emissions Direct,Emissions|CO2|Energy|Demand|Industry|Coal,0,Coal,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,7,Emissions Direct,Emissions|CO2|Energy|Demand|Buildings|Commercial|Oil,0,Oil,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,7,Emissions Direct,Emissions|CO2|Energy|Demand|Buildings|Commercial|Gas,0,Gas,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,7,Emissions Direct,Emissions|CO2|Energy|Demand|Buildings|Commercial|Coal,0,Coal,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,7,Emissions Direct,Emissions|CO2|Energy|Demand|Buildings|Residential|Oil,0,Oil,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,7,Emissions Direct,Emissions|CO2|Energy|Demand|Buildings|Residential|Gas,0,Gas,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,7,Emissions Direct,Emissions|CO2|Energy|Demand|Buildings|Residential|Coal,0,Coal,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,7,Emissions Direct,Emissions|CO2|Energy|Supply|Electricity|Oil,0,Oil,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,7,Emissions Direct,Emissions|CO2|Energy|Supply|Electricity|Gas,0,Gas,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,7,Emissions Direct,Emissions|CO2|Energy|Supply|Electricity|Coal,0,Coal,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,7,Emissions Direct,Emissions|CO2|Energy|Supply|Electricity|Geothermal,0,Geothermal,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,8,Emissions Indirect,Emissions|CO2|Energy|Demand|Buildings|Residential|Indirect,0,Indirect,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,8,Emissions Indirect,Emissions|CO2|Energy|Demand|Buildings|Commercial|Indirect,0,Indirect,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,8,Emissions Indirect,Emissions|CO2|Energy|Demand|Industry|Indirect,0,Indirect,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed
+stackbar,8,Emissions Indirect,Emissions|CO2|Energy|Demand|Transportation|Indirect,0,Indirect,usa,models_ghgi_only,five_twentyone,historic_only,grid,stack,variable,value,year,model,variable_rename,region,fixed

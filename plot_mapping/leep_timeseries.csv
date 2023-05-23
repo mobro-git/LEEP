@@ -32,3 +32,5 @@ timeseries,18,EV Share,Energy Service|Transportation|EV|Sales Share,EV Share,0,u
 timeseries,19,Industry - Fossil,Final Energy|Industry|Fossil,Fossil,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
 timeseries,20,Industry - Electricity,Final Energy|Industry|Electricity,Electricity,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
 timeseries,21,Industry - Alternative,Final Energy|Industry|Alternative Energy,Alternative Energy,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,22,Nox,Emissions|NOx|Energy|Supply|Electricity,NOx,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,23,Sox,Emissions|Sulfur|Energy|Supply|Electricity,Sox,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed

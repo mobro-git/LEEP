@@ -47,11 +47,12 @@ tar_plan(
     # Use models_leep for all initial plots
     # USREP-ReEDS, GCAM-PNNL, OP-NEMS - averages for CAP-ADD
     models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-EMF", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
-                    "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA-LTS", "EIA-STEO", "IEA"),
+                    "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA-LTS", "EIA-STEO", "IEA","EPA"),
 
     #models_leep_sens = c("USREP-ReEDS", "ReEDS", "Scout v0.8", "GCAM-USA v6.0", "OP-NEMS"),
     models_lts = c("GCAM-LTS", "OP-NEMS-LTS", "EIA-LTS"),
     models_eia_only = c("EIA"),
+    models_ghgi_only = c("EPA-GHGI"),
 
     # scenarios
     main_scenarios = c("Pre-IRA","IRA"),
@@ -78,7 +79,8 @@ tar_plan(
     fives = c(seq(2005,2020,by = 1),seq(2025,2050,by = 5)),
     historic = c(seq(2005,2035,by = 1)),
     ghgi_yrs = c(seq(1990,2021,by = 1)),
-    long_history = c(seq(1950,2020,by = 1))
+    long_history = c(seq(1950,2020,by = 1)),
+    five_twentyone = c(2005, 2021)
 
   ),
 
