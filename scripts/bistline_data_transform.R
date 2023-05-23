@@ -137,13 +137,24 @@ fossil <- read_xlsx(bistline_wrkbk, sheet = "fossil") %>%
   relocate_standard_col_order() %>%
   select(-`variable-bistline`)
 
+#####
+##
+## emissions sensitivities
+##
+#####
+
+hi_low <- read_xlsx(bistline_wrkbk, sheet = "emissions sensitivities") %>%
+  pivot_longer(cols = 7:12, names_to = "year", values_to = "value") %>%
+  relocate_standard_col_order() %>%
+  select(-`variable-bistline`)
+
 #############################
 ##
 ## all modeled data
 ##
 #############################
 
-all_modeled = rbind(gen_cap, emissions, elc, ev_share, fossil) %>%
+all_modeled = rbind(gen_cap, emissions, elc, ev_share, fossil, hi_low) %>%
   filter(!is.na(value))
 
 #############################
