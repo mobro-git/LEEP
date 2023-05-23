@@ -2,11 +2,11 @@ name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iterat
 "%|||%"|function|28bdb9a1b5a6acc2|||||||||||||||
 %forwhich%|function|9320d517f0334dd8|||||||||||||||
 .__DEVTOOLS__|object|4da1907b175080ea|||||||||||||||
-.Random.seed|object|9e3bf4d60a147c0c|||||||||||||||
+.Random.seed|object|013ffd74395b50d0|||||||||||||||
 all_blank_or_zero|function|8a29bb3328acf8f3|||||||||||||||
-all_calculated|stem|f6a67ac11c13cd9a|3bab5870f004d48e|77094e3bb4be7ddf|677961423||t19496.6607038504s|c7e27ec85d323791|1521|rds|local|vector|||0||
-all_calculated_var|stem|a7db3ddbc4eff5ec|7b3f535b03d0e0d2|dc565910e40b6adb|738427922||t19496.6493247613s|4f479f57c0215211|401|rds|local|vector|||0||
-annual_growth_rate_var|stem|2b16f91bcb3935df|ccf614428c8bf668|251aa7469274456e|-1247063012||t19496.6492257348s|cc5b6dbe9d597cc2|424|rds|local|vector|||0.03||
+all_calculated|stem|bce747da1a39f35c|3bab5870f004d48e|4f27949f40d8733e|677961423||t19499.893339891s|229909e936d4a569|1559|rds|local|vector|||0||
+all_calculated_var|stem|1f83598582db0e38|7b3f535b03d0e0d2|dffaa717518b714c|738427922||t19499.8933415794s|0dd407bf2b677bc2|418|rds|local|vector|||0.02||
+annual_growth_rate_var|stem|2b16f91bcb3935df|ccf614428c8bf668|251aa7469274456e|-1247063012||t19499.893238307s|cc5b6dbe9d597cc2|424|rds|local|vector|||0.01||
 annual_growth_rate_var_list|stem|d59ee63e8859ec75|2d6e1bec5a32395c|ef46db3751d8e999|-1047866742|data-raw/process_data/annualgrowthrate_variables.csv|t19493.7257966274s|76d5158c9904ac60|264|file|local|vector|||0||
 approved_facet_type|function|6a3d5097fcc9c726|||||||||||||||
 approved_plot_type|function|ff07e071f42aac65|||||||||||||||
@@ -21,27 +21,27 @@ assert_vars_in_template_or_calculated|function|a27fb0a0e23f6333|||||||||||||||
 assert_years_in_config_or_numeric|function|4f2a38a34093f903|||||||||||||||
 band|object|0b30114f49c97919|||||||||||||||
 band_figure_specific_data_processing|function|498aed9f75503021|||||||||||||||
-band_grid_fn|function|56445f6c67ee4908|||||||||||||||
-band_wrap_fn|function|8823e5a88a6054cc|||||||||||||||
-bld_ts|stem|794be3614d98cc38|150c81dd044ff90e|c02d9bfdc0392911|-1530997140||t19496.6503091449s|a1c456b03adbfbf8|44|rds|local|vector|||1.83|Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.|
+band_grid_fn|function|6e4145ca611b67ee|||||||||||||||
+band_wrap_fn|function|4fce7e7bc82c117d|||||||||||||||
+bld_ts|stem|794be3614d98cc38|150c81dd044ff90e|8c7b113c0d8e0b45|-1530997140||t19499.8939701467s|a1c456b03adbfbf8|44|rds|local|vector|||1.16|Unknown or uninitialised column shape.. Unknown or uninitialised column position.|
 bottom1|object|6280d64eb594116d|||||||||||||||
 calc_var_csv_path|function|8a0b0577f8cba34b|||||||||||||||
 call_plot_fn|function|470ab27e7900750f|||||||||||||||
 check_dat_before_plotting|function|cf10600ba99b19a9|||||||||||||||
 check_figure_specification|function|0d0d78e7a57bd609|||||||||||||||
 check_stop|function|14de8044aa3a03d5|||||||||||||||
-clean_data|stem|f0c5b5f7fa23f3d1|a7c3ba58ae7dbe47|5372b26f1f8adf29|-1026135149||t19496.6610516282s|40d356bafd2dd1dd|747115|rds|local|vector|||19.25|1m22mSupplying ... without names was deprecated in tidyr 1.0.0.36mℹ39m Please specify a name for each selection.36mℹ39m Did you want data  cyear, value36mℹ39m The deprecated feature was likely used in the 34mLEEP39m package.  Please report the issue to the authors.|
-clean_data_index|stem|cb6d23ab5d1c77d2|08bea06ecba10c80|acd5e7e340577f83|2019267802||t19496.6501519287s|01682bceb1d7f954|25288|rds|local|vector|||1.07||
+clean_data|stem|6c3dbaa4d5389806|d2a9065fa5bbd4d6|159a851c8a9de7a1|-1026135149||t19499.8937303923s|6be3c58dadd18845|857945|rds|local|vector|||26.72|1m22mReturning more or less than 1 row per summarise group was deprecated indplyr 1.1.0.36mℹ39m Please use reframe instead.36mℹ39m When switching from summarise to reframe, remember that reframe  always returns an ungrouped data frame and adjust accordingly.36mℹ39m The deprecated feature was likely used in the 34mLEEP39m package.  Please report the issue to the authors.. 1m22mSupplying ... without names was deprecated in tidyr 1.0.0.36mℹ39m Please specify a name for each selection.36mℹ39m Did you want data  cyear, value36mℹ39m The deprecated feature was likely used in the 34mLEEP39m package.  Please report the issue to the authors.|
+clean_data_index|stem|19bd219b5a0c792c|08bea06ecba10c80|274d64683c1acc25|2019267802||t19499.893918768s|a115ac1fdedd830a|27686|rds|local|vector|||1.07||
 clean_text_for_filename|function|6dd0b58802c7735b|||||||||||||||
 clean_text_for_md|function|d6603a7ab6c9a0de|||||||||||||||
-color_map|object|3db3200489257b38|||||||||||||||
+color_map|object|6788862e92ed41e0|||||||||||||||
 complete_implicit_na|function|edefecf8185907ca|||||||||||||||
-cone|object|9193875023f1d307|||||||||||||||
+cone|stem|794be3614d98cc38|1adb55f4ef685c6a|f594f924d6915883|1799025940||t19499.8938556247s|a1c456b03adbfbf8|44|rds|local|vector|||10.78|Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown|
 cone_uncertainty_figure_specific_data_processing|function|15ef96323bb79e08|||||||||||||||
-cone_uncertainty_grid_fn|function|ad0149bfd7d26684|||||||||||||||
-cone_uncertainty_single_fn|function|01538996dabfdff1|||||||||||||||
-cone_uncertainty_wrap_fn|function|af186a4c74ca3ec6|||||||||||||||
-config|stem|383949610543e0e4|7f116aadbd87dd1c|60657f4ab9d07b8e|1264390909||t19496.6607069101s|47353470805eba3c|60708|rds|local|vector|||0.11||
+cone_uncertainty_grid_fn|function|daf1aaff46a27157|||||||||||||||
+cone_uncertainty_single_fn|function|491913b3ae04803d|||||||||||||||
+cone_uncertainty_wrap_fn|function|d1e0404f79786ae5|||||||||||||||
+config|stem|5a0dda7303b0a281|e4ed53fe44de6dce|76a94a76d4923394|1264390909||t19499.8933428971s|574680022c45fbb6|60809|rds|local|vector|||0.03||
 conv_units_case|function|2f5df7cef2e056ad|||||||||||||||
 convert_units|function|4fe7079ce3a837bb|||||||||||||||
 corrplot|object|937a2188c51d5076|||||||||||||||
@@ -49,56 +49,56 @@ corrplot_figure_specific_data_processing|function|23a24dd15ecde7e0||||||||||||||
 corrplot_lower_fn|function|ac90122eed948fe9|||||||||||||||
 country_abbr|function|ae7f831619664f2d|||||||||||||||
 create_folders|function|c7b5dfe8e8c38aaf|||||||||||||||
-create_graph|function|80e2845b0c513093|||||||||||||||
+create_graph|function|5ceebf6ba50c4edb|||||||||||||||
 create_graph_list|function|b533346ca8a78f63|||||||||||||||
-create_subpalettes|function|ad55a527027be3d9|||||||||||||||
+create_subpalettes|function|c1d878b4c0b4af8b|||||||||||||||
 cumulate|function|d2a32fcd881895a9|||||||||||||||
-cumulative_var|stem|9e264a76ef5fb161|6f568addbab17bb7|7049f10a873ca00f|-802968985||t19496.6492311675s|e8324796932fa831|400|rds|local|vector|||0.05||
+cumulative_var|stem|9e264a76ef5fb161|6f568addbab17bb7|7049f10a873ca00f|-802968985||t19499.8932375854s|e8324796932fa831|400|rds|local|vector|||0.02||
 cumulative_var_list|stem|7ff9797507a15215|3f5dd26ad0381bb4|ef46db3751d8e999|-232057156|data-raw/process_data/cumulative_variables.csv|t19487.6458296593s|a60e113d72b0b5b8|248|file|local|vector|||0||
-data_files|stem|d89c1b93a1ace621|ea2c63a76a444ff2|e994e380adf2f7b6|31038078|data-raw/model-runs/2023-03-30_data_IAMC_format-IRA_USAonly.xlsx*data-raw/model-runs/bistline_ira_tall.csv*data-raw/model-runs/EIA-IEA-bistline_historic.csv*data-raw/model-runs/EIAinEMF37.csv*data-raw/model-runs/EPA-GHGI.csv*data-raw/model-runs/GCAM-USA-v6-IRA-national-05042023.csv*data-raw/model-runs/LTS_data_small.xlsx*data-raw/model-runs/OP-NEMS IRA 5cenario outputs 05-11-23.xlsx*data-raw/model-runs/ReEDS_compiled.csv*data-raw/model-runs/usrep_reeds_allscen.csv|t19496.6586616936s|0c8d42054a1a88d9|4803128|file|local|vector|||0.03||
-data_folder|stem|d89c1b93a1ace621|97416003d6084b3e|79bb15b6a98b2097|-1589943188|data-raw/model-runs|t19496.6586616936s|0c8d42054a1a88d9|4803128|file|local|vector|||0||
+data_files|stem|deed28f27ceb5d72|ea2c63a76a444ff2|716950e6f3aed49c|31038078|data-raw/model-runs/2023-03-30_data_IAMC_format-IRA_USAonly.xlsx*data-raw/model-runs/AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx*data-raw/model-runs/bistline_ira_tall.csv*data-raw/model-runs/EIA-IEA-bistline_historic.csv*data-raw/model-runs/EIAinEMF37.csv*data-raw/model-runs/EPA-GHGI.csv*data-raw/model-runs/EPA-nonco2.xlsx*data-raw/model-runs/GCAM-USA-v6-IRA-national-05042023.csv*data-raw/model-runs/LTS_data_small.xlsx*data-raw/model-runs/OP-NEMS IRA 5cenario outputs 05-11-23.xlsx*data-raw/model-runs/ReEDS_compiled.csv*data-raw/model-runs/usrep_reeds_allscen.csv|t19499.8927140096s|8c6e7c6aacf1fc22|5411074|file|local|vector|||0.01||
+data_folder|stem|deed28f27ceb5d72|97416003d6084b3e|79bb15b6a98b2097|-1589943188|data-raw/model-runs|t19499.8927140096s|8c6e7c6aacf1fc22|5411074|file|local|vector|||0||
 data_from_graph|function|ee5b2c612805abc4|||||||||||||||
-data_long|stem|7eeb49efaff628e2|eab797916025fe48|76306884ca451c61|1053362806||t19496.6608228211s|3437ca71d3a3f6c4|673351|rds|local|vector|||0.5||
-data_long_read|stem|f2bc4ef4a607a577|bccb3a0cb7aaa375|2c5efef86332f951|1127857077||t19496.6608114713s|d6162e4871d36736|687809|rds|local|vector|||8.4||
-data_min|stem|b8b8916ebcfe68d2|cc98cc8428be0606|8fa3cbe41441a6f6|818268966||t19496.6493231901s|fea2aca0ca5fd6f2|816244|rds|local|vector|||3.26||
-data_output|stem|0f61ce6232129878|323b2640a6b2f130|e57d073cabad1e75|-749723440||t19496.6501388714s|3da8535f5871aaba|730430|rds|local|vector|||0.36||
-data_raw|stem|238a3b0bf7f0e179|e68cfe4970eb113f|6b826d5ffaec098f|648730325||t19496.6492701764s|be3f31d7d322bc4a|857833|rds|local|vector|||2.36||
-data_wide|stem|310f7c22d7d4c308|2bc42324074a329a|65e54b87cf3b5fbd|742754411||t19496.6503186387s|68f636660eb6c438|728520|rds|local|vector|||0.47|1m22mValues from value are not uniquely identified output will contain listcols.36m39m Use values_fn  list to suppress this warning.36m39m Use values_fn  summary_fun to summarise duplicates.36m39m Use the following dplyr code to identify duplicates.  data   dplyrgroup_bymodel, scenario, unit, datasrc, variable, region, year   dplyrsummarisen  dplyrn, .groups  drop   dplyrfiltern  1L|
+data_long|stem|649bfc36692e3ef2|eab797916025fe48|0540fcb9725ad222|1053362806||t19499.8934143498s|b39b5b73d601af06|775710|rds|local|vector|||0.25||
+data_long_read|stem|b707b5ec99804354|bccb3a0cb7aaa375|b7b4b076c6700874|1127857077||t19499.8934019023s|7e52ef84a82ecc3b|791761|rds|local|vector|||4.41||
+data_min|stem|0ceda532cb4d8d98|cc98cc8428be0606|1f30726578142290|818268966||t19499.893297683s|c93a196260ba2ff3|934461|rds|local|vector|||3.65||
+data_output|stem|9f6ff05e8d8faee1|28a999f858de6015|8dd1995074eae228|-749723440||t19499.8941570235s|7eb9cb72f9a2ec41|857843|rds|local|vector|||0.34||
+data_raw|stem|ba78e770378abcce|e68cfe4970eb113f|b5bd994b301dc05a|648730325||t19499.8933394474s|df28e38773b04392|1014496|rds|local|vector|||2.68||
+data_wide|stem|9f6ff05e8d8faee1|2bc42324074a329a|8ed20f7952bf3280|742754411||t19499.8938627551s|7eb9cb72f9a2ec41|857843|rds|local|vector|||0.25|1m22mValues from value are not uniquely identified output will contain listcols.36m39m Use values_fn  list to suppress this warning.36m39m Use values_fn  summary_fun to summarise duplicates.36m39m Use the following dplyr code to identify duplicates.  data   dplyrgroup_bymodel, scenario, unit, datasrc, variable, region, year   dplyrsummarisen  dplyrn, .groups  drop   dplyrfiltern  1L|
 def_from_variable|function|a5bdc8a40c061104|||||||||||||||
 def_from_variable_factory|function|3d4b34e942400071|||||||||||||||
 def_var_from_variable|function|6aecc0579a5f70af|||||||||||||||
 def_x_from_variable_factory|function|558bdc79a17c46b1|||||||||||||||
 diff_bar_figure_specific_data_processing|function|738fdd2bd119c37e|||||||||||||||
-diffbar|object|cd21c69edc622281|||||||||||||||
+diffbar|stem|794be3614d98cc38|c97b121e63a7d26f|fdf4313a93274a53|347903424||t19499.8941482885s|a1c456b03adbfbf8|44|rds|local|vector|||1.86|Unknown or uninitialised column shape.|
 distinct_models_in_data|function|89a0baa99e36321b|||||||||||||||
 fig_type_obj|object|7878d816c0ecaf3c|||||||||||||||
-figmap_bld_timeseries|stem|b9005443daffc55d|4f67ade9bd105ccf|e4eaf75406f2a40c|1626285532||t19496.6494035576s|0d280a2fc3631f0a|663|rds|local|vector|||0.09||
+figmap_bld_timeseries|stem|b9005443daffc55d|4f67ade9bd105ccf|3ee3960323130de5|1626285532||t19499.8934051856s|0d280a2fc3631f0a|663|rds|local|vector|||0.06||
 figmap_csv_bld_timeseries|stem|9f86709925b05709|a75c59f73251d6ce|f831698a771cebac|1193803269|plot_mapping/bld_timeseries.csv|t19494.7435853472s|928f28f6ec044076|1081|file|local|vector|||0||
-figmap_csv_leep_cone|stem|2ce099f44bd69076|e009ef1c328e2e8b|f831698a771cebac|309168147|plot_mapping/leep_cone.csv|t19493.6525582503s|54a9460972ef4726|6909|file|local|vector|||0||
-figmap_csv_leep_diffbar|stem|4ae2548768c4c950|dec383c2759c8e69|f831698a771cebac|1941850072|plot_mapping/leep_diffbar.csv|t19480.7898541407s|af3c8df1178dfb66|1164|file|local|vector|||0||
-figmap_csv_leep_stackbar|stem|50b9c5231c769756|64105042bb9b38d4|f831698a771cebac|-1557044331|plot_mapping/leep_stackbar.csv|t19480.7898548545s|1476f25704154386|928|file|local|vector|||0||
-figmap_csv_leep_timeseries|stem|a3430045d4038f18|27eca4a16d6560ce|f831698a771cebac|1645029888|plot_mapping/leep_timeseries.csv|t19494.7014636176s|77e10a16c5c70e80|5366|file|local|vector|||0||
+figmap_csv_leep_cone|stem|9e5f1c6066b29bc1|e009ef1c328e2e8b|f831698a771cebac|309168147|plot_mapping/leep_cone.csv|t19499.7817855445s|95722f9bc92966bd|9033|file|local|vector|||0||
+figmap_csv_leep_diffbar|stem|d06521b5f2d866df|dec383c2759c8e69|f831698a771cebac|1941850072|plot_mapping/leep_diffbar.csv|t19499.8699155891s|1e0c41a98502c370|1161|file|local|vector|||0||
+figmap_csv_leep_stackbar|stem|378a5aa400c44d75|64105042bb9b38d4|f831698a771cebac|-1557044331|plot_mapping/leep_stackbar.csv|t19499.5895310014s|38dd480405b4406c|13483|file|local|vector|||0||
+figmap_csv_leep_timeseries|stem|19521cbd667f8d34|27eca4a16d6560ce|f831698a771cebac|1645029888|plot_mapping/leep_timeseries.csv|t19499.7817858697s|fcebb8f625027f74|6047|file|local|vector|||0||
 figmap_csv_path|function|5fe106840baf4097|||||||||||||||
-figmap_csv_test_diffbar|stem|9cc8e9f9f90bfae0|f60857958a0bb9c5|f831698a771cebac|-1735121653|plot_mapping/test_diffbar.csv|t19474.8549211786s|e0b8c76e5f999237|2272|file|local|vector|||0||
-figmap_leep_cone|stem|789085f3de2f3d93|98a978302db70f23|b10fae5ea80999aa|-1722128459||t19496.6493311293s|688e23f32551f9a9|1016|rds|local|vector|||0.1|lengthx  2  1 in coercion to logical1. lengthx  2  1 in coercion to logical1|
-figmap_leep_diffbar|stem|f27977adaa9af13c|e3d219ffe84971d3|8639cd20246fc063|-1548579252||t19496.6493267826s|a82fd942818cd8aa|726|rds|local|vector|||0.09||
-figmap_leep_stackbar|stem|3832e479d26b27ae|288d62734245b8f0|c3e9c9358bcbb783|1923386432||t19496.6494020876s|22b4442571f78ea6|657|rds|local|vector|||0.08||
-figmap_leep_timeseries|stem|6f6feb44ab8c37b6|e43d7a33a8e7d10c|1c0a70b05b5b7749|1324003666||t19496.6493292841s|dee36e414ae195bd|993|rds|local|vector|||0.16|lengthx  2  1 in coercion to logical1|
+figmap_csv_test_diffbar|stem|2d47c3b94d2c0529|f60857958a0bb9c5|f831698a771cebac|-1735121653|plot_mapping/test_diffbar.csv|t19499.8678172253s|9f93cdbb878ee5e8|2250|file|local|vector|||0||
+figmap_leep_cone|stem|389ad26188a338b6|98a978302db70f23|f6d8d550a69f9f61|-1722128459||t19499.8933441288s|66ab4bec9797c563|1034|rds|local|vector|||0.08|lengthx  2  1 in coercion to logical1. lengthx  2  1 in coercion to logical1|
+figmap_leep_diffbar|stem|f69cdcfb8b4fb7a6|e3d219ffe84971d3|9edb940b482a0d83|-1548579252||t19499.8934063926s|b3adb536dc76b5a2|733|rds|local|vector|||0.06||
+figmap_leep_stackbar|stem|9fa8e6c916ae6c2b|288d62734245b8f0|150ab56e83c1bb4d|1923386432||t19499.8933453705s|4f142a551b623cd1|1469|rds|local|vector|||0.06|lengthx  3  1 in coercion to logical1. lengthx  3  1 in coercion to logical1|
+figmap_leep_timeseries|stem|265208cfedf95b5b|e43d7a33a8e7d10c|a924e484e112c56d|1324003666||t19499.8934040883s|7b65b95af8c30958|1113|rds|local|vector|||0.06|lengthx  3  1 in coercion to logical1|
 figmap_list|object|ad00902912d7a51e|||||||||||||||
 figmap_list_csv|object|1ac2e8083fb79ae2|||||||||||||||
-figmap_test_diffbar|stem|dc471596d7484b5a|d40243947b606934|dae58524ebd35442|1969423106||t19496.6494050674s|c92b8651eccb506b|746|rds|local|vector|||0.1||
+figmap_test_diffbar|stem|35f89f7ec430c922|d40243947b606934|278d7d3f9715ca60|1969423106||t19499.8934029467s|77f1a8cb303e5572|743|rds|local|vector|||0.07||
 find_color|function|fed7e9254fdc80a8|||||||||||||||
 flatten_units|function|a348e9144396b3f8|||||||||||||||
 get_plot_fn|function|4642ef943da39ede|||||||||||||||
 handle_units|function|cd807d5d217e6e57|||||||||||||||
 import_figure_csv|function|76b07f00b612dfb3|||||||||||||||
 index_data_long|function|b09e251d60930440|||||||||||||||
-index_var|stem|2bb32d89815a3794|326d8b3d709ca39e|57e0a85cdf7b9942|-584388920||t19496.6492237048s|2cabad3ee722f40e|486|rds|local|vector|||0.01||
+index_var|stem|2bb32d89815a3794|326d8b3d709ca39e|57e0a85cdf7b9942|-584388920||t19499.8932300989s|2cabad3ee722f40e|486|rds|local|vector|||0.05||
 index_var_list|stem|ee149b6b69ec4ceb|7d75ae3706d9cda3|ef46db3751d8e999|-325556799|data-raw/process_data/index_variables.csv|t19487.6465154594s|c91a6b892b3e25c8|681|file|local|vector|||0||
 install_extra_units|function|7b9211507bba1fb1|||||||||||||||
 make_agr_variables|function|a896dce4e42d8259|||||||||||||||
 make_calculated_vars|function|b096848054616524|||||||||||||||
-make_clean_data|function|60fdac31b303ac34|||||||||||||||
+make_clean_data|function|42ed1a2d965ed23c|||||||||||||||
 make_cumulative_variables|function|2ef876e5d094f48d|||||||||||||||
 make_data_long|function|8d53c840ccc98800|||||||||||||||
 make_ipcc_data|function|f5946445484be194|||||||||||||||
@@ -118,17 +118,17 @@ nolegend|object|6d1dd44ee89cdc2c|||||||||||||||
 normalize_units|function|bab945d02482f2de|||||||||||||||
 one|function|7d827a448c1c59eb|||||||||||||||
 pdf_plots|function|71c4471da8307e3d|||||||||||||||
-per_diff_var|stem|2b1f9356162e9f7e|013cadb21333701f|8a7413febb19d3e5|943970586||t19496.6492242331s|19e426cce5adb19f|489|rds|local|vector|||0.02||
-per_diff_var_list|stem|ae16a9f8abf21099|9d4cafcc9bd542b9|ef46db3751d8e999|1905006288|data-raw/process_data/per_diff_variables.csv|t19494.7420119793s|ba984c08f1495aa7|768|file|local|vector|||0.01||
-plotly_sankey_fn|function|78bd58f57e55d8f0|||||||||||||||
+per_diff_var|stem|2b1f9356162e9f7e|013cadb21333701f|8a7413febb19d3e5|943970586||t19499.8932396527s|19e426cce5adb19f|489|rds|local|vector|||0.03||
+per_diff_var_list|stem|ae16a9f8abf21099|9d4cafcc9bd542b9|ef46db3751d8e999|1905006288|data-raw/process_data/per_diff_variables.csv|t19494.7420119793s|ba984c08f1495aa7|768|file|local|vector|||0||
+plotly_sankey_fn|function|9ba43da02cdf4717|||||||||||||||
 plotly_sankey_fn_v2|function|26fc44acb94a62fc|||||||||||||||
 png_plots|function|23129ceb23325153|||||||||||||||
 preliminary_data_processing_for_plotting|function|c105a9060ecaaa98|||||||||||||||
-print_graph|function|6563e38317130c33|||||||||||||||
+print_graph|function|66d9f2e20545f8b6|||||||||||||||
 process_data_file|function|c5a64c2713dba198|||||||||||||||
 process_minimal_from_raw|function|211bef39d92c9438|||||||||||||||
 process_special_cases|function|769a11f3181de215|||||||||||||||
-ratio_var|stem|c31ab0c56fa87869|b3c6235d8cc77c85|269273f1ce20f107|943594905||t19496.649231809s|b61fd30e50026aef|412|rds|local|vector|||0.02||
+ratio_var|stem|c31ab0c56fa87869|b3c6235d8cc77c85|269273f1ce20f107|943594905||t19499.8932389388s|b61fd30e50026aef|412|rds|local|vector|||0.02||
 ratio_var_list|stem|c35e16ca0adfe6b6|72b9b654b743b28b|ef46db3751d8e999|-253572101|data-raw/process_data/ratio_variables.csv|t19487.6475411303s|7e4b7c0c701deb20|438|file|local|vector|||0||
 read_csv_model_metadata|function|b24b9b94f32e8c58|||||||||||||||
 read_emf_template_xlsx|function|34239e6a5d728fd3|||||||||||||||
@@ -144,7 +144,7 @@ region_filter|function|c54e0ec7140dee8b|||||||||||||||
 relocate_standard_col_order|function|3fae7b5b9740d5ca|||||||||||||||
 ribbonize|function|2d4ed1cc01873f4c|||||||||||||||
 sankey|object|5d456c84f46f9d0a|||||||||||||||
-sankey_fn|function|9acf53dc265b8bae|||||||||||||||
+sankey_fn|function|b57ef03f8493c92b|||||||||||||||
 scale_subpalette|function|9904011b33b4ec22|||||||||||||||
 scale_subpalette2|function|0b0f22cd9ca7d96f|||||||||||||||
 scatter|object|9e6b123743b16f02|||||||||||||||
@@ -152,12 +152,12 @@ scatterplot_figure_specific_data_processing|function|3bb59d7c1d966076|||||||||||
 scatterplot_grid_fn|function|8062e33ccc2bdee8|||||||||||||||
 scatterplot_single_fn|function|619d079727323de3|||||||||||||||
 scatterplot_wrap_fn|function|105016aa283bed6e|||||||||||||||
-scen_mapping_csv|stem|bc95494ccf9acd38|0880799611ae5a1e|ef46db3751d8e999|-1039305582|data-raw/scenario-mapping.csv|t19494.8389036764s|4d55fa2633aced3b|5930|file|local|vector|||0||
+scen_mapping_csv|stem|225aa281cb7ecfc6|0880799611ae5a1e|ef46db3751d8e999|-1039305582|data-raw/scenario-mapping.csv|t19499.892896008s|94fa465bb2cb78c9|6102|file|local|vector|||0||
 scenario_filter|function|dc68d5024f63d800|||||||||||||||
 set_default_page_filter|function|0bc6a32a0b7240ad|||||||||||||||
 slantx|object|9fad8cd5ffeac321|||||||||||||||
 smyr_filter|function|48ceb3094bb39a84|||||||||||||||
-stackbar|object|7878d816c0ecaf3c|||||||||||||||
+stackbar|stem|794be3614d98cc38|513594b634347568|0a06fb260a755112|-450720414||t19499.8939057086s|a1c456b03adbfbf8|44|rds|local|vector|||3.67|Unknown or uninitialised column shape.. there are multiple units for Capacity Additions2. Figure not printed.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.|
 stacked_bar_batch_grid_plot_fn1|function|cc7994bfcb749536|||||||||||||||
 stacked_bar_batch_grid_plot_fn2|function|36834078d6f8f20c|||||||||||||||
 stacked_bar_batch_plot_fn|function|02fe238c044f4b17|||||||||||||||
@@ -179,25 +179,26 @@ standard_timeseries_cols|object|8b7b670350071cac|||||||||||||||
 standardize_col_names|function|e4ac0cf15ad5fa29|||||||||||||||
 standardize_row_data|function|51a6ba5df33a0399|||||||||||||||
 sub_palettes|object|377cde285109144e|||||||||||||||
-summation_var|stem|977b4afa7631eef2|4159351f4c5d18c4|32866e29e46f4973|-442781690||t19496.6606900182s|0fdb0f79fe41df31|942|rds|local|vector|||0.1||
-summation_var_list|stem|813e8ae254ba6a50|cbc4b961bc87604f|ef46db3751d8e999|540522421|data-raw/process_data/summation_variables.csv|t19496.6544347996s|35c72258979258ac|4095|file|local|vector|||0||
+summation_var|stem|993cc68670707f4a|4159351f4c5d18c4|7585a0af3bc1c4b9|-442781690||t19499.8932322439s|5a765dd53c650cd9|981|rds|local|vector|||0.03||
+summation_var_list|stem|da144b1595c97221|cbc4b961bc87604f|ef46db3751d8e999|540522421|data-raw/process_data/summation_variables.csv|t19496.6655338396s|84f54a8d0f073cf2|4427|file|local|vector|||0||
 tar_meta_stable|function|04caf1afbc9613a7|||||||||||||||
-template|stem|301debec8fca732c|223df9f554028e1f|6aa49f6d2871de78|-1092328110||t19496.6607029116s|6610d5e3584a5d24|28913|rds|local|vector|||0.01||
-template_additions|stem|266af7f2777f9e25|37a736da5e94c1df|fa9bf5321ec7e18f|158275296||t19496.6606877736s|79191eb1d1f85be6|1087|rds|local|vector|||0.7||
-template_additions_csv|stem|d18b86d9aecdba72|ecb306c3c10ee1e9|ef46db3751d8e999|-980912479|data-raw/template_additions.xlsx|t19496.6586618268s|05e6a9f05ca79316|11867|file|local|vector|||0||
-template_original|stem|928213b57d168c4f|c35caff7f75f5341|115c58b623d8f83e|-399900708||t19496.6606974478s|80736e01e662a49a|28221|rds|local|vector|||0.53||
-template_original_csv|stem|6af86bb8bd9a9b96|00f9197720237daf|ef46db3751d8e999|-1785896501|data-raw/EMF37_data_template_R2_v2.xlsx|t19496.6544345274s|2300d5f6e0ff1fc3|83154|file|local|vector|||0||
+template|stem|c71c40a335f6d3dd|223df9f554028e1f|ad74c5c13c6bff37|-1092328110||t19499.8933405412s|23deb41bad849aa8|29140|rds|local|vector|||0.01||
+template_additions|stem|e251e02c3f4f1ff3|37a736da5e94c1df|a5a0601ea367c87d|158275296||t19499.8932368996s|a9484a75f6fc0474|1567|rds|local|vector|||0.37||
+template_additions_csv|stem|6e648e052989e5af|ecb306c3c10ee1e9|ef46db3751d8e999|-980912479|data-raw/template_additions.xlsx|t19499.8656353813s|9c3712af0cb39f50|13339|file|local|vector|||0||
+template_original|stem|d72127d703d52462|c35caff7f75f5341|827c8a76d41b07f4|-399900708||t19499.8932433711s|3930ad3040e4292d|27967|rds|local|vector|||0.28||
+template_original_csv|stem|76dfb047f9762cdb|00f9197720237daf|ef46db3751d8e999|-1785896501|data-raw/EMF37_data_template_R2_v2.xlsx|t19439.6884121327s|82e8064f51425177|82435|file|local|vector|||0||
+test_diffbar|stem|794be3614d98cc38|e9c9de2f354bf894|6f2f33b650712704|-1435518514||t19499.8939563839s|a1c456b03adbfbf8|44|rds|local|vector|||3.19|Unknown or uninitialised column shape.. Unknown or uninitialised column shape.|
 theme_emf|function|0dd948303163f4c5|||||||||||||||
 time_series_figure_specific_data_processing|function|23a24dd15ecde7e0|||||||||||||||
 time_series_grid_fn|function|7aef6ca4b2fef841|||||||||||||||
-time_series_single_fn|function|43da23ebd4ae3547|||||||||||||||
+time_series_single_fn|function|04cbbbd620aab9b6|||||||||||||||
 time_series_wrap_fn|function|b583ced7e0fa54d4|||||||||||||||
 timeseries|object|7878d816c0ecaf3c|||||||||||||||
 transform_emf_to_long|function|5df42d4326a14cb4|||||||||||||||
 transform_long_to_tidy|function|dbaae86bcd43a5c6|||||||||||||||
 transform_to_national|function|3d51467cc7de5a1d|||||||||||||||
-ts|stem|794be3614d98cc38|4467530757ed887c|b00f11f98c10e2d8|657409939||t19496.6503974131s|a1c456b03adbfbf8|44|rds|local|vector|||6.78|Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.|
-unique_submissions|stem|794be3614d98cc38|17d4c8b29dc3e4ce|2601aa05fcca43a2|-1741985978||t19496.6493252977s|a1c456b03adbfbf8|44|rds|local|vector|||0.01||
+ts|stem|794be3614d98cc38|4467530757ed887c|fcd3221f237c20e2|657409939||t19499.8941263881s|a1c456b03adbfbf8|44|rds|local|vector|||13.47|Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. Unknown or uninitialised column shape.. Unknown or uninitialised column position.|
+unique_submissions|stem|794be3614d98cc38|17d4c8b29dc3e4ce|6c9ac14449c89303|-1741985978||t19499.893341172s|a1c456b03adbfbf8|44|rds|local|vector|||0.01||
 unit_name_standardize|function|34b48f4b1ff4674f|||||||||||||||
 units_package_name_aliases|object|662e8fcdea98b646|||||||||||||||
 validate_model_metadata|function|68e06b880cf64b41|||||||||||||||
