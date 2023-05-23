@@ -80,7 +80,8 @@ tar_plan(
     historic = c(seq(2005,2035,by = 1)),
     ghgi_yrs = c(seq(1990,2021,by = 1)),
     long_history = c(seq(1950,2020,by = 1)),
-    five_twentyone = c(2005, 2021)
+    five_twentyone = c(2005, 2021),
+    five_twentyone_inclusive = c(seq(2005,2021,by = 1))
 
   ),
 

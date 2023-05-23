@@ -49,3 +49,11 @@
 8,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Hydrogen,EJ/yr,1
 7,Final Energy|Transportation|Fossil,Final Energy|Transportation|Oil,EJ/yr,1
 7,Final Energy|Transportation|Fossil,Final Energy|Transportation|Gas,EJ/yr,1
+124,Emissions|CO2|Energy|Demand|Buildings|Direct,Emissions|CO2|Energy|Demand|Buildings|Residential,Mt CO2/yr,1
+124,Emissions|CO2|Energy|Demand|Buildings|Direct,Emissions|CO2|Energy|Demand|Buildings|Commercial,Mt CO2/yr,1
+124,Emissions|CO2|Energy|Demand|Buildings|Direct,Emissions|CO2|Energy|Demand|Buildings|Residential|Indirect,Mt CO2/yr,-1
+124,Emissions|CO2|Energy|Demand|Buildings|Direct,Emissions|CO2|Energy|Demand|Buildings|Commercial|Indirect,Mt CO2/yr,-1
+125,Emissions|CO2|Energy|Demand|Transportation|Direct,Emissions|CO2|Energy|Demand|Transportation,Mt CO2/yr,1
+125,Emissions|CO2|Energy|Demand|Transportation|Direct,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,-1
+126,Emissions|CO2|Energy|Demand|Industry|Direct,Emissions|CO2|Energy|Demand|Industry|Indirect,Mt CO2/yr,-1
+126,Emissions|CO2|Energy|Demand|Industry|Direct,Emissions|CO2|Energy|Demand|Industry,Mt CO2/yr,1

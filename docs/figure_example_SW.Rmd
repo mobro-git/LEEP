@@ -31,6 +31,8 @@ tar_load(figmap_leep_cone)
 tar_load(figmap_leep_timeseries)
 tar_load(figmap_leep_stackbar)
 
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+
 # convert EJ to Quad
 clean_data = clean_data %>% mutate(value = case_when(
   unit == "EJ/yr" ~ value * 0.9478,
@@ -106,7 +108,143 @@ clean_data %>% write.csv("output/data/clean_data.csv", row.names = FALSE)
 #   ymin and ymax: to manually set the y axis limits so that the axes line up across plots
 #   plot_title: manually set the plot title of the combined plot
 #   metric: what centrality metric to show on the dot plots: "mean" or "median"
+dot_plots_sens = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric, historic_coord = c(0,0), iralow_coord = c(0,0), irahigh_coord = c(0,0)) {
+  
+  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+  
+  # make the spagetti plot
+  fig = print_graph(plot_type, config, emf_data_long, figmap, figure_num, reg)
+  # update the axis range
+  fig = fig + scale_y_continuous(limits = c(ymin, ymax)) +
+      scale_alpha(range = c(0.6, 1), guide = "none") + 
+      annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historic", color = "black", alpha = 1) +
+      annotate("text", x = iralow_coord[1], y = iralow_coord[2], label = "IRA.Low", color = "#A1A1A1", alpha = 1) +
+      annotate("text", x = irahigh_coord[1], y = irahigh_coord[2], label = "IRA.High", color = "#363636", alpha = 1) +
+      theme(legend.position = "none", plot.title = element_blank())
+  
+  # pull the data from the graph and filter/summarize for 2030/2035
+  df_30 = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
+    filter(year %in% c(2030))
+  df_stat_30 = df_30 %>%
+    group_by(scenario,year,variable_rename) %>%
+    summarise(mean = mean(value, na.rm = TRUE),
+           median = median(value, na.rm = TRUE))
+  df_35 = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
+    filter(year %in% c(2035))
+  df_stat_35 = df_35 %>%
+    group_by(scenario,year,variable_rename) %>%
+    summarise(mean = mean(value, na.rm = TRUE),
+           median = median(value, na.rm = TRUE))
+  
+  # these are the summary stats we'll eventually want to overlay on the plot to highlight the efficacy of the IRA
+  # preira_mean_30 = df_stat_30[df_stat_30$scenario == "Pre-IRA","mean"]$mean
+  # ira_mean_30 = df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+  # preira_mean_35 = df_stat_35[df_stat_35$scenario == "Pre-IRA","mean"]$mean
+  # ira_mean_35 = df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+  # preira_med_30 = df_stat_30[df_stat_30$scenario == "Pre-IRA","median"]$median
+  # ira_med_30 = df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+  # preira_med_35 = df_stat_35[df_stat_35$scenario == "Pre-IRA","median"]$median
+  # ira_med_35 = df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+  # 
+  # # calculate raw differences
+  # mean_diff_30 = preira_mean_30 - ira_mean_30
+  # mean_diff_35 = preira_mean_35 - ira_mean_35
+  # med_diff_30 = preira_med_30 - ira_med_30
+  # med_diff_35 = preira_med_35 - ira_med_35
+  # 
+  # # calculate percent differences
+  # mean_pctdiff_30 = mean_diff_30 / preira_mean_30
+  # mean_pctdiff_35 = mean_diff_35 / preira_mean_35
+  # med_pctdiff_30 = med_diff_30 / preira_med_30
+  # med_pctdiff_35 = med_diff_35 / preira_med_35
+  # 
+  # # stick em all in a data frame
+  # # stats = 0
+  # stats = data.frame("year" = c(2030,2035,2030,2035), "metric" = c("mean","mean","median","median"),
+  #                    "Pre-IRA mean" = c(preira_mean_30, preira_mean_35, preira_med_30, preira_med_35),
+  #                    "IRA mean" = c(ira_mean_30, ira_mean_35, ira_med_30, ira_med_35),
+  #                    "difference" = c(mean_diff_30, mean_diff_35, med_diff_30, med_diff_35),
+  #                    "percent difference" = c(mean_pctdiff_30, mean_pctdiff_35, med_pctdiff_30, med_pctdiff_35))
+
+  # still not entirely sure what this does...
+  # subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+  
+  # a few of the ggplot lines of code vary based on the year or on the metric chosen, so conditionally choose the right one here
+  if (metric == "mean") {
+    segment_code_30 = geom_segment(data = df_stat_30, 
+                                   aes(x = year - 0.04, xend = year + 0.04, y = mean, yend = mean, color = scenario), 
+                                   size = 1)
+    segment_code_35 = geom_segment(data = df_stat_35, 
+                                   aes(x = year - 0.04, xend = year + 0.04, y = mean, yend = mean, color = scenario),
+                                   size = 1)
+    text_code = geom_text(data = df_stat_30, aes(x = year - 0.08, y = mean, color = scenario), 
+                          label = "Avg", size = 3, hjust = 0.5, angle = 90, position = position_dodge2(width = 0.05))
+  } else if (metric == "median") {
+    segment_code_30 = geom_segment(data = df_stat_30, 
+                                   aes(x = year - 0.04, xend = year + 0.04, y = median, yend = median, color = scenario), 
+                                   size = 1)
+    segment_code_35 = geom_segment(data = df_stat_35, 
+                                   aes(x = year - 0.04, xend = year + 0.04, y = median, yend = median, color = scenario), 
+                                   size = 1)
+    text_code = geom_text(data = df_stat_30, aes(x = year - 0.08, y = median, color = scenario), 
+                          label = "Med", size = 3, hjust = 0.5, angle = 90, position = position_dodge2(width = 0.05))
+  }
+  
+  # dot plot for 2030
+  dots_30 = ggplot() +
+    geom_point(data = df_30, aes(x = year, y = value, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = 0.05)) +
+    segment_code_30 +
+    #text_code +
+    scale_x_continuous(breaks = c(2030), labels = c("2030"), limits = c(2029.9, 2030.1)) +
+    scale_y_continuous(limits = c(ymin, ymax)) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions Sensitivity") +
+    theme(panel.grid = element_blank(), plot.title = element_blank(),
+          axis.text.y = element_blank(),
+          axis.title.y = element_blank(), axis.title.x = element_blank(),
+          axis.ticks = element_blank(), panel.border = element_blank(),
+          legend.position = "none", plot.margin = margin(0,0,0,0))
+  
+  # dot plot for 2035
+  dots_35 = ggplot() +
+    geom_point(data = df_35, aes(x = year, y = value, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = 0.05)) +
+    segment_code_35 +
+    scale_x_continuous(breaks = c(2035), labels = c("2035"), limits = c(2034.9, 2035.1)) +
+    scale_y_continuous(limits = c(ymin,ymax)) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions Sensitivity") +
+    theme(panel.grid = element_blank(), plot.title = element_blank(),
+          axis.text.y = element_blank(),
+          axis.title.y = element_blank(), axis.title.x = element_blank(),
+          axis.ticks = element_blank(), panel.border = element_blank(),
+          legend.position = "none", plot.margin = margin(0,0,0,0))
+  
+  # combine all the plots
+  final = fig + dots_30 + dots_35 + 
+    plot_annotation(title = plot_title, theme = theme(plot.title = element_text(hjust = 0.5))) +
+    plot_layout(widths = c(10,1,1)) +
+    theme(plot.margin = margin(0,0,0,0))
+  
+  # return the full plot + the components + the summary stats
+  return(list(
+    full = final,
+    line = fig,
+    dot1 = dots_30,
+    dot2 = dots_35,
+    stats = stats
+  ))
+}
+
+# p = dot_plots("time_series", config, clean_data, figmap_leep_timeseries, 4, "United States", 0, 2500, "Emissions|CO2|Energy|Demand|Electricity", metric = "median")
+# print(p$full)
+# print(p$stats)
+
+```
+
+```{r}
 dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0)) {
+  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+  
   # make the spagetti plot
   fig = print_graph(plot_type, config, emf_data_long, figmap, figure_num, reg)
   # update the axis range
@@ -154,12 +292,12 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
   med_pctdiff_35 = med_diff_35 / preira_med_35
   
   # stick em all in a data frame
-  #stats = 0
-  stats = data.frame("year" = c(2030,2035,2030,2035), "metric" = c("mean","mean","median","median"),
-                     "Pre-IRA mean" = c(preira_mean_30, preira_mean_35, preira_med_30, preira_med_35),
-                     "IRA mean" = c(ira_mean_30, ira_mean_35, ira_med_30, ira_med_35),
-                     "difference" = c(mean_diff_30, mean_diff_35, med_diff_30, med_diff_35),
-                     "percent difference" = c(mean_pctdiff_30, mean_pctdiff_35, med_pctdiff_30, med_pctdiff_35))
+  stats = 0
+  # stats = data.frame("year" = c(2030,2035,2030,2035), "metric" = c("mean","mean","median","median"),
+  #                    "Pre-IRA mean" = c(preira_mean_30, preira_mean_35, preira_med_30, preira_med_35),
+  #                    "IRA mean" = c(ira_mean_30, ira_mean_35, ira_med_30, ira_med_35),
+  #                    "difference" = c(mean_diff_30, mean_diff_35, med_diff_30, med_diff_35),
+  #                    "percent difference" = c(mean_pctdiff_30, mean_pctdiff_35, med_pctdiff_30, med_pctdiff_35))
 
   # still not entirely sure what this does...
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
@@ -230,13 +368,10 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
   ))
 }
 
-# p = dot_plots("time_series", config, clean_data, figmap_leep_timeseries, 4, "United States", 0, 2500, "Emissions|CO2|Energy|Demand|Electricity", metric = "median")
-# print(p$full)
-# print(p$stats)
 
 ```
 
-
+Some data manipulations
 ```{r}
 duplicate_historical_data <- function(data_long, hist_model, hist_year, criteria = FALSE) {
   # short circuit
@@ -274,7 +409,7 @@ duplicate_historical_data <- function(data_long, hist_model, hist_year, criteria
 # clean_data2 = clean_data %>% duplicate_historical_data("EIA-LTS",2020)
 ```
 
-
+Function for cone plots for LTS plots
 ```{r}
 lts_coneplot_with_dots = function(config, data, figmap, lts_fignum, leep_fignum, region, ymin, ymax, metric = "mean", facet = FALSE) {
   # update the historical data (is this even necessary anymore?)
@@ -445,13 +580,19 @@ Overlaid Versions
 
 ```{r}
 # uncertainty plot
-clean_data2 = clean_data %>% duplicate_historical_data("EIA-STEO",2020) %>% mutate(alpha = 1)
+clean_data2 = clean_data %>% duplicate_historical_data("EIA-STEO",2020, criteria = TRUE) %>% mutate(alpha = 1)
 fig = print_graph("time_series", config, clean_data2, figmap_leep_timeseries, 16, "United States") +
    scale_alpha(range = c(0.6, 1), guide = "none")
 dta = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
 fig
-ggsave(filename = "output/leep/time_series/Fig3.1_emis_sensitivity.svg",fig, width = 7, height = 5, units = "in")
+
+sens = dot_plots_sens("time_series", config, clean_data2, figmap_leep_timeseries, 16, "United States", 0, 6000, "Emissions", metric = "median", historic_coord = c(2015,5000), iralow_coord = c(2030, 4400), irahigh_coord = c(2027, 2200))
+print(sens$full)
+
+ggsave(filename = "output/leep/time_series/Fig1.4_emis_sensitivity.svg",sens$full, width = 7, height = 5, units = "in")
 ```
+
+
 ```{r}
 # EV share plot
 scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)
@@ -500,8 +641,6 @@ ggsave(filename = "output/leep/time_series/Fig3.4_ev_share.svg",p$full, width = 
 ```
 
 ```{r}
-# uncertainty plot
-#tar_load(data_min)
 
 # clean_data5 = data_raw %>% filter(grepl("GHGI",variable)) %>% 
 #   select(-c(datasrc,Model,Scenario,Region,Variable,Unit,...34,...35)) %>%
@@ -761,6 +900,9 @@ ggsave(filename = "output/leep/stacked_bar/Fig1.1_emissions.svg",combined, width
   
 
 ```
+
+More
+
 ```{r}
 clean_data7 = clean_data %>% duplicate_historical_data("EPA",2021, criteria = TRUE) %>%
   mutate(alpha = case_when(
@@ -796,4 +938,95 @@ ggsave(filename = "output/leep/time_series/Fig2.6_sox.svg",sox_full$full, width 
 
 dta = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 22, "United States")
 View(dta)
+```
+
+```{r}
+# Figure 1.1
+subpalettes = create_subpalettes(figmap_leep_stackbar, config)
+subpalettes$`Emissions Stack`[["Electricity Generation"]] = "#0388B3"
+subpalettes$`Emissions Stack`[["Other Sectors"]] = "#DEDEDE"
+
+emis_stack = function(dta, title) {
+  p = dta %>% ggplot() +
+    geom_bar(aes(x = year, y = value, fill = variable_rename), position = "stack", stat = "identity") +
+    labs(y = "Mt CO2/yr", title = title) +
+    scale_subpalette(subpalettes, "Emissions Stack") +
+    theme_emf() + 
+    theme(axis.ticks = element_blank(), axis.title.x = element_blank())
+    
+  return(p)  
+}
+
+dta1 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 9, "United States") %>%
+  mutate(variable_rename = factor(variable_rename, 
+                                  levels = c("Industry: Indirect", "Industry: Direct", "Buildings: Indirect", 
+                                             "Buildings: Direct", "Transportation: Indirect", "Transportation: Direct")))
+
+p1 = emis_stack(dta1, "Economy-Wide Emissions")
+p1
+ggsave(filename = "output/leep/stacked_bar/Fig1.1_emis.svg",p1, width = 7, height = 5, units = "in")
+
+
+# 3.1
+dta2 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 9, "United States") %>%
+  mutate(variable_rename = case_when(
+    variable_rename == "Transportation: Direct" ~ variable_rename,
+    variable_rename == "Transportation: Indirect" ~ variable_rename,
+    TRUE ~ "Other Sectors"
+  )) %>%
+  mutate(variable_rename = factor(variable_rename, 
+                                  levels = c("Other Sectors", "Transportation: Indirect", "Transportation: Direct")))
+
+p2 = emis_stack(dta2, "Transportation Emissions")
+p2
+ggsave(filename = "output/leep/stacked_bar/Fig3.1_emis_trans.svg",p2, width = 7, height = 5, units = "in")
+
+
+# 4.1
+dta3 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 9, "United States") %>%
+  mutate(variable_rename = case_when(
+    variable_rename == "Buildings: Direct" ~ variable_rename,
+    variable_rename == "Buildings: Indirect" ~ variable_rename,
+    TRUE ~ "Other Sectors"
+  )) %>%
+  mutate(variable_rename = factor(variable_rename, 
+                                  levels = c("Other Sectors", "Buildings: Indirect", "Buildings: Direct")))
+
+p3 = emis_stack(dta3, "Buildings Emissions")
+p3
+ggsave(filename = "output/leep/stacked_bar/Fig4.1_emis_build.svg",p3, width = 7, height = 5, units = "in")
+
+
+# 5.1
+dta4 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 9, "United States") %>%
+  mutate(variable_rename = case_when(
+    variable_rename == "Industry: Direct" ~ variable_rename,
+    variable_rename == "Industry: Indirect" ~ variable_rename,
+    TRUE ~ "Other Sectors"
+  )) %>%
+  mutate(variable_rename = factor(variable_rename, 
+                                  levels = c("Other Sectors", "Industry: Indirect", "Industry: Direct")))
+
+p4 = emis_stack(dta4, "Industrial Emissions")
+p4
+ggsave(filename = "output/leep/stacked_bar/Fig5.1_emis_ind.svg",p4, width = 7, height = 5, units = "in")
+
+
+# 2.1 (MAYBE)
+dta5 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 9, "United States") %>%
+  mutate(variable_rename = case_when(
+    variable_rename == "Industry: Indirect" ~ "Electricity Generation",
+    variable_rename == "Buildings: Indirect" ~ "Electricity Generation",
+    variable_rename == "Transportation: Indirect" ~ "Electricity Generation",
+    TRUE ~ "Other Sectors"
+  )) %>%
+  mutate(variable_rename = factor(variable_rename, 
+                                  levels = c("Other Sectors", "Electricity Generation")))
+
+p5 = emis_stack(dta5, "Electric Sector Emissions")
+p5
+ggsave(filename = "output/leep/stacked_bar/Fig2.1_emis_elec.svg",p5, width = 7, height = 5, units = "in")
+
+
+
 ```

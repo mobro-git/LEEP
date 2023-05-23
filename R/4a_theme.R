@@ -137,7 +137,11 @@ master_palette <- c(
   "apricotD" = "#ffd8b1",
   "beigeD" = "#fffac8",
   "mintD" = "#9FEDB6",
-  "lavenderD" = "#dcbeff"
+  "lavenderD" = "#dcbeff",
+  "l.m.green" = "#BEF5E0",
+  "morgans salmon" = "#F9C4B7",
+  "another orange" = "#FFC93C",
+  "another lighter orange" = "#FFEBB6"
   )
 
 # Color Mapping - labels matched to hex codes
@@ -148,8 +152,8 @@ color_map <- c(
   "IRA" = "light salmon",
   "Reference" = "teal blue",
   "Pre-IRA" = "teal blue",
-  "IRA.High" = "normal gray",
-  "IRA.Low" = "light gray",
+  "IRA.High" = "dark gray",
+  "IRA.Low" = "normal gray",
 
   # models
   "AEO2020" = "black",
@@ -234,6 +238,7 @@ color_map <- c(
 
   "Renewables" = "teal green",
   "Electricity" = "teal blue",
+  "Electricity Generation" = "teal blue",
   "Hydrogen" = "m.burnorange",
   "Non-Fossil Combustion" = "#EA9C9C",
   "Biomass and H2" = "teal green",
@@ -268,9 +273,16 @@ color_map <- c(
   "Industrial Processes" = "slate",
   "Energy" = "teal blue",
   "Energy & Industrial Processes" = "teal blue",
-  "Buildings" = "light orange",
-  "Transportation" = "dark salmon",
-  "Industry" = "m.green",
+  "Buildings" = "light orange", #->FFC93C, FFEBB6
+  "Transportation" = "dark salmon", #->F9C4B7
+  "Transportation: Direct" = "another orange",
+  "Transportation: Indirect" = "another lighter orange",
+  "Industry: Direct" = "dark salmon",
+  "Industry: Indirect" = "morgans salmon",
+  "Buildings: Direct" = "m.green",
+  "Buildings: Indirect" = "l.m.green",
+
+  "Industry" = "m.green", #->BEF5E0
   "Heat" = "m.red",
   "Energy Supply (pos)" = "m.violet",
   "Energy Supply (neg)" = "teal green",
