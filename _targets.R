@@ -45,6 +45,7 @@ tar_plan(
     models_ghgi = c("EPA-GHGI"),
 
     # Use models_leep for all initial plots
+    # USREP-ReEDS, GCAM-PNNL, OP-NEMS - averages for CAP-ADD
     models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-EMF", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
                     "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA-LTS", "EIA-STEO", "IEA"),
 
