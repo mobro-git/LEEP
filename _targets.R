@@ -55,12 +55,12 @@ tar_plan(
     models_ghgi_only = c("EPA-GHGI"),
 
     # scenarios
-    main_scenarios = c("Pre-IRA","IRA"),
+    main_scenarios = c("No IRA","IRA"),
     ira_only = c("IRA", "Historic"),
     historic_only = c("Historic"),
 
-    hist_mod_scenarios = c("Pre-IRA","IRA"),
-    hist_mod_scenarios2 = c("Historic", "Pre-IRA", "IRA"),
+    hist_mod_scenarios = c("No IRA","IRA"),
+    hist_mod_scenarios2 = c("Historic", "No IRA", "IRA"),
 
     leep_sens = c("IRA.Low","IRA.High", "Historic"),
 
@@ -199,9 +199,7 @@ tar_plan(
   stackbar = create_graph("leep", "stacked_bar", config, clean_data, figmap_leep_stackbar),
   diffbar = create_graph("leep", "diff_bar", config, clean_data, figmap_leep_diffbar),
 
-  bld_ts = create_graph("bld","time_series", config, clean_data, figmap_bld_timeseries),
-
-  test_diffbar = create_graph("test", "diff_bar",config,clean_data,figmap_test_diffbar)
+  bld_ts = create_graph("bld","time_series", config, clean_data, figmap_bld_timeseries)
 
 )
 

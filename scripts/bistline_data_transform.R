@@ -85,7 +85,12 @@ nox_so2 = read_xlsx(bistline_wrkbk, sheet = "non-co2") %>%
   pivot_longer(cols = 6:11, names_to = "year", values_to = "value") %>%
   relocate_standard_col_order()
 
-emissions = rbind(co2, nox_so2)
+hi_low <- read_xlsx(bistline_wrkbk, sheet = "emissions sensitivities") %>%
+  pivot_longer(cols = 7:12, names_to = "year", values_to = "value") %>%
+  relocate_standard_col_order() %>%
+  select(-`variable-bistline`)
+
+emissions = rbind(co2, nox_so2, hi_low)
 
 #####
 ##
@@ -137,24 +142,13 @@ fossil <- read_xlsx(bistline_wrkbk, sheet = "fossil") %>%
   relocate_standard_col_order() %>%
   select(-`variable-bistline`)
 
-#####
-##
-## emissions sensitivities
-##
-#####
-
-hi_low <- read_xlsx(bistline_wrkbk, sheet = "emissions sensitivities") %>%
-  pivot_longer(cols = 7:12, names_to = "year", values_to = "value") %>%
-  relocate_standard_col_order() %>%
-  select(-`variable-bistline`)
-
 #############################
 ##
 ## all modeled data
 ##
 #############################
 
-all_modeled = rbind(gen_cap, emissions, elc, ev_share, fossil, hi_low) %>%
+all_modeled = rbind(gen_cap, emissions, elc, ev_share, fossil) %>%
   filter(!is.na(value))
 
 #############################
@@ -236,7 +230,17 @@ all_co2 = all_modeled %>%
   summarise(value = sum(value)) %>%
   ungroup()
 
-summed_emissions = rbind(nrg_co2, all_co2)
+ghg = rbind(emissions, all_co2) %>%
+  select(-unit) %>%
+  filter(variable %in% c("Emissions|CO2", "Emissions|Non-CO2 GHG")) %>%
+  pivot_wider(names_from = "variable", values_from = "value") %>%
+  mutate(`Emissions|GHG` = `Emissions|CO2` + `Emissions|Non-CO2 GHG`) %>%
+  select(-`Emissions|CO2`,-`Emissions|Non-CO2 GHG`) %>%
+  pivot_longer(col = `Emissions|GHG`, names_to = "variable", values_to = "value") %>%
+  mutate(unit = "Mt CO2e/yr") %>%
+  relocate_standard_col_order()
+
+summed_emissions = rbind(nrg_co2, all_co2, ghg)
 
 
 #############################
