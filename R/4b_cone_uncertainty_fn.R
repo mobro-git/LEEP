@@ -123,7 +123,7 @@ cone_uncertainty_grid_fn <- function(df, data_list, mapping_list) {
     geom_line(df, mapping = aes(x = .data[[data_list$x]], y = .data[[data_list$y]],
                                 color = .data[[data_list$color]],
                                 group = interaction(.data[[data_list$range]], .data[[data_list$color]], model)),
-              size = 1, alpha = 0.1) +
+              size = 0.5, alpha = 0.1) +
     facet_grid(rows = vars(.data[[data_list$facet1]]), cols = vars(.data[[data_list$facet2]]),
                scales = mapping_list$scales) +
     geom_ribbon(data = sen_ribbon,
