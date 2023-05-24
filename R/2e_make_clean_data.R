@@ -41,17 +41,24 @@ make_clean_data = function(df) {
                            "Emissions|CO2|Energy|Supply|Hydrogen",
                            "Emissions|CO2|Energy|Supply|Petroleum Refining",
                            "Emissions|CO2|Energy|Supply|Synthetic Gas",
-                           "Emissions|CO2|Energy|Supply|Synthetic Liquids")) %>%
+                           "Emissions|CO2|Energy|Supply|Synthetic Liquids",
+                           "Emissions|CO2|Industrial Processes")) %>%
     mutate(variable = "Emissions|CO2|Energy|Demand|Industry and Fuel Production") %>%
     group_by(scenario,model,region,unit,year,variable) %>%
     summarise(value = sum(value)) %>%
     ungroup() %>%
-    mutate(datasrc = "calculated")
+    mutate(datasrc = "calculated") %>%
+    select(model,scenario,unit,year,datasrc,variable,region,value) %>%
+    filter(model != "GCAM-PNNL") # GCAM-PNNL results look very low - not reporting a value that other models are reporting
 
-  ind_emissions_indirect = ind_emissions %>%
-    filter(variable = "Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect")
+  ind_emissions_indirect = df %>% filter(model %in% c("USREP-ReEDS","GCAM-PNNL", "ReEDS-NREL", "OP-NEMS")) %>%
+    filter(variable == "Emissions|CO2|Energy|Demand|Industry|Indirect") %>%
+    select(model,scenario,unit,year,datasrc,variable,region,value) %>%
+    mutate(variable = "Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect")
 
-  all = rbind(ind_emissions, ind_emissions_indirect, df)
+  ind_var = rbind(ind_emissions, ind_emissions_indirect)
+
+  all = rbind(ind_var, df)
 
   all
 
