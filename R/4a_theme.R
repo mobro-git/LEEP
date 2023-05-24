@@ -151,7 +151,7 @@ color_map <- c(
   "Historic" = "black",
   "IRA" = "light salmon",
   "Reference" = "teal blue",
-  "Pre-IRA" = "teal blue",
+  "No IRA" = "teal blue",
   "IRA.High" = "dark gray",
   "IRA.Low" = "normal gray",
 
