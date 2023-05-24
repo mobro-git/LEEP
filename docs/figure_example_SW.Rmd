@@ -116,6 +116,7 @@ dot_plots_sens = function(plot_type, config, emf_data_long, figmap, figure_num, 
   fig = print_graph(plot_type, config, emf_data_long, figmap, figure_num, reg)
   # update the axis range
   fig = fig + scale_y_continuous(limits = c(ymin, ymax)) +
+      #scale_x_continuous(breaks = c(2005, 2021, 2025, 2030, 2035), labels = c(2005, 2021, 2025, 2030, 2035)) +
       scale_alpha(range = c(0.6, 1), guide = "none") + 
       annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historic", color = "black", alpha = 1) +
       annotate("text", x = iralow_coord[1], y = iralow_coord[2], label = "IRA.Low", color = "#A1A1A1", alpha = 1) +
@@ -137,13 +138,13 @@ dot_plots_sens = function(plot_type, config, emf_data_long, figmap, figure_num, 
            median = median(value, na.rm = TRUE))
   
   # these are the summary stats we'll eventually want to overlay on the plot to highlight the efficacy of the IRA
-  # preira_mean_30 = df_stat_30[df_stat_30$scenario == "Pre-IRA","mean"]$mean
+  # preira_mean_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean
   # ira_mean_30 = df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
-  # preira_mean_35 = df_stat_35[df_stat_35$scenario == "Pre-IRA","mean"]$mean
+  # preira_mean_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean
   # ira_mean_35 = df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
-  # preira_med_30 = df_stat_30[df_stat_30$scenario == "Pre-IRA","median"]$median
+  # preira_med_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median
   # ira_med_30 = df_stat_30[df_stat_30$scenario == "IRA","median"]$median
-  # preira_med_35 = df_stat_35[df_stat_35$scenario == "Pre-IRA","median"]$median
+  # preira_med_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median
   # ira_med_35 = df_stat_35[df_stat_35$scenario == "IRA","median"]$median
   # 
   # # calculate raw differences
@@ -161,7 +162,7 @@ dot_plots_sens = function(plot_type, config, emf_data_long, figmap, figure_num, 
   # # stick em all in a data frame
   # # stats = 0
   # stats = data.frame("year" = c(2030,2035,2030,2035), "metric" = c("mean","mean","median","median"),
-  #                    "Pre-IRA mean" = c(preira_mean_30, preira_mean_35, preira_med_30, preira_med_35),
+  #                    "No IRA mean" = c(preira_mean_30, preira_mean_35, preira_med_30, preira_med_35),
   #                    "IRA mean" = c(ira_mean_30, ira_mean_35, ira_med_30, ira_med_35),
   #                    "difference" = c(mean_diff_30, mean_diff_35, med_diff_30, med_diff_35),
   #                    "percent difference" = c(mean_pctdiff_30, mean_pctdiff_35, med_pctdiff_30, med_pctdiff_35))
@@ -242,16 +243,17 @@ dot_plots_sens = function(plot_type, config, emf_data_long, figmap, figure_num, 
 ```
 
 ```{r}
-dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0)) {
+dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric, hist_year = 2021, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0)) {
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
   
   # make the spagetti plot
   fig = print_graph(plot_type, config, emf_data_long, figmap, figure_num, reg)
   # update the axis range
   fig = fig + scale_y_continuous(limits = c(ymin, ymax)) +
+      scale_x_continuous(breaks = c(2005,2010, hist_year, 2025, 2030, 2035), labels = c(2005, 2010, hist_year, 2025, 2030, 2035)) +
       scale_alpha(range = c(0.6, 1), guide = "none") + 
       annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historic", color = "black", alpha = 1) +
-      annotate("text", x = preira_coord[1], y = preira_coord[2], label = "Pre-IRA", color = "#0388B3", alpha = 1) +
+      annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#0388B3", alpha = 1) +
       annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#F28063", alpha = 1) +
       theme(legend.position = "none", plot.title = element_blank())
   
@@ -270,13 +272,13 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
            median = median(value, na.rm = TRUE))
   
   # these are the summary stats we'll eventually want to overlay on the plot to highlight the efficacy of the IRA
-  preira_mean_30 = df_stat_30[df_stat_30$scenario == "Pre-IRA","mean"]$mean
+  preira_mean_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean
   ira_mean_30 = df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
-  preira_mean_35 = df_stat_35[df_stat_35$scenario == "Pre-IRA","mean"]$mean
+  preira_mean_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean
   ira_mean_35 = df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
-  preira_med_30 = df_stat_30[df_stat_30$scenario == "Pre-IRA","median"]$median
+  preira_med_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median
   ira_med_30 = df_stat_30[df_stat_30$scenario == "IRA","median"]$median
-  preira_med_35 = df_stat_35[df_stat_35$scenario == "Pre-IRA","median"]$median
+  preira_med_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median
   ira_med_35 = df_stat_35[df_stat_35$scenario == "IRA","median"]$median
   
   # calculate raw differences
@@ -294,7 +296,7 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
   # stick em all in a data frame
   stats = 0
   # stats = data.frame("year" = c(2030,2035,2030,2035), "metric" = c("mean","mean","median","median"),
-  #                    "Pre-IRA mean" = c(preira_mean_30, preira_mean_35, preira_med_30, preira_med_35),
+  #                    "No IRA mean" = c(preira_mean_30, preira_mean_35, preira_med_30, preira_med_35),
   #                    "IRA mean" = c(ira_mean_30, ira_mean_35, ira_med_30, ira_med_35),
   #                    "difference" = c(mean_diff_30, mean_diff_35, med_diff_30, med_diff_35),
   #                    "percent difference" = c(mean_pctdiff_30, mean_pctdiff_35, med_pctdiff_30, med_pctdiff_35))
@@ -418,7 +420,8 @@ lts_coneplot_with_dots = function(config, data, figmap, lts_fignum, leep_fignum,
   # make the LTS cone plot
   fig1 = print_graph("cone_uncertainty", config, data, figmap, lts_fignum, region) +
     scale_y_continuous(limits = c(ymin, ymax)) +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+    scale_x_continuous(breaks = c(2005, 2021, 2030, 2040, 2050), labels = c(2005, 2021, 2030, 2040, 2050)) +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1), axis.ticks = element_blank())
     
   
   # extract points and summary statistics for 2030 and 2035
@@ -460,7 +463,8 @@ lts_coneplot_with_dots = function(config, data, figmap, lts_fignum, leep_fignum,
     segment_code_30 +
     geom_point(data = df_35, aes(x = year, y = value, color = variable_rename), shape = 1, size = 2, position = position_dodge(width = 1)) +
     segment_code_35 +
-    bottom1
+    theme(legend.position = "none", axis.title.x = element_blank())
+    #bottom1
   return(fig2)
   
 }
@@ -508,7 +512,7 @@ lts_data_table = function(focus, leep_models) {
     mutate(scenario = "NZ2050")
   
   dta_leep = clean_data %>% 
-    filter(variable == focus, model %in% models_leep, year %in% c(2030, 2035), scenario != "Pre-IRA") %>%
+    filter(variable == focus, model %in% models_leep, year %in% c(2030, 2035), scenario != "No IRA") %>%
     group_by(year, unit) %>%
     summarize(median = median(value), mean = mean(value)) %>%
     mutate(scenario = "IRA")
@@ -608,7 +612,7 @@ raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year
 iea_2022 = raw %>% filter(model == "IEA", year == 2021) %>% mutate(year = 2022)
 clean_data4 = rbind(raw, iea_2022) %>% filter(unit != "thousands") %>% mutate(value = 100 * value) %>%
   filter(model != "EIA-LTS") %>% 
-  duplicate_historical_data("IEA",2022) %>% mutate(
+  duplicate_historical_data("IEA",2022, criteria = TRUE) %>% mutate(
     variable = case_when(
       variable %in% c("Energy Service|Transportation|Passenger|BEV|Sales Share",
                       "Energy Service|Transportation|Passenger|FCEV|Sales Share",
@@ -630,9 +634,9 @@ dta = data_from_graph("time_series", config, clean_data4, figmap_leep_timeseries
 fig
 
       # annotate("text", x = 2015, y = 8, label = "Historic", color = "black", alpha = 1) +
-      # annotate("text", x = 2030, y = 16, label = "Pre-IRA", color = "#0388B3", alpha = 1) +
+      # annotate("text", x = 2030, y = 16, label = "No IRA", color = "#0388B3", alpha = 1) +
       # annotate("text", x = 2027, y = 45, label = "IRA", color = "#F28063", alpha = 1) +
-p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 18, "United States", 0, 100, "EV Share", metric = "mean", historic_coord = c(2015,8), preira_coord = c(2030, 16), ira_coord = c(2027, 45))
+p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 18, "United States", 0, 100, "EV Share", metric = "mean", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 16), ira_coord = c(2027, 45))
 print(p$full)
 print(p$stats)
 
@@ -649,7 +653,10 @@ ggsave(filename = "output/leep/time_series/Fig3.4_ev_share.svg",p$full, width = 
 #   mutate(year = as.factor(year), datasrc = "x")
 
 
-fig = print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3, "United States", level_var = c("Lubricants", "Motorcycles", "Buses", "Pipelines", "Rail", "Water", "Aircraft", "MHD Trucks", "LD Trucks", "Passenger Cars")) +
+fig = print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3, "United States", 
+                  level_var = c("Lubricants", "Motorcycles", "Buses", "Pipelines", "Rail", 
+                                "Water", "Aircraft", "MHD Trucks", "LD Trucks", "Passenger Cars")) +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5)) +
   bottom1
 
 fig
@@ -937,7 +944,7 @@ ggsave(filename = "output/leep/time_series/Fig2.6_sox.svg",sox_full$full, width 
 
 
 dta = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 22, "United States")
-View(dta)
+# View(dta)
 ```
 
 ```{r}
@@ -947,12 +954,21 @@ subpalettes$`Emissions Stack`[["Electricity Generation"]] = "#0388B3"
 subpalettes$`Emissions Stack`[["Other Sectors"]] = "#DEDEDE"
 
 emis_stack = function(dta, title) {
+  totals = dta %>% group_by(year) %>%
+    summarize(value = sum(value))
+  
+  dta = dta %>% group_by(year, variable_rename) %>%
+    summarize(value = sum(value))
+  
   p = dta %>% ggplot() +
-    geom_bar(aes(x = year, y = value, fill = variable_rename), position = "stack", stat = "identity") +
+    geom_bar(aes(x = year, y = value, fill = variable_rename), position = position_stack(), stat = "identity") +
+    geom_text(aes(x = year, y = value, label = round(value, 0), fill = variable_rename), size = 2.5, position = position_stack(vjust = 0.5, reverse = FALSE)) +
+    geom_text(data = totals, aes(x = year, y = value, label = round(value, 0)), vjust = -0.4, stat = "identity", size = 2.5) +
     labs(y = "Mt CO2/yr", title = title) +
     scale_subpalette(subpalettes, "Emissions Stack") +
     theme_emf() + 
-    theme(axis.ticks = element_blank(), axis.title.x = element_blank())
+    theme(axis.ticks = element_blank(), axis.title.x = element_blank()) + 
+    bottom1
     
   return(p)  
 }
@@ -1027,6 +1043,6 @@ p5 = emis_stack(dta5, "Electric Sector Emissions")
 p5
 ggsave(filename = "output/leep/stacked_bar/Fig2.1_emis_elec.svg",p5, width = 7, height = 5, units = "in")
 
-
+#CH4, N2O, HFCs
 
 ```
