@@ -66,7 +66,7 @@
 <polyline points='223.66,182.20 234.89,295.15 246.12,295.15 257.35,295.15 268.58,295.15 279.81,295.15 291.04,295.15 302.27,295.15 313.50,295.15 324.73,295.15 335.96,295.15 347.19,295.15 358.42,295.15 369.65,295.15 380.88,295.15 392.11,295.15 ' style='stroke-width: 2.13; stroke: #0388B3; stroke-opacity: 0.80; stroke-linecap: butt;' />
 <polyline points='223.66,182.20 234.89,295.15 246.12,295.15 257.35,295.15 268.58,295.15 279.81,294.06 291.04,292.09 302.27,290.13 313.50,288.17 324.73,286.21 335.96,284.25 347.19,282.89 358.42,281.53 369.65,280.17 380.88,278.82 392.11,277.46 ' style='stroke-width: 2.13; stroke: #F28063; stroke-opacity: 0.80; stroke-linecap: butt;' />
 <text x='167.51' y='138.18' text-anchor='middle' style='font-size: 11.04px; font-family: "Arial";' textLength='36.76px' lengthAdjust='spacingAndGlyphs'>Historic</text>
-<text x='358.42' y='261.38' text-anchor='middle' style='font-size: 11.04px;fill: #0388B3; font-family: "Arial";' textLength='39.23px' lengthAdjust='spacingAndGlyphs'>Pre-IRA</text>
+<text x='358.42' y='261.38' text-anchor='middle' style='font-size: 11.04px;fill: #0388B3; font-family: "Arial";' textLength='35.55px' lengthAdjust='spacingAndGlyphs'>No IRA</text>
 <text x='302.27' y='268.92' text-anchor='middle' style='font-size: 11.04px;fill: #F28063; font-family: "Arial";' textLength='18.39px' lengthAdjust='spacingAndGlyphs'>IRA</text>
 <rect x='38.36' y='31.15' width='370.60' height='276.57' style='stroke-width: 1.07; stroke: #B3B3B3;' />
 </g>

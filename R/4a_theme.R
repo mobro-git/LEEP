@@ -337,6 +337,7 @@ color_map <- c(
   "*Indirect" = "teal green",
   "CO2" =  "teal blue",
   "Non-CO2" = "dark salmon",
+  "NonCO2" = "dark salmon",
   "CH4" = "teal blue",
   "Non-CO2" = "dark salmon",
   "F-Gases" = "light orange",
