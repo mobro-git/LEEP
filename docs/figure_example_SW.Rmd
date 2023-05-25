@@ -608,12 +608,12 @@ Overlaid Versions
 model_labels = FALSE
 
 clean_data2 = clean_data %>% duplicate_historical_data("EIA-STEO",2020, criteria = TRUE) %>% mutate(alpha = 1)
-fig = print_graph("time_series", config, clean_data2, figmap_leep_timeseries, 16, "United States") +
+fig = print_graph("time_series", config, clean_data2, figmap_leep_timeseries, 116, "United States") +
    scale_alpha(range = c(0.6, 1), guide = "none")
-dta = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
-fig
+dta = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 116, "United States")
+#fig
 
-sens = dot_plots_sens("time_series", config, clean_data2, figmap_leep_timeseries, 16, "United States", 0, 6000, "Emissions", metric = "median", 
+sens = dot_plots_sens("time_series", config, clean_data2, figmap_leep_timeseries, 116, "United States", 0, 6000, "Emissions", metric = "median", 
                       labels = model_labels, historic_coord = c(2015,5000), iralow_coord = c(2030, 4400), 
                       irahigh_coord = c(2027, 2200))
 print(sens$full)
@@ -654,14 +654,14 @@ clean_data4 = rbind(raw, iea_2022) %>% filter(unit != "thousands") %>% mutate(va
     TRUE ~ 0.8)
   )
 
-fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 18, "United States")
-dta = data_from_graph("time_series", config, clean_data4, figmap_leep_timeseries, 18, "United States")
-fig
+fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
+dta = data_from_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
+#fig
 
       # annotate("text", x = 2015, y = 8, label = "Historic", color = "black", alpha = 1) +
       # annotate("text", x = 2030, y = 16, label = "No IRA", color = "#0388B3", alpha = 1) +
       # annotate("text", x = 2027, y = 45, label = "IRA", color = "#F28063", alpha = 1) +
-p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 18, "United States", 0, 100, "EV Share", metric = "mean", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 16), ira_coord = c(2027, 45))
+p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States", 0, 100, "EV Share", metric = "mean", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 16), ira_coord = c(2027, 45))
 print(p$full)
 print(p$stats)
 
@@ -694,16 +694,16 @@ dta
 #   duplicate_historical_data("IEA",2022) %>% 
 #   mutate(value = 100 * value)
 # 
-# fig = print_graph("time_series", config, clean_data3, figmap_leep_timeseries, 18, "United States")
-# dta = data_from_graph("time_series", config, clean_data3, figmap_leep_timeseries, 18, "United States")
+# fig = print_graph("time_series", config, clean_data3, figmap_leep_timeseries, 118, "United States")
+# dta = data_from_graph("time_series", config, clean_data3, figmap_leep_timeseries, 118, "United States")
 # fig
 # 
-# p = dot_plots("time_series", config, clean_data3, figmap_leep_timeseries, 18, "United States", 0, 2, "EV Share", metric = "mean")
+# p = dot_plots("time_series", config, clean_data3, figmap_leep_timeseries, 118, "United States", 0, 2, "EV Share", metric = "mean")
 # print(p$full)
 # print(p$stats)
 
 
-ggsave(filename = "output/leep/stacked_bar/Fig3.1_trans_co2.svg",fig, width = 7, height = 5, units = "in")
+ggsave(filename = "output/leep/stacked_bar/Fig3.2_trans_co2.svg",fig, width = 7, height = 5, units = "in")
 ```
 
 
@@ -724,7 +724,7 @@ fig = print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "U
 
 dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States")
 
-fig
+#fig
 
 # var_map = data.frame("variable" = c("Capacity Additions|Electricity|Coal|w/ CCS",
 #                                     "Capacity Additions|Electricity|Coal|w/o CCS",
@@ -816,7 +816,7 @@ dotplot2 = dta4 %>% ggplot() +
         axis.title.y = element_blank(), axis.ticks = element_blank(),
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "none")
-dotplot2
+#dotplot2
   
 
 combined = 
@@ -838,29 +838,29 @@ print(stats)
 clean_data6 = clean_data %>% duplicate_historical_data("EIA-LTS", 2020) %>%
   filter(model != "GCAM-PNNL")
 
-p1 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 19, "United States", 0, 30, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,15), preira_coord = c(2030, 16), ira_coord = c(2027, 25))
+p1 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 119, "United States", 0, 30, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,15), preira_coord = c(2030, 16), ira_coord = c(2027, 25))
 print(p1$full)
 ggsave(filename = "output/leep/time_series/Fig5.3_industrial_energy_fossil.svg",p1$full, width = 7, height = 5, units = "in")
 print(p1$stats)
 
 
-p2 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 20, "United States", 0, 5, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,3.2), preira_coord = c(2030, 3), ira_coord = c(2027, 4))
+p2 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 120, "United States", 0, 5, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,3.2), preira_coord = c(2030, 3), ira_coord = c(2027, 4))
 print(p2$full)
 ggsave(filename = "output/leep/time_series/Fig5.4_industrial_energy_elec.svg",p2$full, width = 7, height = 5, units = "in")
 print(p2$stats)
 
-p3 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 21, "United States", 0, 5, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,3.2), preira_coord = c(2032, .75), ira_coord = c(2027, .6))
+p3 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 121, "United States", 0, 5, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,3.2), preira_coord = c(2032, .75), ira_coord = c(2027, .6))
 print(p3$full)
 ggsave(filename = "output/leep/time_series/Fig5.5_industrial_energy_alternative.svg",p3$full, width = 7, height = 5, units = "in")
 print(p3$stats)
 
 
-dta = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 19, "United States")
+dta = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 119, "United States")
 # View(dta)
 
 ```
 ```{r}
-print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 7, "United States")
+#print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 7, "United States")
 dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 7, "United States") %>%
   mutate(variable_rename2 = case_when(
     grepl("Commercial", variable) ~ "Buildings",
@@ -904,7 +904,7 @@ p1 = dta %>% ggplot() +
   labs(y = "MMT CO2") +
   theme(axis.text.x = element_blank(), plot.margin = margin(0,0,0,0),
         axis.title.x = element_blank(), axis.ticks = element_blank())
-p1
+#p1
 
 p2 = dta2 %>% ggplot() +
   geom_bar(aes(x = variable_rename2, y = value, fill = variable_rename), position = "stack", stat = "identity") + 
@@ -919,7 +919,7 @@ p2 = dta2 %>% ggplot() +
   theme(axis.text.x = element_text(angle = 45, size = 7, hjust = 1),
         axis.title.x = element_blank(), axis.ticks = element_blank(),
         strip.text.x = element_blank(), plot.margin = margin(0,0,0,0))
-p2
+#p2
 
 combined = p1 / p2 +
   plot_annotation(title = "Emissions from Fossil Fuel Combustion by Sector and Fuel Type", 
@@ -946,21 +946,21 @@ clean_data7 = clean_data %>% duplicate_historical_data("EPA",2021, criteria = TR
   ) %>%
   filter(value > 1e-4)
 
-nox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 22, "United States") +
+nox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States") +
   scale_alpha(range = c(0.6, 1), guide = "none")
-nox
+#nox
 
-sox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 23, "United States") +
+sox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States") +
   scale_alpha(range = c(0.6, 1), guide = "none")
-sox
+#sox
 
-nox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 22, "United States", 0, 3, "Power Sector NOx Emissions", metric = "median", 
+nox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States", 0, 3, "Power Sector NOx Emissions", metric = "median", 
                      historic_coord = c(2015,1.8), preira_coord = c(2030, 0.95), ira_coord = c(2029, 0.15))
 print(nox_full$full)
 print(nox_full$stats)
 ggsave(filename = "output/leep/time_series/Fig2.5_nox.svg",nox_full$full, width = 7, height = 5, units = "in")
 
-sox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 23, "United States", 0, 5, "Power Sector SO2 Emissions", metric = "median", 
+sox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States", 0, 5, "Power Sector SO2 Emissions", metric = "median", 
                      historic_coord = c(2017,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12))
 print(sox_full$full)
 print(sox_full$stats)
@@ -968,7 +968,7 @@ ggsave(filename = "output/leep/time_series/Fig2.6_sox.svg",sox_full$full, width 
 
 
 
-dta = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 22, "United States")
+dta = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States")
 # View(dta)
 ```
 
@@ -977,6 +977,7 @@ dta = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries
 subpalettes = create_subpalettes(figmap_leep_stackbar, config)
 subpalettes$`Emissions Stack`[["Electricity Generation"]] = "#0388B3"
 subpalettes$`Emissions Stack`[["Other Sectors"]] = "#DEDEDE"
+subpalettes$`Emissions Stack`[["Non-CO2 GHGs"]] = "#469990"
 
 emis_stack = function(dta, title) {
   totals = dta %>% group_by(year) %>%
@@ -987,8 +988,8 @@ emis_stack = function(dta, title) {
   
   p = dta %>% ggplot() +
     geom_bar(aes(x = year, y = value, fill = variable_rename), position = position_stack(), stat = "identity") +
-    geom_text(aes(x = year, y = value, label = round(value, 0), fill = variable_rename), size = 2.5, position = position_stack(vjust = 0.5, reverse = FALSE)) +
-    geom_text(data = totals, aes(x = year, y = value, label = round(value, 0)), vjust = -0.4, stat = "identity", size = 2.5) +
+    #geom_text(aes(x = year, y = value, label = round(value, 0), fill = variable_rename), size = 2.5, position = position_stack(vjust = 0.5, reverse = FALSE)) +
+    #geom_text(data = totals, aes(x = year, y = value, label = round(value, 0)), vjust = -0.4, stat = "identity", size = 2.5) +
     labs(y = "Mt CO2/yr", title = title) +
     scale_subpalette(subpalettes, "Emissions Stack") +
     theme_emf() + 
@@ -1003,10 +1004,25 @@ dta1 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 
                                   levels = c("Industry: Indirect", "Industry: Direct", "Buildings: Indirect", 
                                              "Buildings: Direct", "Transportation: Indirect", "Transportation: Direct")))
 
-p1 = emis_stack(dta1, "Economy-Wide Emissions")
+dta_nonghg = clean_data %>% 
+  filter(scenario == "Historic", model == "EPA-GHGI", year >= 2005,
+         (grepl("CH4", variable) | grepl("F-Gasses", variable) | grepl("NO2", variable))) %>%
+  mutate(variable = "Emissions|Non-CO2", variable_rename = "Non-CO2 GHGs")
+
+dta1a = rbind(dta1, dta_nonghg) %>%
+  mutate(variable_rename = factor(variable_rename, 
+                                levels = c("Non-CO2 GHGs",
+                                           "Industry: Indirect", "Industry: Direct", "Buildings: Indirect", 
+                                           "Buildings: Direct", "Transportation: Indirect", "Transportation: Direct")))
+  
+
+p1 = emis_stack(dta1, "Economy-Wide CO2 Emissions")
 p1
 ggsave(filename = "output/leep/stacked_bar/Fig1.1_emis.svg",p1, width = 7, height = 5, units = "in")
 
+p1a = emis_stack(dta1a, "Economy-Wide GHG Emissions")
+p1a
+ggsave(filename = "output/leep/stacked_bar/Fig1.1.2_emis_ghg.svg",p1a, width = 7, height = 5, units = "in")
 
 # 3.1
 dta2 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 9, "United States") %>%
@@ -1018,7 +1034,7 @@ dta2 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 
   mutate(variable_rename = factor(variable_rename, 
                                   levels = c("Other Sectors", "Transportation: Indirect", "Transportation: Direct")))
 
-p2 = emis_stack(dta2, "Transportation Emissions")
+p2 = emis_stack(dta2, "Transportation CO2 Emissions")
 p2
 ggsave(filename = "output/leep/stacked_bar/Fig3.1_emis_trans.svg",p2, width = 7, height = 5, units = "in")
 
@@ -1033,7 +1049,7 @@ dta3 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 
   mutate(variable_rename = factor(variable_rename, 
                                   levels = c("Other Sectors", "Buildings: Indirect", "Buildings: Direct")))
 
-p3 = emis_stack(dta3, "Buildings Emissions")
+p3 = emis_stack(dta3, "Buildings CO2 Emissions")
 p3
 ggsave(filename = "output/leep/stacked_bar/Fig4.1_emis_build.svg",p3, width = 7, height = 5, units = "in")
 
@@ -1048,7 +1064,7 @@ dta4 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 
   mutate(variable_rename = factor(variable_rename, 
                                   levels = c("Other Sectors", "Industry: Indirect", "Industry: Direct")))
 
-p4 = emis_stack(dta4, "Industrial Emissions")
+p4 = emis_stack(dta4, "Industrial CO2 Emissions")
 p4
 ggsave(filename = "output/leep/stacked_bar/Fig5.1_emis_ind.svg",p4, width = 7, height = 5, units = "in")
 
@@ -1103,4 +1119,97 @@ p
 ggsave(filename = "output/leep/stacked_bar/Fig1.1a_emis_nonco2ghg.svg",p, width = 7, height = 5, units = "in")
 
 
+```
+
+```{r}
+# sensitivity dot plots
+panel1_scens = c("IRA","IRA.Low","IRA.High")
+panel2_scens = c() # Economic Growth
+panel3_scens = c("IRA.LGP","IRA.HGP") # Energy Prices
+panel4_scens = c("IRA.AllClean", "IRA.AdvBRE", "IRA.ConsBRE") # Technology Cost
+panel5_scens = c("IRA.Cons") # Deployment Constraints
+
+sens_dta = clean_data %>% filter(variable == "Emissions|CO2|Energy|Supply|Electricity",
+                                 year %in% c(2030, 2035)) #%>% 
+#  mutate(year = factor(year))
+
+print(max(sens_dta$value))
+print(min(sens_dta$value))
+
+filler = data.frame(year = c(203), value = c(-200), scenario = c(""), model = c("NA"))
+
+sens_dta_panel1 = sens_dta %>% filter(scenario %in% panel1_scens) %>%
+  mutate(stagger = case_when(
+    scenario == "IRA.Low" ~ -0.7,
+    scenario == "IRA.High" ~ 0.7,
+    TRUE ~ 0
+  ))
+sens_dta_panel2 = sens_dta %>% filter(scenario %in% panel3_scens) %>% mutate(value = -200) %>%
+  bind_rows(filler)
+sens_dta_panel3 = sens_dta %>% filter(scenario %in% panel3_scens) %>%
+  bind_rows(filler)
+sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>% 
+  bind_rows(filler)
+sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
+  bind_rows(filler)
+
+sens_dot_plot = function(dta, far_left = FALSE, ira_coord = c(0,0), low_coord = c(0,0), high_coord = c(0,0)) {
+  if (far_left) {
+    point_code = geom_point(aes(x = year + stagger, y = value, color = scenario), shape = 1, size = 2)
+  } else {
+    point_code = geom_point(aes(x = year, y = value), shape = 1, size = 2)
+  }
+  
+  p = dta %>% ggplot() +
+    point_code + 
+    scale_x_continuous(breaks = c(2030, 2035), labels = c(2030, 2035), limits = c(2028, 2037)) +
+    scale_y_continuous(limits = c(0, 1600)) +
+    theme_emf() +
+    theme(axis.title.x = element_blank(),
+          plot.title = element_blank(), axis.ticks = element_blank(),
+          plot.margin = margin(0.5,0.5,0.5,0.5))
+  
+  if (!far_left) {
+    p = p + 
+      geom_text_repel(aes(x = year, y = value + 50, label = scenario), size = 2, hjust = -0.2) +
+      theme(axis.text.y = element_blank(), axis.title.y = element_blank(),)
+  } else {
+    p = p +
+      labs(y = "Mt CO2/yr") +
+      scale_subpalette(subpalettes, "Sensitivity Dots") +
+      scale_color_manual(values = c("IRA" = "black", "IRA.Low" = "#42d4f4", "IRA.High" = "#f58231"), guide = "none") +
+      annotate("text", x = ira_coord[1], y = ira_coord[2], size = 2.5,
+               label = "IRA", color = "black", alpha = 1, hjust = -0.2) +
+      annotate("text", x = low_coord[1], y = low_coord[2], size = 2.5,
+               label = "IRA.Low", color = "#42d4f4", alpha = 1, hjust = -0.2) +
+      annotate("text", x = high_coord[1], y = high_coord[2], size = 2.5,
+               label = "IRA.High", color = "#f58231", alpha = 1, hjust = -0.2)
+      
+  }
+  return(p)
+}
+
+
+p1 = sens_dot_plot(sens_dta_panel1, far_left = TRUE, ira_coord = c(2030,1275), low_coord = c(2030, 1425), 
+                   high_coord = c(2030, 250))
+#p1
+p2 = sens_dot_plot(sens_dta_panel2)
+#p2
+p3 = sens_dot_plot(sens_dta_panel3)
+# p3
+p4 = sens_dot_plot(sens_dta_panel4)
+# p4
+p5 = sens_dot_plot(sens_dta_panel5)
+# p5
+
+combined = (p1 | p2 | p3 | p4 | p5) +
+  plot_annotation(title = "Electric Sector CO2 Emissions", 
+                  theme = theme(plot.title = element_text(hjust = 0.5)))
+  
+combined
+
+ggsave(filename = "output/leep/dots/Fig1.4_elec_sensitivity_dots.svg",combined, width = 7, height = 5, units = "in")
+
+
+#View(sens_dta)
 ```

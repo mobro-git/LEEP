@@ -138,7 +138,7 @@ master_palette <- c(
   "beigeD" = "#fffac8",
   "mintD" = "#9FEDB6",
   "lavenderD" = "#dcbeff",
-  "l.m.green" = "#BEF5E0",
+  "l.m.green" = "#38E4A2",
   "morgans salmon" = "#F9C4B7",
   "another orange" = "#FFC93C",
   "another lighter orange" = "#FFEBB6"
