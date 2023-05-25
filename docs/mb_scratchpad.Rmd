@@ -1,0 +1,90 @@
+---
+title: "Morgan Scratchpad"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, include = TRUE, warning = FALSE, message = FALSE, tidy = TRUE, cache = FALSE)
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+```{r}
+library(knitr)
+library(targets)
+library(tarchetypes)
+library(ggplot2)
+library(tidyverse)
+library(ggh4x)
+source("packages.R")
+devtools::load_all(here())
+
+tar_load(config)
+tar_load(clean_data)
+```
+
+```{r}
+vars = c("Final Energy|Percent Electricity", 
+         "Final Energy|Buildings|Percent Electricity",
+         "Final Energy|Industry|Percent Electricity",
+         "Final Energy|Industry and Fuel Production|Percent Electricity",
+         "Final Energy|Transportation|Percent Electricity")
+
+elc = clean_data %>% 
+  filter(variable %in% vars & model %in% config$models_per_elc)
+
+ref_elc = clean_data %>%
+  filter(variable %in% vars & year == 2020 & model == "AEO2021") %>%
+  mutate(value = case_when(
+    variable == "Final Energy|Buildings|Percent Electricity" ~ 0.47, # number from Chioke, our number is wrong
+    variable == "Final Energy|Industry|Percent Electricity" ~ 0.13, # number calculated from AEO 2021, ~3 quads elc ~25 quads total
+    TRUE~value))
+
+elc_all = rbind(elc, ref_elc) %>%
+  mutate(
+    variable = case_when(
+      variable == "Final Energy|Percent Electricity" ~ "Total",
+      str_detect("Buildings", variable) ~ "Buildings",
+      str_detect("Industry", variable) ~ "Industry",
+      str_detect("Transportation", variable) ~ "Transportation",
+      TRUE ~ variable
+    ),
+    scenario = case_when(
+      scenario == "NT.Ref" ~ "Reference",
+      scenario == "0by50.Ref" ~ "Net Zero",
+      scenario == "0by50.Adv" ~ "Net Zero+",
+      TRUE ~ scenario),
+    year = case_when(
+      year == 2020 ~ "2020 Reference",
+      year == 2050 ~ "2050"
+    )) %>%
+  mutate(value = value * 100) %>%
+  mutate(
+    scenario = factor(scenario, levels = c("Reference", "Net Zero", "Net Zero+")),
+    variable = factor(variable, levels = c("Total", "Transportation", "Industry", "Buildings")))
+
+means = elc_all %>%
+  filter(year == 2050) %>%
+  group_by(variable,scenario) %>%
+  summarise(value = mean(value)) %>%
+  mutate(year = "2050 Mean")
+
+ref_points = elc_all %>% filter(year == "2020 Reference")
+mod_points = elc_all %>% filter(year == "2050")
+  
+sub_palettes = create_subpalettes(figmap_op_timeseries, config)
+shapes <- c("2020 Reference"=18, "2050"=16, "2050 Mean"=17)
+
+fig <- ggplot() +
+  geom_point(data=mod_points, aes(x=scenario,y=value, color=model, shape = year)) +
+  geom_line(data=mod_points, aes(x=scenario,y=value, group = model, color=model), linewidth = 1, alpha = .85) +
+  geom_point(data=ref_points, aes(x=scenario,y=value, shape = year), size = 4, color = "black") +
+  geom_point(data = means, aes(x=scenario,y=value, shape = year), size = 3, color = "black") +
+  facet_grid(~variable) +
+  labs(title = "",
+       x="", y = "Electricity Share in Final Energy (%)") +
+  theme_emf() +
+  scale_subpalette(sub_palettes, "Percent Electricity") +
+  scale_shape_manual(values = shapes) +
+  theme(axis.text.x = element_text(angle = 90, hjust = .51)) +
+  guides(color = guide_legend(ncol=1))
+fig
+```
