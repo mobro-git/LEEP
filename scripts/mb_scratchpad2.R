@@ -45,6 +45,32 @@ vars_data_long = data_long %>% filter(datasrc == workbook)
 
 
 
+
+
+
+
+
+
+ghgi = read_csv("data-raw/model-runs/EPA-GHGI.csv") %>%
+  pivot_wider(names_from = "year", values_from = "value")
+
+write.csv(ghgi, "data-extra/ghgi/EPA-GHGI_wide.csv")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #####################################
 
 bev = clean_data %>% filter(variable == "Energy Service|Transportation|Passenger|BEV|Sales Share") #datasrc == "bistline_ira_tall.csv" & 7y
