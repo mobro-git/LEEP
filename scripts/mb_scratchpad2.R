@@ -35,48 +35,30 @@ data_vars
 vars_data_long = data_long %>% filter(datasrc == workbook)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ghgi = read_csv("data-raw/model-runs/EPA-GHGI.csv") %>%
-  pivot_wider(names_from = "year", values_from = "value")
-
-write.csv(ghgi, "data-extra/ghgi/EPA-GHGI_wide.csv")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #####################################
 
 bev = clean_data %>% filter(variable == "Energy Service|Transportation|Passenger|BEV|Sales Share") #datasrc == "bistline_ira_tall.csv" & 7y
 bev_raw = data_raw %>% filter(variable == "Energy Service|Transportation|Passenger|BEV|Sales Share")
 bev_min = data_min %>% filter(variable == "Energy Service|Transportation|Passenger|BEV|Sales Share")
 
+####################################################################################################
+
+library(targets)
+library(tidyverse)
+tar_load(config)
+tar_load(clean_data)
+
+co2 = clean_data %>%
+  filter(variable == "Emissions|CO2" &
+           year > 2020 &
+           model %in% config$models_leep)
+unique(co2$model)
+
+nonco2 = clean_data %>%
+  filter(variable == "Emissions|Non-CO2 GHG" &
+           year > 2020 &
+           model %in% config$models_leep)
+unique(nonco2$model)
 
 
 

@@ -50,7 +50,7 @@ tar_plan(
                     "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA-LTS", "EIA-STEO", "IEA","EPA"),
 
     models_per_elc = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-EMF", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
-                       "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "AEO2021"),
+                       "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP"),
 
     #models_leep_sens = c("USREP-ReEDS", "ReEDS", "Scout v0.8", "GCAM-USA v6.0", "OP-NEMS"),
     models_lts = c("GCAM-LTS", "OP-NEMS-LTS", "EIA-LTS"),

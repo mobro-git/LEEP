@@ -212,7 +212,7 @@ nrg_co2_var = c("Emissions|CO2|Energy|Demand|Buildings",
                 "Emissions|CO2|Energy|Demand|Transportation",
                 "Emissions|CO2|Energy|Supply|Electricity")
 
-co2_models = c("EPS-EI", "GCAM-CGS", "MARKAL-NETL", "NEMS-RGH", "RIO-REPEAT")
+co2_models = c("EPS-EI", "GCAM-CGS", "MARKAL-NETL", "NEMS-RHG", "RIO-REPEAT")
 
 nrg_co2 = all_modeled %>%
   filter(variable %in% nrg_co2_var) %>%
