@@ -7,6 +7,7 @@
 
 complete_implicit_na = function(df) {
 
+  print("Completing implicit NAs")
   # model-scenario combinations to cross reference. only add back implicit missing data for model-scenario combinations submitted
   submitted = unique(df[c("model","scenario")])
 
@@ -32,6 +33,7 @@ complete_implicit_na = function(df) {
 
 make_clean_data = function(df) {
 
+  print("Making clean data")
   ind_emissions = df %>% filter(model %in% c("USREP-ReEDS","GCAM-PNNL", "ReEDS-NREL", "OP-NEMS")) %>%
     filter(variable %in% c("Emissions|CO2|Energy|Demand|Industry",
                            "Emissions|CO2|Energy|Supply|Biogas",
@@ -58,7 +60,17 @@ make_clean_data = function(df) {
 
   ind_var = rbind(ind_emissions, ind_emissions_indirect)
 
-  all = rbind(ind_var, df)
+  gcampnnl_nonco2 = df %>%
+    filter(model == "GCAM-PNNL" &
+             variable %in% c("Emissions|CH4","Emissions|N2O","Emissions|F-Gases")) %>%
+    group_by(scenario,model,region,unit,year,variable) %>%
+    summarise(value = sum(value)) %>%
+    ungroup() %>%
+    mutate(datasrc = "calculated") %>%
+    mutate(variable = "Emissions|Non-CO2 GHG") %>%
+    select(model,scenario,unit,year,datasrc,variable,region,value)
+
+  all = rbind(ind_var, df, gcampnnl_nonco2)
 
   all
 

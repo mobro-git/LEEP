@@ -4247,6 +4247,9 @@
 "MARKAL-NETL","IRA","United States","Emissions|CO2|Energy","Mt CO2/yr","2040",3182.16
 "MARKAL-NETL","IRA","United States","Emissions|CO2|Energy","Mt CO2/yr","2045",3083.91
 "MARKAL-NETL","IRA","United States","Emissions|CO2|Energy","Mt CO2/yr","2050",2845.14
+"NEMS-RHG","IRA","United States","Emissions|CO2|Energy","Mt CO2/yr","2025",4218.18582452069
+"NEMS-RHG","IRA","United States","Emissions|CO2|Energy","Mt CO2/yr","2030",3361.96624537214
+"NEMS-RHG","IRA","United States","Emissions|CO2|Energy","Mt CO2/yr","2035",3199.30631077256
 "REGEN-EPRI","IRA","United States","Emissions|CO2|Energy","Mt CO2/yr","2025",4459.55636712156
 "REGEN-EPRI","IRA","United States","Emissions|CO2|Energy","Mt CO2/yr","2030",3920.61451399309
 "REGEN-EPRI","IRA","United States","Emissions|CO2|Energy","Mt CO2/yr","2035",3158.19215192956
@@ -4322,6 +4325,9 @@
 "MARKAL-NETL","Reference","United States","Emissions|CO2|Energy","Mt CO2/yr","2040",4132.78
 "MARKAL-NETL","Reference","United States","Emissions|CO2|Energy","Mt CO2/yr","2045",4190.65
 "MARKAL-NETL","Reference","United States","Emissions|CO2|Energy","Mt CO2/yr","2050",4158.51
+"NEMS-RHG","Reference","United States","Emissions|CO2|Energy","Mt CO2/yr","2025",4117.22582670527
+"NEMS-RHG","Reference","United States","Emissions|CO2|Energy","Mt CO2/yr","2030",3884.9935535944
+"NEMS-RHG","Reference","United States","Emissions|CO2|Energy","Mt CO2/yr","2035",3684.15024981487
 "REGEN-EPRI","Reference","United States","Emissions|CO2|Energy","Mt CO2/yr","2025",4501.15357682317
 "REGEN-EPRI","Reference","United States","Emissions|CO2|Energy","Mt CO2/yr","2030",4119.10492874878
 "REGEN-EPRI","Reference","United States","Emissions|CO2|Energy","Mt CO2/yr","2035",3883.04149792527
@@ -4349,6 +4355,9 @@
 "MARKAL-NETL","IRA","United States","Emissions|CO2","Mt CO2/yr","2040",3211.22
 "MARKAL-NETL","IRA","United States","Emissions|CO2","Mt CO2/yr","2045",3113.75
 "MARKAL-NETL","IRA","United States","Emissions|CO2","Mt CO2/yr","2050",2874.3
+"NEMS-RHG","IRA","United States","Emissions|CO2","Mt CO2/yr","2025",4617.66277995179
+"NEMS-RHG","IRA","United States","Emissions|CO2","Mt CO2/yr","2030",3731.42341620699
+"NEMS-RHG","IRA","United States","Emissions|CO2","Mt CO2/yr","2035",3572.57563575272
 "RIO-REPEAT","IRA","United States","Emissions|CO2","Mt CO2/yr","2025",4771.5
 "RIO-REPEAT","IRA","United States","Emissions|CO2","Mt CO2/yr","2030",3693
 "RIO-REPEAT","IRA","United States","Emissions|CO2","Mt CO2/yr","2035",2763
@@ -4406,6 +4415,9 @@
 "MARKAL-NETL","Reference","United States","Emissions|CO2","Mt CO2/yr","2040",4162.56
 "MARKAL-NETL","Reference","United States","Emissions|CO2","Mt CO2/yr","2045",4222.06
 "MARKAL-NETL","Reference","United States","Emissions|CO2","Mt CO2/yr","2050",4190.57
+"NEMS-RHG","Reference","United States","Emissions|CO2","Mt CO2/yr","2025",4516.98988352657
+"NEMS-RHG","Reference","United States","Emissions|CO2","Mt CO2/yr","2030",4267.33793080568
+"NEMS-RHG","Reference","United States","Emissions|CO2","Mt CO2/yr","2035",4069.21513053717
 "RIO-REPEAT","Reference","United States","Emissions|CO2","Mt CO2/yr","2025",4809.5
 "RIO-REPEAT","Reference","United States","Emissions|CO2","Mt CO2/yr","2030",4156
 "RIO-REPEAT","Reference","United States","Emissions|CO2","Mt CO2/yr","2035",3710
@@ -4442,6 +4454,12 @@
 "MARKAL-NETL","IRA","United States","Emissions|GHG","Mt CO2e/yr","2040",3623.80254
 "MARKAL-NETL","IRA","United States","Emissions|GHG","Mt CO2e/yr","2045",3530.47984
 "MARKAL-NETL","IRA","United States","Emissions|GHG","Mt CO2e/yr","2050",3305.63606
+"NEMS-RHG","Reference","United States","Emissions|GHG","Mt CO2e/yr","2025",5736.99372358143
+"NEMS-RHG","Reference","United States","Emissions|GHG","Mt CO2e/yr","2030",5447.62816319668
+"NEMS-RHG","Reference","United States","Emissions|GHG","Mt CO2e/yr","2035",5202.58009324508
+"NEMS-RHG","IRA","United States","Emissions|GHG","Mt CO2e/yr","2025",5834.36680771287
+"NEMS-RHG","IRA","United States","Emissions|GHG","Mt CO2e/yr","2030",4867.02402089029
+"NEMS-RHG","IRA","United States","Emissions|GHG","Mt CO2e/yr","2035",4672.37826428518
 "RIO-REPEAT","Reference","United States","Emissions|GHG","Mt CO2e/yr","2025",6153.09624028867
 "RIO-REPEAT","Reference","United States","Emissions|GHG","Mt CO2e/yr","2030",5460.34097579332
 "RIO-REPEAT","Reference","United States","Emissions|GHG","Mt CO2e/yr","2035",5009.7424026266
