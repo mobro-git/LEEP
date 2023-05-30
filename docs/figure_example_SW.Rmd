@@ -42,16 +42,16 @@ clean_data = clean_data %>% mutate(value = case_when(
   TRUE ~ unit
 ))
 
-clean_data = clean_data %>% mutate(value = case_when(
-    (model == "OP-NEMS-LTS" & scenario == "LTS.High" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Buildings") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Buildings"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Buildings"),"value"]$value) / 2,
-    (model == "OP-NEMS-LTS" & scenario == "LTS.High" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Industry") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Industry"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Industry"),"value"]$value) / 2,
-    (model == "OP-NEMS-LTS" & scenario == "LTS.High" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Transportation") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Transportation"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Transportation"),"value"]$value) / 2,
-    
-    (model == "OP-NEMS-LTS" & scenario == "LTS.Low" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Buildings") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Buildings"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Buildings"),"value"]$value) / 2,
-    (model == "OP-NEMS-LTS" & scenario == "LTS.Low" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Industry") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Industry"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Industry"),"value"]$value) / 2,
-    (model == "OP-NEMS-LTS" & scenario == "LTS.Low" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Transportation") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Transportation"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Transportation"),"value"]$value) / 2,
-  TRUE ~ value
-))
+# clean_data = clean_data %>% mutate(value = case_when(
+#     (model == "OP-NEMS-LTS" & scenario == "LTS.High" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Buildings") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Buildings"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Buildings"),"value"]$value) / 2,
+#     (model == "OP-NEMS-LTS" & scenario == "LTS.High" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Industry") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Industry"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Industry"),"value"]$value) / 2,
+#     (model == "OP-NEMS-LTS" & scenario == "LTS.High" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Transportation") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Transportation"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.High" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Transportation"),"value"]$value) / 2,
+#     
+#     (model == "OP-NEMS-LTS" & scenario == "LTS.Low" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Buildings") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Buildings"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Buildings"),"value"]$value) / 2,
+#     (model == "OP-NEMS-LTS" & scenario == "LTS.Low" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Industry") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Industry"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Industry"),"value"]$value) / 2,
+#     (model == "OP-NEMS-LTS" & scenario == "LTS.Low" & year == 2025 & variable == "Emissions|CO2|Energy|Demand|Transportation") ~ (clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2020 & clean_data$variable == "Emissions|CO2|Energy|Demand|Transportation"),"value"]$value + clean_data[(clean_data$model == "OP-NEMS-LTS" & clean_data$scenario == "LTS.Low" & clean_data$year == 2030 & clean_data$variable == "Emissions|CO2|Energy|Demand|Transportation"),"value"]$value) / 2,
+#   TRUE ~ value
+# ))
 
 cap_add_avg = clean_data %>% 
   filter(model %in% c("USREP-ReEDS", "GCAM-PNNL", "OP-NEMS"), 
@@ -264,8 +264,8 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
       scale_x_continuous(breaks = c(2005,2010, hist_year, 2025, 2030, 2035), labels = c(2005, 2010, hist_year, 2025, 2030, 2035)) +
       scale_alpha(range = c(0.6, 1), guide = "none") + 
       annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historic", color = "black", alpha = 1) +
-      annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#0388B3", alpha = 1) +
-      annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#F28063", alpha = 1) +
+      annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#F28063", alpha = 1) +
+      annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#0388B3", alpha = 1) +
       theme(legend.position = "none", plot.title = element_blank())
   
   if (labels) {
@@ -434,9 +434,9 @@ duplicate_historical_data <- function(data_long, hist_model, hist_year, criteria
 
 Function for cone plots for LTS plots
 ```{r}
-lts_coneplot_with_dots = function(config, data, figmap, lts_fignum, leep_fignum, region, ymin, ymax, metric = "mean", facet = FALSE) {
+lts_coneplot_with_dots = function(config, data, figmap, lts_fignum, leep_fignum, region, ymin, ymax, title, metric = "mean", facet = FALSE) {
   # update the historical data (is this even necessary anymore?)
-  # data2 = data %>% duplicate_historical_data("EIA-LTS",2020)
+  data = data %>% duplicate_historical_data("EIA-LTS",2020)
   
   # make the LTS cone plot
   fig1 = print_graph("cone_uncertainty", config, data, figmap, lts_fignum, region) +
@@ -480,10 +480,13 @@ lts_coneplot_with_dots = function(config, data, figmap, lts_fignum, leep_fignum,
 
   
   fig2 = fig1 +
-    geom_point(data = df_30, aes(x = year, y = value, color = variable_rename), shape = 1, size = 2, position = position_dodge(width = 1)) +
+    geom_point(data = df_30, aes(x = year, y = value, color = variable_rename), 
+               shape = 1, size = 2, position = position_dodge(width = 1)) +
     segment_code_30 +
-    geom_point(data = df_35, aes(x = year, y = value, color = variable_rename), shape = 1, size = 2, position = position_dodge(width = 1)) +
+    geom_point(data = df_35, aes(x = year, y = value, color = variable_rename), 
+               shape = 1, size = 2, position = position_dodge(width = 1)) +
     segment_code_35 +
+    ggtitle(title) +
     theme(legend.position = "none", axis.title.x = element_blank())
     #bottom1
   return(fig2)
@@ -495,58 +498,102 @@ lts_coneplot_with_dots = function(config, data, figmap, lts_fignum, leep_fignum,
 Faceted Versions
 ```{r}
 # Buildings Energy
-  p = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 15, 16, "United States", 0, 15, "mean", facet = TRUE) +
-    facet_grid(~factor(variable_rename, levels=c('Electricity', 'NonElectric')))
-  p
-  ggsave(filename = "output/leep/cone_uncertainty/Fig6.4_LTS_cone_buildings_facet.svg",p, width = 7, height = 5, units = "in")
-  
+p = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 15, 16, "United States", 0, 15, title = "Buildings Sector Final Energy", "median", facet = TRUE) +
+  facet_grid(~factor(variable_rename, levels=c('Electricity', 'NonElectric')))
+p
+ggsave(filename = "output/leep/cone_uncertainty/Fig6.4_LTS_cone_buildings_facet.svg",p, width = 7, height = 5, units = "in")
+
 # Transportation Energy
-  p3 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 11, 12, "United States", 0, 30, "mean", facet = TRUE)
-  p3 + facet_grid(~factor(variable_rename, levels=c('Fossil', 'Electricity', 'Alternative Fuels')))
-  ggsave(filename = "output/leep/cone_uncertainty/Fig6.3_LTS_cone_transport_facet.svg",p3, width = 7, height = 5, units = "in")
-  
+p3 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 11, 12, "United States", 0, 30, title = "Transportation Sector Final Energy" , "median", facet = TRUE)
+p3 + facet_grid(~factor(variable_rename, levels=c('Fossil', 'Electricity', 'Alternative Fuels')))
+ggsave(filename = "output/leep/cone_uncertainty/Fig6.3_LTS_cone_transport_facet.svg",p3, width = 7, height = 5, units = "in")
+
 # Industrial Energy
-  p4 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 13, 14, "United States", 0, 25, "mean", facet = TRUE) +
-    facet_grid(~factor(variable_rename, levels=c('Fossil', 'Electricity', 'Alternative Energy')))
-  p4
-  ggsave(filename = "output/leep/cone_uncertainty/Fig6.5_LTS_cone_industry_facet.svg",p4, width = 7, height = 5, units = "in")
+p4 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 13, 14, "United States", 0, 25, title = "Industrial Sector Final Energy", "median", facet = TRUE) +
+  facet_grid(~factor(variable_rename, levels=c('Fossil', 'Electricity', 'Alternative Energy')))
+p4
+ggsave(filename = "output/leep/cone_uncertainty/Fig6.5_LTS_cone_industry_facet.svg", p4, width = 7, height = 5, units = "in")
 
 # Economy-wide Emissions
-  p5 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 9, 10, "United States", -100, 2500, "mean", facet = TRUE) +
-    facet_grid(~factor(variable_rename, levels=c('Electricity', 'Transportation', 'Buildings', 'Industry')))
-  p5
-  ggsave(filename = "output/leep/cone_uncertainty/Fig6.2_LTS_cone_emissions_facet_Fig17.svg",p5, width = 7, height = 5, units = "in")
+p5 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 9, 10, "United States", -100, 2500, title = "Economy-Wide Combustions Emissions by Sector", "median", facet = TRUE) +
+  facet_grid(~factor(variable_rename, levels=c('Electricity', 'Transportation', 'Buildings', 'Industry')))
+p5
+ggsave(filename = "output/leep/cone_uncertainty/Fig6.2_LTS_cone_emissions_facet.svg", p5, width = 7, height = 5, units = "in")
+  
+
+filler = data.frame("model" = c("NA"), "scenario" = c("NA"), "year" = c(2020), variable = c("Emissions|CO2|Energy|Supply|Electricity"),
+               variable_rename = c("Electricity"), unit = c("Mt CO2/yr"), value = c(-200))
+  
+# Economy-wide Indirect Emissions
+p6 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 17, 18, "United States", 
+                            -100, 2500, "median", facet = TRUE) +
+  theme(axis.text.y = element_blank(), plot.title = element_blank(), axis.title.y = element_blank()) +
+  facet_grid(~factor(variable_rename, levels = c('Electricity', 'Transportation', 'Buildings', 'Industry')))
+# p6
+
+p6a = filler %>% ggplot() +
+  geom_point(aes(x = year, y = value)) +
+  labs(y = "Mt CO2/yr") +
+  scale_y_continuous(limits = c(-100, 2500)) +
+  scale_x_continuous(limits = c(2005, 2050), 
+                     breaks = c(2005, 2021, 2030, 2040, 2050), labels = c(2005, 2021, 2030, 2040, 2050)) +
+  facet_grid(~factor(variable_rename, levels = c('Electricity', 'Transportation', 'Buildings', 'Industry'))) +
+  theme_emf() +
+  theme(axis.ticks = element_blank(), axis.title.x = element_blank(),
+        axis.text.x = element_text(angle = 45, hjust = 1))
+# p6a
+
+p6b = (p6a | p6) +
+  plot_annotation(title = "Economy-Wide Emissions from Electricity Used", theme = theme(plot.title = element_text(hjust = 0.5))) +
+  plot_layout(widths = c(1,3)) +
+  theme(plot.margin = margin(0,0,0,0))
+  
+p6b
+ggsave(filename = "output/leep/cone_uncertainty/Fig6.2A_LTS_cone_indirect_emissions_facet.svg", p6b, width = 7, height = 5, units = "in")
+
+  
 ```
 
 
 ```{r}
 # data table for LTS plots
-models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC",
+leep_models = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC",
                 "IPM-EPA", "MARKAL-NETL", "NEMS-RHG", "NEMS-RHG", "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT",
                 "ReEDS-NREL", "Scout-LEEP", "EIA-LTS", "EIA-STEO", "IEA")
 
+clean_data10 = clean_data %>% mutate(
+  variable = case_when(
+    (model == "GCAM-LTS" & variable == "Emissions|CO2|Energy|Demand|Industry") ~
+      "Emissions|CO2|Energy|Demand|Industry and Fuel Production",
+    TRUE ~ variable
+  )
+)
+
 lts_data_table = function(focus, leep_models) {
-  dta_lts = clean_data %>% 
+  print(focus)
+  dta_lts = clean_data10 %>% 
     filter(variable == focus, model == "GCAM-LTS", scenario == "LTS.Mid1", year %in% c(2030, 2035)) %>%
     group_by(year, unit) %>%
-    summarize(median = median(value), mean = mean(value)) %>%
+    summarize(median = median(value)) %>%
     mutate(scenario = "NZ2050")
   
-  dta_leep = clean_data %>% 
-    filter(variable == focus, model %in% models_leep, year %in% c(2030, 2035), scenario != "No IRA") %>%
+  dta_leep = clean_data10 %>% 
+    filter(variable == focus, model %in% models_leep, year %in% c(2030, 2035), scenario == "IRA") %>%
     group_by(year, unit) %>%
-    summarize(median = median(value), mean = mean(value)) %>%
+    summarize(median = median(value)) %>%
     mutate(scenario = "IRA")
   
   dta_combo = rbind(dta_lts, dta_leep) %>%
     mutate(variable = focus) %>%
-    select(scenario, variable, year, unit, median, mean) %>%
-    pivot_wider(names_from = scenario, values_from = c(mean, median)) %>%
+    select(scenario, variable, year, unit, median) %>%
+    pivot_wider(names_from = scenario, values_from = c(median)) %>%
     data.frame() %>%
+    rename(median_IRA = IRA) %>%
+    rename(median_NZ2050 = NZ2050) %>%
     mutate(diff_median = median_IRA - median_NZ2050) %>%
-    mutate(diff_mean = mean_IRA - mean_NZ2050) %>%
-    mutate(pct_diff_median = diff_median / median_NZ2050) %>%
-    mutate(pct_diff_mean = diff_mean / mean_NZ2050)
+    # #mutate(diff_mean = mean_IRA - mean_NZ2050) %>%
+    mutate(pct_diff_median = diff_median / median_NZ2050)
+    # #mutate(pct_diff_mean = diff_mean / mean_NZ2050)
   return(dta_combo)
 }
 
@@ -554,7 +601,7 @@ t = lts_data_table("Final Energy|Buildings|NonElectric", leep_models)
 
 # Emissions
 tab = rbind(lts_data_table("Emissions|CO2|Energy|Demand|Buildings", leep_models), 
-      lts_data_table("Emissions|CO2|Energy|Demand|Industry", leep_models),
+      lts_data_table("Emissions|CO2|Energy|Demand|Industry and Fuel Production", leep_models),
       lts_data_table("Emissions|CO2|Energy|Demand|Transportation", leep_models), 
       lts_data_table("Emissions|CO2|Energy|Supply|Electricity", leep_models))
 print(tab)
@@ -600,6 +647,47 @@ Overlaid Versions
   # p5 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 3, 4, "United States", -1000, 2500, "mean", facet = FALSE)
   # p5
   # ggsave(filename = "output/leep/cone_uncertainty/Fig17_LTS_cone_emissions_new.svg",p5, width = 7, height = 5, units = "in")
+```
+
+```{r}
+# Trying again: cones
+# Buildings Energy
+mid = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 23, 24, "United States", -100, 2500, title = "Buildings", "median", facet = TRUE) +
+  theme(axis.title.y = element_blank(), axis.text.y = element_blank())
+mid
+
+# +
+#   facet_grid(~factor(variable_rename, levels=c('Electricity', 'NonElectric')))
+
+# Transportation Energy
+left = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 21, 22, "United States", -100, 2500, title = "Transportation" , "median", facet = TRUE)
+left
+# p3 + facet_grid(~factor(variable_rename, levels=c('Fossil', 'Electricity', 'Alternative Fuels')))
+# ggsave(filename = "output/leep/cone_uncertainty/Fig6.3_LTS_cone_transport_facet.svg",p3, width = 7, height = 5, units = "in")
+
+# Industrial Energy
+right = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 25, 26, "United States", -100, 2500, title = "Industrial", "median", facet = TRUE) +
+  theme(axis.title.y = element_blank(), axis.text.y = element_blank())
+right
+# +
+#   facet_grid(~factor(variable_rename, levels=c('Fossil', 'Electricity', 'Alternative Energy')))
+# p4
+# ggsave(filename = "output/leep/cone_uncertainty/Fig6.5_LTS_cone_industry_facet.svg", p4, width = 7, height = 5, units = "in")
+
+# Economy-wide Emissions
+top = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 19, 20, "United States", -100, 2500, title = "Electric Sector CO2 Emissions", "median", facet = FALSE)
+top
+# +
+#   facet_grid(~factor(variable_rename, levels=c('Electricity', 'Transportation', 'Buildings', 'Industry')))
+# p5
+# ggsave(filename = "output/leep/cone_uncertainty/Fig6.2_LTS_cone_emissions_facet.svg", p5, width = 7, height = 5, units = "in")
+
+combined = (top / (left | mid | right))
+combined
+
+ggsave(filename = "output/leep/cone_uncertainty/Fig6.2NEW_LTS_cone_indirect_emissions_TOTAL.svg", combined, width = 7, height = 5, units = "in")
+
+
 ```
 
 
@@ -1123,11 +1211,11 @@ ggsave(filename = "output/leep/stacked_bar/Fig1.1a_emis_nonco2ghg.svg",p, width 
 
 ```{r}
 # sensitivity dot plots
-panel1_scens = c("IRA","IRA.Low","IRA.High")
+panel1_scens = c("Core","IRA", "IRA.Low","IRA.High")
 panel2_scens = c() # Economic Growth
-panel3_scens = c("IRA.LGP","IRA.HGP") # Energy Prices
-panel4_scens = c("IRA.AllClean", "IRA.AdvBRE", "IRA.ConsBRE") # Technology Cost
-panel5_scens = c("IRA.Cons") # Deployment Constraints
+panel3_scens = c("Low Gas Price","High Gas Price", "Core") # Energy Prices
+panel4_scens = c("All Advanced", "Adv Battery/Renew", "Cons Battery/Renew", "Core") # Technology Cost
+panel5_scens = c("Constrained Deployment", "Core") # Deployment Constraints
 
 sens_dta = clean_data %>% filter(variable == "Emissions|CO2|Energy|Supply|Electricity",
                                  year %in% c(2030, 2035)) #%>% 
@@ -1153,20 +1241,50 @@ sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>%
 sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
   bind_rows(filler)
 
-sens_dot_plot = function(dta, far_left = FALSE, ira_coord = c(0,0), low_coord = c(0,0), high_coord = c(0,0)) {
+sens_dot_plot = function(dta, title, far_left = FALSE, ymin = 0, ymax = 0, ira_coord = c(0,0), low_coord = c(0,0), high_coord = c(0,0)) {
   if (far_left) {
     point_code = geom_point(aes(x = year + stagger, y = value, color = scenario), shape = 1, size = 2)
   } else {
     point_code = geom_point(aes(x = year, y = value), shape = 1, size = 2)
   }
   
+  if (far_left) {
+    stats = dta %>% 
+      mutate(scenario = case_when(scenario == "Core" ~ "IRA", TRUE ~ scenario)) %>%
+      group_by(year, stagger, scenario) %>%
+      summarize(median = median(value))
+    segment_code = geom_segment(data = stats, 
+                                aes(x = year + stagger - 0.5, xend = year + stagger + 0.5, 
+                                    y = median, yend = median, color = scenario), 
+                                linewidth = 0.5)
+  } else {
+    dta$stagger = 0
+    stats = dta %>% 
+      mutate(scenario = case_when(scenario == "Core" ~ "IRA", TRUE ~ scenario)) %>%
+      group_by(year, stagger) %>%
+      summarize(median = median(value))
+    segment_code = geom_segment(data = stats,
+                                aes(x = year + stagger - 0.5, xend = year + stagger + 0.5, 
+                                    y = median, yend = median), 
+                                linewidth = 0.5, color = "black")
+  }
+  
+  stats = dta %>% 
+    mutate(scenario = case_when(scenario == "Core" ~ "IRA", TRUE ~ scenario)) %>%
+    group_by(year, stagger, scenario) %>%
+    summarize(median = median(value))
+   
+  print(stats)
+  
   p = dta %>% ggplot() +
     point_code + 
+    segment_code +
     scale_x_continuous(breaks = c(2030, 2035), labels = c(2030, 2035), limits = c(2028, 2037)) +
-    scale_y_continuous(limits = c(0, 1600)) +
+    scale_y_continuous(limits = c(ymin, ymax)) +
     theme_emf() +
+    ggtitle(title) + 
     theme(axis.title.x = element_blank(),
-          plot.title = element_blank(), axis.ticks = element_blank(),
+          plot.title = element_text(hjust = 0.5, size = 8), axis.ticks = element_blank(),
           plot.margin = margin(0.5,0.5,0.5,0.5))
   
   if (!far_left) {
@@ -1176,40 +1294,125 @@ sens_dot_plot = function(dta, far_left = FALSE, ira_coord = c(0,0), low_coord = 
   } else {
     p = p +
       labs(y = "Mt CO2/yr") +
-      scale_subpalette(subpalettes, "Sensitivity Dots") +
-      scale_color_manual(values = c("IRA" = "black", "IRA.Low" = "#42d4f4", "IRA.High" = "#f58231"), guide = "none") +
-      annotate("text", x = ira_coord[1], y = ira_coord[2], size = 2.5,
-               label = "IRA", color = "black", alpha = 1, hjust = -0.2) +
-      annotate("text", x = low_coord[1], y = low_coord[2], size = 2.5,
-               label = "IRA.Low", color = "#42d4f4", alpha = 1, hjust = -0.2) +
-      annotate("text", x = high_coord[1], y = high_coord[2], size = 2.5,
-               label = "IRA.High", color = "#f58231", alpha = 1, hjust = -0.2)
-      
+      #scale_subpalette(subpalettes, "Sensitivity Dots") +
+      scale_color_manual(values = c("IRA" = "black", "IRA.Low" = "#42d4f4", "IRA.High" = "#883192"), guide = "none")
   }
+  
+  if(sum(ira_coord) != 0) {
+     p = p +
+      annotate("text", x = ira_coord[1], y = ira_coord[2], size = 2.5,
+               label = "Core", color = "black", alpha = 1, hjust = -0.2)
+  }
+  if(sum(low_coord) != 0) {
+    p = p +
+      annotate("text", x = low_coord[1], y = low_coord[2], size = 2.5,
+               label = "Pessimistic", color = "#42d4f4", alpha = 1, hjust = -0.2)
+  }
+  if(sum(high_coord) != 0) {
+    p = p +
+      annotate("text", x = high_coord[1], y = high_coord[2], size = 2.5,
+               label = "Optimistic", color = "#883192", alpha = 1, hjust = -0.2)
+  }
+  
   return(p)
 }
 
 
-p1 = sens_dot_plot(sens_dta_panel1, far_left = TRUE, ira_coord = c(2030,1275), low_coord = c(2030, 1425), 
+p1 = sens_dot_plot(sens_dta_panel1, title = "IRA Implementation", ymin = 0, ymax = 1600, far_left = TRUE, ira_coord = c(2030,1275), low_coord = c(2030, 1425), 
                    high_coord = c(2030, 250))
-#p1
-p2 = sens_dot_plot(sens_dta_panel2)
+# p1
+#p2 = sens_dot_plot(sens_dta_panel2)
 #p2
-p3 = sens_dot_plot(sens_dta_panel3)
+p3 = sens_dot_plot(sens_dta_panel3, title = "Natural Gas Price", ymin = 0, ymax = 1600,)
 # p3
-p4 = sens_dot_plot(sens_dta_panel4)
+p4 = sens_dot_plot(sens_dta_panel4, title = "Technology Cost", ymin = 0, ymax = 1600,)
 # p4
-p5 = sens_dot_plot(sens_dta_panel5)
+p5 = sens_dot_plot(sens_dta_panel5, title = "Constrained Deployment", ymin = 0, ymax = 1600,)
 # p5
 
-combined = (p1 | p2 | p3 | p4 | p5) +
+combined = (p1 | p3 | p4 | p5) +
   plot_annotation(title = "Electric Sector CO2 Emissions", 
                   theme = theme(plot.title = element_text(hjust = 0.5)))
   
 combined
 
-ggsave(filename = "output/leep/dots/Fig1.4_elec_sensitivity_dots.svg",combined, width = 7, height = 5, units = "in")
+ggsave(filename = "output/leep/dots/Fig1.4b_elec_sensitivity_dots.svg",combined, width = 7, height = 5, units = "in")
 
+sens_dta = clean_data %>% filter(variable == "Emissions|CO2", year %in% c(2030, 2035))
 
 #View(sens_dta)
+```
+
+
+```{r}
+# sensitivity dot plots
+panel1_scens = c("Core","IRA", "IRA.Low","IRA.High")
+
+sens_dta_econ = clean_data %>% filter(variable == "Emissions|CO2",
+                                 year %in% c(2030, 2035)) %>%
+  filter(scenario %in% panel1_scens) %>%
+  mutate(stagger = case_when(
+    scenario == "IRA.Low" ~ -0.7,
+    scenario == "IRA.High" ~ 0.7,
+    TRUE ~ 0
+  ))
+
+# print(max(sens_dta$value))
+# print(min(sens_dta$value))
+
+#  mutate(year = factor(year))
+
+sens_dta_trans = clean_data %>% 
+  filter(variable == "Emissions|CO2|Energy|Demand|Transportation", year %in% c(2030, 2035)) %>% 
+  filter(scenario %in% panel1_scens) %>%
+  mutate(stagger = case_when(
+    scenario == "IRA.Low" ~ -0.7,
+    scenario == "IRA.High" ~ 0.7,
+    TRUE ~ 0
+  ))
+
+sens_dta_build = clean_data %>% 
+  filter(variable == "Emissions|CO2|Energy|Demand|Buildings", year %in% c(2030, 2035)) %>% 
+  filter(scenario %in% panel1_scens) %>%
+  mutate(stagger = case_when(
+    scenario == "IRA.Low" ~ -0.7,
+    scenario == "IRA.High" ~ 0.7,
+    TRUE ~ 0
+  ))
+
+sens_dta_ind = clean_data %>% 
+  filter(variable == "Emissions|CO2|Energy|Demand|Industry and Fuel Production", year %in% c(2030, 2035)) %>% 
+  filter(scenario %in% panel1_scens) %>%
+  mutate(stagger = case_when(
+    scenario == "IRA.Low" ~ -0.7,
+    scenario == "IRA.High" ~ 0.7,
+    TRUE ~ 0
+  ))
+
+p7 = sens_dot_plot(sens_dta_econ, title = "Economy-Wide CO2 Emissions", ymin = 0, ymax = 5000, far_left = TRUE, ira_coord = c(2030,4000), low_coord = c(2029.2, 4200), 
+                   high_coord = c(2030.6, 3700))
+p7
+ggsave(filename = "output/leep/dots/Fig1.4a_econwide_sensitivity_dots.svg",p7, width = 7, height = 5, units = "in")
+
+
+p8 = sens_dot_plot(sens_dta_trans, title = "Transportation CO2 Emissions", ymin = 0, ymax = 2000, far_left = TRUE, ira_coord = c(2030,1700), low_coord = c(2028.3, 1600), 
+                   high_coord = c(2030.6, 1550))
+p8
+ggsave(filename = "output/leep/dots/Fig1.4c_trans_sensitivity_dots.svg",p8, width = 7, height = 5, units = "in")
+
+
+p9 = sens_dot_plot(sens_dta_build, title = "Buildings CO2 Emissions", ymin = 0, ymax = 750, far_left = TRUE, ira_coord = c(2030,600), low_coord = c(2029.3, 625), 
+                   high_coord = c(2030.7, 550))
+p9
+ggsave(filename = "output/leep/dots/Fig1.4d_build_sensitivity_dots.svg",p9, width = 7, height = 5, units = "in")
+
+
+p10 = sens_dot_plot(sens_dta_ind, title = "Industrial CO2 Emissions", ymin = 0, ymax = 1250, far_left = TRUE, ira_coord = c(2030,1125), low_coord = c(2028.3, 1050), 
+                   high_coord = c(2030.7, 1080))
+p10
+ggsave(filename = "output/leep/dots/Fig1.4e_ind_sensitivity_dots.svg",p10, width = 7, height = 5, units = "in")
+
+
+
+
 ```

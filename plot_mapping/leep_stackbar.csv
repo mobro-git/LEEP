@@ -109,3 +109,4 @@ stackbar,12,Total GHGs,Emissions|F-Gasses,0,NonCO2,usa,models_ghgi_only,five_twe
 stackbar,12,Total GHGs,Emissions|NO2,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,13,Total GHGs4,Emissions|GHG,0,Total,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,13,Total GHGs4,Emissions|Non-CO2 GHG,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,14,Another GHG barplot,,,,,,,,,,,,,,,,

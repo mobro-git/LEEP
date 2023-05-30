@@ -149,9 +149,9 @@ master_palette <- c(
 color_map <- c(
   # scenarios
   "Historic" = "black",
-  "IRA" = "light salmon",
-  "Reference" = "teal blue",
-  "No IRA" = "teal blue",
+  "IRA" = "teal blue",
+  "Reference" = "light salmon",
+  "No IRA" = "light salmon",
   "IRA.High" = "dark gray",
   "IRA.Low" = "normal gray",
 
