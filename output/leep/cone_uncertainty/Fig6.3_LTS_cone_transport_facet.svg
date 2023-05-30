@@ -127,7 +127,7 @@
 <circle cx='264.96' cy='305.85' r='2.49' style='stroke-width: 0.71; stroke: #0388B3;' />
 <circle cx='264.96' cy='302.81' r='2.49' style='stroke-width: 0.71; stroke: #0388B3;' />
 <circle cx='264.96' cy='309.87' r='2.49' style='stroke-width: 0.71; stroke: #0388B3;' />
-<line x1='259.37' y1='307.08' x2='270.55' y2='307.08' style='stroke-width: 2.13; stroke: #0388B3; stroke-linecap: butt;' />
+<line x1='259.37' y1='306.08' x2='270.55' y2='306.08' style='stroke-width: 2.13; stroke: #0388B3; stroke-linecap: butt;' />
 <circle cx='278.94' cy='299.14' r='2.49' style='stroke-width: 0.71; stroke: #0388B3;' />
 <circle cx='278.94' cy='305.48' r='2.49' style='stroke-width: 0.71; stroke: #0388B3;' />
 <circle cx='278.94' cy='297.15' r='2.49' style='stroke-width: 0.71; stroke: #0388B3;' />
@@ -140,7 +140,7 @@
 <circle cx='278.94' cy='301.47' r='2.49' style='stroke-width: 0.71; stroke: #0388B3;' />
 <circle cx='278.94' cy='288.28' r='2.49' style='stroke-width: 0.71; stroke: #0388B3;' />
 <circle cx='278.94' cy='304.87' r='2.49' style='stroke-width: 0.71; stroke: #0388B3;' />
-<line x1='273.35' y1='302.57' x2='284.53' y2='302.57' style='stroke-width: 2.13; stroke: #0388B3; stroke-linecap: butt;' />
+<line x1='273.35' y1='301.69' x2='284.53' y2='301.69' style='stroke-width: 2.13; stroke: #0388B3; stroke-linecap: butt;' />
 <rect x='188.76' y='44.81' width='138.42' height='282.24' style='stroke-width: 1.07; stroke: #B3B3B3;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
@@ -189,11 +189,11 @@
 <circle cx='414.72' cy='159.23' r='2.49' style='stroke-width: 0.71; stroke: #003052;' />
 <circle cx='414.72' cy='121.76' r='2.49' style='stroke-width: 0.71; stroke: #003052;' />
 <circle cx='414.72' cy='116.76' r='2.49' style='stroke-width: 0.71; stroke: #003052;' />
-<line x1='409.13' y1='132.58' x2='420.31' y2='132.58' style='stroke-width: 2.13; stroke: #003052; stroke-linecap: butt;' />
+<line x1='409.13' y1='121.76' x2='420.31' y2='121.76' style='stroke-width: 2.13; stroke: #003052; stroke-linecap: butt;' />
 <circle cx='428.70' cy='187.14' r='2.49' style='stroke-width: 0.71; stroke: #003052;' />
 <circle cx='428.70' cy='144.65' r='2.49' style='stroke-width: 0.71; stroke: #003052;' />
 <circle cx='428.70' cy='131.47' r='2.49' style='stroke-width: 0.71; stroke: #003052;' />
-<line x1='423.11' y1='154.42' x2='434.29' y2='154.42' style='stroke-width: 2.13; stroke: #003052; stroke-linecap: butt;' />
+<line x1='423.11' y1='144.65' x2='434.29' y2='144.65' style='stroke-width: 2.13; stroke: #003052; stroke-linecap: butt;' />
 <rect x='338.52' y='44.81' width='138.42' height='282.24' style='stroke-width: 1.07; stroke: #B3B3B3;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
@@ -261,6 +261,6 @@
 <text x='34.07' y='147.11' text-anchor='end' style='font-size: 11.00px;fill: #4D4D4D; font-family: "Arial";' textLength='12.24px' lengthAdjust='spacingAndGlyphs'>20</text>
 <text x='34.07' y='61.58' text-anchor='end' style='font-size: 11.00px;fill: #4D4D4D; font-family: "Arial";' textLength='12.24px' lengthAdjust='spacingAndGlyphs'>30</text>
 <text transform='translate(14.05,185.93) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='37.35px' lengthAdjust='spacingAndGlyphs'>Quads</text>
-<text x='39.00' y='18.27' style='font-size: 14.40px; font-family: "Arial";' textLength='300.00px' lengthAdjust='spacingAndGlyphs'>Transportation Energy-United States (EIA-LTS)</text>
+<text x='39.00' y='18.27' style='font-size: 14.40px; font-family: "Arial";' textLength='222.68px' lengthAdjust='spacingAndGlyphs'>Transportation Sector Final Energy</text>
 </g>
 </svg>

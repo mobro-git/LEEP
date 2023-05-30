@@ -119,6 +119,9 @@
 <line x1='118.31' y1='202.87' x2='129.36' y2='202.87' style='stroke-width: 1.07; stroke: #42D4F4; stroke-linecap: butt;' />
 <line x1='126.04' y1='225.21' x2='137.09' y2='225.21' style='stroke-width: 1.07; stroke-linecap: butt;' />
 <line x1='133.78' y1='272.21' x2='144.83' y2='272.21' style='stroke-width: 1.07; stroke: #883192; stroke-linecap: butt;' />
+<text x='79.40' y='109.11' style='font-size: 7.11px; font-family: "Arial";' textLength='15.41px' lengthAdjust='spacingAndGlyphs'>Core</text>
+<text x='83.43' y='83.19' style='font-size: 7.11px;fill: #42D4F4; font-family: "Arial";' textLength='35.54px' lengthAdjust='spacingAndGlyphs'>Pessimistic</text>
+<text x='82.56' y='286.27' style='font-size: 7.11px;fill: #883192; font-family: "Arial";' textLength='31.19px' lengthAdjust='spacingAndGlyphs'>Optimistic</text>
 <rect x='49.25' y='36.57' width='109.39' height='304.19' style='stroke-width: 1.07; stroke: #B3B3B3;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
@@ -162,7 +165,7 @@
 <circle cx='189.45' cy='270.52' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='189.45' cy='238.18' r='2.49' style='stroke-width: 0.71;' />
 <line x1='183.92' y1='259.94' x2='194.97' y2='259.94' style='stroke-width: 1.07; stroke-linecap: butt;' />
-<text x='178.04' y='246.63' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
+<text x='178.05' y='246.63' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
 <text x='197.07' y='263.92' style='font-size: 5.69px; font-family: "Arial";' textLength='38.24px' lengthAdjust='spacingAndGlyphs'>High Gas Price</text>
 <text x='196.81' y='231.58' style='font-size: 5.69px; font-family: "Arial";' textLength='36.97px' lengthAdjust='spacingAndGlyphs'>Low Gas Price</text>
 <rect x='162.37' y='36.57' width='109.39' height='304.19' style='stroke-width: 1.07; stroke: #B3B3B3;' />
@@ -204,9 +207,10 @@
 <circle cx='302.57' cy='220.17' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='302.57' cy='259.94' r='2.49' style='stroke-width: 0.71;' />
 <line x1='297.05' y1='273.74' x2='308.10' y2='273.74' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<line x1='313.21' y1='272.15' x2='302.96' y2='278.66' style='stroke-width: 1.07;' />
 <line x1='311.16' y1='211.53' x2='302.97' y2='211.53' style='stroke-width: 1.07;' />
-<text x='309.62' y='274.35' style='font-size: 5.69px; font-family: "Arial";' textLength='48.66px' lengthAdjust='spacingAndGlyphs'>Adv Battery/Renew</text>
-<text x='310.50' y='285.61' style='font-size: 5.69px; font-family: "Arial";' textLength='32.88px' lengthAdjust='spacingAndGlyphs'>All Advanced</text>
+<text x='315.01' y='274.11' style='font-size: 5.69px; font-family: "Arial";' textLength='48.66px' lengthAdjust='spacingAndGlyphs'>Adv Battery/Renew</text>
+<text x='307.80' y='285.48' style='font-size: 5.69px; font-family: "Arial";' textLength='32.88px' lengthAdjust='spacingAndGlyphs'>All Advanced</text>
 <text x='312.96' y='213.57' style='font-size: 5.69px; font-family: "Arial";' textLength='52.14px' lengthAdjust='spacingAndGlyphs'>Cons Battery/Renew</text>
 <text x='286.31' y='253.34' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
 <rect x='275.50' y='36.57' width='109.39' height='304.19' style='stroke-width: 1.07; stroke: #B3B3B3;' />
@@ -246,9 +250,9 @@
 <circle cx='415.70' cy='212.14' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='415.70' cy='259.94' r='2.49' style='stroke-width: 0.71;' />
 <line x1='410.18' y1='236.04' x2='421.23' y2='236.04' style='stroke-width: 1.07; stroke-linecap: butt;' />
-<line x1='426.37' y1='203.50' x2='416.10' y2='203.49' style='stroke-width: 1.07;' />
+<line x1='426.37' y1='203.49' x2='416.10' y2='203.49' style='stroke-width: 1.07;' />
 <text x='428.17' y='205.53' style='font-size: 5.69px; font-family: "Arial";' textLength='62.58px' lengthAdjust='spacingAndGlyphs'>Constrained Deployment</text>
-<text x='399.44' y='253.34' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
+<text x='399.44' y='253.35' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
 <rect x='388.63' y='36.57' width='109.39' height='304.19' style='stroke-width: 1.07; stroke: #B3B3B3;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>

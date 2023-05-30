@@ -47,3 +47,17 @@ coneplot,15,Buildings Energy,Final Energy|Buildings|Electricity,Electricity,0,us
 coneplot,15,Buildings Energy,Final Energy|Buildings|NonElectric,NonElectric,0,usa,models_lts,fives,scenarios_lts,grid,year,value,scenario,region,variable_rename,region,variable_rename,fixed
 coneplot,16,Buildings Energy IRA,Final Energy|Buildings|Electricity,Electricity,0,usa,models_leep,fives,ira_only,grid,year,value,scenario,region,variable_rename,region,variable_rename,fixed
 coneplot,16,Buildings Energy IRA,Final Energy|Buildings|NonElectric,NonElectric,0,usa,models_leep,fives,ira_only,grid,year,value,scenario,region,variable_rename,region,variable_rename,fixed
+coneplot,17,XXX,Emissions|CO2|Energy|Demand|Buildings|Electricity,Buildings,0,usa,models_lts,fives,scenarios_lts,grid,year,value,scenario,region,variable_rename,region,variable_rename,fixed
+coneplot,17,XXX,Emissions|CO2|Energy|Demand|Industry|Electricity,Industry,0,usa,models_lts,fives,scenarios_lts,grid,year,value,scenario,region,variable_rename,region,variable_rename,fixed
+coneplot,17,XXX,Emissions|CO2|Energy|Demand|Transportation|Electricity,Transportation,0,usa,models_lts,fives,scenarios_lts,grid,year,value,scenario,region,variable_rename,region,variable_rename,fixed
+coneplot,18,YYY,Emissions|CO2|Energy|Demand|Buildings|Indirect,Buildings,0,usa,models_leep,fives,ira_only,grid,year,value,scenario,region,variable_rename,region,variable_rename,fixed
+coneplot,18,YYY,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Industry,0,usa,models_leep,fives,ira_only,grid,year,value,scenario,region,variable_rename,region,variable_rename,fixed
+coneplot,18,YYY,Emissions|CO2|Energy|Demand|Transportation|Indirect,Transportation,0,usa,models_leep,fives,ira_only,grid,year,value,scenario,region,variable_rename,region,variable_rename,fixed
+coneplot,19,Top,Emissions|CO2|Energy|Supply|Electricity,Electricity,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,20,Top2,Emissions|CO2|Energy|Supply|Electricity,Electricity,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,21,Left,Emissions|CO2|Energy|Demand|Transportation|TotalDI,Transportation,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,22,Left2,Emissions|CO2|Energy|Demand|Transportation|Total,Transportation,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,23,Mid,Emissions|CO2|Energy|Demand|Buildings|TotalDI,Buildings,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,24,Mid2,Emissions|CO2|Energy|Demand|Buildings|Total,Buildings,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,25,Right,Emissions|CO2|Energy|Demand|Industry|TotalDI,Industry,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,26,Right2,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total,Industry,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
