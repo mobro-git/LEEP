@@ -6,14 +6,14 @@ stackbar,1,Sectoral CO2 Emissions,Emissions|CO2|Energy|Supply|Electricity,0,Elec
 stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Passenger Cars,0,Passenger Cars,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Light-Duty Trucks,0,LD Trucks,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Medium- and Heavy-Duty Trucks,0,MHD Trucks,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
-stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Buses,0,Buses,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
-stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Mortorcycles,0,Motorcycles,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Buses,0,Other,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Mortorcycles,0,Other,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Commerical Aircraft,0,Aircraft,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Other Aircraft,0,Aircraft,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Ships and Boats,0,Water,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
-stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Rail,0,Rail,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Rail,0,Other,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Pipelines,0,Pipelines,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
-stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Lubricants,0,Lubricants,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,3,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|GHGI|Lubricants,0,Pipelines,usa,models_ghgi,ghgi_yrs,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,4,Capacity Additions,Capacity Additions|Electricity|Coal|w/o CCS,0,Coal,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,4,Capacity Additions,Capacity Additions|Electricity|Gas|w/o CCS,0,Gas,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,4,Capacity Additions,Capacity Additions|Electricity|Hydro,0,Hydro,usa,models_eia_only,long_history,historic_only,single,stack,year,value,,,variable_rename,region,fixed
@@ -109,4 +109,3 @@ stackbar,12,Total GHGs,Emissions|F-Gasses,0,NonCO2,usa,models_ghgi_only,five_twe
 stackbar,12,Total GHGs,Emissions|NO2,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,13,Total GHGs4,Emissions|GHG,0,Total,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,13,Total GHGs4,Emissions|Non-CO2 GHG,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
-stackbar,14,Another GHG barplot,,,,,,,,,,,,,,,,
