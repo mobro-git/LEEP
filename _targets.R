@@ -34,22 +34,22 @@ tar_plan(
     models = c("AEO2020","AEO2021","AEO2022",
                "EIA_Historic","EIA_STEO","EPA-GHGI","NCS-GHGI",
                "GCAM-CGS","EPS-EI","Haiky-RFF","IPM-NRDC","MARKAL-NETL","NEMS-RHG","ReEDS-NREL","REGEN-EPRI","RIO-REPEAT", #bistline paper
-               "GCAM-EMF" # emf
+               "GCAM-PNNL"
                ),
 
     models_noaeo = c("NEMS","GCAM","IPM","USREP-ReEDS","Scout"),
 
     models_bistline = c("GCAM-CGS","EPS-EI","Haiku-RFF","IPM-NRDC","MARKAL-NETL","NEMS-RHG","ReEDS-NREL","REGEN-EPRI","RIO-REPEAT"),
 
-    models_emf = c("GCAM-EMF"),
+    #models_emf = c("GCAM-EMF"),
     models_ghgi = c("EPA-GHGI"),
 
     # Use models_leep for all initial plots
     # USREP-ReEDS, GCAM-PNNL, OP-NEMS - averages for CAP-ADD
-    models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-EMF", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
+    models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
                     "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP", "EIA-LTS", "EIA-STEO", "IEA","EPA"),
 
-    models_per_elc = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-EMF", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
+    models_per_elc = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
                        "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP"),
 
     #models_leep_sens = c("USREP-ReEDS", "ReEDS", "Scout v0.8", "GCAM-USA v6.0", "OP-NEMS"),
@@ -168,7 +168,7 @@ tar_plan(
 
   data_long = make_data_long(data_long_read),
 
-  # emf_data_long but can add in transformations or filter out models/variables
+  # data_long but can add in transformations or filter out models/variables
   clean_data = {
     data_long %>%
       complete_implicit_na() %>%
