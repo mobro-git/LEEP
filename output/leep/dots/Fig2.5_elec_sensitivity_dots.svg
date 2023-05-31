@@ -125,7 +125,7 @@
 <circle cx='189.32' cy='255.15' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='189.32' cy='266.33' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='189.32' cy='232.15' r='2.49' style='stroke-width: 0.71;' />
-<text x='173.46' y='251.52' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
+<text x='173.46' y='251.51' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
 <text x='196.95' y='268.36' style='font-size: 5.69px; font-family: "Arial";' textLength='38.24px' lengthAdjust='spacingAndGlyphs'>High Gas Price</text>
 <text x='196.69' y='234.19' style='font-size: 5.69px; font-family: "Arial";' textLength='36.97px' lengthAdjust='spacingAndGlyphs'>Low Gas Price</text>
 <rect x='162.37' y='19.07' width='108.89' height='321.49' style='stroke-width: 1.07; stroke: #B3B3B3;' />
@@ -166,11 +166,12 @@
 <circle cx='302.45' cy='284.81' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='302.45' cy='213.12' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='302.45' cy='255.15' r='2.49' style='stroke-width: 0.71;' />
+<line x1='312.42' y1='278.89' x2='302.82' y2='284.12' style='stroke-width: 1.07;' />
 <line x1='311.04' y1='213.12' x2='302.83' y2='213.12' style='stroke-width: 1.07;' />
-<text x='310.23' y='281.02' style='font-size: 5.69px; font-family: "Arial";' textLength='48.66px' lengthAdjust='spacingAndGlyphs'>Adv Battery/Renew</text>
-<text x='310.94' y='292.42' style='font-size: 5.69px; font-family: "Arial";' textLength='32.88px' lengthAdjust='spacingAndGlyphs'>All Advanced</text>
+<text x='314.22' y='280.87' style='font-size: 5.69px; font-family: "Arial";' textLength='48.66px' lengthAdjust='spacingAndGlyphs'>Adv Battery/Renew</text>
+<text x='307.25' y='292.25' style='font-size: 5.69px; font-family: "Arial";' textLength='32.88px' lengthAdjust='spacingAndGlyphs'>All Advanced</text>
 <text x='312.84' y='215.15' style='font-size: 5.69px; font-family: "Arial";' textLength='52.14px' lengthAdjust='spacingAndGlyphs'>Cons Battery/Renew</text>
-<text x='286.54' y='257.19' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
+<text x='286.54' y='257.18' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
 <rect x='275.50' y='19.07' width='108.89' height='321.49' style='stroke-width: 1.07; stroke: #B3B3B3;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
@@ -209,7 +210,7 @@
 <circle cx='415.58' cy='255.15' r='2.49' style='stroke-width: 0.71;' />
 <line x1='426.25' y1='204.62' x2='415.95' y2='204.62' style='stroke-width: 1.07;' />
 <text x='428.05' y='206.66' style='font-size: 5.69px; font-family: "Arial";' textLength='62.58px' lengthAdjust='spacingAndGlyphs'>Constrained Deployment</text>
-<text x='399.67' y='257.19' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
+<text x='399.67' y='257.18' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
 <rect x='388.63' y='19.07' width='108.89' height='321.49' style='stroke-width: 1.07; stroke: #B3B3B3;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
