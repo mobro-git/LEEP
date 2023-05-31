@@ -25,3 +25,6 @@ library(kableExtra)
 library(DT)
 library(visNetwork)
 
+library(cowplot)
+library(tableHTML)
+

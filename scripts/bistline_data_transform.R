@@ -139,10 +139,12 @@ ev_share <- read_xlsx(bistline_wrkbk, sheet = "ev share") %>%
 
 fossil <- read_xlsx(bistline_wrkbk, sheet = "fossil") %>%
   pivot_longer(cols = 7:12, names_to = "year", values_to = "value") %>%
+  mutate(value = value*1.05505585262,
+         unit = "EJ/yr") %>% # converting from quads to EJ/Yr
   relocate_standard_col_order() %>%
   select(-`variable-bistline`)
 
-#############################
+############################
 ##
 ## all modeled data
 ##

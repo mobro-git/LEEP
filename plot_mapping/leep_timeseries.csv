@@ -1,36 +1,55 @@
 figure_type,figure_no,title_name,variable,variable_rename,flip_sign,regions,models,years,scenarios,type,x,y,facet1,facet2,color,page_filter,scales
-timeseries,1,Final Energy,Final Energy|Coal,Coal,0,usa,models_leep,historic,hist_mod_scenarios,grid,year,value,region,variable_rename,scenario,region,fixed
-timeseries,1,Final Energy,Final Energy|Gas,Gas,0,usa,models_leep,historic,hist_mod_scenarios,grid,year,value,region,variable_rename,scenario,region,fixed
-timeseries,1,Final Energy,Final Energy|Oil,Oil,0,usa,models_leep,historic,hist_mod_scenarios,grid,year,value,region,variable_rename,scenario,region,fixed
-timeseries,2,Economy-Wide Emissions - summed up,Emissions|CO2|Energy|Demand|Buildings,Economy-Wide Emissions (CO2),0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,2,Economy-Wide Emissions - summed up,Emissions|CO2|Energy|Supply|Electricity,Economy-Wide Emissions (CO2),0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,2,Economy-Wide Emissions - summed up,Emissions|CO2|Energy|Demand|Industry,Economy-Wide Emissions (CO2),0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,2,Economy-Wide Emissions - summed up,Emissions|CO2|Industrial Processes,Economy-Wide Emissions (CO2),0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,2,Economy-Wide Emissions - summed up,Emissions|CO2|Other,Economy-Wide Emissions (CO2),0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,2,Economy-Wide Emissions - summed up,Emissions|CO2|Energy|Demand|Transportation,Economy-Wide Emissions (CO2),0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,3,Emissions|CO2|Energy|Demand|Buildings,Emissions|CO2|Energy|Demand|Buildings,CO2,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,4,Emissions|CO2|Energy|Supply|Electricity,Emissions|CO2|Energy|Supply|Electricity,CO2,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,5,Emissions|CO2|Energy|Demand|Industry,Emissions|CO2|Energy|Demand|Industry,CO2,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,6,Emissions|CO2|Industrial Processes,Emissions|CO2|Industrial Processes,CO2,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,7,Emissions|CO2|Other,Emissions|CO2|Other,CO2,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,8,Emissions|CO2|Energy|Demand|Transportation,Emissions|CO2|Energy|Demand|Transportation,CO2,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,9,Economy-Wide Emissions - CO2 Energy,Emissions|CO2|Energy,CO2,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,10,Primary Energy,Primary Energy|Coal,Coal,0,usa,models_leep,historic,hist_mod_scenarios,grid,year,value,region,variable_rename,scenario,region,fixed
-timeseries,10,Primary Energy,Primary Energy|Gas,Gas,0,usa,models_leep,historic,hist_mod_scenarios,grid,year,value,region,variable_rename,scenario,region,fixed
-timeseries,10,Primary Energy,Primary Energy|Oil,Oil,0,usa,models_leep,historic,hist_mod_scenarios,grid,year,value,region,variable_rename,scenario,region,fixed
-timeseries,11,Power Sector Emissions,Emissions|CO2|Energy|Supply|Electricity,Power Sector Emissions,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,12,Transportation Emissions,Emissions|CO2|Energy|Demand|Transportation,Transportation Emissions,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,13,Industry Emissions,Emissions|CO2|Energy|Demand|Industry,Industry Emissions,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,14,Building Emissions,Emissions|CO2|Energy|Demand|Buildings,Building Emissions,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,,,scenario,region,fixed
-timeseries,15,Economy-Wide Emissions,Emissions|CO2|Energy,Total Emissions,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,variable_rename,region,scenario,region,fixed
-timeseries,15,Economy-Wide Emissions,Emissions|CO2|Energy|Supply|Electricity,Electricity,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,variable_rename,region,scenario,region,fixed
-timeseries,15,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Transportation,Transportation,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,variable_rename,region,scenario,region,fixed
-timeseries,15,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Industry,Industry,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,variable_rename,region,scenario,region,fixed
-timeseries,15,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Buildings,Buildings,0,usa,models_leep,historic,hist_mod_scenarios,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,1,Final Energy,Final Energy|Coal,Coal,0,usa,models_leep,historic,hist_mod_scenarios2,grid,year,value,region,variable_rename,scenario,region,fixed
+timeseries,1,Final Energy,Final Energy|Gas,Gas,0,usa,models_leep,historic,hist_mod_scenarios2,grid,year,value,region,variable_rename,scenario,region,fixed
+timeseries,1,Final Energy,Final Energy|Oil,Oil,0,usa,models_leep,historic,hist_mod_scenarios2,grid,year,value,region,variable_rename,scenario,region,fixed
+timeseries,2,Economy-Wide Emissions - summed up,Emissions|CO2|Energy|Demand|Buildings,Economy-Wide Emissions (CO2),0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,2,Economy-Wide Emissions - summed up,Emissions|CO2|Energy|Supply|Electricity,Economy-Wide Emissions (CO2),0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,2,Economy-Wide Emissions - summed up,Emissions|CO2|Energy|Demand|Industry,Economy-Wide Emissions (CO2),0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,2,Economy-Wide Emissions - summed up,Emissions|CO2|Industrial Processes,Economy-Wide Emissions (CO2),0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,2,Economy-Wide Emissions - summed up,Emissions|CO2|Other,Economy-Wide Emissions (CO2),0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,2,Economy-Wide Emissions - summed up,Emissions|CO2|Energy|Demand|Transportation,Economy-Wide Emissions (CO2),0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,3,Emissions|CO2|Energy|Demand|Buildings,Emissions|CO2|Energy|Demand|Buildings,CO2,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,4,Emissions|CO2|Energy|Supply|Electricity,Emissions|CO2|Energy|Supply|Electricity,CO2,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,5,Emissions|CO2|Energy|Demand|Industry,Emissions|CO2|Energy|Demand|Industry,CO2,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,6,Emissions|CO2|Industrial Processes,Emissions|CO2|Industrial Processes,CO2,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,7,Emissions|CO2|Other,Emissions|CO2|Other,CO2,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,8,Emissions|CO2|Energy|Demand|Transportation,Emissions|CO2|Energy|Demand|Transportation,CO2,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,9,Economy-Wide Emissions - CO2 Energy,Emissions|CO2,CO2,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,10,Primary Energy,Primary Energy|Coal,Coal,0,usa,models_leep,historic,hist_mod_scenarios2,grid,year,value,region,variable_rename,scenario,region,fixed
+timeseries,10,Primary Energy,Primary Energy|Gas,Gas,0,usa,models_leep,historic,hist_mod_scenarios2,grid,year,value,region,variable_rename,scenario,region,fixed
+timeseries,10,Primary Energy,Primary Energy|Oil,Oil,0,usa,models_leep,historic,hist_mod_scenarios2,grid,year,value,region,variable_rename,scenario,region,fixed
+timeseries,11,Power Sector Emissions,Emissions|CO2|Energy|Supply|Electricity,Power Sector Emissions,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,12,Transportation Emissions,Emissions|CO2|Energy|Demand|Industry and Fuel Production,Transportation Emissions,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,13,Industry Emissions,Emissions|CO2|Energy|Demand|Industry,Industry Emissions,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,14,Building Emissions,Emissions|CO2|Energy|Demand|Buildings,Building Emissions,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,15,Economy-Wide Emissions,Emissions|CO2,Total Emissions,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,15,Economy-Wide Emissions,Emissions|CO2|Energy|Supply|Electricity,Electricity,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,15,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Transportation,Transportation,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,15,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Industry and Fuel Production,Industry,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,15,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Buildings,Buildings,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
 timeseries,116,Emissions Sensitivity,Emissions|CO2|Energy,Emissions,0,usa,models_leep,historic,leep_sens,single,year,value,,,scenario,region,fixed
 timeseries,118,EV Share,Energy Service|Transportation|EV|Sales Share,EV Share,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
 timeseries,119,Industry - Fossil,Final Energy|Industry|Fossil,Fossil,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
 timeseries,120,Industry - Electricity,Final Energy|Industry|Electricity,Electricity,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
-timeseries,121,Industry - Alternative,Final Energy|Industry|Alternative Energy,Alternative Energy,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,121,Industry - Alternative,Final Energy|Industry|Alternative Fuels,Alternative Fuels,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
 timeseries,122,Nox,Emissions|NOx|Energy|Supply|Electricity,NOx,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
 timeseries,123,Sox,Emissions|Sulfur|Energy|Supply|Electricity,Sox,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,16,Low Emitting Generation,Secondary Energy|Electricity|Nuclear,Nuclear,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,16,Low Emitting Generation,Secondary Energy|Electricity|Solar,Solar,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,16,Low Emitting Generation,Secondary Energy|Electricity|Wind,Wind,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,16,Low Emitting Generation,Secondary Energy|Electricity|Biomass,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,16,Low Emitting Generation,Secondary Energy|Electricity|Geothermal,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,16,Low Emitting Generation,Secondary Energy|Electricity|Hydro,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,16,Low Emitting Generation,Secondary Energy|Electricity|Oil|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,16,Low Emitting Generation,Secondary Energy|Electricity|Gas|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,16,Low Emitting Generation,Secondary Energy|Electricity|Coal|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,16,Low Emitting Generation,Secondary Energy|Electricity|Coal|w/o CCS,Coal,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,16,Low Emitting Generation,Secondary Energy|Electricity|Gas|w/o CCS,Natural Gas,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,16,Low Emitting Generation,Secondary Energy|Electricity|Oil|w/o CCS,Oil,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,18,Indirect Transportation Emissions,Emissions|CO2|Energy|Demand|Transportation|Indirect,Indirect Transportation Emissions,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,19,Total Transportation Emissions,Emissions|CO2|Energy|Demand|Transportation|Total,Total Transportation Emissions,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,20,Indirect Industry Emissions,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Indirect Industry Emissions,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,21,Total Industry Emissions,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total,Total Industry Emissions,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,22,Indirect Building Emissions,Emissions|CO2|Energy|Demand|Buildings|Indirect,Indirect Building Emissions,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,23,Total Building Emissions,Emissions|CO2|Energy|Demand|Buildings|Total,Total Building Emissions,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,24,Transportation Electricity,Final Energy|Transportation|Passenger|Road|Electricity,Light-Duty Vehicles,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
