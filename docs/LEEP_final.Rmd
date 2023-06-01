@@ -20,6 +20,8 @@ devtools::load_all(here())
 targets::tar_load(config)
 targets::tar_load(clean_data)
 targets::tar_load(figmap_leep_timeseries)
+targets::tar_load(figmap_leep_cone)
+targets::tar_load(figmap_leep_stackbar)
 
 # create workbook for saving figure data
 # data_wb <- createWorkbook()
