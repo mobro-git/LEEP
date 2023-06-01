@@ -1,0 +1,19 @@
+"Scenario","Absolute Level (TWh)","Year","% Reductions from 2005","% Reductions from No IRA","Reductions from No IRA (TWh)"
+"No IRA Min",0,2021,NA,NA,NA
+"No IRA Median",0,2021,NA,NA,NA
+"No IRA Max",0,2021,NA,NA,NA
+"IRA Min",0,2021,NA,NA,0
+"IRA Median",0,2021,NA,NA,0
+"IRA Max",0,2021,NA,NA,0
+"No IRA Min",0,2030,NA,NA,NA
+"No IRA Median",0,2030,NA,NA,NA
+"No IRA Max",28.19,2030,NA,NA,NA
+"IRA Min",0,2030,NA,-Inf,0
+"IRA Median",135.282,2030,NA,-451359000629.555,-135.282
+"IRA Max",449.154,2030,NA,-1493.334,-420.964
+"No IRA Min",0,2035,NA,NA,NA
+"No IRA Median",0,2035,NA,NA,NA
+"No IRA Max",28.19,2035,NA,NA,NA
+"IRA Min",0,2035,NA,-Inf,0
+"IRA Median",152.399,2035,NA,-Inf,-152.399
+"IRA Max",1382.929,2035,NA,-4805.818,-1354.739

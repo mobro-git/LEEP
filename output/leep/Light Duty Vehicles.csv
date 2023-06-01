@@ -1,0 +1,13 @@
+"Scenario","Absolute Level (Mt CO2)","Year","% Reductions from 2005","% Reductions from No IRA","Reductions from No IRA (Mt CO2)"
+"No IRA Min",20.114,2030,NA,NA,NA
+"No IRA Median",131.92,2030,NA,NA,NA
+"No IRA Max",312.008,2030,NA,NA,NA
+"IRA Min",20.114,2030,NA,0,0
+"IRA Median",173.205,2030,NA,-31.295,-41.285
+"IRA Max",397.744,2030,NA,-27.479,-85.736
+"No IRA Min",34.572,2035,NA,NA,NA
+"No IRA Median",265.885,2035,NA,NA,NA
+"No IRA Max",499,2035,NA,NA,NA
+"IRA Min",34.572,2035,NA,0,0
+"IRA Median",299.417,2035,NA,-12.612,-33.532
+"IRA Max",641,2035,NA,-28.457,-142

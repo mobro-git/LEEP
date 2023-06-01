@@ -34,6 +34,8 @@ complete_implicit_na = function(df) {
 make_clean_data = function(df) {
 
   print("Making clean data")
+
+  # sum industry and fuel production emissions for internal models
   ind_emissions = df %>% filter(model %in% c("USREP-ReEDS","GCAM-PNNL", "ReEDS-NREL", "OP-NEMS")) %>%
     filter(variable %in% c("Emissions|CO2|Energy|Demand|Industry",
                            "Emissions|CO2|Energy|Supply|Biogas",
@@ -52,7 +54,6 @@ make_clean_data = function(df) {
     mutate(datasrc = "calculated") %>%
     select(model,scenario,unit,year,datasrc,variable,region,value) %>%
     filter(model != "GCAM-PNNL") # GCAM-PNNL results look very low - not reporting a value that other models are reporting
-
   ind_emissions_indirect = df %>% filter(model %in% c("USREP-ReEDS","GCAM-PNNL", "ReEDS-NREL", "OP-NEMS")) %>%
     filter(variable == "Emissions|CO2|Energy|Demand|Industry|Indirect") %>%
     select(model,scenario,unit,year,datasrc,variable,region,value) %>%
@@ -60,6 +61,7 @@ make_clean_data = function(df) {
 
   ind_var = rbind(ind_emissions, ind_emissions_indirect)
 
+  # sum nonco2 emissions for gcam
   gcampnnl_nonco2 = df %>%
     filter(model == "GCAM-PNNL" &
              variable %in% c("Emissions|CH4","Emissions|N2O","Emissions|F-Gases")) %>%
@@ -70,7 +72,53 @@ make_clean_data = function(df) {
     mutate(variable = "Emissions|Non-CO2 GHG") %>%
     select(model,scenario,unit,year,datasrc,variable,region,value)
 
-  all = rbind(ind_var, df, gcampnnl_nonco2)
+  # calculate average capacity additions 2021-2035 for internal models
+  cap_add_avg = df %>%
+    filter(model %in% c("USREP-ReEDS", "GCAM-PNNL", "OP-NEMS"),
+           (grepl("Capacity Additions", variable) | grepl("Capacity Retirements", variable)),
+           (year >= 2021 | year <= 2035)) %>%
+    filter(!(variable %in% c("Capacity Additions|Electricity|Biomass", "Capacity Additions|Electricity|Biomass|w/ CCS", "Capacity Additions|Electricity|Biomass|w/o CCS",
+                             "Capacity Additions|Electricity|Coal", "Capacity Additions|Electricity|Gas",
+                             "Capacity Additions|Electricity|Geothermal",
+                             "Capacity Additions|Electricity|Oil", "Capacity Additions|Electricity|Oil|w/ CCS", "Capacity Additions|Electricity|Oil|w/o CCS",
+                             "Capacity Additions|Electricity|Solar|CSP","Capacity Additions|Electricity|Solar|PV",
+                             "Capacity Additions|Electricity|Solar|PV|Rooftop","Capacity Additions|Electricity|Solar|PV|Utility-Scale",
+                             "Capacity Additions|Electricity|Storage Capacity|Battery","Capacity Additions|Electricity|Storage Capacity|PSH",
+                             "Capacity Additions|Electricity|Wind|Offshore","Capacity Additions|Electricity|Wind|Onshore",
+                             "Capacity Additions|Electricity|Gas|CT|w/o CCS","Capacity Additions|Electricity|Gas|CT|w/ CCS", "Capacity Additions|Electricity|Gas|CT",
+                             "Capacity Additions|Electricity|Gas|CC|w/o CCS","Capacity Additions|Electricity|Gas|CC|w/ CCS", "Capacity Additions|Electricity|Gas|CC",
+                             "Capacity Additions|Electricity|Gas|ST|w/o CCS","Capacity Additions|Electricity|Gas|ST|w/ CCS", "Capacity Additions|Electricity|Gas|ST",
+                             "Capacity Additions|Electricity"))) %>%
+    filter(!(variable %in% c("Capacity Retirements|Electricity|Biomass", "Capacity Retirements|Electricity|Biomass|w/ CCS",
+                             "Capacity Retirements|Electricity|Biomass|w/o CCS",
+                             "Capacity Retirements|Electricity|Coal", "Capacity Retirements|Electricity|Gas",
+                             "Capacity Retirements|Electricity|Geothermal",
+                             "Capacity Retirements|Electricity|Oil", "Capacity Retirements|Electricity|Oil|w/ CCS", "Capacity Retirements|Electricity|Oil|w/o CCS",
+                             "Capacity Retirements|Electricity|Solar|CSP","Capacity Retirements|Electricity|Solar|PV",
+                             "Capacity Retirements|Electricity|Solar|PV|Rooftop","Capacity Retirements|Electricity|Solar|PV|Utility-Scale",
+                             "Capacity Retirements|Electricity|Storage Capacity|Battery","Capacity Retirements|Electricity|Storage Capacity|PSH",
+                             "Capacity Retirements|Electricity|Wind|Offshore","Capacity Retirements|Electricity|Wind|Onshore",
+                             "Capacity Retirements|Electricity|Gas|CT|w/o CCS","Capacity Retirements|Electricity|Gas|CT|w/ CCS",
+                             "Capacity Retirements|Electricity|Gas|CT",
+                             "Capacity Retirements|Electricity|Gas|CC|w/o CCS","Capacity Retirements|Electricity|Gas|CC|w/ CCS",
+                             "Capacity Retirements|Electricity|Gas|CC",
+                             "Capacity Retirements|Electricity|Gas|ST|w/o CCS","Capacity Retirements|Electricity|Gas|ST|w/ CCS",
+                             "Capacity Retirements|Electricity|Gas|ST",
+                             "Capacity Retirements|Electricity"))) %>%
+    group_by(model, scenario, unit, datasrc, variable, region) %>%
+    summarize(value = mean(value)) %>%
+    mutate(variable = paste0(variable,"|Average 2021-2035"), year = 2035)
+
+  all = rbind(df, ind_var, gcampnnl_nonco2, cap_add_avg) %>%
+    # convert EJ to quads
+    mutate(
+      value = case_when(
+        unit == "EJ/yr" ~ value * 0.9478,
+        TRUE ~ value)) %>%
+    mutate(
+      unit = case_when(
+        unit == "EJ/yr" ~ "Quads",
+        TRUE ~ unit))
 
   all
 

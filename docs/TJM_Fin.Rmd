@@ -2,10 +2,7 @@
 title: "TJM_Fin"
 output:
   html_document: default
-  pdf_document: default
-date: "2023-05-26"
-params:
-  mode: null
+date: "2023-05-26
 ---
 # Read Me
 
@@ -17,7 +14,7 @@ Negative values in tables reflect an increase relative to "2005 Baseline" or "No
 #Lib
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 source("packages.R")
-devtools::load_all()
+devtools::load_all(here())
 library(cowplot)
 library(tableHTML)
 
@@ -45,7 +42,6 @@ df <- fig$data %>%
          !model =="ReEDS-NREL", 
          !model == "Scout-LEEP", 
          !model == "Haiku-RFF" )
-  
 
 df <- df %>%
   mutate(

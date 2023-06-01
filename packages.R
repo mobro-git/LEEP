@@ -27,4 +27,6 @@ library(visNetwork)
 
 library(cowplot)
 library(tableHTML)
+library(egg)
+library(ggbreak)
 
