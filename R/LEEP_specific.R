@@ -423,3 +423,54 @@ lts_coneplot_with_dots = function(config, data, figmap, lts_fignum, leep_fignum,
   return(fig2)
 
 }
+
+################################################################################################################################################
+################################################################################################################################################
+################################################################################################################################################
+
+medians_table = function(plot_type, config, data, figmap, plot_num, region, models_to_exclude = c()) {
+  med_dta = data_from_graph(plot_type, config, data, figmap, plot_num, region)
+  if (length(models_to_exclude) > 0) {
+    med_dta = med_dta %>% filter(!(model %in% models_to_exclude))
+  }
+
+  # calculate difference in medians
+  diff_med = med_dta %>%
+    filter(year %in% c(2030, 2035)) %>%
+    mutate(scenario = case_when(
+      scenario == "No IRA" ~ "No_IRA",
+      TRUE ~ scenario
+    )) %>%
+    group_by(year, scenario, variable, unit) %>%
+    summarize(median = median(value)) %>%
+    data.frame() %>%
+    pivot_wider(names_from = scenario, values_from = median, names_prefix = "median_") %>%
+    mutate(absolute_diff_of_medians = median_IRA - median_No_IRA,
+           percent_diff_of_medians = (median_IRA - median_No_IRA) / median_No_IRA)
+
+  # calculate median of differences
+  med_diff = med_dta %>%
+    data.frame() %>%
+    select(model, scenario, variable, unit, year, value) %>%
+    filter(year %in% c(2030, 2035)) %>%
+    mutate(scenario = case_when(
+      scenario == "No IRA" ~ "No_IRA",
+      TRUE ~ scenario
+    )) %>%
+    pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
+    mutate(absolute_diff = value_IRA - value_No_IRA,
+           percent_diff = (value_IRA - value_No_IRA) / value_No_IRA) %>%
+    group_by(variable, unit, year) %>%
+    summarize(median_of_abs_diffs = median(absolute_diff),
+              median_of_pct_diffs = median(percent_diff)) %>%
+    data.frame()
+
+  # stick 'em together
+  full_diffs = diff_med %>% left_join(
+    select(med_diff, c(year, variable, median_of_abs_diffs, median_of_pct_diffs)),
+    by = c("year","variable")
+  ) %>%
+    arrange(variable, year)
+
+  return(full_diffs)
+}
