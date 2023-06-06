@@ -173,7 +173,7 @@ color_map <- c(
   "IPM-NRDC" = "mintD",
   "MARKAL-NETL" = "m.violet",
   "NEMS-RGH" = "navyD",
-  "OP-NEMS" = "oliveD",
+  "OP-NEMS" = "tealD",
   "OP-NEMS-LTS" = "tealD",
   "REGEN-EPRI" = "apricotD",
   "RIO-REPEAT" = "pinkD",

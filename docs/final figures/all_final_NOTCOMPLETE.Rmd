@@ -7124,8 +7124,8 @@ lts <- clean_data %>%
            variable == "Carbon Sequestration|LULUCF" | 
            variable == "Carbon Sequestration|Direct Air Capture|Net") %>%
   mutate(value = case_when(
-    unit == "Mt CH4/yr" ~ value * 28,
-    unit == "kt N2O/yr" ~ value * 265/1000, 
+    # unit == "Mt CH4/yr" ~ value * 28,
+    # unit == "kt N2O/yr" ~ value * 265/1000, 
     grepl("Sequestration", variable) ~ value * -1, 
     T ~ value
   )) %>%

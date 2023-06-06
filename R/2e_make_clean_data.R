@@ -109,7 +109,28 @@ make_clean_data = function(df) {
     summarize(value = mean(value)) %>%
     mutate(variable = paste0(variable,"|Average 2021-2035"), year = 2035)
 
-  all = rbind(df, ind_var, gcampnnl_nonco2, cap_add_avg) %>%
+  all = rbind(df, ind_var, gcampnnl_nonco2, cap_add_avg)
+
+  all
+
+}
+
+
+#' unit_conversion()
+#' manual changes to data for unit conversion for the leep report
+#' @param df
+#'
+#' @return
+
+
+unit_conversion = function(df) {
+
+  all_converted = df %>%
+    # Mt CO2-equiv/yr to Mt CO2e/yr
+    mutate(
+      unit = case_when(
+        unit == "Mt CO2-equiv/yr" ~ "Mt CO2e/yr",
+        TRUE ~ unit)) %>%
     # convert EJ to quads
     mutate(
       value = case_when(
@@ -118,9 +139,26 @@ make_clean_data = function(df) {
     mutate(
       unit = case_when(
         unit == "EJ/yr" ~ "Quads",
+        TRUE ~ unit)) %>%
+   # convert Mt CH4/yr to Mt CO2e/yr
+    mutate(
+      value = case_when(
+        unit == "Mt CH4/yr" ~ value * 28,
+        TRUE ~ value)) %>%
+    mutate(
+      unit = case_when(
+        unit == "Mt CH4/yr" ~ "Mt CO2e/yr",
+        TRUE ~ unit)) %>%
+    # convert kt N2O/yr to Mt CO2e/yr
+    mutate(
+      value = case_when(
+        unit == "kt N2O/yr" ~ value * 265/1000,
+        TRUE ~ value)) %>%
+    mutate(
+      unit = case_when(
+        unit == "kt N2O/yr" ~ "Mt CO2e/yr",
         TRUE ~ unit))
 
-  all
-
+  all_converted
 }
 
