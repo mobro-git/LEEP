@@ -474,3 +474,5 @@ medians_table = function(plot_type, config, data, figmap, plot_num, region, mode
 
   return(full_diffs)
 }
+
+#medians_table("time_series", config, clean_data, figmap_leep_timeseries, 9, "United States")
