@@ -100,12 +100,12 @@ stackbar,9,Emissions Stack,Emissions|CO2|Energy|Demand|Buildings,0,Buildings: Di
 stackbar,10,Total GHGs,Emissions|CO2,0,CO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,11,Total GHGs,Emissions|CH4,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,11,Total GHGs,Emissions|N2O,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
-stackbar,11,Total GHGs,Emissions|F-Gasses,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
-stackbar,11,Total GHGs,Emissions|NO2,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,11,Total GHGs,Emissions|F-Gases,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,11,Total GHGs,Emissions|N2O,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,12,Total GHGs,Emissions|CO2,0,CO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,12,Total GHGs,Emissions|CH4,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,12,Total GHGs,Emissions|N2O,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
-stackbar,12,Total GHGs,Emissions|F-Gasses,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
-stackbar,12,Total GHGs,Emissions|NO2,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,12,Total GHGs,Emissions|F-Gases,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,12,Total GHGs,Emissions|N2O,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,13,Total GHGs4,Emissions|GHG,0,Total,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,13,Total GHGs4,Emissions|Non-CO2 GHG,0,NonCO2,usa,models_ghgi_only,five_twentyone,historic_only,single,stack,year,value,,,variable_rename,region,fixed

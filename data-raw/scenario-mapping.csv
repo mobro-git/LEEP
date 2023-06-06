@@ -86,6 +86,5 @@ bistline_ira_tall.csv,RIO-REPEAT,Reference,RIO-REPEAT,No IRA,Bistline IRA compar
 2023-03-30_data_IAMC_format-IRA_USAonly.xlsx,Scout v0.8,IRA.High,Scout-LEEP,IRA.High,,
 2023-03-30_data_IAMC_format-IRA_USAonly.xlsx,Scout v0.8,IRA.Low,Scout-LEEP,IRA.Low,,
 2023-03-30_data_IAMC_format-IRA_USAonly.xlsx,Scout v0.8,Baseline,Scout-LEEP,No IRA,,
-usrep_reeds_allscen.csv,USREP-ReEDS,IRA_mid,USREP-ReEDS,IRA,,
-usrep_reeds_allscen.csv,USREP-ReEDS,IRA_low,USREP-ReEDS,IRA.Low,,
-usrep_reeds_allscen.csv,USREP-ReEDS,reference-noIRA,USREP-ReEDS,No IRA,,
+report_emf_mid.csv,USREP-ReEDS,ira_mid,USREP-ReEDS,IRA,,
+report_emf_mid.csv,USREP-ReEDS,reference-noIRA,USREP-ReEDS,No IRA,,

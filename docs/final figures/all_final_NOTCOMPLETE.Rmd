@@ -5,6 +5,9 @@ output:
   html_document:
     toc: true
     toc_float: true
+params:
+  mode: NULL
+  format: "svg"
 ---
 
 ```{r setup, include=FALSE, warning=FALSE}
@@ -28,19 +31,10 @@ targets::tar_load(figmap_leep_stackbar)
 
 # format toggle
 format <- "svg"
+format <- params$format
 
 # palettes
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
-```
-
-```{r}
-savefig = function(figure, fig_no, format = "svg", wd = 7, ht = 5, unit = "in") {
-  ggsave(filename = paste("output/final_figures/",format,"/Fig",fig_no,".",format,sep=""),
-         plot = figure, 
-         width = wd, 
-         height = ht, 
-         units = unit)
-}
 ```
 
 # Chapter 1 - Introduction / Economy-Wide

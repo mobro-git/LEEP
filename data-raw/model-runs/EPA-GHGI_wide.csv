@@ -1,4 +1,36 @@
 model,scenario,region,variable,unit,year,value
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,1990,-938.8555571
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,1991,-944.4180773
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,1992,-936.8256285
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,1993,-917.6304614
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,1994,-931.8314703
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,1995,-902.8142522
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,1996,-923.4539966
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,1997,-903.3996067
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,1998,-898.6541897
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,1999,-900.5331568
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2000,-902.0116353
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2001,-899.937561
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2002,-867.119353
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2003,-891.4022678
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2004,-791.2862581
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2005,-853.5285357
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2006,-882.5949783
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2007,-843.124743
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2008,-824.6616583
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2009,-787.014059
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2010,-807.3666167
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2011,-853.7809218
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2012,-849.3832299
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2013,-813.4922676
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2014,-826.8500086
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2015,-752.2364852
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2016,-874.241425
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2017,-842.5159305
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2018,-829.5008575
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2019,-768.2245019
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2020,-852.5344377
+EPA-GHGI,Historic,United States,Carbon Sequestration|LULUCF,Mt CO2e/yr,2021,-832.0389796
 EPA-GHGI,Historic,United States,Emissions|CH4,Mt CO2e/yr,1990,922.1671946
 EPA-GHGI,Historic,United States,Emissions|CH4,Mt CO2e/yr,1991,927.3508533
 EPA-GHGI,Historic,United States,Emissions|CH4,Mt CO2e/yr,1992,925.6741772
@@ -506,6 +538,38 @@ EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Pr
 EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production,Mt CO2/yr,2019,815.9
 EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production,Mt CO2/yr,2020,767.9
 EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production,Mt CO2/yr,2021,775.6
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1990,686.4
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1991,674.2
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1992,699.2
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1993,709.2
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1994,723.3
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1995,716
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1996,736.5
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1997,755.2
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1998,770.2
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1999,773
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2000,789.5
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2001,735.6
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2002,723.5
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2003,742.7
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2004,745.5
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2005,736.3
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2006,711.4
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2007,714.9
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2008,696.7
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2009,601.7
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2010,641
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2011,624.8
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2012,593.1
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2013,594.8
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2014,593
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2015,549.5
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2016,517.6
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2017,504.4
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2018,501.3
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2019,465.5
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2020,409.8
+EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2021,445.1
 EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry|Coal,Mt CO2/yr,1990,157.8
 EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry|Coal,Mt CO2/yr,1991,154.6
 EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry|Coal,Mt CO2/yr,1992,150.3
@@ -570,38 +634,6 @@ EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry|Gas,Mt CO2/
 EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry|Gas,Mt CO2/yr,2019,501.5
 EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry|Gas,Mt CO2/yr,2020,486.1
 EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry|Gas,Mt CO2/yr,2021,499.6
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1990,686.4
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1991,674.2
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1992,699.2
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1993,709.2
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1994,723.3
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1995,716
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1996,736.5
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1997,755.2
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1998,770.2
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1999,773
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2000,789.5
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2001,735.6
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2002,723.5
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2003,742.7
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2004,745.5
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2005,736.3
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2006,711.4
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2007,714.9
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2008,696.7
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2009,601.7
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2010,641
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2011,624.8
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2012,593.1
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2013,594.8
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2014,593
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2015,549.5
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2016,517.6
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2017,504.4
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2018,501.3
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2019,465.5
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2020,409.8
-EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2021,445.1
 EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry|Oil,Mt CO2/yr,1990,287.1
 EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry|Oil,Mt CO2/yr,1991,269.5
 EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Demand|Industry|Oil,Mt CO2/yr,1992,285.7
@@ -1338,38 +1370,38 @@ EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Supply|Electricity|Oil,Mt C
 EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Supply|Electricity|Oil,Mt CO2/yr,2019,16.2
 EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Supply|Electricity|Oil,Mt CO2/yr,2020,16.2
 EPA-GHGI,Historic,United States,Emissions|CO2|Energy|Supply|Electricity|Oil,Mt CO2/yr,2021,17.7
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,1990,91.43215121
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,1991,83.49994579
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,1992,87.38298492
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,1993,87.35828174
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,1994,90.93961447
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,1995,107.8089796
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,1996,118.0718389
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,1997,124.8506742
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,1998,138.7266288
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,1999,136.9867144
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2000,138.3333115
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2001,127.8670417
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2002,135.4567124
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2003,128.8056189
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2004,135.7236452
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2005,138.3342326
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2006,141.8107501
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2007,152.360193
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2008,154.5580919
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2009,150.9441742
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2010,159.0322868
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2011,165.2193941
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2012,162.7414202
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2013,163.0394998
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2014,167.6135175
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2015,170.2758875
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2016,170.558371
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2017,172.3175657
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2018,172.7913404
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2019,177.6997523
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2020,180.1936123
-EPA-GHGI,Historic,United States,Emissions|F-Gasses,Mt CO2e/yr,2021,187.29171
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,1990,91.43215121
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,1991,83.49994579
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,1992,87.38298492
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,1993,87.35828174
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,1994,90.93961447
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,1995,107.8089796
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,1996,118.0718389
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,1997,124.8506742
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,1998,138.7266288
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,1999,136.9867144
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2000,138.3333115
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2001,127.8670417
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2002,135.4567124
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2003,128.8056189
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2004,135.7236452
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2005,138.3342326
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2006,141.8107501
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2007,152.360193
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2008,154.5580919
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2009,150.9441742
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2010,159.0322868
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2011,165.2193941
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2012,162.7414202
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2013,163.0394998
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2014,167.6135175
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2015,170.2758875
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2016,170.558371
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2017,172.3175657
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2018,172.7913404
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2019,177.6997523
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2020,180.1936123
+EPA-GHGI,Historic,United States,Emissions|F-Gases,Mt CO2e/yr,2021,187.29171
 EPA-GHGI,Historic,United States,Emissions|GHG,Mt CO2e/yr,1990,6453.450223
 EPA-GHGI,Historic,United States,Emissions|GHG,Mt CO2e/yr,1991,6382.938922
 EPA-GHGI,Historic,United States,Emissions|GHG,Mt CO2e/yr,1992,6497.290079
@@ -1466,70 +1498,38 @@ EPA-GHGI,Historic,United States,Emissions|GHG|Net,Mt CO2e/yr,2018,5989.701882
 EPA-GHGI,Historic,United States,Emissions|GHG|Net,Mt CO2e/yr,2019,5913.871782
 EPA-GHGI,Historic,United States,Emissions|GHG|Net,Mt CO2e/yr,2020,5249.805272
 EPA-GHGI,Historic,United States,Emissions|GHG|Net,Mt CO2e/yr,2021,5586.00325
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,1990,-938.8555571
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,1991,-944.4180773
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,1992,-936.8256285
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,1993,-917.6304614
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,1994,-931.8314703
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,1995,-902.8142522
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,1996,-923.4539966
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,1997,-903.3996067
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,1998,-898.6541897
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,1999,-900.5331568
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2000,-902.0116353
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2001,-899.937561
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2002,-867.119353
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2003,-891.4022678
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2004,-791.2862581
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2005,-853.5285357
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2006,-882.5949783
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2007,-843.124743
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2008,-824.6616583
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2009,-787.014059
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2010,-807.3666167
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2011,-853.7809218
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2012,-849.3832299
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2013,-813.4922676
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2014,-826.8500086
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2015,-752.2364852
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2016,-874.241425
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2017,-842.5159305
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2018,-829.5008575
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2019,-768.2245019
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2020,-852.5344377
-EPA-GHGI,Historic,United States,Emissions|LULUCF,Mt CO2e/yr,2021,-832.0389796
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,1990,410.675533
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,1991,401.8326506
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,1992,401.8968749
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,1993,419.1949155
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,1994,423.157494
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,1995,426.0737334
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,1996,437.2191296
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,1997,424.0997604
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,1998,425.8926218
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,1999,421.8645289
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2000,419.1479025
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2001,421.4884528
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2002,426.6249095
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2003,425.964936
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2004,440.1139905
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2005,426.896751
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2006,422.5545546
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2007,434.872458
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2008,416.6175094
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2009,414.4244616
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2010,415.4141143
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2011,419.0771501
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2012,399.1536589
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2013,430.7174119
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2014,434.9593388
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2015,432.6523855
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2016,414.5273891
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2017,422.9399969
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2018,437.2261283
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2019,417.5877885
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2020,399.8533645
-EPA-GHGI,Historic,United States,Emissions|NO2,Mt CO2e/yr,2021,405.1224928
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,1990,410.675533
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,1991,401.8326506
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,1992,401.8968749
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,1993,419.1949155
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,1994,423.157494
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,1995,426.0737334
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,1996,437.2191296
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,1997,424.0997604
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,1998,425.8926218
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,1999,421.8645289
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2000,419.1479025
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2001,421.4884528
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2002,426.6249095
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2003,425.964936
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2004,440.1139905
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2005,426.896751
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2006,422.5545546
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2007,434.872458
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2008,416.6175094
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2009,414.4244616
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2010,415.4141143
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2011,419.0771501
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2012,399.1536589
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2013,430.7174119
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2014,434.9593388
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2015,432.6523855
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2016,414.5273891
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2017,422.9399969
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2018,437.2261283
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2019,417.5877885
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2020,399.8533645
+EPA-GHGI,Historic,United States,Emissions|N2O,Mt CO2e/yr,2021,405.1224928
 EPA-GHGI,Historic,United States,Emissions|Non-CO2 GHG,Mt CO2e/yr,1990,1424.274879
 EPA-GHGI,Historic,United States,Emissions|Non-CO2 GHG,Mt CO2e/yr,1991,1412.68345
 EPA-GHGI,Historic,United States,Emissions|Non-CO2 GHG,Mt CO2e/yr,1992,1414.954037

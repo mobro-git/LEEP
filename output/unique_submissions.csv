@@ -84,6 +84,5 @@
 "83","ReEDS_compiled.csv","ReEDS","NoNewPolicy - HGP"
 "84","ReEDS_compiled.csv","ReEDS","NoNewPolicy - LGP"
 "85","ReEDS_compiled.csv","ReEDS","NoNewPolicy - Mid"
-"86","usrep_reeds_allscen.csv","USREP-ReEDS","reference-noIRA"
-"87","usrep_reeds_allscen.csv","USREP-ReEDS","IRA_low"
-"88","usrep_reeds_allscen.csv","USREP-ReEDS","IRA_mid"
+"86","report_emf_mid.csv","USREP-ReEDS","reference-noIRA"
+"87","report_emf_mid.csv","USREP-ReEDS","ira_mid"

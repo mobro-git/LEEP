@@ -242,7 +242,21 @@ ghg = rbind(emissions, all_co2) %>%
   mutate(unit = "Mt CO2e/yr") %>%
   relocate_standard_col_order()
 
-summed_emissions = rbind(nrg_co2, all_co2, ghg)
+net_ghg_model = c("GCAM-CGS", "MARKAL-NETL", "NEMS-RHG", "RIO-REPEAT", "EPS-EI")
+
+sink = all_modeled %>%
+  filter(variable == "Carbon Sequestration|LULUCF" &
+           model %in% net_ghg_model)
+
+ghg_net = ghg %>%
+  filter(model %in% net_ghg_model) %>%
+  mutate(variable = "Emissions|GHG|Net") %>%
+  group_by(model,scenario,region,unit,year,variable) %>%
+  summarise(value=sum(value)) %>%
+  ungroup() %>%
+  relocate_standard_col_order()
+
+summed_emissions = rbind(nrg_co2, all_co2, ghg, ghg_net)
 
 
 #############################

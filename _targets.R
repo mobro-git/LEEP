@@ -162,6 +162,10 @@ tar_plan(
       distinct() %>%
       write.csv("output/unique_submissions.csv")},
 
+  omitted_var = check_omissions(data_raw, data_long, template_original, template),
+
+  omitted_data = {data_raw %>% filter(variable %in% omitted_var)},
+
   data_long_read = {
     map_dfr(data_files, ~read_process_data_file(.x, config)) %>%
     # map_variable_names() %>%
@@ -199,20 +203,14 @@ tar_plan(
 
   ### Figures  -------------------
 
+  # Final Figures
+
   ts = create_graph("leep", "time_series", config, clean_data, figmap_leep_timeseries),
   cone = create_graph("leep", "cone_uncertainty", config, clean_data, figmap_leep_cone),
   stackbar = create_graph("leep", "stacked_bar", config, clean_data, figmap_leep_stackbar),
   diffbar = create_graph("leep", "diff_bar", config, clean_data, figmap_leep_diffbar)
 
-  #bld_ts = create_graph("bld","time_series", config, clean_data, figmap_bld_timeseries),
-
-  # Final Figures
-
-  # tar_render(
-  #   final_figures,
-  #   "docs/LEEP_final.Rmd",
-  #   output_dir = "output/final_figures",
-  #   output_file = "FinalFigures")
+  #bld_ts = create_graph("bld","time_series", config, clean_data, figmap_bld_timeseries)
 
 )
 

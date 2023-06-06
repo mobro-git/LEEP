@@ -209,4 +209,27 @@ assert_has_standard_cols <- function(data) {
 }
 
 
+#' check_omissions
+#' outputs omitted data due to variable or unit mismatch
+#'
+#' @param data
+#'
+#' @return
+#' @export
+
+check_omissions = function(data_raw, data_long, template_original, template) {
+
+  data_raw = data_raw %>% arrange(variable)
+
+  raw_vars = unique(data_raw$variable)
+  orig_vars = unique(template_original$variable)
+  new_vars = unique(template$variable)
+
+  unmatched_orig = setdiff(raw_vars,orig_vars) # unmatched variables without template additions
+
+  unmatched = setdiff(raw_vars,new_vars) # unmatched variables after template additions
+
+  unmatched
+
+}
 
