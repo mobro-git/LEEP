@@ -1,0 +1,422 @@
+---
+title: "Chapter 5: Industry"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+date: "`r Sys.time()`"
+params:
+  mode: NULL
+  format: "svg"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+```{r}
+if(is.null(params$mode)) {
+  source("packages.R")
+  devtools::load_all()
+}
+
+# load data from targets pipeline
+targets::tar_load(config)
+targets::tar_load(clean_data)
+targets::tar_load(figmap_leep_timeseries)
+targets::tar_load(figmap_leep_cone)
+targets::tar_load(figmap_leep_stackbar)
+targets::tar_load(data_min)
+targets::tar_load(data_raw)
+
+# create workbook for saving figure data
+# data_wb <- createWorkbook()
+
+# format toggle
+format <- params$format
+
+# palettes
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+```
+
+## 6.1 comparing us climate targets with scenario modeling through 2050
+
+## Fig ES4/3/6.1 THIS IS THE VERSION WE WANT TO USE THE OTHER ONE ISNT GOOD!
+
+```{r} 
+ghgi <- clean_data %>%
+  filter(model == "EPA-GHGI" & 
+           variable == "Emissions|GHG|Net" &
+           year >= 2005)
+
+connect <- ghgi[ghgi$year == 2021,] %>%
+  select(year, value)%>%
+  mutate(ymin = value, 
+         ymax = value, 
+         med = value) %>%
+  select(-value)
+
+lts <- clean_data %>%
+  filter(model == "GCAM-LTS" &
+           variable %in% c(
+             "Emissions|CO2",
+             "Emissions|CH4",
+             "Emissions|N2O",
+             "Emissions|F-Gases",
+             "Carbon Sequestration|CCS|Biomass|Energy",
+             "Carbon Sequestration|LULUCF",
+             "Carbon Sequestration|Direct Air Capture|Net")) %>%
+  mutate(value = case_when(
+    grepl("Sequestration", variable) ~ value * -1, 
+    T ~ value
+  )) %>%
+  group_by(year, scenario) %>%
+  summarize(value = sum(value)) %>%
+  ungroup() %>%
+  group_by(year) %>%
+  summarize(ymax = max(value), 
+            ymin = min(value), 
+            med = median(value)) %>%
+  filter(year >= 2021) %>%
+  filter(year <= 2035)
+
+lts <- rbind(lts, connect)
+
+IRA <- clean_data %>%
+  filter(scenario == "IRA" | scenario == "No IRA") %>%
+  filter(year > 2021  & year <= 2035) %>%
+  filter(variable == "Emissions|CO2" | variable == "Emissions|Non-CO2 GHG" |
+           variable == "Carbon Sequestration|CCS|Biomass|Energy" | 
+           variable == "Carbon Sequestration|LULUCF" | 
+           variable == "Carbon Sequestration|Direct Air Capture|Net") %>%
+  group_by(year, model, scenario) %>%
+  summarise(
+    value = sum(value)
+  ) %>%
+  filter(!model == "USREP-ReEDS") %>%
+  filter(!model== "OP-NEMS") %>%
+  filter(model != "MARKAL-NETL") %>%
+  filter(!model == "AEO.2023")
+  
+histcon <- IRA %>%
+  group_by(model, scenario) %>%
+  slice(1) %>%
+  mutate(year = 2021) %>%
+  mutate(value = ghgi$value[ghgi$year == 2021])
+
+IRA <- rbind(IRA, histcon)
+
+IRA <- IRA %>%
+  mutate(alpha = case_when(
+    model == "USREP-ReEDS" ~ 1, 
+    model == "GCAM-PNNL" ~ 1, 
+    model == "IPM-EPA" ~ 1,
+    scenario == "Historic" ~ 1,
+    T ~ 0.8
+  )) 
+
+
+fin = ggplot() + 
+  geom_line(ghgi, mapping = aes(x = year, y = value/1000, color = "Historic"), size = 0.8) +
+  geom_line(lts, mapping = aes(x=year, y = ymin/1000, color = "LTS"), linetype = "dashed", size = 0.8, color = "#767684")+
+  geom_line(lts, mapping = aes(x=year, y = ymax/1000, color = "LTS"), linetype = "dashed", size = 0.8, color = "#767684")+
+  geom_ribbon(lts, mapping = aes(x=year, ymax = ymax/1000, ymin = ymin/1000, fill = "LTS"), alpha = 0.2) + 
+  geom_line(IRA, mapping = aes(x=year, y = value/1000, group = interaction(model, scenario), color = scenario, alpha = alpha)) + 
+  scale_color_manual(name = "", 
+                     breaks = c("IRA", "No IRA", "Historic", "LTS"), 
+                     values = c("#0388B3","#F28063", "black", "#767684"), 
+                     labels = c("IRA", "No IRA", "Historic Emissions", "Emissions Targets")) + 
+  scale_fill_manual(name = "", 
+                    breaks = c("IRA", "No IRA", "Historic", "LTS"), 
+                     values = c("#0388B3","#F28063", "black", "#767684"), 
+                     labels = c("IRA", "No IRA", "Historic Emissions", "Emissions Targets")) +
+  theme_emf() + 
+  labs(title = "", 
+       y = expression(paste("Net GHG Emissions (MMt ", CO[2], "e)", sep = "")), 
+       x = "") +
+  scale_alpha(range = c(0.6, 1), guide = F) + 
+  ylim(-0.5, 8) + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.title.x = element_blank(),
+        axis.ticks = element_blank(),
+        legend.box = "vertical",
+        legend.text = element_text(size = 8),
+        legend.spacing.y = unit(0.5, "mm"),
+        legend.position = c(0.2, 0.3), 
+        legend.background = element_blank()) + 
+  scale_x_continuous(breaks = c(2005, 2021, 2025, 2030, 2035)) + 
+  guides(fill = guide_legend(nrow=4, byrow = T))
+
+
+df_30 = IRA %>%
+    filter(year %in% c(2030))%>%
+    mutate(value = value/1000)
+  df_stat_30 = df_30 %>%
+    group_by(scenario,year) %>%
+    summarise(mean = mean(value),
+           median = median(value))
+  
+  df_35 = IRA %>%
+    filter(year %in% c(2035)) %>%
+    mutate(value = value/1000)
+  df_stat_35 = df_35 %>%
+    group_by(scenario,year) %>%
+    summarise(mean = mean(value),
+           median = median(value))
+  
+  dots_30 = ggplot() +
+    geom_point(data = df_30, aes(x = year, y = value, alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = 0.1)) +
+    geom_segment(data = df_stat_30, aes(x = year - 0.025, xend = year + 0.025, y = median, yend = median, color = scenario))+
+    scale_x_continuous(breaks = c(2030), labels = c("2030"), limits = c(2029.9, 2030.1)) +
+    scale_y_continuous(limits = c(-0.5,8)) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+  scale_alpha(range = c(0.4, 1), guide = F) + 
+    theme(panel.grid = element_blank(), plot.title = element_blank(),
+          axis.text.y = element_blank(),
+          axis.text.x = element_text(angle = 45, hjust=1),
+          axis.title.y = element_blank(), axis.title.x = element_blank(),
+          axis.ticks = element_blank(), panel.border = element_blank(),
+          legend.position = "none", plot.margin = margin(0,0,0,0))
+  
+  # dot plot for 2035
+  dots_35 = ggplot() +
+    geom_point(data = df_35, aes(x = year, y = value, color = scenario, alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.1)) +
+    geom_segment(data = df_stat_35, aes(x = year - 0.025, xend = year + 0.025, y = median, yend = median, color = scenario))+
+    scale_x_continuous(breaks = c(2035), labels = c("2035"), limits = c(2034.9, 2035.1)) +
+    scale_y_continuous(limits = c(-0.5,8)) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+  scale_alpha(range = c(0.4, 1), guide = F) + 
+    theme(panel.grid = element_blank(), plot.title = element_blank(),
+          axis.text.y = element_blank(),
+          axis.text.x = element_text(angle = 45, hjust=1),
+          axis.title.y = element_blank(), axis.title.x = element_blank(),
+          axis.ticks = element_blank(), panel.border = element_blank(),
+          legend.position = "none", plot.margin = margin(0,0,0,0))
+
+
+final = fin + dots_30 + dots_35 +
+    plot_layout(widths = c(10,1,1)) +
+    theme(plot.margin = margin(0,0,0,0))
+
+print(final)
+
+ggsave(filename = "output/final_figures/Fig6.1andES4.svg", plot = final,width = 7, height = 5, units = "in")
+ggsave(filename = "output/final_figures/Fig6.1andES4.png", plot = final,width = 7, height = 5, units = "in")
+
+```
+
+### Table ES4/6.1
+
+```{r}
+
+title = "GHG Emissions Exec"
+
+base <- clean_data %>%
+  filter(variable == "Emissions|GHG|Net" & year == 2005 & model == "EPA-GHGI")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (Mt CO2)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (Mt CO2)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (Mt CO2)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (Mt CO2)`)
+
+NoIRA <- clean_data %>%
+  filter(!model %in% c("USREP-ReEDS","OP-NEMS","MARKAL-NETL","AEO.2023") &
+           variable == "Emissions|GHG|Net" &
+           year %in% c(2025,2030,2035) &
+           scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (Mt CO2)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (Mt CO2)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (Mt CO2)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- clean_data %>%
+  filter(!model == "USREP-ReEDS") %>%
+  filter(!model== "OP-NEMS") %>%
+  filter(model != "MARKAL-NETL") %>%
+  filter(!model == "AEO.2023") %>%
+  filter(variable == "Emissions|GHG|Net") %>%
+  filter(year %in% c(2025,2030,2035)) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (Mt CO2)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (Mt CO2)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+      year == 2025 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2025 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2025 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2025 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2025 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2025 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2025 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2025 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2025 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (Mt CO2)` = case_when(
+      year == 2025 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2025 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`), 
+      
+      year == 2025 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2025 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`), 
+      
+      year == 2025 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2025 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+IRA$`Absolute Level (Mt CO2)` = round(IRA$`Absolute Level (Mt CO2)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (Mt CO2)` = round(IRA$`Reductions from No IRA (Mt CO2)`,3)
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+```
+
+## 6.2 us energy emissions by sector comparing ira modeling to lts pathways
+
+```{r}
+# LTS Cone plot for economy-wide emissions
+
+# buildings cone
+mid = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 23, 24, "United States", -100, 2500, "Buildings", 8, "median", facet = TRUE) +
+  theme(axis.title.y = element_blank(), axis.text.y = element_blank())
+mid
+
+# transportation cone
+left = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 21, 22, "United States", -100, 2500, "Transportation", 8, "median", facet = TRUE)
+left
+
+# industry cone
+right = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 25, 26, "United States", -100, 2500, "Industrial", 8, "median", facet = TRUE) +
+  theme(axis.title.y = element_blank(), axis.text.y = element_blank())
+right
+
+# electric sector cone
+top = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 19, 20, "United States", -100, 2500, "Electric Sector CO2 Emissions", 12, "median", facet = FALSE)
+top
+
+# put 'em all together
+bottom = (left | mid | right) + plot_annotation(title = "Direct and Indirect CO2 Emissions", theme = theme(plot.title = element_text(hjust = 0.5, size = 12), plot.margin = margin(0,0,0,0)))
+bottom
+
+combined = (wrap_elements(top) / wrap_elements(bottom))
+combined
+
+ggsave(filename = "output/final_figures/svg/Fig6.2NEW_LTS_cone_indirect_emissions_TOTAL.svg", 
+       combined, width = 7, height = 5, units = "in")
+ggsave(filename = "output/final_figures/png/Fig6.2NEW_LTS_cone_indirect_emissions_TOTAL.png", 
+       combined, width = 7, height = 5, units = "in")
+
+# supporting data
+dta = data.frame()
+for (i in c(seq(19,26,by = 1))) {
+  dta = rbind(dta, data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, i, "United States"))
+}
+dta %>% write.csv("output/final_figures/data/Fig6.2NEW_LTS_cone_indirect_emissions_TOTAL.csv", row.names = FALSE)
+
+```
+
+## 6.3 energy used in the transportation sector, by fuel type, comparing ira scenarios to lts pathways
+
+```{r}
+p3 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 11, 12, "United States", 0, 30, title = "Transportation Sector Final Energy" , "median", facet = TRUE) +
+  facet_grid(~factor(variable_rename, levels=c('Fossil', 'Electricity', 'Alternative Fuels'))) +
+  theme(plot.title = element_blank())
+p3
+ggsave(filename = "output/final_figures/svg/Fig6.3_LTS_cone_transport_facet.svg",p3, width = 7, height = 5, units = "in")
+ggsave(filename = "output/final_figures/png/Fig6.3_LTS_cone_transport_facet.png",p3, width = 7, height = 5, units = "in")
+
+dta1 = data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 11, "United States")
+dta2 = data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 12, "United States")
+dta = rbind(dta1, dta2)
+dta %>% write.csv("output/final_figures/data/Fig6.3_LTS_cone_transport_facet.csv", row.names = FALSE)
+```
+
+## 6.4 energy used in the buildings sector, by fuel type, comparing ira scenarios to lts pathways
+
+```{r}
+p = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 15, 16, "United States", 0, 15, title = "Buildings Sector Final Energy", "median", facet = TRUE) +
+  facet_grid(~factor(variable_rename, levels=c('Electricity', 'Non-Electric'))) +
+  theme(plot.title = element_blank())
+p
+ggsave(filename = "output/final_figures/svg/Fig6.4_LTS_cone_buildings_facet.svg",p, width = 7, height = 5, units = "in")
+ggsave(filename = "output/final_figures/png/Fig6.4_LTS_cone_buildings_facet.png",p, width = 7, height = 5, units = "in")
+
+dta1 = data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 13, "United States")
+dta2 = data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 14, "United States")
+dta = rbind(dta1, dta2)
+dta %>% write.csv("output/final_figures/data/Fig6.4_LTS_cone_industry_facet.csv", row.names = FALSE)
+```
+
+## 6.5 energy used in the industrial sector, by fuel type, comparing ira scenarios to lts pathways
+
+```{r}
+p4 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 13, 14, "United States", 0, 23, title = "Industrial Sector Final Energy", "median", facet = TRUE) +
+  facet_grid(~factor(variable_rename, levels=c('Fossil', 'Electricity', 'Alternative Fuels'))) +
+  theme(plot.title = element_blank())
+p4
+ggsave(filename = "output/final_figures/svg/Fig6.5_LTS_cone_industry_facet.svg", p4, width = 7, height = 5, units = "in")
+ggsave(filename = "output/final_figures/png/Fig6.5_LTS_cone_industry_facet.png", p4, width = 7, height = 5, units = "in")
+
+dta1 = data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 13, "United States")
+dta2 = data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 14, "United States")
+dta = rbind(dta1, dta2)
+dta %>% write.csv("output/final_figures/data/Fig6.5_LTS_cone_industry_facet.csv", row.names = FALSE)
+```
+
+

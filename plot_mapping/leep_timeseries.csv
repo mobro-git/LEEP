@@ -70,3 +70,11 @@ timeseries,38,Emissions|CO2|Energy|Demand|Buildings|Percent difference from No I
 timeseries,124,Industrial Energy Pct diff,Final Energy|Industry|Fossil|Percent difference from No IRA,Fossil,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,model,region,fixed
 timeseries,125,Nox pct diff,Emissions|NOx|Energy|Supply|Electricity|Percent difference from No IRA,Fossil,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,model,region,fixed
 timeseries,126,Sox pct diff,Emissions|Sulfur|Energy|Supply|Electricity|Percent difference from No IRA,Fossil,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,model,region,fixed
+timeseries,94,Primary Energy,Primary Energy|Coal,Coal,0,usa,models_leep,historic,hist_mod_scenarios2,grid,year,value,region,variable_rename,scenario,region,fixed
+timeseries,93,Primary Energy,Primary Energy|Gas,Gas,0,usa,models_leep,historic,hist_mod_scenarios2,grid,year,value,region,variable_rename,scenario,region,fixed
+timeseries,92,Primary Energy,Primary Energy|Oil,Oil,0,usa,models_leep,historic,hist_mod_scenarios2,grid,year,value,region,variable_rename,scenario,region,fixed
+timeseries,99,Economy-Wide Emissions,Emissions|CO2,Total Emissions,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,98,Economy-Wide Emissions,Emissions|CO2|Energy|Supply|Electricity,Electricity,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,97,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Transportation,Transportation,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,96,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Industry and Fuel Production,Industry,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,95,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Buildings,Buildings,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
