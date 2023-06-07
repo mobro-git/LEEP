@@ -190,6 +190,7 @@ color_map <- c(
   "Biomass Solids" = "m.indigo",
   "Coal" = "very dark blue",
   "Gas" = "brown",
+  "Natural Gas" = "brown",
   "Oil" = "brown red",
   "Solar" = "m.yellow",
   "Wind" = "m.green",
