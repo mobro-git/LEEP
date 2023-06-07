@@ -1859,3 +1859,9 @@ m2 = medians_table("time_series", config, clean_data, figmap_leep_timeseries, 4,
 View(m2)
 
 ```
+
+```{r}
+# compile data
+test = compile_all_data()
+
+```

@@ -357,9 +357,9 @@ bottom
 combined = (wrap_elements(top) / wrap_elements(bottom))
 combined
 
-ggsave(filename = "output/final_figures/svg/Fig6.2NEW_LTS_cone_indirect_emissions_TOTAL.svg", 
+ggsave(filename = "output/final_figures/svg/Fig6.2_LTS_cone_indirect_emissions_TOTAL.svg", 
        combined, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig6.2NEW_LTS_cone_indirect_emissions_TOTAL.png", 
+ggsave(filename = "output/final_figures/png/Fig6.2_LTS_cone_indirect_emissions_TOTAL.png", 
        combined, width = 7, height = 5, units = "in")
 
 # supporting data
@@ -367,7 +367,7 @@ dta = data.frame()
 for (i in c(seq(19,26,by = 1))) {
   dta = rbind(dta, data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, i, "United States"))
 }
-dta %>% write.csv("output/final_figures/data/Fig6.2NEW_LTS_cone_indirect_emissions_TOTAL.csv", row.names = FALSE)
+dta %>% write.csv("output/final_figures/data/Fig6.2_LTS_cone_indirect_emissions_TOTAL.csv", row.names = FALSE)
 
 ```
 

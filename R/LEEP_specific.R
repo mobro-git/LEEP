@@ -560,3 +560,23 @@ emis_stack = function(dta, title, econwide = FALSE) {
 
   return(p)
 }
+
+
+# A function to write all csvs in the final_figures/data/folder to a single excel document
+# need to have installed package "openxlsx"
+compile_all_data = function() {
+  all_data = list.files("./output/final_figures/data", full.names = FALSE)
+  #print(all_data)
+
+  data_list = list()
+  for (file in all_data) {
+    fignum = strsplit(file, "_")[[1]][1]
+    #print(fignum)
+
+    df = read.csv(paste0("./output/final_figures/data/",file))
+    data_list[[fignum]] = df
+  }
+
+  openxlsx::write.xlsx(data_list, "./output/final_figures/data/ALL_DATA.xlsx")
+  return(data_list)
+}
