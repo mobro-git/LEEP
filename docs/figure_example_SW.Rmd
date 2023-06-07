@@ -1562,7 +1562,7 @@ print(p10$stats %>% data.frame() %>% select(-stagger))
 
 ```{r}
 # function for spaghetti plots + dot plots
-dot_plots_but_with_lines = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric, labels = FALSE, hist_year = 2021, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0)) {
+dot_plots_but_with_arrows = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric, labels = FALSE, hist_year = 2021, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0)) {
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
   
   # make the spagetti plot
@@ -1613,7 +1613,22 @@ dot_plots_but_with_lines = function(plot_type, config, emf_data_long, figmap, fi
     mutate(stagger = stagger - 1) %>%
     mutate(stagger = stagger / max(stagger)) %>%
     mutate(stagger = stagger - 0.5)
-  View(df_lines_30)
+  
+  df_arrow_30 = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
+    filter(year %in% c(2030), scenario == "IRA") %>%
+    select(model, value) %>%
+    rename(IRA_value = value)
+  
+  df_lines_30 = df_lines_30 %>% left_join(df_arrow_30, by = "model") %>%
+    mutate(arrow_direction = case_when(
+      max == IRA_value ~ "up",
+      min == IRA_value ~ "down",
+      TRUE ~ "uh-oh"
+    )) %>%
+    mutate(arrow_end = case_when(arrow_direction == "up" ~ max, TRUE ~ min),
+           arrow_start = case_when(arrow_direction == "up" ~ min, TRUE ~ max))
+  
+  #View(df_lines_30)
 
   df_lines_35 = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
     filter(year %in% c(2035)) %>% 
@@ -1628,69 +1643,31 @@ dot_plots_but_with_lines = function(plot_type, config, emf_data_long, figmap, fi
     mutate(stagger = stagger - 1) %>%
     mutate(stagger = stagger / max(stagger)) %>%
     mutate(stagger = stagger - 0.5)
-  View(df_lines_35)
-
-    
-  # these are the summary stats we'll eventually want to overlay on the plot to highlight the efficacy of the IRA
-  preira_mean_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean
-  ira_mean_30 = df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
-  preira_mean_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean
-  ira_mean_35 = df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
-  preira_med_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median
-  ira_med_30 = df_stat_30[df_stat_30$scenario == "IRA","median"]$median
-  preira_med_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median
-  ira_med_35 = df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+  # View(df_lines_35)
   
-  # calculate raw differences
-  mean_diff_30 = preira_mean_30 - ira_mean_30
-  mean_diff_35 = preira_mean_35 - ira_mean_35
-  med_diff_30 = preira_med_30 - ira_med_30
-  med_diff_35 = preira_med_35 - ira_med_35
+  df_arrow_35 = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
+    filter(year %in% c(2035), scenario == "IRA") %>%
+    select(model, value) %>%
+    rename(IRA_value = value)
   
-  # calculate percent differences
-  mean_pctdiff_30 = mean_diff_30 / preira_mean_30
-  mean_pctdiff_35 = mean_diff_35 / preira_mean_35
-  med_pctdiff_30 = med_diff_30 / preira_med_30
-  med_pctdiff_35 = med_diff_35 / preira_med_35
-  
-  # stick em all in a data frame
-  stats = 0
-  # stats = data.frame("year" = c(2030,2035,2030,2035), "metric" = c("mean","mean","median","median"),
-  #                    "No IRA mean" = c(preira_mean_30, preira_mean_35, preira_med_30, preira_med_35),
-  #                    "IRA mean" = c(ira_mean_30, ira_mean_35, ira_med_30, ira_med_35),
-  #                    "difference" = c(mean_diff_30, mean_diff_35, med_diff_30, med_diff_35),
-  #                    "percent difference" = c(mean_pctdiff_30, mean_pctdiff_35, med_pctdiff_30, med_pctdiff_35))
+  df_lines_35 = df_lines_35 %>% left_join(df_arrow_35, by = "model") %>%
+    mutate(arrow_direction = case_when(
+      max == IRA_value ~ "up",
+      min == IRA_value ~ "down",
+      TRUE ~ "uh-oh"
+    )) %>%
+    mutate(arrow_end = case_when(arrow_direction == "up" ~ max, TRUE ~ min),
+           arrow_start = case_when(arrow_direction == "up" ~ min, TRUE ~ max))
 
   # still not entirely sure what this does...
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
-  
-  # a few of the ggplot lines of code vary based on the year or on the metric chosen, so conditionally choose the right one here
-  if (metric == "mean") {
-    segment_code_30 = geom_segment(data = df_stat_30, 
-                                   aes(x = year - 0.04, xend = year + 0.04, y = mean, yend = mean, color = scenario), 
-                                   size = 1)
-    segment_code_35 = geom_segment(data = df_stat_35, 
-                                   aes(x = year - 0.04, xend = year + 0.04, y = mean, yend = mean, color = scenario),
-                                   size = 1)
-    text_code = geom_text(data = df_stat_30, aes(x = year - 0.08, y = mean, color = scenario), 
-                          label = "Avg", size = 3, hjust = 0.5, angle = 90, position = position_dodge2(width = 0.05))
-  } else if (metric == "median") {
-    segment_code_30 = geom_segment(data = df_stat_30, 
-                                   aes(x = year - 0.04, xend = year + 0.04, y = median, yend = median, color = scenario), 
-                                   size = 1)
-    segment_code_35 = geom_segment(data = df_stat_35, 
-                                   aes(x = year - 0.04, xend = year + 0.04, y = median, yend = median, color = scenario), 
-                                   size = 1)
-    text_code = geom_text(data = df_stat_30, aes(x = year - 0.08, y = median, color = scenario), 
-                          label = "Med", size = 3, hjust = 0.5, angle = 90, position = position_dodge2(width = 0.05))
-  }
   
   # dot plot for 2030
   dots_30 = ggplot() +
     # geom_point(data = df_30, aes(x = year, y = value, color = scenario), 
     #            shape = 1, size = 1.5, position = position_dodge(width = 0.05)) +
-    geom_segment(data = df_lines_30, aes(x = year + stagger, xend = year + stagger, y = min, yend = max), color = "black",
-                                    size = 0.5) +
+    geom_segment(data = df_lines_30, aes(x = year + stagger, xend = year + stagger, y = arrow_start, yend = arrow_end), color = "black",
+                                    size = 0.5, arrow = arrow(length = unit(0.2, "cm"), type = "closed", angle = 25)) +
     # geom_segment(data = df_lines_30, aes(x = year - 0.5, xend = year + 0.5, y = median, yend = median), color = "black",
     #              size = 1) +
     # #segment_code_30 +
@@ -1710,8 +1687,8 @@ dot_plots_but_with_lines = function(plot_type, config, emf_data_long, figmap, fi
   dots_35 = ggplot() +
     # geom_point(data = df_35, aes(x = year, y = value, color = scenario), 
     #            shape = 1, size = 1.5, position = position_dodge(width = 0.05)) +
-    geom_segment(data = df_lines_35, aes(x = year + stagger, xend = year + stagger, y = min, yend = max), color = "black",
-                                    size = 0.5) +
+    geom_segment(data = df_lines_35, aes(x = year + stagger, xend = year + stagger, y = arrow_start, yend = arrow_end), color = "black",
+                                    size = 0.5, arrow = arrow(length = unit(0.2, "cm"), type = "closed", angle = 25)) +
     # geom_segment(data = df_lines_35, aes(x = year - 0.5, xend = year + 0.5, y = median, yend = median), color = "black",
     #              size = 1) +
     # segment_code_35 +
@@ -1741,16 +1718,18 @@ dot_plots_but_with_lines = function(plot_type, config, emf_data_long, figmap, fi
   ))
 }
 
-p = dot_plots_but_with_lines("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States", 
+p = dot_plots_but_with_arrows("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States", 
                              0, 5, "Power Sector SO2 Emissions", metric = "median",
                              historic_coord = c(2017,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12) )
 
-p = dot_plots_but_with_lines("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States",
+p = dot_plots_but_with_arrows("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States",
                              0, 100, "EV Share", metric = "mean", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 16), ira_coord = c(2027, 45))
 
 p$full
 
 ```
+
+
 ```{r}
 # percentage difference figures for appendix
 
