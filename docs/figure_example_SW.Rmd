@@ -587,7 +587,7 @@ dta %>% write.csv("output/final_figures/data/Fig6.3_LTS_cone_transport_facet.csv
 dta1 = data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 13, "United States")
 dta2 = data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 14, "United States")
 dta = rbind(dta1, dta2)
-dta %>% write.csv("output/final_figures/data/Fig6.4_LTS_cone_industry_facet.csv", row.names = FALSE)
+dta %>% write.csv("output/final_figures/data/Fig6.5_LTS_cone_industry_facet.csv", row.names = FALSE)
 
 ```
 
@@ -1265,7 +1265,7 @@ ggsave(filename = "output/leep/stacked_bar/Fig1.1a_emis_nonco2ghg.svg",p, width 
 ```{r}
 # electric sector emissions sensitivity dot plots
 panel1_scens = c("Core","IRA", "IRA.Low","IRA.High")
-panel2_scens = c("Low Growth", "High Growth", "Core", "IRA") # Economic Growth
+panel2_scens = c("Low Growth", "High Growth", "Core") # Economic Growth
 panel3_scens = c("Low Gas Price","High Gas Price", "Core") # Energy Prices
 panel4_scens = c("All Advanced", "Adv Battery/Renew", "Cons Battery/Renew", "Core") # Technology Cost
 panel5_scens = c("Constrained Deployment", "Core") # Deployment Constraints
@@ -1415,6 +1415,7 @@ dta %>% write.csv("output/final_figures/data/Fig2.5_elec_sensitivity_dots.csv", 
 ```{r}
 # sensitivity dot plots
 panel1_scens = c("Core","IRA", "IRA.Low","IRA.High")
+panel2_scens = c("Low Growth", "High Growth", "Core", "IRA") # panel2_scens from fig 2.5, but "IRA" added for GCAM
 model_list = c("EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI", "USREP-ReEDS") # models with all three (low,mid,high) cases
 
 sens_dta_econ = clean_data %>% filter(variable == "Emissions|CO2|Energy",

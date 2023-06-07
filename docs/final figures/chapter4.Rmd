@@ -1,0 +1,192 @@
+---
+title: "Chapter 4: Buildings"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+date: "`r Sys.time()`"
+params:
+  mode: NULL
+  format: "svg"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+```{r}
+if(is.null(params$mode)) {
+  source("packages.R")
+  devtools::load_all()
+}
+
+# load data from targets pipeline
+targets::tar_load(config)
+targets::tar_load(clean_data)
+targets::tar_load(figmap_leep_timeseries)
+targets::tar_load(figmap_leep_cone)
+targets::tar_load(figmap_leep_stackbar)
+targets::tar_load(data_min)
+targets::tar_load(data_raw)
+
+# create workbook for saving figure data
+# data_wb <- createWorkbook()
+
+# format toggle
+format <- params$format
+
+# palettes
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+```
+
+## 4.1 co2 emissions from the buildings sector in the us compared to economy-wide co2 emissions
+
+```{r}
+dta3 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 9, "United States") %>%
+  mutate(variable_rename = case_when(
+    variable_rename == "Buildings: Direct" ~ variable_rename,
+    variable_rename == "Buildings: Indirect" ~ variable_rename,
+    TRUE ~ "Other Sectors"
+  )) %>%
+  mutate(variable_rename = factor(variable_rename, 
+                                  levels = c("Buildings: Direct", "Buildings: Indirect","Other Sectors")))
+
+p3 = emis_stack(dta3, "Buildings CO2 Emissions") + 
+  scale_fill_manual(values = c("Other Sectors" = "white", "Buildings: Indirect" = subpalettes$`Emissions Stack`[["Buildings: Indirect"]], "Buildings: Direct" = subpalettes$`Emissions Stack`[["Buildings: Direct"]])) +
+  scale_color_manual(values = c("Other Sectors" = "#CECECE", "Buildings: Indirect" = subpalettes$`Emissions Stack`[["Buildings: Indirect"]], "Buildings: Direct" = subpalettes$`Emissions Stack`[["Buildings: Direct"]])) +
+  scale_alpha_manual(values = c("Other Sectors" = 0.5, "Buildings: Indirect" = 1, "Buildings: Direct" = 1))
+p3
+ggsave(filename = "output/final_figures/svg/Fig4.1_emis_build.svg",p3, width = 7, height = 5, units = "in")
+ggsave(filename = "output/final_figures/png/Fig4.1_emis_build.png",p3, width = 7, height = 5, units = "in")
+
+dta3 %>% write.csv("output/final_figures/data/Fig4.1_emis.csv", row.names = FALSE)
+```
+
+## 4.2 buildings total co2 emissions
+
+```{r}
+TotSpg = spg(
+  23,
+  "EPA-GHGI",
+  expression(paste("Total Building C", O[2])),
+  expression(paste("Mt C", O[2], "/yr")),
+  gd = "none",
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  0,
+  2500,
+  c(0, 500, 1000, 1500, 2000, 2500),
+  scales::comma) + 
+  annotate("text", x = 2015, y = 2250, label = "Historic", color = "black") + 
+  annotate("text", x = 2030, y = 1675, label = "No IRA", color = "#F28063") + 
+  annotate("text", x = 2022.5, y = 1000, label = "IRA", color = "#0388B3")
+
+TotDot = dotted(TotSpg$data, TotSpg, "median", 0, 2500)
+
+TotTab = html(TotSpg$data, "Total Building CO<sub>2<sub>")
+
+DirSpg = spg(
+  95,
+  "EPA-GHGI",
+  expression(paste("Direct Combustion")),
+  expression(paste("Mt C", O[2], "/yr")),
+  gd = "none",
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  0,
+  2000,
+  c(0, 500, 1000, 1500, 2000),
+
+  scales::comma)
+
+DirDot = dotted(DirSpg$data, DirSpg, "median", 0, 2000)
+
+DirTab = html(DirSpg$data, "Direct Building CO<sub>2<sub>")
+
+IndDirSpg = spg(
+  22,
+  "EPA-GHGI",
+  expression(paste("Indirect from Electricity")),
+  "",
+  gd = "none",
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  0,
+  2000,
+  c(0, 500, 1000, 1500, 2000),
+  NULL)
+
+IndDirDot = dotted(IndDirSpg$data, IndDirSpg, "median", 0, 2000)
+
+IndDirTab = html(IndDirSpg$data, "Indirect Building CO<sub>2<sub>")
+
+figure = TotDot / (DirDot | IndDirDot)
+
+TotTab
+DirTab
+IndDirTab
+```
+
+## 4.3 emissions reudctions by end use type from scout modeling
+
+```{r}
+#need real data and color directions
+
+data <- read.csv("./data-extra/scout_buildings_IRA_scenario_emissions_wedges.csv")
+
+data_sort <- data %>%
+  filter(year <= 2035) %>%
+  filter(year >= 2025) %>%
+  mutate(scenario = case_when(
+    scenario == "IRA-Low" ~ "IRA-Pessimistic", 
+    scenario == "IRA-Central" ~ "IRA-Core", 
+    scenario == "IRA-High" ~ "IRA-Optimistic"
+  )) %>%
+  rename(Reference = `Reference.Building.Emissions`,
+         Total = `Total.Building.Emissions`, 
+         Power = `Power.Supply.Decarbonization`, 
+         WaterHeating = `Water.Heating`, 
+         HVAC = HVAC.Env) %>%
+  pivot_longer(
+    cols = c(Reference, Total, Power, Other, WaterHeating, HVAC), names_to = "variable_rename"
+  )
+  
+ref <- data_sort[data_sort$variable_rename == "Reference",]
+
+data_sort$scenario <- factor(data_sort$scenario, levels = c("IRA-Pessimistic", "IRA-Core", "IRA-Optimistic"))
+data_sort$variable_rename <- factor(data_sort$variable_rename, levels = c("HVAC", "WaterHeating", "Other","Power", "Total", "Reference"))
+
+
+fin = ggplot(data = data_sort[data_sort$variable_rename != "Reference",] , aes(x=year, y=value, fill = variable_rename)) +
+  geom_area() +
+  facet_grid(~scenario) +
+  labs(title = "",
+         x = "",
+         y = expression(Mt ~ CO[2]),
+         color = "") +
+    scale_y_continuous(limits = c(0, 1500), labels = scales::comma) +
+    theme_emf() +
+    scale_x_continuous(breaks = c(2025, 2030, 2035)) + 
+    theme(axis.text.x = element_text(angle = 45, hjust=1)) +
+    theme(panel.spacing.x = unit(4, "mm"), legend.position = "bottom") + 
+  guides(fill = guide_legend(nrow = 2)) + 
+  scale_fill_manual(name = "", 
+    labels = c("HVAC/Env", "Water Heating", "Other" , "Power Supply Decarbonizaiton", "Total Building Emissions", "Reference"),
+    breaks = c("HVAC", "WaterHeating", "Other","Power", "Total", "Reference"), 
+    values = c("#75FF8E", '#f58231', "#FFF362",  '#42d4f4', "#DEDEDE", "#767684"),
+    limits = c("HVAC", "WaterHeating", "Other", "Power", "Total") 
+  ) + 
+  
+  geom_line(data = data_sort[data_sort$variable_rename == "Reference",],  aes(x=year, y=value, color = variable_rename),linetype="dashed") +
+  scale_color_manual(name = "", 
+    labels = c("HVAC/Env", "Water Heating", "Other" , "Power Supply Decarbonizaiton", "Total Building Emissions", "Reference"),
+    breaks = c("HVAC", "WaterHeating", "Other","Power", "Total", "Reference"), 
+    values = c("#75FF8E", '#f58231', "#FFF362",  '#42d4f4', "#DEDEDE", "#767684"),
+    limits = c("Reference") 
+  )
+fin
+
+ggsave(filename = "output/final_figures/Fig4.3.svg", plot = fin,width = 8, height = 5, units = "in")
+
+ggsave(filename = "output/final_figures/Fig4.3.png", plot = fin,width = 8, height = 5, units = "in")
+```
+
+

@@ -1,0 +1,124 @@
+---
+title: "Chapter 5: Industry"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+date: "`r Sys.time()`"
+params:
+  mode: NULL
+  format: "svg"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+```{r}
+if(is.null(params$mode)) {
+  source("packages.R")
+  devtools::load_all()
+}
+
+# load data from targets pipeline
+targets::tar_load(config)
+targets::tar_load(clean_data)
+targets::tar_load(figmap_leep_timeseries)
+targets::tar_load(figmap_leep_cone)
+targets::tar_load(figmap_leep_stackbar)
+targets::tar_load(data_min)
+targets::tar_load(data_raw)
+
+# create workbook for saving figure data
+# data_wb <- createWorkbook()
+
+# format toggle
+format <- params$format
+
+# palettes
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+```
+
+# Appendix
+## Economy-Wide Diff FIN
+```{r EconWide Differnce}
+EconPD = pd(25, "", "Percent Difference (%)", "none", "")
+EconAD = ad(3, "", "Absolute Difference (Mt CO2)", "right", "")
+
+figure = (EconPD | EconAD) + 
+  plot_layout(guides = "collect")
+
+print(figure)
+```
+## Electricity Diff FIN
+```{r Electricity Differnce}
+ElecPD = pd(26, "", "Percent Difference (%)", "none", "")
+ElecAD = ad(4, "", "Absolute Difference (Mt CO2)", "right", "")
+
+figure = (ElecPD | ElecAD) + 
+  plot_layout(guides = "collect")
+
+print(figure)
+```
+## Transportation Diff FIN
+```{r Transportation Differnce}
+TranPD = pd(27, "", "Percent Difference (%)", "none", "")
+TranAD = ad(5, "", "Absolute Difference (Mt CO2)", "right", "")
+
+figure = (TranPD | TranAD) + 
+  plot_layout(guides = "collect")
+
+print(figure)
+
+test = TranSpg / (TranPD | TranAD) + 
+  plot_layout(guides = "collect")
+
+print(test)
+
+#Note: final = (No IRA | IRA) / (TradAD | TranPD)
+```
+## Building Diff FIN
+```{r Building Differnce}
+BuilPD = pd(28, "", "Percent Difference (%)", "none", "")
+BuilAD = ad(7, "", "Absolute Difference (Mt CO2)", "right", "")
+
+figure = (BuilPD | BuilAD) + 
+  plot_layout(guides = "collect")
+
+print(figure)
+```
+
+## Industry Diff FIN
+```{r Industry Differnce}
+IndPD = pd(29, "", "Percent Difference (%)", "none", "")
+IndAD = ad(6, "", "Absolute Difference (Mt CO2)", "right", "")
+
+figure = (IndPD | IndAD) + 
+  plot_layout(guides = "collect")
+
+print(figure)
+```
+
+## Coal Emissions
+## Gas
+## Petrol
+
+## ALL Generation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

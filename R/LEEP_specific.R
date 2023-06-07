@@ -1,8 +1,3 @@
-################################################################################################################################################
-################################################################################################################################################
-################################################################################################################################################
-
-
 
 ## Function to ggsave figures with defaults and file format specified once for all figures
 savefig = function(figure, fig_no, format = "svg", wd = 7, ht = 5, unit = "in") {
@@ -12,13 +7,6 @@ savefig = function(figure, fig_no, format = "svg", wd = 7, ht = 5, unit = "in") 
          height = ht,
          units = unit)
 }
-
-
-################################################################################################################################################
-################################################################################################################################################
-################################################################################################################################################
-
-
 
 
 # This function does a bunch of stuff
@@ -172,9 +160,91 @@ dot_plots_sens = function(plot_type, config, emf_data_long, figmap, figure_num, 
 # print(p$stats)
 
 
-################################################################################################################################################
-################################################################################################################################################
-################################################################################################################################################
+sens_dot_plot = function(dta, title, far_left = FALSE, single = FALSE, ymin = 0, ymax = 0, ira_coord = c(0,0), low_coord = c(0,0), high_coord = c(0,0)) {
+  if (far_left) {
+    point_code = geom_point(aes(x = year + stagger, y = value, color = scenario), shape = 1, size = 2)
+  } else {
+    point_code = geom_point(aes(x = year, y = value), shape = 1, size = 2)
+  }
+
+  if (far_left) {
+    stats = dta %>%
+      mutate(scenario = case_when(scenario == "Core" ~ "IRA", TRUE ~ scenario)) %>%
+      group_by(year, stagger, scenario) %>%
+      summarize(median = median(value))
+    if (single) {
+      width = 0.2
+      left_margin = 11.5
+    } else {
+      width = 0.5
+      left_margin = 0.5
+    }
+    segment_code = geom_segment(data = stats,
+                                aes(x = year + stagger - width, xend = year + stagger + width,
+                                    y = median, yend = median, color = scenario),
+                                linewidth = 0.5)
+  } else {
+    dta$stagger = 0
+    stats = dta %>%
+      mutate(scenario = case_when(scenario == "Core" ~ "IRA", TRUE ~ scenario)) %>%
+      group_by(year, stagger) %>%
+      summarize(median = median(value))
+    segment_code = geom_segment(aes(x = year, xend = year, y = -5000, yend = -5000))
+    left_margin = 0.5
+  }
+
+  stats = dta %>%
+    mutate(scenario = case_when(scenario == "Core" ~ "IRA", TRUE ~ scenario)) %>%
+    group_by(year, stagger, scenario) %>%
+    summarize(median = median(value))
+
+  p = dta %>% ggplot() +
+    point_code +
+    segment_code +
+    scale_x_continuous(breaks = c(2030, 2035), labels = c(2030, 2035), limits = c(2028, 2037)) +
+    scale_y_continuous(limits = c(ymin, ymax)) +
+    theme_emf() +
+    ggtitle(title) +
+    theme(axis.title.x = element_blank(),
+          plot.title = element_text(hjust = 0.5, size = 8), axis.ticks = element_blank(),
+          plot.margin = margin(0.7,1,0.7,left_margin))
+
+  if (!far_left) {
+    p = p +
+      geom_text_repel(aes(x = year, y = value, label = scenario), size = 2, hjust = -0.2) +
+      theme(axis.text.y = element_blank(), axis.title.y = element_blank(),)
+    opt_label = "Optimistic Emissions"
+    pes_label = "Pessimistic Emissions"
+  } else {
+    p = p +
+      labs(y = "Mt CO2/yr") +
+      #scale_subpalette(subpalettes, "Sensitivity Dots") +
+      scale_color_manual(values = c("IRA" = "black", "IRA.Low" = "#42d4f4", "IRA.High" = "#883192"), guide = "none")
+    opt_label = "Optimistic Emissions"
+    pes_label = "Pessimistic Emissions"
+  }
+
+  if(sum(ira_coord) != 0) {
+    p = p +
+      annotate("text", x = ira_coord[1], y = ira_coord[2], size = 2.5,
+               label = "Core", color = "black", alpha = 1, hjust = -0.2)
+  }
+  if(sum(low_coord) != 0) {
+    p = p +
+      annotate("text", x = low_coord[1], y = low_coord[2], size = 2.5,
+               label = pes_label, color = "#42d4f4", alpha = 1, hjust = -0.2)
+  }
+  if(sum(high_coord) != 0) {
+    p = p +
+      annotate("text", x = high_coord[1], y = high_coord[2], size = 2.5,
+               label = opt_label, color = "#883192", alpha = 1, hjust = -0.2)
+  }
+
+  return(list(
+    "plot" = p,
+    "stats" = stats
+  ))
+}
 
 
 # function for spaghetti plots + dot plots
@@ -317,11 +387,6 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
 }
 
 
-################################################################################################################################################
-################################################################################################################################################
-################################################################################################################################################
-
-
 duplicate_historical_data <- function(data_long, hist_model, hist_year, criteria = FALSE) {
   # short circuit
   if (hist_model == "none") {
@@ -330,6 +395,7 @@ duplicate_historical_data <- function(data_long, hist_model, hist_year, criteria
 
   # this is the data we'll stamp for every model
   copy_data = data_long %>% filter(model == hist_model, year == hist_year)
+
   # this is all the historical data, don't lose it
   hist_data = data_long %>% filter(model == hist_model & year <= hist_year)
   # temporary data_long which will be appended many times
@@ -338,7 +404,7 @@ duplicate_historical_data <- function(data_long, hist_model, hist_year, criteria
   if (criteria) {
     data_25 = data_long %>% filter(model != hist_model, year == 2025) %>%
       mutate(year = hist_year)
-    data_in = rbind(data_in, data_25)
+    data_in = bind_rows(data_in, data_25)
   }
 
   data_wide = data_in %>% left_join(select(copy_data,c(value,year,variable,region)), by = c("year", "variable","region")) %>%
@@ -348,7 +414,7 @@ duplicate_historical_data <- function(data_long, hist_model, hist_year, criteria
     )) %>%
     select(-c(value.x,value.y))
 
-  data_final = rbind(data_wide, hist_data)
+  data_final = bind_rows(data_wide, hist_data)
 
   # the end
   return(data_final)
@@ -356,12 +422,6 @@ duplicate_historical_data <- function(data_long, hist_model, hist_year, criteria
 
 # remove all historical data and replace with EIA-LTS 2020 data for connectivity purposes
 # clean_data2 = clean_data %>% duplicate_historical_data("EIA-LTS",2020)
-
-
-
-################################################################################################################################################
-################################################################################################################################################
-################################################################################################################################################
 
 # function for coneplot with dots overlaid
 lts_coneplot_with_dots = function(config, data, figmap, lts_fignum, leep_fignum, region, ymin, ymax, title, titlesize = 8, metric = "mean", facet = FALSE) {
@@ -424,10 +484,6 @@ lts_coneplot_with_dots = function(config, data, figmap, lts_fignum, leep_fignum,
 
 }
 
-################################################################################################################################################
-################################################################################################################################################
-################################################################################################################################################
-
 medians_table = function(plot_type, config, data, figmap, plot_num, region, models_to_exclude = c()) {
   med_dta = data_from_graph(plot_type, config, data, figmap, plot_num, region)
   if (length(models_to_exclude) > 0) {
@@ -476,3 +532,31 @@ medians_table = function(plot_type, config, data, figmap, plot_num, region, mode
 }
 
 #medians_table("time_series", config, clean_data, figmap_leep_timeseries, 9, "United States")
+
+emis_stack = function(dta, title, econwide = FALSE) {
+  totals = dta %>% group_by(year) %>%
+    summarize(value = sum(value))
+
+  dta = dta %>% group_by(year, variable_rename) %>%
+    summarize(value = sum(value))
+
+  if (econwide) {
+    bar_code = geom_bar(aes(x = year, y = value, fill = variable_rename), position = position_stack(), stat = "identity")
+  } else {
+    bar_code = geom_bar(aes(x = year, y = value, fill = variable_rename,
+                            color = variable_rename, alpha = variable_rename), position = position_stack(reverse = TRUE), stat = "identity")
+  }
+
+  p = dta %>% ggplot() +
+    bar_code +
+    #geom_text(aes(x = year, y = value, label = round(value, 0), fill = variable_rename), size = 2.5, position = position_stack(vjust = 0.5, reverse = FALSE)) +
+    #geom_text(data = totals, aes(x = year, y = value, label = round(value, 0)), vjust = -0.4, stat = "identity", size = 2.5) +
+    scale_x_continuous(breaks = c(2005, 2021), labels = c(2005, 2021)) +
+    labs(y = "Mt CO2/yr", title = title) +
+    scale_subpalette(subpalettes, "Emissions Stack") +
+    theme_emf() +
+    theme(axis.ticks = element_blank(), axis.title.x = element_blank(), plot.title = element_blank()) +
+    bottom1
+
+  return(p)
+}

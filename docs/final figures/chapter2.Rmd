@@ -1,23 +1,25 @@
 ---
-title: "LEEP Report Figures and Data"
-date: "`r Sys.time()`"
+title: "Chapter 2: Electricity"
 output: 
   html_document:
     toc: true
     toc_float: true
+date: "`r Sys.time()`"
 params:
   mode: NULL
   format: "svg"
 ---
 
-```{r setup, include=FALSE, warning=FALSE}
-knitr::opts_chunk$set(echo = FALSE, include = TRUE, warning = FALSE, message = FALSE, tidy = TRUE, cache = FALSE, paged.print=TRUE)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 knitr::opts_knit$set(root.dir = here::here())
 ```
 
 ```{r}
-source("packages.R")
-devtools::load_all(here())
+if(is.null(params$mode)) {
+  source("packages.R")
+  devtools::load_all()
+}
 
 # load data from targets pipeline
 targets::tar_load(config)
@@ -25,35 +27,22 @@ targets::tar_load(clean_data)
 targets::tar_load(figmap_leep_timeseries)
 targets::tar_load(figmap_leep_cone)
 targets::tar_load(figmap_leep_stackbar)
+targets::tar_load(data_min)
+targets::tar_load(data_raw)
 
 # create workbook for saving figure data
 # data_wb <- createWorkbook()
 
 # format toggle
-format <- "svg"
 format <- params$format
 
 # palettes
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 ```
 
-```{r}
-savefig = function(figure, fig_no, format = "svg", wd = 7, ht = 5, unit = "in") {
-  ggsave(filename = paste("output/final_figures/",format,"/Fig",fig_no,".",format,sep=""),
-         plot = figure, 
-         width = wd, 
-         height = ht, 
-         units = unit)
-}
-```
-
-# Chapter 2 - Electricity
-
-## Fig 2.1
+## 2.1 co2 emissions from the power sector in the us, compared to economy-wide co2 emissions
 
 ```{r}
-fig_no = 2.1
-
 data <- clean_data %>%
   filter(model == "EPA-GHGI") %>%
   filter(year >= 2005) %>%
@@ -96,268 +85,62 @@ fig = ggplot(data, aes(fill = variable_rename, y = value, alpha = alpha, x = yea
     theme(panel.spacing.x = unit(4, "mm"), legend.position = "bottom") +
     scale_alpha(range = c(0.6, 1), guide = F)+
   scale_color_manual(breaks = c( "Coal", "Gas", "Petroleum", "Other Sectors"), 
-                     values = c( "#003052", "#BC8F73", "#733D3D", "black")) +
+                     values = c( "#003052", "#BC8F73", "#733D3D", "#DEDEDE")) +
   scale_fill_manual(breaks = c( "Coal", "Gas", "Petroleum", "Other Sectors"), 
-                     values = c( "#003052", "#BC8F73", "#733D3D", "white")) 
+                     values = c( "#003052", "#BC8F73", "#733D3D", "#DEDEDE")) 
 
 print(fig)
-
-ggsave(filename = paste("output/final_figures/",format,"/Fig",fig_no,".",format,sep=""), 
-       plot = final, width = 7, height = 5, units = "in")
 ```
 
-## Fig 2.3
+## 2.2 us electricity generation and capacity shares by fuel type, 2021
 
 ```{r}
-fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 11, "United States")
+clean_data10 = clean_data %>% 
+  filter(datasrc == 'EIA-IEA-bistline_historic.csv')
 
-metric = "median"
-ymin = 0
-ymax = 2500
+fig = print_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14, "United States", 
+                  level_var = c("Other", "Renewables", "Nuclear", "Natural Gas", "Coal")) +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5), plot.title = element_blank()) +
+  bottom1
 
-fig$data <- fig$data %>%
-  filter(
-    year <= 2021 & model == "EPA-GHGI" | year >= 2021 & scenario != "Historic"
-  ) %>%
-  pivot_wider(names_from = year, values_from = value)
+fig
+#dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3, "United States")
 
-fig$data <- fig$data %>%
-  mutate(
-    `2021`= case_when(
-      is.na(`2021`) ~ fig$data$`2021`[fig$data$model == "EPA-GHGI"],
-      T ~ `2021`
-    )
-  )
+ggsave(filename = "output/final_figures/svg/Fig2.2_hist_generation_mix.svg",fig, width = 7, height = 5, units = "in")
+ggsave(filename = "output/final_figures/png/Fig2.2_hist_generation_mix.png",fig, width = 7, height = 5, units = "in")
 
-fig$data <- fig$data %>%
-  pivot_longer(cols = starts_with("20"), names_to = "year", values_to = "value") %>%
-  filter(!is.na(value)) %>%
-  mutate(year = as.numeric(year))%>%
-  mutate(alpha = case_when(
-    model == "USREP-ReEDS" ~ 1, 
-    model == "GCAM-PNNL" ~ 1, 
-    model == "IPM-EPA" ~ 1,
-    scenario == "Historic" ~ 1,
-    T ~ 0.8
-  ))
-  
+# supporting data
+dta = data_from_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14, "United States")
+dta %>% write.csv("output/final_figures/data/Fig2.2_hist_generation_mix.csv", row.names = FALSE)
+```
 
-fig = ggplot(data = fig$data, aes(year, value, color = scenario, group = interaction(model, scenario))) + 
-  geom_line(size = 0.75, aes(alpha = alpha)) +  
-  scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-  labs(title = "",
-         x = "",
-         y = expression(paste("Mt C", O[2], "/yr")),
-         color = "") +
-    scale_y_continuous(limits = c(ymin, ymax), labels = scales::comma) +
-    theme_emf() +
-    theme(axis.text.x = element_text(angle = 45, hjust=1)) +
-    theme(panel.spacing.x = unit(4, "mm"), legend.position = "none") +
-  scale_x_continuous(breaks = c(2005, 2021, 2025, 2030, 2035)) +
-    scale_alpha(range = c(0.6, 1), guide = F)+
+## 2.3 us power sector co2 emissions
+
+```{r}
+ElecSpg = spg(
+  98,
+  "EPA-GHGI",
+  "",
+  expression(paste("Mt C", O[2], "/yr")),
+  gd = "none",
+  c("Scout-LEEP"),
+  0,
+  2500,
+  c(0, 500, 1000, 1500, 2000, 2500),
+  scales::comma) +
   annotate("text", x = 2015, y = 2250, label = "Historic", color = "black") + 
   annotate("text", x = 2027.5, y = 1750, label = "No IRA", color = "#F28063") + 
   annotate("text", x = 2023, y = 650, label = "IRA", color = "#0388B3")
 
-df_30 = fig$data %>%
-    filter(year %in% c(2030))
-  df_stat_30 = df_30 %>%
-    group_by(scenario,year,variable_rename) %>%
-    summarise(mean = mean(value),
-           median = median(value))
-  
-  df_35 = fig$data %>%
-    filter(year %in% c(2035))
-  df_stat_35 = df_35 %>%
-    group_by(scenario,year,variable_rename) %>%
-    summarise(mean = mean(value),
-           median = median(value))
-  
-  
-  mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
-  mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
-  median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
-  median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
-  # stick em all in a data frame
-  stats = data.frame("year" = c(2030,2035,2030,2035), "metric" = c("mean","mean","median","median"), 
-                     "difference" = c(mean_diff_30, mean_diff_35, median_diff_30, median_diff_35))
-  
-  # a few of the ggplot lines of code vary based on the year or on the metric chosen, so conditionally choose the right one here
-  if (metric == "mean") {
-    segment_code_30 = geom_segment(data = df_stat_30, aes(x = year - 0.025, xend = year + 0.025, y = mean, yend = mean, color = scenario), 
-                                   size = 1)
-    segment_code_35 = geom_segment(data = df_stat_35, aes(x = year - 0.025, xend = year + 0.025, y = mean, yend = mean, color = scenario),
-                                   size = 1)
-  } else if (metric == "median") {
-    segment_code_30 = geom_segment(data = df_stat_30, aes(x = year - 0.025, xend = year + 0.025, y = median, yend = median, color = scenario), 
-                                   size = 1)
-    segment_code_35 = geom_segment(data = df_stat_35, aes(x = year - 0.025, xend = year + 0.025, y = median, yend = median, color = scenario), 
-                                   size = 1)
-  }
-  
-  dots_30 = ggplot() +
-    geom_point(data = df_30, aes(x = year, y = value, color = scenario, alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.05)) +
-    segment_code_30 +
-    scale_x_continuous(breaks = c(2030), labels = c("2030"), limits = c(2029.9, 2030.1)) +
-    scale_y_continuous(limits = c(ymin, ymax)) +
-    theme_emf() +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(panel.grid = element_blank(), plot.title = element_blank(),
-          axis.text.y = element_blank(),
-          axis.text.x = element_text(angle = 45, hjust=1),
-          axis.title.y = element_blank(), axis.title.x = element_blank(),
-          axis.ticks = element_blank(), panel.border = element_blank(),
-          legend.position = "none", plot.margin = margin(0,0,0,0)) +
-    scale_alpha(range = c(0.6, 1), guide = F)
-  
-  # dot plot for 2035
-  dots_35 = ggplot() +
-    geom_point(data = df_35, aes(x = year, y = value, color = scenario, alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.05)) +
-    segment_code_35 +
-    scale_x_continuous(breaks = c(2035), labels = c("2035"), limits = c(2034.9, 2035.1)) +
-    scale_y_continuous(limits = c(ymin,ymax)) +
-    theme_emf() +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(panel.grid = element_blank(), plot.title = element_blank(),
-          axis.text.y = element_blank(),
-          axis.text.x = element_text(angle = 45, hjust=1),
-          axis.title.y = element_blank(), axis.title.x = element_blank(),
-          axis.ticks = element_blank(), panel.border = element_blank(),
-          legend.position = "none", plot.margin = margin(0,0,0,0))+
-    scale_alpha(range = c(0.6, 1), guide = F)
+ElecDot = dotted(ElecSpg$data, ElecSpg, "median", 0, 2500)
 
-final = fig + dots_30 + dots_35 +
-    plot_annotation(title =  fig$data$plot_title, theme = theme(plot.title = element_text(hjust = 0.5))) +
-    plot_layout(guides = "collect", widths = c(10,1,1)) +
-    theme(plot.margin = margin(0,0,0,0))
+ElecTab = html(ElecSpg$data, "Electricity CO<sub>2<sub>")
 
-print(final)
-
-
-ggsave(filename = "output/final_figures/Fig2.3.svg", plot = final,width = 7, height = 5, units = "in")
-
-ggsave(filename = "output/final_figures/Fig2.3.png", plot = final,width = 7, height = 5, units = "in")
+print(ElecDot)
+ElecTab
 ```
 
-### Table 2.3
-
-```{r}
-
-title = "Power Sector Emissions"
-
-fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 11, "United States")
-
-base <- fig$data %>%
-  filter(year == 2005 & model == "EPA-GHGI")
-
-baseline = base$value[1]
-
-base <- as.data.frame(base) %>%
-  select(Year = year, 
-         `Absolute Level (Mt CO2)` = value) %>%
-  mutate(Scenario = "Baseline", 
-    `% Reductions from 2005` = NA,
-    `% Reductions from No IRA` = NA, 
-    `Reductions from No IRA (Mt CO2)` = NA)  %>%
-  select(Year, Scenario, `Absolute Level (Mt CO2)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (Mt CO2)`)
-
-NoIRA <- fig$data %>%
-  filter(year == 2030 | year == 2035) %>%
-  filter(scenario == "No IRA") %>%
-  group_by(year) %>%
-  summarize(`No IRA Median` = median(value), 
-            `No IRA Min` = min(value),
-            `No IRA Max` =  max(value))%>%
-  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (Mt CO2)") %>%
-  mutate(`2005_perc_red` = ((baseline-`Absolute Level (Mt CO2)`)/baseline) * 100) %>%
-  mutate(
-    Year = year, 
-    `% Reductions from 2005` = `2005_perc_red`, 
-    `% Reductions from No IRA` = NA, 
-    `Reductions from No IRA (Mt CO2)` = NA
-  ) %>%
-  select(!year & !`2005_perc_red`)
-
-IRA <- fig$data %>%
-  filter(year == 2030 | year == 2035) %>%
-  filter(scenario == "IRA") %>%
-  select(!scenario) %>%
-  group_by(year) %>%
-  summarize(
-    `IRA Max` = max(value), 
-    `IRA Min` = min(value), 
-    `IRA Median` = median(value)) %>%
-  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (Mt CO2)") %>%
-  mutate(
-    `% Reductions from 2005` = ((baseline-`Absolute Level (Mt CO2)`)/baseline) * 100
-  )%>%
-  mutate(
-    `% Reductions from No IRA` = case_when(
-      year == 2030 & Scenario == "IRA Max" ~ 
-        ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
-      
-      year == 2030 & Scenario == "IRA Median" ~ 
-        ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
-      
-      year == 2030 & Scenario == "IRA Min" ~ 
-        ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
-      
-            year == 2035 & Scenario == "IRA Max" ~ 
-        ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
-      
-      year == 2035 & Scenario == "IRA Median" ~ 
-        ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
-      
-      year == 2035 & Scenario == "IRA Min" ~ 
-        ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
-    ), 
-
-    `Reductions from No IRA (Mt CO2)` = case_when(
-      year == 2030 & Scenario == "IRA Max" ~ 
-        (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`), 
-      
-      year == 2030 & Scenario == "IRA Median" ~ 
-        (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`), 
-      
-      year == 2030 & Scenario == "IRA Min" ~ 
-        (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`),
-      
-            year == 2035 & Scenario == "IRA Max" ~ 
-        (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`), 
-      
-      year == 2035 & Scenario == "IRA Median" ~ 
-        (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`), 
-      
-      year == 2035 & Scenario == "IRA Min" ~ 
-        (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`)
-    )
-  ) %>%
-  rename(Year = year)
-
-IRA = rbind(NoIRA, IRA)
-
-IRA$`Absolute Level (Mt CO2)` = round(IRA$`Absolute Level (Mt CO2)`, 3)
-IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
-IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
-IRA$`Reductions from No IRA (Mt CO2)` = round(IRA$`Reductions from No IRA (Mt CO2)`,3)
-
-IRA <- IRA %>%
-  arrange(desc(IRA)) %>%
-  arrange(Year)
-
-IRA = rbind(base, IRA)
-
-write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
-
-IRA %>%
-tableHTML(caption = paste(title), rownames = F)
-
-
-
-
-```
-
-## Fig 2.4
+## 2.4 us power sector generation from high and low/zero emitting generation
 
 ```{r}
 ##### Data #####
@@ -2653,4 +2436,199 @@ write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
 IRA %>%
 tableHTML(caption = paste(title), rownames = F)
 ```
+
+## 2.5 historical and projected capacity additions by technology
+
+```{r}
+# capacity addition plot
+
+ymin = -40
+ymax = 130
+
+subpalettes = create_subpalettes(figmap_leep_stackbar, config)
+
+fig = print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States") +
+  geom_hline(yintercept = 0, linewidth = 0.25, color = "black") +
+  scale_subpalette(subpalettes, "Capacity Additions2") +
+  scale_y_continuous(limits = c(ymin, ymax)) +
+  ggtitle("Historical Annual Capacity Changes") +
+  theme(legend.position = "none", plot.title = element_text(hjust = 0.5, size = 10),
+        axis.text.x = element_text(angle = 45))
+
+dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States")
+
+#fig
+
+dta4 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 6, "United States")
+dta_ttl = dta4 %>% 
+  mutate(temp = case_when(
+    grepl("Additions",variable) ~ "Capacity Additions",
+    TRUE ~ "Capacity Retirements")) %>%
+  group_by(model, scenario, region, datasrc, unit, temp) %>%
+  summarize(value = sum(value)) %>% 
+  select(-temp) %>%
+  mutate(variable_rename = "Total")
+
+dta4 = rbind(dta4,dta_ttl) %>% mutate(variable_rename = factor(variable_rename, 
+                                  levels = c("Total", "Solar", "Wind", "Storage", "Nuclear", "Hydro", "Gas CCS", "Gas", "Coal CCS", "Coal"))) %>%
+  mutate(stagger = case_when((variable_rename %in% c("Coal", "Nuclear", "Gas", "Total") & (value >= 0)) ~ -0.1,
+                             (variable_rename %in% c("Coal", "Nuclear", "Gas", "Total") & (value < 0)) ~ 0.1,
+                             TRUE ~ 0))
+
+stats = dta4 %>% group_by(variable_rename, stagger) %>% summarize(mean = mean(value), median = median(value))
+
+dotplot2 = dta4 %>% ggplot() + 
+  geom_point(aes(x = (as.numeric(variable_rename) + stagger), y = value, color = variable_rename), shape = 16, size = 2) + 
+  #geom_point(data = stats, aes(x = variable_rename, y = median, color = variable_rename), shape = 3, size = 2) +
+  geom_segment(data = stats, aes(x = as.numeric(variable_rename) - 0.25 + stagger, xend = as.numeric(variable_rename) + 0.25 + stagger, 
+                                 y = median, yend = median, color = variable_rename), linewidth = 0.5) +
+  geom_hline(yintercept = 0, linewidth = 0.25, color = "black") +
+  scale_x_continuous(breaks = seq(1,10), labels = c("Total", "Solar", "Wind", "Storage", "Nuclear", "Hydro", "Gas CCS", "Gas", "Coal CCS", "Coal")) +
+  scale_y_continuous(limits = c(ymin, ymax)) +
+  scale_subpalette(subpalettes, "Capacity Additions2") +
+  ggtitle("Average Annual Capacity Changes (2021-2035)") +
+  theme_emf() +
+  theme(plot.title = element_text(hjust = 0.5, size = 10), axis.text.y = element_blank(),
+        axis.title.y = element_blank(), axis.ticks = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "none")
+#dotplot2
+  
+
+combined = 
+  fig + dotplot2 + 
+  plot_annotation(theme = theme(plot.title = element_text(hjust = 0.5))) +
+    plot_layout(widths = c(1,1)) +
+    theme(plot.margin = margin(0,0,0,0))
+    # bottom1
+combined
+
+
+ggsave(filename = "output/final_figures/svg/Fig2.4_capacity.svg",combined, width = 7, height = 5, units = "in")
+ggsave(filename = "output/final_figures/png/Fig2.4_capacity.png",combined, width = 7, height = 5, units = "in")
+print(stats)
+
+#suporting data for plot
+dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States")
+dta %>% write.csv("output/final_figures/data/Fig2.4_capacity_bars.csv", row.names = FALSE)
+dta4 %>% write.csv("output/final_figures/data/Fig2.4_capacity_dots.csv", row.names = FALSE)
+
+```
+
+## 2.6 sensitivity of electric sector emissions
+
+```{r}
+# electric sector emissions sensitivity dot plots
+panel1_scens = c("Core","IRA", "IRA.Low","IRA.High")
+panel2_scens = c("Low Growth", "High Growth", "Core") # Economic Growth
+panel3_scens = c("Low Gas Price","High Gas Price", "Core") # Energy Prices
+panel4_scens = c("All Advanced", "Adv Battery/Renew", "Cons Battery/Renew", "Core") # Technology Cost
+panel5_scens = c("Constrained Deployment", "Core") # Deployment Constraints
+
+sens_dta = clean_data %>% filter(variable == "Emissions|CO2|Energy|Supply|Electricity",
+                                 year %in% c(2030, 2035)) #%>% 
+#  mutate(year = factor(year))
+
+print(max(sens_dta$value))
+print(min(sens_dta$value))
+
+filler = data.frame(year = c(203), value = c(-200), scenario = c(""), model = c("NA"))
+
+sens_dta_panel1 = sens_dta %>% filter(scenario %in% panel1_scens) %>%
+  filter(model %in% c("EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI")) %>%
+  mutate(stagger = case_when(
+    scenario == "IRA.Low" ~ -0.7,
+    scenario == "IRA.High" ~ 0.7,
+    TRUE ~ 0
+  ))
+sens_dta_panel2 = sens_dta %>% filter(scenario %in% panel2_scens) %>% #mutate(value = -200) %>%
+  bind_rows(filler)
+sens_dta_panel3 = sens_dta %>% filter(scenario %in% panel3_scens) %>%
+  bind_rows(filler)
+sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>% 
+  bind_rows(filler)
+sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
+  bind_rows(filler)
+
+p1 = sens_dot_plot(sens_dta_panel1, title = "IRA Implementation", ymin = 0, ymax = 1600, far_left = TRUE, 
+                   ira_coord = c(2030,1020), low_coord = c(2028.7, 1200), high_coord = c(2030, 620))
+# p1
+p2 = sens_dot_plot(sens_dta_panel2, title = "Economic Growth", ymin = 0, ymax = 1600,)
+#p2
+p3 = sens_dot_plot(sens_dta_panel3, title = "Natural Gas Price", ymin = 0, ymax = 1600,)
+# p3
+p4 = sens_dot_plot(sens_dta_panel4, title = "Technology Cost", ymin = 0, ymax = 1600,)
+# p4
+p5 = sens_dot_plot(sens_dta_panel5, title = "Constrained Deployment", ymin = 0, ymax = 1600,)
+# p5
+
+combined = (p1$plot | p2$plot | p3$plot | p4$plot | p5$plot) +
+  plot_annotation(title = "Electric Sector CO2 Emissions", 
+                  theme = theme(plot.title = element_blank()))
+  
+combined
+
+ggsave(filename = "output/final_figures/svg/Fig2.5_elec_sensitivity_dots.svg",combined, width = 7, height = 5, units = "in")
+ggsave(filename = "output/final_figures/png/Fig2.5_elec_sensitivity_dots.png",combined, width = 7, height = 5, units = "in")
+
+# supporting data for figure
+dta = bind_rows(sens_dta_panel1, sens_dta_panel3, sens_dta_panel4, sens_dta_panel5)
+dta %>% write.csv("output/final_figures/data/Fig2.5_elec_sensitivity_dots.csv", row.names = FALSE)
+
+
+#View(sens_dta)
+```
+
+## 2.7 & 2.8 nox and so2 emissions
+
+```{r}
+clean_data7 = clean_data %>% duplicate_historical_data("EPA",2021, criteria = TRUE) %>%
+  mutate(alpha = case_when(
+    model == "USREP-ReEDS" ~ 1,
+    model == "GCAM-PNNL" ~ 1,
+    model == "IPM-EPA" ~ 1,
+    scenario == "Historic" ~ 1,
+    TRUE ~ 0.8)
+  ) %>%
+  filter(value > 1e-4)
+
+nox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States") +
+  scale_alpha(range = c(0.6, 1), guide = "none")
+#nox
+
+sox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States") +
+  scale_alpha(range = c(0.6, 1), guide = "none")
+#sox
+
+nox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States", 0, 3, "Power Sector NOx Emissions", metric = "median", 
+                     historic_coord = c(2015,1.8), preira_coord = c(2030, 0.95), ira_coord = c(2029, 0.15))
+print(nox_full$full)
+print(nox_full$stats)
+ggsave(filename = "output/final_figures/svg/Fig2.7_nox.svg",nox_full$full, width = 7, height = 5, units = "in")
+ggsave(filename = "output/final_figures/png/Fig2.7_nox.png",nox_full$full, width = 7, height = 5, units = "in")
+
+sox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States", 0, 5, "Power Sector SO2 Emissions", metric = "median", 
+                     historic_coord = c(2017,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12))
+print(sox_full$full)
+print(sox_full$stats)
+ggsave(filename = "output/final_figures/svg/Fig2.8_sox.svg",sox_full$full, width = 7, height = 5, units = "in")
+ggsave(filename = "output/final_figures/png/Fig2.8_sox.png",sox_full$full, width = 7, height = 5, units = "in")
+
+
+
+dta1 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States")
+dta2 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States")
+dta1 %>% write.csv("output/final_figures/data/Fig2.7_nox.csv", row.names = FALSE)
+dta2 %>% write.csv("output/final_figures/data/Fig2.8_sox.csv", row.names = FALSE)
+
+# View(dta)
+```
+
+
+
+
+
+
+
+
 

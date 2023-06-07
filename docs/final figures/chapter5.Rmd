@@ -1,0 +1,131 @@
+---
+title: "Chapter 5: Industry"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+date: "`r Sys.time()`"
+params:
+  mode: NULL
+  format: "svg"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+```{r}
+if(is.null(params$mode)) {
+  source("packages.R")
+  devtools::load_all()
+}
+
+# load data from targets pipeline
+targets::tar_load(config)
+targets::tar_load(clean_data)
+targets::tar_load(figmap_leep_timeseries)
+targets::tar_load(figmap_leep_cone)
+targets::tar_load(figmap_leep_stackbar)
+targets::tar_load(data_min)
+targets::tar_load(data_raw)
+
+# create workbook for saving figure data
+# data_wb <- createWorkbook()
+
+# format toggle
+format <- params$format
+
+# palettes
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+```
+
+## 5.1 co2 emissions from the industrial sector in the us compared to economy-wide co2 emissions
+
+```{r}
+dta4 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 9, "United States") %>%
+  mutate(variable_rename = case_when(
+    variable_rename == "Industry: Direct" ~ variable_rename,
+    variable_rename == "Industry: Indirect" ~ variable_rename,
+    TRUE ~ "Other Sectors"
+  )) %>%
+  mutate(variable_rename = factor(variable_rename, 
+                                  levels = c("Industry: Direct","Industry: Indirect", "Other Sectors")))
+
+p4 = emis_stack(dta4, "Industrial CO2 Emissions") + 
+  scale_fill_manual(values = c("Other Sectors" = "white", "Industry: Indirect" = subpalettes$`Emissions Stack`[["Industry: Indirect"]], "Industry: Direct" = subpalettes$`Emissions Stack`[["Industry: Direct"]])) +
+  scale_color_manual(values = c("Other Sectors" = "#CECECE", "Industry: Indirect" = subpalettes$`Emissions Stack`[["Industry: Indirect"]], "Industry: Direct" = subpalettes$`Emissions Stack`[["Industry: Direct"]])) +
+  scale_alpha_manual(values = c("Other Sectors" = 0.5, "Industry: Indirect" = 1, "Industry: Direct" = 1))
+p4
+ggsave(filename = "output/final_figures/svg/Fig5.1_emis_ind.svg",p4, width = 7, height = 5, units = "in")
+ggsave(filename = "output/final_figures/png/Fig5.1_emis_ind.png",p4, width = 7, height = 5, units = "in")
+
+dta4 %>% write.csv("output/final_figures/data/Fig5.1_emis.csv", row.names = FALSE)
+```
+
+## 5.2 industry total co2 emissions 
+
+```{r}
+IndSpg = spg(
+  21,
+  "EPA-GHGI",
+  "",
+  expression(paste("Mt C", O[2], "/yr")),
+  gd = "none",
+  c("IPM-NRDC", "IPM-EPA", "GCAM-PNNL"),
+  0,
+  2500,
+  c(0, 500, 1000, 1500, 2000, 2500),
+  scales::comma) +
+  annotate("text", x = 2015, y = 1550, label = "Historic", color = "black") + 
+  annotate("text", x = 2030, y = 1575, label = "No IRA", color = "#F28063") + 
+  annotate("text", x = 2020, y = 750, label = "IRA", color = "#0388B3")
+
+IndDot = dotted(IndSpg$data, IndSpg, "median", 0, 2500)
+
+IndTab = html(IndSpg$data, "Industry CO<sub>2<sub>")
+
+print(IndDot)
+IndTab
+```
+
+## 5.3 energy used in the industry sector, by fuel, over time
+
+```{r}
+# industrial final energy plots
+
+clean_data6 = clean_data %>% duplicate_historical_data("EIA-LTS", 2020) #%>%
+  # filter(model != "GCAM-PNNL")
+
+p1 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 119, "United States", 0, 30, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,17), preira_coord = c(2030, 16), ira_coord = c(2027, 23))
+p1$full = p1$full + theme(plot.title = element_blank())
+print(p1$full)
+ggsave(filename = "output/final_figures/svg/Fig5.3_industrial_energy_fossil.svg",p1$full, width = 7, height = 5, units = "in")
+ggsave(filename = "output/final_figures/png/Fig5.3_industrial_energy_fossil.png",p1$full, width = 7, height = 5, units = "in")
+print(p1$stats)
+
+# p2 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 120, "United States", 0, 5, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,3.2), preira_coord = c(2030, 3), ira_coord = c(2027, 4))
+# p2$full = p2$full + theme(plot.title = element_blank())
+# print(p2$full)
+# ggsave(filename = "output/leep/time_series/Fig5.4_industrial_energy_elec.svg",p2$full, width = 7, height = 5, units = "in")
+# print(p2$stats)
+# 
+# p3 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 121, "United States", 0, 5, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,3.2), preira_coord = c(2032, .75), ira_coord = c(2027, .6))
+# p3$full = p3$full + theme(plot.title = element_blank())
+# print(p3$full)
+# ggsave(filename = "output/leep/time_series/Fig5.5_industrial_energy_alternative.svg",p3$full, width = 7, height = 5, units = "in")
+# print(p3$stats)
+# 
+# 
+# dta = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 119, "United States")
+# View(dta)
+
+# supporting data for plot
+dta = data_from_graph("time_series", config, clean_data6, figmap_leep_timeseries, 119, "United States")
+dta %>% write.csv("output/final_figures/data/Fig5.3_industrial_energy_fossil.csv", row.names = FALSE)
+
+
+
+```
+
+

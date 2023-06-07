@@ -39,7 +39,7 @@ subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
 # Chapter 1 - Introduction / Economy-Wide
 
-##  Fig 1.2
+## Fig 1.2
 
 ```{r}
 fig_no = 1.2
@@ -7037,7 +7037,6 @@ fin = ggplot() +
   scale_x_continuous(breaks = c(2005, 2021, 2025, 2030, 2035)) + 
   guides(fill = guide_legend(nrow=4, byrow = T))
 
-
 df_30 = IRA %>%
     filter(year %in% c(2030))%>%
     mutate(value = value/1000)
@@ -7097,15 +7096,10 @@ print(final)
 ## Fig ES4/3/6.1 THIS IS THE VERSION WE WANT TO USE THE OTHER ONE ISNT GOOD!
 
 ```{r} 
-look <- clean_data %>%
-  filter(grepl("Seq", variable))
-unique(look$variable)
-
-
 ghgi <- clean_data %>%
-  filter(model == "EPA-GHGI") %>%
-  filter(variable == "Emissions|GHG|Net")%>%
-  filter(year >= 2005)
+  filter(model == "EPA-GHGI" & 
+           variable == "Emissions|GHG|Net" &
+           year >= 2005)
 
 connect <- ghgi[ghgi$year == 2021,] %>%
   select(year, value)%>%
@@ -7115,17 +7109,16 @@ connect <- ghgi[ghgi$year == 2021,] %>%
   select(-value)
 
 lts <- clean_data %>%
-  filter(model == "GCAM-LTS") %>%
-  filter(variable == "Emissions|CO2" | 
-           variable == "Emissions|CH4" |
-           variable == "Emissions|N2O" | 
-           variable == "Emissions|F-Gases" |
-           variable == "Carbon Sequestration|CCS|Biomass|Energy" | 
-           variable == "Carbon Sequestration|LULUCF" | 
-           variable == "Carbon Sequestration|Direct Air Capture|Net") %>%
+  filter(model == "GCAM-LTS" &
+           variable %in% c(
+             "Emissions|CO2",
+             "Emissions|CH4",
+             "Emissions|N2O",
+             "Emissions|F-Gases",
+             "Carbon Sequestration|CCS|Biomass|Energy",
+             "Carbon Sequestration|LULUCF",
+             "Carbon Sequestration|Direct Air Capture|Net")) %>%
   mutate(value = case_when(
-    # unit == "Mt CH4/yr" ~ value * 28,
-    # unit == "kt N2O/yr" ~ value * 265/1000, 
     grepl("Sequestration", variable) ~ value * -1, 
     T ~ value
   )) %>%
@@ -7287,13 +7280,10 @@ base <- as.data.frame(base) %>%
   select(Year, Scenario, `Absolute Level (Mt CO2)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (Mt CO2)`)
 
 NoIRA <- clean_data %>%
-  filter(!model == "USREP-ReEDS") %>%
-  filter(!model== "OP-NEMS") %>%
-  filter(model != "MARKAL-NETL") %>%
-  filter(!model == "AEO.2023") %>%
-  filter(variable == "Emissions|GHG") %>%
-  filter(year %in% c(2025,2030,2035)) %>%
-  filter(scenario == "No IRA") %>%
+  filter(!model %in% c("USREP-ReEDS","OP-NEMS","MARKAL-NETL","AEO.2023") &
+           variable == "Emissions|GHG|Net" &
+           year %in% c(2025,2030,2035) &
+           scenario == "No IRA") %>%
   group_by(year) %>%
   summarize(`No IRA Median` = median(value), 
             `No IRA Min` = min(value),
@@ -7313,7 +7303,7 @@ IRA <- clean_data %>%
   filter(!model== "OP-NEMS") %>%
   filter(model != "MARKAL-NETL") %>%
   filter(!model == "AEO.2023") %>%
-  filter(variable == "Emissions|GHG") %>%
+  filter(variable == "Emissions|GHG|Net") %>%
   filter(year %in% c(2025,2030,2035)) %>%
   filter(scenario == "IRA") %>%
   select(!scenario) %>%
