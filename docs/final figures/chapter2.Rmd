@@ -2583,7 +2583,7 @@ nox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 12
   scale_alpha(range = c(0.6, 1), guide = "none")
 #nox
 
-nox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States", 0, 3, "Power Sector NOx Emissions", metric = "median", 
+nox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States", 0, 5, "Power Sector NOx Emissions", metric = "median", 
                      historic_coord = c(2015,1.8), preira_coord = c(2030, 0.95), ira_coord = c(2029, 0.15))
 print(nox_full$full)
 print(nox_full$stats)
@@ -2603,7 +2603,7 @@ sox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 12
 #sox
 
 sox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States", 0, 5, "Power Sector SO2 Emissions", metric = "median", 
-                     historic_coord = c(2017,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12))
+                     historic_coord = c(2019,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12))
 print(sox_full$full)
 print(sox_full$stats)
 
@@ -2612,4 +2612,18 @@ dta2 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeserie
 saveall(sox_full$full, dta2, fig_no)
 ```
 
+## 2.7A nox and sox in one figure
+```{r}
+fig_no= 2.7
+left = nox_full$full + theme(plot.margin = margin(0,0,0,0))
+right = sox_full$full + theme(plot.margin = margin(0,0,0,0))
 
+combined = (wrap_elements(left) | wrap_elements(right)) +     
+    plot_annotation(title = "NOx                                                                                 SO2", 
+                  theme = theme(plot.title = element_text(hjust = 0.5, size = 10))) +
+  theme(plot.margin = margin(0,0,0,0))
+combined
+
+
+
+```
