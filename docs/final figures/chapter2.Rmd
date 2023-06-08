@@ -2500,8 +2500,8 @@ savefig(combined, fig_no)
 
 print(stats)
 
-savedata(dta, paste(fig_no,"bars"))
-savedata(dta4, paste(fig_no, "dots"))
+savedata(dta, paste0(fig_no,"bars"))
+savedata(dta4, paste0(fig_no, "dots"))
 ```
 
 ## 2.6 sensitivity of electric sector emissions

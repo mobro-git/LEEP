@@ -595,9 +595,10 @@ compile_all_data = function() {
   for (file in all_data) {
     fignum = strsplit(file, "_")[[1]][1]
     #print(fignum)
-
-    df = read.csv(paste0("./output/final_figures/data/",file))
-    data_list[[fignum]] = df
+    if (substr(fignum,1,3) == "Fig") {
+      df = read.csv(paste0("./output/final_figures/data/",file))
+      data_list[[fignum]] = df
+    }
   }
 
   openxlsx::write.xlsx(data_list, "./output/final_figures/data/ALL_DATA.xlsx")

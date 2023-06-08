@@ -1,5 +1,5 @@
 ---
-title: "Appendix"
+title: "Chapter 5: Industry"
 output: 
   html_document:
     toc: true
@@ -26,7 +26,6 @@ targets::tar_load(clean_data)
 targets::tar_load(figmap_leep_timeseries)
 targets::tar_load(figmap_leep_cone)
 targets::tar_load(figmap_leep_stackbar)
-targets::tar_load(figmap_leep_diffbar)
 targets::tar_load(data_min)
 targets::tar_load(data_raw)
 
@@ -54,9 +53,13 @@ unit = "Mt CO2/yr"
 
 fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-fig
+fig$figure
 
-savefig(fig, fig_no)
+write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+
+savefig(fig$figure, fig_no)
 ```
 
 ## Electricity Diff
@@ -72,9 +75,13 @@ unit = expression("Mt CO"[2]*"/yr")
 
 fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-fig
+fig$figure
 
-savefig(fig, fig_no)
+write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+
+savefig(fig$figure, fig_no)
 ```
 
 ## Transportation Diff
@@ -90,9 +97,13 @@ unit = expression("Mt CO"[2]*"/yr")
 
 fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-fig
+fig$figure
 
-savefig(fig, fig_no)
+write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+
+savefig(fig$figure, fig_no)
 ```
 
 ## Building Diff
@@ -108,9 +119,13 @@ unit = expression("Mt CO"[2]*"/yr")
 
 fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-fig
+fig$figure
 
-savefig(fig, fig_no)
+write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+
+savefig(fig$figure, fig_no)
 ```
 
 ## Industry Diff
@@ -126,9 +141,13 @@ unit = expression("Mt CO"[2]*"/yr")
 
 fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-fig
+fig$figure
 
-savefig(fig, fig_no)
+write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+
+savefig(fig$figure, fig_no)
 
 ```
 
@@ -145,9 +164,13 @@ unit = expression("Mt CO"[2]*"/yr")
 
 fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-fig
+fig$figure
 
-savefig(fig, fig_no)
+write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+
+savefig(fig$figure, fig_no)
 ```
 
 ## Gas Diff
@@ -163,9 +186,13 @@ unit = expression("Mt CO"[2]*"/yr")
 
 fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-fig
+fig$figure
 
-savefig(fig, fig_no)
+write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+
+savefig(fig$figure, fig_no)
 ```
 
 ## Petrol Diff
@@ -181,9 +208,13 @@ unit = expression("Mt CO"[2]*"/yr")
 
 fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-fig
+fig$figure
 
-savefig(fig, fig_no)
+write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+
+savefig(fig$figure, fig_no)
 ```
 
 ## Nuclear Generation Diff
@@ -199,9 +230,13 @@ unit = "Quads"
 
 fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-fig
+fig$figure
 
-savefig(fig, fig_no)
+write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+
+savefig(fig$figure, fig_no)
 ```
 ## Solar Generation Diff
 ```{r Solar Generation Difference} 
@@ -216,9 +251,13 @@ unit = "Quads"
 
 fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-fig
+fig$figure
 
-savefig(fig, fig_no)
+write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+
+savefig(fig$figure, fig_no)
 ```
 ## Wind Generation Diff FIN
 ```{r Wind Generation Difference} 
@@ -233,9 +272,13 @@ unit = "Quads"
 
 fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-fig
+fig$figure
 
-savefig(fig, fig_no)
+write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+
+savefig(fig$figure, fig_no)
 ```
 ## CCS Generation Diff
 ```{r CCS Generation Difference} 
@@ -334,9 +377,13 @@ adfigure = ad(diff_ID = ad_map_ID, "", expression(paste("Absolute Difference (Qu
 fig = (NoIRAfigure | IRAfigure) / (adfigure | pdfigure)+ 
   plot_layout(guides = "collect")
 
-fig
+fig$figure
 
-savefig(fig, fig_no)
+write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+
+savefig(fig$figure, fig_no)
 ```
 ## Coal Generation Diff FIN
 ```{r Coal Generation Difference} 
@@ -351,9 +398,13 @@ unit = "Quads"
 
 fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-fig
+fig$figure
 
-savefig(fig, fig_no)
+write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+
+savefig(fig$figure, fig_no)
 ```
 ## Gas Generation Diff FIN
 ```{r Gas Generation Difference} 
@@ -368,9 +419,13 @@ unit = "Quads"
 
 fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-fig
+fig$figure
 
-savefig(fig, fig_no)
+write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+
+savefig(fig$figure, fig_no)
 ```
 ## Other Generation Diff FIN
 ```{r Other Generation Difference} 
@@ -385,9 +440,13 @@ unit = "Quads"
 
 fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-fig
+fig$figure
 
-savefig(fig, fig_no)
+write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+
+savefig(fig$figure, fig_no)
 ```
 
 

@@ -247,7 +247,6 @@ html = function(df, title) {
   return(tab)
 }
 
-
 #Function to create standard percent difference figs
 pd = function(ts_map_ID, title, yname, gd, drop) {
   #Take data from leep_timeseries map based on ID.
@@ -309,7 +308,8 @@ pd = function(ts_map_ID, title, yname, gd, drop) {
       legend.position = gd
     ) +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))
-  return(figure)
+  return(list(figure = figure,
+              pd_df = df))
 }
 
 ad = function(diff_ID, title, yname, gd, drop) {
@@ -367,10 +367,9 @@ ad = function(diff_ID, title, yname, gd, drop) {
       legend.position = gd
     ) +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))
-  return(figure)
+  return(list(figure = figure,
+              ad_df = df))
 }
-
-
 
 four_corners = function(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit) {
 
@@ -450,14 +449,18 @@ four_corners = function(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit) {
     )
 
   #Percent Difference
-
   pdfigure = pd(pd_map_ID, "", expression(paste("Percent Difference (%)")), "none", drop)
 
   #Absolute Difference
   adfigure = ad(diff_ID = ad_map_ID, "", paste("Absolute Difference (",unit,")"), "none", drop)
 
-  figure = (NoIRAfigure | IRAfigure) / (adfigure | pdfigure)+
+  figure = (NoIRAfigure | IRAfigure) / (adfigure$figure | pdfigure$figure)+
     plot_layout(guides = "collect")
 
-  return(figure)
+  return(list(
+    figure = figure,
+    ts_df = ts_df,
+    ad_df = adfigure$ad_df,
+    pd_df = pdfigure$pd_df
+  ))
 }

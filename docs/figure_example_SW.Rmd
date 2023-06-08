@@ -1796,6 +1796,8 @@ ggsave(filename = "output/final_figures/png/Pct_diff/Fig5.3_pctdiff.png",p3, wid
 
 
 ```
+
+grapes
 ```{r}
 # medians table for appendix
 medians_table_annual = function(plot_type, config, data, figmap, plot_num, region, models_to_exclude = c()) {

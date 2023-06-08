@@ -1,0 +1,142 @@
+"model","scenario","variable_rename","year","value"
+"USREP-ReEDS","No IRA","Total Transportation Emissions",2025,1699.753863585
+"USREP-ReEDS","No IRA","Total Transportation Emissions",2030,1621.42361573
+"USREP-ReEDS","No IRA","Total Transportation Emissions",2035,1564.93717276
+"USREP-ReEDS","No IRA","Total Transportation Emissions",2021,1757.4
+"USREP-ReEDS","IRA","Total Transportation Emissions",2025,1708.973790879
+"USREP-ReEDS","IRA","Total Transportation Emissions",2030,1599.23476078
+"USREP-ReEDS","IRA","Total Transportation Emissions",2035,1495.21077201
+"USREP-ReEDS","IRA","Total Transportation Emissions",2021,1757.4
+"EPS-EI","No IRA","Total Transportation Emissions",2025,1597.22323579713
+"EPS-EI","No IRA","Total Transportation Emissions",2030,1462.17510201961
+"EPS-EI","No IRA","Total Transportation Emissions",2035,1338.94240705854
+"EPS-EI","No IRA","Total Transportation Emissions",2021,1757.4
+"EPS-EI","IRA","Total Transportation Emissions",2025,1594.04495600469
+"EPS-EI","IRA","Total Transportation Emissions",2030,1417.94385151708
+"EPS-EI","IRA","Total Transportation Emissions",2035,1229.5350411901
+"EPS-EI","IRA","Total Transportation Emissions",2021,1757.4
+"GCAM-CGS","No IRA","Total Transportation Emissions",2025,1615.05184442844
+"GCAM-CGS","No IRA","Total Transportation Emissions",2030,1504.65588515461
+"GCAM-CGS","No IRA","Total Transportation Emissions",2035,1363.27993729408
+"GCAM-CGS","No IRA","Total Transportation Emissions",2021,1757.4
+"GCAM-CGS","IRA","Total Transportation Emissions",2025,1562.07727857705
+"GCAM-CGS","IRA","Total Transportation Emissions",2030,1396.9307216309
+"GCAM-CGS","IRA","Total Transportation Emissions",2035,1310.87256817385
+"GCAM-CGS","IRA","Total Transportation Emissions",2021,1757.4
+"GCAM-PNNL","No IRA","Total Transportation Emissions",2025,1807.79888728497
+"GCAM-PNNL","No IRA","Total Transportation Emissions",2030,1657.55966421321
+"GCAM-PNNL","No IRA","Total Transportation Emissions",2035,1484.05456084813
+"GCAM-PNNL","No IRA","Total Transportation Emissions",2021,1757.4
+"GCAM-PNNL","IRA","Total Transportation Emissions",2025,1786.33837604668
+"GCAM-PNNL","IRA","Total Transportation Emissions",2030,1537.62684744612
+"GCAM-PNNL","IRA","Total Transportation Emissions",2035,1329.5614733653
+"GCAM-PNNL","IRA","Total Transportation Emissions",2021,1757.4
+"IPM-NRDC","No IRA","Total Transportation Emissions",2025,7.57773625448672
+"IPM-NRDC","No IRA","Total Transportation Emissions",2030,12.5002498268564
+"IPM-NRDC","No IRA","Total Transportation Emissions",2035,17.5687555287983
+"IPM-NRDC","No IRA","Total Transportation Emissions",2021,1757.4
+"IPM-NRDC","IRA","Total Transportation Emissions",2025,8.0379178396307
+"IPM-NRDC","IRA","Total Transportation Emissions",2030,9.61274936954768
+"IPM-NRDC","IRA","Total Transportation Emissions",2035,12.5680666070461
+"IPM-NRDC","IRA","Total Transportation Emissions",2021,1757.4
+"IPM-EPA","No IRA","Total Transportation Emissions",2025,42.9488644742506
+"IPM-EPA","No IRA","Total Transportation Emissions",2030,83.2558359265068
+"IPM-EPA","No IRA","Total Transportation Emissions",2035,103.104288933374
+"IPM-EPA","No IRA","Total Transportation Emissions",2021,1757.4
+"IPM-EPA","IRA","Total Transportation Emissions",2025,45.557067751607
+"IPM-EPA","IRA","Total Transportation Emissions",2030,62.0607338394517
+"IPM-EPA","IRA","Total Transportation Emissions",2035,50.2837051187581
+"IPM-EPA","IRA","Total Transportation Emissions",2021,1757.4
+"MARKAL-NETL","No IRA","Total Transportation Emissions",2025,1598.2008680868
+"MARKAL-NETL","No IRA","Total Transportation Emissions",2030,1508.56110082758
+"MARKAL-NETL","No IRA","Total Transportation Emissions",2035,1430.38206139489
+"MARKAL-NETL","No IRA","Total Transportation Emissions",2021,1757.4
+"MARKAL-NETL","IRA","Total Transportation Emissions",2025,1602.97588900257
+"MARKAL-NETL","IRA","Total Transportation Emissions",2030,1493.40111677302
+"MARKAL-NETL","IRA","Total Transportation Emissions",2035,1356.21828072744
+"MARKAL-NETL","IRA","Total Transportation Emissions",2021,1757.4
+"NEMS-RHG","No IRA","Total Transportation Emissions",2025,1646.18623208117
+"NEMS-RHG","No IRA","Total Transportation Emissions",2030,1533.1896159726
+"NEMS-RHG","No IRA","Total Transportation Emissions",2035,1423.41741805767
+"NEMS-RHG","No IRA","Total Transportation Emissions",2021,1757.4
+"NEMS-RHG","IRA","Total Transportation Emissions",2025,1647.68999269901
+"NEMS-RHG","IRA","Total Transportation Emissions",2030,1508.59734546816
+"NEMS-RHG","IRA","Total Transportation Emissions",2035,1387.05900584666
+"NEMS-RHG","IRA","Total Transportation Emissions",2021,1757.4
+"OP-NEMS","No IRA","Total Transportation Emissions",2025,1800.883057
+"OP-NEMS","No IRA","Total Transportation Emissions",2030,1701.130493
+"OP-NEMS","No IRA","Total Transportation Emissions",2035,1610.456665
+"OP-NEMS","No IRA","Total Transportation Emissions",2022,1807.583374
+"OP-NEMS","No IRA","Total Transportation Emissions",2023,1819.734009
+"OP-NEMS","No IRA","Total Transportation Emissions",2024,1811.533936
+"OP-NEMS","No IRA","Total Transportation Emissions",2026,1783.37146
+"OP-NEMS","No IRA","Total Transportation Emissions",2027,1761.358765
+"OP-NEMS","No IRA","Total Transportation Emissions",2028,1741.427734
+"OP-NEMS","No IRA","Total Transportation Emissions",2029,1720.286865
+"OP-NEMS","No IRA","Total Transportation Emissions",2031,1683.193481
+"OP-NEMS","No IRA","Total Transportation Emissions",2032,1666.378174
+"OP-NEMS","No IRA","Total Transportation Emissions",2033,1650.185547
+"OP-NEMS","No IRA","Total Transportation Emissions",2034,1630.141968
+"OP-NEMS","No IRA","Total Transportation Emissions",2021,1757.4
+"OP-NEMS","IRA","Total Transportation Emissions",2025,1795.930786
+"OP-NEMS","IRA","Total Transportation Emissions",2030,1634.299072
+"OP-NEMS","IRA","Total Transportation Emissions",2035,1450.618286
+"OP-NEMS","IRA","Total Transportation Emissions",2022,1806.582275
+"OP-NEMS","IRA","Total Transportation Emissions",2023,1818.687622
+"OP-NEMS","IRA","Total Transportation Emissions",2024,1806.199951
+"OP-NEMS","IRA","Total Transportation Emissions",2026,1772.863525
+"OP-NEMS","IRA","Total Transportation Emissions",2027,1741.97876
+"OP-NEMS","IRA","Total Transportation Emissions",2028,1709.892456
+"OP-NEMS","IRA","Total Transportation Emissions",2029,1671.923096
+"OP-NEMS","IRA","Total Transportation Emissions",2031,1596.484497
+"OP-NEMS","IRA","Total Transportation Emissions",2032,1559.907715
+"OP-NEMS","IRA","Total Transportation Emissions",2033,1525.598145
+"OP-NEMS","IRA","Total Transportation Emissions",2034,1486.073486
+"OP-NEMS","IRA","Total Transportation Emissions",2021,1757.4
+"REGEN-EPRI","No IRA","Total Transportation Emissions",2025,1731.3428583466
+"REGEN-EPRI","No IRA","Total Transportation Emissions",2030,1595.66732239906
+"REGEN-EPRI","No IRA","Total Transportation Emissions",2035,1472.85569929252
+"REGEN-EPRI","No IRA","Total Transportation Emissions",2021,1757.4
+"REGEN-EPRI","IRA","Total Transportation Emissions",2025,1732.86935379878
+"REGEN-EPRI","IRA","Total Transportation Emissions",2030,1569.14666069388
+"REGEN-EPRI","IRA","Total Transportation Emissions",2035,1376.14761897839
+"REGEN-EPRI","IRA","Total Transportation Emissions",2021,1757.4
+"RIO-REPEAT","No IRA","Total Transportation Emissions",2025,1838.98436721475
+"RIO-REPEAT","No IRA","Total Transportation Emissions",2030,1663.08141962422
+"RIO-REPEAT","No IRA","Total Transportation Emissions",2035,1446.13628727425
+"RIO-REPEAT","No IRA","Total Transportation Emissions",2021,1757.4
+"RIO-REPEAT","IRA","Total Transportation Emissions",2025,1829.6000371425
+"RIO-REPEAT","IRA","Total Transportation Emissions",2030,1583.87483206449
+"RIO-REPEAT","IRA","Total Transportation Emissions",2035,1204.93197278912
+"RIO-REPEAT","IRA","Total Transportation Emissions",2021,1757.4
+"AEO.2023","No IRA","Total Transportation Emissions",2025,1741.17627
+"AEO.2023","No IRA","Total Transportation Emissions",2030,1672.112427
+"AEO.2023","No IRA","Total Transportation Emissions",2035,1615.413452
+"AEO.2023","No IRA","Total Transportation Emissions",2022,1778.925049
+"AEO.2023","No IRA","Total Transportation Emissions",2023,1774.28125
+"AEO.2023","No IRA","Total Transportation Emissions",2024,1763.679321
+"AEO.2023","No IRA","Total Transportation Emissions",2026,1730.514038
+"AEO.2023","No IRA","Total Transportation Emissions",2027,1719.85144
+"AEO.2023","No IRA","Total Transportation Emissions",2028,1706.725342
+"AEO.2023","No IRA","Total Transportation Emissions",2029,1691.203857
+"AEO.2023","No IRA","Total Transportation Emissions",2031,1654.459106
+"AEO.2023","No IRA","Total Transportation Emissions",2032,1639.921631
+"AEO.2023","No IRA","Total Transportation Emissions",2033,1629.517456
+"AEO.2023","No IRA","Total Transportation Emissions",2034,1621.873047
+"AEO.2023","No IRA","Total Transportation Emissions",2021,1757.4
+"AEO.2023","IRA","Total Transportation Emissions",2025,1731.996338
+"AEO.2023","IRA","Total Transportation Emissions",2030,1657.054932
+"AEO.2023","IRA","Total Transportation Emissions",2035,1592.773071
+"AEO.2023","IRA","Total Transportation Emissions",2022,1778.743774
+"AEO.2023","IRA","Total Transportation Emissions",2023,1766.850586
+"AEO.2023","IRA","Total Transportation Emissions",2024,1753.365356
+"AEO.2023","IRA","Total Transportation Emissions",2026,1717.358398
+"AEO.2023","IRA","Total Transportation Emissions",2027,1702.410156
+"AEO.2023","IRA","Total Transportation Emissions",2028,1694.913574
+"AEO.2023","IRA","Total Transportation Emissions",2029,1677.163818
+"AEO.2023","IRA","Total Transportation Emissions",2031,1639.307983
+"AEO.2023","IRA","Total Transportation Emissions",2032,1624.935791
+"AEO.2023","IRA","Total Transportation Emissions",2033,1613.014038
+"AEO.2023","IRA","Total Transportation Emissions",2034,1602.519531
+"AEO.2023","IRA","Total Transportation Emissions",2021,1757.4
+"EPA-GHGI","Historic","Total Transportation Emissions",2021,1757.4
