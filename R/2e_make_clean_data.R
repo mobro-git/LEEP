@@ -33,6 +33,10 @@ complete_implicit_na = function(df) {
 
 make_clean_data = function(df) {
 
+  # for interactive testing
+  # tar_load(data_long)
+  # df = data_long %>% unit_conversion() %>% complete_implicit_na()
+
   print("Making clean data")
 
   # sum industry and fuel production emissions for internal models
@@ -110,24 +114,55 @@ make_clean_data = function(df) {
     summarize(value = mean(value)) %>%
     mutate(variable = paste0(variable,"|Average 2021-2035"), year = 2035)
 
-  most = rbind(df, ind_var, gcampnnl_nonco2, cap_add_avg) %>%
-    arrange(model)
+  df2 = rbind(df, ind_var, gcampnnl_nonco2, cap_add_avg) %>%
+    arrange(model) %>%
+    filter(!(model == "MARKAL-NETL" & variable %in% c("Emissions|Non-CO2 GHG"))) %>% # remove, #s too low
+    filter(!(model == "OP-NEMS" & variable %in% c("Emissions|CO2|Industrial Processes"))) # remove, reported as 0
 
   # copy nonco2 and land sink gcam numbers for other models
-  gcam_netghg = most %>%
-    filter(model == "NEMS-RHG" &
-             variable %in% c("Emissions|Non-CO2 GHG", "Carbon Sequestration|LULUCF")) %>%
+  gcam_netghg = df2 %>%
+    filter(model == "GCAM-PNNL" &
+             variable %in% c("Emissions|Non-CO2 GHG", "Carbon Sequestration|LULUCF") &
+             scenario %in% c("No IRA", "IRA") &
+             year %in% c(2025, 2030, 2035, 2040, 2045, 2050)) %>%
     mutate(datasrc = "GCAM-PNNL values")
 
   op_nems = gcam_netghg %>% mutate(model = "OP-NEMS")
   regen = gcam_netghg %>% mutate(model = "REGEN-EPRI")
   usrep = gcam_netghg %>% mutate(model = "USREP-ReEDS")
+  markal = gcam_netghg %>% filter(variable == "Emissions|Non-CO2 GHG") %>% mutate(model = "MARKAL-NETL")
 
-  copied_netghg = rbind(op_nems, regen, usrep)
+  copied_netghg = rbind(op_nems, regen, usrep, markal)
 
-  all = rbind(most, copied_netghg)
+  df3 = rbind(df2, copied_netghg)
+
+  # make Emissions|CO2 for OP-NEMS and REGEN-EPRI
+  gcam_nonenergyco2 = df3 %>%
+    filter(model == "GCAM-PNNL" &
+             variable == "Emissions|CO2|Industrial Processes" &
+             scenario %in% c("No IRA", "IRA") &
+             year %in% c(2025, 2030, 2035, 2040, 2045, 2050)) %>%
+    mutate(datasrc = "GCAM-PNNL values")
+  gcam_yrs = unique(gcam_nonenergyco2$year)
+
+  op_nems_ind = gcam_nonenergyco2 %>% mutate(model = "OP-NEMS")
+  regen_ind = gcam_nonenergyco2 %>% mutate(model = "REGEN-EPRI")
+
+  total_co2 = df3 %>%
+    filter(model %in% c("OP-NEMS", "REGEN-EPRI") &
+             variable %in% c("Emissions|CO2|Energy") &
+             year %in% gcam_yrs &
+             scenario %in% c("No IRA", "IRA")) %>%
+    rbind(op_nems_ind, regen_ind) %>%
+    mutate(variable = "Emissions|CO2",
+           datasrc = "calculated w/ GCAM-PNNL values") %>%
+    group_by(model,scenario,unit,year,datasrc,region,variable) %>%
+    summarise(value = sum(value))
+
+  all = rbind(df3, total_co2)
 
   all
+
 }
 
 
@@ -175,5 +210,6 @@ unit_conversion = function(df) {
         TRUE ~ unit))
 
   all_converted
+
 }
 
