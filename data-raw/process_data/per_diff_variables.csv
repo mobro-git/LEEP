@@ -16,3 +16,15 @@ Emissions|CO2|Energy|Demand|Buildings,Emissions|CO2|Energy|Demand|Buildings|Perc
 Final Energy|Industry|Fossil,Final Energy|Industry|Fossil|Percent difference from No IRA,difference,scenario,No IRA,%
 Emissions|NOx|Energy|Supply|Electricity,Emissions|NOx|Energy|Supply|Electricity|Percent difference from No IRA,difference,scenario,No IRA,%
 Emissions|Sulfur|Energy|Supply|Electricity,Emissions|Sulfur|Energy|Supply|Electricity|Percent difference from No IRA,difference,scenario,No IRA,%
+Secondary Energy|Electricity|Nuclear,Secondary Energy|Electricity|Nuclear|Percent differnce from No IRA,difference,scenario,No IRA,%
+Secondary Energy|Electricity|Solar,Secondary Energy|Electricity|Solar|Percent differnce from No IRA,difference,scenario,No IRA,%
+Secondary Energy|Electricity|Wind,Secondary Energy|Electricity|Wind|Percent differnce from No IRA,difference,scenario,No IRA,%
+Secondary Energy|Electricity|Biomass,Secondary Energy|Electricity|Biomass|Percent differnce from No IRA,difference,scenario,No IRA,%
+Secondary Energy|Electricity|Geothermal,Secondary Energy|Electricity|Geothermal|Percent differnce from No IRA,difference,scenario,No IRA,%
+Secondary Energy|Electricity|Hydro,Secondary Energy|Electricity|Hydro|Percent differnce from No IRA,difference,scenario,No IRA,%
+Secondary Energy|Electricity|Oil|w/ CCS,Secondary Energy|Electricity|Oil|w/ CCS|Percent differnce from No IRA,difference,scenario,No IRA,%
+Secondary Energy|Electricity|Gas|w/ CCS,Secondary Energy|Electricity|Gas|w/ CCS|Percent differnce from No IRA,difference,scenario,No IRA,%
+Secondary Energy|Electricity|Coal|w/ CCS,Secondary Energy|Electricity|Coal|w/ CCS|Percent differnce from No IRA,difference,scenario,No IRA,%
+Secondary Energy|Electricity|Coal|w/o CCS,Secondary Energy|Electricity|Coal|w/o CCS|Percent differnce from No IRA,difference,scenario,No IRA,%
+Secondary Energy|Electricity|Gas|w/o CCS,Secondary Energy|Electricity|Gas|w/o CCS|Percent differnce from No IRA,difference,scenario,No IRA,%
+Secondary Energy|Electricity|Oil|w/o CCS,Secondary Energy|Electricity|Oil|w/o CCS|Percent differnce from No IRA,difference,scenario,No IRA,%

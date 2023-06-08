@@ -248,7 +248,6 @@ html = function(df, title) {
 }
 
 
-
 #Function to create standard percent difference figs
 pd = function(ts_map_ID, title, yname, gd, drop) {
   #Take data from leep_timeseries map based on ID.
@@ -262,7 +261,9 @@ pd = function(ts_map_ID, title, yname, gd, drop) {
   ) %>%
     filter(!scenario == "No IRA") %>%
     filter(year > 2021) %>%
-    filter(!model %in% drop)
+    filter(!model %in% drop) %>%
+    group_by(model, year, scenario, variable_rename) %>%
+    summarize(value= sum(value))
 
   medians = df %>%
     filter(year %in% c(2030, 2035)) %>%
@@ -311,7 +312,6 @@ pd = function(ts_map_ID, title, yname, gd, drop) {
   return(figure)
 }
 
-
 ad = function(diff_ID, title, yname, gd, drop) {
 
   df = data_from_graph("diff_bar",
@@ -320,8 +320,10 @@ ad = function(diff_ID, title, yname, gd, drop) {
                        figmap_leep_diffbar,
                        diff_ID,
                        "United States") %>%
-    filter(!model %in% drop) %>%
-    filter(year > 2021)
+    filter(!model %in% drop)%>%
+    filter(year > 2021) %>%
+    group_by(model, year, scenario, variable_rename) %>%
+    summarize(diff = sum(diff))
 
   medians = df %>%
     filter(year %in% c(2030, 2035)) %>%
@@ -370,9 +372,92 @@ ad = function(diff_ID, title, yname, gd, drop) {
 
 
 
+four_corners = function(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit) {
 
+  #Time Series Dataframe
+  ts_df = data_from_graph(
+    "time_series",
+    config,
+    clean_data,
+    figmap_leep_timeseries,
+    ts_map_ID,
+    "United States"
+  ) %>%
+    filter(!model %in% drop) %>%
+    filter(!datasrc %in% drop)%>%
+    filter(year >= 2021) %>%
+    filter(year <= 2021 &
+             model == histsrc |
+             year > 2021 & scenario != "Historic") %>%
+    group_by(model, scenario, year, variable_rename) %>%
+    summarize(value = sum(value)) %>%
+    pivot_wider(names_from = year, values_from = value)
 
+  ts_df = ts_df %>%
+    mutate(`2021` = case_when(T ~ ts_df$`2021`[ts_df$model == histsrc])) %>%
+    pivot_longer(cols = starts_with("20"),
+                 names_to = "year",
+                 values_to = "value") %>%
+    filter(!is.na(value)) %>%
+    mutate(year = as.numeric(year))
 
+  noIRAmedians = ts_df[ts_df$scenario == "No IRA",] %>%
+    filter(year == 2030 | year == 2035) %>%
+    group_by(year) %>%
+    summarize(median = median(value))
 
+  IRAmedians = ts_df[ts_df$scenario == "IRA",] %>%
+    filter(year == 2030 | year == 2035) %>%
+    group_by(year) %>%
+    summarize(median = median(value))
 
+  NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA", ], aes(year, value, color = model)) +
+    geom_line(size = 0.75) +
+    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+    theme_emf() +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "No IRA",
+         y = unit,
+         x = element_blank()) +
+    theme(legend.position = "right",
+          axis.text.x = element_text(angle = 45, hjust = 1)) +
+    geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+    geom_point(
+      data = noIRAmedians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    )
 
+  IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA", ], aes(year, value, color = model)) +
+    geom_line(size = 0.75) +
+    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+    theme_emf() +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "IRA",
+         y = unit,
+         x = element_blank()) +
+    theme(legend.position = "right",
+          axis.text.x = element_text(angle = 45, hjust = 1)) +
+    geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+    geom_point(
+      data = IRAmedians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    )
+
+  #Percent Difference
+
+  pdfigure = pd(pd_map_ID, "", expression(paste("Percent Difference (%)")), "none", drop)
+
+  #Absolute Difference
+  adfigure = ad(diff_ID = ad_map_ID, "", paste("Absolute Difference (",unit,")"), "none", drop)
+
+  figure = (NoIRAfigure | IRAfigure) / (adfigure | pdfigure)+
+    plot_layout(guides = "collect")
+
+  return(figure)
+}

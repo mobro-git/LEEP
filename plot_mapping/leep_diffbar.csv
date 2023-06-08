@@ -7,4 +7,19 @@ diffbar,3,EconWide CO2,Emissions|CO2,0,CO2,scenario,No IRA,usa,models_leep,ira_2
 diffbar,4,Elec CO2,Emissions|CO2|Energy|Supply|Electricity,0,CO2,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
 diffbar,5,Transportation CO2,Emissions|CO2|Energy|Demand|Transportation|Total,0,CO2,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
 diffbar,6,Industry CO2,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total,0,CO2,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
-diffbar,7,Buildings CO2,Emissions|CO2|Energy|Demand|Buildings|Total,0,CO2,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
+diffbar,7,Building CO2,Emissions|CO2|Energy|Demand|Buildings|Total,0,CO2,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
+diffbar,8,Generation,Secondary Energy|Electricity|Nuclear,0,Nuclear,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
+diffbar,9,Generation,Secondary Energy|Electricity|Solar,0,Solar,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
+diffbar,10,Generation,Secondary Energy|Electricity|Wind,0,Wind,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
+diffbar,11,Generation,Secondary Energy|Electricity|Biomass,0,Other,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
+diffbar,11,Generation,Secondary Energy|Electricity|Geothermal,0,Other,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
+diffbar,11,Generation,Secondary Energy|Electricity|Hydro,0,Other,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
+diffbar,14,Generation,Secondary Energy|Electricity|Oil|w/ CCS,0,CCS,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
+diffbar,14,Generation,Secondary Energy|Electricity|Gas|w/ CCS,0,CCS,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
+diffbar,14,Generation,Secondary Energy|Electricity|Coal|w/ CCS,0,CCS,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
+diffbar,17,Generation,Secondary Energy|Electricity|Coal|w/o CCS,0,Coal,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
+diffbar,18,Generation,Secondary Energy|Electricity|Gas|w/o CCS,0,Gas ,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
+diffbar,11,Generation,Secondary Energy|Electricity|Oil|w/o CCS,0,Other,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
+diffbar,20,Energy Emissions,Primary Energy|Coal,0,CO2,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
+diffbar,21,Energy Emissions,Primary Energy|Gas,0,CO2,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed
+diffbar,22,Energy Emissions,Primary Energy|Oil,0,CO2,scenario,No IRA,usa,models_leep,ira_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,TRUE,variable_rename,region,fixed

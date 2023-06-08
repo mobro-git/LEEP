@@ -283,7 +283,9 @@ pd = function(ts_map_ID, title, yname, gd, drop) {
     ) %>%
     filter(!scenario == "No IRA") %>%
     filter(year > 2021) %>%
-    filter(!model %in% drop)
+    filter(!model %in% drop) %>%
+      group_by(model, year, scenario, variable_rename) %>%
+      summarize(value= sum(value))
   
   medians = df %>%
     filter(year %in% c(2030, 2035)) %>%
@@ -342,8 +344,10 @@ ad = function(diff_ID, title, yname, gd, drop) {
                        figmap_leep_diffbar,
                        diff_ID,
                        "United States") %>%
-    filter(!model %in% drop) %>%
-    filter(year > 2021)
+    filter(!model %in% drop)%>%
+    filter(year > 2021) %>%
+      group_by(model, year, scenario, variable_rename) %>%
+      summarize(diff = sum(diff))
   
   medians = df %>%
     filter(year %in% c(2030, 2035)) %>%
@@ -392,16 +396,10 @@ ad = function(diff_ID, title, yname, gd, drop) {
 ```
 
 ```{r Four Corners Function, include = FALSE}
-ts_map_ID = 98
-pd_map_ID = 26 
-ad_map_ID = 4
-drop = c("")
-histsrc = "EPA-GHGI"
-
-four_corners = function(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc) {
+four_corners = function(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit) {
 
   #Time Series Dataframe
-      ts_df = data_from_graph(
+    ts_df = data_from_graph(
     "time_series",
     config,
     clean_data,
@@ -410,96 +408,82 @@ four_corners = function(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc) {
     "United States"
   ) %>%
     filter(!model %in% drop) %>%
-    filter(!datasrc %in% drop) %>%
-    mutate(
-      alpha = case_when(
-        model == "USREP-ReEDS" ~ 1,
-        model == "GCAM-PNNL" ~ 1,
-        model == "IPM-EPA" ~ 1,
-        scenario == "Historic" ~ 1,
-        T ~ 0.6
-      )
-    ) %>%
+    filter(!datasrc %in% drop)%>%
+    filter(year >= 2021) %>%
     filter(year <= 2021 &
              model == histsrc |
-             year >= 2021 & scenario != "Historic") %>%
-    pivot_wider(names_from = year, values_from = value) %>%
-    mutate(`2021` = case_when(T ~ `2021`[model == histsrc])) %>%
+             year > 2021 & scenario != "Historic") %>%
+      group_by(model, scenario, year, variable_rename) %>%
+      summarize(value = sum(value)) %>%
+    pivot_wider(names_from = year, values_from = value)
+    
+    ts_df = ts_df %>%
+    mutate(`2021` = case_when(T ~ ts_df$`2021`[ts_df$model == histsrc])) %>%
     pivot_longer(cols = starts_with("20"),
                  names_to = "year",
                  values_to = "value") %>%
     filter(!is.na(value)) %>%
-    mutate(year = as.numeric(year))
+    mutate(year = as.numeric(year)) 
       
-        NOIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA",], aes(year,value, color = scenario, group = interaction(model, scenario))) + geom_line(aes(alpha = alpha), size = 0.5) +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme_emf() +
-    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
-    scale_alpha(range = c(0.5, 1), guide = F) + 
-    labs(title = title, 
-         x = element_blank(), 
-         y = "Mt CO2") +
-        theme(legend.position = "none",
-          axis.text.x = element_text(angle = 45, hjust = 1))
+    noIRAmedians = ts_df[ts_df$scenario == "No IRA",] %>%
+      filter(year == 2030 | year == 2035) %>%
+      group_by(year) %>%
+      summarize(median = median(value))
+    
+    IRAmedians = ts_df[ts_df$scenario == "IRA",] %>%
+      filter(year == 2030 | year == 2035) %>%
+      group_by(year) %>%
+      summarize(median = median(value))
+    
+    NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA", ], aes(year, value, color = model)) +
+      geom_line(size = 0.75) +
+      scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+      theme_emf() +
+      scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+      labs(title = "No IRA",
+           y = unit,
+           x = element_blank()) +
+      theme(legend.position = "right",
+            axis.text.x = element_text(angle = 45, hjust = 1)) +
+      geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+      geom_point(
+        data = noIRAmedians,
+        aes(x = year, y = median),
+        color = "black",
+        shape = 16,
+        size = 2
+      )
+    
+    IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA", ], aes(year, value, color = model)) +
+      geom_line(size = 0.75) +
+      scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+      theme_emf() +
+      scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+      labs(title = "IRA",
+           y = unit,
+           x = element_blank()) +
+      theme(legend.position = "right",
+            axis.text.x = element_text(angle = 45, hjust = 1)) +
+      geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+      geom_point(
+        data = IRAmedians,
+        aes(x = year, y = median),
+        color = "black",
+        shape = 16,
+        size = 2
+      )
     
     #Percent Difference
       
-    pd_df = data_from_graph(
-      "time_series",
-      config,
-      clean_data,
-      figmap_leep_timeseries,
-      pd_map_ID,
-      "United States"
-    ) %>%
-    filter(!scenario == "No IRA") %>%
-    filter(year > 2021) %>%
-    filter(!model %in% drop) %>%
-    filter(!datasrc %in% drop)
+pdfigure = pd(pd_map_ID, "", expression(paste("Percent Difference (%)")), "none", drop)
+    
+    #Absolute Difference
+adfigure = ad(diff_ID = ad_map_ID, "", paste("Absolute Difference (",unit,")"), "none", drop)
   
-  pd_medians = pd_df %>%
-    filter(year %in% c(2030, 2035)) %>%
-    filter(value != 0) %>%
-    group_by(year) %>% 
-    summarize(median = median(value))
+figure = (NoIRAfigure | IRAfigure) / (adfigure | pdfigure)+ 
+  plot_layout(guides = "collect")
   
-  hist <- pd_df %>%
-    group_by(model) %>%
-    slice(1) %>%
-    mutate(scenario = "Historic",
-           value = 0,
-           year = 2021)
-  
-  pd_df <- rbind(pd_df, hist)
-  
-    figure = ggplot() +
-    geom_line(data = pd_df, aes(
-    x = year,
-    y = value,
-    group = model,
-    color = model), 
-    size = 0.75) + 
-    geom_point(aes(x = 2021, y = 0), color = "black") + 
-    geom_point(
-      data = pd_medians,
-      aes(x = year, y = median),
-      color = "black",
-      shape = 16,
-      size = 2
-    ) + 
-    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") + #Standard subpallete
-    labs(title = title,
-         x = "",
-         y = "Percent Difference (%)") +
-    theme_emf() +
-    theme(
-      axis.text.x = element_text(angle = 45, hjust = 1),
-      panel.spacing.x = unit(4, "mm"),
-      legend.position = "none"
-    ) +
-    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))
-  
-  
+  return(figure)
 }
 
 ```
@@ -592,6 +576,8 @@ ElecTab
 TranTab
 BuilTab
 IndTab
+
+
 ```
 
 ## Fig1.3 FIN
@@ -655,6 +641,7 @@ print(figure)
 CoalTab
 GasTab
 PetrolTab
+
 ```
 
 # Electricity
@@ -954,73 +941,292 @@ IndTab
 # Appendix
 ## Economy-Wide Diff FIN
 ```{r EconWide Differnce}
-EconPD = pd(25, "", "Percent Difference (%)", "none", "")
-EconAD = ad(3, "", "Absolute Difference (Mt CO2)", "right", "")
+ts_map_ID = 98
+pd_map_ID = 25
+ad_map_ID = 3
+drop = ""
+histsrc = "EPA-GHGI"
+unit = "Mt CO2/yr"
 
-figure = (EconPD | EconAD) + 
-  plot_layout(guides = "collect")
+figure = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-print(figure)
+figure
 ```
+
 ## Electricity Diff FIN
 ```{r Electricity Differnce}
-ElecPD = pd(26, "", "Percent Difference (%)", "none", "")
-ElecAD = ad(4, "", "Absolute Difference (Mt CO2)", "right", "")
+ts_map_ID = 98
+pd_map_ID = 26
+ad_map_ID = 4
+drop = ""
+histsrc = "EPA-GHGI"
+unit = expression("Mt CO"[2]*"/yr")
 
-figure = (ElecPD | ElecAD) + 
-  plot_layout(guides = "collect")
+figure = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-print(figure)
+figure
 ```
+
 ## Transportation Diff FIN
 ```{r Transportation Differnce}
-TranPD = pd(27, "", "Percent Difference (%)", "none", "")
-TranAD = ad(5, "", "Absolute Difference (Mt CO2)", "right", "")
+ts_map_ID = 19
+pd_map_ID = 27
+ad_map_ID = 5
+drop = ""
+histsrc = "EPA-GHGI"
+unit = expression("Mt CO"[2]*"/yr")
 
-figure = (TranPD | TranAD) + 
-  plot_layout(guides = "collect")
+figure = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-print(figure)
-
-test = TranSpg / (TranPD | TranAD) + 
-  plot_layout(guides = "collect")
-
-print(test)
-
-#Note: final = (No IRA | IRA) / (TradAD | TranPD)
+figure
 ```
+
 ## Building Diff FIN
-```{r Building Differnce}
-BuilPD = pd(28, "", "Percent Difference (%)", "none", "")
-BuilAD = ad(7, "", "Absolute Difference (Mt CO2)", "right", "")
+```{r Building Difference}
+ts_map_ID = 23
+pd_map_ID = 29
+ad_map_ID = 7
+drop = ""
+histsrc = "EPA-GHGI"
+unit = expression("Mt CO"[2]*"/yr")
 
-figure = (BuilPD | BuilAD) + 
-  plot_layout(guides = "collect")
+figure = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-print(figure)
+figure
 ```
 
 ## Industry Diff FIN
 ```{r Industry Differnce}
-IndPD = pd(29, "", "Percent Difference (%)", "none", "")
-IndAD = ad(6, "", "Absolute Difference (Mt CO2)", "right", "")
+ts_map_ID = 21
+pd_map_ID = 28
+ad_map_ID = 6
+drop = ""
+histsrc = "EPA-GHGI"
+unit = expression("Mt CO"[2]*"/yr")
 
-figure = (IndPD | IndAD) + 
-  plot_layout(guides = "collect")
+figure = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
-print(figure)
+figure
+
 ```
 
-## Coal Emissions
-## Gas
-## Petrol
+## Coal Diff FIN
+```{r Coal Emissions Difference} 
+ts_map_ID = 94
+pd_map_ID = 32
+ad_map_ID = 20
+drop = "EIAinEMF37.csv"
+histsrc = "EIA"
+unit = expression("Mt CO"[2]*"/yr")
 
-## ALL Generation
+figure = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
+figure
+```
 
+## Gas Diff FIN
+```{r Gas Emissions Difference} 
+ts_map_ID = 93
+pd_map_ID = 31
+ad_map_ID = 21
+drop = "EIAinEMF37.csv"
+histsrc = "EIA"
+unit = expression("Mt CO"[2]*"/yr")
 
+figure = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
 
+figure
+```
 
+## Petrol Diff FIN
+```{r Petrol Emissions Difference} 
+ts_map_ID = 92
+pd_map_ID = 30
+ad_map_ID = 22
+drop = "EIAinEMF37.csv"
+histsrc = "EIA"
+unit = expression("Mt CO"[2]*"/yr")
+
+figure = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+
+figure
+```
+
+## Nuclear Generation Diff FIN
+```{r Nuclear Generation Difference} 
+ts_map_ID = 91
+pd_map_ID = 80
+ad_map_ID = 8
+drop = "EIAinEMF37.csv"
+histsrc = "EIA"
+unit = "Quads"
+
+figure = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+
+figure
+```
+## Solar Generation Diff FIN
+```{r Solar Generation Difference} 
+ts_map_ID = 90
+pd_map_ID = 79
+ad_map_ID = 9
+drop = c("EIAinEMF37.csv", "IPM-EPA")
+histsrc = "EIA"
+unit = "Quads"
+
+figure = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+
+figure
+```
+## Wind Generation Diff FIN
+```{r Wind Generation Difference} 
+ts_map_ID = 89
+pd_map_ID = 78
+ad_map_ID = 10
+drop = c("EIAinEMF37.csv", "IPM-EPA")
+histsrc = "EIA"
+unit = "Quads"
+
+figure = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+
+figure
+```
+## CCS Generation Diff
+```{r CCS Generation Difference} 
+#there is no historic data here so gotta do a lil manual work 
+ts_map_ID = 85
+pd_map_ID = 76
+ad_map_ID = 14
+drop = c("EIAinEMF37.csv", "IPM-EPA")
+histsrc = "EIA"
+unit = "Quads"
+
+ #Time Series Dataframe
+    ts_df = data_from_graph(
+    "time_series",
+    config,
+    clean_data,
+    figmap_leep_timeseries,
+    ts_map_ID,
+    "United States"
+  ) %>%
+    filter(!model %in% drop) %>%
+    filter(!datasrc %in% drop)%>%
+    filter(year >= 2021) %>%
+    filter(year <= 2021 &
+             model == histsrc |
+             year > 2021 & scenario != "Historic") %>%
+      group_by(model, scenario, year, variable_rename) %>%
+      summarize(value = sum(value)) %>%
+    pivot_wider(names_from = year, values_from = value)
+    
+    ts_df = ts_df %>%
+    mutate(`2021` = 0) %>%
+    pivot_longer(cols = starts_with("20"),
+                 names_to = "year",
+                 values_to = "value") %>%
+    filter(!is.na(value)) %>%
+    mutate(year = as.numeric(year)) 
+      
+    noIRAmedians = ts_df[ts_df$scenario == "No IRA",] %>%
+      filter(year == 2030 | year == 2035) %>%
+      group_by(year) %>%
+      summarize(median = median(value))
+    
+    IRAmedians = ts_df[ts_df$scenario == "IRA",] %>%
+      filter(year == 2030 | year == 2035) %>%
+      group_by(year) %>%
+      summarize(median = median(value))
+    
+    NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA", ], aes(year, value, color = model)) +
+      geom_line(size = 0.75) +
+      scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+      theme_emf() +
+      scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+      labs(title = "No IRA",
+           y = unit,
+           x = element_blank()) +
+      theme(legend.position = "right",
+            axis.text.x = element_text(angle = 45, hjust = 1)) +
+      geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+      geom_point(
+        data = noIRAmedians,
+        aes(x = year, y = median),
+        color = "black",
+        shape = 16,
+        size = 2
+      )
+    
+    IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA", ], aes(year, value, color = model)) +
+      geom_line(size = 0.75) +
+      scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+      theme_emf() +
+      scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+      labs(title = "IRA",
+           y = unit,
+           x = element_blank()) +
+      theme(legend.position = "right",
+            axis.text.x = element_text(angle = 45, hjust = 1)) +
+      geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+      geom_point(
+        data = IRAmedians,
+        aes(x = year, y = median),
+        color = "black",
+        shape = 16,
+        size = 2
+      )
+    
+    #Percent Difference
+      
+pdfigure = pd(pd_map_ID, "", expression(paste("Percent Difference (%)")), "none", drop)
+    
+    #Absolute Difference
+adfigure = ad(diff_ID = ad_map_ID, "", expression(paste("Absolute Difference (Quads)")), "none", drop)
+  
+figure = (NoIRAfigure | IRAfigure) / (adfigure | pdfigure)+ 
+  plot_layout(guides = "collect")
+
+figure
+```
+## Coal Generation Diff FIN
+```{r Coal Generation Difference} 
+ts_map_ID = 82
+pd_map_ID = 71
+ad_map_ID = 17
+drop = c("EIAinEMF37.csv", "IPM-EPA")
+histsrc = "EIA"
+unit = "Quads"
+
+figure = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+
+figure
+```
+## Gas Generation Diff FIN
+```{r Gas Generation Difference} 
+ts_map_ID = 81
+pd_map_ID = 70
+ad_map_ID = 18
+drop = c("EIAinEMF37.csv", "IPM-EPA")
+histsrc = "EIA"
+unit = "Quads"
+
+figure = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+
+figure
+```
+## Other Generation Diff FIN
+```{r Other Generation Difference} 
+ts_map_ID = 88
+pd_map_ID = 77
+ad_map_ID = 11
+drop = c("EIAinEMF37.csv", "IPM-EPA")
+histsrc = "EIA"
+unit = "Quads"
+
+figure = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+
+figure
+```
 
 
 
