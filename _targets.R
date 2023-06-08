@@ -177,10 +177,10 @@ tar_plan(
   # data_long but can add in transformations or filter out models/variables
   clean_data = {
     data_long %>%
+      unit_conversion() %>%
       complete_implicit_na() %>%
       make_clean_data() %>%
-      make_calculated_vars(ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var) %>%
-      unit_conversion()},
+      make_calculated_vars(ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var)},
 
   data_wide = {clean_data %>% pivot_wider(names_from = "year", values_from = "value")},
 

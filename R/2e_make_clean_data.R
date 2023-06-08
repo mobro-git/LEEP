@@ -54,6 +54,7 @@ make_clean_data = function(df) {
     mutate(datasrc = "calculated") %>%
     select(model,scenario,unit,year,datasrc,variable,region,value) %>%
     filter(model != "GCAM-PNNL") # GCAM-PNNL results look very low - not reporting a value that other models are reporting
+
   ind_emissions_indirect = df %>% filter(model %in% c("USREP-ReEDS","GCAM-PNNL", "ReEDS-NREL", "OP-NEMS")) %>%
     filter(variable == "Emissions|CO2|Energy|Demand|Industry|Indirect") %>%
     select(model,scenario,unit,year,datasrc,variable,region,value) %>%
@@ -66,10 +67,10 @@ make_clean_data = function(df) {
     filter(model == "GCAM-PNNL" &
              variable %in% c("Emissions|CH4","Emissions|N2O","Emissions|F-Gases")) %>%
     group_by(scenario,model,region,unit,year,variable) %>%
+    mutate(variable = "Emissions|Non-CO2 GHG") %>%
     summarise(value = sum(value)) %>%
     ungroup() %>%
     mutate(datasrc = "calculated") %>%
-    mutate(variable = "Emissions|Non-CO2 GHG") %>%
     select(model,scenario,unit,year,datasrc,variable,region,value)
 
   # calculate average capacity additions 2021-2035 for internal models
@@ -109,10 +110,24 @@ make_clean_data = function(df) {
     summarize(value = mean(value)) %>%
     mutate(variable = paste0(variable,"|Average 2021-2035"), year = 2035)
 
-  all = rbind(df, ind_var, gcampnnl_nonco2, cap_add_avg)
+  most = rbind(df, ind_var, gcampnnl_nonco2, cap_add_avg) %>%
+    arrange(model)
+
+  # copy nonco2 and land sink gcam numbers for other models
+  gcam_netghg = most %>%
+    filter(model == "NEMS-RHG" &
+             variable %in% c("Emissions|Non-CO2 GHG", "Carbon Sequestration|LULUCF")) %>%
+    mutate(datasrc = "GCAM-PNNL values")
+
+  op_nems = gcam_netghg %>% mutate(model = "OP-NEMS")
+  regen = gcam_netghg %>% mutate(model = "REGEN-EPRI")
+  usrep = gcam_netghg %>% mutate(model = "USREP-ReEDS")
+
+  copied_netghg = rbind(op_nems, regen, usrep)
+
+  all = rbind(most, copied_netghg)
 
   all
-
 }
 
 

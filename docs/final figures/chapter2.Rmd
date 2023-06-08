@@ -7,7 +7,6 @@ output:
 date: "`r Sys.time()`"
 params:
   mode: NULL
-  format: "svg"
 ---
 
 ```{r setup, include=FALSE}
@@ -29,20 +28,13 @@ targets::tar_load(figmap_leep_cone)
 targets::tar_load(figmap_leep_stackbar)
 targets::tar_load(data_min)
 targets::tar_load(data_raw)
-
-# create workbook for saving figure data
-# data_wb <- createWorkbook()
-
-# format toggle
-format <- params$format
-
-# palettes
-subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 ```
 
 ## 2.1 co2 emissions from the power sector in the us, compared to economy-wide co2 emissions
 
 ```{r}
+fig_no = 2.1
+
 data <- clean_data %>%
   filter(model == "EPA-GHGI") %>%
   filter(year >= 2005) %>%
@@ -89,12 +81,14 @@ fig = ggplot(data, aes(fill = variable_rename, y = value, alpha = alpha, x = yea
   scale_fill_manual(breaks = c( "Coal", "Gas", "Petroleum", "Other Sectors"), 
                      values = c( "#003052", "#BC8F73", "#733D3D", "#DEDEDE")) 
 
-print(fig)
+saveall(fig, data, fig_no)
 ```
 
 ## 2.2 us electricity generation and capacity shares by fuel type, 2021
 
 ```{r}
+fig_no = 2.2
+
 clean_data10 = clean_data %>% 
   filter(datasrc == 'EIA-IEA-bistline_historic.csv')
 
@@ -104,19 +98,17 @@ fig = print_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14,
   bottom1
 
 fig
-#dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3, "United States")
 
-ggsave(filename = "output/final_figures/svg/Fig2.2_hist_generation_mix.svg",fig, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig2.2_hist_generation_mix.png",fig, width = 7, height = 5, units = "in")
+df = data_from_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14, "United States")
 
-# supporting data
-dta = data_from_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14, "United States")
-dta %>% write.csv("output/final_figures/data/Fig2.2_hist_generation_mix.csv", row.names = FALSE)
+saveall(fig, df, fig_no)
 ```
 
 ## 2.3 us power sector co2 emissions
 
 ```{r}
+fig_no = 2.3
+
 ElecSpg = spg(
   98,
   "EPA-GHGI",
@@ -133,17 +125,19 @@ ElecSpg = spg(
   annotate("text", x = 2023, y = 650, label = "IRA", color = "#0388B3")
 
 ElecDot = dotted(ElecSpg$data, ElecSpg, "median", 0, 2500)
+ElecDot
 
 ElecTab = html(ElecSpg$data, "Electricity CO<sub>2<sub>")
-
-print(ElecDot)
 ElecTab
+
+savefig(ElecDot, fig_no)
 ```
 
 ## 2.4 us power sector generation from high and low/zero emitting generation
 
 ```{r}
-##### Data #####
+fig_no = 2.4
+
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
 
 fig$data <- fig$data %>%
@@ -218,9 +212,6 @@ individual <- fig$data %>%
     T ~ 0.8
   ))
 
-
-
-
 ##### All Total #####
 df_21 = total %>%
   filter(year %in% c(2021))
@@ -269,6 +260,8 @@ data_total <- data %>%
     year == 2021 ~ "Historic", 
     T ~ scenario)
   )
+
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
 dots_Total = ggplot(data = data_total, aes(x = axe, y = value,  color = scenario)) +
   geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
@@ -898,9 +891,7 @@ final = final +
 ) & theme(legend.position = "bottom")
 final
 
-ggsave(filename = "output/final_figures/Fig2.4.svg", plot = final,width = 9, height = 8, units = "in")
-
-ggsave(filename = "output/final_figures/Fig2.4.png", plot = final,width = 9, height = 8, units = "in")
+savefig(final, fig_no)
 ```
 
 ### Table 2.4 Total
@@ -2440,6 +2431,8 @@ tableHTML(caption = paste(title), rownames = F)
 ## 2.5 historical and projected capacity additions by technology
 
 ```{r}
+fig_no = 2.5
+
 # capacity addition plot
 
 ymin = -40
@@ -2503,21 +2496,19 @@ combined =
     # bottom1
 combined
 
+savefig(combined, fig_no)
 
-ggsave(filename = "output/final_figures/svg/Fig2.4_capacity.svg",combined, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig2.4_capacity.png",combined, width = 7, height = 5, units = "in")
 print(stats)
 
-#suporting data for plot
-dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States")
-dta %>% write.csv("output/final_figures/data/Fig2.4_capacity_bars.csv", row.names = FALSE)
-dta4 %>% write.csv("output/final_figures/data/Fig2.4_capacity_dots.csv", row.names = FALSE)
-
+savedata(dta, paste(fig_no,"bars"))
+savedata(dta4, paste(fig_no, "dots"))
 ```
 
 ## 2.6 sensitivity of electric sector emissions
 
 ```{r}
+fig_no = 2.6
+
 # electric sector emissions sensitivity dot plots
 panel1_scens = c("Core","IRA", "IRA.Low","IRA.High")
 panel2_scens = c("Low Growth", "High Growth", "Core") # Economic Growth
@@ -2568,20 +2559,16 @@ combined = (p1$plot | p2$plot | p3$plot | p4$plot | p5$plot) +
   
 combined
 
-ggsave(filename = "output/final_figures/svg/Fig2.5_elec_sensitivity_dots.svg",combined, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig2.5_elec_sensitivity_dots.png",combined, width = 7, height = 5, units = "in")
-
-# supporting data for figure
 dta = bind_rows(sens_dta_panel1, sens_dta_panel3, sens_dta_panel4, sens_dta_panel5)
-dta %>% write.csv("output/final_figures/data/Fig2.5_elec_sensitivity_dots.csv", row.names = FALSE)
 
-
-#View(sens_dta)
+saveall(combined, dta, fig_no)
 ```
 
-## 2.7 & 2.8 nox and so2 emissions
+## 2.7 nox emissions
 
 ```{r}
+fig_no = 2.7
+
 clean_data7 = clean_data %>% duplicate_historical_data("EPA",2021, criteria = TRUE) %>%
   mutate(alpha = case_when(
     model == "USREP-ReEDS" ~ 1,
@@ -2596,39 +2583,33 @@ nox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 12
   scale_alpha(range = c(0.6, 1), guide = "none")
 #nox
 
-sox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States") +
-  scale_alpha(range = c(0.6, 1), guide = "none")
-#sox
-
 nox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States", 0, 3, "Power Sector NOx Emissions", metric = "median", 
                      historic_coord = c(2015,1.8), preira_coord = c(2030, 0.95), ira_coord = c(2029, 0.15))
 print(nox_full$full)
 print(nox_full$stats)
-ggsave(filename = "output/final_figures/svg/Fig2.7_nox.svg",nox_full$full, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig2.7_nox.png",nox_full$full, width = 7, height = 5, units = "in")
+
+dta1 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States")
+
+saveall(nox_full$full, dta1, fig_no)
+```
+
+## 2.8 so2 emissions
+
+```{r}
+fig_no = 2.8
+
+sox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States") +
+  scale_alpha(range = c(0.6, 1), guide = "none")
+#sox
 
 sox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States", 0, 5, "Power Sector SO2 Emissions", metric = "median", 
                      historic_coord = c(2017,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12))
 print(sox_full$full)
 print(sox_full$stats)
-ggsave(filename = "output/final_figures/svg/Fig2.8_sox.svg",sox_full$full, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig2.8_sox.png",sox_full$full, width = 7, height = 5, units = "in")
 
-
-
-dta1 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States")
 dta2 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States")
-dta1 %>% write.csv("output/final_figures/data/Fig2.7_nox.csv", row.names = FALSE)
-dta2 %>% write.csv("output/final_figures/data/Fig2.8_sox.csv", row.names = FALSE)
 
-# View(dta)
+saveall(sox_full$full, dta2, fig_no)
 ```
-
-
-
-
-
-
-
 
 

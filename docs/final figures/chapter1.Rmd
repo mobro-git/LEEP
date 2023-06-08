@@ -7,7 +7,6 @@ output:
 date: "`r Sys.time()`"
 params:
   mode: NULL
-  format: "svg"
 ---
 
 ```{r setup, include=FALSE}
@@ -18,7 +17,7 @@ knitr::opts_knit$set(root.dir = here::here())
 ```{r}
 if(is.null(params$mode)) {
   source("packages.R")
-  devtools::load_all()
+  devtools::load_all(here())
 }
 
 # load data from targets pipeline
@@ -29,46 +28,35 @@ targets::tar_load(figmap_leep_cone)
 targets::tar_load(figmap_leep_stackbar)
 targets::tar_load(data_min)
 targets::tar_load(data_raw)
-
-# create workbook for saving figure data
-# data_wb <- createWorkbook()
-
-# format toggle
-format <- params$format
-
-# palettes
-subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 ```
 
 ## 1.1 economy-wide co2 emissions from fossil fuel combustion by sector
 
 ```{r}
-# Figure 1.1
-subpalettes_temp = subpalettes # save off version to be used after this figure's temp subpalette
+fig_no = 1.1
 
 subpalettes = create_subpalettes(figmap_leep_stackbar, config)
+
 subpalettes$`Emissions Stack`[["Electricity Generation"]] = "#0388B3"
 subpalettes$`Emissions Stack`[["Other Sectors"]] = "#DEDEDE"
 subpalettes$`Emissions Stack`[["Non-CO2 GHGs"]] = "#469990"
 
-dta1 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 9, "United States") %>%
+df = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 9, "United States") %>%
   mutate(variable_rename = factor(variable_rename, 
                                   levels = c("Industry: Direct", "Industry: Indirect", "Buildings: Direct", 
                                              "Buildings: Indirect", "Transportation: Direct", "Transportation: Indirect")))
 
-p1 = emis_stack(dta1, "Economy-Wide CO2 Emissions", econwide = TRUE)
-p1
-ggsave(filename = "output/final_figures/svg/Fig1.1_emis.svg",p1, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig1.1_emis.png",p1, width = 7, height = 5, units = "in")
+fig = emis_stack(df, "Economy-Wide CO2 Emissions", econwide = TRUE)
+fig
 
-dta1 %>% write.csv("output/final_figures/data/Fig1.1_emis.csv", row.names = FALSE)
-
-subpalettes = subpalettes_temp # change back to original subpalettes
+saveall(fig, df, fig_no)
 ```
 
 ## 1.2 economy-wide, electricity, and sector co2 emissions
 
 ```{r}
+fig_no = 1.2
+
 EconSpg = spg(
   99,
   "EPA-GHGI",
@@ -141,11 +129,12 @@ BuilSpg = spg(
   NULL)
 BuilTab = html(BuilSpg$data, "Building CO<sub>2<sub>")
 
-figure = (EconSpg | ElecSpg) / (TranSpg | BuilSpg | IndSpg) + 
+fig = (EconSpg | ElecSpg) / (TranSpg | BuilSpg | IndSpg) + 
   plot_annotation(tag_levels = list(c("", "", "Sectoral Emissions: Direct + Indirect from Electricity", "", ""))) & 
   theme(plot.tag.position = c(1.09, 1.1))
+fig
 
-print(figure)
+savefig(fig, fig_no)
 
 EconTab
 ElecTab
@@ -157,6 +146,8 @@ IndTab
 ## 1.3 fossil energy consumption by fuel
 
 ```{r}
+fig_no = 1.3
+
 CoalSpg = spg(
   94,
   "EIA",
@@ -208,9 +199,11 @@ PetrolDot = dotted(PetrolSpg$data, PetrolSpg, "median", 0, 45)
 
 PetrolTab = html(PetrolSpg$data, "Petroleum")
 
-figure = (CoalDot | GasDot | PetrolDot) 
+fig = (CoalDot | GasDot | PetrolDot) 
+fig
 
-print(figure)
+savefig(fig, fig_no)
+
 CoalTab
 GasTab
 PetrolTab
@@ -219,6 +212,8 @@ PetrolTab
 ## 1.4 economy-wide co2 emissions sensitivities
 
 ```{r}
+fig_no = 1.4
+
 # sensitivity dot plots
 panel1_scens = c("Core","IRA", "IRA.Low","IRA.High")
 panel2_scens = c("Low Growth", "High Growth", "Core", "IRA") # panel2_scens from fig 2.5, but "IRA" added for GCAM
@@ -276,28 +271,15 @@ sens_dta_ind = clean_data %>%
 p7 = sens_dot_plot(sens_dta_econ, title = "IRA Implementation", ymin = 0, ymax = 5000, far_left = TRUE, single = FALSE, 
                    ira_coord = c(2030,4050), low_coord = c(2028, 4220), 
                    high_coord = c(2030.6, 4070))
-#p7$plot = p7$plot + theme(plot.title = element_blank(), plot.margin = margin(2,2,2,2))
-p7$plot
+#p7$plot
 
 p7b = sens_dot_plot(sens_dta_econ_panel2, title = "Economic Growth", ymin = 0, ymax = 5000)
-p7b$plot
+#p7b$plot
 
-combined = (p7$plot | p7b$plot) +
+fig = (p7$plot | p7b$plot) +
   plot_annotation(title = "Economy-Wide Emissions", 
                   theme = theme(plot.title = element_blank()))
-  
-combined
+fig
 
-
-ggsave(filename = "output/final_figures/svg/Fig1.4_econwide_sensitivity_dots.svg",combined, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig1.4_econwide_sensitivity_dots.png",combined, width = 7, height = 5, units = "in")
+savefig(fig, fig_no)
 ```
-
-
-
-
-
-
-
-
-

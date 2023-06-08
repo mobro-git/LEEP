@@ -7,7 +7,6 @@ output:
 date: "`r Sys.time()`"
 params:
   mode: NULL
-  format: "svg"
 ---
 
 ```{r setup, include=FALSE}
@@ -29,20 +28,15 @@ targets::tar_load(figmap_leep_cone)
 targets::tar_load(figmap_leep_stackbar)
 targets::tar_load(data_min)
 targets::tar_load(data_raw)
-
-# create workbook for saving figure data
-# data_wb <- createWorkbook()
-
-# format toggle
-format <- params$format
-
-# palettes
-subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 ```
 
 ## 3.1 co2 emissions from the transportation sector in the us compared to economy-wide co2 emissions
 
 ```{r}
+fig_no = 3.1
+
+subpalettes = create_subpalettes(figmap_leep_stackbar, config)
+
 dta2 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 9, "United States") %>%
   mutate(variable_rename = case_when(
     variable_rename == "Transportation: Direct" ~ variable_rename,
@@ -57,22 +51,14 @@ p2 = emis_stack(dta2, "Transportation CO2 Emissions") +
   scale_color_manual(values = c("Other Sectors" = "#CECECE", "Transportation: Indirect" = subpalettes$`Emissions Stack`[["Transportation: Indirect"]], "Transportation: Direct" = subpalettes$`Emissions Stack`[["Transportation: Direct"]])) +
   scale_alpha_manual(values = c("Other Sectors" = 0.5, "Transportation: Indirect" = 1, "Transportation: Direct" = 1))
 p2
-ggsave(filename = "output/final_figures/svg/Fig3.1_emis_trans.svg",p2, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig3.1_emis_trans.png",p2, width = 7, height = 5, units = "in")
 
-dta2 %>% write.csv("output/final_figures/data/Fig3.1_emis.csv", row.names = FALSE)
+saveall(p2, dta2, fig_no)
 ```
 
 ## 3.2 co2 emissions from the transportation sector in the us by end use
 
 ```{r}
-
-# clean_data5 = data_raw %>% filter(grepl("GHGI",variable)) %>% 
-#   select(-c(datasrc,Model,Scenario,Region,Variable,Unit,...34,...35)) %>%
-#   gather("year","value","2020":"2018") %>%
-#   filter(year >= 1990 & year <= 2021) %>%
-#   mutate(year = as.factor(year), datasrc = "x")
-
+fig_no = 3.2
 
 fig = print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3, "United States", 
                   level_var = c("Other", "Pipelines", 
@@ -81,35 +67,17 @@ fig = print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3, "U
   bottom1
 
 fig
+
 dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3, "United States")
-#dta
 
-# iea_2022 = clean_data %>% filter(model == "IEA", year == 2021) %>% mutate(year = 2022)
-# clean_data3 = rbind(clean_data, iea_2022)
-# clean_data3 = clean_data3 %>% filter(model != "EIA-LTS") %>% 
-#   duplicate_historical_data("IEA",2022) %>% 
-#   mutate(value = 100 * value)
-# 
-# fig = print_graph("time_series", config, clean_data3, figmap_leep_timeseries, 118, "United States")
-# dta = data_from_graph("time_series", config, clean_data3, figmap_leep_timeseries, 118, "United States")
-# fig
-# 
-# p = dot_plots("time_series", config, clean_data3, figmap_leep_timeseries, 118, "United States", 0, 2, "EV Share", metric = "mean")
-# print(p$full)
-# print(p$stats)
-
-
-ggsave(filename = "output/final_figures/svg/Fig3.2_trans_co2.svg",fig, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig3.2_trans_co2.png",fig, width = 7, height = 5, units = "in")
-
-# supporting data
-dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3, "United States")
-dta %>% write.csv("output/final_figures/data/Fig3.2_trans_co2.csv", row.names = FALSE)
+saveall(fig, dta, fig_no)
 ```
 
 ## 3.3 total co2 emissions in the transportation sector
 
 ```{r}
+fig_no = 3.3
+
 TranSpg = spg(
   19,
   "EPA-GHGI",
@@ -125,18 +93,19 @@ TranSpg = spg(
   annotate("text", x = 2030, y = 2100, label = "No IRA", color = "#F28063") + 
   annotate("text", x = 2025, y = 1250, label = "IRA", color = "#0388B3")
 
-TranDot = dotted(TranSpg$data, TranSpg, "median", 0, 2500)
+fig = dotted(TranSpg$data, TranSpg, "median", 0, 2500)
+fig
 
-TranTab = html(TranSpg$data, "Transportation CO<sub>2<sub>")
+savefig(fig, fig_no)
 
-print(TranDot)
-TranTab
+html(TranSpg$data, "Transportation CO<sub>2<sub>")
 ```
 
 ## 3.4 electric vehicle percent share of new sales
 
 ```{r}
-# EV share plot
+fig_no = 3.4
+
 scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)
 
 raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
@@ -169,27 +138,20 @@ clean_data4 = rbind(raw, iea_2022) %>% filter(unit != "thousands") %>% mutate(va
 
 fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
 dta = data_from_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
-#fig
 
-      # annotate("text", x = 2015, y = 8, label = "Historic", color = "black", alpha = 1) +
-      # annotate("text", x = 2030, y = 16, label = "No IRA", color = "#0388B3", alpha = 1) +
-      # annotate("text", x = 2027, y = 45, label = "IRA", color = "#F28063", alpha = 1) +
 p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States", 0, 100, "EV Share", metric = "median", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 16), ira_coord = c(2027, 45))
-print(p$full)
+p$full
+
 print(p$stats)
 
-
-ggsave(filename = "output/final_figures/svg/Fig3.4_ev_share.svg",p$full, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig3.4_ev_share.png",p$full, width = 7, height = 5, units = "in")
-
-# supporting data
-dta = data_from_graph("time_series", config, clean_data4, figmap_leep_cone, 118, "United States")
-dta %>% write.csv("output/final_figures/data/Fig3.4_ev_share.csv", row.names = FALSE)
+saveall(p$full, dta, fig_no)
 ```
 
 ## 3.5 electricity demand from light-duty vehicles in the transportation sector
 
 ```{r}
+fig_no = 3.5
+
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 24, "United States")
 
 ymin = 0
@@ -256,7 +218,7 @@ data <- data %>%
   )) %>%
   filter(scenario == "No IRA" | scenario == "IRA")
 
-
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
 A = ggplot(data = data, aes(x = axe, y = value,  color = scenario)) +
   geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
@@ -276,15 +238,12 @@ A = ggplot(data = data, aes(x = axe, y = value,  color = scenario)) +
 
 print(A)
 
-ggsave(filename = "output/final_figures/Fig3.5.svg", plot = A,width = 7, height = 5, units = "in")
-
-ggsave(filename = "output/final_figures/Fig3.5.png", plot = A,width = 7, height = 5, units = "in")
+savefig(A, fig_no)
 ```
 
 ### Table 3.5
 
 ```{r}
-
 title = "Light Duty Vehicles"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 24, "United States")
@@ -392,9 +351,6 @@ IRA <- IRA %>%
 
 IRA = rbind(base, IRA)
 
-write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
-
 IRA %>%
 tableHTML(caption = paste(title), rownames = F)
-
 ```

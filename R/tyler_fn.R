@@ -10,6 +10,8 @@ drop_warn = function(drop) {
 
 spg = function(ts_map_ID, histsrc, title, yname, gd, drop, ymin, ymax, ybreaks, yax) {
 
+  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+
   df = data_from_graph(
     "time_series",
     config,
@@ -58,6 +60,9 @@ spg = function(ts_map_ID, histsrc, title, yname, gd, drop, ymin, ymax, ybreaks, 
 
 
 dotted = function(df, spg, metric, ymin, ymax) {
+
+  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+
   df_30 = df %>%
     filter(year %in% c(2030))
   df_stat_30 = df_30 %>%

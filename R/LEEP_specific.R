@@ -1,11 +1,34 @@
 
 ## Function to ggsave figures with defaults and file format specified once for all figures
-savefig = function(figure, fig_no, format = "svg", wd = 7, ht = 5, unit = "in") {
-  ggsave(filename = paste("output/final_figures/",format,"/Fig",fig_no,".",format, sep = ""),
+savefig = function(figure, fig_no, format = c("svg","png"), wd = 7, ht = 5, unit = "in") {
+
+  for(item in format) {
+  ggsave(filename = paste("output/final_figures/",item,"/Fig",fig_no,".",item, sep = ""),
          plot = figure,
          width = wd,
          height = ht,
          units = unit)
+  }
+}
+
+savedata = function(df, fig_no) {
+
+  write.csv(df, file = paste("output/final_figures/data/Fig",fig_no,".csv",sep=""), row.names = FALSE)
+
+}
+
+saveall = function(figure, df, fig_no, format = c("svg","png"), wd = 7, ht = 5, unit = "in") {
+
+  for(item in format) {
+    ggsave(filename = paste("output/final_figures/",item,"/Fig",fig_no,".",item, sep = ""),
+           plot = figure,
+           width = wd,
+           height = ht,
+           units = unit)
+  }
+
+  savedata(df, fig_no)
+
 }
 
 

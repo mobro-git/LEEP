@@ -1,55 +1,55 @@
 ﻿index,variable,lower_level,unit,flip_sign
-1,Final Energy|Fossil,Final Energy|Coal,EJ/yr,1
-1,Final Energy|Fossil,Final Energy|Gas,EJ/yr,1
-1,Final Energy|Fossil,Final Energy|Oil,EJ/yr,1
+1,Final Energy|Fossil,Final Energy|Coal,Quads,1
+1,Final Energy|Fossil,Final Energy|Gas,Quads,1
+1,Final Energy|Fossil,Final Energy|Oil,Quads,1
 2,Emissions|CO2|Energy|Demand|Buildings|Total,Emissions|CO2|Energy|Demand|Buildings,Mt CO2/yr,1
 2,Emissions|CO2|Energy|Demand|Buildings|Total,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,1
 3,Emissions|CO2|Energy|Demand|Industry|Total,Emissions|CO2|Energy|Demand|Industry,Mt CO2/yr,1
 3,Emissions|CO2|Energy|Demand|Industry|Total,Emissions|CO2|Energy|Demand|Industry|Indirect,Mt CO2/yr,1
 4,Emissions|CO2|Energy|Demand|Transportation|Total,Emissions|CO2|Energy|Demand|Transportation,Mt CO2/yr,1
 4,Emissions|CO2|Energy|Demand|Transportation|Total,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,1
-5,Final Energy|Buildings|Non-Electric,Final Energy|Buildings|Gas,EJ/yr,1
-5,Final Energy|Buildings|Non-Electric,Final Energy|Buildings|Oil,EJ/yr,1
-5,Final Energy|Buildings|Non-Electric,Final Energy|Buildings|Coal,EJ/yr,1
-5,Final Energy|Buildings|Non-Electric,Final Energy|Buildings|Biomass,EJ/yr,1
-5,Final Energy|Buildings|Non-Electric,Final Energy|Buildings|Biogas,EJ/yr,1
-5,Final Energy|Buildings|Non-Electric,Final Energy|Buildings|Biomass liquids,EJ/yr,1
+5,Final Energy|Buildings|Non-Electric,Final Energy|Buildings|Gas,Quads,1
+5,Final Energy|Buildings|Non-Electric,Final Energy|Buildings|Oil,Quads,1
+5,Final Energy|Buildings|Non-Electric,Final Energy|Buildings|Coal,Quads,1
+5,Final Energy|Buildings|Non-Electric,Final Energy|Buildings|Biomass,Quads,1
+5,Final Energy|Buildings|Non-Electric,Final Energy|Buildings|Biogas,Quads,1
+5,Final Energy|Buildings|Non-Electric,Final Energy|Buildings|Biomass liquids,Quads,1
 6,Emissions|CO2|CDR,Carbon Sequestration|LULUCF,Mt CO2/yr,1
 6,Emissions|CO2|CDR,Carbon Sequestration|CCS|Biomass|Energy – BECCS,Mt CO2/yr,1
-7,Final Energy|Transportation|Fossil,Final Energy|Transportation|Oil,EJ/yr,1
-7,Final Energy|Transportation|Fossil,Final Energy|Transportation|Gas,EJ/yr,1
-9,Final Energy|Industry|Fossil,Final Energy|Industry|Coal,EJ/yr,1
-9,Final Energy|Industry|Fossil,Final Energy|Industry|Gas,EJ/yr,1
-9,Final Energy|Industry|Fossil,Final Energy|Industry|Oil,EJ/yr,1
-9,Final Energy|Industry|Fossil,Transformation Energy|Coal,EJ/yr,1
-9,Final Energy|Industry|Fossil,Transformation Energy|Oil,EJ/yr,1
-9,Final Energy|Industry|Fossil,Transformation Energy|Gas,EJ/yr,1
-9,Final Energy|Industry|Fossil,Final Energy|Industry|Gas Feedstocks,EJ/yr,1
-9,Final Energy|Industry|Fossil,Final Energy|Industry|Oil Feedstocks,EJ/yr,1
-10,Final Energy|Industry|Fossil,Final Energy|Industry|Coal|w/ CCS,EJ/yr,1
-10,Final Energy|Industry|Fossil,Final Energy|Industry|Coal|w/o CCS,EJ/yr,1
-10,Final Energy|Industry|Fossil,Final Energy|Industry|Gas|w/ CCS,EJ/yr,1
-10,Final Energy|Industry|Fossil,Final Energy|Industry|Gas|w/o CCS,EJ/yr,1
-10,Final Energy|Industry|Fossil,Final Energy|Industry|Oil|w/ CCS,EJ/yr,1
-10,Final Energy|Industry|Fossil,Final Energy|Industry|Oil|w/o CCS,EJ/yr,1
-10,Final Energy|Industry|Fossil,Transformation Energy|Coal,EJ/yr,1
-10,Final Energy|Industry|Fossil,Transformation Energy|Oil,EJ/yr,1
-10,Final Energy|Industry|Fossil,Transformation Energy|Gas,EJ/yr,1
-10,Final Energy|Industry|Fossil,Final Energy|Industry|Gas Feedstocks,EJ/yr,1
-10,Final Energy|Industry|Fossil,Final Energy|Industry|Oil Feedstocks,EJ/yr,1
-11,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biomass Liquids,EJ/yr,1
-11,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biogas,EJ/yr,1
-11,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biomass Liquids feedstocks,EJ/yr,1
-11,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Hydrogen,EJ/yr,1
-11,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biomass,EJ/yr,1
-11,Final Energy|Industry|Alternative Fuels,Transformation Energy|Biomass,EJ/yr,1
-12,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biomass Liquids,EJ/yr,1
-12,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biogas,EJ/yr,1
-12,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biomass Liquids feedstocks,EJ/yr,1
-12,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Hydrogen,EJ/yr,1
-12,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biomass|w/ CCS,EJ/yr,1
-12,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biomass|w/o CCS,EJ/yr,1
-12,Final Energy|Industry|Alternative Fuels,Transformation Energy|Biomass,EJ/yr,1
+7,Final Energy|Transportation|Fossil,Final Energy|Transportation|Oil,Quads,1
+7,Final Energy|Transportation|Fossil,Final Energy|Transportation|Gas,Quads,1
+9,Final Energy|Industry|Fossil,Final Energy|Industry|Coal,Quads,1
+9,Final Energy|Industry|Fossil,Final Energy|Industry|Gas,Quads,1
+9,Final Energy|Industry|Fossil,Final Energy|Industry|Oil,Quads,1
+9,Final Energy|Industry|Fossil,Transformation Energy|Coal,Quads,1
+9,Final Energy|Industry|Fossil,Transformation Energy|Oil,Quads,1
+9,Final Energy|Industry|Fossil,Transformation Energy|Gas,Quads,1
+9,Final Energy|Industry|Fossil,Final Energy|Industry|Gas Feedstocks,Quads,1
+9,Final Energy|Industry|Fossil,Final Energy|Industry|Oil Feedstocks,Quads,1
+10,Final Energy|Industry|Fossil,Final Energy|Industry|Coal|w/ CCS,Quads,1
+10,Final Energy|Industry|Fossil,Final Energy|Industry|Coal|w/o CCS,Quads,1
+10,Final Energy|Industry|Fossil,Final Energy|Industry|Gas|w/ CCS,Quads,1
+10,Final Energy|Industry|Fossil,Final Energy|Industry|Gas|w/o CCS,Quads,1
+10,Final Energy|Industry|Fossil,Final Energy|Industry|Oil|w/ CCS,Quads,1
+10,Final Energy|Industry|Fossil,Final Energy|Industry|Oil|w/o CCS,Quads,1
+10,Final Energy|Industry|Fossil,Transformation Energy|Coal,Quads,1
+10,Final Energy|Industry|Fossil,Transformation Energy|Oil,Quads,1
+10,Final Energy|Industry|Fossil,Transformation Energy|Gas,Quads,1
+10,Final Energy|Industry|Fossil,Final Energy|Industry|Gas Feedstocks,Quads,1
+10,Final Energy|Industry|Fossil,Final Energy|Industry|Oil Feedstocks,Quads,1
+11,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biomass Liquids,Quads,1
+11,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biogas,Quads,1
+11,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biomass Liquids feedstocks,Quads,1
+11,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Hydrogen,Quads,1
+11,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biomass,Quads,1
+11,Final Energy|Industry|Alternative Fuels,Transformation Energy|Biomass,Quads,1
+12,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biomass Liquids,Quads,1
+12,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biogas,Quads,1
+12,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biomass Liquids feedstocks,Quads,1
+12,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Hydrogen,Quads,1
+12,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biomass|w/ CCS,Quads,1
+12,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biomass|w/o CCS,Quads,1
+12,Final Energy|Industry|Alternative Fuels,Transformation Energy|Biomass,Quads,1
 124,Emissions|CO2|Energy|Demand|Buildings|Direct,Emissions|CO2|Energy|Demand|Buildings|Residential,Mt CO2/yr,1
 124,Emissions|CO2|Energy|Demand|Buildings|Direct,Emissions|CO2|Energy|Demand|Buildings|Commercial,Mt CO2/yr,1
 124,Emissions|CO2|Energy|Demand|Buildings|Direct,Emissions|CO2|Energy|Demand|Buildings|Residential|Indirect,Mt CO2/yr,-1
@@ -66,17 +66,17 @@
 13,Energy Service|Transportation|EV|Sales Share,Energy Service|Transportation|Passenger|PHEV|Sales Share,%,1
 14,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total,Emissions|CO2|Energy|Demand|Industry and Fuel Production,Mt CO2/yr,1
 14,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,1
-15,Final Energy|Buildings|Alternative Fuels,Final Energy|Buildings|Biogas,EJ/yr,1
-15,Final Energy|Buildings|Alternative Fuels,Final Energy|Buildings|Biomass Liquids,EJ/yr,1
-15,Final Energy|Buildings|Alternative Fuels,Final Energy|Buildings|Biomass Solids,EJ/yr,1
-15,Final Energy|Buildings|Alternative Fuels,Final Energy|Buildings|Hydrogen,EJ/yr,1
-15,Final Energy|Buildings|Alternative Fuels,Final Energy|Buildings|Synthetic Gas,EJ/yr,1
-15,Final Energy|Buildings|Alternative Fuels,Final Energy|Buildings|Synthetic Liquids,EJ/yr,1
-16,Final Energy|Buildings|Fossil,Final Energy|Buildings|Coal,EJ/yr,1
-16,Final Energy|Buildings|Fossil,Final Energy|Buildings|Gas,EJ/yr,1
-16,Final Energy|Buildings|Fossil,Final Energy|Buildings|Oil,EJ/yr,1
-19,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Biogas,EJ/yr,1
-19,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Biomass Liquids,EJ/yr,1
-19,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Hydrogen,EJ/yr,1
-19,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Synthetic Gas,EJ/yr,1
-19,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Synthetic Liquids,EJ/yr,1
+15,Final Energy|Buildings|Alternative Fuels,Final Energy|Buildings|Biogas,Quads,1
+15,Final Energy|Buildings|Alternative Fuels,Final Energy|Buildings|Biomass Liquids,Quads,1
+15,Final Energy|Buildings|Alternative Fuels,Final Energy|Buildings|Biomass Solids,Quads,1
+15,Final Energy|Buildings|Alternative Fuels,Final Energy|Buildings|Hydrogen,Quads,1
+15,Final Energy|Buildings|Alternative Fuels,Final Energy|Buildings|Synthetic Gas,Quads,1
+15,Final Energy|Buildings|Alternative Fuels,Final Energy|Buildings|Synthetic Liquids,Quads,1
+16,Final Energy|Buildings|Fossil,Final Energy|Buildings|Coal,Quads,1
+16,Final Energy|Buildings|Fossil,Final Energy|Buildings|Gas,Quads,1
+16,Final Energy|Buildings|Fossil,Final Energy|Buildings|Oil,Quads,1
+19,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Biogas,Quads,1
+19,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Biomass Liquids,Quads,1
+19,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Hydrogen,Quads,1
+19,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Synthetic Gas,Quads,1
+19,Final Energy|Transportation|Alternative Fuels,Final Energy|Transportation|Synthetic Liquids,Quads,1

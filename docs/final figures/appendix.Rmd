@@ -7,7 +7,6 @@ output:
 date: "`r Sys.time()`"
 params:
   mode: NULL
-  format: "svg"
 ---
 
 ```{r setup, include=FALSE}

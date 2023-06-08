@@ -7,7 +7,6 @@ output:
 date: "`r Sys.time()`"
 params:
   mode: NULL
-  format: "svg"
 ---
 
 ```{r setup, include=FALSE}
@@ -30,25 +29,20 @@ targets::tar_load(figmap_leep_stackbar)
 targets::tar_load(data_min)
 targets::tar_load(data_raw)
 
-# create workbook for saving figure data
-# data_wb <- createWorkbook()
-
-# format toggle
-format <- params$format
-
 # palettes
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 ```
 
-## 6.1 comparing us climate targets with scenario modeling through 2050
+## 6.1/ES3 comparing us climate targets with scenario modeling through 2050
 
-## Fig ES4/3/6.1 THIS IS THE VERSION WE WANT TO USE THE OTHER ONE ISNT GOOD!
+```{r}
+fig_no = 6.1
 
-```{r} 
 ghgi <- clean_data %>%
   filter(model == "EPA-GHGI" & 
            variable == "Emissions|GHG|Net" &
-           year >= 2005)
+           year >= 2005) %>%
+  mutate(value = value/1000)
 
 connect <- ghgi[ghgi$year == 2021,] %>%
   select(year, value)%>%
@@ -67,6 +61,7 @@ lts <- clean_data %>%
              "Carbon Sequestration|CCS|Biomass|Energy",
              "Carbon Sequestration|LULUCF",
              "Carbon Sequestration|Direct Air Capture|Net")) %>%
+  mutate(value = value/1000) %>%
   mutate(value = case_when(
     grepl("Sequestration", variable) ~ value * -1, 
     T ~ value
@@ -81,29 +76,33 @@ lts <- clean_data %>%
   filter(year >= 2021) %>%
   filter(year <= 2035)
 
+target_30 = lts %>% filter(year == 2030)
+target_35 = lts %>% filter(year == 2035)
+
 lts <- rbind(lts, connect)
 
 IRA <- clean_data %>%
-  filter(scenario == "IRA" | scenario == "No IRA") %>%
-  filter(year > 2021  & year <= 2035) %>%
-  filter(variable == "Emissions|CO2" | variable == "Emissions|Non-CO2 GHG" |
-           variable == "Carbon Sequestration|CCS|Biomass|Energy" | 
-           variable == "Carbon Sequestration|LULUCF" | 
-           variable == "Carbon Sequestration|Direct Air Capture|Net") %>%
+  filter(scenario %in% c("IRA","No IRA") &
+           year > 2021 & 
+           year <= 2035 &
+           variable %in% c("Emissions|CO2",
+                           "Emissions|Non-CO2 GHG",
+                           "Carbon Sequestration|CCS|Biomass|Energy",
+                           "Carbon Sequestration|LULUCF",
+                           "Carbon Sequestration|Direct Air Capture|Net")) %>%
   group_by(year, model, scenario) %>%
   summarise(
-    value = sum(value)
+    value = sum(value)/1000
   ) %>%
-  filter(!model == "USREP-ReEDS") %>%
-  filter(!model== "OP-NEMS") %>%
-  filter(model != "MARKAL-NETL") %>%
-  filter(!model == "AEO.2023")
+  filter(!model %in% c("MARKAL-NETL","AEO.2023", "REGEN-EPRI", "OP-NEMS"))
+# MARKAL non-co2 too low, regen doesnt report non-energy co2, op-nems doesnt report non-energy co2
   
 histcon <- IRA %>%
   group_by(model, scenario) %>%
   slice(1) %>%
-  mutate(year = 2021) %>%
-  mutate(value = ghgi$value[ghgi$year == 2021])
+  mutate(
+    year = 2021,
+    value = ghgi$value[ghgi$year == 2021])
 
 IRA <- rbind(IRA, histcon)
 
@@ -116,13 +115,12 @@ IRA <- IRA %>%
     T ~ 0.8
   )) 
 
-
 fin = ggplot() + 
-  geom_line(ghgi, mapping = aes(x = year, y = value/1000, color = "Historic"), size = 0.8) +
-  geom_line(lts, mapping = aes(x=year, y = ymin/1000, color = "LTS"), linetype = "dashed", size = 0.8, color = "#767684")+
-  geom_line(lts, mapping = aes(x=year, y = ymax/1000, color = "LTS"), linetype = "dashed", size = 0.8, color = "#767684")+
-  geom_ribbon(lts, mapping = aes(x=year, ymax = ymax/1000, ymin = ymin/1000, fill = "LTS"), alpha = 0.2) + 
-  geom_line(IRA, mapping = aes(x=year, y = value/1000, group = interaction(model, scenario), color = scenario, alpha = alpha)) + 
+  geom_line(ghgi, mapping = aes(x = year, y = value, color = "Historic"), size = 0.8) +
+  geom_line(lts, mapping = aes(x=year, y = ymin, color = "LTS"), linetype = "dashed", size = 0.8, color = "#767684")+
+  geom_line(lts, mapping = aes(x=year, y = ymax, color = "LTS"), linetype = "dashed", size = 0.8, color = "#767684")+
+  geom_ribbon(lts, mapping = aes(x=year, ymax = ymax, ymin = ymin, fill = "LTS"), alpha = 0.2) + 
+  geom_line(IRA, mapping = aes(x=year, y = value, group = interaction(model, scenario), color = scenario, alpha = alpha)) + 
   scale_color_manual(name = "", 
                      breaks = c("IRA", "No IRA", "Historic", "LTS"), 
                      values = c("#0388B3","#F28063", "black", "#767684"), 
@@ -148,70 +146,147 @@ fin = ggplot() +
   scale_x_continuous(breaks = c(2005, 2021, 2025, 2030, 2035)) + 
   guides(fill = guide_legend(nrow=4, byrow = T))
 
+base <- clean_data %>%
+  filter(variable == "Emissions|GHG|Net" & year == 2005 & model == "EPA-GHGI")
+
+baseline = base$value[1]/1000
 
 df_30 = IRA %>%
-    filter(year %in% c(2030))%>%
-    mutate(value = value/1000)
-  df_stat_30 = df_30 %>%
-    group_by(scenario,year) %>%
-    summarise(mean = mean(value),
-           median = median(value))
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  group_by(scenario, year) %>%
+  summarise(mean = mean(value),
+            median = median(value)) %>%
+  rbind(data.frame(scenario="Historic",year=2030,mean=baseline,median=baseline))
+
+df_35 = IRA %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  group_by(scenario, year) %>%
+  summarise(mean = mean(value),
+            median = median(value)) %>%
+  rbind(data.frame(scenario="Historic",year=2035,mean=baseline,median=baseline))
   
-  df_35 = IRA %>%
-    filter(year %in% c(2035)) %>%
-    mutate(value = value/1000)
-  df_stat_35 = df_35 %>%
-    group_by(scenario,year) %>%
-    summarise(mean = mean(value),
-           median = median(value))
+dots_30 = ggplot() +
+  geom_point(
+    data = df_30,
+    aes(x = year,y = value,alpha = alpha,color = scenario),
+    shape = 1,size = 1.5,position = position_dodge(width = 0.1)) +
+  geom_segment(
+    data = df_stat_30,
+    aes(x = year - 0.025,
+        xend = year + 0.025,
+        y = median,
+        yend = median,
+        color = scenario)) +
+  geom_rect(
+    data = target_30,
+    aes(ymin = ymin, 
+        ymax = ymax,
+        xmin = year - 0.025,
+        xmax = year + 0.025),
+    alpha = 0.2
+  ) +
+  scale_x_continuous(
+    breaks = c(2030),
+    labels = c("2030"),
+    limits = c(2029.9, 2030.1)) +
+  scale_y_continuous(limits = c(-0.5, 8)) +
+  theme_emf() +
+  scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+  scale_alpha(range = c(0.4, 1), guide = F) +
+  theme(
+    panel.grid = element_blank(),
+    plot.title = element_blank(),
+    axis.text.y = element_blank(),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    axis.title.y = element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks = element_blank(),
+    panel.border = element_blank(),
+    legend.position = "none",
+    plot.margin = margin(0, 0, 0, 0))
   
-  dots_30 = ggplot() +
-    geom_point(data = df_30, aes(x = year, y = value, alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = 0.1)) +
-    geom_segment(data = df_stat_30, aes(x = year - 0.025, xend = year + 0.025, y = median, yend = median, color = scenario))+
-    scale_x_continuous(breaks = c(2030), labels = c("2030"), limits = c(2029.9, 2030.1)) +
-    scale_y_continuous(limits = c(-0.5,8)) +
-    theme_emf() +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-  scale_alpha(range = c(0.4, 1), guide = F) + 
-    theme(panel.grid = element_blank(), plot.title = element_blank(),
-          axis.text.y = element_blank(),
-          axis.text.x = element_text(angle = 45, hjust=1),
-          axis.title.y = element_blank(), axis.title.x = element_blank(),
-          axis.ticks = element_blank(), panel.border = element_blank(),
-          legend.position = "none", plot.margin = margin(0,0,0,0))
-  
-  # dot plot for 2035
-  dots_35 = ggplot() +
-    geom_point(data = df_35, aes(x = year, y = value, color = scenario, alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.1)) +
-    geom_segment(data = df_stat_35, aes(x = year - 0.025, xend = year + 0.025, y = median, yend = median, color = scenario))+
-    scale_x_continuous(breaks = c(2035), labels = c("2035"), limits = c(2034.9, 2035.1)) +
-    scale_y_continuous(limits = c(-0.5,8)) +
-    theme_emf() +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-  scale_alpha(range = c(0.4, 1), guide = F) + 
-    theme(panel.grid = element_blank(), plot.title = element_blank(),
-          axis.text.y = element_blank(),
-          axis.text.x = element_text(angle = 45, hjust=1),
-          axis.title.y = element_blank(), axis.title.x = element_blank(),
-          axis.ticks = element_blank(), panel.border = element_blank(),
-          legend.position = "none", plot.margin = margin(0,0,0,0))
+# dot plot for 2035
+dots_35 = ggplot() +
+  geom_point(
+    data = df_35,
+    aes(
+      x = year,
+      y = value,
+      color = scenario,
+      alpha = alpha
+    ),
+    shape = 1,
+    size = 1.5,
+    position = position_dodge(width = 0.1)
+  ) +
+  geom_segment(data = df_stat_35,
+               aes(
+                 x = year - 0.025,
+                 xend = year + 0.025,
+                 y = median,
+                 yend = median,
+                 color = scenario
+               )) +
+  geom_rect(
+    data = target_35,
+    aes(ymin = ymin, 
+        ymax = ymax,
+        xmin = year - 0.025,
+        xmax = year + 0.025),
+    alpha = 0.2
+  ) +
+  scale_x_continuous(
+    breaks = c(2035),
+    labels = c("2035"),
+    limits = c(2034.9, 2035.1)
+  ) +
+  scale_y_continuous(limits = c(-0.5, 8)) +
+  theme_emf() +
+  scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+  scale_alpha(range = c(0.4, 1), guide = F) +
+  theme(
+    panel.grid = element_blank(),
+    plot.title = element_blank(),
+    axis.text.y = element_blank(),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    axis.title.y = element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks = element_blank(),
+    panel.border = element_blank(),
+    legend.position = "none",
+    plot.margin = margin(0, 0, 0, 0)
+  )
 
 
 final = fin + dots_30 + dots_35 +
     plot_layout(widths = c(10,1,1)) +
     theme(plot.margin = margin(0,0,0,0))
+final
 
-print(final)
+savefig(final, fig_no)
+```
 
-ggsave(filename = "output/final_figures/Fig6.1andES4.svg", plot = final,width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/Fig6.1andES4.png", plot = final,width = 7, height = 5, units = "in")
+### Morgan's Stats
+
+```{r}
+table_raw = IRA %>%
+  ungroup() %>%
+  filter(year %in% c(2025, 2030, 2035)) %>%
+  mutate(
+    value = round(value,2),
+    diff_2005 = baseline - value,
+    per_diff = diff_2005/baseline * 100) %>%
+  group_by() 
+  
+
 
 ```
 
-### Table ES4/6.1
+### Table 6.1
 
 ```{r}
-
 title = "GHG Emissions Exec"
 
 base <- clean_data %>%
@@ -228,11 +303,9 @@ base <- as.data.frame(base) %>%
     `Reductions from No IRA (Mt CO2)` = NA)  %>%
   select(Year, Scenario, `Absolute Level (Mt CO2)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (Mt CO2)`)
 
-NoIRA <- clean_data %>%
-  filter(!model %in% c("USREP-ReEDS","OP-NEMS","MARKAL-NETL","AEO.2023") &
-           variable == "Emissions|GHG|Net" &
-           year %in% c(2025,2030,2035) &
-           scenario == "No IRA") %>%
+NoIRA <- IRA %>%
+  filter(scenario == "No IRA" &
+           year %in% c(2025,2030,2035)) %>%
   group_by(year) %>%
   summarize(`No IRA Median` = median(value), 
             `No IRA Min` = min(value),
@@ -247,14 +320,9 @@ NoIRA <- clean_data %>%
   ) %>%
   select(!year & !`2005_perc_red`)
 
-IRA <- clean_data %>%
-  filter(!model == "USREP-ReEDS") %>%
-  filter(!model== "OP-NEMS") %>%
-  filter(model != "MARKAL-NETL") %>%
-  filter(!model == "AEO.2023") %>%
-  filter(variable == "Emissions|GHG|Net") %>%
-  filter(year %in% c(2025,2030,2035)) %>%
-  filter(scenario == "IRA") %>%
+IRA <- IRA %>%
+  filter(scenario == "IRA" &
+           year %in% c(2025,2030,2035)) %>%
   select(!scenario) %>%
   group_by(year) %>%
   summarize(
@@ -320,8 +388,6 @@ IRA <- IRA %>%
   arrange(Year)
 
 IRA = rbind(base, IRA)
-
-write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
 
 IRA %>%
 tableHTML(caption = paste(title), rownames = F)
