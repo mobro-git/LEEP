@@ -120,9 +120,9 @@ stackbar,14,Hist Generation Mix,Secondary Energy|Electricity|Gas,0,Natural Gas,u
 stackbar,14,Hist Generation Mix,Secondary Energy|Electricity|Geothermal,0,Renewables,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,14,Hist Generation Mix,Secondary Energy|Electricity|Hydro,0,Renewables,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,14,Hist Generation Mix,Secondary Energy|Electricity|Nuclear,0,Nuclear,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
-stackbar,14,Hist Generation Mix,Secondary Energy|Electricity|Oil,0,Other,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
-stackbar,14,Hist Generation Mix,Secondary Energy|Electricity|Oil|w/ CCS,0,Other,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
-stackbar,14,Hist Generation Mix,Secondary Energy|Electricity|Oil|w/o CCS,0,Other,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,14,Hist Generation Mix,Secondary Energy|Electricity|Oil,0,Oil,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,14,Hist Generation Mix,Secondary Energy|Electricity|Oil|w/ CCS,0,Oil,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,14,Hist Generation Mix,Secondary Energy|Electricity|Oil|w/o CCS,0,Oil,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,14,Hist Generation Mix,Secondary Energy|Electricity|Solar,0,Renewables,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,14,Hist Generation Mix,Secondary Energy|Electricity|Wind,0,Renewables,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,14,Hist Generation Mix,Secondary Energy|Electricity|Other,0,Other,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed

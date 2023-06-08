@@ -93,7 +93,7 @@ clean_data10 = clean_data %>%
   filter(datasrc == 'EIA-IEA-bistline_historic.csv')
 
 fig = print_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14, "United States", 
-                  level_var = c("Other", "Renewables", "Nuclear", "Natural Gas", "Coal")) +
+                  level_var = c("Other", "Renewables", "Nuclear", "Oil", "Natural Gas", "Coal")) +
   theme(axis.text.x = element_text(angle = 0, hjust = 0.5), plot.title = element_blank()) +
   bottom1
 
