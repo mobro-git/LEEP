@@ -83,19 +83,16 @@ lts <- rbind(lts, connect)
 
 IRA <- clean_data %>%
   filter(scenario %in% c("IRA","No IRA") &
-           year > 2021 & 
-           year <= 2035 &
+           year %in% c(2025, 2030, 2035) &
            variable %in% c("Emissions|CO2",
                            "Emissions|Non-CO2 GHG",
                            "Carbon Sequestration|CCS|Biomass|Energy",
                            "Carbon Sequestration|LULUCF",
                            "Carbon Sequestration|Direct Air Capture|Net")) %>%
+  # MARKAL non-co2 too low, regen doesnt report non-energy co2, op-nems doesnt report non-energy co2
+  filter(!model %in% c("AEO.2023","MARKAL-NETL")) %>% #"REGEN-EPRI", "OP-NEMS", 
   group_by(year, model, scenario) %>%
-  summarise(
-    value = sum(value)/1000
-  ) %>%
-  filter(!model %in% c("MARKAL-NETL","AEO.2023", "REGEN-EPRI", "OP-NEMS"))
-# MARKAL non-co2 too low, regen doesnt report non-energy co2, op-nems doesnt report non-energy co2
+  summarise(value = sum(value)/1000)
   
 histcon <- IRA %>%
   group_by(model, scenario) %>%
@@ -114,6 +111,8 @@ IRA <- IRA %>%
     scenario == "Historic" ~ 1,
     T ~ 0.8
   )) 
+
+yscale = scale_y_continuous(limits = c(0,8), expand = c(0,0))
 
 fin = ggplot() + 
   geom_line(ghgi, mapping = aes(x = year, y = value, color = "Historic"), size = 0.8) +
@@ -134,7 +133,7 @@ fin = ggplot() +
        y = expression(paste("Net GHG Emissions (MMt ", CO[2], "e)", sep = "")), 
        x = "") +
   scale_alpha(range = c(0.6, 1), guide = F) + 
-  ylim(-0.5, 8) + 
+  yscale + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
         axis.title.x = element_blank(),
         axis.ticks = element_blank(),
@@ -144,7 +143,10 @@ fin = ggplot() +
         legend.position = c(0.2, 0.3), 
         legend.background = element_blank()) + 
   scale_x_continuous(breaks = c(2005, 2021, 2025, 2030, 2035)) + 
-  guides(fill = guide_legend(nrow=4, byrow = T))
+  guides(fill = guide_legend(nrow=4, byrow = T)) +
+  geom_hline(aes(yintercept=0)) +
+  theme(plot.margin = margin(0, 0, 0, 0))
+fin
 
 base <- clean_data %>%
   filter(variable == "Emissions|GHG|Net" & year == 2005 & model == "EPA-GHGI")
@@ -157,7 +159,8 @@ df_stat_30 = df_30 %>%
   group_by(scenario, year) %>%
   summarise(mean = mean(value),
             median = median(value)) %>%
-  rbind(data.frame(scenario="Historic",year=2030,mean=baseline,median=baseline))
+  rbind(data.frame(scenario="Historic",year=2030,mean=baseline,median=baseline)) %>%
+  rbind(data.frame(scenario="zero",year=2030,mean=0,median=0))
 
 df_35 = IRA %>%
   filter(year %in% c(2035))
@@ -165,7 +168,8 @@ df_stat_35 = df_35 %>%
   group_by(scenario, year) %>%
   summarise(mean = mean(value),
             median = median(value)) %>%
-  rbind(data.frame(scenario="Historic",year=2035,mean=baseline,median=baseline))
+  rbind(data.frame(scenario="Historic",year=2035,mean=baseline,median=baseline)) %>%
+  rbind(data.frame(scenario="zero",year=2035,mean=0,median=0))
   
 dots_30 = ggplot() +
   geom_point(
@@ -191,7 +195,7 @@ dots_30 = ggplot() +
     breaks = c(2030),
     labels = c("2030"),
     limits = c(2029.9, 2030.1)) +
-  scale_y_continuous(limits = c(-0.5, 8)) +
+  yscale +
   theme_emf() +
   scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
   scale_alpha(range = c(0.4, 1), guide = F) +
@@ -242,7 +246,7 @@ dots_35 = ggplot() +
     labels = c("2035"),
     limits = c(2034.9, 2035.1)
   ) +
-  scale_y_continuous(limits = c(-0.5, 8)) +
+  yscale +
   theme_emf() +
   scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
   scale_alpha(range = c(0.4, 1), guide = F) +
@@ -257,8 +261,7 @@ dots_35 = ggplot() +
     panel.border = element_blank(),
     legend.position = "none",
     plot.margin = margin(0, 0, 0, 0)
-  )
-
+  ) 
 
 final = fin + dots_30 + dots_35 +
     plot_layout(widths = c(10,1,1)) +
@@ -271,17 +274,30 @@ savefig(final, fig_no)
 ### Morgan's Stats
 
 ```{r}
-table_raw = IRA %>%
+table1 = IRA %>%
   ungroup() %>%
+  select(-alpha) %>%
   filter(year %in% c(2025, 2030, 2035)) %>%
   mutate(
-    value = round(value,2),
     diff_2005 = baseline - value,
     per_diff = diff_2005/baseline * 100) %>%
-  group_by() 
-  
+  mutate_if(is.numeric, round, 2)
 
+write.csv(table1, "output/final_figures/data/6.1_allstats.csv", row.names = FALSE)
 
+table2 = table1 %>%
+  group_by(year,scenario) %>%
+  summarise(
+    min_ab = min(value),
+    max_ab = max(value),
+    median_ab = median(value),
+    min_diff = min(per_diff),
+    max_diff = max(per_diff),
+    median_diff = median(per_diff)
+            ) %>%
+  mutate_if(is.numeric, round, 2)
+
+write.csv(table2, "output/final_figures/data/6.1_smallstats.csv", row.names = FALSE)
 ```
 
 ### Table 6.1
