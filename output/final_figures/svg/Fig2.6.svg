@@ -74,12 +74,18 @@
 <circle cx='120.26' cy='266.76' r='2.49' style='stroke-width: 0.71; stroke: #883192;' />
 <circle cx='64.50' cy='199.18' r='2.49' style='stroke-width: 0.71; stroke: #42D4F4;' />
 <circle cx='108.07' cy='264.39' r='2.49' style='stroke-width: 0.71; stroke: #42D4F4;' />
-<line x1='60.14' y1='192.86' x2='68.85' y2='192.86' style='stroke-width: 1.07; stroke: #42D4F4; stroke-linecap: butt;' />
-<line x1='66.24' y1='196.20' x2='74.95' y2='196.20' style='stroke-width: 1.07; stroke-linecap: butt;' />
-<line x1='72.34' y1='209.93' x2='81.05' y2='209.93' style='stroke-width: 1.07; stroke: #883192; stroke-linecap: butt;' />
-<line x1='103.71' y1='250.00' x2='112.42' y2='250.00' style='stroke-width: 1.07; stroke: #42D4F4; stroke-linecap: butt;' />
-<line x1='109.81' y1='251.46' x2='118.52' y2='251.46' style='stroke-width: 1.07; stroke-linecap: butt;' />
-<line x1='115.91' y1='268.12' x2='124.62' y2='268.12' style='stroke-width: 1.07; stroke: #883192; stroke-linecap: butt;' />
+<circle cx='70.59' cy='213.27' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='114.16' cy='236.81' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='76.69' cy='214.43' r='2.49' style='stroke-width: 0.71; stroke: #883192;' />
+<circle cx='120.26' cy='236.68' r='2.49' style='stroke-width: 0.71; stroke: #883192;' />
+<circle cx='64.50' cy='198.41' r='2.49' style='stroke-width: 0.71; stroke: #42D4F4;' />
+<circle cx='108.07' cy='220.54' r='2.49' style='stroke-width: 0.71; stroke: #42D4F4;' />
+<line x1='60.14' y1='198.41' x2='68.85' y2='198.41' style='stroke-width: 1.07; stroke: #42D4F4; stroke-linecap: butt;' />
+<line x1='66.24' y1='201.80' x2='74.95' y2='201.80' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<line x1='72.34' y1='214.43' x2='81.05' y2='214.43' style='stroke-width: 1.07; stroke: #883192; stroke-linecap: butt;' />
+<line x1='103.71' y1='244.51' x2='112.42' y2='244.51' style='stroke-width: 1.07; stroke: #42D4F4; stroke-linecap: butt;' />
+<line x1='109.81' y1='244.56' x2='118.52' y2='244.56' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<line x1='115.91' y1='266.76' x2='124.62' y2='266.76' style='stroke-width: 1.07; stroke: #883192; stroke-linecap: butt;' />
 <text x='73.68' y='142.18' style='font-size: 7.11px; font-family: "Arial";' textLength='15.41px' lengthAdjust='spacingAndGlyphs'>Core</text>
 <text x='73.25' y='109.30' style='font-size: 7.11px;fill: #42D4F4; font-family: "Arial";' textLength='69.90px' lengthAdjust='spacingAndGlyphs'>Pessimistic Emissions</text>
 <text x='83.70' y='215.24' style='font-size: 7.11px;fill: #883192; font-family: "Arial";' textLength='65.55px' lengthAdjust='spacingAndGlyphs'>Optimistic Emissions</text>
@@ -127,11 +133,11 @@
 <circle cx='161.10' cy='184.46' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='204.67' cy='187.28' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='161.10' cy='255.15' r='2.49' style='stroke-width: 0.71;' />
-<text x='155.53' y='174.44' style='font-size: 5.69px; font-family: "Arial";' textLength='31.60px' lengthAdjust='spacingAndGlyphs'>High Growth</text>
-<text x='190.80' y='180.84' style='font-size: 5.69px; font-family: "Arial";' textLength='31.60px' lengthAdjust='spacingAndGlyphs'>High Growth</text>
-<text x='155.10' y='193.25' style='font-size: 5.69px; font-family: "Arial";' textLength='30.33px' lengthAdjust='spacingAndGlyphs'>Low Growth</text>
-<text x='192.06' y='196.27' style='font-size: 5.69px; font-family: "Arial";' textLength='30.33px' lengthAdjust='spacingAndGlyphs'>Low Growth</text>
-<text x='149.99' y='257.18' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
+<text x='166.50' y='169.83' style='font-size: 5.69px; font-family: "Arial";' textLength='31.60px' lengthAdjust='spacingAndGlyphs'>High Growth</text>
+<text x='190.72' y='180.85' style='font-size: 5.69px; font-family: "Arial";' textLength='31.60px' lengthAdjust='spacingAndGlyphs'>High Growth</text>
+<text x='153.93' y='191.96' style='font-size: 5.69px; font-family: "Arial";' textLength='30.33px' lengthAdjust='spacingAndGlyphs'>Low Growth</text>
+<text x='192.05' y='192.36' style='font-size: 5.69px; font-family: "Arial";' textLength='30.33px' lengthAdjust='spacingAndGlyphs'>Low Growth</text>
+<text x='166.02' y='249.87' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
 <rect x='139.75' y='19.07' width='86.27' height='321.49' style='stroke-width: 1.07; stroke: #B3B3B3;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
@@ -169,9 +175,11 @@
 <circle cx='251.60' cy='255.15' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='251.60' cy='266.33' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='251.60' cy='232.15' r='2.49' style='stroke-width: 0.71;' />
-<text x='240.50' y='253.58' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
-<text x='259.22' y='268.36' style='font-size: 5.69px; font-family: "Arial";' textLength='38.24px' lengthAdjust='spacingAndGlyphs'>High Gas Price</text>
-<text x='258.97' y='234.19' style='font-size: 5.69px; font-family: "Arial";' textLength='36.97px' lengthAdjust='spacingAndGlyphs'>Low Gas Price</text>
+<line x1='265.06' y1='259.02' x2='251.90' y2='262.59' style='stroke-width: 1.07;' />
+<line x1='264.55' y1='224.84' x2='251.90' y2='228.41' style='stroke-width: 1.07;' />
+<text x='256.52' y='249.60' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
+<text x='266.86' y='261.04' style='font-size: 5.69px; font-family: "Arial";' textLength='38.24px' lengthAdjust='spacingAndGlyphs'>High Gas Price</text>
+<text x='266.35' y='226.87' style='font-size: 5.69px; font-family: "Arial";' textLength='36.97px' lengthAdjust='spacingAndGlyphs'>Low Gas Price</text>
 <rect x='230.25' y='19.07' width='86.27' height='321.49' style='stroke-width: 1.07; stroke: #B3B3B3;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
@@ -210,11 +218,12 @@
 <circle cx='342.10' cy='284.81' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='342.10' cy='213.12' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='342.10' cy='255.15' r='2.49' style='stroke-width: 0.71;' />
-<line x1='351.55' y1='279.27' x2='342.40' y2='284.16' style='stroke-width: 1.07;' />
-<text x='353.35' y='281.27' style='font-size: 5.69px; font-family: "Arial";' textLength='48.66px' lengthAdjust='spacingAndGlyphs'>Adv Battery/Renew</text>
-<text x='347.16' y='292.55' style='font-size: 5.69px; font-family: "Arial";' textLength='32.88px' lengthAdjust='spacingAndGlyphs'>All Advanced</text>
-<text x='351.24' y='215.15' style='font-size: 5.69px; font-family: "Arial";' textLength='52.14px' lengthAdjust='spacingAndGlyphs'>Cons Battery/Renew</text>
-<text x='330.99' y='257.19' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
+<line x1='352.91' y1='273.19' x2='342.39' y2='280.46' style='stroke-width: 1.07;' />
+<line x1='356.47' y1='284.39' x2='342.40' y2='281.23' style='stroke-width: 1.07;' />
+<text x='354.71' y='275.18' style='font-size: 5.69px; font-family: "Arial";' textLength='48.66px' lengthAdjust='spacingAndGlyphs'>Adv Battery/Renew</text>
+<text x='358.27' y='286.43' style='font-size: 5.69px; font-family: "Arial";' textLength='32.88px' lengthAdjust='spacingAndGlyphs'>All Advanced</text>
+<text x='351.23' y='207.83' style='font-size: 5.69px; font-family: "Arial";' textLength='52.14px' lengthAdjust='spacingAndGlyphs'>Cons Battery/Renew</text>
+<text x='347.02' y='249.86' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
 <rect x='320.75' y='19.07' width='86.27' height='321.49' style='stroke-width: 1.07; stroke: #B3B3B3;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
@@ -251,8 +260,8 @@
 <polyline points='476.18,340.56 476.18,19.07 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <circle cx='432.61' cy='204.62' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='432.61' cy='255.15' r='2.49' style='stroke-width: 0.71;' />
-<text x='422.94' y='206.66' style='font-size: 5.69px; font-family: "Arial";' textLength='62.58px' lengthAdjust='spacingAndGlyphs'>Constrained Deployment</text>
-<text x='421.49' y='257.18' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
+<text x='431.29' y='199.34' style='font-size: 5.69px; font-family: "Arial";' textLength='62.58px' lengthAdjust='spacingAndGlyphs'>Constrained Deployment</text>
+<text x='437.53' y='249.87' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
 <rect x='411.26' y='19.07' width='86.27' height='321.49' style='stroke-width: 1.07; stroke: #B3B3B3;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>

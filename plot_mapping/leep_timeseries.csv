@@ -102,3 +102,17 @@ timeseries,76,Diff Low Emitting Gen,Secondary Energy|Electricity|Coal|w/ CCS|Per
 timeseries,71,Diff Low Emitting Gen,Secondary Energy|Electricity|Coal|w/o CCS|Percent differnce from No IRA,Coal,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,70,Diff Low Emitting Gen,Secondary Energy|Electricity|Gas|w/o CCS|Percent differnce from No IRA,Natural Gas,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,77,Diff Low Emitting Gen,Secondary Energy|Electricity|Oil|w/o CCS|Percent differnce from No IRA,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,127,Electric-EW,Final Energy|Percent Electricity,Percent Electricity,0,usa,models_leep,historic,main_scenarios,single,year,value,,,scenario,region,fixed
+timeseries,128,Electric-Trans,Final Energy|Transportation|Percent Electricity,Percent Electricity,0,usa,models_leep,historic,main_scenarios,single,year,value,,,scenario,region,fixed
+timeseries,129,Electric-Build,Final Energy|Buildings|Percent Electricity,Percent Electricity,0,usa,models_leep,historic,main_scenarios,single,year,value,,,scenario,region,fixed
+timeseries,130,Electric-Ind,Final Energy|Industry|Percent Electricity,Percent Electricity,0,usa,models_leep,historic,main_scenarios,single,year,value,,,scenario,region,fixed
+timeseries,131,Electric-Ind,Final Energy|Industry and Fuel Production|Percent Electricity,Percent Electricity,0,usa,models_leep,historic,main_scenarios,single,year,value,,,scenario,region,fixed
+timeseries,132,Industry-New,Final Energy|Industry and Fuel Production|Percent Electricity|Percent Difference from 2020,Industry,0,usa,models_leep,historic,main_scenarios,single,year,value,,,scenario,region,fixed
+timeseries,133,Industry-New2,Final Energy|Industry|Percent Electricity|Percent Difference from 2020,Industry,0,usa,models_leep,historic,main_scenarios,single,year,value,,,scenario,region,fixed
+timeseries,134,Transportation-New,Final Energy|Transportation|Percent Electricity|Percent Difference from 2020,Transportation,0,usa,models_leep,historic,main_scenarios,single,year,value,,,scenario,region,fixed
+timeseries,135,Buildings-New,Final Energy|Buildings|Percent Electricity|Percent Difference from 2020,Buildings,0,usa,models_leep,historic,main_scenarios,single,year,value,,,scenario,region,fixed
+timeseries,136,XXX,Final Energy|Transportation|Electricity|Percent difference from 2020,Transportation,0,usa,models_leep,historic,main_scenarios,single,year,value,,,scenario,region,fixed
+timeseries,137,YYY,Final Energy|Buildings|Electricity|Percent difference from 2020,Buildings,0,usa,models_leep,historic,main_scenarios,single,year,value,,,scenario,region,fixed
+timeseries,138,ZZZ,Final Energy|Industry|Electricity|Percent difference from 2020,Industry,0,usa,models_leep,historic,main_scenarios,single,year,value,,,scenario,region,fixed
+timeseries,139,ZZZZ,Final Energy|Electricity|Percent difference from 2020,Electricity,0,usa,models_leep,historic,main_scenarios,single,year,value,,,scenario,region,fixed
+timeseries,140,ZZZZZ,Final Energy|Electricity|Percent difference from No IRA,Electricity,0,usa,models_leep,historic,main_scenarios,single,year,value,,,model,region,fixed

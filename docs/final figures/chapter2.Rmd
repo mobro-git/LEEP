@@ -2523,10 +2523,10 @@ sens_dta = clean_data %>% filter(variable == "Emissions|CO2|Energy|Supply|Electr
 print(max(sens_dta$value))
 print(min(sens_dta$value))
 
-filler = data.frame(year = c(203), value = c(-200), scenario = c(""), model = c("NA"))
+filler = data.frame(year = c(2035), value = c(-200), scenario = c(""), model = c("NA"))
 
 sens_dta_panel1 = sens_dta %>% filter(scenario %in% panel1_scens) %>%
-  filter(model %in% c("EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI")) %>%
+  filter(model %in% c("EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI","USREP-ReEDS")) %>%
   mutate(stagger = case_when(
     scenario == "IRA.Low" ~ -0.7,
     scenario == "IRA.High" ~ 0.7,

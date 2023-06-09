@@ -234,7 +234,7 @@ sens_dot_plot = function(dta, title, far_left = FALSE, single = FALSE, ymin = 0,
 
   if (!far_left) {
     p = p +
-      geom_text_repel(aes(x = year, y = value, label = scenario), size = 2, hjust = -0.2) +
+      geom_text_repel(aes(x = year, y = value + 20, label = scenario), size = 2, hjust = -0.4, vjust = -0.4) +
       theme(axis.text.y = element_blank(), axis.title.y = element_blank(),)
     opt_label = "Optimistic Emissions"
     pes_label = "Pessimistic Emissions"
@@ -594,6 +594,9 @@ compile_all_data = function() {
   data_list = list()
   for (file in all_data) {
     fignum = strsplit(file, "_")[[1]][1]
+    if(grepl(".csv",fignum)) {
+      fignum = substr(fignum,1,nchar(fignum) - 4)
+    }
     #print(fignum)
     if (substr(fignum,1,3) == "Fig") {
       df = read.csv(paste0("./output/final_figures/data/",file))
