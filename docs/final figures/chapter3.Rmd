@@ -116,12 +116,12 @@ raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year
   rename(model = model_new) %>%
   rename(scenario = scenario_new) %>%
   filter(unit != "thousands") %>%
-  filter(!(model == "IEA" & year >= 2022))
+  filter(!(model == "EPA-ATR" & year >= 2022))
 
-iea_2022 = raw %>% filter(model == "IEA", year == 2021) %>% mutate(year = 2022)
-clean_data4 = rbind(raw, iea_2022) %>% filter(unit != "thousands") %>% mutate(value = 100 * value) %>%
+atr_2022 = raw %>% filter(model == "EPA-ATR", year == 2021) %>% mutate(year = 2022)
+clean_data4 = rbind(raw, atr_2022) %>% filter(unit != "thousands") %>% mutate(value = 100 * value) %>%
   filter(model != "EIA-LTS") %>% 
-  duplicate_historical_data("IEA",2022, criteria = TRUE) %>% mutate(
+  duplicate_historical_data("EPA-ATR",2022, criteria = TRUE) %>% mutate(
     variable = case_when(
       variable %in% c("Energy Service|Transportation|Passenger|BEV|Sales Share",
                       "Energy Service|Transportation|Passenger|FCEV|Sales Share",

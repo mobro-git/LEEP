@@ -48,7 +48,7 @@ tar_plan(
     # USREP-ReEDS, GCAM-PNNL, OP-NEMS - averages for CAP-ADD
     models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
                     "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP","AEO.2023",
-                    "EIA-LTS", "EIA-STEO", "IEA", "EPA", "EPA-GHGI", "EIA"),
+                    "EIA-LTS", "EIA-STEO", "EPA-ATR", "EPA", "EPA-GHGI", "EIA"),
 
     models_per_elc = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
                        "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP"),
@@ -207,14 +207,14 @@ tar_plan(
 
   # Final Figures
 
-  tar_render(
-    chapter1,
-    "docs/final figures/chapter1.Rmd",
-    output_dir = "output/final_figures/rmd",
-    output_file = "chapter1",
-    params = list(
-      mode = "targets"),
-  ),
+  # tar_render(
+  #   chapter1,
+  #   "docs/final figures/chapter1.Rmd",
+  #   output_dir = "output/final_figures/rmd",
+  #   output_file = "chapter1",
+  #   params = list(
+  #     mode = "targets"),
+  # ),
 
   # Plot maps
 

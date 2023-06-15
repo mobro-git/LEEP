@@ -177,8 +177,8 @@ ev_shares = read_xlsx("data-extra/ira_comparison_raw/energyservice_transportatio
   pivot_longer(cols = 6:21, names_to = "year", values_to = "value") %>%
   select(scenario,model,variable,unit,year,region,value)
 
-# ev_modeled = ev_shares %>% filter(model != "IEA") # Data is already brought in above in data.transport
-ev_historic = ev_shares %>% filter(model == "IEA")
+# ev_modeled = ev_shares %>% filter(model != "EPA-ATR") # Data is already brought in above in data.transport
+ev_historic = ev_shares %>% filter(model == "EPA-ATR")
 
 #####
 ##

@@ -5846,7 +5846,7 @@ ggsave(filename = "output/leep/cone_uncertainty/Fig6.5_LTS_cone_industry_facet.p
 
 leep_models = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC",
                 "IPM-EPA", "MARKAL-NETL", "NEMS-RHG", "NEMS-RHG", "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT",
-                "ReEDS-NREL", "Scout-LEEP", "EIA-LTS", "EIA-STEO", "IEA")
+                "ReEDS-NREL", "Scout-LEEP", "EIA-LTS", "EIA-STEO", "EPA-ATR")
 
 clean_data10 = clean_data %>% mutate(
   variable = case_when(

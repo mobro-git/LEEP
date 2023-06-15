@@ -40,8 +40,8 @@ bistline_ira_tall.csv,RIO-REPEAT,IRA.Low,RIO-REPEAT,IRA.Low,,
 bistline_ira_tall.csv,RIO-REPEAT,IRA.High,RIO-REPEAT,IRA.High,,
 bistline_ira_tall.csv,RIO-REPEAT,IRA,RIO-REPEAT,IRA,Bistline IRA comparison paper,
 bistline_ira_tall.csv,RIO-REPEAT,Reference,RIO-REPEAT,No IRA,Bistline IRA comparison paper,
-EIA-IEA-bistline_historic.csv,EIA,Historic,EIA,Historic,,x
-EIA-IEA-bistline_historic.csv,IEA,Historic,IEA,Historic,,x
+EIA-EPA-bistline_historic.csv,EIA,Historic,EIA,Historic,EIA data from Bistline paper,x
+EIA-EPA-bistline_historic.csv,EPA-ATR,Historic,EPA-ATR,Historic,electric vehicle sales share data from EPA-ATR,x
 EIAinEMF37.csv,AEO.2020,REF2020,AEO2020,No IRA,From EIA in EMF37 Repo,
 EIAinEMF37.csv,AEO.2021,REF2021,AEO2021,No IRA,From EIA in EMF37 Repo,
 EIAinEMF37.csv,AEO.2022,REF2022,AEO2022,No IRA,From EIA in EMF37 Repo,

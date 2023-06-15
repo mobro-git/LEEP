@@ -596,7 +596,7 @@ dta %>% write.csv("output/final_figures/data/Fig6.5_LTS_cone_industry_facet.csv"
 # data table for LTS plots -- Needs to be updated
 leep_models = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC",
                 "IPM-EPA", "MARKAL-NETL", "NEMS-RHG", "NEMS-RHG", "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT",
-                "ReEDS-NREL", "Scout-LEEP", "EIA-LTS", "EIA-STEO", "IEA")
+                "ReEDS-NREL", "Scout-LEEP", "EIA-LTS", "EIA-STEO", "EPA-ATR")
 
 clean_data10 = clean_data %>% mutate(
   variable = case_when(
@@ -759,12 +759,12 @@ raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year
   rename(model = model_new) %>%
   rename(scenario = scenario_new) %>%
   filter(unit != "thousands") %>%
-  filter(!(model == "IEA" & year >= 2022))
+  filter(!(model == "EPA-ATR" & year >= 2022))
 
-iea_2022 = raw %>% filter(model == "IEA", year == 2021) %>% mutate(year = 2022)
+atr_2022 = raw %>% filter(model == "EPA-ATR", year == 2021) %>% mutate(year = 2022)
 clean_data4 = rbind(raw, iea_2022) %>% filter(unit != "thousands") %>% mutate(value = 100 * value) %>%
   filter(model != "EIA-LTS") %>% 
-  duplicate_historical_data("IEA",2022, criteria = TRUE) %>% mutate(
+  duplicate_historical_data("EPA-ATR",2022, criteria = TRUE) %>% mutate(
     variable = case_when(
       variable %in% c("Energy Service|Transportation|Passenger|BEV|Sales Share",
                       "Energy Service|Transportation|Passenger|FCEV|Sales Share",
@@ -822,10 +822,10 @@ fig
 dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3, "United States")
 #dta
 
-# iea_2022 = clean_data %>% filter(model == "IEA", year == 2021) %>% mutate(year = 2022)
+# atr_2022 = clean_data %>% filter(model == "EPA-ATR", year == 2021) %>% mutate(year = 2022)
 # clean_data3 = rbind(clean_data, iea_2022)
 # clean_data3 = clean_data3 %>% filter(model != "EIA-LTS") %>% 
-#   duplicate_historical_data("IEA",2022) %>% 
+#   duplicate_historical_data("EPA-ATR",2022) %>% 
 #   mutate(value = 100 * value)
 # 
 # fig = print_graph("time_series", config, clean_data3, figmap_leep_timeseries, 118, "United States")

@@ -1,17 +1,17 @@
 model,scenario,region,variable,unit,year,value
-EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV|Sales Share,%,2010,0
-EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV|Sales Share,%,2011,0.001
-EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV|Sales Share,%,2012,0.004
-EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV|Sales Share,%,2013,0.007
-EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV|Sales Share,%,2014,0.007
-EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV|Sales Share,%,2015,0.008
-EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV|Sales Share,%,2016,0.008
-EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV|Sales Share,%,2017,0.014
-EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV|Sales Share,%,2018,0.022
-EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV|Sales Share,%,2019,0.017
-EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV|Sales Share,%,2020,0.023
-EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV|Sales Share,%,2021,0.044
-EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV|Sales Share,%,2022,0.084
+EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share,%,2010,0
+EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share,%,2011,0.001
+EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share,%,2012,0.004
+EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share,%,2013,0.007
+EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share,%,2014,0.007
+EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share,%,2015,0.008
+EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share,%,2016,0.008
+EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share,%,2017,0.014
+EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share,%,2018,0.022
+EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share,%,2019,0.017
+EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share,%,2020,0.023
+EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share,%,2021,0.044
+EPA-ATR,Historic,United States,Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share,%,2022,0.084
 EIA,Historic,United States,Secondary Energy|Electricity|Coal|w/o CCS,EJ/yr,1950,0.556271978
 EIA,Historic,United States,Secondary Energy|Electricity|Oil|w/o CCS,EJ/yr,1950,0.121443437
 EIA,Historic,United States,Secondary Energy|Electricity|Gas|w/o CCS,EJ/yr,1950,0.160412972
