@@ -27,13 +27,6 @@ timeseries,15,Economy-Wide Emissions,Emissions|CO2|Energy|Supply|Electricity,Ele
 timeseries,15,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Transportation,Transportation,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
 timeseries,15,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Industry and Fuel Production,Industry,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
 timeseries,15,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Buildings,Buildings,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
-timeseries,116,Emissions Sensitivity,Emissions|CO2|Energy,Emissions,0,usa,models_leep,historic,leep_sens,single,year,value,,,scenario,region,fixed
-timeseries,118,EV Share,Energy Service|Transportation|EV|Sales Share,EV Share,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
-timeseries,119,Industry - Fossil,Final Energy|Industry|Fossil,Fossil,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
-timeseries,120,Industry - Electricity,Final Energy|Industry|Electricity,Electricity,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
-timeseries,121,Industry - Alternative,Final Energy|Industry|Alternative Fuels,Alternative Fuels,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
-timeseries,122,Nox,Emissions|NOx|Energy|Supply|Electricity,NOx,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
-timeseries,123,Sox,Emissions|Sulfur|Energy|Supply|Electricity,Sox,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
 timeseries,16,Low Emitting Generation,Secondary Energy|Electricity|Nuclear,Nuclear,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,16,Low Emitting Generation,Secondary Energy|Electricity|Solar,Solar,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,16,Low Emitting Generation,Secondary Energy|Electricity|Wind,Wind,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
@@ -67,41 +60,48 @@ timeseries,35,Emissions|CO2|Energy|Demand|Buildings|Indirect|Percent difference 
 timeseries,36,Emissions|CO2|Energy|Demand|Transportation|Percent difference from No IRA,Emissions|CO2|Energy|Demand|Transportation|Percent difference from No IRA,CO2,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,model,region,fixed
 timeseries,37,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Percent difference from No IRA,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Percent difference from No IRA,CO2,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,model,region,fixed
 timeseries,38,Emissions|CO2|Energy|Demand|Buildings|Percent difference from No IRA,Emissions|CO2|Energy|Demand|Buildings|Percent difference from No IRA,CO2,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,model,region,fixed
-timeseries,124,Industrial Energy Pct diff,Final Energy|Industry|Fossil|Percent difference from No IRA,Fossil,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,model,region,fixed
-timeseries,125,Nox pct diff,Emissions|NOx|Energy|Supply|Electricity|Percent difference from No IRA,Fossil,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,model,region,fixed
-timeseries,126,Sox pct diff,Emissions|Sulfur|Energy|Supply|Electricity|Percent difference from No IRA,Fossil,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,model,region,fixed
-timeseries,94,Primary Energy,Primary Energy|Coal,Coal,0,usa,models_leep,historic,hist_mod_scenarios2,grid,year,value,region,variable_rename,scenario,region,fixed
-timeseries,93,Primary Energy,Primary Energy|Gas,Gas,0,usa,models_leep,historic,hist_mod_scenarios2,grid,year,value,region,variable_rename,scenario,region,fixed
-timeseries,92,Primary Energy,Primary Energy|Oil,Oil,0,usa,models_leep,historic,hist_mod_scenarios2,grid,year,value,region,variable_rename,scenario,region,fixed
-timeseries,99,Economy-Wide Emissions,Emissions|CO2,Total Emissions,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
-timeseries,98,Economy-Wide Emissions,Emissions|CO2|Energy|Supply|Electricity,Electricity,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
-timeseries,97,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Transportation,Transportation,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
-timeseries,96,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Industry and Fuel Production,Industry,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
-timeseries,95,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Buildings,Buildings,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
-timeseries,91,Low Emitting Generation,Secondary Energy|Electricity|Nuclear,Nuclear,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,90,Low Emitting Generation,Secondary Energy|Electricity|Solar,Solar,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,89,Low Emitting Generation,Secondary Energy|Electricity|Wind,Wind,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,88,Low Emitting Generation,Secondary Energy|Electricity|Biomass,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,88,Low Emitting Generation,Secondary Energy|Electricity|Geothermal,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,88,Low Emitting Generation,Secondary Energy|Electricity|Hydro,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,85,Low Emitting Generation,Secondary Energy|Electricity|Oil|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,85,Low Emitting Generation,Secondary Energy|Electricity|Gas|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,85,Low Emitting Generation,Secondary Energy|Electricity|Coal|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,82,Low Emitting Generation,Secondary Energy|Electricity|Coal|w/o CCS,Coal,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,81,Low Emitting Generation,Secondary Energy|Electricity|Gas|w/o CCS,Natural Gas,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,88,Low Emitting Generation,Secondary Energy|Electricity|Oil|w/o CCS,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,80,Diff Low Emitting Gen,Secondary Energy|Electricity|Nuclear|Percent differnce from No IRA,Nuclear,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,79,Diff Low Emitting Gen,Secondary Energy|Electricity|Solar|Percent differnce from No IRA,Solar,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,78,Diff Low Emitting Gen,Secondary Energy|Electricity|Wind|Percent differnce from No IRA,Wind,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,77,Diff Low Emitting Gen,Secondary Energy|Electricity|Biomass|Percent differnce from No IRA,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,77,Diff Low Emitting Gen,Secondary Energy|Electricity|Geothermal|Percent differnce from No IRA,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,77,Diff Low Emitting Gen,Secondary Energy|Electricity|Hydro|Percent differnce from No IRA,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,70,Diff Low Emitting Gen,Secondary Energy|Electricity|Gas|w/o CCS|Percent differnce from No IRA,Natural Gas,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,71,Diff Low Emitting Gen,Secondary Energy|Electricity|Coal|w/o CCS|Percent differnce from No IRA,Coal,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,76,Diff Low Emitting Gen,Secondary Energy|Electricity|Oil|w/ CCS|Percent differnce from No IRA,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,76,Diff Low Emitting Gen,Secondary Energy|Electricity|Gas|w/ CCS|Percent differnce from No IRA,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,76,Diff Low Emitting Gen,Secondary Energy|Electricity|Coal|w/ CCS|Percent differnce from No IRA,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,71,Diff Low Emitting Gen,Secondary Energy|Electricity|Coal|w/o CCS|Percent differnce from No IRA,Coal,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,70,Diff Low Emitting Gen,Secondary Energy|Electricity|Gas|w/o CCS|Percent differnce from No IRA,Natural Gas,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,77,Diff Low Emitting Gen,Secondary Energy|Electricity|Biomass|Percent differnce from No IRA,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,77,Diff Low Emitting Gen,Secondary Energy|Electricity|Geothermal|Percent differnce from No IRA,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,77,Diff Low Emitting Gen,Secondary Energy|Electricity|Hydro|Percent differnce from No IRA,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,77,Diff Low Emitting Gen,Secondary Energy|Electricity|Oil|w/o CCS|Percent differnce from No IRA,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,78,Diff Low Emitting Gen,Secondary Energy|Electricity|Wind|Percent differnce from No IRA,Wind,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,79,Diff Low Emitting Gen,Secondary Energy|Electricity|Solar|Percent differnce from No IRA,Solar,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,80,Diff Low Emitting Gen,Secondary Energy|Electricity|Nuclear|Percent differnce from No IRA,Nuclear,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,81,Low Emitting Generation,Secondary Energy|Electricity|Gas|w/o CCS,Natural Gas,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,82,Low Emitting Generation,Secondary Energy|Electricity|Coal|w/o CCS,Coal,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,85,Low Emitting Generation,Secondary Energy|Electricity|Oil|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,85,Low Emitting Generation,Secondary Energy|Electricity|Gas|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,85,Low Emitting Generation,Secondary Energy|Electricity|Coal|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,88,Low Emitting Generation,Secondary Energy|Electricity|Biomass,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,88,Low Emitting Generation,Secondary Energy|Electricity|Geothermal,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,88,Low Emitting Generation,Secondary Energy|Electricity|Hydro,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,88,Low Emitting Generation,Secondary Energy|Electricity|Oil|w/o CCS,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,89,Low Emitting Generation,Secondary Energy|Electricity|Wind,Wind,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,90,Low Emitting Generation,Secondary Energy|Electricity|Solar,Solar,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,91,Low Emitting Generation,Secondary Energy|Electricity|Nuclear,Nuclear,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,92,Primary Energy,Primary Energy|Oil,Oil,0,usa,models_leep,historic,hist_mod_scenarios2,grid,year,value,region,variable_rename,scenario,region,fixed
+timeseries,93,Primary Energy,Primary Energy|Gas,Gas,0,usa,models_leep,historic,hist_mod_scenarios2,grid,year,value,region,variable_rename,scenario,region,fixed
+timeseries,94,Primary Energy,Primary Energy|Coal,Coal,0,usa,models_leep,historic,hist_mod_scenarios2,grid,year,value,region,variable_rename,scenario,region,fixed
+timeseries,95,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Buildings,Buildings,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,96,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Industry and Fuel Production,Industry,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,97,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Transportation,Transportation,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,98,Economy-Wide Emissions,Emissions|CO2|Energy|Supply|Electricity,Electricity,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,99,Economy-Wide Emissions,Emissions|CO2,Total Emissions,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,116,Emissions Sensitivity,Emissions|CO2|Energy,Emissions,0,usa,models_leep,historic,leep_sens,single,year,value,,,scenario,region,fixed
+timeseries,118,EV Share,Energy Service|Transportation|EV|Sales Share,EV Share,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,119,Industry - Fossil,Final Energy|Industry|Fossil,Fossil,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,120,Industry - Electricity,Final Energy|Industry|Electricity,Electricity,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,121,Industry - Alternative,Final Energy|Industry|Alternative Fuels,Alternative Fuels,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,122,Nox,Emissions|NOx|Energy|Supply|Electricity,NOx,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,123,Sox,Emissions|Sulfur|Energy|Supply|Electricity,Sox,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
+timeseries,124,Industrial Energy Pct diff,Final Energy|Industry|Fossil|Percent difference from No IRA,Fossil,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,model,region,fixed
+timeseries,125,Nox pct diff,Emissions|NOx|Energy|Supply|Electricity|Percent difference from No IRA,Fossil,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,model,region,fixed
+timeseries,126,Sox pct diff,Emissions|Sulfur|Energy|Supply|Electricity|Percent difference from No IRA,Fossil,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,model,region,fixed
 timeseries,127,Electric-EW,Final Energy|Percent Electricity,Percent Electricity,0,usa,models_leep,historic,main_scenarios,single,year,value,,,scenario,region,fixed
 timeseries,128,Electric-Trans,Final Energy|Transportation|Percent Electricity,Percent Electricity,0,usa,models_leep,historic,main_scenarios,single,year,value,,,scenario,region,fixed
 timeseries,129,Electric-Build,Final Energy|Buildings|Percent Electricity,Percent Electricity,0,usa,models_leep,historic,main_scenarios,single,year,value,,,scenario,region,fixed

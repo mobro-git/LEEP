@@ -106,6 +106,8 @@ html(TranSpg$data, "Transportation CO<sub>2<sub>")
 ```{r}
 fig_no = 3.4
 
+# TODO: OP-NEMS should be showing up here, but its removed when year colums are dropped in raw
+
 scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)
 
 raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%

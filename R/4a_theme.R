@@ -159,6 +159,7 @@ color_map <- c(
   "AEO2020" = "black",
   "AEO2021" = "black",
   "AEO2022" = "black",
+  "AEO.2023" = "black",
   "EIA"= "black",
   "EIA-LTS"= "black",
   "EIA-STEO"= "black",

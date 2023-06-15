@@ -40,7 +40,7 @@ make_clean_data = function(df) {
   print("Making clean data")
 
   # sum industry and fuel production emissions for internal models
-  ind_emissions = df %>% filter(model %in% c("USREP-ReEDS","GCAM-PNNL", "ReEDS-NREL", "OP-NEMS")) %>%
+  ind_emissions = df %>% filter(model %in% c("USREP-ReEDS","GCAM-PNNL", "OP-NEMS")) %>%
     filter(variable %in% c("Emissions|CO2|Energy|Demand|Industry",
                            "Emissions|CO2|Energy|Supply|Biogas",
                            "Emissions|CO2|Energy|Supply|Biomass Liqids",
@@ -56,11 +56,10 @@ make_clean_data = function(df) {
     summarise(value = sum(value)) %>%
     ungroup() %>%
     mutate(datasrc = "calculated") %>%
-    select(model,scenario,unit,year,datasrc,variable,region,value) %>%
-    filter(model != "GCAM-PNNL") # GCAM-PNNL results look very low - not reporting a value that other models are reporting
+    select(model,scenario,unit,year,datasrc,variable,region,value)
 
-  ind_emissions_indirect = df %>% filter(model %in% c("USREP-ReEDS","GCAM-PNNL", "ReEDS-NREL", "OP-NEMS")) %>%
-    filter(variable == "Emissions|CO2|Energy|Demand|Industry|Indirect") %>%
+  ind_emissions_indirect = df %>% filter(model %in% c("USREP-ReEDS","GCAM-PNNL","OP-NEMS")) %>%
+    filter(variable %in% c("Emissions|CO2|Energy|Demand|Industry|Indirect")) %>%
     select(model,scenario,unit,year,datasrc,variable,region,value) %>%
     mutate(variable = "Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect")
 

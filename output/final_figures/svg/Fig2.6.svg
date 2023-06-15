@@ -133,10 +133,10 @@
 <circle cx='161.10' cy='184.46' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='204.67' cy='187.28' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='161.10' cy='255.15' r='2.49' style='stroke-width: 0.71;' />
-<text x='166.48' y='169.82' style='font-size: 5.69px; font-family: "Arial";' textLength='31.60px' lengthAdjust='spacingAndGlyphs'>High Growth</text>
-<text x='190.79' y='181.07' style='font-size: 5.69px; font-family: "Arial";' textLength='31.60px' lengthAdjust='spacingAndGlyphs'>High Growth</text>
-<text x='153.93' y='191.95' style='font-size: 5.69px; font-family: "Arial";' textLength='30.33px' lengthAdjust='spacingAndGlyphs'>Low Growth</text>
-<text x='192.05' y='192.36' style='font-size: 5.69px; font-family: "Arial";' textLength='30.33px' lengthAdjust='spacingAndGlyphs'>Low Growth</text>
+<text x='166.53' y='169.85' style='font-size: 5.69px; font-family: "Arial";' textLength='31.60px' lengthAdjust='spacingAndGlyphs'>High Growth</text>
+<text x='190.72' y='180.87' style='font-size: 5.69px; font-family: "Arial";' textLength='31.60px' lengthAdjust='spacingAndGlyphs'>High Growth</text>
+<text x='153.92' y='191.97' style='font-size: 5.69px; font-family: "Arial";' textLength='30.33px' lengthAdjust='spacingAndGlyphs'>Low Growth</text>
+<text x='192.05' y='192.33' style='font-size: 5.69px; font-family: "Arial";' textLength='30.33px' lengthAdjust='spacingAndGlyphs'>Low Growth</text>
 <text x='166.02' y='249.87' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
 <rect x='139.75' y='19.07' width='86.27' height='321.49' style='stroke-width: 1.07; stroke: #B3B3B3;' />
 </g>
@@ -218,10 +218,10 @@
 <circle cx='342.10' cy='284.81' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='342.10' cy='213.12' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='342.10' cy='255.15' r='2.49' style='stroke-width: 0.71;' />
-<line x1='352.91' y1='272.95' x2='342.39' y2='280.46' style='stroke-width: 1.07;' />
-<line x1='356.36' y1='284.15' x2='342.40' y2='281.22' style='stroke-width: 1.07;' />
-<text x='354.71' y='274.94' style='font-size: 5.69px; font-family: "Arial";' textLength='48.66px' lengthAdjust='spacingAndGlyphs'>Adv Battery/Renew</text>
-<text x='358.16' y='286.19' style='font-size: 5.69px; font-family: "Arial";' textLength='32.88px' lengthAdjust='spacingAndGlyphs'>All Advanced</text>
+<line x1='352.91' y1='274.02' x2='342.40' y2='280.49' style='stroke-width: 1.07;' />
+<line x1='357.30' y1='285.22' x2='342.40' y2='281.24' style='stroke-width: 1.07;' />
+<text x='354.71' y='276.02' style='font-size: 5.69px; font-family: "Arial";' textLength='48.66px' lengthAdjust='spacingAndGlyphs'>Adv Battery/Renew</text>
+<text x='359.10' y='287.26' style='font-size: 5.69px; font-family: "Arial";' textLength='32.88px' lengthAdjust='spacingAndGlyphs'>All Advanced</text>
 <text x='351.23' y='207.83' style='font-size: 5.69px; font-family: "Arial";' textLength='52.14px' lengthAdjust='spacingAndGlyphs'>Cons Battery/Renew</text>
 <text x='347.02' y='249.87' style='font-size: 5.69px; font-family: "Arial";' textLength='12.33px' lengthAdjust='spacingAndGlyphs'>Core</text>
 <rect x='320.75' y='19.07' width='86.27' height='321.49' style='stroke-width: 1.07; stroke: #B3B3B3;' />

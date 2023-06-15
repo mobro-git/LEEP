@@ -31,12 +31,6 @@ targets::tar_load(figmap_leep_diffbar)
 targets::tar_load(data_min)
 targets::tar_load(data_raw)
 
-# create workbook for saving figure data
-# data_wb <- createWorkbook()
-
-# format toggle
-format <- params$format
-
 # palettes
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 ```
@@ -46,7 +40,7 @@ subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 ```{r EconWide Differnce}
 fig_no = "Ap.1.EconWideEmis"
 
-ts_map_ID = 98
+ts_map_ID = 99
 pd_map_ID = 25
 ad_map_ID = 3
 drop = ""
@@ -93,7 +87,7 @@ fig_no = "Ap.3.TranEmis"
 ts_map_ID = 19
 pd_map_ID = 27
 ad_map_ID = 5
-drop = ""
+drop = c("IPM-EPA","IPM-NRDC")
 histsrc = "EPA-GHGI"
 unit = "Mt CO2/yr"
 
@@ -379,13 +373,15 @@ adfigure = ad(diff_ID = ad_map_ID, "", expression(paste("Absolute Difference (Qu
 fig = (NoIRAfigure | IRAfigure) / (adfigure$figure | pdfigure$figure)+ 
   plot_layout(guides = "collect")
 
-fig$figure
+fig
+
+# TODO: This entire figure is broken and saves off data that doesnt exist. I fixed the figure, but the whole thing should be rewritten to fit the format of the rest of the figures and actually output the correct data
 
 write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
 write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
 write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
 
-savefig(fig$figure, fig_no)
+savefig(fig, fig_no)
 ```
 ## Coal Generation Diff FIN
 ```{r Coal Generation Difference} 

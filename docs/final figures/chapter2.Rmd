@@ -130,6 +130,7 @@ ElecDot
 ElecTab = html(ElecSpg$data, "Electricity CO<sub>2<sub>")
 ElecTab
 
+savedata(ElecSpg$data, fig_no)
 savefig(ElecDot, fig_no)
 ```
 
@@ -279,7 +280,7 @@ dots_Total = ggplot(data = data_total, aes(x = axe, y = value,  color = scenario
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-
+savedata(data_total, paste(fig_no, "Total"))
 ##### Low Total #####
 df_21 = low %>%
   filter(year %in% c(2021))
@@ -346,6 +347,7 @@ dots_Low = ggplot(data = data_Low, aes(x = axe, y = value,  color = scenario)) +
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Low, paste(fig_no, "Low"))
 
 ##### High Total #####
 df_21 = high %>%
@@ -412,6 +414,7 @@ dots_High = ggplot(data = data_High, aes(x = axe, y = value,  color = scenario))
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_High, paste(fig_no, "High"))
 
 ##### Nuclear #####
 df_21 = individual[individual$variable_rename == "Nuclear", ] %>%
@@ -479,6 +482,7 @@ dots_Nuclear = ggplot(data = data_Nuclear, aes(x = axe, y = value,  color = scen
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Nuclear, paste(fig_no, "Nuclear"))
 
 ##### Solar #####
 df_21 = individual[individual$variable_rename == "Solar", ] %>%
@@ -546,6 +550,7 @@ dots_Solar = ggplot(data = data_Solar, aes(x = axe, y = value,  color = scenario
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Solar, paste(fig_no, "Solar"))
 
 ##### Wind #####
 
@@ -613,6 +618,7 @@ dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = value,  color = scenario))
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Wind, paste(fig_no, "Wind"))
 
 ##### CCS #####
 
@@ -681,6 +687,7 @@ dots_CCS = ggplot(data = data_CCS, aes(x = axe, y = value,  color = scenario)) +
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_CCS, paste(fig_no, "CCS"))
 
 ##### Coal #####
 df_21 = individual[individual$variable_rename == "Coal", ] %>%
@@ -747,6 +754,7 @@ dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = value,  color = scenario))
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Coal, paste(fig_no, "Coal"))
 
 ##### Gas #####
 df_21 = individual[individual$variable_rename == "Natural Gas", ] %>%
@@ -814,6 +822,7 @@ dots_Gas = ggplot(data = data_Gas, aes(x = axe, y = value,  color = scenario)) +
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Gas, paste(fig_no, "Gas"))
 
 ##### Other #####
 df_21 = individual[individual$variable_rename == "Other", ] %>%
@@ -881,6 +890,7 @@ dots_Other = ggplot(data = data_Other, aes(x = axe, y = value,  color = scenario
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Other, paste(fig_no, "Other"))
 
 ##### Final #####
 final = (dots_Total | dots_Low | dots_High) / (dots_Wind | dots_Solar | dots_Nuclear | dots_CCS) / (dots_Coal | dots_Gas | dots_Other) 
