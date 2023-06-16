@@ -11044,3 +11044,1293 @@ USREP-ReEDS,ira_mid_adv,USA,Capacity Retirements|Electricity|Wind|Onshore,GW/yr,
 USREP-ReEDS,ira_mid_adv,USA,Capacity Retirements|Electricity|Wind|Onshore,GW/yr,2025,0.0654998
 USREP-ReEDS,ira_mid_adv,USA,Capacity Retirements|Electricity|Wind|Onshore,GW/yr,2030,0.15416
 USREP-ReEDS,ira_mid_adv,USA,Capacity Retirements|Electricity|Wind|Onshore,GW/yr,2035,0.9435204
+USREP-ReEDS,ira_high_adv,USA,Carbon Sequestration|CCS|Fossil|Energy|Supply|Electricity,Mt CO2/yr,2030,1.16122E-07
+USREP-ReEDS,ira_high_adv,USA,Carbon Sequestration|CCS|Fossil|Energy|Supply|Electricity,Mt CO2/yr,2035,1.28746E-07
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity|Coal,Mt CO2/yr,2017,2.195235962
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity|Coal,Mt CO2/yr,2020,876.3665397
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity|Coal,Mt CO2/yr,2025,507.7758
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity|Coal,Mt CO2/yr,2030,136.4127146
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity|Coal,Mt CO2/yr,2035,90.01833198
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity|Gas,Mt CO2/yr,2017,3.776647244
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity|Gas,Mt CO2/yr,2020,594.8215768
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity|Gas,Mt CO2/yr,2025,464.4935159
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity|Gas,Mt CO2/yr,2030,258.2159235
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity|Gas,Mt CO2/yr,2035,186.0063514
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity,Mt CO2/yr,2017,7.070323426
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity,Mt CO2/yr,2020,1471.535307
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity,Mt CO2/yr,2025,972.7656785
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity,Mt CO2/yr,2030,394.8322234
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity,Mt CO2/yr,2035,276.5247851
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2,Mt CO2/yr,2017,3360.210881
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2,Mt CO2/yr,2020,5437.883415
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2,Mt CO2/yr,2025,4080.933138
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2,Mt CO2/yr,2030,3294.518897
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2,Mt CO2/yr,2035,2984.003895
+USREP-ReEDS,ira_high_adv,USA,Carbon Sequestration|CCS|Fossil|Energy|Demand|Industry,Mt CO2/yr,2017,0
+USREP-ReEDS,ira_high_adv,USA,Carbon Sequestration|CCS|Fossil|Energy|Demand|Industry,Mt CO2/yr,2020,0
+USREP-ReEDS,ira_high_adv,USA,Carbon Sequestration|CCS|Fossil|Energy|Demand|Industry,Mt CO2/yr,2025,473.9027561
+USREP-ReEDS,ira_high_adv,USA,Carbon Sequestration|CCS|Fossil|Energy|Demand|Industry,Mt CO2/yr,2030,417.1087289
+USREP-ReEDS,ira_high_adv,USA,Carbon Sequestration|CCS|Fossil|Energy|Demand|Industry,Mt CO2/yr,2035,388.7874618
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy,Mt CO2/yr,2017,3360.210881
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy,Mt CO2/yr,2020,4637.883415
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy,Mt CO2/yr,2025,4080.933138
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy,Mt CO2/yr,2030,3294.518897
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy,Mt CO2/yr,2035,2984.003895
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Coal,Mt CO2/yr,2017,122.1152871
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Coal,Mt CO2/yr,2020,985.0406953
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Coal,Mt CO2/yr,2025,603.6198264
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Coal,Mt CO2/yr,2030,219.2924458
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Coal,Mt CO2/yr,2035,170.5058337
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Gas,Mt CO2/yr,2017,922.4711663
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Gas,Mt CO2/yr,2020,1552.278949
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Gas,Mt CO2/yr,2025,1331.215473
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Gas,Mt CO2/yr,2030,1079.293731
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Gas,Mt CO2/yr,2035,967.1371585
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Oil,Mt CO2/yr,2017,2315.624428
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Oil,Mt CO2/yr,2020,2100.563771
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Oil,Mt CO2/yr,2025,2093.441976
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Oil,Mt CO2/yr,2030,1949.587306
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Oil,Mt CO2/yr,2035,1803.162296
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings,Mt CO2/yr,2017,525.1256857
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings,Mt CO2/yr,2020,521.5277839
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings,Mt CO2/yr,2025,459.8818222
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings,Mt CO2/yr,2030,382.7370585
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings,Mt CO2/yr,2035,323.8338635
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings|Commercial,Mt CO2/yr,2017,234.5414291
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings|Commercial,Mt CO2/yr,2020,232.6743099
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings|Commercial,Mt CO2/yr,2025,233.9796291
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings|Commercial,Mt CO2/yr,2030,200.9390729
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings|Commercial,Mt CO2/yr,2035,174.188628
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2017,4.989214979
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2020,1089.078242
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2025,704.5859935
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2030,272.8811108
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2035,183.8007122
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings|Residential,Mt CO2/yr,2017,290.5842566
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings|Residential,Mt CO2/yr,2020,288.8534741
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings|Residential,Mt CO2/yr,2025,225.9021931
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings|Residential,Mt CO2/yr,2030,181.7979855
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Buildings|Residential,Mt CO2/yr,2035,149.6452356
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry,Mt CO2/yr,2017,809.4936507
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry,Mt CO2/yr,2020,836.6606145
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry,Mt CO2/yr,2025,839.2669144
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry,Mt CO2/yr,2030,854.3137888
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry,Mt CO2/yr,2035,874.947329
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|EInt Mfg,Mt CO2/yr,2017,301.4361447
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|EInt Mfg,Mt CO2/yr,2020,311.0392517
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|EInt Mfg,Mt CO2/yr,2025,264.3612771
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|EInt Mfg,Mt CO2/yr,2030,268.1375858
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|EInt Mfg,Mt CO2/yr,2035,300.0822033
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Indirect,Mt CO2/yr,2017,0.656477043
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Indirect,Mt CO2/yr,2020,139.6544541
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Indirect,Mt CO2/yr,2025,83.90063038
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Indirect,Mt CO2/yr,2030,29.4298178
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Indirect,Mt CO2/yr,2035,18.26539729
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Refineries|Indirect,Mt CO2/yr,2017,0.088544519
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Refineries|Indirect,Mt CO2/yr,2020,14.07555894
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Refineries|Indirect,Mt CO2/yr,2025,6.76920655
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Refineries|Indirect,Mt CO2/yr,2030,1.745844705
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|EInt Mfg|Refineries|Indirect,Mt CO2/yr,2035,0.813320551
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Indirect,Mt CO2/yr,2017,1.63742871
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Indirect,Mt CO2/yr,2020,356.5577295
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Indirect,Mt CO2/yr,2025,218.0781203
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Indirect,Mt CO2/yr,2030,79.21329528
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Indirect,Mt CO2/yr,2035,50.91884367
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Agriculture,Mt CO2/yr,2017,32.18566204
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Agriculture,Mt CO2/yr,2020,33.81401582
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Agriculture,Mt CO2/yr,2025,31.71181621
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Agriculture,Mt CO2/yr,2030,29.79492619
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Agriculture,Mt CO2/yr,2035,28.4805384
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Agriculture|Indirect,Mt CO2/yr,2017,0.119544894
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Agriculture|Indirect,Mt CO2/yr,2020,29.5255041
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Agriculture|Indirect,Mt CO2/yr,2025,16.83628518
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Agriculture|Indirect,Mt CO2/yr,2030,6.042367984
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Agriculture|Indirect,Mt CO2/yr,2035,3.84786886
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Oil-gas extraction,Mt CO2/yr,2017,151.2174728
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Oil-gas extraction,Mt CO2/yr,2020,158.584472
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Oil-gas extraction,Mt CO2/yr,2025,104.0023526
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Oil-gas extraction,Mt CO2/yr,2030,90.96003507
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Oil-gas extraction,Mt CO2/yr,2035,85.19562227
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Oil-gas extraction|Indirect,Mt CO2/yr,2017,0.106336781
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Oil-gas extraction|Indirect,Mt CO2/yr,2020,21.73038279
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Oil-gas extraction|Indirect,Mt CO2/yr,2025,19.77260645
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Oil-gas extraction|Indirect,Mt CO2/yr,2030,5.394540199
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|Non Mfg|Oil-gas extraction|Indirect,Mt CO2/yr,2035,2.783922336
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|NonEInt Mfg,Mt CO2/yr,2017,508.057506
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|NonEInt Mfg,Mt CO2/yr,2020,525.6213628
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|NonEInt Mfg,Mt CO2/yr,2025,574.9056373
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|NonEInt Mfg,Mt CO2/yr,2030,586.176203
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|NonEInt Mfg,Mt CO2/yr,2035,574.8651257
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|NonEInt Mfg|Indirect,Mt CO2/yr,2017,0.980951667
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|NonEInt Mfg|Indirect,Mt CO2/yr,2020,216.9032753
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|NonEInt Mfg|Indirect,Mt CO2/yr,2025,134.1774899
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|NonEInt Mfg|Indirect,Mt CO2/yr,2030,49.78347748
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Industry|NonEInt Mfg|Indirect,Mt CO2/yr,2035,32.65344638
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation,Mt CO2/yr,2017,1851.978943
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation,Mt CO2/yr,2020,1638.201507
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation,Mt CO2/yr,2025,1695.180421
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation,Mt CO2/yr,2030,1564.557732
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation,Mt CO2/yr,2035,1417.027247
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2017,0.089099277
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2020,2.494878359
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2025,7.694652145
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2030,12.33380793
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2035,17.97989639
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation|Freight,Mt CO2/yr,2017,613.8674154
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation|Freight,Mt CO2/yr,2020,517.3924116
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation|Freight,Mt CO2/yr,2025,647.4907301
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation|Freight,Mt CO2/yr,2030,590.1061085
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation|Freight,Mt CO2/yr,2035,509.5510668
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation|Passenger,Mt CO2/yr,2017,1238.111527
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation|Passenger,Mt CO2/yr,2020,1121.264818
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation|Passenger,Mt CO2/yr,2025,1048.645955
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation|Passenger,Mt CO2/yr,2030,975.75609
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Demand|Transportation|Passenger,Mt CO2/yr,2035,908.8594186
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply,Mt CO2/yr,2017,75.43203341
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply,Mt CO2/yr,2020,1533.898102
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply,Mt CO2/yr,2025,1038.522601
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply,Mt CO2/yr,2030,448.460304
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply,Mt CO2/yr,2035,317.1666702
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Petroleum Refining,Mt CO2/yr,2017,68.36170998
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Petroleum Refining,Mt CO2/yr,2020,62.36279441
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Petroleum Refining,Mt CO2/yr,2025,65.75692241
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Petroleum Refining,Mt CO2/yr,2030,53.62808058
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Petroleum Refining,Mt CO2/yr,2035,40.6418851
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity|Oil,Mt CO2/yr,2017,1.09844022
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity|Oil,Mt CO2/yr,2020,0.347190758
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity|Oil,Mt CO2/yr,2025,0.496362606
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity|Oil,Mt CO2/yr,2030,0.203585334
+USREP-ReEDS,ira_high_adv,USA,Emissions|CO2|Energy|Supply|Electricity|Oil,Mt CO2/yr,2035,0.500101701
+USREP-ReEDS,ira_high_adv,USA,Emissions|CH4,Mt CH4/yr,2017,8.137720964
+USREP-ReEDS,ira_high_adv,USA,Emissions|CH4,Mt CH4/yr,2020,8.600663835
+USREP-ReEDS,ira_high_adv,USA,Emissions|CH4,Mt CH4/yr,2025,7.758541201
+USREP-ReEDS,ira_high_adv,USA,Emissions|CH4,Mt CH4/yr,2030,7.649166281
+USREP-ReEDS,ira_high_adv,USA,Emissions|CH4,Mt CH4/yr,2035,7.894781431
+USREP-ReEDS,ira_high_adv,USA,Emissions|CH4|AFOLU,Mt CH4/yr,2020,1.079185061
+USREP-ReEDS,ira_high_adv,USA,Emissions|CH4|AFOLU,Mt CH4/yr,2025,0.741923603
+USREP-ReEDS,ira_high_adv,USA,Emissions|CH4|AFOLU,Mt CH4/yr,2030,0.698443267
+USREP-ReEDS,ira_high_adv,USA,Emissions|CH4|AFOLU,Mt CH4/yr,2035,0.619938023
+USREP-ReEDS,ira_high_adv,USA,Emissions|CH4|Energy,Mt CH4/yr,2017,3.880213411
+USREP-ReEDS,ira_high_adv,USA,Emissions|CH4|Energy,Mt CH4/yr,2020,3.27282328
+USREP-ReEDS,ira_high_adv,USA,Emissions|CH4|Energy,Mt CH4/yr,2025,2.312454713
+USREP-ReEDS,ira_high_adv,USA,Emissions|CH4|Energy,Mt CH4/yr,2030,1.827818472
+USREP-ReEDS,ira_high_adv,USA,Emissions|CH4|Energy,Mt CH4/yr,2035,1.649033326
+USREP-ReEDS,ira_high_adv,USA,Emissions|N2O,kt N2O/yr,2017,36.37452064
+USREP-ReEDS,ira_high_adv,USA,Emissions|N2O,kt N2O/yr,2020,119.414549
+USREP-ReEDS,ira_high_adv,USA,Emissions|N2O,kt N2O/yr,2025,100.4908112
+USREP-ReEDS,ira_high_adv,USA,Emissions|N2O,kt N2O/yr,2030,89.92697978
+USREP-ReEDS,ira_high_adv,USA,Emissions|N2O,kt N2O/yr,2035,83.14751319
+USREP-ReEDS,ira_high_adv,USA,Emissions|N2O|AFOLU,kt N2O/yr,2017,0.139677341
+USREP-ReEDS,ira_high_adv,USA,Emissions|N2O|AFOLU,kt N2O/yr,2020,95.87182072
+USREP-ReEDS,ira_high_adv,USA,Emissions|N2O|AFOLU,kt N2O/yr,2025,66.80929067
+USREP-ReEDS,ira_high_adv,USA,Emissions|N2O|AFOLU,kt N2O/yr,2030,62.30388693
+USREP-ReEDS,ira_high_adv,USA,Emissions|N2O|AFOLU,kt N2O/yr,2035,55.78706495
+USREP-ReEDS,ira_high_adv,USA,Emissions|N2O|Energy,kt N2O/yr,2017,32.46944007
+USREP-ReEDS,ira_high_adv,USA,Emissions|N2O|Energy,kt N2O/yr,2020,20.16719986
+USREP-ReEDS,ira_high_adv,USA,Emissions|N2O|Energy,kt N2O/yr,2025,30.70312556
+USREP-ReEDS,ira_high_adv,USA,Emissions|N2O|Energy,kt N2O/yr,2030,24.97719265
+USREP-ReEDS,ira_high_adv,USA,Emissions|N2O|Energy,kt N2O/yr,2035,24.9743859
+USREP-ReEDS,ira_high_adv,USA,Carbon Sequestration|CCS|Fossil|Energy,Mt CO2/yr,2017,0
+USREP-ReEDS,ira_high_adv,USA,Carbon Sequestration|CCS|Fossil|Energy,Mt CO2/yr,2020,0
+USREP-ReEDS,ira_high_adv,USA,Carbon Sequestration|CCS|Fossil|Energy,Mt CO2/yr,2025,473.9027561
+USREP-ReEDS,ira_high_adv,USA,Carbon Sequestration|CCS|Fossil|Energy,Mt CO2/yr,2030,417.108729
+USREP-ReEDS,ira_high_adv,USA,Carbon Sequestration|CCS|Fossil|Energy,Mt CO2/yr,2035,388.787462
+USREP-ReEDS,ira_high_adv,USA,Price|Primary Energy|Coal,US$2018/GJ,2017,1.468356962
+USREP-ReEDS,ira_high_adv,USA,Price|Primary Energy|Coal,US$2018/GJ,2020,1.425585203
+USREP-ReEDS,ira_high_adv,USA,Price|Primary Energy|Coal,US$2018/GJ,2025,1.542793054
+USREP-ReEDS,ira_high_adv,USA,Price|Primary Energy|Coal,US$2018/GJ,2030,1.600949562
+USREP-ReEDS,ira_high_adv,USA,Price|Primary Energy|Coal,US$2018/GJ,2035,1.641098799
+USREP-ReEDS,ira_high_adv,USA,Price|Primary Energy|Gas,US$2018/GJ,2017,3.447017779
+USREP-ReEDS,ira_high_adv,USA,Price|Primary Energy|Gas,US$2018/GJ,2020,3.365257073
+USREP-ReEDS,ira_high_adv,USA,Price|Primary Energy|Oil,US$2018/GJ,2017,245.0350187
+USREP-ReEDS,ira_high_adv,USA,Price|Primary Energy|Oil,US$2018/GJ,2020,240.6065588
+USREP-ReEDS,ira_high_adv,USA,Price|Primary Energy|Oil,US$2018/GJ,2025,259.3831153
+USREP-ReEDS,ira_high_adv,USA,Price|Primary Energy|Oil,US$2018/GJ,2030,275.3098677
+USREP-ReEDS,ira_high_adv,USA,Price|Primary Energy|Oil,US$2018/GJ,2035,292.4015934
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Electricity,US$2018/GJ,2017,29.2579956
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Electricity,US$2018/GJ,2020,17.39181799
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Electricity,US$2018/GJ,2025,15.33199145
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Electricity,US$2018/GJ,2030,12.94392484
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Electricity,US$2018/GJ,2035,12.38374829
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Gas,US$2018/GJ,2017,5.324238518
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Gas,US$2018/GJ,2020,5.363957133
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Gas,US$2018/GJ,2025,4.889799145
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Gas,US$2018/GJ,2030,4.582558602
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Gas,US$2018/GJ,2035,4.544497906
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Oil,US$2018/GJ,2017,16.85216307
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Oil,US$2018/GJ,2020,16.40674203
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Oil,US$2018/GJ,2025,17.2406766
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Oil,US$2018/GJ,2030,17.90309117
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Oil,US$2018/GJ,2035,18.61739915
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Electricity|Gas,US$2018/GJ,2017,3.433524962
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Electricity|Gas,US$2018/GJ,2020,3.382184098
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Electricity|Gas,US$2018/GJ,2025,3.20520188
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Electricity|Gas,US$2018/GJ,2030,3.287170775
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Electricity|Gas,US$2018/GJ,2035,3.337952459
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Residential|Electricity,US$2018/GJ,2017,40.48798727
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Residential|Electricity,US$2018/GJ,2020,22.40273736
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Residential|Electricity,US$2018/GJ,2025,18.74911414
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Residential|Electricity,US$2018/GJ,2030,14.05913992
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Residential|Electricity,US$2018/GJ,2035,12.0901121
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Residential|Gas,US$2018/GJ,2017,8.883800736
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Residential|Gas,US$2018/GJ,2020,9.452155276
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Residential|Gas,US$2018/GJ,2025,7.808106089
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Residential|Gas,US$2018/GJ,2030,7.27851392
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Residential|Gas,US$2018/GJ,2035,6.641829242
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Residential|Oil,US$2018/GJ,2017,20.90724355
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Residential|Oil,US$2018/GJ,2020,20.14683181
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Residential|Oil,US$2018/GJ,2025,18.34965064
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Residential|Oil,US$2018/GJ,2030,16.23120863
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Residential|Oil,US$2018/GJ,2035,14.55579121
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Commercial|Electricity,US$2018/GJ,2017,26.27448818
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Commercial|Electricity,US$2018/GJ,2020,17.02240343
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Commercial|Electricity,US$2018/GJ,2025,15.56543531
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Commercial|Electricity,US$2018/GJ,2030,13.53897519
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Commercial|Electricity,US$2018/GJ,2035,13.17272415
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Commercial|Gas,US$2018/GJ,2017,7.73372682
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Commercial|Gas,US$2018/GJ,2020,7.675298826
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Commercial|Gas,US$2018/GJ,2025,7.233590797
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Commercial|Gas,US$2018/GJ,2030,7.458145748
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Commercial|Gas,US$2018/GJ,2035,7.554891429
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Commercial|Oil,US$2018/GJ,2017,16.41008441
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Commercial|Oil,US$2018/GJ,2020,16.12534403
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Commercial|Oil,US$2018/GJ,2025,17.07940755
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Commercial|Oil,US$2018/GJ,2030,17.81065286
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Commercial|Oil,US$2018/GJ,2035,18.5842185
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Industrial|Electricity,US$2018/GJ,2017,16.8813679
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Industrial|Electricity,US$2018/GJ,2020,10.99452075
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Industrial|Electricity,US$2018/GJ,2025,9.983058714
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Industrial|Electricity,US$2018/GJ,2030,8.99777223
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Industrial|Electricity,US$2018/GJ,2035,8.96931699
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Industrial|Gas,US$2018/GJ,2017,4.754408438
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Industrial|Gas,US$2018/GJ,2020,4.696125233
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Industrial|Gas,US$2018/GJ,2025,4.771830745
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Industrial|Gas,US$2018/GJ,2030,4.3633215
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Industrial|Gas,US$2018/GJ,2035,4.479038006
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Industrial|Oil,US$2018/GJ,2017,12.35342784
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Industrial|Oil,US$2018/GJ,2020,12.16054344
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Industrial|Oil,US$2018/GJ,2025,13.02356831
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Industrial|Oil,US$2018/GJ,2030,13.8463555
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Industrial|Oil,US$2018/GJ,2035,14.71696355
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Transportation|Electricity,US$2018/GJ,2017,45.26685162
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Transportation|Electricity,US$2018/GJ,2020,34.93584129
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Transportation|Electricity,US$2018/GJ,2025,22.55232354
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Transportation|Electricity,US$2018/GJ,2030,21.62923069
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Transportation|Electricity,US$2018/GJ,2035,19.5384605
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Transportation|Oil|Diesel,US$2018/GJ,2017,18.20782668
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Transportation|Oil|Diesel,US$2018/GJ,2020,17.88610468
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Transportation|Oil|Diesel,US$2018/GJ,2025,18.76644936
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Transportation|Oil|Diesel,US$2018/GJ,2030,19.52727547
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Transportation|Oil|Diesel,US$2018/GJ,2035,20.37109351
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Transportation|Oil|Gasoline,US$2018/GJ,2017,19.61242935
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Transportation|Oil|Gasoline,US$2018/GJ,2020,19.26127989
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Transportation|Oil|Gasoline,US$2018/GJ,2025,20.42811162
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Transportation|Oil|Gasoline,US$2018/GJ,2030,21.28139697
+USREP-ReEDS,ira_high_adv,USA,Price|Final Energy|Transportation|Oil|Gasoline,US$2018/GJ,2035,22.25532106
+USREP-ReEDS,ira_high_adv,USA,Welfare,%,2020,0.001838847
+USREP-ReEDS,ira_high_adv,USA,Welfare,%,2025,-0.028882562
+USREP-ReEDS,ira_high_adv,USA,Welfare,%,2030,-0.428491197
+USREP-ReEDS,ira_high_adv,USA,Welfare,%,2035,-0.643809972
+USREP-ReEDS,ira_high_adv,USA,Price|Carbon,US$2018/t CO2,2017,0
+USREP-ReEDS,ira_high_adv,USA,Price|Carbon,US$2018/t CO2,2020,0
+USREP-ReEDS,ira_high_adv,USA,Price|Carbon,US$2018/t CO2,2025,0
+USREP-ReEDS,ira_high_adv,USA,Price|Carbon,US$2018/t CO2,2030,0
+USREP-ReEDS,ira_high_adv,USA,Price|Carbon,US$2018/t CO2,2035,0
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation,billion US$2018/yr,2020,0.321279671
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation,billion US$2018/yr,2025,-5.714627836
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation,billion US$2018/yr,2030,-93.80972856
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation,billion US$2018/yr,2035,-155.9713148
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 1,billion US$2018/yr,2020,0.006198416
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 1,billion US$2018/yr,2025,0.210458488
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 1,billion US$2018/yr,2030,-1.392976454
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 1,billion US$2018/yr,2035,1.606384248
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 2,billion US$2018/yr,2020,0.021893455
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 2,billion US$2018/yr,2025,-1.799995737
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 2,billion US$2018/yr,2030,-6.97873898
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 2,billion US$2018/yr,2035,-2.84015473
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 3,billion US$2018/yr,2020,0.028808917
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 3,billion US$2018/yr,2025,-1.617021466
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 3,billion US$2018/yr,2030,-8.456935626
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 3,billion US$2018/yr,2035,-6.81001238
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 4,billion US$2018/yr,2020,0.082316993
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 4,billion US$2018/yr,2025,-3.525908517
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 4,billion US$2018/yr,2030,-24.79671693
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 4,billion US$2018/yr,2035,-30.35127711
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 5,billion US$2018/yr,2020,0.18206189
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 5,billion US$2018/yr,2025,1.017839396
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 5,billion US$2018/yr,2030,-52.18436057
+USREP-ReEDS,ira_high_adv,USA,Policy Cost|Equivalent Variation|Quintile 5,billion US$2018/yr,2035,-117.5762548
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity,billion US$2018/yr,2017,207.5914784
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity,billion US$2018/yr,2020,131.8607717
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity,billion US$2018/yr,2025,134.0161332
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity,billion US$2018/yr,2030,122.6428534
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity,billion US$2018/yr,2035,121.4301979
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy,billion US$2018/yr,2017,268.1786841
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy,billion US$2018/yr,2020,190.8314978
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy,billion US$2018/yr,2025,178.1426439
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy,billion US$2018/yr,2030,158.9257447
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy,billion US$2018/yr,2035,151.5877478
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 1,billion US$2018/yr,2017,9.116398687
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 1,billion US$2018/yr,2020,5.936481242
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 1,billion US$2018/yr,2025,5.859139219
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 1,billion US$2018/yr,2030,5.209048647
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 1,billion US$2018/yr,2035,5.166258337
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 2,billion US$2018/yr,2017,27.87941174
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 2,billion US$2018/yr,2020,17.86189058
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 2,billion US$2018/yr,2025,17.68327961
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 2,billion US$2018/yr,2030,16.20149595
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 2,billion US$2018/yr,2035,16.20182299
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 3,billion US$2018/yr,2017,30.9021456
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 3,billion US$2018/yr,2020,19.7177542
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 3,billion US$2018/yr,2025,19.77441654
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 3,billion US$2018/yr,2030,18.10948128
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 3,billion US$2018/yr,2035,17.990905
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 4,billion US$2018/yr,2017,67.343824
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 4,billion US$2018/yr,2020,42.8953754
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 4,billion US$2018/yr,2025,43.87247246
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 4,billion US$2018/yr,2030,40.46452867
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 4,billion US$2018/yr,2035,40.30781415
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 5,billion US$2018/yr,2017,72.34969836
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 5,billion US$2018/yr,2020,45.44927023
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 5,billion US$2018/yr,2025,46.82682542
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 5,billion US$2018/yr,2030,42.65829889
+USREP-ReEDS,ira_high_adv,USA,Consumption|Electricity|Quintile 5,billion US$2018/yr,2035,41.76339746
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 1,billion US$2018/yr,2017,14.59154077
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 1,billion US$2018/yr,2020,11.49570194
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 1,billion US$2018/yr,2025,8.561895592
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 1,billion US$2018/yr,2030,7.273391229
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 1,billion US$2018/yr,2035,6.788514201
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 2,billion US$2018/yr,2017,38.81662933
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 2,billion US$2018/yr,2020,28.77396233
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 2,billion US$2018/yr,2025,25.79039671
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 2,billion US$2018/yr,2030,22.96729569
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 2,billion US$2018/yr,2035,21.96943199
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 3,billion US$2018/yr,2017,40.73327228
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 3,billion US$2018/yr,2020,29.4151667
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 3,billion US$2018/yr,2025,27.13118508
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 3,billion US$2018/yr,2030,24.22889893
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 3,billion US$2018/yr,2035,23.14717105
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 4,billion US$2018/yr,2017,87.13978188
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 4,billion US$2018/yr,2020,62.19115791
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 4,billion US$2018/yr,2025,58.86777799
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 4,billion US$2018/yr,2030,52.95603028
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 4,billion US$2018/yr,2035,50.78759848
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 5,billion US$2018/yr,2017,86.89745981
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 5,billion US$2018/yr,2020,58.95550894
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 5,billion US$2018/yr,2025,57.79138851
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 5,billion US$2018/yr,2030,51.50012855
+USREP-ReEDS,ira_high_adv,USA,Consumption|Energy|Quintile 5,billion US$2018/yr,2035,48.89503211
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 1,billion US$2018/yr,2017,275.5979935
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 1,billion US$2018/yr,2020,276.8768206
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 1,billion US$2018/yr,2025,293.0971044
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 1,billion US$2018/yr,2030,311.7005316
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 1,billion US$2018/yr,2035,343.9204345
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 2,billion US$2018/yr,2017,924.7408178
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 2,billion US$2018/yr,2020,921.223692
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 2,billion US$2018/yr,2025,1009.404867
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 2,billion US$2018/yr,2030,1092.909886
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 2,billion US$2018/yr,2035,1206.592399
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 3,billion US$2018/yr,2017,1223.96069
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 3,billion US$2018/yr,2020,1221.589132
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 3,billion US$2018/yr,2025,1367.062997
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 3,billion US$2018/yr,2030,1499.377404
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 3,billion US$2018/yr,2035,1661.552962
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 4,billion US$2018/yr,2017,3297.550513
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 4,billion US$2018/yr,2020,3291.500367
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 4,billion US$2018/yr,2025,3754.343896
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 4,billion US$2018/yr,2030,4163.829966
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 4,billion US$2018/yr,2035,4637.997241
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 5,billion US$2018/yr,2017,7048.401681
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 5,billion US$2018/yr,2020,6992.880951
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 5,billion US$2018/yr,2025,8055.654731
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 5,billion US$2018/yr,2030,8948.936124
+USREP-ReEDS,ira_high_adv,USA,Consumption|Total|Quintile 5,billion US$2018/yr,2035,9899.541554
+USREP-ReEDS,ira_high_adv,USA,GDP|Consumption,billion US$2018/yr,2017,13552.76934
+USREP-ReEDS,ira_high_adv,USA,GDP|Consumption,billion US$2018/yr,2020,13509.07045
+USREP-ReEDS,ira_high_adv,USA,GDP|Consumption,billion US$2018/yr,2025,15406.36603
+USREP-ReEDS,ira_high_adv,USA,GDP|Consumption,billion US$2018/yr,2030,16996.18581
+USREP-ReEDS,ira_high_adv,USA,GDP|Consumption,billion US$2018/yr,2035,18685.93203
+USREP-ReEDS,ira_high_adv,USA,GDP|Exports,billion US$2018/yr,2017,1772.728019
+USREP-ReEDS,ira_high_adv,USA,GDP|Exports,billion US$2018/yr,2020,1792.2999
+USREP-ReEDS,ira_high_adv,USA,GDP|Exports,billion US$2018/yr,2025,1962.418024
+USREP-ReEDS,ira_high_adv,USA,GDP|Exports,billion US$2018/yr,2030,2088.841181
+USREP-ReEDS,ira_high_adv,USA,GDP|Exports,billion US$2018/yr,2035,2219.505863
+USREP-ReEDS,ira_high_adv,USA,GDP|Government,billion US$2018/yr,2017,3468.153353
+USREP-ReEDS,ira_high_adv,USA,GDP|Government,billion US$2018/yr,2020,3511.974348
+USREP-ReEDS,ira_high_adv,USA,GDP|Government,billion US$2018/yr,2025,3991.286587
+USREP-ReEDS,ira_high_adv,USA,GDP|Government,billion US$2018/yr,2030,4483.926292
+USREP-ReEDS,ira_high_adv,USA,GDP|Government,billion US$2018/yr,2035,5020.757483
+USREP-ReEDS,ira_high_adv,USA,GDP|Imports,billion US$2018/yr,2017,2369.879635
+USREP-ReEDS,ira_high_adv,USA,GDP|Imports,billion US$2018/yr,2020,2402.851137
+USREP-ReEDS,ira_high_adv,USA,GDP|Imports,billion US$2018/yr,2025,2574.774076
+USREP-ReEDS,ira_high_adv,USA,GDP|Imports,billion US$2018/yr,2030,2709.77614
+USREP-ReEDS,ira_high_adv,USA,GDP|Imports,billion US$2018/yr,2035,2850.329529
+USREP-ReEDS,ira_high_adv,USA,GDP|Investment,billion US$2018/yr,2017,3561.486648
+USREP-ReEDS,ira_high_adv,USA,GDP|Investment,billion US$2018/yr,2020,3577.474628
+USREP-ReEDS,ira_high_adv,USA,GDP|Investment,billion US$2018/yr,2025,3588.335134
+USREP-ReEDS,ira_high_adv,USA,GDP|Investment,billion US$2018/yr,2030,3621.406596
+USREP-ReEDS,ira_high_adv,USA,GDP|Investment,billion US$2018/yr,2035,3670.355977
+USREP-ReEDS,ira_high_adv,USA,GDP|MER,billion US$2018/yr,2017,19985.25772
+USREP-ReEDS,ira_high_adv,USA,GDP|MER,billion US$2018/yr,2020,19987.96819
+USREP-ReEDS,ira_high_adv,USA,GDP|MER,billion US$2018/yr,2025,22373.6317
+USREP-ReEDS,ira_high_adv,USA,GDP|MER,billion US$2018/yr,2030,24480.58374
+USREP-ReEDS,ira_high_adv,USA,GDP|MER,billion US$2018/yr,2035,26746.22182
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Volume,Index 2020=1,2017,0.981489121
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Volume,Index 2020=1,2020,1
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Volume,Index 2020=1,2025,0.994281421
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Volume,Index 2020=1,2030,1.024317866
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Volume,Index 2020=1,2035,1.13841308
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|EInt Mfg|Volume,Index 2020=1,2017,0.985109562
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|EInt Mfg|Volume,Index 2020=1,2020,1
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|EInt Mfg|Volume,Index 2020=1,2025,0.855265819
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|EInt Mfg|Volume,Index 2020=1,2030,0.802657486
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|EInt Mfg|Volume,Index 2020=1,2035,1.017462829
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|NonEInt Mfg|Volume,Index 2020=1,2017,0.979093618
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|NonEInt Mfg|Volume,Index 2020=1,2020,1
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|NonEInt Mfg|Volume,Index 2020=1,2025,1.120576887
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|NonEInt Mfg|Volume,Index 2020=1,2030,1.221306307
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|NonEInt Mfg|Volume,Index 2020=1,2035,1.31351001
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Agriculture|Volume,Index 2020=1,2017,0.909694165
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Agriculture|Volume,Index 2020=1,2020,1
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Agriculture|Volume,Index 2020=1,2025,1.038271622
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Agriculture|Volume,Index 2020=1,2030,1.096025923
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Agriculture|Volume,Index 2020=1,2035,1.135265715
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Coal mining|Volume,Index 2020=1,2017,1.263989254
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Coal mining|Volume,Index 2020=1,2020,1
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Coal mining|Volume,Index 2020=1,2025,0.597234077
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Coal mining|Volume,Index 2020=1,2030,0.289131702
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Coal mining|Volume,Index 2020=1,2035,0.214427433
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Oil-gas extraction|Volume,Index 2020=1,2017,0.939459942
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Oil-gas extraction|Volume,Index 2020=1,2020,1
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Oil-gas extraction|Volume,Index 2020=1,2025,0.412853771
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Oil-gas extraction|Volume,Index 2020=1,2030,0.36185723
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Oil-gas extraction|Volume,Index 2020=1,2035,0.257982446
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Government|Value,billion US$2018/yr,2017,3011.830259
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Government|Value,billion US$2018/yr,2020,3050.596221
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Government|Value,billion US$2018/yr,2025,3454.69233
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Government|Value,billion US$2018/yr,2030,3877.975576
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Government|Value,billion US$2018/yr,2035,4339.460165
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Government|Volume,Index 2020=1,2017,0.993968491
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Government|Volume,Index 2020=1,2020,1
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Government|Volume,Index 2020=1,2025,1.13431742
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Government|Volume,Index 2020=1,2030,1.273948134
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Government|Volume,Index 2020=1,2035,1.421386093
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Services|Value,billion US$2018/yr,2017,-3011.830259
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Services|Value,billion US$2018/yr,2020,-3050.596221
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Services|Value,billion US$2018/yr,2025,-3454.69233
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Services|Value,billion US$2018/yr,2030,-3877.975576
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Services|Value,billion US$2018/yr,2035,-4339.460165
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Services|Volume,Index 2020=1,2017,1.005503512
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Services|Volume,Index 2020=1,2020,1
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Services|Volume,Index 2020=1,2025,1.125357939
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Services|Volume,Index 2020=1,2030,1.236682473
+USREP-ReEDS,ira_high_adv,USA,Output|Industry|Non Mfg|Services|Volume,Index 2020=1,2035,1.359599936
+USREP-ReEDS,ira_high_adv,USA,Population,Million,2017,121.7455817
+USREP-ReEDS,ira_high_adv,USA,Population,Million,2020,121.7455817
+USREP-ReEDS,ira_high_adv,USA,Population,Million,2025,121.7455817
+USREP-ReEDS,ira_high_adv,USA,Population,Million,2030,121.7455817
+USREP-ReEDS,ira_high_adv,USA,Population,Million,2035,121.7455817
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential|Gas,EJ/yr,2017,4.714520712
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential|Gas,EJ/yr,2020,4.759030369
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential|Gas,EJ/yr,2025,3.724407219
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential|Gas,EJ/yr,2030,3.028090636
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential|Gas,EJ/yr,2035,2.515858581
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential|Oil,EJ/yr,2017,0.894634583
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential|Oil,EJ/yr,2020,0.830050524
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential|Oil,EJ/yr,2025,0.648582434
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential|Oil,EJ/yr,2030,0.496286373
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential|Oil,EJ/yr,2035,0.386526113
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential|Electricity,EJ/yr,2017,5.127236308
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential|Electricity,EJ/yr,2020,5.011282528
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential|Electricity,EJ/yr,2025,5.537607861
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential|Electricity,EJ/yr,2030,5.802174849
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential|Electricity,EJ/yr,2035,5.853200126
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential,EJ/yr,2017,10.7363916
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential,EJ/yr,2020,10.60036342
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential,EJ/yr,2025,9.910597514
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential,EJ/yr,2030,9.326551858
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Residential,EJ/yr,2035,8.75558482
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial|Gas,EJ/yr,2017,3.463726474
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial|Gas,EJ/yr,2020,3.477275266
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial|Gas,EJ/yr,2025,3.608043738
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial|Gas,EJ/yr,2030,3.110110022
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial|Gas,EJ/yr,2035,2.71016263
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial|Oil,EJ/yr,2017,0.887110217
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial|Oil,EJ/yr,2020,0.854926627
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial|Oil,EJ/yr,2025,0.779085168
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial|Oil,EJ/yr,2030,0.660527
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial|Oil,EJ/yr,2035,0.557766839
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial|Electricity,EJ/yr,2017,5.165648027
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial|Electricity,EJ/yr,2020,5.464003046
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial|Electricity,EJ/yr,2025,6.196608402
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial|Electricity,EJ/yr,2030,6.850594331
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial|Electricity,EJ/yr,2035,7.082637177
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial,EJ/yr,2017,9.516484719
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial,EJ/yr,2020,9.796204939
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial,EJ/yr,2025,10.58373731
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial,EJ/yr,2030,10.62123135
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Commercial,EJ/yr,2035,10.35056665
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Coal,EJ/yr,2017,0.021957499
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Coal,EJ/yr,2020,0.018206865
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Coal,EJ/yr,2025,0.015983448
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Coal,EJ/yr,2030,0.014161621
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Coal,EJ/yr,2035,0.013422659
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Gas,EJ/yr,2017,8.178247186
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Gas,EJ/yr,2020,8.236305635
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Gas,EJ/yr,2025,7.332450957
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Gas,EJ/yr,2030,6.138200659
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Gas,EJ/yr,2035,5.226021211
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Oil,EJ/yr,2017,1.7817448
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Oil,EJ/yr,2020,1.684977151
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Oil,EJ/yr,2025,1.427667603
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Oil,EJ/yr,2030,1.156813373
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Oil,EJ/yr,2035,0.944292952
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Electricity,EJ/yr,2017,10.29288434
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Electricity,EJ/yr,2020,10.47528557
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Electricity,EJ/yr,2025,11.73421626
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Electricity,EJ/yr,2030,12.65276918
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings|Electricity,EJ/yr,2035,12.9358373
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings,EJ/yr,2017,20.25287632
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings,EJ/yr,2020,20.39656836
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings,EJ/yr,2025,20.49433482
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings,EJ/yr,2030,19.94778321
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Buildings,EJ/yr,2035,19.10615147
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Coal,EJ/yr,2017,0.410661016
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Coal,EJ/yr,2020,0.415311392
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Coal,EJ/yr,2025,0.439481477
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Coal,EJ/yr,2030,0.456834944
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Coal,EJ/yr,2035,0.467862103
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Gas,EJ/yr,2017,1.135461859
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Gas,EJ/yr,2020,1.157362902
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Gas,EJ/yr,2025,1.376796562
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Gas,EJ/yr,2030,1.386968005
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Gas,EJ/yr,2035,1.356616441
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Oil,EJ/yr,2017,5.28377004
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Oil,EJ/yr,2020,5.489559411
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Oil,EJ/yr,2025,5.655656202
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Oil,EJ/yr,2030,5.731719152
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Oil,EJ/yr,2035,5.823628386
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Electricity,EJ/yr,2017,1.354329749
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Electricity,EJ/yr,2020,1.343264636
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Electricity,EJ/yr,2025,1.397285996
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Electricity,EJ/yr,2030,1.364582146
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|EInt Mfg|Electricity,EJ/yr,2035,1.285513014
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Coal,EJ/yr,2017,0.664480499
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Coal,EJ/yr,2020,0.582957662
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Coal,EJ/yr,2025,0.536919013
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Coal,EJ/yr,2030,0.473830058
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Coal,EJ/yr,2035,0.399138572
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Gas,EJ/yr,2017,5.685222105
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Gas,EJ/yr,2020,6.33555864
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Gas,EJ/yr,2025,7.391786224
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Gas,EJ/yr,2030,8.014946135
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Gas,EJ/yr,2035,8.155562139
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Oil,EJ/yr,2017,1.772347248
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Oil,EJ/yr,2020,1.72013015
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Oil,EJ/yr,2025,1.745887304
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Oil,EJ/yr,2030,1.767624614
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Oil,EJ/yr,2035,1.847748328
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Electricity,EJ/yr,2017,1.594435561
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Electricity,EJ/yr,2020,1.666905181
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Electricity,EJ/yr,2025,1.841472512
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Electricity,EJ/yr,2030,1.947208404
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|NonEInt Mfg|Electricity,EJ/yr,2035,1.970086391
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Agriculture|Coal,EJ/yr,2017,0.058385276
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Agriculture|Coal,EJ/yr,2020,0.052200124
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Agriculture|Coal,EJ/yr,2025,0.047118041
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Agriculture|Coal,EJ/yr,2030,0.041505932
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Agriculture|Coal,EJ/yr,2035,0.034862964
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Agriculture|Oil,EJ/yr,2017,0.679430427
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Agriculture|Oil,EJ/yr,2020,0.735758698
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Agriculture|Oil,EJ/yr,2025,0.69428908
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Agriculture|Oil,EJ/yr,2030,0.659056639
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Agriculture|Oil,EJ/yr,2035,0.644206333
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Agriculture|Electricity,EJ/yr,2017,0.246624323
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Agriculture|Electricity,EJ/yr,2020,0.283990695
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Agriculture|Electricity,EJ/yr,2025,0.280392476
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Agriculture|Electricity,EJ/yr,2030,0.280168485
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Agriculture|Electricity,EJ/yr,2035,0.270811821
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Coal,EJ/yr,2017,0.137683442
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Coal,EJ/yr,2020,0.102884223
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Coal,EJ/yr,2025,0.078353806
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Coal,EJ/yr,2030,0.044698132
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Coal,EJ/yr,2035,0.047450286
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Gas,EJ/yr,2017,4.245E-05
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Gas,EJ/yr,2020,3.03772E-05
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Gas,EJ/yr,2025,2.12484E-05
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Gas,EJ/yr,2030,9.63804E-06
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Gas,EJ/yr,2035,7.37479E-06
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Oil,EJ/yr,2017,0.065417894
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Oil,EJ/yr,2020,0.046945497
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Oil,EJ/yr,2025,0.025377757
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Oil,EJ/yr,2030,0.010665797
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Oil,EJ/yr,2035,0.008116712
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Electricity,EJ/yr,2017,0.047316068
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Electricity,EJ/yr,2020,0.037001074
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Electricity,EJ/yr,2025,0.019896705
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Electricity,EJ/yr,2030,0.008416104
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal mining|Electricity,EJ/yr,2035,0.005242757
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Coal,EJ/yr,2017,0.002992748
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Coal,EJ/yr,2020,0.002993475
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Coal,EJ/yr,2025,0.003661018
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Coal,EJ/yr,2030,0.003190261
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Coal,EJ/yr,2035,0.002962451
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Gas,EJ/yr,2017,2.653352996
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Gas,EJ/yr,2020,2.802459938
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Gas,EJ/yr,2025,9.211912737
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Gas,EJ/yr,2030,7.977448995
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Gas,EJ/yr,2035,7.964251898
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Oil,EJ/yr,2017,0.559684118
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Oil,EJ/yr,2020,0.56578477
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Oil,EJ/yr,2025,0.595426176
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Oil,EJ/yr,2030,0.438523097
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Oil,EJ/yr,2035,0.300121724
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Electricity,EJ/yr,2017,0.219375631
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Electricity,EJ/yr,2020,0.209013418
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Electricity,EJ/yr,2025,0.329294142
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Electricity,EJ/yr,2030,0.250130439
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil-gas extraction|Electricity,EJ/yr,2035,0.195931593
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal,EJ/yr,2017,0.199061466
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal,EJ/yr,2020,0.158077822
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal,EJ/yr,2025,0.129132864
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal,EJ/yr,2030,0.089394324
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Coal,EJ/yr,2035,0.085275702
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Gas,EJ/yr,2017,2.653395446
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Gas,EJ/yr,2020,2.802490315
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Gas,EJ/yr,2025,9.211933986
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Gas,EJ/yr,2030,7.977458633
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Gas,EJ/yr,2035,7.964259273
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil,EJ/yr,2017,1.304532439
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil,EJ/yr,2020,1.348488965
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil,EJ/yr,2025,1.315093013
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil,EJ/yr,2030,1.108245533
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Oil,EJ/yr,2035,0.95244477
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Electricity,EJ/yr,2017,0.513316022
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Electricity,EJ/yr,2020,0.530005187
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Electricity,EJ/yr,2025,0.629583323
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Electricity,EJ/yr,2030,0.538715028
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Non Mfg|Electricity,EJ/yr,2035,0.471986171
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Coal,EJ/yr,2017,1.274202981
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Coal,EJ/yr,2020,1.156346876
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Coal,EJ/yr,2025,1.105533354
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Coal,EJ/yr,2030,1.020059327
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Coal,EJ/yr,2035,0.952276377
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Gas,EJ/yr,2017,9.47407941
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Gas,EJ/yr,2020,10.29541186
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Gas,EJ/yr,2025,17.98051677
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Gas,EJ/yr,2030,17.37937277
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Gas,EJ/yr,2035,17.47643785
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Oil,EJ/yr,2017,8.360649727
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Oil,EJ/yr,2020,8.558178525
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Oil,EJ/yr,2025,8.716636519
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Oil,EJ/yr,2030,8.607589299
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Oil,EJ/yr,2035,8.623821485
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Electricity,EJ/yr,2017,3.462081332
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Electricity,EJ/yr,2020,3.540175004
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Electricity,EJ/yr,2025,3.868341831
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Electricity,EJ/yr,2030,3.850505577
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry|Electricity,EJ/yr,2035,3.727585577
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry,EJ/yr,2017,22.57101345
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry,EJ/yr,2020,23.55011226
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry,EJ/yr,2025,31.67102847
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry,EJ/yr,2030,30.85752698
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Industry,EJ/yr,2035,30.78012129
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Freight|Oil,EJ/yr,2017,9.472929049
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Freight|Oil,EJ/yr,2020,7.984169679
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Freight|Oil,EJ/yr,2025,9.991789092
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Freight|Oil,EJ/yr,2030,9.106255124
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Freight|Oil,EJ/yr,2035,7.863165533
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Freight|Electricity,EJ/yr,2025,0.019465267
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Freight|Electricity,EJ/yr,2030,0.038304152
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Freight|Electricity,EJ/yr,2035,0.079226352
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Road|Oil,EJ/yr,2017,15.86190653
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Road|Oil,EJ/yr,2020,14.17611245
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Road|Oil,EJ/yr,2025,12.64785416
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Road|Oil,EJ/yr,2030,11.28010821
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Road|Oil,EJ/yr,2035,9.97870946
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2017,0.183814199
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2020,0.023996957
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.101291226
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.51790648
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.146322053
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Oil,EJ/yr,2017,19.10598666
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Oil,EJ/yr,2020,17.30815615
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Oil,EJ/yr,2025,16.18315749
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Oil,EJ/yr,2030,15.05743419
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Oil,EJ/yr,2035,14.02740651
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Electricity,EJ/yr,2017,0.183814199
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Electricity,EJ/yr,2020,0.023996957
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Electricity,EJ/yr,2025,0.108681919
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Electricity,EJ/yr,2030,0.53358162
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Passenger|Electricity,EJ/yr,2035,1.186193198
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Oil,EJ/yr,2017,28.5789157
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Oil,EJ/yr,2020,25.29232583
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Oil,EJ/yr,2025,26.17494658
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Oil,EJ/yr,2030,24.16368931
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Oil,EJ/yr,2035,21.89057205
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Electricity,EJ/yr,2017,0.183814199
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Electricity,EJ/yr,2020,0.023996957
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Electricity,EJ/yr,2025,0.128147186
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Electricity,EJ/yr,2030,0.571885773
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation|Electricity,EJ/yr,2035,1.265419549
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation,EJ/yr,2017,28.7627299
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation,EJ/yr,2020,25.31632278
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation,EJ/yr,2025,26.30309377
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation,EJ/yr,2030,24.73557508
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Transportation,EJ/yr,2035,23.1559916
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Coal,EJ/yr,2017,1.29616048
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Coal,EJ/yr,2020,1.174553741
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Coal,EJ/yr,2025,1.121516802
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Coal,EJ/yr,2030,1.034220948
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Coal,EJ/yr,2035,0.965699036
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Gas,EJ/yr,2017,17.6523266
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Gas,EJ/yr,2020,18.53171749
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Gas,EJ/yr,2025,25.31296773
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Gas,EJ/yr,2030,23.51757343
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Gas,EJ/yr,2035,22.70245906
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Oil,EJ/yr,2017,38.72131023
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Oil,EJ/yr,2020,35.5354815
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Oil,EJ/yr,2025,36.3192507
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Oil,EJ/yr,2030,33.92809198
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Oil,EJ/yr,2035,31.45868648
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Electricity,EJ/yr,2017,13.93877987
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Electricity,EJ/yr,2020,14.03945754
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Electricity,EJ/yr,2025,15.73070528
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Electricity,EJ/yr,2030,17.07516053
+USREP-ReEDS,ira_high_adv,USA,Final Energy|Electricity,EJ/yr,2035,17.92884243
+USREP-ReEDS,ira_high_adv,USA,Final Energy,EJ/yr,2017,71.58661968
+USREP-ReEDS,ira_high_adv,USA,Final Energy,EJ/yr,2020,69.2630034
+USREP-ReEDS,ira_high_adv,USA,Final Energy,EJ/yr,2025,78.46845707
+USREP-ReEDS,ira_high_adv,USA,Final Energy,EJ/yr,2030,75.54088527
+USREP-ReEDS,ira_high_adv,USA,Final Energy,EJ/yr,2035,73.04226435
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Hydro,EJ/yr,2020,1.043050575
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Hydro,EJ/yr,2025,1.06364521
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Hydro,EJ/yr,2030,1.08033145
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Hydro,EJ/yr,2035,1.039380329
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Nuclear,EJ/yr,2020,8.565294675
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Nuclear,EJ/yr,2025,8.58062225
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Nuclear,EJ/yr,2030,7.927732907
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Nuclear,EJ/yr,2035,7.252089968
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Solar,EJ/yr,2020,0.79933446
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Solar,EJ/yr,2025,2.431171605
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Solar,EJ/yr,2030,3.076879253
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Solar,EJ/yr,2035,3.65235106
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Wind,EJ/yr,2020,1.74028877
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Wind,EJ/yr,2025,3.276469269
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Wind,EJ/yr,2030,6.822958993
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Wind,EJ/yr,2035,8.655858128
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Geothermal,EJ/yr,2020,0.010672971
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Geothermal,EJ/yr,2025,0.011798981
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Geothermal,EJ/yr,2030,0.011798981
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Geothermal,EJ/yr,2035,0.011371361
+USREP-ReEDS,ira_high_adv,USA,Primary Energy,EJ/yr,2017,84.8808969
+USREP-ReEDS,ira_high_adv,USA,Primary Energy,EJ/yr,2020,87.65924183
+USREP-ReEDS,ira_high_adv,USA,Primary Energy,EJ/yr,2025,93.86987979
+USREP-ReEDS,ira_high_adv,USA,Primary Energy,EJ/yr,2030,84.75456041
+USREP-ReEDS,ira_high_adv,USA,Primary Energy,EJ/yr,2035,80.98598658
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Biomass|w/o CCS,EJ/yr,2020,0.076651602
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Biomass|w/o CCS,EJ/yr,2025,0.068528927
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Biomass|w/o CCS,EJ/yr,2030,0.058484254
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Biomass|w/o CCS,EJ/yr,2035,0.05502364
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Biomass,EJ/yr,2020,0.076651602
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Biomass,EJ/yr,2025,0.068528927
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Biomass,EJ/yr,2030,0.058484254
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Biomass,EJ/yr,2035,0.055023641
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Coal|w/ CCS,EJ/yr,2030,2.18802E-10
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Coal|w/ CCS,EJ/yr,2035,2.54047E-10
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Coal|w/o CCS,EJ/yr,2020,3.029420293
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Coal|w/o CCS,EJ/yr,2025,1.761858229
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Coal|w/o CCS,EJ/yr,2030,0.470483201
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Coal|w/o CCS,EJ/yr,2035,0.307417221
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Coal,EJ/yr,2020,3.029420293
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Coal,EJ/yr,2025,1.761858229
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Coal,EJ/yr,2030,0.470483201
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Coal,EJ/yr,2035,0.307417222
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|ST|w/o CCS,EJ/yr,2020,0.59130953
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|ST|w/o CCS,EJ/yr,2025,0.060939469
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|ST|w/o CCS,EJ/yr,2030,0.048033627
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|ST|w/o CCS,EJ/yr,2035,0.042936347
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CC|w/ CCS,EJ/yr,2030,4.05903E-10
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CC|w/ CCS,EJ/yr,2035,4.41127E-10
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CC|w/o CCS,EJ/yr,2020,3.904518673
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CC|w/o CCS,EJ/yr,2025,3.986905362
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CC|w/o CCS,EJ/yr,2030,2.139482266
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CC|w/o CCS,EJ/yr,2035,1.457515437
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CC,EJ/yr,2020,3.904518673
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CC,EJ/yr,2025,3.986905362
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CC,EJ/yr,2030,2.139482267
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CC,EJ/yr,2035,1.457515437
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CT|w/o CCS,EJ/yr,2020,0.240890376
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CT|w/o CCS,EJ/yr,2025,0.14703771
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CT|w/o CCS,EJ/yr,2030,0.138371098
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CT|w/o CCS,EJ/yr,2035,0.136237309
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CT,EJ/yr,2020,0.240890376
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CT,EJ/yr,2025,0.14703771
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CT,EJ/yr,2030,0.138371098
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|CT,EJ/yr,2035,0.136237309
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|w/ CCS,EJ/yr,2030,4.05903E-10
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|w/ CCS,EJ/yr,2035,4.41127E-10
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|w/o CCS,EJ/yr,2020,4.736718579
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|w/o CCS,EJ/yr,2025,4.194882542
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|w/o CCS,EJ/yr,2030,2.325886991
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas|w/o CCS,EJ/yr,2035,1.636689093
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas,EJ/yr,2020,4.736718579
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas,EJ/yr,2025,4.194882542
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas,EJ/yr,2030,2.325886992
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Gas,EJ/yr,2035,1.636689093
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Hydro,EJ/yr,2020,1.043050587
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Hydro,EJ/yr,2025,1.063645223
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Hydro,EJ/yr,2030,1.080331463
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Hydro,EJ/yr,2035,1.039380342
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Nuclear,EJ/yr,2020,2.794072527
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Nuclear,EJ/yr,2025,2.799072513
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Nuclear,EJ/yr,2030,2.586094414
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Nuclear,EJ/yr,2035,2.365693898
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Solar|PV,EJ/yr,2020,0.638416084
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Solar|PV,EJ/yr,2025,2.222899317
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Solar|PV,EJ/yr,2030,2.717192212
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Solar|PV,EJ/yr,2035,3.035568144
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Solar,EJ/yr,2020,0.65155414
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Solar,EJ/yr,2025,2.232695736
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Solar,EJ/yr,2030,2.724485769
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Solar,EJ/yr,2035,3.045756114
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Wind|Onshore,EJ/yr,2020,1.739745947
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Wind|Onshore,EJ/yr,2025,3.199150744
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Wind|Onshore,EJ/yr,2030,6.596048424
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Wind|Onshore,EJ/yr,2035,8.12290541
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Wind,EJ/yr,2020,1.740288792
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Wind,EJ/yr,2025,3.276469309
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Wind,EJ/yr,2030,6.822959076
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Wind,EJ/yr,2035,8.655858234
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Storage,EJ/yr,2020,0.055554456
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Storage,EJ/yr,2025,1.357905752
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Storage,EJ/yr,2030,4.038710766
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Storage,EJ/yr,2035,4.246471565
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Storage|Battery,EJ/yr,2020,0.045096699
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Storage|Battery,EJ/yr,2025,0.155265633
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Storage|Battery,EJ/yr,2030,0.272768801
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Storage|Battery,EJ/yr,2035,0.260710613
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Storage|PSH,EJ/yr,2020,0.045096699
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Storage|PSH,EJ/yr,2025,0.155265633
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Storage|PSH,EJ/yr,2030,0.272768801
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Storage|PSH,EJ/yr,2035,0.260710613
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Curtailment,EJ/yr,2020,0.016939658
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Curtailment,EJ/yr,2025,0.653866565
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Curtailment,EJ/yr,2030,1.544130509
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Curtailment,EJ/yr,2035,1.828062357
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Losses|T&D,EJ/yr,2020,0.700179827
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Losses|T&D,EJ/yr,2025,0.759110841
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Losses|T&D,EJ/yr,2030,0.781895566
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Losses|T&D,EJ/yr,2035,0.809497648
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Losses|Storage,EJ/yr,2020,0.00351677
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Losses|Storage,EJ/yr,2025,-1.061070746
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Losses|Storage,EJ/yr,2030,-3.052350925
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Losses|Storage,EJ/yr,2035,-3.133710286
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Losses,EJ/yr,2020,0.703696596
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Losses,EJ/yr,2025,-0.301959904
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Losses,EJ/yr,2030,-2.270455358
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Losses,EJ/yr,2035,-2.324212638
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity,EJ/yr,2020,14.09936915
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity,EJ/yr,2025,16.06281802
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity,EJ/yr,2030,17.62465466
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity,EJ/yr,2035,18.94525226
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Wind|Offshore,EJ/yr,2020,0.000542845
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Wind|Offshore,EJ/yr,2025,0.077318565
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Wind|Offshore,EJ/yr,2030,0.226910652
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Wind|Offshore,EJ/yr,2035,0.532952824
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Solar|CSP,EJ/yr,2020,0.013138056
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Solar|CSP,EJ/yr,2025,0.009796419
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Solar|CSP,EJ/yr,2030,0.007293557
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Solar|CSP,EJ/yr,2035,0.01018797
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Geothermal,EJ/yr,2020,0.010672971
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Geothermal,EJ/yr,2025,0.011798981
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Geothermal,EJ/yr,2030,0.011798981
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Geothermal,EJ/yr,2035,0.011371361
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Biomass|w/ CCS,EJ/yr,2030,8.38519E-11
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Biomass|w/ CCS,EJ/yr,2035,8.50578E-11
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Biomass|w/ CCS,GW,2030,4.50734E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Biomass|w/ CCS,GW,2035,4.50734E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Biomass|w/o CCS,GW,2020,6.5232
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Biomass|w/o CCS,GW,2025,6.388700005
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Biomass|w/o CCS,GW,2030,5.857600015
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Biomass|w/o CCS,GW,2035,5.025500017
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Biomass,GW,2020,6.5232
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Biomass,GW,2025,6.388700005
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Biomass,GW,2030,5.85760002
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Biomass,GW,2035,5.025500021
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Coal|w/ CCS,GW,2030,1.05247E-08
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Coal|w/ CCS,GW,2035,1.09171E-08
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Coal|w/o CCS,GW,2020,220.266301
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Coal|w/o CCS,GW,2025,168.8106333
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Coal|w/o CCS,GW,2030,132.9941399
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Coal|w/o CCS,GW,2035,117.0246557
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Coal,GW,2020,220.266301
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Coal,GW,2025,168.8106333
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Coal,GW,2030,132.9941399
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Coal,GW,2035,117.0246557
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|ST|w/o CCS,GW,2020,89.885
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|ST|w/o CCS,GW,2025,32.20629819
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|ST|w/o CCS,GW,2030,25.3856055
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|ST|w/o CCS,GW,2035,22.69171041
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CC|w/ CCS,GW,2030,1.98884E-08
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CC|w/ CCS,GW,2035,2.22491E-08
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CC|w/o CCS,GW,2020,268.245202
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CC|w/o CCS,GW,2025,268.4373444
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CC|w/o CCS,GW,2030,264.2073444
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CC|w/o CCS,GW,2035,262.0112444
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CC,GW,2020,268.245202
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CC,GW,2025,268.4373444
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CC,GW,2030,264.2073444
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CC,GW,2035,262.0112444
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CT|w/o CCS,GW,2020,127.3097287
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CT|w/o CCS,GW,2025,77.70891998
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CT|w/o CCS,GW,2030,73.12864544
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CT|w/o CCS,GW,2035,72.00094543
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CT,GW,2020,127.3097287
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CT,GW,2025,77.70891998
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CT,GW,2030,73.12864544
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|CT,GW,2035,72.00094543
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|w/ CCS,GW,2030,1.98884E-08
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|w/ CCS,GW,2035,2.22491E-08
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|w/o CCS,GW,2020,485.4399307
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|w/o CCS,GW,2025,378.3525625
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|w/o CCS,GW,2030,362.7215954
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas|w/o CCS,GW,2035,356.7039003
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas,GW,2020,485.4399307
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas,GW,2025,378.3525625
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas,GW,2030,362.7215954
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Gas,GW,2035,356.7039003
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Hydro,GW,2020,80.918801
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Hydro,GW,2025,82.05880101
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Hydro,GW,2030,83.61429454
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Hydro,GW,2035,83.69682455
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Nuclear,GW,2020,96.5236
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Nuclear,GW,2025,96.9468
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Nuclear,GW,2030,94.70680001
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Nuclear,GW,2035,89.02324379
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar|PV,GW,2020,83.52968758
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar|PV,GW,2025,290.4389302
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar|PV,GW,2030,383.4166414
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar|PV,GW,2035,441.1989504
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar|PV|Rooftop,GW,2020,25.91054545
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar|PV|Rooftop,GW,2025,47.25827273
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar|PV|Rooftop,GW,2030,96.33063636
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar|PV|Rooftop,GW,2035,130.9746818
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar|PV|Utility-Scale,GW,2020,57.61914213
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar|PV|Utility-Scale,GW,2025,243.1806575
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar|PV|Utility-Scale,GW,2030,287.086005
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar|PV|Utility-Scale,GW,2035,310.2242686
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar,GW,2020,84.85308758
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar,GW,2025,291.7623302
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar,GW,2030,384.7400415
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar,GW,2035,442.5223505
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Wind|Offshore,GW,2020,0.042
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Wind|Offshore,GW,2025,7.675
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Wind|Offshore,GW,2030,24.242
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Wind|Offshore,GW,2035,41.766
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Wind|Onshore,GW,2020,138.9103214
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Wind|Onshore,GW,2025,257.3427005
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Wind|Onshore,GW,2030,529.7351536
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Wind|Onshore,GW,2035,653.2109557
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Wind,GW,2020,138.9523214
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Wind,GW,2025,265.0177005
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Wind,GW,2030,553.9771536
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Wind,GW,2035,694.9769557
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Storage Capacity,GW,2020,25.23934085
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Storage Capacity,GW,2025,133.2579542
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Storage Capacity,GW,2030,367.6133927
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Storage Capacity,GW,2035,421.5572391
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Storage Capacity|Battery,GW,2020,1.250500006
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Storage Capacity|Battery,GW,2025,11.80218449
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Storage Capacity|Battery,GW,2030,71.27384669
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Storage Capacity|Battery,GW,2035,96.99461889
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Storage Capacity|PSH,GW,2020,23.061203
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Storage Capacity|PSH,GW,2025,27.20241932
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Storage Capacity|PSH,GW,2030,34.25669457
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Storage Capacity|PSH,GW,2035,34.25669458
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity,GW,2020,1141.599683
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity,GW,2025,1425.520582
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity,GW,2030,1989.150118
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity,GW,2035,2213.45577
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Biomass|w/ CCS,GW/yr,2030,9.01468E-10
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Biomass|w/o CCS,GW/yr,2020,0.07698
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Biomass|w/o CCS,GW/yr,2025,0.006480001
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Biomass|w/o CCS,GW/yr,2030,2.03439E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Biomass|w/o CCS,GW/yr,2035,2.42428E-10
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Biomass,GW/yr,2020,0.07698
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Biomass,GW/yr,2025,0.006480001
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Biomass,GW/yr,2030,2.93585E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Biomass,GW/yr,2035,2.42428E-10
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Coal|w/ CCS,GW/yr,2030,2.10493E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Coal|w/ CCS,GW/yr,2035,8.02723E-11
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Coal|w/o CCS,GW/yr,2020,0.21254
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Coal|w/o CCS,GW/yr,2030,4.85557E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Coal|w/o CCS,GW/yr,2035,2.90054E-10
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Coal,GW/yr,2020,0.21254
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Coal,GW/yr,2030,6.9605E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Coal,GW/yr,2035,3.70326E-10
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CC|w/ CCS,GW/yr,2030,3.97768E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CC|w/ CCS,GW/yr,2035,4.77286E-10
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CC|w/o CCS,GW/yr,2020,8.2457804
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CC|w/o CCS,GW/yr,2025,3.284960005
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CC|w/o CCS,GW/yr,2030,1.11844E-08
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CC|w/o CCS,GW/yr,2035,1.28305E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CC,GW/yr,2020,8.2457804
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CC,GW/yr,2025,3.284960005
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CC,GW/yr,2030,1.5162E-08
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CC,GW/yr,2035,1.76034E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CT|w/o CCS,GW/yr,2020,1.849580003
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CT|w/o CCS,GW/yr,2025,1.185440003
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CT|w/o CCS,GW/yr,2030,1.11231E-08
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CT|w/o CCS,GW/yr,2035,1.37563E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CT,GW/yr,2020,1.849580003
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CT,GW/yr,2025,1.185440003
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CT,GW/yr,2030,1.11231E-08
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|CT,GW/yr,2035,1.37563E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|w/ CCS,GW/yr,2030,3.97768E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|w/ CCS,GW/yr,2035,4.77286E-10
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|w/o CCS,GW/yr,2020,10.1533004
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|w/o CCS,GW/yr,2025,4.554100008
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|w/o CCS,GW/yr,2030,2.23074E-08
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|w/o CCS,GW/yr,2035,2.65868E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas,GW/yr,2020,10.1533004
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas,GW/yr,2025,4.554100008
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas,GW/yr,2030,2.62851E-08
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas,GW/yr,2035,3.13597E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Hydro,GW/yr,2020,0.21244
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Hydro,GW/yr,2025,0.228000003
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Hydro,GW/yr,2030,0.311098706
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Hydro,GW/yr,2035,0.016506001
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Nuclear,GW/yr,2020,0.228
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Nuclear,GW/yr,2025,0.4456
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Nuclear,GW/yr,2030,1.0576E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar|PV,GW/yr,2020,12.21818661
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar|PV,GW/yr,2025,41.38184853
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar|PV,GW/yr,2030,18.59554224
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar|PV,GW/yr,2035,11.5564618
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar|PV|Rooftop,GW/yr,2020,3.023418182
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar|PV|Rooftop,GW/yr,2025,4.269545455
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar|PV|Rooftop,GW/yr,2030,9.814472727
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar|PV|Rooftop,GW/yr,2035,6.928809091
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar|PV|Utility-Scale,GW/yr,2020,9.194768425
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar|PV|Utility-Scale,GW/yr,2025,37.11230307
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar|PV|Utility-Scale,GW/yr,2030,8.781069509
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar|PV|Utility-Scale,GW/yr,2035,4.627652714
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar,GW/yr,2020,12.21818661
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar,GW/yr,2025,41.38184853
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar,GW/yr,2030,18.59554225
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar,GW/yr,2035,11.55646181
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Wind|Offshore,GW/yr,2020,0.0084
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Wind|Offshore,GW/yr,2025,1.5266
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Wind|Offshore,GW/yr,2030,3.313400001
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Wind|Offshore,GW/yr,2035,3.5048
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Wind|Onshore,GW/yr,2020,13.26410487
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Wind|Onshore,GW/yr,2025,23.75197563
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Wind|Onshore,GW/yr,2030,54.63265062
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Wind|Onshore,GW/yr,2035,25.63868082
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Wind,GW/yr,2020,13.27250487
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Wind,GW/yr,2025,25.27857563
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Wind,GW/yr,2030,57.94605062
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Wind,GW/yr,2035,29.14348082
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity,GW/yr,2020,36.75684188
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity,GW/yr,2025,93.51692735
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity,GW/yr,2030,124.4310666
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity,GW/yr,2035,53.50865505
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|ST|w/o CCS,GW/yr,2020,0.05794
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Gas|ST|w/o CCS,GW/yr,2025,0.0837
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar|CSP,GW,2020,1.3234
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar|CSP,GW,2025,1.323400019
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar|CSP,GW,2030,1.323400069
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Solar|CSP,GW,2035,1.323400072
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar|CSP,GW/yr,2025,3.85836E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar|CSP,GW/yr,2030,9.87451E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Solar|CSP,GW/yr,2035,6.44514E-10
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Geothermal,GW,2020,2.8831
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Geothermal,GW,2025,2.925100002
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Geothermal,GW,2030,2.925100012
+USREP-ReEDS,ira_high_adv,USA,Capacity|Electricity|Geothermal,GW,2035,2.925100012
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Geothermal,GW/yr,2020,0.02242
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Geothermal,GW/yr,2025,0.0084
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Geothermal,GW/yr,2030,2.09126E-09
+USREP-ReEDS,ira_high_adv,USA,Production|Primary Energy|Coal,EJ/yr,2017,17.74880714
+USREP-ReEDS,ira_high_adv,USA,Production|Primary Energy|Coal,EJ/yr,2020,14.14523275
+USREP-ReEDS,ira_high_adv,USA,Production|Primary Energy|Coal,EJ/yr,2025,8.093842703
+USREP-ReEDS,ira_high_adv,USA,Production|Primary Energy|Coal,EJ/yr,2030,3.844873378
+USREP-ReEDS,ira_high_adv,USA,Production|Primary Energy|Coal,EJ/yr,2035,2.8290789
+USREP-ReEDS,ira_high_adv,USA,Production|Primary Energy|Gas,EJ/yr,2017,34.46335825
+USREP-ReEDS,ira_high_adv,USA,Production|Primary Energy|Gas,EJ/yr,2020,37.06314637
+USREP-ReEDS,ira_high_adv,USA,Production|Primary Energy|Oil,EJ/yr,2017,1.752546928
+USREP-ReEDS,ira_high_adv,USA,Production|Primary Energy|Oil,EJ/yr,2020,1.613136898
+USREP-ReEDS,ira_high_adv,USA,Production|Primary Energy|Oil,EJ/yr,2025,1.490414243
+USREP-ReEDS,ira_high_adv,USA,Production|Primary Energy|Oil,EJ/yr,2030,1.283948369
+USREP-ReEDS,ira_high_adv,USA,Production|Primary Energy|Oil,EJ/yr,2035,1.068962943
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Coal,EJ/yr,2017,15.80283634
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Coal,EJ/yr,2020,10.81205157
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Coal,EJ/yr,2025,6.676624446
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Coal,EJ/yr,2030,2.489167036
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Coal,EJ/yr,2035,1.939860693
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Coal|w/ CCS,EJ/yr,2030,6.98315E-10
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Coal|w/ CCS,EJ/yr,2035,8.1074E-10
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Coal|w/o CCS,EJ/yr,2017,15.80283634
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Coal|w/o CCS,EJ/yr,2020,10.81205157
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Coal|w/o CCS,EJ/yr,2025,6.676624446
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Coal|w/o CCS,EJ/yr,2030,2.489167035
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Coal|w/o CCS,EJ/yr,2035,1.939860692
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Gas,EJ/yr,2017,29.6149392
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Gas,EJ/yr,2020,28.55650599
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Gas,EJ/yr,2025,35.00334364
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Gas,EJ/yr,2030,29.01912684
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Gas,EJ/yr,2035,26.66139562
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Gas|w/o CCS,EJ/yr,2017,29.6149392
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Gas|w/o CCS,EJ/yr,2020,28.55650599
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Gas|w/o CCS,EJ/yr,2025,35.00334364
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Gas|w/o CCS,EJ/yr,2030,29.01912684
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Gas|w/o CCS,EJ/yr,2035,26.66139562
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Oil,EJ/yr,2017,39.46312136
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Oil,EJ/yr,2020,36.05429914
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Oil,EJ/yr,2025,36.78118019
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Oil,EJ/yr,2030,34.30857513
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Oil,EJ/yr,2035,31.76198276
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Oil|w/o CCS,EJ/yr,2017,39.46312136
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Oil|w/o CCS,EJ/yr,2020,36.05429914
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Oil|w/o CCS,EJ/yr,2025,36.78118019
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Oil|w/o CCS,EJ/yr,2030,34.30857513
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Oil|w/o CCS,EJ/yr,2035,31.76198276
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Fossil,EJ/yr,2017,84.8808969
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Fossil,EJ/yr,2020,75.4228567
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Fossil,EJ/yr,2025,78.46114827
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Fossil,EJ/yr,2030,65.81686901
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Fossil,EJ/yr,2035,60.36323907
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Fossil|w/ CCS,EJ/yr,2030,6.98315E-10
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Fossil|w/ CCS,EJ/yr,2035,8.1074E-10
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Fossil|w/o CCS,EJ/yr,2017,84.8808969
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Fossil|w/o CCS,EJ/yr,2020,75.4228567
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Fossil|w/o CCS,EJ/yr,2025,78.46114827
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Fossil|w/o CCS,EJ/yr,2030,65.81686901
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Fossil|w/o CCS,EJ/yr,2035,60.36323907
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Biomass|Modern,EJ/yr,2020,0.077743679
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Biomass|Modern,EJ/yr,2025,0.045024205
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Biomass|Modern,EJ/yr,2030,0.017989815
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Biomass|Modern,EJ/yr,2035,0.011696661
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Biomass,EJ/yr,2020,0.077743679
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Biomass,EJ/yr,2025,0.045024205
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Biomass,EJ/yr,2030,0.017989815
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Biomass,EJ/yr,2035,0.011696661
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Non-Biomass Renewables,EJ/yr,2020,3.593346776
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Non-Biomass Renewables,EJ/yr,2025,6.783085065
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Non-Biomass Renewables,EJ/yr,2030,10.99196868
+USREP-ReEDS,ira_high_adv,USA,Primary Energy|Non-Biomass Renewables,EJ/yr,2035,13.35896088
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining,EJ/yr,2017,39.46312136
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining,EJ/yr,2020,36.05429914
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining,EJ/yr,2025,36.78118019
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining,EJ/yr,2030,34.30857513
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining,EJ/yr,2035,31.76198276
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input,EJ/yr,2017,3.448522642
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input,EJ/yr,2020,3.129084984
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input,EJ/yr,2025,2.827447761
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input,EJ/yr,2030,2.370457845
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input,EJ/yr,2035,1.927378981
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Coal,EJ/yr,2017,0.00018365
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Coal,EJ/yr,2020,0.00016243
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Coal,EJ/yr,2025,0.000143291
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Coal,EJ/yr,2030,0.000116373
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Coal,EJ/yr,2035,9.11576E-05
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Electricity,EJ/yr,2017,0.182669718
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Electricity,EJ/yr,2020,0.135385589
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Electricity,EJ/yr,2025,0.112734761
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Electricity,EJ/yr,2030,0.080950162
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Electricity,EJ/yr,2035,0.057241249
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Gas,EJ/yr,2017,0.950466571
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Gas,EJ/yr,2020,0.86692917
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Gas,EJ/yr,2025,0.76757272
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Gas,EJ/yr,2030,0.630306527
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Gas,EJ/yr,2035,0.503134095
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Oil,EJ/yr,2017,0.562655774
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Oil,EJ/yr,2020,0.513470896
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Oil,EJ/yr,2025,0.456582746
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Oil,EJ/yr,2030,0.375136413
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Petroleum Refining|Input|Oil,EJ/yr,2035,0.297949537
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Non-Biomass Renewables,EJ/yr,2020,3.44556649
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Non-Biomass Renewables,EJ/yr,2025,6.584609248
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Non-Biomass Renewables,EJ/yr,2030,10.63957529
+USREP-ReEDS,ira_high_adv,USA,Secondary Energy|Electricity|Non-Biomass Renewables,EJ/yr,2035,12.75236605
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Storage Capacity,GW/yr,2020,0.360470001
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Storage Capacity,GW/yr,2025,21.61392317
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Storage Capacity,GW/yr,2030,47.57837501
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Storage Capacity,GW/yr,2035,12.79220642
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Storage Capacity|Battery,GW/yr,2020,0.195240001
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Storage Capacity|Battery,GW/yr,2025,2.114136896
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Storage Capacity|Battery,GW/yr,2030,11.94539244
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Storage Capacity|Battery,GW/yr,2035,5.339394441
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Storage Capacity|PSH,GW/yr,2025,0.828243263
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Storage Capacity|PSH,GW/yr,2030,1.416735051
+USREP-ReEDS,ira_high_adv,USA,Capacity Additions|Electricity|Storage Capacity|PSH,GW/yr,2035,1.12597E-09
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity,GW/yr,2020,17.95513509
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity,GW/yr,2025,36.73274748
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity,GW/yr,2030,11.70515947
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity,GW/yr,2035,8.647524626
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Biomass,GW/yr,2020,0.18108
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Biomass,GW/yr,2025,0.03338
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Biomass,GW/yr,2030,0.10622
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Biomass,GW/yr,2035,0.16642
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Biomass|w/o CCS,GW/yr,2020,0.18108
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Biomass|w/o CCS,GW/yr,2025,0.03338
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Biomass|w/o CCS,GW/yr,2030,0.10622
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Biomass|w/o CCS,GW/yr,2035,0.16642
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Coal,GW/yr,2020,9.50814
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Coal,GW/yr,2025,10.29113354
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Coal,GW/yr,2030,7.163298694
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Coal,GW/yr,2035,3.193896833
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Coal|w/o CCS,GW/yr,2020,9.50814
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Coal|w/o CCS,GW/yr,2025,10.29113354
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Coal|w/o CCS,GW/yr,2030,7.163298694
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Coal|w/o CCS,GW/yr,2035,3.193896833
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas,GW/yr,2020,7.27766
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas,GW/yr,2025,25.97157365
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas,GW/yr,2030,3.126193456
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas,GW/yr,2035,1.203539018
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|CC,GW/yr,2020,0.58608
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|CC,GW/yr,2025,3.246531532
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|CC,GW/yr,2030,0.846
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|CC,GW/yr,2035,0.43922
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|CC|w/o CCS,GW/yr,2020,0.58608
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|CC|w/o CCS,GW/yr,2025,3.246531532
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|CC|w/o CCS,GW/yr,2030,0.846
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|CC|w/o CCS,GW/yr,2035,0.43922
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|CT,GW/yr,2020,0.99138
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|CT,GW/yr,2025,11.10560175
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|CT,GW/yr,2030,0.916054919
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|CT,GW/yr,2035,0.225540002
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|CT|w/o CCS,GW/yr,2020,0.99138
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|CT|w/o CCS,GW/yr,2025,11.10560175
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|CT|w/o CCS,GW/yr,2030,0.916054919
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|CT|w/o CCS,GW/yr,2035,0.225540002
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|ST|w/o CCS,GW/yr,2020,5.7002
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|ST|w/o CCS,GW/yr,2025,11.61944036
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|ST|w/o CCS,GW/yr,2030,1.364138537
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|ST|w/o CCS,GW/yr,2035,0.538779016
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|w/o CCS,GW/yr,2020,7.27766
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|w/o CCS,GW/yr,2025,25.97157365
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|w/o CCS,GW/yr,2030,3.126193456
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Gas|w/o CCS,GW/yr,2035,1.203539018
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Nuclear,GW/yr,2020,0.83704
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Nuclear,GW/yr,2025,0.36096
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Nuclear,GW/yr,2030,0.448
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Nuclear,GW/yr,2035,1.136711243
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Storage Capacity,GW/yr,2020,0.001125288
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Storage Capacity,GW/yr,2025,0.010200495
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Storage Capacity,GW/yr,2030,0.707287324
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Storage Capacity,GW/yr,2035,2.003437132
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Storage Capacity|Battery,GW/yr,2025,0.0038
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Storage Capacity|Battery,GW/yr,2030,0.05106
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Storage Capacity|Battery,GW/yr,2035,0.19524
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Storage Capacity|PSH,GW/yr,2020,0.0004
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Storage Capacity|PSH,GW/yr,2030,0.00588
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Wind,GW/yr,2020,0.1500898
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Wind,GW/yr,2025,0.0654998
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Wind,GW/yr,2030,0.15416
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Wind,GW/yr,2035,0.9435204
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Wind|Onshore,GW/yr,2020,0.1500898
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Wind|Onshore,GW/yr,2025,0.0654998
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Wind|Onshore,GW/yr,2030,0.15416
+USREP-ReEDS,ira_high_adv,USA,Capacity Retirements|Electricity|Wind|Onshore,GW/yr,2035,0.9435204

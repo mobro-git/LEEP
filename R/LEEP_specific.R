@@ -234,7 +234,7 @@ sens_dot_plot = function(dta, title, far_left = FALSE, single = FALSE, ymin = 0,
 
   if (!far_left) {
     p = p +
-      geom_text_repel(aes(x = year, y = value + 20, label = scenario), size = 2, hjust = -0.4, vjust = -0.4) +
+      geom_text_repel(aes(x = year, y = value + 20, label = scenario), point.size = 3, min.segment.length = 0, size = 2, hjust = -0.4, vjust = -0.4) +
       theme(axis.text.y = element_blank(), axis.title.y = element_blank(),)
     opt_label = "Optimistic Emis"
     pes_label = "Pessimistic Emis"
@@ -606,4 +606,160 @@ compile_all_data = function() {
 
   openxlsx::write.xlsx(data_list, "./output/final_figures/data/ALL_DATA.xlsx")
   return(data_list)
+}
+
+dot_plots_but_with_arrows = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric, labels = FALSE, hist_year = 2021, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0)) {
+  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+
+  # make the spagetti plot
+  fig = print_graph(plot_type, config, emf_data_long, figmap, figure_num, reg)
+  # update the axis range
+  fig = fig + scale_y_continuous(limits = c(ymin, ymax)) +
+    scale_x_continuous(breaks = c(2005,2010, hist_year, 2025, 2030, 2035), labels = c(2005, 2010, hist_year, 2025, 2030, 2035)) +
+    scale_alpha(range = c(0.6, 1), guide = "none") +
+    annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historic", color = "black", alpha = 1) +
+    annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#F28063", alpha = 1) +
+    annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#0388B3", alpha = 1) +
+    theme(legend.position = "none", plot.title = element_blank())
+
+  if (labels) {
+    label_data = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
+      filter(year == 2035)
+    print(unique(label_data$model))
+    fig = fig +
+      geom_text(data = label_data, aes(x = year + 0.25, y = value, label = model, color = scenario), size = 2, hjust = 0) +
+      #geom_text_repel(data = label_data, aes(label = model), size = 2, hjust = 0) +
+      scale_x_continuous(limits = c(NA,2037))
+  }
+
+  # pull the data from the graph and filter/summarize for 2030/2035
+  df_30 = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
+    filter(year %in% c(2030))
+  df_stat_30 = df_30 %>%
+    group_by(scenario,year,variable_rename) %>%
+    summarise(mean = mean(value, na.rm = TRUE),
+              median = median(value, na.rm = TRUE))
+  df_35 = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
+    filter(year %in% c(2035))
+  df_stat_35 = df_35 %>%
+    group_by(scenario,year,variable_rename) %>%
+    summarise(mean = mean(value, na.rm = TRUE),
+              median = median(value, na.rm = TRUE))
+
+  df_lines_30 = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
+    filter(year %in% c(2030)) %>%
+    group_by(model, year) %>%
+    summarize(min = min(value),
+              max = max(value)) %>%
+    mutate(diff = max - min) %>%
+    mutate(median = median(diff)) %>%
+    arrange(desc(max)) %>%
+    data.frame() %>%
+    mutate(stagger = row_number()) %>%
+    mutate(stagger = stagger - 1) %>%
+    mutate(stagger = stagger / max(stagger)) %>%
+    mutate(stagger = stagger - 0.5)
+
+  df_arrow_30 = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
+    filter(year %in% c(2030), scenario == "IRA") %>%
+    select(model, value) %>%
+    rename(IRA_value = value)
+
+  df_lines_30 = df_lines_30 %>% left_join(df_arrow_30, by = "model") %>%
+    mutate(arrow_direction = case_when(
+      max == IRA_value ~ "up",
+      min == IRA_value ~ "down",
+      TRUE ~ "uh-oh"
+    )) %>%
+    mutate(arrow_end = case_when(arrow_direction == "up" ~ max, TRUE ~ min),
+           arrow_start = case_when(arrow_direction == "up" ~ min, TRUE ~ max))
+
+  #View(df_lines_30)
+
+  df_lines_35 = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
+    filter(year %in% c(2035)) %>%
+    group_by(model, year) %>%
+    summarize(min = min(value),
+              max = max(value)) %>%
+    mutate(diff = max - min) %>%
+    mutate(median = median(diff)) %>%
+    arrange(desc(max)) %>%
+    data.frame() %>%
+    mutate(stagger = row_number()) %>%
+    mutate(stagger = stagger - 1) %>%
+    mutate(stagger = stagger / max(stagger)) %>%
+    mutate(stagger = stagger - 0.5)
+  # View(df_lines_35)
+
+  df_arrow_35 = data_from_graph(plot_type, config, emf_data_long, figmap, figure_num, reg) %>%
+    filter(year %in% c(2035), scenario == "IRA") %>%
+    select(model, value) %>%
+    rename(IRA_value = value)
+
+  df_lines_35 = df_lines_35 %>% left_join(df_arrow_35, by = "model") %>%
+    mutate(arrow_direction = case_when(
+      max == IRA_value ~ "up",
+      min == IRA_value ~ "down",
+      TRUE ~ "uh-oh"
+    )) %>%
+    mutate(arrow_end = case_when(arrow_direction == "up" ~ max, TRUE ~ min),
+           arrow_start = case_when(arrow_direction == "up" ~ min, TRUE ~ max))
+
+  # still not entirely sure what this does...
+  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+
+  # dot plot for 2030
+  dots_30 = ggplot() +
+    # geom_point(data = df_30, aes(x = year, y = value, color = scenario),
+    #            shape = 1, size = 1.5, position = position_dodge(width = 0.05)) +
+    geom_segment(data = df_lines_30, aes(x = year + stagger, xend = year + stagger, y = arrow_start, yend = arrow_end), color = "black",
+                 size = 0.5, arrow = arrow(length = unit(0.2, "cm"), type = "closed", angle = 25)) +
+    # geom_segment(data = df_lines_30, aes(x = year - 0.5, xend = year + 0.5, y = median, yend = median), color = "black",
+    #              size = 1) +
+    # #segment_code_30 +
+    #text_code +
+    scale_x_continuous(breaks = c(2030), labels = c("2030"), limits = c(2029, 2031)) +
+    scale_y_continuous(limits = c(ymin, ymax)) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(panel.grid = element_blank(), plot.title = element_blank(),
+          axis.text.y = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.title.y = element_blank(), axis.title.x = element_blank(),
+          axis.ticks = element_blank(), panel.border = element_blank(),
+          legend.position = "none", plot.margin = margin(0,0,0,0))
+
+  # grapes
+  # dot plot for 2035
+  dots_35 = ggplot() +
+    # geom_point(data = df_35, aes(x = year, y = value, color = scenario),
+    #            shape = 1, size = 1.5, position = position_dodge(width = 0.05)) +
+    geom_segment(data = df_lines_35, aes(x = year + stagger, xend = year + stagger, y = arrow_start, yend = arrow_end), color = "black",
+                 size = 0.5, arrow = arrow(length = unit(0.2, "cm"), type = "closed", angle = 25)) +
+    # geom_segment(data = df_lines_35, aes(x = year - 0.5, xend = year + 0.5, y = median, yend = median), color = "black",
+    #              size = 1) +
+    # segment_code_35 +
+    scale_x_continuous(breaks = c(2035), labels = c("2035"), limits = c(2034, 2036)) +
+    scale_y_continuous(limits = c(ymin,ymax)) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(panel.grid = element_blank(), plot.title = element_blank(),
+          axis.text.y = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.title.y = element_blank(), axis.title.x = element_blank(),
+          axis.ticks = element_blank(), panel.border = element_blank(),
+          legend.position = "none", plot.margin = margin(0,0,0,0))
+
+  # combine all the plots
+  final = fig + dots_30 + dots_35 +
+    plot_annotation(title = plot_title, theme = theme(plot.title = element_blank())) +
+    plot_layout(widths = c(10,1,1)) +
+    theme(plot.margin = margin(0,0,0,0))
+
+  # return the full plot + the components + the summary stats
+  return(list(
+    full = final,
+    line = fig,
+    dot1 = dots_30,
+    dot2 = dots_35,
+    stats = stats
+  ))
 }

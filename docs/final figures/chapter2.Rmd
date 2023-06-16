@@ -2522,7 +2522,7 @@ fig_no = 2.6
 # electric sector emissions sensitivity dot plots
 panel1_scens = c("Core","IRA", "IRA.Low","IRA.High")
 panel2_scens = c("Low Growth", "High Growth", "IRA") # Economic Growth
-panel3_scens = c("Low Gas Price","High Gas Price", "Core") # Energy Prices
+panel3_scens = c("Low Gas Price","High Gas Price", "Core", "IRA") # Energy Prices
 panel4_scens = c("All Advanced", "Adv Battery/Renew", "Cons Battery/Renew", "Constrained Deployment", "Core", "IRA") # Technology Cost and deployment constraints
 panel5_scens = c("IRA.Low.Adv", "IRA.High.Adv", "Core", "IRA") # Combos
 
@@ -2547,8 +2547,16 @@ sens_dta_panel2 = sens_dta %>% filter(scenario %in% panel2_scens) %>%
   mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
          #mutate(value = -200) %>%
   bind_rows(filler)
+
 sens_dta_panel3 = sens_dta %>% filter(scenario %in% panel3_scens) %>%
+  filter(model %in% c("ReEDS-NREL", "GCAM-PNNL")) %>% 
+  filter(datasrc != "bistline_ira_tall.csv") %>%
+  mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when(model == "ReEDS-NREL" ~ paste0("R.",scenario),
+                           model == "GCAM-PNNL" ~ paste0("GP.",scenario),
+                           TRUE ~ scenario)) %>%
   bind_rows(filler)
+
 sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>% 
   filter(model %in% c("ReEDS-NREL", "USREP-ReEDS")) %>% 
   filter(datasrc != "bistline_ira_tall.csv") %>%
@@ -2569,7 +2577,7 @@ p1 = sens_dot_plot(sens_dta_panel1, title = "\nIRA Implementation",
 # p1
 p2 = sens_dot_plot(sens_dta_panel2, title = "\nEconomic Growth", ymin = 0, ymax = 1600,)
 #p2
-p3 = sens_dot_plot(sens_dta_panel3, title = "\nNatural Gas Price", ymin = 0, ymax = 1600,)
+p3 = sens_dot_plot(sens_dta_panel3, title = "\nEnergy Price", ymin = 0, ymax = 1600,)
 # p3
 p4 = sens_dot_plot(sens_dta_panel4, title = "\nTechnology", ymin = 0, ymax = 1600,)
 # p4
@@ -2594,10 +2602,12 @@ p1$plot = p1$plot +
 
 p2$plot = p2$plot + 
   annotate("text", x = 2028.4, y = 1595, size = 3,
-               label = "GCAM-CGS", color = "black", alpha = 1, hjust = 0)
+               label = "GCAM-PNNL", color = "black", alpha = 1, hjust = 0)
 
 p3$plot = p3$plot + 
   annotate("text", x = 2028.4, y = 1595, size = 3,
+               label = "GCAM-PNNL", color = "black", alpha = 1, hjust = 0) + 
+  annotate("text", x = 2028.4, y = 1535, size = 3,
                label = "ReEDS-NREL", color = "black", alpha = 1, hjust = 0)
 
 p4$plot = p4$plot + 

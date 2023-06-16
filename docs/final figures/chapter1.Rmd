@@ -227,8 +227,9 @@ fig_no = 1.4
 # sensitivity dot plots
 panel1_scens = c("Core","IRA", "IRA.Low","IRA.High")
 panel2_scens = c("Low Growth", "High Growth", "Core", "IRA") # panel2_scens from fig 2.5, but "IRA" added for GCAM
-panel3_scens = c("All Advanced", "Adv Battery/Renew", "Cons Battery/Renew", "Constrained Deployment", "Core", "IRA") # Technology Cost and deployment constraints
-panel4_scens = c("IRA.Low.Adv", "IRA.High.Adv", "Core", "IRA") # Combos
+panel3_scens = c("Low Gas Price","High Gas Price", "Core", "IRA") # Energy Prices
+panel4_scens = c("All Advanced", "Adv Battery/Renew", "Cons Battery/Renew", "Constrained Deployment", "Core", "IRA") # Technology Cost and deployment constraints
+panel5_scens = c("IRA.Low.Adv", "IRA.High.Adv", "Core", "IRA") # Combos
 model_list = c("EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI", "USREP-ReEDS") # models with all three (low,mid,high) cases
 
 sens_dta_econ = clean_data %>% filter(variable == "Emissions|CO2|Energy",
@@ -252,13 +253,20 @@ sens_dta_econ_panel2 = clean_data %>% filter(variable == "Emissions|CO2|Energy",
 sens_dta_econ_panel3 = clean_data %>% 
   filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>% 
   filter(scenario %in% panel3_scens) %>% 
-  filter(model %in% c("USREP-ReEDS")) %>% 
+  filter(model %in% c("GCAM-PNNL")) %>% 
   mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
   bind_rows(filler)
 
 sens_dta_econ_panel4 = clean_data %>% 
+  filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>% 
+  filter(scenario %in% panel4_scens) %>% 
+  filter(model %in% c("USREP-ReEDS")) %>% 
+  mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+  bind_rows(filler)
+
+sens_dta_econ_panel5 = clean_data %>% 
   filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>%
-  filter(scenario %in% panel4_scens) %>%
+  filter(scenario %in% panel5_scens) %>%
   filter(model == "USREP-ReEDS") %>% 
   mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
   bind_rows(filler)
@@ -300,8 +308,9 @@ p7 = sens_dot_plot(sens_dta_econ, title = "IRA Implementation", ymin = 0, ymax =
 #p7$plot
 
 p7b = sens_dot_plot(sens_dta_econ_panel2, title = "\nEconomic Growth", ymin = 0, ymax = 5000)
-p7c = sens_dot_plot(sens_dta_econ_panel3, title = "\nTechnology", ymin = 0, ymax = 5000)
-p7d = sens_dot_plot(sens_dta_econ_panel4, title = "Combined Technology\n + Implementation", ymin = 0, ymax = 5000)
+p7c = sens_dot_plot(sens_dta_econ_panel3, title = "\nEnergy Price", ymin = 0, ymax = 5000)
+p7d = sens_dot_plot(sens_dta_econ_panel4, title = "\nTechnology", ymin = 0, ymax = 5000)
+p7e = sens_dot_plot(sens_dta_econ_panel5, title = "Combined Technology\n + Implementation", ymin = 0, ymax = 5000)
 #p7b$plot
 
 
@@ -319,17 +328,21 @@ p7$plot = p7$plot +
 
 p7b$plot = p7b$plot + 
   annotate("text", x = 2028.4, y = 4995, size = 3,
-               label = "GCAM-CGS", color = "black", alpha = 1, hjust = 0)
+               label = "GCAM-PNNL", color = "black", alpha = 1, hjust = 0)
 
 p7c$plot = p7c$plot + 
   annotate("text", x = 2028.4, y = 4995, size = 3,
-               label = "USREP-ReEDS", color = "black", alpha = 1, hjust = 0)
+               label = "GCAM-PNNL", color = "black", alpha = 1, hjust = 0)
 
 p7d$plot = p7d$plot + 
   annotate("text", x = 2028.4, y = 4995, size = 3,
                label = "USREP-ReEDS", color = "black", alpha = 1, hjust = 0)
 
-fig = (p7$plot | p7b$plot | p7c$plot | p7d$plot) +
+p7e$plot = p7e$plot + 
+  annotate("text", x = 2028.4, y = 4995, size = 3,
+               label = "USREP-ReEDS", color = "black", alpha = 1, hjust = 0)
+
+fig = (p7$plot | p7b$plot | p7c$plot | p7d$plot | p7e$plot) +
   plot_annotation(title = "Economy-Wide Emissions", 
                   theme = theme(plot.title = element_blank()))
 fig
@@ -339,4 +352,21 @@ dta = bind_rows(sens_dta_panel1, sens_dta_panel2,
 
 
 saveall(fig, dta, fig_no)
+```
+## 1.x Playing around with arrows
+```{r}
+# Economy-wide emissions
+clean_data12 = clean_data %>% duplicate_historical_data("EPA-GHGI", 2021, criteria = TRUE)
+p = dot_plots_but_with_arrows("time_series", config, clean_data12, figmap_leep_timeseries, 99,
+                              "United States", 0, 6000, "Economy-wide Emissions", 
+                              metric = "median", historic_coord = c(2017,5540), 
+                              preira_coord = c(2030, 4750), ira_coord = c(2029, 3230) )
+p$full
+
+p2 = dot_plots_but_with_arrows("time_series", config, clean_data12, 
+                               figmap_leep_timeseries, 98,
+                              "United States", 0, 2600, "Economy-wide Emissions", 
+                              metric = "median", historic_coord = c(2017,2100), 
+                              preira_coord = c(2030, 1520), ira_coord = c(2029, 300) )
+p2$full
 ```
