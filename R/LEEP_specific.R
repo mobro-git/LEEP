@@ -181,13 +181,11 @@ dot_plots_sens = function(plot_type, config, emf_data_long, figmap, figure_num, 
 # p = dot_plots("time_series", config, clean_data, figmap_leep_timeseries, 4, "United States", 0, 2500, "Emissions|CO2|Energy|Demand|Electricity", metric = "median")
 # print(p$full)
 # print(p$stats)
-
-
 sens_dot_plot = function(dta, title, far_left = FALSE, single = FALSE, ymin = 0, ymax = 0, ira_coord = c(0,0), low_coord = c(0,0), high_coord = c(0,0)) {
   if (far_left) {
     point_code = geom_point(aes(x = year + stagger, y = value, color = scenario), shape = 1, size = 2)
   } else {
-    point_code = geom_point(aes(x = year, y = value), shape = 1, size = 2)
+    point_code = geom_point(aes(x = year + stagger, y = value), shape = 1, size = 2)
   }
 
   if (far_left) {
@@ -207,7 +205,9 @@ sens_dot_plot = function(dta, title, far_left = FALSE, single = FALSE, ymin = 0,
                                     y = median, yend = median, color = scenario),
                                 linewidth = 0.5)
   } else {
-    dta$stagger = 0
+    if (!("stagger") %in% colnames(dta)) {
+      dta$stagger = 0
+    }
     stats = dta %>%
       mutate(scenario = case_when(scenario == "Core" ~ "IRA", TRUE ~ scenario)) %>%
       group_by(year, stagger) %>%
@@ -234,7 +234,7 @@ sens_dot_plot = function(dta, title, far_left = FALSE, single = FALSE, ymin = 0,
 
   if (!far_left) {
     p = p +
-      geom_text_repel(aes(x = year, y = value + 20, label = scenario), point.size = 3, min.segment.length = 0, size = 2, hjust = -0.4, vjust = -0.4) +
+      geom_text_repel(aes(x = year + stagger, y = value + 20, label = scenario), point.size = 3, size = 2, hjust = 0, vjust = 0, max.time = 2) +
       theme(axis.text.y = element_blank(), axis.title.y = element_blank(),)
     opt_label = "Optimistic Emis"
     pes_label = "Pessimistic Emis"

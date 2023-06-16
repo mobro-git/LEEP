@@ -2518,13 +2518,16 @@ savedata(dta4, paste0(fig_no, "dots"))
 
 ```{r}
 fig_no = 2.6
+# stagger by model
+# remove gray dot
+# shorten labels
 
 # electric sector emissions sensitivity dot plots
 panel1_scens = c("Core","IRA", "IRA.Low","IRA.High")
 panel2_scens = c("Low Growth", "High Growth", "IRA") # Economic Growth
-panel3_scens = c("Low Gas Price","High Gas Price", "Core", "IRA") # Energy Prices
+panel3_scens = c("Low Energy Price","High Energy Price", "Core", "IRA") # Energy Prices
 panel4_scens = c("All Advanced", "Adv Battery/Renew", "Cons Battery/Renew", "Constrained Deployment", "Core", "IRA") # Technology Cost and deployment constraints
-panel5_scens = c("IRA.Low.Adv", "IRA.High.Adv", "Core", "IRA") # Combos
+panel5_scens = c("Pess-IRA.Adv", "Opt-IRA.Adv", "Core", "IRA") # Combos
 
 sens_dta = clean_data %>% filter(variable == "Emissions|CO2|Energy|Supply|Electricity",
                                  year %in% c(2030, 2035)) #%>% 
@@ -2536,34 +2539,59 @@ print(min(sens_dta$value))
 filler = data.frame(year = c(2035), value = c(-200), scenario = c(""), model = c("NA"))
 
 sens_dta_panel1 = sens_dta %>% filter(scenario %in% panel1_scens) %>%
-  filter(model %in% c("EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI","USREP-ReEDS", "ReEDS-NREL")) %>%
+  filter(model %in% c("EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI",
+                      "USREP-ReEDS", "ReEDS-NREL")) %>%
+  mutate(scenario = case_when(scenario == "Core" ~ "IRA", TRUE ~ scenario)) %>%
   mutate(stagger = case_when(
     scenario == "IRA.Low" ~ -0.7,
     scenario == "IRA.High" ~ 0.7,
     TRUE ~ 0
   ))
+
 sens_dta_panel2 = sens_dta %>% filter(scenario %in% panel2_scens) %>% 
   filter(model == "GCAM-PNNL") %>% 
   mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
-         #mutate(value = -200) %>%
+  mutate(scenario = case_when(
+    scenario == "High Growth" ~ "High",
+    scenario == "Low Growth" ~ "Low",
+    TRUE ~ scenario
+  ))
   bind_rows(filler)
 
 sens_dta_panel3 = sens_dta %>% filter(scenario %in% panel3_scens) %>%
   filter(model %in% c("ReEDS-NREL", "GCAM-PNNL")) %>% 
   filter(datasrc != "bistline_ira_tall.csv") %>%
   mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when(
+    scenario == "High Energy Price" ~ "High",
+    scenario == "Low Energy Price" ~ "Low",
+    TRUE ~ scenario
+  )) %>%
   mutate(scenario = case_when(model == "ReEDS-NREL" ~ paste0("R.",scenario),
                            model == "GCAM-PNNL" ~ paste0("GP.",scenario),
                            TRUE ~ scenario)) %>%
+  mutate(stagger = case_when(model == "ReEDS-NREL" ~ 0.7,
+                             model == "GCAM-PNNL" ~ -0.7,
+                             TRUE ~ 0.0))
   bind_rows(filler)
 
 sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>% 
   filter(model %in% c("ReEDS-NREL", "USREP-ReEDS")) %>% 
   filter(datasrc != "bistline_ira_tall.csv") %>%
   mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when(
+    scenario == "Constrained Deployment" ~ "Constr",
+    scenario == "All Advanced" ~ "All-Adv",
+    scenario == "Adv Battery/Renew" ~ "Adv Renew",
+    scenario == "Cons Battery/Renew" ~ "Cons Renew",
+    TRUE ~ scenario
+  )) %>%
   mutate(scenario = case_when(model == "ReEDS-NREL" ~ paste0("R.",scenario),
-                           model == "USREP-ReEDS" ~ paste0("UR.",scenario),
-                           TRUE ~ scenario)) %>%
+                              model == "USREP-ReEDS" ~ paste0("UR.",scenario),
+                              TRUE ~ scenario)) %>%
+  mutate(stagger = case_when(model == "ReEDS-NREL" ~ 0.7,
+                             model == "USREP-ReEDS" ~ -0.7,
+                             TRUE ~ 0.0))
   bind_rows(filler)
 sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
   filter(model == "USREP-ReEDS") %>% 
@@ -2572,8 +2600,8 @@ sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
 
 p1 = sens_dot_plot(sens_dta_panel1, title = "\nIRA Implementation", 
                    ymin = 0, ymax = 1600, far_left = TRUE, 
-                   ira_coord = c(2030,1020), low_coord = c(2028.7, 1200), 
-                   high_coord = c(2030, 620))
+                   ira_coord = c(2030.1,965), low_coord = c(2028.7, 1190), 
+                   high_coord = c(2030, 190))
 # p1
 p2 = sens_dot_plot(sens_dta_panel2, title = "\nEconomic Growth", ymin = 0, ymax = 1600,)
 #p2

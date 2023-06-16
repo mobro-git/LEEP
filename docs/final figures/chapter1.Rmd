@@ -10,7 +10,11 @@ params:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
 knitr::opts_knit$set(root.dir = here::here())
 ```
 
@@ -224,12 +228,16 @@ savedata(PetrolSpg$data, paste(fig_no, "Petroleum"))
 ```{r}
 fig_no = 1.4
 
+# change dot labels to "Energy Price"
+# pessimistic emis label location
+# 
+
 # sensitivity dot plots
 panel1_scens = c("Core","IRA", "IRA.Low","IRA.High")
 panel2_scens = c("Low Growth", "High Growth", "Core", "IRA") # panel2_scens from fig 2.5, but "IRA" added for GCAM
-panel3_scens = c("Low Gas Price","High Gas Price", "Core", "IRA") # Energy Prices
+panel3_scens = c("Low Energy Price","High Energy Price", "Core", "IRA") # Energy Prices
 panel4_scens = c("All Advanced", "Adv Battery/Renew", "Cons Battery/Renew", "Constrained Deployment", "Core", "IRA") # Technology Cost and deployment constraints
-panel5_scens = c("IRA.Low.Adv", "IRA.High.Adv", "Core", "IRA") # Combos
+panel5_scens = c("Pess-IRA.Adv", "Opt-IRA.Adv", "Core", "IRA") # Combos
 model_list = c("EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI", "USREP-ReEDS") # models with all three (low,mid,high) cases
 
 sens_dta_econ = clean_data %>% filter(variable == "Emissions|CO2|Energy",
@@ -248,6 +256,11 @@ sens_dta_econ_panel2 = clean_data %>% filter(variable == "Emissions|CO2|Energy",
          model == "GCAM-PNNL") %>%
   mutate(scenario = case_when(
     scenario == "IRA" ~ "Core", TRUE ~ scenario
+  )) %>%
+  mutate(scenario = case_when(
+    scenario == "High Growth" ~ "High",
+    scenario == "Low Growth" ~ "Low",
+    TRUE ~ scenario
   ))
 
 sens_dta_econ_panel3 = clean_data %>% 
@@ -255,6 +268,11 @@ sens_dta_econ_panel3 = clean_data %>%
   filter(scenario %in% panel3_scens) %>% 
   filter(model %in% c("GCAM-PNNL")) %>% 
   mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when(
+    scenario == "High Energy Price" ~ "High",
+    scenario == "Low Energy Price" ~ "Low",
+    TRUE ~ scenario
+  ))
   bind_rows(filler)
 
 sens_dta_econ_panel4 = clean_data %>% 
@@ -262,6 +280,10 @@ sens_dta_econ_panel4 = clean_data %>%
   filter(scenario %in% panel4_scens) %>% 
   filter(model %in% c("USREP-ReEDS")) %>% 
   mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+    mutate(scenario = case_when(
+    scenario == "All Advanced" ~ "All Adv",
+    TRUE ~ scenario
+  ))
   bind_rows(filler)
 
 sens_dta_econ_panel5 = clean_data %>% 
