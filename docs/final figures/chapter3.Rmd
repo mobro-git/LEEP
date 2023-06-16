@@ -124,10 +124,10 @@ clean_data4 = rbind(raw, atr_2022) %>% filter(unit != "thousands") %>% mutate(va
   duplicate_historical_data("EPA-ATR",2022, criteria = TRUE) %>% mutate(
     variable = case_when(
       variable %in% c("Energy Service|Transportation|Passenger|BEV|Sales Share",
-                      "Energy Service|Transportation|Passenger|FCEV|Sales Share",
-                      "Energy Service|Transportation|Passenger|HEV|Sales Share",
-                      "Energy Service|Transportation|Freight|BEV|Sales Share",
-                      "Energy Service|Transportation|Freight|FCEV|Sales Share",
+                      # "Energy Service|Transportation|Passenger|FCEV|Sales Share",
+                      # "Energy Service|Transportation|Passenger|HEV|Sales Share",
+                      # "Energy Service|Transportation|Freight|BEV|Sales Share",
+                      # "Energy Service|Transportation|Freight|FCEV|Sales Share",
                       "Energy Service|Transportation|Passenger|PHEV|Sales Share") ~ 
         "Energy Service|Transportation|EV|Sales Share")) %>%
   mutate(alpha = case_when(
