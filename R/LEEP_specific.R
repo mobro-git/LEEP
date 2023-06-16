@@ -236,30 +236,30 @@ sens_dot_plot = function(dta, title, far_left = FALSE, single = FALSE, ymin = 0,
     p = p +
       geom_text_repel(aes(x = year, y = value + 20, label = scenario), size = 2, hjust = -0.4, vjust = -0.4) +
       theme(axis.text.y = element_blank(), axis.title.y = element_blank(),)
-    opt_label = "Optimistic Emissions"
-    pes_label = "Pessimistic Emissions"
+    opt_label = "Optimistic Emis"
+    pes_label = "Pessimistic Emis"
   } else {
     p = p +
       labs(y = "Mt CO2/yr") +
       #scale_subpalette(subpalettes, "Sensitivity Dots") +
       scale_color_manual(values = c("IRA" = "black", "IRA.Low" = "#42d4f4", "IRA.High" = "#883192"), guide = "none")
-    opt_label = "Optimistic Emissions"
-    pes_label = "Pessimistic Emissions"
+    opt_label = "Optimistic Emis"
+    pes_label = "Pessimistic Emis"
   }
 
   if(sum(ira_coord) != 0) {
     p = p +
-      annotate("text", x = ira_coord[1], y = ira_coord[2], size = 2.5,
+      annotate("text", x = ira_coord[1], y = ira_coord[2], size = 2,
                label = "Core", color = "black", alpha = 1, hjust = -0.2)
   }
   if(sum(low_coord) != 0) {
     p = p +
-      annotate("text", x = low_coord[1], y = low_coord[2], size = 2.5,
+      annotate("text", x = low_coord[1], y = low_coord[2], size = 2,
                label = pes_label, color = "#42d4f4", alpha = 1, hjust = -0.2)
   }
   if(sum(high_coord) != 0) {
     p = p +
-      annotate("text", x = high_coord[1], y = high_coord[2], size = 2.5,
+      annotate("text", x = high_coord[1], y = high_coord[2], size = 2,
                label = opt_label, color = "#883192", alpha = 1, hjust = -0.2)
   }
 

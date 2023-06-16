@@ -2521,10 +2521,10 @@ fig_no = 2.6
 
 # electric sector emissions sensitivity dot plots
 panel1_scens = c("Core","IRA", "IRA.Low","IRA.High")
-panel2_scens = c("Low Growth", "High Growth", "Core") # Economic Growth
+panel2_scens = c("Low Growth", "High Growth", "IRA") # Economic Growth
 panel3_scens = c("Low Gas Price","High Gas Price", "Core") # Energy Prices
-panel4_scens = c("All Advanced", "Adv Battery/Renew", "Cons Battery/Renew", "Core") # Technology Cost
-panel5_scens = c("Constrained Deployment", "Core") # Deployment Constraints
+panel4_scens = c("All Advanced", "Adv Battery/Renew", "Cons Battery/Renew", "Constrained Deployment", "Core", "IRA") # Technology Cost and deployment constraints
+panel5_scens = c("IRA.Low.Adv", "IRA.High.Adv", "Core", "IRA") # Combos
 
 sens_dta = clean_data %>% filter(variable == "Emissions|CO2|Energy|Supply|Electricity",
                                  year %in% c(2030, 2035)) #%>% 
@@ -2536,32 +2536,79 @@ print(min(sens_dta$value))
 filler = data.frame(year = c(2035), value = c(-200), scenario = c(""), model = c("NA"))
 
 sens_dta_panel1 = sens_dta %>% filter(scenario %in% panel1_scens) %>%
-  filter(model %in% c("EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI","USREP-ReEDS")) %>%
+  filter(model %in% c("EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI","USREP-ReEDS", "ReEDS-NREL")) %>%
   mutate(stagger = case_when(
     scenario == "IRA.Low" ~ -0.7,
     scenario == "IRA.High" ~ 0.7,
     TRUE ~ 0
   ))
-sens_dta_panel2 = sens_dta %>% filter(scenario %in% panel2_scens) %>% #mutate(value = -200) %>%
+sens_dta_panel2 = sens_dta %>% filter(scenario %in% panel2_scens) %>% 
+  filter(model == "GCAM-PNNL") %>% 
+  mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+         #mutate(value = -200) %>%
   bind_rows(filler)
 sens_dta_panel3 = sens_dta %>% filter(scenario %in% panel3_scens) %>%
   bind_rows(filler)
 sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>% 
+  filter(model %in% c("ReEDS-NREL", "USREP-ReEDS")) %>% 
+  filter(datasrc != "bistline_ira_tall.csv") %>%
+  mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when(model == "ReEDS-NREL" ~ paste0("R.",scenario),
+                           model == "USREP-ReEDS" ~ paste0("UR.",scenario),
+                           TRUE ~ scenario)) %>%
   bind_rows(filler)
 sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
+  filter(model == "USREP-ReEDS") %>% 
+  mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
   bind_rows(filler)
 
-p1 = sens_dot_plot(sens_dta_panel1, title = "IRA Implementation", ymin = 0, ymax = 1600, far_left = TRUE, 
-                   ira_coord = c(2030,1020), low_coord = c(2028.7, 1200), high_coord = c(2030, 620))
+p1 = sens_dot_plot(sens_dta_panel1, title = "\nIRA Implementation", 
+                   ymin = 0, ymax = 1600, far_left = TRUE, 
+                   ira_coord = c(2030,1020), low_coord = c(2028.7, 1200), 
+                   high_coord = c(2030, 620))
 # p1
-p2 = sens_dot_plot(sens_dta_panel2, title = "Economic Growth", ymin = 0, ymax = 1600,)
+p2 = sens_dot_plot(sens_dta_panel2, title = "\nEconomic Growth", ymin = 0, ymax = 1600,)
 #p2
-p3 = sens_dot_plot(sens_dta_panel3, title = "Natural Gas Price", ymin = 0, ymax = 1600,)
+p3 = sens_dot_plot(sens_dta_panel3, title = "\nNatural Gas Price", ymin = 0, ymax = 1600,)
 # p3
-p4 = sens_dot_plot(sens_dta_panel4, title = "Technology Cost", ymin = 0, ymax = 1600,)
+p4 = sens_dot_plot(sens_dta_panel4, title = "\nTechnology", ymin = 0, ymax = 1600,)
 # p4
-p5 = sens_dot_plot(sens_dta_panel5, title = "Constrained Deployment", ymin = 0, ymax = 1600,)
+p5 = sens_dot_plot(sens_dta_panel5, title = "Combined Implementation \n + Technology", ymin = 0, ymax = 1600,)
 # p5
+
+# annotations
+# "EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI","USREP-ReEDS", "ReEDS-NREL"
+p1$plot = p1$plot + 
+  annotate("text", x = 2028.4, y = 1595, size = 3,
+               label = "EPS-EI", color = "black", alpha = 1, hjust = 0) + 
+  annotate("text", x = 2028.4, y = 1535, size = 3,
+             label = "GCAM-CGS", color = "black", alpha = 1, hjust = 0) +
+  annotate("text", x = 2028.4, y = 1475, size = 3,
+             label = "ReEDS-NREL", color = "black", alpha = 1, hjust = 0) + 
+  annotate("text", x = 2028.4, y = 1415, size = 3,
+             label = "REGEN-EPRI", color = "black", alpha = 1, hjust = 0) + 
+  annotate("text", x = 2028.4, y = 1355, size = 3,
+             label = "RIO-REPEAT", color = "black", alpha = 1, hjust = 0) + 
+  annotate("text", x = 2028.4, y = 1295, size = 3,
+             label = "USREP-ReEDS", color = "black", alpha = 1, hjust = 0)
+
+p2$plot = p2$plot + 
+  annotate("text", x = 2028.4, y = 1595, size = 3,
+               label = "GCAM-CGS", color = "black", alpha = 1, hjust = 0)
+
+p3$plot = p3$plot + 
+  annotate("text", x = 2028.4, y = 1595, size = 3,
+               label = "ReEDS-NREL", color = "black", alpha = 1, hjust = 0)
+
+p4$plot = p4$plot + 
+  annotate("text", x = 2028.4, y = 1595, size = 3,
+               label = "ReEDS-NREL", color = "black", alpha = 1, hjust = 0) +
+  annotate("text", x = 2028.4, y = 1535, size = 3,
+               label = "USREP-ReEDS", color = "black", alpha = 1, hjust = 0)
+
+p5$plot = p5$plot + 
+  annotate("text", x = 2028.4, y = 1595, size = 3,
+               label = "USREP-ReEDS", color = "black", alpha = 1, hjust = 0)
 
 combined = (p1$plot | p2$plot | p3$plot | p4$plot | p5$plot) +
   plot_annotation(title = "Electric Sector CO2 Emissions", 
@@ -2569,9 +2616,16 @@ combined = (p1$plot | p2$plot | p3$plot | p4$plot | p5$plot) +
   
 combined
 
-dta = bind_rows(sens_dta_panel1, sens_dta_panel3, sens_dta_panel4, sens_dta_panel5)
+dta = bind_rows(sens_dta_panel1, sens_dta_panel2,
+                sens_dta_panel3, sens_dta_panel4, sens_dta_panel5)
 
 saveall(combined, dta, fig_no)
+
+# combine panels 4+5: "Technology"
+# new panel title: "Combined Implementation + Technology"
+# Add annotations to include model names 
+# Add ReEDS core to left (and GCAM core)
+# also do an arrows plot for EW and elec sector emissions
 ```
 
 ## 2.7 nox emissions

@@ -104,9 +104,11 @@ html(TranSpg$data, "Transportation CO<sub>2<sub>")
 ## 3.4 electric vehicle percent share of new sales
 
 ```{r}
+# Add NEMS
 fig_no = 3.4
 
 # TODO: OP-NEMS should be showing up here, but its removed when year colums are dropped in raw
+# Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share
 
 scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)
 
@@ -123,12 +125,14 @@ clean_data4 = rbind(raw, atr_2022) %>% filter(unit != "thousands") %>% mutate(va
   filter(model != "EIA-LTS") %>% 
   duplicate_historical_data("EPA-ATR",2022, criteria = TRUE) %>% mutate(
     variable = case_when(
-      variable %in% c("Energy Service|Transportation|Passenger|BEV|Sales Share",
-                      "Energy Service|Transportation|Passenger|FCEV|Sales Share",
-                      "Energy Service|Transportation|Passenger|HEV|Sales Share",
-                      "Energy Service|Transportation|Freight|BEV|Sales Share",
-                      "Energy Service|Transportation|Freight|FCEV|Sales Share",
-                      "Energy Service|Transportation|Passenger|PHEV|Sales Share") ~ 
+      variable %in% c(
+        "Energy Service|Transportation|Passenger|BEV|Sales Share",
+        "Energy Service|Transportation|Passenger|FCEV|Sales Share",
+        "Energy Service|Transportation|Passenger|HEV|Sales Share",
+        "Energy Service|Transportation|Freight|BEV|Sales Share",
+        "Energy Service|Transportation|Freight|FCEV|Sales Share",
+        "Energy Service|Transportation|Passenger|PHEV|Sales Share"
+        ) ~ 
         "Energy Service|Transportation|EV|Sales Share")) %>%
   mutate(alpha = case_when(
     model == "USREP-ReEDS" ~ 1,
