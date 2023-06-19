@@ -45,9 +45,10 @@ pd_map_ID = 25
 ad_map_ID = 3
 drop = ""
 histsrc = "EPA-GHGI"
+metric = "Emissions"
 unit = "Mt CO2/yr"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -67,9 +68,10 @@ pd_map_ID = 26
 ad_map_ID = 4
 drop = ""
 histsrc = "EPA-GHGI"
+metric = "Emissions"
 unit = "Mt CO2/yr"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -89,9 +91,10 @@ pd_map_ID = 27
 ad_map_ID = 5
 drop = c("IPM-EPA","IPM-NRDC")
 histsrc = "EPA-GHGI"
+metric = "Emissions"
 unit = "Mt CO2/yr"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -111,9 +114,10 @@ pd_map_ID = 29
 ad_map_ID = 7
 drop = ""
 histsrc = "EPA-GHGI"
+metric = "Emissions"
 unit = "Mt CO2/yr"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -133,9 +137,10 @@ pd_map_ID = 28
 ad_map_ID = 6
 drop = ""
 histsrc = "EPA-GHGI"
+metric = "Emissions"
 unit = "Mt CO2/yr"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -156,9 +161,10 @@ pd_map_ID = 32
 ad_map_ID = 20
 drop = "EIAinEMF37.csv"
 histsrc = "EIA"
+metric = "Emissions"
 unit = "Mt CO2/yr"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -178,9 +184,10 @@ pd_map_ID = 31
 ad_map_ID = 21
 drop = "EIAinEMF37.csv"
 histsrc = "EIA"
+metric = "Emissions"
 unit = "Mt CO2/yr"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -200,9 +207,10 @@ pd_map_ID = 30
 ad_map_ID = 22
 drop = "EIAinEMF37.csv"
 histsrc = "EIA"
+metric = "Emissions"
 unit = "Mt CO2/yr"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -222,9 +230,10 @@ pd_map_ID = 80
 ad_map_ID = 8
 drop = "EIAinEMF37.csv"
 histsrc = "EIA"
-unit = "Quads"
+metric = "Generation"
+unit = "TWh"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -243,9 +252,10 @@ pd_map_ID = 79
 ad_map_ID = 9
 drop = c("EIAinEMF37.csv", "IPM-EPA")
 histsrc = "EIA"
-unit = "Quads"
+metric = "Generation"
+unit = "TWh"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -264,9 +274,10 @@ pd_map_ID = 78
 ad_map_ID = 10
 drop = c("EIAinEMF37.csv", "IPM-EPA")
 histsrc = "EIA"
-unit = "Quads"
+metric = "Generation"
+unit = "TWh"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -277,7 +288,7 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 ## CCS Generation Diff
-```{r CCS Generation Difference} 
+```{r CCS Generation Difference, eval = FALSE} 
 fig_no = "Ap.12.CCSGen"
 
 #there is no historic data here so gotta do a lil manual work 
@@ -392,9 +403,11 @@ pd_map_ID = 71
 ad_map_ID = 17
 drop = c("EIAinEMF37.csv", "IPM-EPA")
 histsrc = "EIA"
-unit = "Quads"
+metric = "Generation"
+unit = "TWh"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+
+fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -413,9 +426,11 @@ pd_map_ID = 70
 ad_map_ID = 18
 drop = c("EIAinEMF37.csv", "IPM-EPA")
 histsrc = "EIA"
-unit = "Quads"
+metric = "Generation"
+unit = "TWh"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+
+fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -434,9 +449,11 @@ pd_map_ID = 77
 ad_map_ID = 11
 drop = c("EIAinEMF37.csv", "IPM-EPA")
 histsrc = "EIA"
-unit = "Quads"
+metric = "Generation"
+unit = "TWh"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit)
+
+fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 

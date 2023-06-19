@@ -64,7 +64,7 @@ IndSpg = spg(
   21,
   "EPA-GHGI",
   "",
-  expression(paste("Mt C", O[2], "/yr")),
+  expression(paste("Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
   c("IPM-NRDC", "IPM-EPA", "GCAM-PNNL"),
   0,
@@ -92,7 +92,7 @@ fig_no = 5.3
 
 clean_data6 = clean_data %>% duplicate_historical_data("EIA-LTS", 2020)
 
-p1 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 119, "United States", 0, 30, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,17), preira_coord = c(2030, 16), ira_coord = c(2027, 23))
+p1 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 119, "United States", 0, 30, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,17), preira_coord = c(2030, 16), ira_coord = c(2027, 23), ylab = "Final Energy (Quads)")
 p1$full = p1$full + theme(plot.title = element_blank())
 p1$full
 

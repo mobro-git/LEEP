@@ -371,7 +371,12 @@ ad = function(diff_ID, title, yname, gd, drop) {
               ad_df = df))
 }
 
-four_corners = function(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit) {
+four_corners = function(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit) {
+  if (metric == "Generation") {
+    clean_data = clean_data %>%
+      mutate(value = case_when(unit == "Quads" ~ value * 293.07, TRUE ~ value),
+             unit = case_when(unit == "Quads" ~ "TWh", TRUE ~ unit))
+  }
 
   #Time Series Dataframe
   ts_df = data_from_graph(
@@ -416,7 +421,7 @@ four_corners = function(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit) {
     theme_emf() +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
     labs(title = "No IRA",
-         y = unit,
+         y = paste0(metric," (",unit,")"),
          x = element_blank()) +
     theme(legend.position = "right",
           axis.text.x = element_text(angle = 45, hjust = 1)) +
@@ -435,7 +440,7 @@ four_corners = function(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit) {
     theme_emf() +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
     labs(title = "IRA",
-         y = unit,
+         y = paste0(metric," (",unit,")"),
          x = element_blank()) +
     theme(legend.position = "right",
           axis.text.x = element_text(angle = 45, hjust = 1)) +
@@ -452,7 +457,7 @@ four_corners = function(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, unit) {
   pdfigure = pd(pd_map_ID, "", expression(paste("Percent Difference (%)")), "none", drop)
 
   #Absolute Difference
-  adfigure = ad(diff_ID = ad_map_ID, "", paste("Absolute Difference (",unit,")"), "none", drop)
+  adfigure = ad(diff_ID = ad_map_ID, "", paste0("Absolute Difference (",unit,")"), "none", drop)
 
   figure = (NoIRAfigure | IRAfigure) / (adfigure$figure | pdfigure$figure)+
     plot_layout(guides = "collect")

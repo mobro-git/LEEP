@@ -40,7 +40,6 @@ saveall = function(figure, df, fig_no, format = c("svg","png"), wd = 7, ht = 5, 
 #   plot_title: manually set the plot title of the combined plot
 #   metric: what centrality metric to show on the dot plots: "mean" or "median"
 dot_plots_sens = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric, labels = FALSE, historic_coord = c(0,0), iralow_coord = c(0,0), irahigh_coord = c(0,0)) {
-
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
   # make the spagetti plot
@@ -182,9 +181,11 @@ dot_plots_sens = function(plot_type, config, emf_data_long, figmap, figure_num, 
 # print(p$full)
 # print(p$stats)
 sens_dot_plot = function(dta, title, far_left = FALSE, single = FALSE, ymin = 0, ymax = 0, ira_coord = c(0,0), low_coord = c(0,0), high_coord = c(0,0)) {
+  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
   if (far_left) {
     point_code = geom_point(aes(x = year + stagger, y = value, color = scenario), shape = 1, size = 2)
   } else {
+    #point_code = geom_point(aes(x = year + stagger, y = value, color = model), shape = 1, size = 2)
     point_code = geom_point(aes(x = year + stagger, y = value), shape = 1, size = 2)
   }
 
@@ -226,21 +227,23 @@ sens_dot_plot = function(dta, title, far_left = FALSE, single = FALSE, ymin = 0,
     segment_code +
     scale_x_continuous(breaks = c(2030, 2035), labels = c(2030, 2035), limits = c(2028, 2037)) +
     scale_y_continuous(limits = c(ymin, ymax)) +
+    #scale_subpalette(subpalettes,"ZZZZZ") +
     theme_emf() +
     ggtitle(title) +
     theme(axis.title.x = element_blank(),
           plot.title = element_text(hjust = 0.5, size = 8), axis.ticks = element_blank(),
-          plot.margin = margin(0.7,1,0.7,left_margin))
+          plot.margin = margin(0.7,1,0.7,left_margin), legend.position = "none")
 
   if (!far_left) {
     p = p +
-      geom_text_repel(aes(x = year + stagger, y = value + 20, label = scenario), point.size = 3, size = 2, hjust = 0, vjust = 0, max.time = 2) +
+      geom_text_repel(aes(x = year + stagger, y = value + 20, label = scenario), point.padding = 1.5,
+                      size = 1.5, hjust = 0, vjust = 0, max.time = 6, force_pull = 1, seed = 42) +
       theme(axis.text.y = element_blank(), axis.title.y = element_blank(),)
     opt_label = "Optimistic Emis"
     pes_label = "Pessimistic Emis"
   } else {
     p = p +
-      labs(y = "Mt CO2/yr") +
+      labs(y = "Emissions (Mt CO2/yr)") +
       #scale_subpalette(subpalettes, "Sensitivity Dots") +
       scale_color_manual(values = c("IRA" = "black", "IRA.Low" = "#42d4f4", "IRA.High" = "#883192"), guide = "none")
     opt_label = "Optimistic Emis"
@@ -271,7 +274,7 @@ sens_dot_plot = function(dta, title, far_left = FALSE, single = FALSE, ymin = 0,
 
 
 # function for spaghetti plots + dot plots
-dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric, labels = FALSE, hist_year = 2021, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0)) {
+dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric, labels = FALSE, hist_year = 2021, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0), ylab = "") {
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
   # make the spagetti plot
@@ -280,6 +283,7 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
   fig = fig + scale_y_continuous(limits = c(ymin, ymax)) +
     scale_x_continuous(breaks = c(2005,2010, hist_year, 2025, 2030, 2035), labels = c(2005, 2010, hist_year, 2025, 2030, 2035)) +
     scale_alpha(range = c(0.6, 1), guide = "none") +
+    labs(y = ylab) +
     annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historic", color = "black", alpha = 1) +
     annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#F28063", alpha = 1) +
     annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#0388B3", alpha = 1) +
@@ -575,7 +579,7 @@ emis_stack = function(dta, title, econwide = FALSE) {
     #geom_text(aes(x = year, y = value, label = round(value, 0), fill = variable_rename), size = 2.5, position = position_stack(vjust = 0.5, reverse = FALSE)) +
     #geom_text(data = totals, aes(x = year, y = value, label = round(value, 0)), vjust = -0.4, stat = "identity", size = 2.5) +
     scale_x_continuous(breaks = c(2005, 2021), labels = c(2005, 2021)) +
-    labs(y = "Mt CO2/yr", title = title) +
+    labs(y = "Emissions (Mt CO2/yr)", title = title) +
     scale_subpalette(subpalettes, "Emissions Stack") +
     theme_emf() +
     theme(axis.ticks = element_blank(), axis.title.x = element_blank(), plot.title = element_blank()) +

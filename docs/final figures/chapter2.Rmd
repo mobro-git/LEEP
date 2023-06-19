@@ -71,7 +71,7 @@ fig = ggplot(data, aes(fill = variable_rename, y = value, alpha = alpha, x = yea
   theme_emf() +
   labs(title = "",
          x = "",
-         y = expression(paste("Mt C", O[2], "/yr"))) +
+         y = expression(paste("Emissions (Mt C", O[2], "/yr)"))) +
     scale_y_continuous(limits = c(0, 6000), labels = scales::comma) +
     scale_x_continuous(breaks = c(2005, 2021)) + 
     theme(panel.spacing.x = unit(4, "mm"), legend.position = "bottom") +
@@ -90,10 +90,14 @@ saveall(fig, data, fig_no)
 fig_no = 2.2
 
 clean_data10 = clean_data %>% 
-  filter(datasrc == 'EIA-IEA-bistline_historic.csv')
+  filter(datasrc == 'EIA-EPA-bistline_historic.csv') %>%
+  mutate(value = case_when(unit == "Quads" ~ value * 293.07, TRUE ~ value),
+         unit = case_when(unit == "Quads" ~ "TWh", TRUE ~ unit))
+
 
 fig = print_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14, "United States", 
                   level_var = c("Other", "Renewables", "Nuclear", "Oil", "Natural Gas", "Coal")) +
+  labs(y = "Seconary Energy (TWh)") +
   theme(axis.text.x = element_text(angle = 0, hjust = 0.5), plot.title = element_blank()) +
   bottom1
 
@@ -113,7 +117,7 @@ ElecSpg = spg(
   98,
   "EPA-GHGI",
   "",
-  expression(paste("Mt C", O[2], "/yr")),
+  expression(paste("Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
   c("Scout-LEEP"),
   0,
@@ -272,10 +276,11 @@ dots_Total = ggplot(data = data_total, aes(x = axe, y = value,  color = scenario
     scale_y_continuous(limits = c(ymin, 6500), breaks = c(0, 3250 , 6500), labels = scales::comma) +
     scale_x_continuous(breaks = c(1,2,3), labels = c("2021", "2030", "2035")) +
     theme_emf() +
-    labs(y = "TWh") +
+    labs(y = "Generation (TWh)") +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme(axis.text.x = element_text(angle = 45, hjust = 1),
           axis.title.x = element_blank(),
+          axis.title.y = element_text(size = 7),
           axis.ticks = element_blank(),
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
@@ -610,10 +615,11 @@ dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = value,  color = scenario))
     scale_y_continuous(limits = c(ymin, 2600), breaks = c(0, 1300 , 2600), labels = scales::comma) +
     scale_x_continuous(breaks = c(1,2,3), labels = c("2021", "2030", "2035")) +
     theme_emf() +
-    labs(y = "TWh") +
+    labs(y = "Generation (TWh)") +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme(axis.text.x = element_text(angle = 45, hjust = 1),
           axis.title.x = element_blank(),
+          axis.title.y = element_text(size = 7),
           axis.ticks = element_blank(),
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
@@ -746,10 +752,11 @@ dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = value,  color = scenario))
     scale_y_continuous(limits = c(ymin, 2600), breaks = c(0, 1300 , 2600), labels = scales::comma) +
     scale_x_continuous(breaks = c(1,2,3), labels = c("2021", "2030", "2035")) +
     theme_emf() +
-    labs(y = "TWh") +
+    labs(y = "Generation (TWh)") +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme(axis.text.x = element_text(angle = 45, hjust = 1),
           axis.title.x = element_blank(),
+          axis.title.y = element_text(size = 7),
           axis.ticks = element_blank(),
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
@@ -2452,6 +2459,7 @@ subpalettes = create_subpalettes(figmap_leep_stackbar, config)
 
 fig = print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States") +
   geom_hline(yintercept = 0, linewidth = 0.25, color = "black") +
+  labs(y = "Capacity Change (GW/yr)") +
   scale_subpalette(subpalettes, "Capacity Additions2") +
   scale_y_continuous(limits = c(ymin, ymax)) +
   ggtitle("Historical Annual Capacity Changes") +
@@ -2567,11 +2575,11 @@ sens_dta_panel3 = sens_dta %>% filter(scenario %in% panel3_scens) %>%
     scenario == "Low Energy Price" ~ "Low",
     TRUE ~ scenario
   )) %>%
-  mutate(scenario = case_when(model == "ReEDS-NREL" ~ paste0("R.",scenario),
-                           model == "GCAM-PNNL" ~ paste0("GP.",scenario),
-                           TRUE ~ scenario)) %>%
-  mutate(stagger = case_when(model == "ReEDS-NREL" ~ 0.7,
-                             model == "GCAM-PNNL" ~ -0.7,
+  # mutate(scenario = case_when(model == "ReEDS-NREL" ~ paste0("R.",scenario),
+  #                          model == "GCAM-PNNL" ~ paste0("GP.",scenario),
+  #                          TRUE ~ scenario)) %>%
+  mutate(stagger = case_when(model == "ReEDS-NREL" ~ 0.4,
+                             model == "GCAM-PNNL" ~ -0.4,
                              TRUE ~ 0.0))
   bind_rows(filler)
 
@@ -2586,16 +2594,28 @@ sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>%
     scenario == "Cons Battery/Renew" ~ "Cons Renew",
     TRUE ~ scenario
   )) %>%
-  mutate(scenario = case_when(model == "ReEDS-NREL" ~ paste0("R.",scenario),
-                              model == "USREP-ReEDS" ~ paste0("UR.",scenario),
-                              TRUE ~ scenario)) %>%
-  mutate(stagger = case_when(model == "ReEDS-NREL" ~ 0.7,
-                             model == "USREP-ReEDS" ~ -0.7,
+  # mutate(scenario = case_when(model == "ReEDS-NREL" ~ paste0("R.",scenario),
+  #                             model == "USREP-ReEDS" ~ paste0("UR.",scenario),
+  #                             TRUE ~ scenario)) %>%
+  mutate(stagger = case_when(model == "ReEDS-NREL" ~ 0.4,
+                             model == "USREP-ReEDS" ~ -0.4,
                              TRUE ~ 0.0))
   bind_rows(filler)
+  
 sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
-  filter(model == "USREP-ReEDS") %>% 
+  filter(model %in% c("USREP-ReEDS","OP-NEMS")) %>% 
   mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when(
+    scenario == "Pess-IRA.Adv" ~ "Pess-Adv",
+    scenario == "Opt-IRA.Adv" ~ "Opt-Adv",
+    TRUE ~ scenario
+  )) %>%
+  # mutate(scenario = case_when(model == "USREP-ReEDS" ~ paste0("UR.",scenario),
+  #                          model == "OP-NEMS" ~ paste0("ON.",scenario),
+  #                          TRUE ~ scenario)) %>%
+  mutate(stagger = case_when(model == "USREP-ReEDS" ~ 0.4,
+                             model == "OP-NEMS" ~ -0.4,
+                             TRUE ~ 0.0))
   bind_rows(filler)
 
 p1 = sens_dot_plot(sens_dta_panel1, title = "\nIRA Implementation", 
@@ -2609,46 +2629,48 @@ p3 = sens_dot_plot(sens_dta_panel3, title = "\nEnergy Price", ymin = 0, ymax = 1
 # p3
 p4 = sens_dot_plot(sens_dta_panel4, title = "\nTechnology", ymin = 0, ymax = 1600,)
 # p4
-p5 = sens_dot_plot(sens_dta_panel5, title = "Combined Implementation \n + Technology", ymin = 0, ymax = 1600,)
+p5 = sens_dot_plot(sens_dta_panel5, title = "Combined Technology\n + Implementation", ymin = 0, ymax = 1600,)
 # p5
 
 # annotations
 # "EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI","USREP-ReEDS", "ReEDS-NREL"
 p1$plot = p1$plot + 
   annotate("text", x = 2028.4, y = 1595, size = 3,
-               label = "EPS-EI", color = "black", alpha = 1, hjust = 0) + 
+               label = "EPS-EI", color = "#A1A1A1", alpha = 1, hjust = 0) + 
   annotate("text", x = 2028.4, y = 1535, size = 3,
-             label = "GCAM-CGS", color = "black", alpha = 1, hjust = 0) +
+             label = "GCAM-CGS", color = "#A1A1A1", alpha = 1, hjust = 0) +
   annotate("text", x = 2028.4, y = 1475, size = 3,
-             label = "ReEDS-NREL", color = "black", alpha = 1, hjust = 0) + 
+             label = "ReEDS-NREL", color = "#A1A1A1", alpha = 1, hjust = 0) + 
   annotate("text", x = 2028.4, y = 1415, size = 3,
-             label = "REGEN-EPRI", color = "black", alpha = 1, hjust = 0) + 
+             label = "REGEN-EPRI", color = "#A1A1A1", alpha = 1, hjust = 0) + 
   annotate("text", x = 2028.4, y = 1355, size = 3,
-             label = "RIO-REPEAT", color = "black", alpha = 1, hjust = 0) + 
+             label = "RIO-REPEAT", color = "#A1A1A1", alpha = 1, hjust = 0) + 
   annotate("text", x = 2028.4, y = 1295, size = 3,
-             label = "USREP-ReEDS", color = "black", alpha = 1, hjust = 0)
+             label = "USREP-ReEDS", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p2$plot = p2$plot + 
   annotate("text", x = 2028.4, y = 1595, size = 3,
-               label = "GCAM-PNNL", color = "black", alpha = 1, hjust = 0)
+               label = "GCAM-PNNL", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p3$plot = p3$plot + 
   annotate("text", x = 2028.4, y = 1595, size = 3,
-               label = "GCAM-PNNL", color = "black", alpha = 1, hjust = 0) + 
+               label = "GCAM-PNNL (L)", color = "#A1A1A1", alpha = 1, hjust = 0) + 
   annotate("text", x = 2028.4, y = 1535, size = 3,
-               label = "ReEDS-NREL", color = "black", alpha = 1, hjust = 0)
+               label = "ReEDS-NREL (R)", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p4$plot = p4$plot + 
   annotate("text", x = 2028.4, y = 1595, size = 3,
-               label = "ReEDS-NREL", color = "black", alpha = 1, hjust = 0) +
+               label = "ReEDS-NREL (L)", color = "#A1A1A1", alpha = 1, hjust = 0) +
   annotate("text", x = 2028.4, y = 1535, size = 3,
-               label = "USREP-ReEDS", color = "black", alpha = 1, hjust = 0)
+               label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p5$plot = p5$plot + 
   annotate("text", x = 2028.4, y = 1595, size = 3,
-               label = "USREP-ReEDS", color = "black", alpha = 1, hjust = 0)
+               label = "OP-NEMS (L)", color = "#A1A1A1", alpha = 1, hjust = 0) +
+    annotate("text", x = 2028.4, y = 1535, size = 3,
+               label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0)
 
-combined = (p1$plot | p2$plot | p3$plot | p4$plot | p5$plot) +
+combined = (p1$plot | p4$plot | p5$plot | p2$plot | p3$plot ) +
   plot_annotation(title = "Electric Sector CO2 Emissions", 
                   theme = theme(plot.title = element_blank()))
   
@@ -2685,8 +2707,9 @@ nox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 12
   scale_alpha(range = c(0.6, 1), guide = "none")
 #nox
 
-nox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States", 0, 5, "Power Sector NOx Emissions", metric = "median", 
-                     historic_coord = c(2015,1.8), preira_coord = c(2030, 0.95), ira_coord = c(2029, 0.15))
+nox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States", 0, 5, 
+                     "Power Sector NOx Emissions", metric = "median", 
+                     historic_coord = c(2015,1.8), preira_coord = c(2030, 0.95), ira_coord = c(2029, 0.15), ylab = "Emissions (Mt NOx/yr)")
 print(nox_full$full)
 print(nox_full$stats)
 
@@ -2705,7 +2728,7 @@ sox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 12
 #sox
 
 sox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States", 0, 5, "Power Sector SO2 Emissions", metric = "median", 
-                     historic_coord = c(2019,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12))
+                     historic_coord = c(2019,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12), ylab = "Emissions (Mt SOx/yr)")
 print(sox_full$full)
 print(sox_full$stats)
 

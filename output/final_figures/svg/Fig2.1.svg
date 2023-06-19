@@ -123,10 +123,10 @@
 <polyline points='463.59,288.45 463.59,285.71 ' style='stroke-width: 0.53; stroke: #B3B3B3; stroke-linecap: butt;' />
 <text x='87.42' y='297.09' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2005</text>
 <text x='463.59' y='297.09' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2021</text>
-<text transform='translate(14.20,182.58) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='25.34px' lengthAdjust='spacingAndGlyphs'>Mt C</text>
-<text transform='translate(14.20,157.25) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='9.34px' lengthAdjust='spacingAndGlyphs'>O</text>
-<text transform='translate(16.38,147.91) rotate(-90)' style='font-size: 8.40px; font-family: "Arial";' textLength='4.67px' lengthAdjust='spacingAndGlyphs'>2</text>
-<text transform='translate(14.20,143.24) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='13.33px' lengthAdjust='spacingAndGlyphs'>/yr</text>
+<text transform='translate(14.20,215.59) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='87.36px' lengthAdjust='spacingAndGlyphs'>Emissions (Mt C</text>
+<text transform='translate(14.20,128.23) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='9.34px' lengthAdjust='spacingAndGlyphs'>O</text>
+<text transform='translate(16.38,118.89) rotate(-90)' style='font-size: 8.40px; font-family: "Arial";' textLength='4.67px' lengthAdjust='spacingAndGlyphs'>2</text>
+<text transform='translate(14.20,114.23) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='17.33px' lengthAdjust='spacingAndGlyphs'>/yr)</text>
 <rect x='141.45' y='323.79' width='268.11' height='28.24' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
 <rect x='152.91' y='329.27' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
 <rect x='153.62' y='329.98' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: #003052; stroke-linecap: butt; stroke-linejoin: miter; fill: #003052;' />

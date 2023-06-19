@@ -67,7 +67,7 @@ TotSpg = spg(
   23,
   "EPA-GHGI",
   expression(paste("Total Building C", O[2])),
-  expression(paste("Mt C", O[2], "/yr")),
+  expression(paste("Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
   c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
   0,
@@ -86,7 +86,7 @@ DirSpg = spg(
   95,
   "EPA-GHGI",
   expression(paste("Direct Combustion")),
-  expression(paste("Mt C", O[2], "/yr")),
+  expression(paste("Emissions(Mt C", O[2], "/yr)")),
   gd = "none",
   c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
   0,
@@ -159,7 +159,7 @@ fin = ggplot(data = data_sort[data_sort$variable_rename != "Reference",] , aes(x
   facet_grid(~scenario) +
   labs(title = "",
          x = "",
-         y = expression(Mt ~ CO[2]),
+         y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
          color = "") +
     scale_y_continuous(limits = c(0, 1500), labels = scales::comma) +
     theme_emf() +

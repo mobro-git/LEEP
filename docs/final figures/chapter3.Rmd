@@ -63,6 +63,7 @@ fig_no = 3.2
 fig = print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3, "United States", 
                   level_var = c("Other", "Pipelines", 
                                 "Water", "Aircraft", "MHD Trucks", "LD Trucks", "Passenger Cars")) +
+  labs(y = "Emissions (Mt CO2/yr)") +
   theme(axis.text.x = element_text(angle = 0, hjust = 0.5), plot.title = element_blank()) +
   bottom1
 
@@ -82,7 +83,7 @@ TranSpg = spg(
   19,
   "EPA-GHGI",
   "",
-  expression(paste("Mt C", O[2], "/yr")),
+  expression(paste("Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
   c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "USREP-ReEDS"),
   0,
@@ -160,7 +161,7 @@ fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 11
 fig
 dta = data_from_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
 
-p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States", 0, 100, "EV Share", metric = "median", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 10), ira_coord = c(2027, 53))
+p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States", 0, 100, "EV Share", metric = "median", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 10), ira_coord = c(2027, 53), ylab = "EV Sales Share (%)")
 p$full
 
 print(p$stats)
@@ -248,7 +249,7 @@ A = ggplot(data = data, aes(x = axe, y = value,  color = scenario)) +
   geom_segment(data = df_stat_25, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
     scale_x_continuous(breaks = c(1,2,3), labels = c("2025", "2030", "2035")) +
     theme_emf() +
-    labs(y = "TWh") +
+    labs(y = "Final Energy (TWh)") +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme(axis.text.x = element_text(angle = 45, hjust = 1),
           axis.title.x = element_blank(),

@@ -65,7 +65,7 @@ EconSpg = spg(
   99,
   "EPA-GHGI",
   expression(paste("Economy-Wide C", O[2])),
-  expression(paste("Mt C", O[2], "/yr")),
+  expression(paste("Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
   c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
   0,
@@ -96,7 +96,7 @@ TranSpg = spg(
   19,
   "EPA-GHGI",
   expression(paste("Transportation C", O[2])),
-  expression(paste("Mt C", O[2], "/yr")),
+  expression(paste("Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
   c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "USREP-ReEDS"),
   0,
@@ -162,7 +162,7 @@ CoalSpg = spg(
   94,
   "EIA",
   expression(paste("Coal")),
-  expression(paste("Quads")),
+  expression(paste("Primary Energy (Quads)")),
   gd = "none",
   c("RIO-REPEAT","EIAinEMF37.csv"),
   0,
@@ -233,11 +233,11 @@ fig_no = 1.4
 # 
 
 # sensitivity dot plots
-panel1_scens = c("Core","IRA", "IRA.Low","IRA.High")
-panel2_scens = c("Low Growth", "High Growth", "Core", "IRA") # panel2_scens from fig 2.5, but "IRA" added for GCAM
+panel1_scens = c("Core","IRA", "IRA.Low","IRA.High") # IRA Implementation
+panel2_scens = c("Low Growth", "High Growth", "Core", "IRA") # Economic Growth
 panel3_scens = c("Low Energy Price","High Energy Price", "Core", "IRA") # Energy Prices
 panel4_scens = c("All Advanced", "Adv Battery/Renew", "Cons Battery/Renew", "Constrained Deployment", "Core", "IRA") # Technology Cost and deployment constraints
-panel5_scens = c("Pess-IRA.Adv", "Opt-IRA.Adv", "Core", "IRA") # Combos
+panel5_scens = c("Pess-IRA.Adv", "Opt-IRA.Adv", "Core", "IRA") # Combined Technology and Implementation
 model_list = c("EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI", "USREP-ReEDS") # models with all three (low,mid,high) cases
 
 sens_dta_econ = clean_data %>% filter(variable == "Emissions|CO2|Energy",
@@ -289,8 +289,19 @@ sens_dta_econ_panel4 = clean_data %>%
 sens_dta_econ_panel5 = clean_data %>% 
   filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>%
   filter(scenario %in% panel5_scens) %>%
-  filter(model == "USREP-ReEDS") %>% 
+  filter(model %in% c("OP-NEMS", "USREP-ReEDS")) %>% 
   mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when(
+    scenario == "Pess-IRA.Adv" ~ "Pess-Adv",
+    scenario == "Opt-IRA.Adv" ~ "Opt-Adv",
+    TRUE ~ scenario
+  )) %>%
+  # mutate(scenario = case_when(model == "USREP-ReEDS" ~ paste0("UR.",scenario),
+  #                          model == "OP-NEMS" ~ paste0("ON.",scenario),
+  #                          TRUE ~ scenario)) %>%
+  mutate(stagger = case_when(model == "USREP-ReEDS" ~ 0.4,
+                             model == "OP-NEMS" ~ -0.4,
+                             TRUE ~ 0.0)) %>%
   bind_rows(filler)
   
 
@@ -324,8 +335,8 @@ sens_dta_ind = clean_data %>%
     TRUE ~ 0
   ))
 
-p7 = sens_dot_plot(sens_dta_econ, title = "IRA Implementation", ymin = 0, ymax = 5000, far_left = TRUE, single = FALSE, 
-                   ira_coord = c(2028.4,3220), low_coord = c(2032.3, 3775), 
+p7 = sens_dot_plot(sens_dta_econ, title = "\nIRA Implementation", ymin = 0, ymax = 5000, far_left = TRUE, single = FALSE, 
+                   ira_coord = c(2028.4,3220), low_coord = c(2031.3, 3760), 
                    high_coord = c(2030.6, 4070))
 #p7$plot
 
@@ -338,33 +349,35 @@ p7e = sens_dot_plot(sens_dta_econ_panel5, title = "Combined Technology\n + Imple
 
 p7$plot = p7$plot + 
   annotate("text", x = 2028.4, y = 4995, size = 3,
-               label = "EPS-EI", color = "black", alpha = 1, hjust = 0) + 
+               label = "EPS-EI", color = "#A1A1A1", alpha = 1, hjust = 0) + 
   annotate("text", x = 2028.4, y = 4845, size = 3,
-             label = "GCAM-CGS", color = "black", alpha = 1, hjust = 0) +
+             label = "GCAM-CGS", color = "#A1A1A1", alpha = 1, hjust = 0) +
   annotate("text", x = 2028.4, y = 4695, size = 3,
-             label = "REGEN-EPRI", color = "black", alpha = 1, hjust = 0) + 
+             label = "REGEN-EPRI", color = "#A1A1A1", alpha = 1, hjust = 0) + 
   annotate("text", x = 2028.4, y = 4545, size = 3,
-             label = "RIO-REPEAT", color = "black", alpha = 1, hjust = 0) + 
+             label = "RIO-REPEAT", color = "#A1A1A1", alpha = 1, hjust = 0) + 
   annotate("text", x = 2028.4, y = 4395, size = 3,
-             label = "USREP-ReEDS", color = "black", alpha = 1, hjust = 0)
+             label = "USREP-ReEDS", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p7b$plot = p7b$plot + 
   annotate("text", x = 2028.4, y = 4995, size = 3,
-               label = "GCAM-PNNL", color = "black", alpha = 1, hjust = 0)
+               label = "GCAM-PNNL", color = "#A1A1A1", alpha = 1, hjust = 0) #3cb44b
 
 p7c$plot = p7c$plot + 
   annotate("text", x = 2028.4, y = 4995, size = 3,
-               label = "GCAM-PNNL", color = "black", alpha = 1, hjust = 0)
+               label = "GCAM-PNNL", color = "#A1A1A1", alpha = 1, hjust = 0) #3cb44b
 
 p7d$plot = p7d$plot + 
   annotate("text", x = 2028.4, y = 4995, size = 3,
-               label = "USREP-ReEDS", color = "black", alpha = 1, hjust = 0)
+               label = "USREP-ReEDS", color = "#A1A1A1", alpha = 1, hjust = 0) #FFF362
 
 p7e$plot = p7e$plot + 
   annotate("text", x = 2028.4, y = 4995, size = 3,
-               label = "USREP-ReEDS", color = "black", alpha = 1, hjust = 0)
+               label = "OP-NEMS (L)", color = "#A1A1A1", alpha = 1, hjust = 0) + #469990
+  annotate("text", x = 2028.4, y = 4845, size = 3,
+             label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0) #FFF362
 
-fig = (p7$plot | p7b$plot | p7c$plot | p7d$plot | p7e$plot) +
+fig = (p7$plot | p7d$plot | p7e$plot | p7b$plot | p7c$plot) +
   plot_annotation(title = "Economy-Wide Emissions", 
                   theme = theme(plot.title = element_blank()))
 fig

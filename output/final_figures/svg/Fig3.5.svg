@@ -47,8 +47,8 @@
 <circle cx='85.93' cy='259.31' r='1.95' style='stroke-width: 0.71; stroke: #F28063; stroke-opacity: 0.60;' />
 <circle cx='126.74' cy='253.78' r='1.95' style='stroke-width: 0.71; stroke: #0388B3; stroke-opacity: 0.60;' />
 <circle cx='85.93' cy='261.87' r='1.95' style='stroke-width: 0.71; stroke: #F28063; stroke-opacity: 0.60;' />
-<circle cx='126.74' cy='249.23' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
-<circle cx='85.93' cy='257.38' r='1.95' style='stroke-width: 0.71; stroke: #F28063;' />
+<circle cx='126.74' cy='243.77' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
+<circle cx='85.93' cy='258.63' r='1.95' style='stroke-width: 0.71; stroke: #F28063;' />
 <circle cx='126.74' cy='271.34' r='1.95' style='stroke-width: 0.71; stroke: #0388B3; stroke-opacity: 0.60;' />
 <circle cx='85.93' cy='271.34' r='1.95' style='stroke-width: 0.71; stroke: #F28063; stroke-opacity: 0.60;' />
 <circle cx='126.74' cy='215.01' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
@@ -69,8 +69,8 @@
 <circle cx='249.17' cy='221.51' r='1.95' style='stroke-width: 0.71; stroke: #F28063; stroke-opacity: 0.60;' />
 <circle cx='289.98' cy='209.13' r='1.95' style='stroke-width: 0.71; stroke: #0388B3; stroke-opacity: 0.60;' />
 <circle cx='249.17' cy='237.97' r='1.95' style='stroke-width: 0.71; stroke: #F28063; stroke-opacity: 0.60;' />
-<circle cx='289.98' cy='138.11' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
-<circle cx='249.17' cy='215.18' r='1.95' style='stroke-width: 0.71; stroke: #F28063;' />
+<circle cx='289.98' cy='167.69' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
+<circle cx='249.17' cy='218.24' r='1.95' style='stroke-width: 0.71; stroke: #F28063;' />
 <circle cx='289.98' cy='268.20' r='1.95' style='stroke-width: 0.71; stroke: #0388B3; stroke-opacity: 0.60;' />
 <circle cx='249.17' cy='268.20' r='1.95' style='stroke-width: 0.71; stroke: #F28063; stroke-opacity: 0.60;' />
 <circle cx='289.98' cy='169.60' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
@@ -91,8 +91,8 @@
 <circle cx='412.42' cy='173.63' r='1.95' style='stroke-width: 0.71; stroke: #F28063; stroke-opacity: 0.60;' />
 <circle cx='453.23' cy='192.54' r='1.95' style='stroke-width: 0.71; stroke: #0388B3; stroke-opacity: 0.60;' />
 <circle cx='412.42' cy='219.67' r='1.95' style='stroke-width: 0.71; stroke: #F28063; stroke-opacity: 0.60;' />
-<circle cx='453.23' cy='71.80' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
-<circle cx='412.42' cy='142.56' r='1.95' style='stroke-width: 0.71; stroke: #F28063;' />
+<circle cx='453.23' cy='89.21' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
+<circle cx='412.42' cy='148.77' r='1.95' style='stroke-width: 0.71; stroke: #F28063;' />
 <circle cx='453.23' cy='263.22' r='1.95' style='stroke-width: 0.71; stroke: #0388B3; stroke-opacity: 0.60;' />
 <circle cx='412.42' cy='263.22' r='1.95' style='stroke-width: 0.71; stroke: #F28063; stroke-opacity: 0.60;' />
 <circle cx='453.23' cy='129.85' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
@@ -125,7 +125,7 @@
 <text transform='translate(110.89,297.34) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2025</text>
 <text transform='translate(274.13,297.34) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2030</text>
 <text transform='translate(437.38,297.34) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2035</text>
-<text transform='translate(14.05,147.91) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='25.98px' lengthAdjust='spacingAndGlyphs'>TWh</text>
+<text transform='translate(14.05,147.91) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='109.33px' lengthAdjust='spacingAndGlyphs'>Final Energy (TWh)</text>
 <rect x='211.42' y='323.79' width='116.32' height='28.24' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
 <rect x='222.87' y='329.27' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
 <circle cx='231.51' cy='337.91' r='1.95' style='stroke-width: 0.71; stroke: #F28063;' />
