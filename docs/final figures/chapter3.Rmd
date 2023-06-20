@@ -97,7 +97,7 @@ TranSpg = spg(
 fig = dotted(TranSpg$data, TranSpg, "median", 0, 2500)
 fig
 
-savefig(fig, fig_no)
+saveall(fig, TranSpg$data, fig_no)
 
 html(TranSpg$data, "Transportation CO<sub>2<sub>")
 ```
@@ -261,6 +261,7 @@ A = ggplot(data = data, aes(x = axe, y = value,  color = scenario)) +
 print(A)
 
 savefig(A, fig_no)
+savedata(data, fig_no)
 ```
 
 ### Table 3.5

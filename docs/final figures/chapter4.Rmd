@@ -123,6 +123,10 @@ savefig(TotDot, fig_no) # only using total, not using direct/indirect anymore
 TotTab
 DirTab
 IndDirTab
+
+savedata(TotSpg$data, paste(fig_no, "Total"))
+savedata(DirSpg$data, paste(fig_no, "Direct"))
+savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 ```
 
 ## 4.3 emissions reudctions by end use type from scout modeling
