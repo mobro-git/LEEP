@@ -2549,6 +2549,7 @@ filler = data.frame(year = c(2035), value = c(-200), scenario = c(""), model = c
 sens_dta_panel1 = sens_dta %>% filter(scenario %in% panel1_scens) %>%
   filter(model %in% c("EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI",
                       "USREP-ReEDS", "ReEDS-NREL")) %>%
+  filter(!(model == "ReEDS-NREL" & datasrc == "bistline_ira_tall.csv")) %>%
   mutate(scenario = case_when(scenario == "Core" ~ "IRA", TRUE ~ scenario)) %>%
   mutate(stagger = case_when(
     scenario == "IRA.Low" ~ -0.7,
@@ -2597,8 +2598,8 @@ sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>%
   # mutate(scenario = case_when(model == "ReEDS-NREL" ~ paste0("R.",scenario),
   #                             model == "USREP-ReEDS" ~ paste0("UR.",scenario),
   #                             TRUE ~ scenario)) %>%
-  mutate(stagger = case_when(model == "ReEDS-NREL" ~ 0.4,
-                             model == "USREP-ReEDS" ~ -0.4,
+  mutate(stagger = case_when(model == "ReEDS-NREL" ~ -0.4,
+                             model == "USREP-ReEDS" ~ +0.4,
                              TRUE ~ 0.0))
   bind_rows(filler)
   
@@ -2680,12 +2681,160 @@ dta = bind_rows(sens_dta_panel1, sens_dta_panel2,
                 sens_dta_panel3, sens_dta_panel4, sens_dta_panel5)
 
 saveall(combined, dta, fig_no)
+```
 
-# combine panels 4+5: "Technology"
-# new panel title: "Combined Implementation + Technology"
-# Add annotations to include model names 
-# Add ReEDS core to left (and GCAM core)
-# also do an arrows plot for EW and elec sector emissions
+
+### table for Figure 2.6
+```{r}
+panel1_summ = sens_dta_panel1 %>%
+  select(-c(stagger,datasrc,region)) %>%
+  mutate(scenario = case_when(scenario == "IRA.High" ~ "Optimistic",
+                              scenario == "IRA.Low" ~ "Pessimistic",
+                              TRUE ~ "Core")) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
+  mutate(diff_opt = value_Optimistic - value_Core,
+         diff_pess = value_Pessimistic - value_Core) %>%
+  group_by(variable, unit, year) %>%
+  summarize(opt_median = median(diff_opt),
+            opt_min = min(diff_opt),
+            opt_max = max(diff_opt),
+            pess_median = median(diff_pess),
+            pess_min = min(diff_pess),
+            pess_max = max(diff_pess)) %>%
+  pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
+  mutate(value = round(value,1)) %>%
+  pivot_wider(names_from = scen, values_from = value) %>%
+  rename(c("Optimistic" = "opt", "Pessimistic" = "pess"))
+
+panel2_summ = sens_dta_panel2 %>%
+  select(-c(datasrc,region)) %>%
+  mutate(scenario = case_when(scenario == "High" ~ "Optimistic",
+                              scenario == "Low" ~ "Pessimistic",
+                              TRUE ~ "Core")) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
+  mutate(diff_opt = value_Optimistic - value_Core,
+         diff_pess = value_Pessimistic - value_Core) %>%
+  group_by(variable, unit, year) %>%
+  summarize(opt_median = median(diff_opt),
+            opt_min = min(diff_opt),
+            opt_max = max(diff_opt),
+            pess_median = median(diff_pess),
+            pess_min = min(diff_pess),
+            pess_max = max(diff_pess)) %>%
+  pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
+  mutate(value = round(value,1)) %>%
+  pivot_wider(names_from = scen, values_from = value) %>%
+  rename(c("High Growth" = "opt", "Low Growth" = "pess")) %>%
+  data.frame() %>%
+  select(-c(variable,unit,year,metric))
+
+panel3_summ = sens_dta_panel3 %>%
+  select(-c(stagger,datasrc,region)) %>%
+  mutate(scenario = case_when(scenario == "High" ~ "Optimistic",
+                              scenario == "Low" ~ "Pessimistic",
+                              TRUE ~ "Core")) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
+  mutate(diff_opt = value_Optimistic - value_Core,
+         diff_pess = value_Pessimistic - value_Core) %>%
+  group_by(variable, unit, year) %>%
+  summarize(opt_median = median(diff_opt),
+            opt_min = min(diff_opt),
+            opt_max = max(diff_opt),
+            pess_median = median(diff_pess),
+            pess_min = min(diff_pess),
+            pess_max = max(diff_pess)) %>%
+  pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
+  mutate(value = round(value,1)) %>%
+  pivot_wider(names_from = scen, values_from = value) %>%
+  rename(c("High Price" = "opt", "Low Price" = "pess")) %>%
+  data.frame() %>%
+  select(-c(variable,unit,year,metric))
+
+panel4_summ = sens_dta_panel4 %>%
+  select(-c(stagger,datasrc,region)) %>%
+  mutate(scenario = case_when(scenario == "Adv Renew" ~ "Optimistic",
+                              scenario == "Cons Renew" ~ "Pessimistic",
+                              scenario == "Constr" ~ "Constr",
+                              scenario == "All-Adv" ~ "AllAdv",
+                              TRUE ~ "Core")) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
+  mutate(value_Optimistic = case_when(is.na(value_Optimistic) ~ value_Core
+                                            , TRUE ~ value_Optimistic),
+         value_Pessimistic = case_when(is.na(value_Pessimistic) ~ value_Core
+                                            , TRUE ~ value_Pessimistic),
+         value_Constr = case_when(is.na(value_Constr) ~ value_Core
+                                            , TRUE ~ value_Constr)) %>%
+  mutate(diff_opt = value_Optimistic - value_Core,
+         diff_pess = value_Pessimistic - value_Core,
+         diff_constr = value_Constr - value_Core,
+         diff_alladv = value_AllAdv - value_Core) %>%
+  replace_with_na(replace = list(diff_opt = c(0), diff_pess = c(0),
+                             diff_constr = c(0), diff_alladv = c(0))) %>%
+  group_by(variable, unit, year) %>%
+  summarize(opt_median = median(diff_opt, na.rm = T),
+            opt_min = min(diff_opt, na.rm = T),
+            opt_max = max(diff_opt, na.rm = T),
+            pess_median = median(diff_pess, na.rm = T),
+            pess_min = min(diff_pess, na.rm = T),
+            pess_max = max(diff_pess, na.rm = T),
+            constr_median = median(diff_constr, na.rm = T),
+            constr_min = min(diff_constr, na.rm = T),
+            constr_max = max(diff_constr, na.rm = T),
+            alladv_median = median(diff_alladv, na.rm = T),
+            alladv_min = min(diff_alladv, na.rm = T),
+            alladv_max = max(diff_alladv, na.rm = T)) %>%
+  pivot_longer(cols = starts_with(c("opt_","pess_","constr_","alladv_")), names_to = c("scen","metric"), names_sep = "_") %>%
+  mutate(value = round(value,1)) %>%
+  pivot_wider(names_from = scen, values_from = value)  %>%
+  mutate(opt = case_when((opt == Inf | opt == -Inf) ~ NA, TRUE ~ opt),
+         pess = case_when((pess == Inf | pess == -Inf) ~ NA, TRUE ~ pess),
+         constr = case_when((constr == Inf | constr == -Inf) ~ NA, TRUE ~ constr),
+         alladv = case_when((alladv == Inf | alladv == -Inf) ~ NA, TRUE ~ alladv)) %>%
+  rename(c("Adv Renew" = "opt", "Cons Renew" = "pess", "Constrained" = "constr",
+           "All Adv" = "alladv")) %>%
+  data.frame() %>%
+  select(-c(variable,unit,year,metric))
+
+panel5_summ = sens_dta_panel5 %>%
+  select(-c(stagger,datasrc,region)) %>%
+  mutate(scenario = case_when(scenario == "Opt-Adv" ~ "Optimistic",
+                              scenario == "Pess-Adv" ~ "Pessimistic",
+                              TRUE ~ "Core")) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
+  mutate(value_Optimistic = case_when(is.na(value_Optimistic) ~ value_Core
+                                            , TRUE ~ value_Optimistic),
+         value_Pessimistic = case_when(is.na(value_Pessimistic) ~ value_Core
+                                            , TRUE ~ value_Pessimistic)) %>%
+  mutate(diff_opt = value_Optimistic - value_Core,
+         diff_pess = value_Pessimistic - value_Core) %>%
+  replace_with_na(replace = list(diff_opt = c(0), diff_pess = c(0),
+                             diff_constr = c(0), diff_alladv = c(0))) %>%
+  group_by(variable, unit, year) %>%
+  summarize(opt_median = median(diff_opt, na.rm = T),
+            opt_min = min(diff_opt, na.rm = T),
+            opt_max = max(diff_opt, na.rm = T),
+            pess_median = median(diff_pess, na.rm = T),
+            pess_min = min(diff_pess, na.rm = T),
+            pess_max = max(diff_pess, na.rm = T)) %>%
+  pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
+  mutate(value = round(value,1)) %>%
+  pivot_wider(names_from = scen, values_from = value) %>%
+  rename(c("Opt-Adv" = "opt", "Pess-Adv" = "pess")) %>%
+  data.frame() %>%
+  select(-c(variable,unit,year,metric))
+
+all_panels = cbind(panel1_summ, panel4_summ, panel5_summ, panel2_summ, panel3_summ)
+all_panels %>% write.csv("./output/final_figures/data/Fig2.6_Summary.csv", row.names = FALSE)
+
+all_panels = add_header_row(flextable(all_panels), values = c("", "IRA Implementation", "Technology", "Combined Technology + Implementation", "Economic Growth", "Energy Price"),
+  colwidths = c(4,2,4,2,2,2), top = TRUE)
+
+all_panels = add_header_row(all_panels, values = c("","Difference from IRA Core Scenario (negative is reduced emissions)"), colwidths = c(4,12)) 
+
+all_panels
+
+#  pivot_longer(cols = starts_with("value_"), names_to = "year", names_prefix = "value_", values_to = "value") %>%
+
 ```
 
 ## 2.7 nox emissions

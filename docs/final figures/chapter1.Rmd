@@ -385,6 +385,136 @@ dta = bind_rows(sens_dta_panel1, sens_dta_panel2,
 
 saveall(fig, dta, fig_no)
 ```
+
+### table for Figure 1.4
+```{r}
+econ_panel1_summ = sens_dta_econ %>%
+  select(-c(stagger,datasrc,region)) %>%
+  mutate(scenario = case_when(scenario == "IRA.High" ~ "Optimistic",
+                              scenario == "IRA.Low" ~ "Pessimistic",
+                              TRUE ~ "Core")) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
+  mutate(diff_opt = value_Optimistic - value_Core,
+         diff_pess = value_Pessimistic - value_Core) %>%
+  group_by(variable, unit, year) %>%
+  summarize(opt_median = median(diff_opt),
+            opt_min = min(diff_opt),
+            opt_max = max(diff_opt),
+            pess_median = median(diff_pess),
+            pess_min = min(diff_pess),
+            pess_max = max(diff_pess)) %>%
+  pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
+  mutate(value = round(value,1)) %>%
+  pivot_wider(names_from = scen, values_from = value) %>%
+  rename(c("Optimistic" = "opt", "Pessimistic" = "pess"))
+
+econ_panel2_summ = sens_dta_econ_panel2 %>%
+  select(-c(datasrc,region)) %>%
+  mutate(scenario = case_when(scenario == "High" ~ "Optimistic",
+                              scenario == "Low" ~ "Pessimistic",
+                              TRUE ~ "Core")) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
+  mutate(diff_opt = value_Optimistic - value_Core,
+         diff_pess = value_Pessimistic - value_Core) %>%
+  group_by(variable, unit, year) %>%
+  summarize(opt_median = median(diff_opt),
+            opt_min = min(diff_opt),
+            opt_max = max(diff_opt),
+            pess_median = median(diff_pess),
+            pess_min = min(diff_pess),
+            pess_max = max(diff_pess)) %>%
+  pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
+  mutate(value = round(value,1)) %>%
+  pivot_wider(names_from = scen, values_from = value) %>%
+  rename(c("High Growth" = "opt", "Low Growth" = "pess")) %>%
+  data.frame() %>%
+  select(-c(variable,unit,year,metric))
+
+econ_panel3_summ = sens_dta_econ_panel3 %>%
+  select(-c(datasrc,region)) %>%
+  mutate(scenario = case_when(scenario == "High" ~ "Optimistic",
+                              scenario == "Low" ~ "Pessimistic",
+                              TRUE ~ "Core")) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
+  mutate(diff_opt = value_Optimistic - value_Core,
+         diff_pess = value_Pessimistic - value_Core) %>%
+  group_by(variable, unit, year) %>%
+  summarize(opt_median = median(diff_opt),
+            opt_min = min(diff_opt),
+            opt_max = max(diff_opt),
+            pess_median = median(diff_pess),
+            pess_min = min(diff_pess),
+            pess_max = max(diff_pess)) %>%
+  pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
+  mutate(value = round(value,1)) %>%
+  pivot_wider(names_from = scen, values_from = value) %>%
+  rename(c("High Price" = "opt", "Low Price" = "pess")) %>%
+  data.frame() %>%
+  select(-c(variable,unit,year,metric))
+
+econ_panel4_summ = sens_dta_econ_panel4 %>%
+  select(-c(datasrc,region)) %>%
+  mutate(scenario = case_when(scenario == "All Adv" ~ "Optimistic",
+                              scenario == "Cons" ~ "Pessimistic",
+                              TRUE ~ "Core")) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
+  mutate(diff_opt = value_Optimistic - value_Core) %>%
+  group_by(variable, unit, year) %>%
+  summarize(opt_median = median(diff_opt),
+            opt_min = min(diff_opt),
+            opt_max = max(diff_opt)) %>%
+  pivot_longer(cols = starts_with(c("opt_")), names_to = c("scen","metric"), names_sep = "_") %>%
+  mutate(value = round(value,1)) %>%
+  pivot_wider(names_from = scen, values_from = value) %>%
+  rename(c("All-Adv" = "opt")) %>%
+  data.frame() %>%
+  select(-c(variable,unit,year,metric))
+
+econ_panel5_summ = sens_dta_econ_panel5 %>%
+  filter(!is.na(variable)) %>%
+  select(-c(stagger,datasrc,region)) %>%
+  mutate(scenario = case_when(scenario == "Opt-Adv" ~ "Optimistic",
+                              scenario == "Pess-Adv" ~ "Pessimistic",
+                              TRUE ~ "Core")) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
+  mutate(value_Optimistic = case_when(is.na(value_Optimistic) ~ value_Core
+                                            , TRUE ~ value_Optimistic),
+         value_Pessimistic = case_when(is.na(value_Pessimistic) ~ value_Core
+                                            , TRUE ~ value_Pessimistic)) %>%
+  mutate(diff_opt = value_Optimistic - value_Core,
+         diff_pess = value_Pessimistic - value_Core) %>%
+  replace_with_na(replace = list(diff_opt = c(0), diff_pess = c(0),
+                             diff_constr = c(0), diff_alladv = c(0))) %>%
+  group_by(variable, unit, year) %>%
+  summarize(opt_median = median(diff_opt, na.rm = T),
+            opt_min = min(diff_opt, na.rm = T),
+            opt_max = max(diff_opt, na.rm = T),
+            pess_median = median(diff_pess, na.rm = T),
+            pess_min = min(diff_pess, na.rm = T),
+            pess_max = max(diff_pess, na.rm = T)) %>%
+  pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
+  mutate(value = round(value,1)) %>%
+  pivot_wider(names_from = scen, values_from = value) %>%
+  rename(c("Opt-Adv" = "opt", "Pess-Adv" = "pess")) %>%
+  data.frame() %>%
+  select(-c(variable,unit,year,metric))
+
+all_panels = cbind(econ_panel1_summ, econ_panel4_summ, econ_panel5_summ, econ_panel2_summ, econ_panel3_summ)
+all_panels %>% write.csv("./output/final_figures/data/Fig1.4_Summary.csv", row.names = FALSE)
+
+
+all_panels = add_header_row(flextable(all_panels), values = c("", "IRA Implementation", "Technology", "Combined Technology + Implementation", "Economic Growth", "Energy Price"),
+  colwidths = c(4,2,1,2,2,2), top = TRUE)
+
+all_panels = add_header_row(all_panels, values = c("","Difference from IRA Core Scenario (negative is reduced emissions)"), colwidths = c(4,9)) 
+
+all_panels
+
+
+```
+
+
+
 ## 1.x Playing around with arrows
 ```{r, eval = FALSE}
 # Economy-wide emissions

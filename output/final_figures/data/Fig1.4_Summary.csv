@@ -1,0 +1,8 @@
+,,,,IRA Implementation,IRA Implementation,Technology,Combined Technology + Implementation,Combined Technology + Implementation,Economic Growth,Economic Growth,Energy Price,Energy Price
+variable,unit,year,metric,Optimistic,Pessimistic,All.Adv,Opt.Adv,Pess.Adv,High.Growth,Low.Growth,High.Price,Low.Price
+Emissions|CO2|Energy,Mt CO2/yr,2030,median,-107.3,91.6,-168.4,-313.6,-101.9,94.2,-100,-133.2,38
+Emissions|CO2|Energy,Mt CO2/yr,2030,min,-280,42,-168.4,-428,-101.9,94.2,-100,-133.2,38
+Emissions|CO2|Energy,Mt CO2/yr,2030,max,62.8,156,-168.4,-199.2,-101.9,94.2,-100,-133.2,38
+Emissions|CO2|Energy,Mt CO2/yr,2035,median,-55,112.8,-284.3,-303.8,-203.7,121.1,-129.9,-173.3,61.9
+Emissions|CO2|Energy,Mt CO2/yr,2035,min,-190.8,15.6,-284.3,-359.9,-203.7,121.1,-129.9,-173.3,61.9
+Emissions|CO2|Energy,Mt CO2/yr,2035,max,-23.6,450.9,-284.3,-247.7,-203.7,121.1,-129.9,-173.3,61.9

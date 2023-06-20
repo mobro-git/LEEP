@@ -31,4 +31,6 @@ library(egg)
 library(ggbreak)
 
 library(openxlsx)
+library(flextable)
+library(naniar)
 
