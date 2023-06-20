@@ -273,7 +273,6 @@ sens_dta_econ_panel3 = clean_data %>%
     scenario == "Low Energy Price" ~ "Low",
     TRUE ~ scenario
   ))
-  bind_rows(filler)
 
 sens_dta_econ_panel4 = clean_data %>% 
   filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>% 
@@ -284,7 +283,6 @@ sens_dta_econ_panel4 = clean_data %>%
     scenario == "All Advanced" ~ "All Adv",
     TRUE ~ scenario
   ))
-  bind_rows(filler)
 
 sens_dta_econ_panel5 = clean_data %>% 
   filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>%
@@ -301,8 +299,7 @@ sens_dta_econ_panel5 = clean_data %>%
   #                          TRUE ~ scenario)) %>%
   mutate(stagger = case_when(model == "USREP-ReEDS" ~ 0.4,
                              model == "OP-NEMS" ~ -0.4,
-                             TRUE ~ 0.0)) %>%
-  bind_rows(filler)
+                             TRUE ~ 0.0))
   
 
 sens_dta_trans = clean_data %>% 
@@ -389,7 +386,7 @@ dta = bind_rows(sens_dta_panel1, sens_dta_panel2,
 saveall(fig, dta, fig_no)
 ```
 ## 1.x Playing around with arrows
-```{r}
+```{r, eval = FALSE}
 # Economy-wide emissions
 clean_data12 = clean_data %>% duplicate_historical_data("EPA-GHGI", 2021, criteria = TRUE)
 p = dot_plots_but_with_arrows("time_series", config, clean_data12, figmap_leep_timeseries, 99,
