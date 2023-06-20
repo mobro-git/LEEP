@@ -36,6 +36,22 @@ subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 ```
 
 # Appendix
+
+## Emissions reductions tables
+
+```{r}
+# electricity
+appendix_tables(var = "Emissions|CO2|Energy|Supply|Electricity", 
+                suffix = "Electricity", 
+                drop_mod = c("Scout-LEEP"),
+                drop_datasrc = c("ReEDS_compiled.csv")) # remove duplicate values for ReEDS-NREL - basically same values
+
+# economy-wide
+appendix_tables(var = "Emissions|CO2", 
+                suffix = "Economy-Wide", 
+                drop_mod = c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"))
+```
+
 ## Economy-Wide Diff
 ```{r EconWide Differnce}
 fig_no = "Ap.1.EconWideEmis"

@@ -767,3 +767,67 @@ dot_plots_but_with_arrows = function(plot_type, config, emf_data_long, figmap, f
     stats = stats
   ))
 }
+
+appendix_tables = function(var, suffix,drop_mod, drop_datasrc = NULL) {
+
+  baseline_2005 = (clean_data %>% filter(year == 2005 & model == "EPA-GHGI" & variable == var))$value
+  baseline_2021 = (clean_data %>% filter(year == 2021 & model == "EPA-GHGI" & variable == var))$value
+
+  table1 = clean_data %>%
+    filter(variable == var &
+             model %in% config$models_leep &
+             !model %in% drop_mod &
+             !datasrc %in% drop_datasrc &
+             year %in% c(2005, 2025, 2030, 2035) &
+             scenario %in% c("IRA", "No IRA")) %>%
+    select(-variable, -datasrc, -region) %>%
+    mutate(
+      diff_2005 = baseline_2021 - value,
+      per_diff_2005 = diff_2005/baseline_2005 * 100) %>%
+    mutate(
+      diff_2021 = baseline_2021 - value,
+      per_diff_2021 = diff_2021/baseline_2021 * 100) %>%
+    mutate_if(is.numeric, round, 2)
+
+  table2 = table1 %>%
+    group_by(year,scenario) %>%
+    summarise(
+      min_ab = min(value),
+      max_ab = max(value),
+      median_ab = median(value),
+      min_diff_2005 = min(per_diff_2005),
+      max_diff_2005 = max(per_diff_2005),
+      median_diff_2005 = median(per_diff_2005),
+      min_diff_2021 = min(per_diff_2021),
+      max_diff_2021 = max(per_diff_2021),
+      median_diff_2021 = median(per_diff_2021)
+    ) %>%
+    mutate_if(is.numeric, round, 2)
+
+  write.csv(table2, paste("output/final_figures/data/AppendixA1_",suffix,".csv",sep=""), row.names = FALSE)
+
+  table3 = table1 %>%
+    select(model,scenario,unit,year,value) %>%
+    pivot_wider(names_from = "scenario", values_from = "value") %>%
+    mutate(diff_noira = `No IRA` - `IRA`,
+           per_diff_noira = diff_noira/`No IRA`) %>%
+    mutate_if(is.numeric, round, 2) %>%
+    group_by(year) %>%
+    summarise(
+      min_diff = min(diff_noira),
+      max_diff = max(diff_noira),
+      median_diff = median(diff_noira),
+      min_per = min(per_diff_noira),
+      max_per = max(per_diff_noira),
+      median_per = median(per_diff_noira)
+    )
+
+  write.csv(table3, paste("output/final_figures/data/AppendixA2_",suffix,".csv",sep=""), row.names = FALSE)
+
+  return(list(
+    table1,
+    table2,
+    table3
+  ))
+
+}

@@ -81,7 +81,7 @@ IndTab = html(IndSpg$data, "Industry CO<sub>2<sub>")
 IndDot
 
 savefig(IndDot, fig_no)
-
+savedata(IndSpg$data, fig_no)
 IndTab
 ```
 
