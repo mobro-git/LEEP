@@ -371,7 +371,7 @@ ad = function(diff_ID, title, yname, gd, drop) {
               ad_df = df))
 }
 
-four_corners = function(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit) {
+four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit) {
   if (metric == "Generation") {
     clean_data = clean_data %>%
       mutate(value = case_when(unit == "Quads" ~ value * 293.07, TRUE ~ value),
@@ -460,7 +460,8 @@ four_corners = function(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, 
   adfigure = ad(diff_ID = ad_map_ID, "", paste0("Absolute Difference (",unit,")"), "none", drop)
 
   figure = (NoIRAfigure | IRAfigure) / (adfigure$figure | pdfigure$figure)+
-    plot_layout(guides = "collect")
+    plot_layout(guides = "collect") +
+    plot_annotation(title = title)
 
   return(list(
     figure = figure,

@@ -770,7 +770,7 @@ dot_plots_but_with_arrows = function(plot_type, config, emf_data_long, figmap, f
   ))
 }
 
-appendix_tables = function(var, suffix,drop_mod, drop_datasrc = NULL) {
+comparison_tables = function(var, suffix, drop_mod, drop_datasrc = NULL) {
 
   baseline_2005 = (clean_data %>% filter(year == 2005 & model == "EPA-GHGI" & variable == var))$value
   baseline_2021 = (clean_data %>% filter(year == 2021 & model == "EPA-GHGI" & variable == var))$value
@@ -806,8 +806,6 @@ appendix_tables = function(var, suffix,drop_mod, drop_datasrc = NULL) {
     ) %>%
     mutate_if(is.numeric, round, 2)
 
-  write.csv(table2, paste("output/final_figures/data/AppendixA1_",suffix,".csv",sep=""), row.names = FALSE)
-
   table3 = table1 %>%
     select(model,scenario,unit,year,value) %>%
     pivot_wider(names_from = "scenario", values_from = "value") %>%
@@ -823,8 +821,6 @@ appendix_tables = function(var, suffix,drop_mod, drop_datasrc = NULL) {
       max_per = max(per_diff_noira),
       median_per = median(per_diff_noira)
     )
-
-  write.csv(table3, paste("output/final_figures/data/AppendixA2_",suffix,".csv",sep=""), row.names = FALSE)
 
   return(list(
     table1,

@@ -1,0 +1,158 @@
+"model","scenario","variable_rename","year","value"
+"USREP-ReEDS","No IRA","Electricity",2025,1324.274957
+"USREP-ReEDS","No IRA","Electricity",2030,1154.603142
+"USREP-ReEDS","No IRA","Electricity",2035,1060.287391
+"USREP-ReEDS","No IRA","Electricity",2021,1540.9
+"USREP-ReEDS","IRA","Electricity",2025,1063.271865
+"USREP-ReEDS","IRA","Electricity",2030,616.834498
+"USREP-ReEDS","IRA","Electricity",2035,488.0122266
+"USREP-ReEDS","IRA","Electricity",2021,1540.9
+"EPS-EI","No IRA","Electricity",2025,1350.69
+"EPS-EI","No IRA","Electricity",2030,1201.47
+"EPS-EI","No IRA","Electricity",2035,1198.69
+"EPS-EI","No IRA","Electricity",2021,1540.9
+"EPS-EI","IRA","Electricity",2025,1189.66
+"EPS-EI","IRA","Electricity",2030,602.7
+"EPS-EI","IRA","Electricity",2035,336.702
+"EPS-EI","IRA","Electricity",2021,1540.9
+"GCAM-CGS","No IRA","Electricity",2025,1325.317583
+"GCAM-CGS","No IRA","Electricity",2030,1274.910283
+"GCAM-CGS","No IRA","Electricity",2035,1293.115286
+"GCAM-CGS","No IRA","Electricity",2021,1540.9
+"GCAM-CGS","IRA","Electricity",2025,1001.239884
+"GCAM-CGS","IRA","Electricity",2030,679.6590548
+"GCAM-CGS","IRA","Electricity",2035,445.5802983
+"GCAM-CGS","IRA","Electricity",2021,1540.9
+"GCAM-PNNL","No IRA","Electricity",2025,1313.67
+"GCAM-PNNL","No IRA","Electricity",2030,1279.982
+"GCAM-PNNL","No IRA","Electricity",2035,1298.525
+"GCAM-PNNL","No IRA","Electricity",2021,1540.9
+"GCAM-PNNL","IRA","Electricity",2025,1104.05052070558
+"GCAM-PNNL","IRA","Electricity",2030,799.78330510876
+"GCAM-PNNL","IRA","Electricity",2035,760.427730385201
+"GCAM-PNNL","IRA","Electricity",2021,1540.9
+"Haiku-RFF","No IRA","Electricity",2025,1394.149219
+"Haiku-RFF","No IRA","Electricity",2030,1282.577646
+"Haiku-RFF","No IRA","Electricity",2035,1174.263397
+"Haiku-RFF","No IRA","Electricity",2021,1540.9
+"Haiku-RFF","IRA","Electricity",2025,1205.452422
+"Haiku-RFF","IRA","Electricity",2030,852.6587255
+"Haiku-RFF","IRA","Electricity",2035,767.7010654
+"Haiku-RFF","IRA","Electricity",2021,1540.9
+"IPM-NRDC","No IRA","Electricity",2025,1109.416193
+"IPM-NRDC","No IRA","Electricity",2030,1075.922329
+"IPM-NRDC","No IRA","Electricity",2035,1079.880052
+"IPM-NRDC","No IRA","Electricity",2021,1540.9
+"IPM-NRDC","IRA","Electricity",2025,1176.788939
+"IPM-NRDC","IRA","Electricity",2030,827.3891986
+"IPM-NRDC","IRA","Electricity",2035,772.5080126
+"IPM-NRDC","IRA","Electricity",2021,1540.9
+"IPM-EPA","No IRA","Electricity",2025,1109.416193
+"IPM-EPA","No IRA","Electricity",2030,1303.582844
+"IPM-EPA","No IRA","Electricity",2035,1247.287691
+"IPM-EPA","No IRA","Electricity",2021,1540.9
+"IPM-EPA","IRA","Electricity",2025,1176.788939
+"IPM-EPA","IRA","Electricity",2030,971.719364
+"IPM-EPA","IRA","Electricity",2035,608.2991027
+"IPM-EPA","IRA","Electricity",2021,1540.9
+"MARKAL-NETL","No IRA","Electricity",2025,1377.84
+"MARKAL-NETL","No IRA","Electricity",2030,1379.59
+"MARKAL-NETL","No IRA","Electricity",2035,1430.05
+"MARKAL-NETL","No IRA","Electricity",2021,1540.9
+"MARKAL-NETL","IRA","Electricity",2025,1410.01
+"MARKAL-NETL","IRA","Electricity",2030,1232.67
+"MARKAL-NETL","IRA","Electricity",2035,749.4
+"MARKAL-NETL","IRA","Electricity",2021,1540.9
+"NEMS-RHG","No IRA","Electricity",2025,1090.613921
+"NEMS-RHG","No IRA","Electricity",2030,979.598572
+"NEMS-RHG","No IRA","Electricity",2035,906.2442278
+"NEMS-RHG","No IRA","Electricity",2021,1540.9
+"NEMS-RHG","IRA","Electricity",2025,1194.845278
+"NEMS-RHG","IRA","Electricity",2030,482.8198467
+"NEMS-RHG","IRA","Electricity",2035,588.5355894
+"NEMS-RHG","IRA","Electricity",2021,1540.9
+"OP-NEMS","No IRA","Electricity",2025,1231.154297
+"OP-NEMS","No IRA","Electricity",2030,1017.954834
+"OP-NEMS","No IRA","Electricity",2035,930.697266
+"OP-NEMS","No IRA","Electricity",2022,1496.958374
+"OP-NEMS","No IRA","Electricity",2023,1449.014038
+"OP-NEMS","No IRA","Electricity",2024,1306.278687
+"OP-NEMS","No IRA","Electricity",2026,1177.866699
+"OP-NEMS","No IRA","Electricity",2027,1128.046021
+"OP-NEMS","No IRA","Electricity",2028,1102.11145
+"OP-NEMS","No IRA","Electricity",2029,1062.591797
+"OP-NEMS","No IRA","Electricity",2031,1004.218872
+"OP-NEMS","No IRA","Electricity",2032,996.223267
+"OP-NEMS","No IRA","Electricity",2033,994.388184
+"OP-NEMS","No IRA","Electricity",2034,964.367188
+"OP-NEMS","No IRA","Electricity",2021,1540.9
+"OP-NEMS","IRA","Electricity",2025,1169.192871
+"OP-NEMS","IRA","Electricity",2030,692.679688
+"OP-NEMS","IRA","Electricity",2035,429.997345
+"OP-NEMS","IRA","Electricity",2022,1497.042969
+"OP-NEMS","IRA","Electricity",2023,1448.929321
+"OP-NEMS","IRA","Electricity",2024,1285.598999
+"OP-NEMS","IRA","Electricity",2026,1077.067993
+"OP-NEMS","IRA","Electricity",2027,981.275696
+"OP-NEMS","IRA","Electricity",2028,887.40155
+"OP-NEMS","IRA","Electricity",2029,769.903259
+"OP-NEMS","IRA","Electricity",2031,651.633728
+"OP-NEMS","IRA","Electricity",2032,632.834595
+"OP-NEMS","IRA","Electricity",2033,574.104675
+"OP-NEMS","IRA","Electricity",2034,489.504913
+"OP-NEMS","IRA","Electricity",2021,1540.9
+"REGEN-EPRI","No IRA","Electricity",2025,1338.365888
+"REGEN-EPRI","No IRA","Electricity",2030,1125.057415
+"REGEN-EPRI","No IRA","Electricity",2035,1097.150355
+"REGEN-EPRI","No IRA","Electricity",2021,1540.9
+"REGEN-EPRI","IRA","Electricity",2025,1325.90851
+"REGEN-EPRI","IRA","Electricity",2030,999.6662542
+"REGEN-EPRI","IRA","Electricity",2035,500.0375196
+"REGEN-EPRI","IRA","Electricity",2021,1540.9
+"RIO-REPEAT","No IRA","Electricity",2025,1437.5
+"RIO-REPEAT","No IRA","Electricity",2030,981
+"RIO-REPEAT","No IRA","Electricity",2035,775
+"RIO-REPEAT","No IRA","Electricity",2021,1540.9
+"RIO-REPEAT","IRA","Electricity",2025,1460.5
+"RIO-REPEAT","IRA","Electricity",2030,741
+"RIO-REPEAT","IRA","Electricity",2035,370
+"RIO-REPEAT","IRA","Electricity",2021,1540.9
+"ReEDS-NREL","No IRA","Electricity",2025,1361.653137
+"ReEDS-NREL","No IRA","Electricity",2030,1238.165475
+"ReEDS-NREL","No IRA","Electricity",2035,1165.177986
+"ReEDS-NREL","No IRA","Electricity",2021,1540.9
+"ReEDS-NREL","IRA","Electricity",2025,1152.978546
+"ReEDS-NREL","IRA","Electricity",2030,413.5135248
+"ReEDS-NREL","IRA","Electricity",2035,323.383785
+"ReEDS-NREL","IRA","Electricity",2021,1540.9
+"AEO.2023","No IRA","Electricity",2025,1317.436523
+"AEO.2023","No IRA","Electricity",2030,1177.160889
+"AEO.2023","No IRA","Electricity",2035,1100.493042
+"AEO.2023","No IRA","Electricity",2022,1507.266113
+"AEO.2023","No IRA","Electricity",2023,1396.958008
+"AEO.2023","No IRA","Electricity",2024,1387.346802
+"AEO.2023","No IRA","Electricity",2026,1269.72522
+"AEO.2023","No IRA","Electricity",2027,1235.09375
+"AEO.2023","No IRA","Electricity",2028,1214.805298
+"AEO.2023","No IRA","Electricity",2029,1202.780518
+"AEO.2023","No IRA","Electricity",2031,1144.698242
+"AEO.2023","No IRA","Electricity",2032,1121.275391
+"AEO.2023","No IRA","Electricity",2033,1117.068115
+"AEO.2023","No IRA","Electricity",2034,1111.81311
+"AEO.2023","No IRA","Electricity",2021,1540.9
+"AEO.2023","IRA","Electricity",2025,1295.490356
+"AEO.2023","IRA","Electricity",2030,768.311584
+"AEO.2023","IRA","Electricity",2035,714.001099
+"AEO.2023","IRA","Electricity",2022,1507.019531
+"AEO.2023","IRA","Electricity",2023,1396.994263
+"AEO.2023","IRA","Electricity",2024,1395.245239
+"AEO.2023","IRA","Electricity",2026,1161.389648
+"AEO.2023","IRA","Electricity",2027,1024.768433
+"AEO.2023","IRA","Electricity",2028,913.385315
+"AEO.2023","IRA","Electricity",2029,828.363403
+"AEO.2023","IRA","Electricity",2031,748.608398
+"AEO.2023","IRA","Electricity",2032,743.979004
+"AEO.2023","IRA","Electricity",2033,739.65332
+"AEO.2023","IRA","Electricity",2034,722.299683
+"AEO.2023","IRA","Electricity",2021,1540.9
+"EPA-GHGI","Historic","Electricity",2021,1540.9
