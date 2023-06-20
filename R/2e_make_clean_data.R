@@ -59,7 +59,8 @@ make_clean_data = function(df) {
     select(model,scenario,unit,year,datasrc,variable,region,value)
 
   ind_emissions_indirect = df %>% filter(model %in% c("USREP-ReEDS","GCAM-PNNL","OP-NEMS")) %>%
-    filter(variable %in% c("Emissions|CO2|Energy|Demand|Industry|Indirect")) %>%
+    filter(variable %in% c("Emissions|CO2|Energy|Demand|Industry|Indirect",
+                           "Emissions|CO2|Energy|Supply|Indirect")) %>%
     select(model,scenario,unit,year,datasrc,variable,region,value) %>%
     mutate(variable = "Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect")
 
