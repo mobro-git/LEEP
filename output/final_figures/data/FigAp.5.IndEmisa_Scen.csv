@@ -1,0 +1,142 @@
+"model","scenario","variable_rename","year","value"
+"USREP-ReEDS","No IRA","Total Industry Emissions",2025,1252.98988769
+"USREP-ReEDS","No IRA","Total Industry Emissions",2030,1222.36571587
+"USREP-ReEDS","No IRA","Total Industry Emissions",2035,1183.25485155
+"USREP-ReEDS","No IRA","Total Industry Emissions",2021,1220.7
+"USREP-ReEDS","IRA","Total Industry Emissions",2025,1152.13401681
+"USREP-ReEDS","IRA","Total Industry Emissions",2030,1037.57958193
+"USREP-ReEDS","IRA","Total Industry Emissions",2035,1037.94050988
+"USREP-ReEDS","IRA","Total Industry Emissions",2021,1220.7
+"EPS-EI","No IRA","Total Industry Emissions",2025,1200.247358
+"EPS-EI","No IRA","Total Industry Emissions",2030,1142.2420761
+"EPS-EI","No IRA","Total Industry Emissions",2035,1117.2887562
+"EPS-EI","No IRA","Total Industry Emissions",2021,1220.7
+"EPS-EI","IRA","Total Industry Emissions",2025,1183.3456554
+"EPS-EI","IRA","Total Industry Emissions",2030,975.2575952
+"EPS-EI","IRA","Total Industry Emissions",2035,826.23129181
+"EPS-EI","IRA","Total Industry Emissions",2021,1220.7
+"GCAM-CGS","No IRA","Total Industry Emissions",2025,1469.5880908
+"GCAM-CGS","No IRA","Total Industry Emissions",2030,1498.2663569
+"GCAM-CGS","No IRA","Total Industry Emissions",2035,1533.3296146
+"GCAM-CGS","No IRA","Total Industry Emissions",2021,1220.7
+"GCAM-CGS","IRA","Total Industry Emissions",2025,1299.8771115
+"GCAM-CGS","IRA","Total Industry Emissions",2030,1185.549759
+"GCAM-CGS","IRA","Total Industry Emissions",2035,1174.6879871
+"GCAM-CGS","IRA","Total Industry Emissions",2021,1220.7
+"GCAM-PNNL","No IRA","Total Industry Emissions",2025,1157.51901672254
+"GCAM-PNNL","No IRA","Total Industry Emissions",2030,1135.04946776163
+"GCAM-PNNL","No IRA","Total Industry Emissions",2035,1119.6795316039
+"GCAM-PNNL","No IRA","Total Industry Emissions",2021,1220.7
+"GCAM-PNNL","IRA","Total Industry Emissions",2025,1119.7335107452
+"GCAM-PNNL","IRA","Total Industry Emissions",2030,1045.25740112757
+"GCAM-PNNL","IRA","Total Industry Emissions",2035,1023.11608646295
+"GCAM-PNNL","IRA","Total Industry Emissions",2021,1220.7
+"IPM-NRDC","No IRA","Total Industry Emissions",2025,277.2564903
+"IPM-NRDC","No IRA","Total Industry Emissions",2030,268.5165507
+"IPM-NRDC","No IRA","Total Industry Emissions",2035,267.5878343
+"IPM-NRDC","No IRA","Total Industry Emissions",2021,1220.7
+"IPM-NRDC","IRA","Total Industry Emissions",2025,294.0937524
+"IPM-NRDC","IRA","Total Industry Emissions",2030,206.4904573
+"IPM-NRDC","IRA","Total Industry Emissions",2035,191.4228768
+"IPM-NRDC","IRA","Total Industry Emissions",2021,1220.7
+"IPM-EPA","No IRA","Total Industry Emissions",2025,276.9883061
+"IPM-EPA","No IRA","Total Industry Emissions",2030,317.6227935
+"IPM-EPA","No IRA","Total Industry Emissions",2035,295.3824703
+"IPM-EPA","No IRA","Total Industry Emissions",2021,1220.7
+"IPM-EPA","IRA","Total Industry Emissions",2025,293.8092819
+"IPM-EPA","IRA","Total Industry Emissions",2030,236.7630261
+"IPM-EPA","IRA","Total Industry Emissions",2035,144.0572957
+"IPM-EPA","IRA","Total Industry Emissions",2021,1220.7
+"MARKAL-NETL","No IRA","Total Industry Emissions",2025,1315.0982329
+"MARKAL-NETL","No IRA","Total Industry Emissions",2030,1336.1244539
+"MARKAL-NETL","No IRA","Total Industry Emissions",2035,1367.9857839
+"MARKAL-NETL","No IRA","Total Industry Emissions",2021,1220.7
+"MARKAL-NETL","IRA","Total Industry Emissions",2025,1316.8174649
+"MARKAL-NETL","IRA","Total Industry Emissions",2030,1314.6462098
+"MARKAL-NETL","IRA","Total Industry Emissions",2035,1222.2666622
+"MARKAL-NETL","IRA","Total Industry Emissions",2021,1220.7
+"NEMS-RHG","No IRA","Total Industry Emissions",2025,1093.6177074
+"NEMS-RHG","No IRA","Total Industry Emissions",2030,1070.7417609
+"NEMS-RHG","No IRA","Total Industry Emissions",2035,1049.8547982
+"NEMS-RHG","No IRA","Total Industry Emissions",2021,1220.7
+"NEMS-RHG","IRA","Total Industry Emissions",2025,1121.9678091
+"NEMS-RHG","IRA","Total Industry Emissions",2030,937.6841386
+"NEMS-RHG","IRA","Total Industry Emissions",2035,844.772202
+"NEMS-RHG","IRA","Total Industry Emissions",2021,1220.7
+"OP-NEMS","No IRA","Total Industry Emissions",2025,1314.090576
+"OP-NEMS","No IRA","Total Industry Emissions",2030,1264.990967
+"OP-NEMS","No IRA","Total Industry Emissions",2035,1239.155518
+"OP-NEMS","No IRA","Total Industry Emissions",2022,1382.125977
+"OP-NEMS","No IRA","Total Industry Emissions",2023,1368.256958
+"OP-NEMS","No IRA","Total Industry Emissions",2024,1329.564453
+"OP-NEMS","No IRA","Total Industry Emissions",2026,1302.894531
+"OP-NEMS","No IRA","Total Industry Emissions",2027,1287.601318
+"OP-NEMS","No IRA","Total Industry Emissions",2028,1283.514648
+"OP-NEMS","No IRA","Total Industry Emissions",2029,1273.452026
+"OP-NEMS","No IRA","Total Industry Emissions",2031,1260.465332
+"OP-NEMS","No IRA","Total Industry Emissions",2032,1264.094482
+"OP-NEMS","No IRA","Total Industry Emissions",2033,1263.117188
+"OP-NEMS","No IRA","Total Industry Emissions",2034,1251.128662
+"OP-NEMS","No IRA","Total Industry Emissions",2021,1220.7
+"OP-NEMS","IRA","Total Industry Emissions",2025,1290.757446
+"OP-NEMS","IRA","Total Industry Emissions",2030,1146.979248
+"OP-NEMS","IRA","Total Industry Emissions",2035,1066.524902
+"OP-NEMS","IRA","Total Industry Emissions",2022,1381.951416
+"OP-NEMS","IRA","Total Industry Emissions",2023,1368.644043
+"OP-NEMS","IRA","Total Industry Emissions",2024,1324.078003
+"OP-NEMS","IRA","Total Industry Emissions",2026,1265.446533
+"OP-NEMS","IRA","Total Industry Emissions",2027,1234.540161
+"OP-NEMS","IRA","Total Industry Emissions",2028,1208.079712
+"OP-NEMS","IRA","Total Industry Emissions",2029,1170.78418
+"OP-NEMS","IRA","Total Industry Emissions",2031,1129.796753
+"OP-NEMS","IRA","Total Industry Emissions",2032,1123.962402
+"OP-NEMS","IRA","Total Industry Emissions",2033,1107.81189
+"OP-NEMS","IRA","Total Industry Emissions",2034,1079.847412
+"OP-NEMS","IRA","Total Industry Emissions",2021,1220.7
+"REGEN-EPRI","No IRA","Total Industry Emissions",2025,1405.3217271
+"REGEN-EPRI","No IRA","Total Industry Emissions",2030,1342.8367205
+"REGEN-EPRI","No IRA","Total Industry Emissions",2035,1305.6038884
+"REGEN-EPRI","No IRA","Total Industry Emissions",2021,1220.7
+"REGEN-EPRI","IRA","Total Industry Emissions",2025,1389.5173745
+"REGEN-EPRI","IRA","Total Industry Emissions",2030,1279.6354461
+"REGEN-EPRI","IRA","Total Industry Emissions",2035,1044.2239898
+"REGEN-EPRI","IRA","Total Industry Emissions",2021,1220.7
+"RIO-REPEAT","No IRA","Total Industry Emissions",2025,1176.8446687
+"RIO-REPEAT","No IRA","Total Industry Emissions",2030,1069.4321503
+"RIO-REPEAT","No IRA","Total Industry Emissions",2035,1020.4880302
+"RIO-REPEAT","No IRA","Total Industry Emissions",2021,1220.7
+"RIO-REPEAT","IRA","Total Industry Emissions",2025,1143.8880154
+"RIO-REPEAT","IRA","Total Industry Emissions",2030,911.2163009
+"RIO-REPEAT","IRA","Total Industry Emissions",2035,688.09232264
+"RIO-REPEAT","IRA","Total Industry Emissions",2021,1220.7
+"AEO.2023","No IRA","Total Industry Emissions",2025,1330.928101
+"AEO.2023","No IRA","Total Industry Emissions",2030,1331.838379
+"AEO.2023","No IRA","Total Industry Emissions",2035,1338.454346
+"AEO.2023","No IRA","Total Industry Emissions",2022,1392.48645
+"AEO.2023","No IRA","Total Industry Emissions",2023,1373.731689
+"AEO.2023","No IRA","Total Industry Emissions",2024,1342.744385
+"AEO.2023","No IRA","Total Industry Emissions",2026,1335.197998
+"AEO.2023","No IRA","Total Industry Emissions",2027,1334.293945
+"AEO.2023","No IRA","Total Industry Emissions",2028,1335.599365
+"AEO.2023","No IRA","Total Industry Emissions",2029,1335.988525
+"AEO.2023","No IRA","Total Industry Emissions",2031,1324.355713
+"AEO.2023","No IRA","Total Industry Emissions",2032,1325.81897
+"AEO.2023","No IRA","Total Industry Emissions",2033,1330.183594
+"AEO.2023","No IRA","Total Industry Emissions",2034,1335.602783
+"AEO.2023","No IRA","Total Industry Emissions",2021,1220.7
+"AEO.2023","IRA","Total Industry Emissions",2025,1318.057739
+"AEO.2023","IRA","Total Industry Emissions",2030,1211.789795
+"AEO.2023","IRA","Total Industry Emissions",2035,1223.267578
+"AEO.2023","IRA","Total Industry Emissions",2022,1392.85144
+"AEO.2023","IRA","Total Industry Emissions",2023,1350.519165
+"AEO.2023","IRA","Total Industry Emissions",2024,1334.820679
+"AEO.2023","IRA","Total Industry Emissions",2026,1298.450439
+"AEO.2023","IRA","Total Industry Emissions",2027,1270.626343
+"AEO.2023","IRA","Total Industry Emissions",2028,1246.968384
+"AEO.2023","IRA","Total Industry Emissions",2029,1226.747803
+"AEO.2023","IRA","Total Industry Emissions",2031,1209.937988
+"AEO.2023","IRA","Total Industry Emissions",2032,1215.535034
+"AEO.2023","IRA","Total Industry Emissions",2033,1219.532959
+"AEO.2023","IRA","Total Industry Emissions",2034,1221.428101
+"AEO.2023","IRA","Total Industry Emissions",2021,1220.7
+"EPA-GHGI","Historic","Total Industry Emissions",2021,1220.7

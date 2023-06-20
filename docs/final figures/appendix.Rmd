@@ -28,9 +28,6 @@ targets::tar_load(figmap_leep_cone)
 targets::tar_load(figmap_leep_stackbar)
 targets::tar_load(figmap_leep_diffbar)
 
-targets::tar_load(data_min)
-targets::tar_load(data_raw)
-
 # palettes
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 ```
@@ -40,16 +37,96 @@ subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 ## Emissions reductions tables
 
 ```{r}
+# economy-wide
+comparison_tables(var = "Emissions|CO2", 
+                suffix = "Economy-Wide", 
+                drop_mod = c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"))
+
 # electricity
-appendix_tables(var = "Emissions|CO2|Energy|Supply|Electricity", 
+comparison_tables(var = "Emissions|CO2|Energy|Supply|Electricity", 
                 suffix = "Electricity", 
                 drop_mod = c("Scout-LEEP"),
                 drop_datasrc = c("ReEDS_compiled.csv")) # remove duplicate values for ReEDS-NREL - basically same values
+```
 
-# economy-wide
-appendix_tables(var = "Emissions|CO2", 
-                suffix = "Economy-Wide", 
-                drop_mod = c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"))
+```{r}
+var = "Emissions|CO2"
+suffix = "Economy-Wide"
+drop_mod = c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF")
+
+
+baseline_2005 = (clean_data %>% filter(year == 2005 &
+                                         model == "EPA-GHGI" & variable == var))$value
+baseline_2021 = (clean_data %>% filter(year == 2021 &
+                                         model == "EPA-GHGI" & variable == var))$value
+
+# interpolation
+# year_range <- seq.int(from = vars$start_yr, to = vars$end_yr)
+#
+# interp <- data %>%
+#   filter(variable %in% unique(vars$variable)) %>%
+#   filter(!is.na(value)) %>%
+#   complete(nesting(model, scenario, region, variable, unit, datasrc),
+#            year = year_range) %>%
+#   arrange(model, scenario, region, variable, year) %>%
+#   nest(year, value) %>%
+#   mutate(int_pts = map(data,
+#                        .f = ~approx(x=.$year, y=.$value, xout = .$year) %>% as_tibble() )) %>%
+#   unnest(cols = c(data, int_pts)) %>%
+#   mutate(value = y) %>%
+#   select(-x, -y)
+
+table1 = clean_data %>%
+  filter(
+    variable == var &
+      model %in% config$models_leep &
+      !model %in% drop_mod &
+      !datasrc %in% drop_datasrc &
+      year %in% c(2005, 2025, 2030, 2035) &
+      scenario %in% c("IRA", "No IRA")
+  ) %>%
+  select(-variable, -datasrc, -region) %>%
+  mutate(diff_2005 = baseline_2021 - value,
+         per_diff_2005 = diff_2005 / baseline_2005 * 100) %>%
+  mutate(diff_2021 = baseline_2021 - value,
+         per_diff_2021 = diff_2021 / baseline_2021 * 100) %>%
+  mutate_if(is.numeric, round, 2)
+
+table2 = table1 %>%
+  group_by(year, scenario) %>%
+  summarise(
+    min_ab = min(value),
+    max_ab = max(value),
+    median_ab = median(value),
+    min_diff_2005 = min(per_diff_2005),
+    max_diff_2005 = max(per_diff_2005),
+    median_diff_2005 = median(per_diff_2005),
+    min_diff_2021 = min(per_diff_2021),
+    max_diff_2021 = max(per_diff_2021),
+    median_diff_2021 = median(per_diff_2021)
+  ) %>%
+  mutate_if(is.numeric, round, 2)
+
+table3 = table1 %>%
+  select(model, scenario, unit, year, value) %>%
+  pivot_wider(names_from = "scenario", values_from = "value") %>%
+  mutate(diff_noira = `No IRA` - `IRA`,
+         per_diff_noira = diff_noira / `No IRA`) %>%
+  mutate_if(is.numeric, round, 2) %>%
+  group_by(year) %>%
+  summarise(
+    min_diff = min(diff_noira),
+    max_diff = max(diff_noira),
+    median_diff = median(diff_noira),
+    min_per = min(per_diff_noira),
+    max_per = max(per_diff_noira),
+    median_per = median(per_diff_noira)
+  )
+
+return(list(table1,
+            table2,
+            table3))
+
 ```
 
 ## Economy-Wide Diff
@@ -64,7 +141,7 @@ histsrc = "EPA-GHGI"
 metric = "Emissions"
 unit = "Mt CO2/yr"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
+fig = four_corners("Economy-wide CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -87,7 +164,7 @@ histsrc = "EPA-GHGI"
 metric = "Emissions"
 unit = "Mt CO2/yr"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
+fig = four_corners("Electricity CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -110,7 +187,7 @@ histsrc = "EPA-GHGI"
 metric = "Emissions"
 unit = "Mt CO2/yr"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
+fig = four_corners("Transportation CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -133,7 +210,7 @@ histsrc = "EPA-GHGI"
 metric = "Emissions"
 unit = "Mt CO2/yr"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
+fig = four_corners("Buildings CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -156,7 +233,7 @@ histsrc = "EPA-GHGI"
 metric = "Emissions"
 unit = "Mt CO2/yr"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
+fig = four_corners("Industry CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -170,7 +247,7 @@ savefig(fig$figure, fig_no)
 
 ## Coal Diff
 ```{r Coal Emissions Difference} 
-fig_no = "Ap.6.CoalEmis"
+fig_no = "Ap.6.Coal"
 
 ts_map_ID = 94
 pd_map_ID = 32
@@ -180,7 +257,7 @@ histsrc = "EIA"
 metric = "Emissions"
 unit = "Mt CO2/yr"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
+fig = four_corners("Primary Energy: Coal",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -193,7 +270,7 @@ savefig(fig$figure, fig_no)
 
 ## Gas Diff
 ```{r Gas Emissions Difference} 
-fig_no = "Ap.7.GasEmis"
+fig_no = "Ap.7.Gas"
 
 ts_map_ID = 93
 pd_map_ID = 31
@@ -203,7 +280,7 @@ histsrc = "EIA"
 metric = "Emissions"
 unit = "Mt CO2/yr"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
+fig = four_corners("Primary Energy: Gas",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -216,7 +293,7 @@ savefig(fig$figure, fig_no)
 
 ## Petrol Diff
 ```{r Petrol Emissions Difference} 
-fig_no = "Ap.8.PetrolEmis"
+fig_no = "Ap.8.Petrol"
 
 ts_map_ID = 92
 pd_map_ID = 30
@@ -226,7 +303,7 @@ histsrc = "EIA"
 metric = "Emissions"
 unit = "Mt CO2/yr"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
+fig = four_corners("Primary Energy: Petroleum", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -249,7 +326,7 @@ histsrc = "EIA"
 metric = "Generation"
 unit = "TWh"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
+fig = four_corners("Nuclear Generation", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -259,6 +336,7 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 
 savefig(fig$figure, fig_no)
 ```
+
 ## Solar Generation Diff
 ```{r Solar Generation Difference} 
 fig_no = "Ap.10.SolarGen"
@@ -271,7 +349,7 @@ histsrc = "EIA"
 metric = "Generation"
 unit = "TWh"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
+fig = four_corners("Solar Generation", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -281,7 +359,8 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 
 savefig(fig$figure, fig_no)
 ```
-## Wind Generation Diff FIN
+
+## Wind Generation Diff
 ```{r Wind Generation Difference} 
 fig_no = "Ap.11.WindGen"
 
@@ -293,7 +372,7 @@ histsrc = "EIA"
 metric = "Generation"
 unit = "TWh"
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
+fig = four_corners("Wind Generation", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -303,6 +382,7 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 
 savefig(fig$figure, fig_no)
 ```
+
 ## CCS Generation Diff
 ```{r CCS Generation Difference, eval = FALSE} 
 fig_no = "Ap.12.CCSGen"
@@ -398,7 +478,8 @@ pdfigure = pd(pd_map_ID, "", expression(paste("Percent Difference (%)")), "none"
 adfigure = ad(diff_ID = ad_map_ID, "", expression(paste("Absolute Difference (Quads)")), "none", drop)
   
 fig = (NoIRAfigure | IRAfigure) / (adfigure$figure | pdfigure$figure)+ 
-  plot_layout(guides = "collect")
+  plot_layout(guides = "collect") +
+  plot_annotation(title = "CCS Generation")
 
 fig
 
@@ -410,7 +491,8 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 
 savefig(fig, fig_no)
 ```
-## Coal Generation Diff FIN
+
+## Coal Generation Diff
 ```{r Coal Generation Difference} 
 fig_no = "Ap.13.CoalGen"
 
@@ -423,7 +505,7 @@ metric = "Generation"
 unit = "TWh"
 
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
+fig = four_corners("Coal Generation", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -433,7 +515,8 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 
 savefig(fig$figure, fig_no)
 ```
-## Gas Generation Diff FIN
+
+## Gas Generation Diff
 ```{r Gas Generation Difference} 
 fig_no = "Ap.14.GasGen"
 
@@ -446,7 +529,7 @@ metric = "Generation"
 unit = "TWh"
 
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
+fig = four_corners("Gas Generation", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
@@ -456,7 +539,8 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 
 savefig(fig$figure, fig_no)
 ```
-## Other Generation Diff FIN
+
+## Other Generation Diff
 ```{r Other Generation Difference} 
 fig_no = "Ap.15.OtherGen"
 
@@ -469,7 +553,7 @@ metric = "Generation"
 unit = "TWh"
 
 
-fig = four_corners(ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
+fig = four_corners("Other Generation", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit)
 
 fig$figure
 
