@@ -236,8 +236,10 @@ sens_dot_plot = function(dta, title, far_left = FALSE, single = FALSE, ymin = 0,
 
   if (!far_left) {
     p = p +
-      geom_text_repel(aes(x = year + stagger, y = value + 20, label = scenario), point.padding = 1.5,
-                      size = 1.5, hjust = 0, vjust = 0, max.time = 6, force_pull = 1, seed = 42) +
+      geom_text_repel(aes(x = year + stagger, y = value, label = scenario, segment.alpha = 0.6, segment.size = 0.2), point.padding = 0.2,
+                      size = 1.5, hjust = 0, vjust = 0, max.time = 6, force_pull = 1, seed = 42,
+                      min.segment.length = 0.0) +
+      coord_cartesian(clip = "off") +
       theme(axis.text.y = element_blank(), axis.title.y = element_blank(),)
     opt_label = "Optimistic Emis"
     pes_label = "Pessimistic Emis"
