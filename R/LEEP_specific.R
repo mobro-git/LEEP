@@ -792,11 +792,12 @@ tableit = function(table, table_name, col_names) {
     vline(j = c(1,4), border = fp_border_default()) %>%
     border_outer() %>%
     border_inner() %>%
-    set_table_properties(width = .2, layout = "autofit")
+    set_table_properties(width = .25, layout = "autofit")
   ft_table
 
 }
 
+# TODO: change to per_reduction
 
 summary_tables = function(table_no, var, suffix, drop_mod = NULL, drop_datasrc = NULL, data, config) {
 
@@ -846,7 +847,7 @@ summary_tables = function(table_no, var, suffix, drop_mod = NULL, drop_datasrc =
 
   raw = interpolation %>%
     filter(year >= 2024) %>%
-    mutate(diff_2005 = baseline_2021 - value,
+    mutate(diff_2005 = baseline_2005 - value,
            per_diff_2005 = (diff_2005 / baseline_2005) * 100) %>%
     mutate(diff_2021 = baseline_2021 - value,
            per_diff_2021 = (diff_2021 / baseline_2021) * 100) %>%
