@@ -784,13 +784,13 @@ tableit = function(table, table_name, col_names) {
     vline(j = c(1,4), border = fp_border_default()) %>%
     border_outer() %>%
     border_inner() %>%
-    set_table_properties(width = 1, layout = "autofit")
+    set_table_properties(width = .2, layout = "autofit")
   ft_table
 
 }
 
 
-summary_tables = function(table_no, var, suffix, drop_mod = NULL, drop_datasrc = NULL, data = clean_data, config = config) {
+summary_tables = function(table_no, var, suffix, drop_mod = NULL, drop_datasrc = NULL, data, config) {
 
   var_df = clean_data %>% filter(variable == var)
 
@@ -935,7 +935,7 @@ save_as_html(
   ft_table2,
   ft_table3,
   ft_table4,
-  path = paste("output/final_figures/data/Table",table_no,sep="")
+  path = paste("output/final_figures/data/Table",table_no,".html",sep="")
 )
 
 return(list(table1, ft_table1,
