@@ -778,62 +778,180 @@ dot_plots_but_with_arrows = function(plot_type, config, emf_data_long, figmap, f
   ))
 }
 
-comparison_tables = function(var, suffix, drop_mod, drop_datasrc = NULL) {
 
-  baseline_2005 = (clean_data %>% filter(year == 2005 & model == "EPA-GHGI" & variable == var))$value
-  baseline_2021 = (clean_data %>% filter(year == 2021 & model == "EPA-GHGI" & variable == var))$value
 
-  table1 = clean_data %>%
-    filter(variable == var &
-             model %in% config$models_leep &
-             !model %in% drop_mod &
-             !datasrc %in% drop_datasrc &
-             year %in% c(2005, 2025, 2030, 2035) &
-             scenario %in% c("IRA", "No IRA")) %>%
-    select(-variable, -datasrc, -region) %>%
-    mutate(
-      diff_2005 = baseline_2021 - value,
-      per_diff_2005 = diff_2005/baseline_2005 * 100) %>%
-    mutate(
-      diff_2021 = baseline_2021 - value,
-      per_diff_2021 = diff_2021/baseline_2021 * 100) %>%
-    mutate_if(is.numeric, round, 2)
 
-  table2 = table1 %>%
-    group_by(year,scenario) %>%
-    summarise(
-      min_ab = min(value),
-      max_ab = max(value),
-      median_ab = median(value),
-      min_diff_2005 = min(per_diff_2005),
-      max_diff_2005 = max(per_diff_2005),
-      median_diff_2005 = median(per_diff_2005),
-      min_diff_2021 = min(per_diff_2021),
-      max_diff_2021 = max(per_diff_2021),
-      median_diff_2021 = median(per_diff_2021)
-    ) %>%
-    mutate_if(is.numeric, round, 2)
 
-  table3 = table1 %>%
-    select(model,scenario,unit,year,value) %>%
-    pivot_wider(names_from = "scenario", values_from = "value") %>%
-    mutate(diff_noira = `No IRA` - `IRA`,
-           per_diff_noira = diff_noira/`No IRA`) %>%
-    mutate_if(is.numeric, round, 2) %>%
-    group_by(year) %>%
-    summarise(
-      min_diff = min(diff_noira),
-      max_diff = max(diff_noira),
-      median_diff = median(diff_noira),
-      min_per = min(per_diff_noira),
-      max_per = max(per_diff_noira),
-      median_per = median(per_diff_noira)
-    )
+tableit = function(table, table_name, col_names) {
 
-  return(list(
-    table1,
-    table2,
-    table3
-  ))
+  ft_table = flextable(table) %>%
+    add_header_row(values = col_names, colwidths = c(1,3,3)) %>%
+    add_header_lines(values = table_name) %>%
+    theme_booktabs(bold_header = TRUE) %>%
+    align(align = "center", part = "all") %>%
+    vline(j = c(1,4), border = fp_border_default()) %>%
+    border_outer() %>%
+    border_inner() %>%
+    set_table_properties(width = 1, layout = "autofit")
+  ft_table
 
 }
+
+
+summary_tables = function(table_no, var, suffix, drop_mod = NULL, drop_datasrc = NULL, data = clean_data, config = config) {
+
+  var_df = clean_data %>% filter(variable == var)
+
+  baseline_2005 = (var_df %>% filter(year == 2005 & model == "EPA-GHGI"))$value
+  baseline_2021 = (var_df %>% filter(year == 2021 & model == "EPA-GHGI"))$value
+
+  var_unit = unique(var_df$unit)
+
+  mod = clean_data %>%
+    filter(
+      variable == var &
+        model %in% config$models_leep &
+        !model %in% drop_mod &
+        !datasrc %in% drop_datasrc &
+        year >= 2024 &
+        scenario %in% c("IRA", "No IRA"))
+
+  dup_2021 = mod %>%
+    select(model,scenario,unit,region,variable) %>%
+    distinct() %>%
+    mutate(
+      year = 2021,
+      datasrc = "EPA-GHGI",
+      value = baseline_2021
+    ) %>%
+    relocate_standard_col_order()
+
+  df = rbind(mod, dup_2021)
+
+  year_range <- seq.int(from = 2021, to = 2035)
+
+  interpolation = df %>%
+    select(-variable, -datasrc, -region, -unit) %>%
+    filter(!is.na(value)) %>%
+    complete(nesting(model, scenario),
+             year = year_range) %>%
+    arrange(model, scenario, year) %>%
+    nest(data = c(year, value)) %>%
+    mutate(int_pts = map(data,
+                         .f = ~approx(x=.$year, y=.$value, xout = .$year) %>% as_tibble() )) %>%
+    unnest(cols = c(data, int_pts)) %>%
+    mutate(value = y) %>%
+    select(-x, -y) %>%
+    filter(year >= 2024 & year <= 2035)
+
+  raw = interpolation %>%
+    filter(year >= 2024) %>%
+    mutate(diff_2005 = baseline_2021 - value,
+           per_diff_2005 = (diff_2005 / baseline_2005) * 100) %>%
+    mutate(diff_2021 = baseline_2021 - value,
+           per_diff_2021 = (diff_2021 / baseline_2021) * 100) %>%
+    mutate_if(is.numeric, round, 1) %>%
+    mutate(year = as.character(year))
+
+  stats_all = raw %>%
+    group_by(year, scenario) %>%
+    summarise(
+      min_ab = round(min(value),0),
+      max_ab = round(max(value),0),
+      median_ab = round(median(value),0),
+      min_diff_2005 = round(min(per_diff_2005),1),
+      max_diff_2005 = round(max(per_diff_2005),1),
+      median_diff_2005 = round(median(per_diff_2005),1),
+      min_diff_2021 = round(min(per_diff_2021),1),
+      max_diff_2021 = round(max(per_diff_2021),1),
+      median_diff_2021 = round(median(per_diff_2021),1)
+    ) %>%
+    ungroup()
+
+  stats_noira = stats_all %>%
+    filter(scenario == "No IRA")
+
+  stats_ira = stats_all %>%
+    filter(scenario == "IRA")
+
+  diff_scenarios = raw %>%
+    select(model, scenario, year, value) %>%
+    pivot_wider(names_from = "scenario", values_from = "value") %>%
+    mutate(diff_noira = `No IRA` - `IRA`,
+           per_diff_noira = (diff_noira / `No IRA`) * 100) %>%
+    mutate_if(is.numeric, round, 1) %>%
+    group_by(year) %>%
+    summarise(
+      median_diff = median(diff_noira),
+      min_diff = min(diff_noira),
+      max_diff = max(diff_noira),
+      median_per = median(per_diff_noira),
+      min_per = min(per_diff_noira),
+      max_per = max(per_diff_noira)
+    )
+
+  colnames = c("Year","Median","Min","Max","Median\r","Min\r","Max\r")
+
+  table1 = cbind(stats_noira %>% select(year, median_ab, min_ab, max_ab),
+                 stats_ira %>% select(median_ab, min_ab, max_ab))
+  colnames(table1) = colnames
+
+  table2 = diff_scenarios
+  colnames(table2) = colnames
+
+  table3 = stats_noira %>%
+    select(year, median_diff_2005, min_diff_2005, max_diff_2005, median_diff_2021, min_diff_2021, max_diff_2021)
+  colnames(table3) = colnames
+
+  table4 = stats_ira %>%
+    select(year, median_diff_2005, min_diff_2005, max_diff_2005, median_diff_2021, min_diff_2021, max_diff_2021)
+  colnames(table4) = colnames
+
+  ft_table1 = tableit(
+    table = table1,
+    table_name = as_paragraph(suffix," (",var_unit,")"),
+    col_names = c("", "No IRA", "IRA")
+  )
+  ft_table1
+
+  cols_table2 = as_paragraph(as_chunk(c("",
+                                        paste("Absolute Difference (",var_unit,")",sep=""),
+                                        "% Difference")))
+
+  ft_table2 = tableit(
+    table = table2,
+    table_name = as_paragraph("Difference between No IRA and IRA ",suffix),
+    col_names = cols_table2)
+  ft_table2
+
+  ft_table3 = tableit(
+    table = table3,
+    table_name = as_paragraph("% Difference in ",suffix," from 2005 and 2021 for the No IRA scenario"),
+    col_names = c("","2005","2021")
+  )
+  ft_table3
+
+  ft_table4 = tableit(
+    table = table4,
+    table_name = as_paragraph("% Difference in ",suffix," from 2005 and 2021 for the IRA scenario"),
+    col_names = c("","2005","2021")
+  )
+  ft_table4
+
+save_as_html(
+  ft_table1,
+  ft_table2,
+  ft_table3,
+  ft_table4,
+  path = paste("output/final_figures/data/Table",table_no,sep="")
+)
+
+return(list(table1, ft_table1,
+            table2, ft_table2,
+            table3, ft_table3,
+            table4, ft_table4))
+
+}
+
+
+

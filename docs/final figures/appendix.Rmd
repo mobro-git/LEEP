@@ -37,96 +37,16 @@ subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 ## Emissions reductions tables
 
 ```{r}
-# economy-wide
-comparison_tables(var = "Emissions|CO2", 
-                suffix = "Economy-Wide", 
-                drop_mod = c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"))
+tab_a1 = summary_tables(table_no = "A1",
+               var = "Emissions|CO2",
+               suffix = "Economy-wide emissions",
+               drop_mod = c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"))
 
-# electricity
-comparison_tables(var = "Emissions|CO2|Energy|Supply|Electricity", 
-                suffix = "Electricity", 
-                drop_mod = c("Scout-LEEP"),
-                drop_datasrc = c("ReEDS_compiled.csv")) # remove duplicate values for ReEDS-NREL - basically same values
-```
+save_as_html(
+  ft_table1, ft_table2,
+  path = "test.html")
 
-```{r}
-var = "Emissions|CO2"
-suffix = "Economy-Wide"
-drop_mod = c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF")
-
-
-baseline_2005 = (clean_data %>% filter(year == 2005 &
-                                         model == "EPA-GHGI" & variable == var))$value
-baseline_2021 = (clean_data %>% filter(year == 2021 &
-                                         model == "EPA-GHGI" & variable == var))$value
-
-# interpolation
-# year_range <- seq.int(from = vars$start_yr, to = vars$end_yr)
-#
-# interp <- data %>%
-#   filter(variable %in% unique(vars$variable)) %>%
-#   filter(!is.na(value)) %>%
-#   complete(nesting(model, scenario, region, variable, unit, datasrc),
-#            year = year_range) %>%
-#   arrange(model, scenario, region, variable, year) %>%
-#   nest(year, value) %>%
-#   mutate(int_pts = map(data,
-#                        .f = ~approx(x=.$year, y=.$value, xout = .$year) %>% as_tibble() )) %>%
-#   unnest(cols = c(data, int_pts)) %>%
-#   mutate(value = y) %>%
-#   select(-x, -y)
-
-table1 = clean_data %>%
-  filter(
-    variable == var &
-      model %in% config$models_leep &
-      !model %in% drop_mod &
-      !datasrc %in% drop_datasrc &
-      year %in% c(2005, 2025, 2030, 2035) &
-      scenario %in% c("IRA", "No IRA")
-  ) %>%
-  select(-variable, -datasrc, -region) %>%
-  mutate(diff_2005 = baseline_2021 - value,
-         per_diff_2005 = diff_2005 / baseline_2005 * 100) %>%
-  mutate(diff_2021 = baseline_2021 - value,
-         per_diff_2021 = diff_2021 / baseline_2021 * 100) %>%
-  mutate_if(is.numeric, round, 2)
-
-table2 = table1 %>%
-  group_by(year, scenario) %>%
-  summarise(
-    min_ab = min(value),
-    max_ab = max(value),
-    median_ab = median(value),
-    min_diff_2005 = min(per_diff_2005),
-    max_diff_2005 = max(per_diff_2005),
-    median_diff_2005 = median(per_diff_2005),
-    min_diff_2021 = min(per_diff_2021),
-    max_diff_2021 = max(per_diff_2021),
-    median_diff_2021 = median(per_diff_2021)
-  ) %>%
-  mutate_if(is.numeric, round, 2)
-
-table3 = table1 %>%
-  select(model, scenario, unit, year, value) %>%
-  pivot_wider(names_from = "scenario", values_from = "value") %>%
-  mutate(diff_noira = `No IRA` - `IRA`,
-         per_diff_noira = diff_noira / `No IRA`) %>%
-  mutate_if(is.numeric, round, 2) %>%
-  group_by(year) %>%
-  summarise(
-    min_diff = min(diff_noira),
-    max_diff = max(diff_noira),
-    median_diff = median(diff_noira),
-    min_per = min(per_diff_noira),
-    max_per = max(per_diff_noira),
-    median_per = median(per_diff_noira)
-  )
-
-return(list(table1,
-            table2,
-            table3))
-
+save_as_image(ft_table1, path = "test.png")
 ```
 
 ## Economy-Wide Diff

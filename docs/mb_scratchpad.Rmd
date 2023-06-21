@@ -21,6 +21,8 @@ tar_load(config)
 tar_load(clean_data)
 ```
 
+# Electrification Figure
+
 ```{r}
 vars = c("Final Energy|Percent Electricity", 
          "Final Energy|Buildings|Percent Electricity",
@@ -89,4 +91,31 @@ fig <- ggplot() +
   theme(axis.text.x = element_text(angle = 90, hjust = .51)) +
   guides(color = guide_legend(ncol=1))
 fig
+```
+
+# Appendix Tables
+
+```{r}
+table_no = "A1"
+var = "Emissions|CO2"
+suffix = "Economy-Wide Emissions"
+drop_mod = c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF")
+drop_datasrc = NULL
+
+tableit = function(table, table_name, col_names) {
+
+  ft_table = flextable(table) %>%
+    add_header_row(values = col_names, colwidths = c(1,3,3)) %>%
+    add_header_lines(values = table_name) %>%
+    theme_booktabs(bold_header = TRUE) %>%
+    align(align = "center", part = "all") %>%
+    autofit() %>%
+    vline(j = c(1,4), border = fp_border_default()) %>%
+    border_outer() %>%
+    border_inner()
+  ft_table
+
+}
+
+
 ```
