@@ -84,7 +84,7 @@ ElecSpg = spg(
   expression(paste("Electricity C", O[2])),
   "",
   gd = "none",
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+  c("Scout-LEEP"),
   0,
   7000,
   c(0, 2000, 4000, 6000),
@@ -379,8 +379,8 @@ fig = (p7$plot | p7d$plot | p7e$plot | p7b$plot | p7c$plot) +
                   theme = theme(plot.title = element_blank()))
 fig
 
-dta = bind_rows(sens_dta_panel1, sens_dta_panel2,
-                sens_dta_panel3, sens_dta_panel4, sens_dta_panel5)
+dta = bind_rows(sens_dta_econ, sens_dta_econ_panel2,
+                sens_dta_econ_panel3, sens_dta_econ_panel4, sens_dta_econ_panel5)
 
 
 saveall(fig, dta, fig_no)
