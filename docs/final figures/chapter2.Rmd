@@ -105,6 +105,8 @@ fig
 
 df = data_from_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14, "United States")
 
+df = clean_supplemental_data(df, fig_no)
+
 saveall(fig, df, fig_no)
 ```
 
@@ -133,6 +135,8 @@ ElecDot
 
 ElecTab = html(ElecSpg$data, "Electricity CO<sub>2<sub>")
 ElecTab
+
+ElecSpg$data = clean_supplemental_data(ElecSpg$data, fig_no)
 
 savedata(ElecSpg$data, fig_no)
 savefig(ElecDot, fig_no)
@@ -2518,6 +2522,9 @@ savefig(combined, fig_no)
 
 print(stats)
 
+dta = clean_supplemental_data(dta, fig_no)
+dta4 = clean_supplemental_data(dta4, fig_no)
+
 savedata(dta, paste0(fig_no,"bars"))
 savedata(dta4, paste0(fig_no, "dots"))
 ```
@@ -2559,7 +2566,7 @@ sens_dta_panel1 = sens_dta %>% filter(scenario %in% panel1_scens) %>%
 
 sens_dta_panel2 = sens_dta %>% filter(scenario %in% panel2_scens) %>% 
   filter(model == "GCAM-PNNL") %>% 
-  mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
   mutate(scenario = case_when(
     scenario == "High Growth" ~ "High",
     scenario == "Low Growth" ~ "Low",
@@ -2570,7 +2577,7 @@ sens_dta_panel2 = sens_dta %>% filter(scenario %in% panel2_scens) %>%
 sens_dta_panel3 = sens_dta %>% filter(scenario %in% panel3_scens) %>%
   filter(model %in% c("ReEDS-NREL", "GCAM-PNNL")) %>% 
   filter(datasrc != "bistline_ira_tall.csv") %>%
-  mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
   mutate(scenario = case_when(
     scenario == "High Energy Price" ~ "High",
     scenario == "Low Energy Price" ~ "Low",
@@ -2587,7 +2594,7 @@ sens_dta_panel3 = sens_dta %>% filter(scenario %in% panel3_scens) %>%
 sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>% 
   filter(model %in% c("ReEDS-NREL", "USREP-ReEDS")) %>% 
   filter(datasrc != "bistline_ira_tall.csv") %>%
-  mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
   mutate(scenario = case_when(
     scenario == "Constrained Deployment" ~ "Constr",
     scenario == "All Advanced" ~ "All-Adv",
@@ -2605,7 +2612,7 @@ sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>%
   
 sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
   filter(model %in% c("USREP-ReEDS","OP-NEMS")) %>% 
-  mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
   mutate(scenario = case_when(
     scenario == "Pess-IRA.Adv" ~ "Pess-Adv",
     scenario == "Opt-IRA.Adv" ~ "Opt-Adv",
@@ -2679,6 +2686,9 @@ combined
 
 dta = bind_rows(sens_dta_panel1, sens_dta_panel2,
                 sens_dta_panel3, sens_dta_panel4, sens_dta_panel5)
+
+dta = dta %>% mutate(figure_num = fig_no) %>%
+  select(-stagger, -datasrc)
 
 saveall(combined, dta, fig_no)
 ```
@@ -2829,7 +2839,7 @@ all_panels %>% write.csv("./output/final_figures/data/Fig2.6_Summary.csv", row.n
 all_panels = add_header_row(flextable(all_panels), values = c("", "IRA Implementation", "Technology", "Combined Technology + Implementation", "Economic Growth", "Energy Price"),
   colwidths = c(4,2,4,2,2,2), top = TRUE)
 
-all_panels = add_header_row(all_panels, values = c("","Difference from IRA Core Scenario (negative is reduced emissions)"), colwidths = c(4,12)) 
+all_panels = add_header_row(all_panels, values = c("","Difference from IRA Moderate Scenario (negative is reduced emissions)"), colwidths = c(4,12)) 
 
 all_panels
 
@@ -2864,6 +2874,8 @@ print(nox_full$stats)
 
 dta1 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States")
 
+dta1 = clean_supplemental_data(dta1, fig_no)
+
 saveall(nox_full$full, dta1, fig_no)
 ```
 
@@ -2882,6 +2894,8 @@ print(sox_full$full)
 print(sox_full$stats)
 
 dta2 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States")
+
+dta2 = clean_supplemental_data(dta2, fig_no)
 
 saveall(sox_full$full, dta2, fig_no)
 ```

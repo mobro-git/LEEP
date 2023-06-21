@@ -1,150 +1,150 @@
-"model","scenario","variable_rename","year","value"
-"USREP-ReEDS","No IRA","Total Building Emissions",2025,1475.6308269
-"USREP-ReEDS","No IRA","Total Building Emissions",2030,1276.5641196
-"USREP-ReEDS","No IRA","Total Building Emissions",2035,1136.7822893
-"USREP-ReEDS","No IRA","Total Building Emissions",2021,1637
-"USREP-ReEDS","IRA","Total Building Emissions",2025,1240.8256929
-"USREP-ReEDS","IRA","Total Building Emissions",2030,826.8316008
-"USREP-ReEDS","IRA","Total Building Emissions",2035,666.1815082
-"USREP-ReEDS","IRA","Total Building Emissions",2021,1637
-"EPS-EI","No IRA","Total Building Emissions",2025,1535.0775291
-"EPS-EI","No IRA","Total Building Emissions",2030,1396.5540182
-"EPS-EI","No IRA","Total Building Emissions",2035,1358.8167987
-"EPS-EI","No IRA","Total Building Emissions",2021,1637
-"EPS-EI","IRA","Total Building Emissions",2025,1386.2317499
-"EPS-EI","IRA","Total Building Emissions",2030,919.1842197
-"EPS-EI","IRA","Total Building Emissions",2035,723.3525795
-"EPS-EI","IRA","Total Building Emissions",2021,1637
-"GCAM-CGS","No IRA","Total Building Emissions",2025,1559.6870112
-"GCAM-CGS","No IRA","Total Building Emissions",2030,1479.3062611
-"GCAM-CGS","No IRA","Total Building Emissions",2035,1428.9594397
-"GCAM-CGS","No IRA","Total Building Emissions",2021,1637
-"GCAM-CGS","IRA","Total Building Emissions",2025,1250.4103539
-"GCAM-CGS","IRA","Total Building Emissions",2030,924.9101101
-"GCAM-CGS","IRA","Total Building Emissions",2035,752.9288417
-"GCAM-CGS","IRA","Total Building Emissions",2021,1637
-"GCAM-PNNL","No IRA","Total Building Emissions",2025,1421.3191
-"GCAM-PNNL","No IRA","Total Building Emissions",2030,1378.5304
-"GCAM-PNNL","No IRA","Total Building Emissions",2035,1360.2558
-"GCAM-PNNL","No IRA","Total Building Emissions",2021,1637
-"GCAM-PNNL","IRA","Total Building Emissions",2025,1255.57612457476
-"GCAM-PNNL","IRA","Total Building Emissions",2030,1030.09689270567
-"GCAM-PNNL","IRA","Total Building Emissions",2035,989.486787493834
-"GCAM-PNNL","IRA","Total Building Emissions",2021,1637
-"IPM-NRDC","No IRA","Total Building Emissions",2025,764.8324175
-"IPM-NRDC","No IRA","Total Building Emissions",2030,731.2607408
-"IPM-NRDC","No IRA","Total Building Emissions",2035,725.8463124
-"IPM-NRDC","No IRA","Total Building Emissions",2021,1637
-"IPM-NRDC","IRA","Total Building Emissions",2025,811.2792431
-"IPM-NRDC","IRA","Total Building Emissions",2030,562.3428589
-"IPM-NRDC","IRA","Total Building Emissions",2035,519.2447915
-"IPM-NRDC","IRA","Total Building Emissions",2021,1637
-"IPM-EPA","No IRA","Total Building Emissions",2025,789.4790222
-"IPM-EPA","No IRA","Total Building Emissions",2030,902.7042148
-"IPM-EPA","No IRA","Total Building Emissions",2035,848.8009316
-"IPM-EPA","No IRA","Total Building Emissions",2021,1637
-"IPM-EPA","IRA","Total Building Emissions",2025,837.4225895
-"IPM-EPA","IRA","Total Building Emissions",2030,672.8956041
-"IPM-EPA","IRA","Total Building Emissions",2035,413.958102
-"IPM-EPA","IRA","Total Building Emissions",2021,1637
-"MARKAL-NETL","No IRA","Total Building Emissions",2025,1348.870899
-"MARKAL-NETL","No IRA","Total Building Emissions",2030,1296.974445
-"MARKAL-NETL","No IRA","Total Building Emissions",2035,1335.512155
-"MARKAL-NETL","No IRA","Total Building Emissions",2021,1637
-"MARKAL-NETL","IRA","Total Building Emissions",2025,1323.266646
-"MARKAL-NETL","IRA","Total Building Emissions",2030,1140.9326735
-"MARKAL-NETL","IRA","Total Building Emissions",2035,778.0950571
-"MARKAL-NETL","IRA","Total Building Emissions",2021,1637
-"NEMS-RHG","No IRA","Total Building Emissions",2025,1377.4218872
-"NEMS-RHG","No IRA","Total Building Emissions",2030,1281.0621768
-"NEMS-RHG","No IRA","Total Building Emissions",2035,1210.8780336
-"NEMS-RHG","No IRA","Total Building Emissions",2021,1637
-"NEMS-RHG","IRA","Total Building Emissions",2025,1448.5280226
-"NEMS-RHG","IRA","Total Building Emissions",2030,915.6847613
-"NEMS-RHG","IRA","Total Building Emissions",2035,967.4751029
-"NEMS-RHG","IRA","Total Building Emissions",2021,1637
-"OP-NEMS","No IRA","Total Building Emissions",2025,1458.655578
-"OP-NEMS","No IRA","Total Building Emissions",2030,1293.685607
-"OP-NEMS","No IRA","Total Building Emissions",2035,1218.250061
-"OP-NEMS","No IRA","Total Building Emissions",2022,1673.072632
-"OP-NEMS","No IRA","Total Building Emissions",2023,1628.869019
-"OP-NEMS","No IRA","Total Building Emissions",2024,1521.225647
-"OP-NEMS","No IRA","Total Building Emissions",2026,1417.244506
-"OP-NEMS","No IRA","Total Building Emissions",2027,1381.244018
-"OP-NEMS","No IRA","Total Building Emissions",2028,1361.364197
-"OP-NEMS","No IRA","Total Building Emissions",2029,1329.343812
-"OP-NEMS","No IRA","Total Building Emissions",2031,1281.741578
-"OP-NEMS","No IRA","Total Building Emissions",2032,1273.054809
-"OP-NEMS","No IRA","Total Building Emissions",2033,1268.249633
-"OP-NEMS","No IRA","Total Building Emissions",2034,1245.353638
-"OP-NEMS","No IRA","Total Building Emissions",2021,1637
-"OP-NEMS","IRA","Total Building Emissions",2025,1400.807067
-"OP-NEMS","IRA","Total Building Emissions",2030,1015.817504
-"OP-NEMS","IRA","Total Building Emissions",2035,814.391754
-"OP-NEMS","IRA","Total Building Emissions",2022,1673.29187
-"OP-NEMS","IRA","Total Building Emissions",2023,1626.528747
-"OP-NEMS","IRA","Total Building Emissions",2024,1500.407471
-"OP-NEMS","IRA","Total Building Emissions",2026,1322.748963
-"OP-NEMS","IRA","Total Building Emissions",2027,1245.701294
-"OP-NEMS","IRA","Total Building Emissions",2028,1169.92981
-"OP-NEMS","IRA","Total Building Emissions",2029,1078.571777
-"OP-NEMS","IRA","Total Building Emissions",2031,980.989013
-"OP-NEMS","IRA","Total Building Emissions",2032,960.492584
-"OP-NEMS","IRA","Total Building Emissions",2033,915.097443
-"OP-NEMS","IRA","Total Building Emissions",2034,857.254517
-"OP-NEMS","IRA","Total Building Emissions",2021,1637
-"REGEN-EPRI","No IRA","Total Building Emissions",2025,1364.4889913
-"REGEN-EPRI","No IRA","Total Building Emissions",2030,1180.6008859
-"REGEN-EPRI","No IRA","Total Building Emissions",2035,1104.5819103
-"REGEN-EPRI","No IRA","Total Building Emissions",2021,1637
-"REGEN-EPRI","IRA","Total Building Emissions",2025,1337.1696388
-"REGEN-EPRI","IRA","Total Building Emissions",2030,1071.8324072
-"REGEN-EPRI","IRA","Total Building Emissions",2035,737.8205431
-"REGEN-EPRI","IRA","Total Building Emissions",2021,1637
-"RIO-REPEAT","No IRA","Total Building Emissions",2025,1691.670964
-"RIO-REPEAT","No IRA","Total Building Emissions",2030,1317.4864301
-"RIO-REPEAT","No IRA","Total Building Emissions",2035,1133.3756825
-"RIO-REPEAT","No IRA","Total Building Emissions",2021,1637
-"RIO-REPEAT","IRA","Total Building Emissions",2025,1696.011948
-"RIO-REPEAT","IRA","Total Building Emissions",2030,1091.908867
-"RIO-REPEAT","IRA","Total Building Emissions",2035,759.9757046
-"RIO-REPEAT","IRA","Total Building Emissions",2021,1637
-"Scout-LEEP","No IRA","Total Building Emissions",2025,1393.76219375366
-"Scout-LEEP","No IRA","Total Building Emissions",2030,1255.16166525435
-"Scout-LEEP","No IRA","Total Building Emissions",2035,1110.37504384162
-"Scout-LEEP","No IRA","Total Building Emissions",2021,1637
-"Scout-LEEP","IRA","Total Building Emissions",2025,1367.6482308122
-"Scout-LEEP","IRA","Total Building Emissions",2030,1187.88999252743
-"Scout-LEEP","IRA","Total Building Emissions",2035,995.032132994579
-"Scout-LEEP","IRA","Total Building Emissions",2021,1637
-"AEO.2023","No IRA","Total Building Emissions",2025,1528.168823
-"AEO.2023","No IRA","Total Building Emissions",2030,1420.761658
-"AEO.2023","No IRA","Total Building Emissions",2035,1353.036682
-"AEO.2023","No IRA","Total Building Emissions",2022,1682.544067
-"AEO.2023","No IRA","Total Building Emissions",2023,1603.311218
-"AEO.2023","No IRA","Total Building Emissions",2024,1577.72168
-"AEO.2023","No IRA","Total Building Emissions",2026,1492.344483
-"AEO.2023","No IRA","Total Building Emissions",2027,1465.398133
-"AEO.2023","No IRA","Total Building Emissions",2028,1451.571838
-"AEO.2023","No IRA","Total Building Emissions",2029,1441.355224
-"AEO.2023","No IRA","Total Building Emissions",2031,1395.739258
-"AEO.2023","No IRA","Total Building Emissions",2032,1375.646667
-"AEO.2023","No IRA","Total Building Emissions",2033,1369.787903
-"AEO.2023","No IRA","Total Building Emissions",2034,1363.819031
-"AEO.2023","No IRA","Total Building Emissions",2021,1637
-"AEO.2023","IRA","Total Building Emissions",2025,1502.789795
-"AEO.2023","IRA","Total Building Emissions",2030,1127.282226
-"AEO.2023","IRA","Total Building Emissions",2035,1077.198486
-"AEO.2023","IRA","Total Building Emissions",2022,1681.863647
-"AEO.2023","IRA","Total Building Emissions",2023,1597.620667
-"AEO.2023","IRA","Total Building Emissions",2024,1575.418457
-"AEO.2023","IRA","Total Building Emissions",2026,1405.377929
-"AEO.2023","IRA","Total Building Emissions",2027,1306.146607
-"AEO.2023","IRA","Total Building Emissions",2028,1228.785217
-"AEO.2023","IRA","Total Building Emissions",2029,1169.081665
-"AEO.2023","IRA","Total Building Emissions",2031,1111.676117
-"AEO.2023","IRA","Total Building Emissions",2032,1106.754303
-"AEO.2023","IRA","Total Building Emissions",2033,1100.851685
-"AEO.2023","IRA","Total Building Emissions",2034,1085.891388
-"AEO.2023","IRA","Total Building Emissions",2021,1637
-"EPA-GHGI","Historic","Total Building Emissions",2021,1637
+"model","scenario","variable_rename","year","value","figure_num"
+"USREP-ReEDS","No IRA","Total Building Emissions",2025,1475.6308269,"Ap.4.BuilEmis"
+"USREP-ReEDS","No IRA","Total Building Emissions",2030,1276.5641196,"Ap.4.BuilEmis"
+"USREP-ReEDS","No IRA","Total Building Emissions",2035,1136.7822893,"Ap.4.BuilEmis"
+"USREP-ReEDS","No IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"USREP-ReEDS","IRA","Total Building Emissions",2025,1240.8256929,"Ap.4.BuilEmis"
+"USREP-ReEDS","IRA","Total Building Emissions",2030,826.8316008,"Ap.4.BuilEmis"
+"USREP-ReEDS","IRA","Total Building Emissions",2035,666.1815082,"Ap.4.BuilEmis"
+"USREP-ReEDS","IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"EPS-EI","No IRA","Total Building Emissions",2025,1535.0775291,"Ap.4.BuilEmis"
+"EPS-EI","No IRA","Total Building Emissions",2030,1396.5540182,"Ap.4.BuilEmis"
+"EPS-EI","No IRA","Total Building Emissions",2035,1358.8167987,"Ap.4.BuilEmis"
+"EPS-EI","No IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"EPS-EI","IRA","Total Building Emissions",2025,1386.2317499,"Ap.4.BuilEmis"
+"EPS-EI","IRA","Total Building Emissions",2030,919.1842197,"Ap.4.BuilEmis"
+"EPS-EI","IRA","Total Building Emissions",2035,723.3525795,"Ap.4.BuilEmis"
+"EPS-EI","IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"GCAM-CGS","No IRA","Total Building Emissions",2025,1559.6870112,"Ap.4.BuilEmis"
+"GCAM-CGS","No IRA","Total Building Emissions",2030,1479.3062611,"Ap.4.BuilEmis"
+"GCAM-CGS","No IRA","Total Building Emissions",2035,1428.9594397,"Ap.4.BuilEmis"
+"GCAM-CGS","No IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"GCAM-CGS","IRA","Total Building Emissions",2025,1250.4103539,"Ap.4.BuilEmis"
+"GCAM-CGS","IRA","Total Building Emissions",2030,924.9101101,"Ap.4.BuilEmis"
+"GCAM-CGS","IRA","Total Building Emissions",2035,752.9288417,"Ap.4.BuilEmis"
+"GCAM-CGS","IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"GCAM-PNNL","No IRA","Total Building Emissions",2025,1421.3191,"Ap.4.BuilEmis"
+"GCAM-PNNL","No IRA","Total Building Emissions",2030,1378.5304,"Ap.4.BuilEmis"
+"GCAM-PNNL","No IRA","Total Building Emissions",2035,1360.2558,"Ap.4.BuilEmis"
+"GCAM-PNNL","No IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"GCAM-PNNL","IRA","Total Building Emissions",2025,1255.57612457476,"Ap.4.BuilEmis"
+"GCAM-PNNL","IRA","Total Building Emissions",2030,1030.09689270567,"Ap.4.BuilEmis"
+"GCAM-PNNL","IRA","Total Building Emissions",2035,989.486787493834,"Ap.4.BuilEmis"
+"GCAM-PNNL","IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"IPM-NRDC","No IRA","Total Building Emissions",2025,764.8324175,"Ap.4.BuilEmis"
+"IPM-NRDC","No IRA","Total Building Emissions",2030,731.2607408,"Ap.4.BuilEmis"
+"IPM-NRDC","No IRA","Total Building Emissions",2035,725.8463124,"Ap.4.BuilEmis"
+"IPM-NRDC","No IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"IPM-NRDC","IRA","Total Building Emissions",2025,811.2792431,"Ap.4.BuilEmis"
+"IPM-NRDC","IRA","Total Building Emissions",2030,562.3428589,"Ap.4.BuilEmis"
+"IPM-NRDC","IRA","Total Building Emissions",2035,519.2447915,"Ap.4.BuilEmis"
+"IPM-NRDC","IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"IPM-EPA","No IRA","Total Building Emissions",2025,789.4790222,"Ap.4.BuilEmis"
+"IPM-EPA","No IRA","Total Building Emissions",2030,902.7042148,"Ap.4.BuilEmis"
+"IPM-EPA","No IRA","Total Building Emissions",2035,848.8009316,"Ap.4.BuilEmis"
+"IPM-EPA","No IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"IPM-EPA","IRA","Total Building Emissions",2025,837.4225895,"Ap.4.BuilEmis"
+"IPM-EPA","IRA","Total Building Emissions",2030,672.8956041,"Ap.4.BuilEmis"
+"IPM-EPA","IRA","Total Building Emissions",2035,413.958102,"Ap.4.BuilEmis"
+"IPM-EPA","IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"MARKAL-NETL","No IRA","Total Building Emissions",2025,1348.870899,"Ap.4.BuilEmis"
+"MARKAL-NETL","No IRA","Total Building Emissions",2030,1296.974445,"Ap.4.BuilEmis"
+"MARKAL-NETL","No IRA","Total Building Emissions",2035,1335.512155,"Ap.4.BuilEmis"
+"MARKAL-NETL","No IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"MARKAL-NETL","IRA","Total Building Emissions",2025,1323.266646,"Ap.4.BuilEmis"
+"MARKAL-NETL","IRA","Total Building Emissions",2030,1140.9326735,"Ap.4.BuilEmis"
+"MARKAL-NETL","IRA","Total Building Emissions",2035,778.0950571,"Ap.4.BuilEmis"
+"MARKAL-NETL","IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"NEMS-RHG","No IRA","Total Building Emissions",2025,1377.4218872,"Ap.4.BuilEmis"
+"NEMS-RHG","No IRA","Total Building Emissions",2030,1281.0621768,"Ap.4.BuilEmis"
+"NEMS-RHG","No IRA","Total Building Emissions",2035,1210.8780336,"Ap.4.BuilEmis"
+"NEMS-RHG","No IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"NEMS-RHG","IRA","Total Building Emissions",2025,1448.5280226,"Ap.4.BuilEmis"
+"NEMS-RHG","IRA","Total Building Emissions",2030,915.6847613,"Ap.4.BuilEmis"
+"NEMS-RHG","IRA","Total Building Emissions",2035,967.4751029,"Ap.4.BuilEmis"
+"NEMS-RHG","IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"OP-NEMS","No IRA","Total Building Emissions",2025,1458.655578,"Ap.4.BuilEmis"
+"OP-NEMS","No IRA","Total Building Emissions",2030,1293.685607,"Ap.4.BuilEmis"
+"OP-NEMS","No IRA","Total Building Emissions",2035,1218.250061,"Ap.4.BuilEmis"
+"OP-NEMS","No IRA","Total Building Emissions",2022,1673.072632,"Ap.4.BuilEmis"
+"OP-NEMS","No IRA","Total Building Emissions",2023,1628.869019,"Ap.4.BuilEmis"
+"OP-NEMS","No IRA","Total Building Emissions",2024,1521.225647,"Ap.4.BuilEmis"
+"OP-NEMS","No IRA","Total Building Emissions",2026,1417.244506,"Ap.4.BuilEmis"
+"OP-NEMS","No IRA","Total Building Emissions",2027,1381.244018,"Ap.4.BuilEmis"
+"OP-NEMS","No IRA","Total Building Emissions",2028,1361.364197,"Ap.4.BuilEmis"
+"OP-NEMS","No IRA","Total Building Emissions",2029,1329.343812,"Ap.4.BuilEmis"
+"OP-NEMS","No IRA","Total Building Emissions",2031,1281.741578,"Ap.4.BuilEmis"
+"OP-NEMS","No IRA","Total Building Emissions",2032,1273.054809,"Ap.4.BuilEmis"
+"OP-NEMS","No IRA","Total Building Emissions",2033,1268.249633,"Ap.4.BuilEmis"
+"OP-NEMS","No IRA","Total Building Emissions",2034,1245.353638,"Ap.4.BuilEmis"
+"OP-NEMS","No IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"OP-NEMS","IRA","Total Building Emissions",2025,1400.807067,"Ap.4.BuilEmis"
+"OP-NEMS","IRA","Total Building Emissions",2030,1015.817504,"Ap.4.BuilEmis"
+"OP-NEMS","IRA","Total Building Emissions",2035,814.391754,"Ap.4.BuilEmis"
+"OP-NEMS","IRA","Total Building Emissions",2022,1673.29187,"Ap.4.BuilEmis"
+"OP-NEMS","IRA","Total Building Emissions",2023,1626.528747,"Ap.4.BuilEmis"
+"OP-NEMS","IRA","Total Building Emissions",2024,1500.407471,"Ap.4.BuilEmis"
+"OP-NEMS","IRA","Total Building Emissions",2026,1322.748963,"Ap.4.BuilEmis"
+"OP-NEMS","IRA","Total Building Emissions",2027,1245.701294,"Ap.4.BuilEmis"
+"OP-NEMS","IRA","Total Building Emissions",2028,1169.92981,"Ap.4.BuilEmis"
+"OP-NEMS","IRA","Total Building Emissions",2029,1078.571777,"Ap.4.BuilEmis"
+"OP-NEMS","IRA","Total Building Emissions",2031,980.989013,"Ap.4.BuilEmis"
+"OP-NEMS","IRA","Total Building Emissions",2032,960.492584,"Ap.4.BuilEmis"
+"OP-NEMS","IRA","Total Building Emissions",2033,915.097443,"Ap.4.BuilEmis"
+"OP-NEMS","IRA","Total Building Emissions",2034,857.254517,"Ap.4.BuilEmis"
+"OP-NEMS","IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"REGEN-EPRI","No IRA","Total Building Emissions",2025,1364.4889913,"Ap.4.BuilEmis"
+"REGEN-EPRI","No IRA","Total Building Emissions",2030,1180.6008859,"Ap.4.BuilEmis"
+"REGEN-EPRI","No IRA","Total Building Emissions",2035,1104.5819103,"Ap.4.BuilEmis"
+"REGEN-EPRI","No IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"REGEN-EPRI","IRA","Total Building Emissions",2025,1337.1696388,"Ap.4.BuilEmis"
+"REGEN-EPRI","IRA","Total Building Emissions",2030,1071.8324072,"Ap.4.BuilEmis"
+"REGEN-EPRI","IRA","Total Building Emissions",2035,737.8205431,"Ap.4.BuilEmis"
+"REGEN-EPRI","IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"RIO-REPEAT","No IRA","Total Building Emissions",2025,1691.670964,"Ap.4.BuilEmis"
+"RIO-REPEAT","No IRA","Total Building Emissions",2030,1317.4864301,"Ap.4.BuilEmis"
+"RIO-REPEAT","No IRA","Total Building Emissions",2035,1133.3756825,"Ap.4.BuilEmis"
+"RIO-REPEAT","No IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"RIO-REPEAT","IRA","Total Building Emissions",2025,1696.011948,"Ap.4.BuilEmis"
+"RIO-REPEAT","IRA","Total Building Emissions",2030,1091.908867,"Ap.4.BuilEmis"
+"RIO-REPEAT","IRA","Total Building Emissions",2035,759.9757046,"Ap.4.BuilEmis"
+"RIO-REPEAT","IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"Scout-LEEP","No IRA","Total Building Emissions",2025,1393.76219375366,"Ap.4.BuilEmis"
+"Scout-LEEP","No IRA","Total Building Emissions",2030,1255.16166525435,"Ap.4.BuilEmis"
+"Scout-LEEP","No IRA","Total Building Emissions",2035,1110.37504384162,"Ap.4.BuilEmis"
+"Scout-LEEP","No IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"Scout-LEEP","IRA","Total Building Emissions",2025,1367.6482308122,"Ap.4.BuilEmis"
+"Scout-LEEP","IRA","Total Building Emissions",2030,1187.88999252743,"Ap.4.BuilEmis"
+"Scout-LEEP","IRA","Total Building Emissions",2035,995.032132994579,"Ap.4.BuilEmis"
+"Scout-LEEP","IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"AEO.2023","No IRA","Total Building Emissions",2025,1528.168823,"Ap.4.BuilEmis"
+"AEO.2023","No IRA","Total Building Emissions",2030,1420.761658,"Ap.4.BuilEmis"
+"AEO.2023","No IRA","Total Building Emissions",2035,1353.036682,"Ap.4.BuilEmis"
+"AEO.2023","No IRA","Total Building Emissions",2022,1682.544067,"Ap.4.BuilEmis"
+"AEO.2023","No IRA","Total Building Emissions",2023,1603.311218,"Ap.4.BuilEmis"
+"AEO.2023","No IRA","Total Building Emissions",2024,1577.72168,"Ap.4.BuilEmis"
+"AEO.2023","No IRA","Total Building Emissions",2026,1492.344483,"Ap.4.BuilEmis"
+"AEO.2023","No IRA","Total Building Emissions",2027,1465.398133,"Ap.4.BuilEmis"
+"AEO.2023","No IRA","Total Building Emissions",2028,1451.571838,"Ap.4.BuilEmis"
+"AEO.2023","No IRA","Total Building Emissions",2029,1441.355224,"Ap.4.BuilEmis"
+"AEO.2023","No IRA","Total Building Emissions",2031,1395.739258,"Ap.4.BuilEmis"
+"AEO.2023","No IRA","Total Building Emissions",2032,1375.646667,"Ap.4.BuilEmis"
+"AEO.2023","No IRA","Total Building Emissions",2033,1369.787903,"Ap.4.BuilEmis"
+"AEO.2023","No IRA","Total Building Emissions",2034,1363.819031,"Ap.4.BuilEmis"
+"AEO.2023","No IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"AEO.2023","IRA","Total Building Emissions",2025,1502.789795,"Ap.4.BuilEmis"
+"AEO.2023","IRA","Total Building Emissions",2030,1127.282226,"Ap.4.BuilEmis"
+"AEO.2023","IRA","Total Building Emissions",2035,1077.198486,"Ap.4.BuilEmis"
+"AEO.2023","IRA","Total Building Emissions",2022,1681.863647,"Ap.4.BuilEmis"
+"AEO.2023","IRA","Total Building Emissions",2023,1597.620667,"Ap.4.BuilEmis"
+"AEO.2023","IRA","Total Building Emissions",2024,1575.418457,"Ap.4.BuilEmis"
+"AEO.2023","IRA","Total Building Emissions",2026,1405.377929,"Ap.4.BuilEmis"
+"AEO.2023","IRA","Total Building Emissions",2027,1306.146607,"Ap.4.BuilEmis"
+"AEO.2023","IRA","Total Building Emissions",2028,1228.785217,"Ap.4.BuilEmis"
+"AEO.2023","IRA","Total Building Emissions",2029,1169.081665,"Ap.4.BuilEmis"
+"AEO.2023","IRA","Total Building Emissions",2031,1111.676117,"Ap.4.BuilEmis"
+"AEO.2023","IRA","Total Building Emissions",2032,1106.754303,"Ap.4.BuilEmis"
+"AEO.2023","IRA","Total Building Emissions",2033,1100.851685,"Ap.4.BuilEmis"
+"AEO.2023","IRA","Total Building Emissions",2034,1085.891388,"Ap.4.BuilEmis"
+"AEO.2023","IRA","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"
+"EPA-GHGI","Historic","Total Building Emissions",2021,1637,"Ap.4.BuilEmis"

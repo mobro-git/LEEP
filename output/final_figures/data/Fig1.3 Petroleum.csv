@@ -1,134 +1,134 @@
-"model","scenario","unit","datasrc","variable","region","figure_type","figure_no","title_name","variable_rename","flip_sign","regions","models","years","scenarios","type","x","y","facet1","facet2","color","page_filter","scales","alpha","year","value",".group"
-"AEO.2023","IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2021,35.242100410454,1
-"AEO.2023","IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2022,35.1726583056864,1
-"AEO.2023","IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2023,35.2939147413563,1
-"AEO.2023","IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2024,34.7865401026889,1
-"AEO.2023","IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2025,34.6576867023754,1
-"AEO.2023","IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2026,34.5219363341606,1
-"AEO.2023","IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2027,34.3815199876613,1
-"AEO.2023","IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2028,34.3335382109695,1
-"AEO.2023","IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2029,34.1226701923538,1
-"AEO.2023","IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2030,33.867923377951,1
-"AEO.2023","IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2031,33.662609333487,1
-"AEO.2023","IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2032,33.5156030176576,1
-"AEO.2023","IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2033,33.3841616293887,1
-"AEO.2023","IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2034,33.2979570305868,1
-"AEO.2023","IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2035,33.1915445258329,1
-"AEO.2023","No IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2021,35.242100410454,1
-"AEO.2023","No IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2022,35.1767992864142,1
-"AEO.2023","No IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2023,35.7472956313119,1
-"AEO.2023","No IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2024,35.0970416576079,1
-"AEO.2023","No IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2025,34.9365584045005,1
-"AEO.2023","No IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2026,34.8360728721623,1
-"AEO.2023","No IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2027,34.7423513083445,1
-"AEO.2023","No IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2028,34.6088419297,1
-"AEO.2023","No IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2029,34.4411397101898,1
-"AEO.2023","No IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2030,34.1920178696082,1
-"AEO.2023","No IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2031,33.9869398240459,1
-"AEO.2023","No IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2032,33.8230035870087,1
-"AEO.2023","No IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2033,33.7037601419703,1
-"AEO.2023","No IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2034,33.6588773508558,1
-"AEO.2023","No IRA","Quads","AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2035,33.6007776212532,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2021,35.242100410454,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2005,40.215841572032,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2006,39.729794349238,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2007,39.366903907758,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2008,36.768718837494,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2009,34.778521791328,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2010,35.31987301143,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2011,34.638548317828,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2012,33.832471875594,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2013,34.397303674902,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2014,34.657200983916,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2015,35.367488151842,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2016,35.711257941506,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2017,36.042504952104,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2018,36.89115362268,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2019,36.865715087712,1
-"EIA","Historic","Quads","EIA-EPA-bistline_historic.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2020,32.33055000777,1
-"EPS-EI","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2021,35.242100410454,1
-"EPS-EI","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2025,32.297409602612,1
-"EPS-EI","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2030,30.02992056785,1
-"EPS-EI","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2035,27.771050361866,1
-"EPS-EI","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2021,35.242100410454,1
-"EPS-EI","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2025,32.343747772084,1
-"EPS-EI","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2030,30.26280535887,1
-"EPS-EI","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2035,28.233514008028,1
-"GCAM-CGS","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2021,35.242100410454,1
-"GCAM-CGS","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2025,30.70165396144,1
-"GCAM-CGS","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2030,28.226940370524,1
-"GCAM-CGS","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2035,27.73591606037,1
-"GCAM-CGS","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2021,35.242100410454,1
-"GCAM-CGS","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2025,32.66402609232,1
-"GCAM-CGS","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2030,31.77689519683,1
-"GCAM-CGS","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2035,28.881459346614,1
-"GCAM-PNNL","IRA","Quads","PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2021,35.242100410454,1
-"GCAM-PNNL","IRA","Quads","PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2025,30.5359914858968,1
-"GCAM-PNNL","IRA","Quads","PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2030,26.9546305173232,1
-"GCAM-PNNL","IRA","Quads","PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2035,23.4908351324151,1
-"GCAM-PNNL","No IRA","Quads","PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2021,35.242100410454,1
-"GCAM-PNNL","No IRA","Quads","PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2025,31.475935666,1
-"GCAM-PNNL","No IRA","Quads","PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2030,28.765616264,1
-"GCAM-PNNL","No IRA","Quads","PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2035,25.73532906,1
-"MARKAL-NETL","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2021,35.242100410454,1
-"MARKAL-NETL","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2025,36.353124346798,1
-"MARKAL-NETL","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2030,35.896031598896,1
-"MARKAL-NETL","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2035,35.448199691058,1
-"MARKAL-NETL","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2021,35.242100410454,1
-"MARKAL-NETL","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2025,36.385172763142,1
-"MARKAL-NETL","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2030,35.927441036914,1
-"MARKAL-NETL","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2035,35.478799139196,1
-"NEMS-RHG","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2021,35.242100410454,1
-"NEMS-RHG","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2025,36.84960737836,1
-"NEMS-RHG","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2030,34.781399738638,1
-"NEMS-RHG","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2035,32.927483224398,1
-"NEMS-RHG","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2021,35.242100410454,1
-"NEMS-RHG","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2025,36.828466756228,1
-"NEMS-RHG","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2030,35.154885987004,1
-"NEMS-RHG","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2035,33.686250513972,1
-"OP-NEMS","IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2021,35.242100410454,1
-"OP-NEMS","IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2022,35.1463344281983,1
-"OP-NEMS","IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2023,35.566834471182,1
-"OP-NEMS","IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2024,35.3174556317965,1
-"OP-NEMS","IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2025,35.1928272118199,1
-"OP-NEMS","IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2026,34.8281369090965,1
-"OP-NEMS","IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2027,34.3017273590179,1
-"OP-NEMS","IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2028,33.7959457129366,1
-"OP-NEMS","IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2029,33.1880035423127,1
-"OP-NEMS","IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2030,32.6090662366994,1
-"OP-NEMS","IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2031,32.015636998532,1
-"OP-NEMS","IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2032,31.4811924858483,1
-"OP-NEMS","IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2033,31.0329755718595,1
-"OP-NEMS","IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2034,30.5244789384139,1
-"OP-NEMS","IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2035,30.1136108506028,1
-"OP-NEMS","No IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2021,35.242100410454,1
-"OP-NEMS","No IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2022,35.1553823860889,1
-"OP-NEMS","No IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2023,35.5859403822627,1
-"OP-NEMS","No IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2024,35.4096412027629,1
-"OP-NEMS","No IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2025,35.3330125593942,1
-"OP-NEMS","No IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2026,35.1205815480528,1
-"OP-NEMS","No IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2027,34.8083400012317,1
-"OP-NEMS","No IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2028,34.551527196444,1
-"OP-NEMS","No IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2029,34.237363658568,1
-"OP-NEMS","No IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2030,33.9845838350107,1
-"OP-NEMS","No IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2031,33.7255600405131,1
-"OP-NEMS","No IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2032,33.5541218383902,1
-"OP-NEMS","No IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2033,33.3150629509754,1
-"OP-NEMS","No IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2034,33.0134903545008,1
-"OP-NEMS","No IRA","Quads","OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2035,32.7067197822177,1
-"REGEN-EPRI","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2021,35.242100410454,1
-"REGEN-EPRI","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2025,30.839442936022,1
-"REGEN-EPRI","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2030,27.43950435828,1
-"REGEN-EPRI","IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2035,24.019566129524,1
-"REGEN-EPRI","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2021,35.242100410454,1
-"REGEN-EPRI","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2025,30.90944167192,1
-"REGEN-EPRI","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2030,27.869496584958,1
-"REGEN-EPRI","No IRA","Quads","bistline_ira_tall.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",0.6,2035,24.819551677228,1
-"USREP-ReEDS","IRA","Quads","usrep_reeds_allscen.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2021,35.242100410454,1
-"USREP-ReEDS","IRA","Quads","usrep_reeds_allscen.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2025,34.924638345226,1
-"USREP-ReEDS","IRA","Quads","usrep_reeds_allscen.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2030,32.78779374969,1
-"USREP-ReEDS","IRA","Quads","usrep_reeds_allscen.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2035,30.860427028984,1
-"USREP-ReEDS","No IRA","Quads","usrep_reeds_allscen.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2021,35.242100410454,1
-"USREP-ReEDS","No IRA","Quads","usrep_reeds_allscen.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2025,34.790376115488,1
-"USREP-ReEDS","No IRA","Quads","usrep_reeds_allscen.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2030,33.082136176908,1
-"USREP-ReEDS","No IRA","Quads","usrep_reeds_allscen.csv","Primary Energy|Oil","United States","timeseries",92,"Primary Energy","Oil",0,"usa","models_leep","historic","hist_mod_scenarios2","grid","year","value","region","variable_rename","scenario","region","fixed",1,2035,31.724095116518,1
+"figure_num","model","scenario","variable","unit","year","variable_rename","value"
+1.3,"AEO.2023","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"AEO.2023","IRA","Primary Energy|Oil","Quads",2022,"Oil",35.1726583056864
+1.3,"AEO.2023","IRA","Primary Energy|Oil","Quads",2023,"Oil",35.2939147413563
+1.3,"AEO.2023","IRA","Primary Energy|Oil","Quads",2024,"Oil",34.7865401026889
+1.3,"AEO.2023","IRA","Primary Energy|Oil","Quads",2025,"Oil",34.6576867023754
+1.3,"AEO.2023","IRA","Primary Energy|Oil","Quads",2026,"Oil",34.5219363341606
+1.3,"AEO.2023","IRA","Primary Energy|Oil","Quads",2027,"Oil",34.3815199876613
+1.3,"AEO.2023","IRA","Primary Energy|Oil","Quads",2028,"Oil",34.3335382109695
+1.3,"AEO.2023","IRA","Primary Energy|Oil","Quads",2029,"Oil",34.1226701923538
+1.3,"AEO.2023","IRA","Primary Energy|Oil","Quads",2030,"Oil",33.867923377951
+1.3,"AEO.2023","IRA","Primary Energy|Oil","Quads",2031,"Oil",33.662609333487
+1.3,"AEO.2023","IRA","Primary Energy|Oil","Quads",2032,"Oil",33.5156030176576
+1.3,"AEO.2023","IRA","Primary Energy|Oil","Quads",2033,"Oil",33.3841616293887
+1.3,"AEO.2023","IRA","Primary Energy|Oil","Quads",2034,"Oil",33.2979570305868
+1.3,"AEO.2023","IRA","Primary Energy|Oil","Quads",2035,"Oil",33.1915445258329
+1.3,"AEO.2023","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"AEO.2023","No IRA","Primary Energy|Oil","Quads",2022,"Oil",35.1767992864142
+1.3,"AEO.2023","No IRA","Primary Energy|Oil","Quads",2023,"Oil",35.7472956313119
+1.3,"AEO.2023","No IRA","Primary Energy|Oil","Quads",2024,"Oil",35.0970416576079
+1.3,"AEO.2023","No IRA","Primary Energy|Oil","Quads",2025,"Oil",34.9365584045005
+1.3,"AEO.2023","No IRA","Primary Energy|Oil","Quads",2026,"Oil",34.8360728721623
+1.3,"AEO.2023","No IRA","Primary Energy|Oil","Quads",2027,"Oil",34.7423513083445
+1.3,"AEO.2023","No IRA","Primary Energy|Oil","Quads",2028,"Oil",34.6088419297
+1.3,"AEO.2023","No IRA","Primary Energy|Oil","Quads",2029,"Oil",34.4411397101898
+1.3,"AEO.2023","No IRA","Primary Energy|Oil","Quads",2030,"Oil",34.1920178696082
+1.3,"AEO.2023","No IRA","Primary Energy|Oil","Quads",2031,"Oil",33.9869398240459
+1.3,"AEO.2023","No IRA","Primary Energy|Oil","Quads",2032,"Oil",33.8230035870087
+1.3,"AEO.2023","No IRA","Primary Energy|Oil","Quads",2033,"Oil",33.7037601419703
+1.3,"AEO.2023","No IRA","Primary Energy|Oil","Quads",2034,"Oil",33.6588773508558
+1.3,"AEO.2023","No IRA","Primary Energy|Oil","Quads",2035,"Oil",33.6007776212532
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2005,"Oil",40.215841572032
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2006,"Oil",39.729794349238
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2007,"Oil",39.366903907758
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2008,"Oil",36.768718837494
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2009,"Oil",34.778521791328
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2010,"Oil",35.31987301143
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2011,"Oil",34.638548317828
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2012,"Oil",33.832471875594
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2013,"Oil",34.397303674902
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2014,"Oil",34.657200983916
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2015,"Oil",35.367488151842
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2016,"Oil",35.711257941506
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2017,"Oil",36.042504952104
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2018,"Oil",36.89115362268
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2019,"Oil",36.865715087712
+1.3,"EIA","Historic","Primary Energy|Oil","Quads",2020,"Oil",32.33055000777
+1.3,"EPS-EI","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"EPS-EI","IRA","Primary Energy|Oil","Quads",2025,"Oil",32.297409602612
+1.3,"EPS-EI","IRA","Primary Energy|Oil","Quads",2030,"Oil",30.02992056785
+1.3,"EPS-EI","IRA","Primary Energy|Oil","Quads",2035,"Oil",27.771050361866
+1.3,"EPS-EI","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"EPS-EI","No IRA","Primary Energy|Oil","Quads",2025,"Oil",32.343747772084
+1.3,"EPS-EI","No IRA","Primary Energy|Oil","Quads",2030,"Oil",30.26280535887
+1.3,"EPS-EI","No IRA","Primary Energy|Oil","Quads",2035,"Oil",28.233514008028
+1.3,"GCAM-CGS","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"GCAM-CGS","IRA","Primary Energy|Oil","Quads",2025,"Oil",30.70165396144
+1.3,"GCAM-CGS","IRA","Primary Energy|Oil","Quads",2030,"Oil",28.226940370524
+1.3,"GCAM-CGS","IRA","Primary Energy|Oil","Quads",2035,"Oil",27.73591606037
+1.3,"GCAM-CGS","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"GCAM-CGS","No IRA","Primary Energy|Oil","Quads",2025,"Oil",32.66402609232
+1.3,"GCAM-CGS","No IRA","Primary Energy|Oil","Quads",2030,"Oil",31.77689519683
+1.3,"GCAM-CGS","No IRA","Primary Energy|Oil","Quads",2035,"Oil",28.881459346614
+1.3,"GCAM-PNNL","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"GCAM-PNNL","IRA","Primary Energy|Oil","Quads",2025,"Oil",30.5359914858968
+1.3,"GCAM-PNNL","IRA","Primary Energy|Oil","Quads",2030,"Oil",26.9546305173232
+1.3,"GCAM-PNNL","IRA","Primary Energy|Oil","Quads",2035,"Oil",23.4908351324151
+1.3,"GCAM-PNNL","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"GCAM-PNNL","No IRA","Primary Energy|Oil","Quads",2025,"Oil",31.475935666
+1.3,"GCAM-PNNL","No IRA","Primary Energy|Oil","Quads",2030,"Oil",28.765616264
+1.3,"GCAM-PNNL","No IRA","Primary Energy|Oil","Quads",2035,"Oil",25.73532906
+1.3,"MARKAL-NETL","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"MARKAL-NETL","IRA","Primary Energy|Oil","Quads",2025,"Oil",36.353124346798
+1.3,"MARKAL-NETL","IRA","Primary Energy|Oil","Quads",2030,"Oil",35.896031598896
+1.3,"MARKAL-NETL","IRA","Primary Energy|Oil","Quads",2035,"Oil",35.448199691058
+1.3,"MARKAL-NETL","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"MARKAL-NETL","No IRA","Primary Energy|Oil","Quads",2025,"Oil",36.385172763142
+1.3,"MARKAL-NETL","No IRA","Primary Energy|Oil","Quads",2030,"Oil",35.927441036914
+1.3,"MARKAL-NETL","No IRA","Primary Energy|Oil","Quads",2035,"Oil",35.478799139196
+1.3,"NEMS-RHG","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"NEMS-RHG","IRA","Primary Energy|Oil","Quads",2025,"Oil",36.84960737836
+1.3,"NEMS-RHG","IRA","Primary Energy|Oil","Quads",2030,"Oil",34.781399738638
+1.3,"NEMS-RHG","IRA","Primary Energy|Oil","Quads",2035,"Oil",32.927483224398
+1.3,"NEMS-RHG","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"NEMS-RHG","No IRA","Primary Energy|Oil","Quads",2025,"Oil",36.828466756228
+1.3,"NEMS-RHG","No IRA","Primary Energy|Oil","Quads",2030,"Oil",35.154885987004
+1.3,"NEMS-RHG","No IRA","Primary Energy|Oil","Quads",2035,"Oil",33.686250513972
+1.3,"OP-NEMS","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"OP-NEMS","IRA","Primary Energy|Oil","Quads",2022,"Oil",35.1463344281983
+1.3,"OP-NEMS","IRA","Primary Energy|Oil","Quads",2023,"Oil",35.566834471182
+1.3,"OP-NEMS","IRA","Primary Energy|Oil","Quads",2024,"Oil",35.3174556317965
+1.3,"OP-NEMS","IRA","Primary Energy|Oil","Quads",2025,"Oil",35.1928272118199
+1.3,"OP-NEMS","IRA","Primary Energy|Oil","Quads",2026,"Oil",34.8281369090965
+1.3,"OP-NEMS","IRA","Primary Energy|Oil","Quads",2027,"Oil",34.3017273590179
+1.3,"OP-NEMS","IRA","Primary Energy|Oil","Quads",2028,"Oil",33.7959457129366
+1.3,"OP-NEMS","IRA","Primary Energy|Oil","Quads",2029,"Oil",33.1880035423127
+1.3,"OP-NEMS","IRA","Primary Energy|Oil","Quads",2030,"Oil",32.6090662366994
+1.3,"OP-NEMS","IRA","Primary Energy|Oil","Quads",2031,"Oil",32.015636998532
+1.3,"OP-NEMS","IRA","Primary Energy|Oil","Quads",2032,"Oil",31.4811924858483
+1.3,"OP-NEMS","IRA","Primary Energy|Oil","Quads",2033,"Oil",31.0329755718595
+1.3,"OP-NEMS","IRA","Primary Energy|Oil","Quads",2034,"Oil",30.5244789384139
+1.3,"OP-NEMS","IRA","Primary Energy|Oil","Quads",2035,"Oil",30.1136108506028
+1.3,"OP-NEMS","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"OP-NEMS","No IRA","Primary Energy|Oil","Quads",2022,"Oil",35.1553823860889
+1.3,"OP-NEMS","No IRA","Primary Energy|Oil","Quads",2023,"Oil",35.5859403822627
+1.3,"OP-NEMS","No IRA","Primary Energy|Oil","Quads",2024,"Oil",35.4096412027629
+1.3,"OP-NEMS","No IRA","Primary Energy|Oil","Quads",2025,"Oil",35.3330125593942
+1.3,"OP-NEMS","No IRA","Primary Energy|Oil","Quads",2026,"Oil",35.1205815480528
+1.3,"OP-NEMS","No IRA","Primary Energy|Oil","Quads",2027,"Oil",34.8083400012317
+1.3,"OP-NEMS","No IRA","Primary Energy|Oil","Quads",2028,"Oil",34.551527196444
+1.3,"OP-NEMS","No IRA","Primary Energy|Oil","Quads",2029,"Oil",34.237363658568
+1.3,"OP-NEMS","No IRA","Primary Energy|Oil","Quads",2030,"Oil",33.9845838350107
+1.3,"OP-NEMS","No IRA","Primary Energy|Oil","Quads",2031,"Oil",33.7255600405131
+1.3,"OP-NEMS","No IRA","Primary Energy|Oil","Quads",2032,"Oil",33.5541218383902
+1.3,"OP-NEMS","No IRA","Primary Energy|Oil","Quads",2033,"Oil",33.3150629509754
+1.3,"OP-NEMS","No IRA","Primary Energy|Oil","Quads",2034,"Oil",33.0134903545008
+1.3,"OP-NEMS","No IRA","Primary Energy|Oil","Quads",2035,"Oil",32.7067197822177
+1.3,"REGEN-EPRI","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"REGEN-EPRI","IRA","Primary Energy|Oil","Quads",2025,"Oil",30.839442936022
+1.3,"REGEN-EPRI","IRA","Primary Energy|Oil","Quads",2030,"Oil",27.43950435828
+1.3,"REGEN-EPRI","IRA","Primary Energy|Oil","Quads",2035,"Oil",24.019566129524
+1.3,"REGEN-EPRI","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"REGEN-EPRI","No IRA","Primary Energy|Oil","Quads",2025,"Oil",30.90944167192
+1.3,"REGEN-EPRI","No IRA","Primary Energy|Oil","Quads",2030,"Oil",27.869496584958
+1.3,"REGEN-EPRI","No IRA","Primary Energy|Oil","Quads",2035,"Oil",24.819551677228
+1.3,"USREP-ReEDS","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"USREP-ReEDS","IRA","Primary Energy|Oil","Quads",2025,"Oil",34.924638345226
+1.3,"USREP-ReEDS","IRA","Primary Energy|Oil","Quads",2030,"Oil",32.78779374969
+1.3,"USREP-ReEDS","IRA","Primary Energy|Oil","Quads",2035,"Oil",30.860427028984
+1.3,"USREP-ReEDS","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.3,"USREP-ReEDS","No IRA","Primary Energy|Oil","Quads",2025,"Oil",34.790376115488
+1.3,"USREP-ReEDS","No IRA","Primary Energy|Oil","Quads",2030,"Oil",33.082136176908
+1.3,"USREP-ReEDS","No IRA","Primary Energy|Oil","Quads",2035,"Oil",31.724095116518

@@ -191,7 +191,7 @@ sens_dot_plot = function(dta, title, far_left = FALSE, single = FALSE, ymin = 0,
 
   if (far_left) {
     stats = dta %>%
-      mutate(scenario = case_when(scenario == "Core" ~ "IRA", TRUE ~ scenario)) %>%
+      mutate(scenario = case_when(scenario == "Mod" ~ "IRA", TRUE ~ scenario)) %>%
       group_by(year, stagger, scenario) %>%
       summarize(median = median(value))
     if (single) {
@@ -210,7 +210,7 @@ sens_dot_plot = function(dta, title, far_left = FALSE, single = FALSE, ymin = 0,
       dta$stagger = 0
     }
     stats = dta %>%
-      mutate(scenario = case_when(scenario == "Core" ~ "IRA", TRUE ~ scenario)) %>%
+      mutate(scenario = case_when(scenario == "Mod" ~ "IRA", TRUE ~ scenario)) %>%
       group_by(year, stagger) %>%
       summarize(median = median(value))
     segment_code = geom_segment(aes(x = year, xend = year, y = -5000, yend = -5000))
@@ -255,7 +255,7 @@ sens_dot_plot = function(dta, title, far_left = FALSE, single = FALSE, ymin = 0,
   if(sum(ira_coord) != 0) {
     p = p +
       annotate("text", x = ira_coord[1], y = ira_coord[2], size = 2,
-               label = "Core", color = "black", alpha = 1, hjust = -0.2)
+               label = "Moderate", color = "black", alpha = 1, hjust = -0.2)
   }
   if(sum(low_coord) != 0) {
     p = p +
