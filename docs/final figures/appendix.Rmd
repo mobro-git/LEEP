@@ -38,7 +38,7 @@ subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
 ```{r}
 tab_a1 = summary_tables(
-  table_no = "A1",
+  table_no = "A1. Economy-Wide Emissions",
   var = "Emissions|CO2",
   suffix = "Economy-wide emissions",
   drop_mod = c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
@@ -47,11 +47,38 @@ tab_a1 = summary_tables(
 )
 
 tab_a2 = summary_tables(
-  table_no = "A2",
+  table_no = "A2 Power Sector Emissions",
   var = "Emissions|CO2|Energy|Supply|Electricity",
   suffix = "Power sector emissions",
   drop_mod = c("Scout-LEEP"),
   drop_datasrc = c("ReEDS_compiled.csv"), # remove duplicate values for ReEDS-NREL - basically same values
+  data = clean_data,
+  config = config
+)
+
+tab_a3 = summary_tables(
+  table_no = "A3 Transportation Emissions",
+  var = "Emissions|CO2|Energy|Demand|Transportation|Total",
+  suffix = "Transportation emissions",
+  drop_mod = c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+  data = clean_data,
+  config = config
+)
+
+tab_a4 = summary_tables(
+  table_no = "A4 Buildings Emissions",
+  var = "Emissions|CO2|Energy|Demand|Buildings|Total",
+  suffix = "Buildings emissions",
+  drop_mod = c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Haiku-RFF"),
+  data = clean_data,
+  config = config
+)
+
+tab_a5 = summary_tables(
+  table_no = "A5 Industry Emissions",
+  var = "Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total",
+  suffix = "Industry emissions",
+  drop_mod = c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
   data = clean_data,
   config = config
 )

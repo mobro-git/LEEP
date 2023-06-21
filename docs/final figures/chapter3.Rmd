@@ -89,7 +89,7 @@ TranSpg = spg(
   "",
   expression(paste("Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "USREP-ReEDS"),
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
   0,
   2500,
   c(0, 500, 1000, 1500, 2000, 2500),

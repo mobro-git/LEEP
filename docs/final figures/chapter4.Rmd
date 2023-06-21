@@ -71,7 +71,7 @@ TotSpg = spg(
   expression(paste("Total Building C", O[2])),
   expression(paste("Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Haiku-RFF"),
   0,
   2500,
   c(0, 500, 1000, 1500, 2000, 2500),
@@ -81,6 +81,7 @@ TotSpg = spg(
   annotate("text", x = 2022.5, y = 1000, label = "IRA", color = "#0388B3")
 
 TotDot = dotted(TotSpg$data, TotSpg, "median", 0, 2500)
+TotDot
 
 TotTab = html(TotSpg$data, "Total Building CO<sub>2<sub>")
 
