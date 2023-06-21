@@ -371,7 +371,7 @@ ad = function(diff_ID, title, yname, gd, drop) {
               ad_df = df))
 }
 
-four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit) {
+four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no) {
   if (metric == "Generation") {
     clean_data = clean_data %>%
       mutate(value = case_when(unit == "Quads" ~ value * 293.07, TRUE ~ value),
@@ -403,7 +403,8 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
                  names_to = "year",
                  values_to = "value") %>%
     filter(!is.na(value)) %>%
-    mutate(year = as.numeric(year))
+    mutate(year = as.numeric(year)) %>%
+    mutate(figure_num = fig_no)
 
   noIRAmedians = ts_df[ts_df$scenario == "No IRA",] %>%
     filter(year == 2030 | year == 2035) %>%
@@ -455,9 +456,11 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
 
   #Percent Difference
   pdfigure = pd(pd_map_ID, "", expression(paste("Percent Difference (%)")), "none", drop)
+  pdfigure$pd_df = pdfigure$pd_df %>% mutate(figure_num = fig_no)
 
   #Absolute Difference
   adfigure = ad(diff_ID = ad_map_ID, "", paste0("Absolute Difference (",unit,")"), "none", drop)
+  adfigure$ad_df = adfigure$ad_df %>% mutate(figure_num = fig_no)
 
   figure = (NoIRAfigure | IRAfigure) / (adfigure$figure | pdfigure$figure)+
     plot_layout(guides = "collect") +

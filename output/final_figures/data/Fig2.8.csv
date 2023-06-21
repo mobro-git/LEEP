@@ -1,47 +1,47 @@
-"model","scenario","unit","year","datasrc","variable","region","value","alpha","figure_type","figure_no","title_name","variable_rename","flip_sign","regions","models","years","scenarios","type","x","y","facet1","facet2","color","page_filter","scales"
-"EPS-EI","IRA","Mt SO2/yr",2025,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.596256,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPS-EI","IRA","Mt SO2/yr",2030,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.216455,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPS-EI","IRA","Mt SO2/yr",2035,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.0455129,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPS-EI","No IRA","Mt SO2/yr",2025,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.723582,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPS-EI","No IRA","Mt SO2/yr",2030,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.536509,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPS-EI","No IRA","Mt SO2/yr",2035,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.5132,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"Haiku-RFF","IRA","Mt SO2/yr",2025,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.903000768,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"Haiku-RFF","IRA","Mt SO2/yr",2030,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.586614077,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"Haiku-RFF","IRA","Mt SO2/yr",2035,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.500989803,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"Haiku-RFF","No IRA","Mt SO2/yr",2025,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",1.070577128,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"Haiku-RFF","No IRA","Mt SO2/yr",2030,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.88868763,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"Haiku-RFF","No IRA","Mt SO2/yr",2035,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.816036982,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"IPM-NRDC","IRA","Mt SO2/yr",2025,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.602531702,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"IPM-NRDC","IRA","Mt SO2/yr",2030,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.322195296,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"IPM-NRDC","IRA","Mt SO2/yr",2035,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.213345413,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"IPM-NRDC","No IRA","Mt SO2/yr",2025,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.544366269,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"IPM-NRDC","No IRA","Mt SO2/yr",2030,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.402946093,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"IPM-NRDC","No IRA","Mt SO2/yr",2035,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.363002875,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"REGEN-EPRI","IRA","Mt SO2/yr",2025,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.66866,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"REGEN-EPRI","IRA","Mt SO2/yr",2030,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.52376,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"REGEN-EPRI","IRA","Mt SO2/yr",2035,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.434,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"REGEN-EPRI","No IRA","Mt SO2/yr",2025,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.708051148,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"REGEN-EPRI","No IRA","Mt SO2/yr",2030,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.529466651,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"REGEN-EPRI","No IRA","Mt SO2/yr",2035,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.487573859,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPS-EI","IRA","Mt SO2/yr",2021,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.854566186196055,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPS-EI","No IRA","Mt SO2/yr",2021,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.854566186196055,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"Haiku-RFF","IRA","Mt SO2/yr",2021,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.854566186196055,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"Haiku-RFF","No IRA","Mt SO2/yr",2021,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.854566186196055,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"IPM-NRDC","IRA","Mt SO2/yr",2021,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.854566186196055,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"IPM-NRDC","No IRA","Mt SO2/yr",2021,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.854566186196055,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"REGEN-EPRI","IRA","Mt SO2/yr",2021,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.854566186196055,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"REGEN-EPRI","No IRA","Mt SO2/yr",2021,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.854566186196055,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"ReEDS-NREL","IRA","Mt SO2/yr",2021,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.854566186196055,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"ReEDS-NREL","No IRA","Mt SO2/yr",2021,"bistline_ira_tall.csv","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.854566186196055,0.8,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt SO2/yr",2010,"EPA-nonco2.xlsx","Emissions|Sulfur|Energy|Supply|Electricity","United States",4.68860322126717,1,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt SO2/yr",2011,"EPA-nonco2.xlsx","Emissions|Sulfur|Energy|Supply|Electricity","United States",4.12385210218809,1,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt SO2/yr",2012,"EPA-nonco2.xlsx","Emissions|Sulfur|Energy|Supply|Electricity","United States",3.01342771056813,1,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt SO2/yr",2013,"EPA-nonco2.xlsx","Emissions|Sulfur|Energy|Supply|Electricity","United States",2.94427775076035,1,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt SO2/yr",2014,"EPA-nonco2.xlsx","Emissions|Sulfur|Energy|Supply|Electricity","United States",2.86563540264522,1,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt SO2/yr",2015,"EPA-nonco2.xlsx","Emissions|Sulfur|Energy|Supply|Electricity","United States",2.01157706768402,1,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt SO2/yr",2016,"EPA-nonco2.xlsx","Emissions|Sulfur|Energy|Supply|Electricity","United States",1.35257824947906,1,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt SO2/yr",2017,"EPA-nonco2.xlsx","Emissions|Sulfur|Energy|Supply|Electricity","United States",1.21397634884225,1,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt SO2/yr",2018,"EPA-nonco2.xlsx","Emissions|Sulfur|Energy|Supply|Electricity","United States",1.14714181817521,1,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt SO2/yr",2019,"EPA-nonco2.xlsx","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.879248868418575,1,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt SO2/yr",2020,"EPA-nonco2.xlsx","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.71414260364814,1,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt SO2/yr",2021,"EPA-nonco2.xlsx","Emissions|Sulfur|Energy|Supply|Electricity","United States",0.854566186196055,1,"timeseries",123,"Sox","Sox",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
+"figure_num","model","scenario","variable","unit","year","variable_rename","value"
+2.8,"EPS-EI","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2025,"Sox",0.596256
+2.8,"EPS-EI","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2030,"Sox",0.216455
+2.8,"EPS-EI","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2035,"Sox",0.0455129
+2.8,"EPS-EI","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2025,"Sox",0.723582
+2.8,"EPS-EI","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2030,"Sox",0.536509
+2.8,"EPS-EI","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2035,"Sox",0.5132
+2.8,"Haiku-RFF","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2025,"Sox",0.903000768
+2.8,"Haiku-RFF","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2030,"Sox",0.586614077
+2.8,"Haiku-RFF","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2035,"Sox",0.500989803
+2.8,"Haiku-RFF","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2025,"Sox",1.070577128
+2.8,"Haiku-RFF","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2030,"Sox",0.88868763
+2.8,"Haiku-RFF","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2035,"Sox",0.816036982
+2.8,"IPM-NRDC","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2025,"Sox",0.602531702
+2.8,"IPM-NRDC","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2030,"Sox",0.322195296
+2.8,"IPM-NRDC","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2035,"Sox",0.213345413
+2.8,"IPM-NRDC","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2025,"Sox",0.544366269
+2.8,"IPM-NRDC","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2030,"Sox",0.402946093
+2.8,"IPM-NRDC","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2035,"Sox",0.363002875
+2.8,"REGEN-EPRI","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2025,"Sox",0.66866
+2.8,"REGEN-EPRI","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2030,"Sox",0.52376
+2.8,"REGEN-EPRI","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2035,"Sox",0.434
+2.8,"REGEN-EPRI","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2025,"Sox",0.708051148
+2.8,"REGEN-EPRI","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2030,"Sox",0.529466651
+2.8,"REGEN-EPRI","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2035,"Sox",0.487573859
+2.8,"EPS-EI","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2021,"Sox",0.854566186196055
+2.8,"EPS-EI","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2021,"Sox",0.854566186196055
+2.8,"Haiku-RFF","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2021,"Sox",0.854566186196055
+2.8,"Haiku-RFF","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2021,"Sox",0.854566186196055
+2.8,"IPM-NRDC","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2021,"Sox",0.854566186196055
+2.8,"IPM-NRDC","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2021,"Sox",0.854566186196055
+2.8,"REGEN-EPRI","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2021,"Sox",0.854566186196055
+2.8,"REGEN-EPRI","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2021,"Sox",0.854566186196055
+2.8,"ReEDS-NREL","IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2021,"Sox",0.854566186196055
+2.8,"ReEDS-NREL","No IRA","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2021,"Sox",0.854566186196055
+2.8,"EPA","Historic","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2010,"Sox",4.68860322126717
+2.8,"EPA","Historic","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2011,"Sox",4.12385210218809
+2.8,"EPA","Historic","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2012,"Sox",3.01342771056813
+2.8,"EPA","Historic","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2013,"Sox",2.94427775076035
+2.8,"EPA","Historic","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2014,"Sox",2.86563540264522
+2.8,"EPA","Historic","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2015,"Sox",2.01157706768402
+2.8,"EPA","Historic","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2016,"Sox",1.35257824947906
+2.8,"EPA","Historic","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2017,"Sox",1.21397634884225
+2.8,"EPA","Historic","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2018,"Sox",1.14714181817521
+2.8,"EPA","Historic","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2019,"Sox",0.879248868418575
+2.8,"EPA","Historic","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2020,"Sox",0.71414260364814
+2.8,"EPA","Historic","Emissions|Sulfur|Energy|Supply|Electricity","Mt SO2/yr",2021,"Sox",0.854566186196055

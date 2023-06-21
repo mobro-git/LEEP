@@ -256,6 +256,9 @@ sens_dta_econ = clean_data %>% filter(variable == "Emissions|CO2|Energy",
     scenario == "IRA.Low" ~ -0.7,
     scenario == "IRA.High" ~ 0.7,
     TRUE ~ 0
+  )) %>% mutate(scenario = case_when(
+    scenario == "Core" ~ "Mod",
+    TRUE ~ scenario
   ))
 
 sens_dta_econ_panel2 = clean_data %>% filter(variable == "Emissions|CO2|Energy",

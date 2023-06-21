@@ -1,74 +1,68 @@
-"model","scenario","unit","year","datasrc","variable","region","value","stagger"
-"EPS-EI","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",602.7,0
-"EPS-EI","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",336.702,0
-"EPS-EI","IRA.High","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",339.282,0.7
-"EPS-EI","IRA.High","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",308.897,0.7
-"EPS-EI","IRA.Low","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",669.569,-0.7
-"EPS-EI","IRA.Low","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",385.676,-0.7
-"GCAM-CGS","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",679.6590548,0
-"GCAM-CGS","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",445.5802983,0
-"GCAM-CGS","IRA.High","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",594.2729955,0.7
-"GCAM-CGS","IRA.High","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",437.1385189,0.7
-"GCAM-CGS","IRA.Low","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",763.1521786,-0.7
-"GCAM-CGS","IRA.Low","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",445.8541138,-0.7
-"REGEN-EPRI","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",999.6662542,0
-"REGEN-EPRI","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",500.0375196,0
-"REGEN-EPRI","IRA.High","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1062.419276,0.7
-"REGEN-EPRI","IRA.High","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",309.2126285,0.7
-"REGEN-EPRI","IRA.Low","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1155.621161,-0.7
-"REGEN-EPRI","IRA.Low","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",950.8940704,-0.7
-"RIO-REPEAT","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",741,0
-"RIO-REPEAT","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",370,0
-"RIO-REPEAT","IRA.High","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",676,0.7
-"RIO-REPEAT","IRA.High","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",324,0.7
-"RIO-REPEAT","IRA.Low","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",694,-0.7
-"RIO-REPEAT","IRA.Low","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",337,-0.7
-"ReEDS-NREL","IRA","Mt CO2/yr",2030,"ReEDS_compiled.csv","Emissions|CO2|Energy|Supply|Electricity","usa",387.6,0
-"ReEDS-NREL","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",413.5135248,0
-"ReEDS-NREL","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",323.383785,0
-"ReEDS-NREL","IRA.High","Mt CO2/yr",2030,"ReEDS_compiled.csv","Emissions|CO2|Energy|Supply|Electricity","usa",332.8,0.7
-"ReEDS-NREL","IRA.High","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",214.7667856,0.7
-"ReEDS-NREL","IRA.High","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",185.874065,0.7
-"ReEDS-NREL","IRA.Low","Mt CO2/yr",2030,"ReEDS_compiled.csv","Emissions|CO2|Energy|Supply|Electricity","usa",463.9,-0.7
-"ReEDS-NREL","IRA.Low","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",928.6052158,-0.7
-"ReEDS-NREL","IRA.Low","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",717.7869986,-0.7
-"USREP-ReEDS","IRA","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",616.834498,0
-"USREP-ReEDS","IRA","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",488.0122266,0
-"USREP-ReEDS","IRA.High","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",610.5185662,0.7
-"USREP-ReEDS","IRA.High","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",488.6738995,0.7
-"USREP-ReEDS","IRA.Low","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",698.2013332,-0.7
-"USREP-ReEDS","IRA.Low","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",577.0663645,-0.7
-"GCAM-PNNL","High","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",807.812995908823,NA
-"GCAM-PNNL","High","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",770.432353034743,NA
-"GCAM-PNNL","Core","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",799.78330510876,NA
-"GCAM-PNNL","Core","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",760.427730385201,NA
-"GCAM-PNNL","Low","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",790.765301001253,NA
-"GCAM-PNNL","Low","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",749.208734487113,NA
-"GCAM-PNNL","High","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",753.340431308477,-0.4
-"GCAM-PNNL","High","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",714.763896736432,-0.4
-"GCAM-PNNL","Core","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",799.78330510876,-0.4
-"GCAM-PNNL","Core","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",760.427730385201,-0.4
-"GCAM-PNNL","Low","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",805.447523533529,-0.4
-"GCAM-PNNL","Low","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",768.118712875634,-0.4
-"ReEDS-NREL","Core","Mt CO2/yr",2030,"ReEDS_compiled.csv","Emissions|CO2|Energy|Supply|Electricity","usa",387.6,0.4
-"ReEDS-NREL","High","Mt CO2/yr",2030,"ReEDS_compiled.csv","Emissions|CO2|Energy|Supply|Electricity","usa",326.4,0.4
-"ReEDS-NREL","Low","Mt CO2/yr",2030,"ReEDS_compiled.csv","Emissions|CO2|Energy|Supply|Electricity","usa",513.5,0.4
-"ReEDS-NREL","Adv Renew","Mt CO2/yr",2030,"ReEDS_compiled.csv","Emissions|CO2|Energy|Supply|Electricity","usa",227.9,0.4
-"ReEDS-NREL","All-Adv","Mt CO2/yr",2030,"ReEDS_compiled.csv","Emissions|CO2|Energy|Supply|Electricity","usa",225.2,0.4
-"ReEDS-NREL","Cons Renew","Mt CO2/yr",2030,"ReEDS_compiled.csv","Emissions|CO2|Energy|Supply|Electricity","usa",617.7,0.4
-"ReEDS-NREL","Constr","Mt CO2/yr",2030,"ReEDS_compiled.csv","Emissions|CO2|Energy|Supply|Electricity","usa",664.2,0.4
-"ReEDS-NREL","Core","Mt CO2/yr",2030,"ReEDS_compiled.csv","Emissions|CO2|Energy|Supply|Electricity","usa",387.6,0.4
-"USREP-ReEDS","All-Adv","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",432.2378221,-0.4
-"USREP-ReEDS","All-Adv","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",294.1613104,-0.4
-"USREP-ReEDS","Core","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",616.834498,-0.4
-"USREP-ReEDS","Core","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",488.0122266,-0.4
-"OP-NEMS","Core","Mt CO2/yr",2030,"OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",692.679688,-0.4
-"OP-NEMS","Core","Mt CO2/yr",2035,"OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",429.997345,-0.4
-"OP-NEMS","Opt-Adv","Mt CO2/yr",2030,"OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",421.542023,-0.4
-"OP-NEMS","Opt-Adv","Mt CO2/yr",2035,"OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",276.458832,-0.4
-"USREP-ReEDS","Core","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",616.834498,0.4
-"USREP-ReEDS","Core","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",488.0122266,0.4
-"USREP-ReEDS","Opt-Adv","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",394.8322234,0.4
-"USREP-ReEDS","Opt-Adv","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",276.5247851,0.4
-"USREP-ReEDS","Pess-Adv","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",484.0228703,0.4
-"USREP-ReEDS","Pess-Adv","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",352.3706364,0.4
+"model","scenario","unit","year","variable","region","value","figure_num"
+"EPS-EI","IRA","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",602.7,2.6
+"EPS-EI","IRA","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",336.702,2.6
+"EPS-EI","IRA.High","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",339.282,2.6
+"EPS-EI","IRA.High","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",308.897,2.6
+"EPS-EI","IRA.Low","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",669.569,2.6
+"EPS-EI","IRA.Low","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",385.676,2.6
+"GCAM-CGS","IRA","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",679.6590548,2.6
+"GCAM-CGS","IRA","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",445.5802983,2.6
+"GCAM-CGS","IRA.High","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",594.2729955,2.6
+"GCAM-CGS","IRA.High","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",437.1385189,2.6
+"GCAM-CGS","IRA.Low","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",763.1521786,2.6
+"GCAM-CGS","IRA.Low","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",445.8541138,2.6
+"REGEN-EPRI","IRA","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",999.6662542,2.6
+"REGEN-EPRI","IRA","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",500.0375196,2.6
+"REGEN-EPRI","IRA.High","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",1062.419276,2.6
+"REGEN-EPRI","IRA.High","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",309.2126285,2.6
+"REGEN-EPRI","IRA.Low","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",1155.621161,2.6
+"REGEN-EPRI","IRA.Low","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",950.8940704,2.6
+"RIO-REPEAT","IRA","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",741,2.6
+"RIO-REPEAT","IRA","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",370,2.6
+"RIO-REPEAT","IRA.High","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",676,2.6
+"RIO-REPEAT","IRA.High","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",324,2.6
+"RIO-REPEAT","IRA.Low","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",694,2.6
+"RIO-REPEAT","IRA.Low","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",337,2.6
+"ReEDS-NREL","IRA","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","usa",387.6,2.6
+"ReEDS-NREL","IRA.High","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","usa",332.8,2.6
+"ReEDS-NREL","IRA.Low","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","usa",463.9,2.6
+"USREP-ReEDS","IRA","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",616.834498,2.6
+"USREP-ReEDS","IRA","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",488.0122266,2.6
+"USREP-ReEDS","IRA.High","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",610.5185662,2.6
+"USREP-ReEDS","IRA.High","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",488.6738995,2.6
+"USREP-ReEDS","IRA.Low","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",698.2013332,2.6
+"USREP-ReEDS","IRA.Low","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",577.0663645,2.6
+"GCAM-PNNL","High","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",807.812995908823,2.6
+"GCAM-PNNL","High","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",770.432353034743,2.6
+"GCAM-PNNL","Mod","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",799.78330510876,2.6
+"GCAM-PNNL","Mod","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",760.427730385201,2.6
+"GCAM-PNNL","Low","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",790.765301001253,2.6
+"GCAM-PNNL","Low","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",749.208734487113,2.6
+"GCAM-PNNL","High","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",753.340431308477,2.6
+"GCAM-PNNL","High","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",714.763896736432,2.6
+"GCAM-PNNL","Mod","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",799.78330510876,2.6
+"GCAM-PNNL","Mod","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",760.427730385201,2.6
+"GCAM-PNNL","Low","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",805.447523533529,2.6
+"GCAM-PNNL","Low","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",768.118712875634,2.6
+"ReEDS-NREL","Core","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","usa",387.6,2.6
+"ReEDS-NREL","High","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","usa",326.4,2.6
+"ReEDS-NREL","Low","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","usa",513.5,2.6
+"ReEDS-NREL","Adv Renew","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","usa",227.9,2.6
+"ReEDS-NREL","All-Adv","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","usa",225.2,2.6
+"ReEDS-NREL","Cons Renew","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","usa",617.7,2.6
+"ReEDS-NREL","Constr","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","usa",664.2,2.6
+"ReEDS-NREL","Core","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","usa",387.6,2.6
+"USREP-ReEDS","All-Adv","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",432.2378221,2.6
+"USREP-ReEDS","All-Adv","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",294.1613104,2.6
+"USREP-ReEDS","Mod","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",616.834498,2.6
+"USREP-ReEDS","Mod","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",488.0122266,2.6
+"OP-NEMS","Mod","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",692.679688,2.6
+"OP-NEMS","Mod","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",429.997345,2.6
+"OP-NEMS","Opt-Adv","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",421.542023,2.6
+"OP-NEMS","Opt-Adv","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",276.458832,2.6
+"USREP-ReEDS","Mod","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",616.834498,2.6
+"USREP-ReEDS","Mod","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",488.0122266,2.6
+"USREP-ReEDS","Opt-Adv","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",394.8322234,2.6
+"USREP-ReEDS","Opt-Adv","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",276.5247851,2.6
+"USREP-ReEDS","Pess-Adv","Mt CO2/yr",2030,"Emissions|CO2|Energy|Supply|Electricity","United States",484.0228703,2.6
+"USREP-ReEDS","Pess-Adv","Mt CO2/yr",2035,"Emissions|CO2|Energy|Supply|Electricity","United States",352.3706364,2.6

@@ -1,47 +1,47 @@
-"model","scenario","unit","year","datasrc","variable","region","value","alpha","figure_type","figure_no","title_name","variable_rename","flip_sign","regions","models","years","scenarios","type","x","y","facet1","facet2","color","page_filter","scales"
-"EPS-EI","IRA","Mt NOx/yr",2025,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.586022,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPS-EI","IRA","Mt NOx/yr",2030,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.268164,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPS-EI","IRA","Mt NOx/yr",2035,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.125015,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPS-EI","No IRA","Mt NOx/yr",2025,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.721639,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPS-EI","No IRA","Mt NOx/yr",2030,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.595847,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPS-EI","No IRA","Mt NOx/yr",2035,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.585692,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"Haiku-RFF","IRA","Mt NOx/yr",2025,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.789013988,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"Haiku-RFF","IRA","Mt NOx/yr",2030,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.558237008,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"Haiku-RFF","IRA","Mt NOx/yr",2035,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.504936998,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"Haiku-RFF","No IRA","Mt NOx/yr",2025,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.905279825,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"Haiku-RFF","No IRA","Mt NOx/yr",2030,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.79281191,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"Haiku-RFF","No IRA","Mt NOx/yr",2035,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.717399725,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"IPM-NRDC","IRA","Mt NOx/yr",2025,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.403377994,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"IPM-NRDC","IRA","Mt NOx/yr",2030,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.28789036,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"IPM-NRDC","IRA","Mt NOx/yr",2035,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.258866439,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"IPM-NRDC","No IRA","Mt NOx/yr",2025,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.359421392,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"IPM-NRDC","No IRA","Mt NOx/yr",2030,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.304093494,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"IPM-NRDC","No IRA","Mt NOx/yr",2035,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.280166325,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"REGEN-EPRI","IRA","Mt NOx/yr",2025,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.73751,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"REGEN-EPRI","IRA","Mt NOx/yr",2030,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.53953,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"REGEN-EPRI","IRA","Mt NOx/yr",2035,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.40888,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"REGEN-EPRI","No IRA","Mt NOx/yr",2025,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.781868151,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"REGEN-EPRI","No IRA","Mt NOx/yr",2030,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.620457331,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"REGEN-EPRI","No IRA","Mt NOx/yr",2035,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.56865182,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPS-EI","IRA","Mt NOx/yr",2021,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.709374053734515,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPS-EI","No IRA","Mt NOx/yr",2021,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.709374053734515,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"Haiku-RFF","IRA","Mt NOx/yr",2021,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.709374053734515,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"Haiku-RFF","No IRA","Mt NOx/yr",2021,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.709374053734515,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"IPM-NRDC","IRA","Mt NOx/yr",2021,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.709374053734515,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"IPM-NRDC","No IRA","Mt NOx/yr",2021,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.709374053734515,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"REGEN-EPRI","IRA","Mt NOx/yr",2021,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.709374053734515,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"REGEN-EPRI","No IRA","Mt NOx/yr",2021,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.709374053734515,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"ReEDS-NREL","IRA","Mt NOx/yr",2021,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.709374053734515,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"ReEDS-NREL","No IRA","Mt NOx/yr",2021,"bistline_ira_tall.csv","Emissions|NOx|Energy|Supply|Electricity","United States",0.709374053734515,0.8,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt NOx/yr",2010,"EPA-nonco2.xlsx","Emissions|NOx|Energy|Supply|Electricity","United States",1.909625175242,1,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt NOx/yr",2011,"EPA-nonco2.xlsx","Emissions|NOx|Energy|Supply|Electricity","United States",1.7935801683609,1,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt NOx/yr",2012,"EPA-nonco2.xlsx","Emissions|NOx|Energy|Supply|Electricity","United States",1.55658886537589,1,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt NOx/yr",2013,"EPA-nonco2.xlsx","Emissions|NOx|Energy|Supply|Electricity","United States",1.56551403807635,1,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt NOx/yr",2014,"EPA-nonco2.xlsx","Emissions|NOx|Energy|Supply|Electricity","United States",1.51285729577474,1,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt NOx/yr",2015,"EPA-nonco2.xlsx","Emissions|NOx|Energy|Supply|Electricity","United States",1.25472422780172,1,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt NOx/yr",2016,"EPA-nonco2.xlsx","Emissions|NOx|Energy|Supply|Electricity","United States",1.09286347361426,1,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt NOx/yr",2017,"EPA-nonco2.xlsx","Emissions|NOx|Energy|Supply|Electricity","United States",0.96819509089539,1,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt NOx/yr",2018,"EPA-nonco2.xlsx","Emissions|NOx|Energy|Supply|Electricity","United States",0.93286098810894,1,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt NOx/yr",2019,"EPA-nonco2.xlsx","Emissions|NOx|Energy|Supply|Electricity","United States",0.80048419547805,1,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt NOx/yr",2020,"EPA-nonco2.xlsx","Emissions|NOx|Energy|Supply|Electricity","United States",0.671493758437305,1,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
-"EPA","Historic","Mt NOx/yr",2021,"EPA-nonco2.xlsx","Emissions|NOx|Energy|Supply|Electricity","United States",0.709374053734515,1,"timeseries",122,"Nox","NOx",0,"usa","models_leep","historic","hist_mod_scenarios2","single","year","value",NA,NA,"scenario","region","fixed"
+"figure_num","model","scenario","variable","unit","year","variable_rename","value"
+2.7,"EPS-EI","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2025,"NOx",0.586022
+2.7,"EPS-EI","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2030,"NOx",0.268164
+2.7,"EPS-EI","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2035,"NOx",0.125015
+2.7,"EPS-EI","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2025,"NOx",0.721639
+2.7,"EPS-EI","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2030,"NOx",0.595847
+2.7,"EPS-EI","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2035,"NOx",0.585692
+2.7,"Haiku-RFF","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2025,"NOx",0.789013988
+2.7,"Haiku-RFF","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2030,"NOx",0.558237008
+2.7,"Haiku-RFF","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2035,"NOx",0.504936998
+2.7,"Haiku-RFF","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2025,"NOx",0.905279825
+2.7,"Haiku-RFF","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2030,"NOx",0.79281191
+2.7,"Haiku-RFF","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2035,"NOx",0.717399725
+2.7,"IPM-NRDC","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2025,"NOx",0.403377994
+2.7,"IPM-NRDC","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2030,"NOx",0.28789036
+2.7,"IPM-NRDC","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2035,"NOx",0.258866439
+2.7,"IPM-NRDC","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2025,"NOx",0.359421392
+2.7,"IPM-NRDC","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2030,"NOx",0.304093494
+2.7,"IPM-NRDC","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2035,"NOx",0.280166325
+2.7,"REGEN-EPRI","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2025,"NOx",0.73751
+2.7,"REGEN-EPRI","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2030,"NOx",0.53953
+2.7,"REGEN-EPRI","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2035,"NOx",0.40888
+2.7,"REGEN-EPRI","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2025,"NOx",0.781868151
+2.7,"REGEN-EPRI","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2030,"NOx",0.620457331
+2.7,"REGEN-EPRI","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2035,"NOx",0.56865182
+2.7,"EPS-EI","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2021,"NOx",0.709374053734515
+2.7,"EPS-EI","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2021,"NOx",0.709374053734515
+2.7,"Haiku-RFF","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2021,"NOx",0.709374053734515
+2.7,"Haiku-RFF","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2021,"NOx",0.709374053734515
+2.7,"IPM-NRDC","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2021,"NOx",0.709374053734515
+2.7,"IPM-NRDC","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2021,"NOx",0.709374053734515
+2.7,"REGEN-EPRI","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2021,"NOx",0.709374053734515
+2.7,"REGEN-EPRI","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2021,"NOx",0.709374053734515
+2.7,"ReEDS-NREL","IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2021,"NOx",0.709374053734515
+2.7,"ReEDS-NREL","No IRA","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2021,"NOx",0.709374053734515
+2.7,"EPA","Historic","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2010,"NOx",1.909625175242
+2.7,"EPA","Historic","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2011,"NOx",1.7935801683609
+2.7,"EPA","Historic","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2012,"NOx",1.55658886537589
+2.7,"EPA","Historic","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2013,"NOx",1.56551403807635
+2.7,"EPA","Historic","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2014,"NOx",1.51285729577474
+2.7,"EPA","Historic","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2015,"NOx",1.25472422780172
+2.7,"EPA","Historic","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2016,"NOx",1.09286347361426
+2.7,"EPA","Historic","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2017,"NOx",0.96819509089539
+2.7,"EPA","Historic","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2018,"NOx",0.93286098810894
+2.7,"EPA","Historic","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2019,"NOx",0.80048419547805
+2.7,"EPA","Historic","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2020,"NOx",0.671493758437305
+2.7,"EPA","Historic","Emissions|NOx|Energy|Supply|Electricity","Mt NOx/yr",2021,"NOx",0.709374053734515

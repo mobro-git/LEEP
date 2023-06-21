@@ -1,57 +1,57 @@
-"model","scenario","unit","year","datasrc","variable","region","value","stagger"
-"EPS-EI","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",3347.003485,0
-"EPS-EI","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",2796.936628,0
-"EPS-EI","IRA.High","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",3067.009458,0.7
-"EPS-EI","IRA.High","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",2741.965576,0.7
-"EPS-EI","IRA.Low","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",3433.919429,-0.7
-"EPS-EI","IRA.Low","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",2882.332415,-0.7
-"GCAM-CGS","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",3507.390591,0
-"GCAM-CGS","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",3238.489396,0
-"GCAM-CGS","IRA.High","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",3400.119301,0.7
-"GCAM-CGS","IRA.High","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",3192.551382,0.7
-"GCAM-CGS","IRA.Low","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",3598.966026,-0.7
-"GCAM-CGS","IRA.Low","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",3254.084821,-0.7
-"REGEN-EPRI","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",3920.614514,0
-"REGEN-EPRI","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",3158.192152,0
-"REGEN-EPRI","IRA.High","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",3983.367536,0.7
-"REGEN-EPRI","IRA.High","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",2967.367261,0.7
-"REGEN-EPRI","IRA.Low","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",4076.569421,-0.7
-"REGEN-EPRI","IRA.Low","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",3609.048703,-0.7
-"RIO-REPEAT","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",3587,0
-"RIO-REPEAT","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",2653,0
-"RIO-REPEAT","IRA.High","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",3464,0.7
-"RIO-REPEAT","IRA.High","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",2476,0.7
-"RIO-REPEAT","IRA.Low","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",3629,-0.7
-"RIO-REPEAT","IRA.Low","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy","United States",2877,-0.7
-"USREP-ReEDS","IRA","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy","United States",3493.680895,0
-"USREP-ReEDS","IRA","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy","United States",3231.66939,0
-"USREP-ReEDS","IRA.High","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy","United States",3477.093537,0.7
-"USREP-ReEDS","IRA.High","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy","United States",3208.064153,0.7
-"USREP-ReEDS","IRA.Low","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy","United States",3589.719854,-0.7
-"USREP-ReEDS","IRA.Low","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy","United States",3344.497042,-0.7
-"GCAM-PNNL","High","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy","United States",3660.16493032093,NA
-"GCAM-PNNL","High","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy","United States",3399.13130185384,NA
-"GCAM-PNNL","Core","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy","United States",3565.9227730384,NA
-"GCAM-PNNL","Core","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy","United States",3278.04747504044,NA
-"GCAM-PNNL","Low","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy","United States",3465.87471940557,NA
-"GCAM-PNNL","Low","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy","United States",3148.12348036985,NA
-"GCAM-PNNL","High","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy","United States",3432.74027833584,NA
-"GCAM-PNNL","High","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy","United States",3104.72513821295,NA
-"GCAM-PNNL","Core","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy","United States",3565.9227730384,NA
-"GCAM-PNNL","Core","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy","United States",3278.04747504044,NA
-"GCAM-PNNL","Low","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy","United States",3603.90689289084,NA
-"GCAM-PNNL","Low","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_16_23.xlsx","Emissions|CO2|Energy","United States",3339.98474507485,NA
-"USREP-ReEDS","All Adv","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy","United States",3325.313438,NA
-"USREP-ReEDS","All Adv","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy","United States",2947.398068,NA
-"USREP-ReEDS","Core","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy","United States",3493.680895,NA
-"USREP-ReEDS","Core","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy","United States",3231.66939,NA
-"OP-NEMS","Core","Mt CO2/yr",2030,"OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Emissions|CO2|Energy","United States",3797.095947,-0.4
-"OP-NEMS","Core","Mt CO2/yr",2035,"OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Emissions|CO2|Energy","United States",3331.534912,-0.4
-"OP-NEMS","Opt-Adv","Mt CO2/yr",2030,"OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Emissions|CO2|Energy","United States",3369.135986,-0.4
-"OP-NEMS","Opt-Adv","Mt CO2/yr",2035,"OP-NEMS IRA 5cenario outputs 05-11-23.xlsx","Emissions|CO2|Energy","United States",2971.619385,-0.4
-"USREP-ReEDS","Core","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy","United States",3493.680895,0.4
-"USREP-ReEDS","Core","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy","United States",3231.66939,0.4
-"USREP-ReEDS","Opt-Adv","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy","United States",3294.518897,0.4
-"USREP-ReEDS","Opt-Adv","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy","United States",2984.003895,0.4
-"USREP-ReEDS","Pess-Adv","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy","United States",3391.754436,0.4
-"USREP-ReEDS","Pess-Adv","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy","United States",3028.01331,0.4
+"model","scenario","unit","year","variable","region","value","figure_num"
+"EPS-EI","IRA","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3347.003485,1.4
+"EPS-EI","IRA","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",2796.936628,1.4
+"EPS-EI","IRA.High","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3067.009458,1.4
+"EPS-EI","IRA.High","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",2741.965576,1.4
+"EPS-EI","IRA.Low","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3433.919429,1.4
+"EPS-EI","IRA.Low","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",2882.332415,1.4
+"GCAM-CGS","IRA","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3507.390591,1.4
+"GCAM-CGS","IRA","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3238.489396,1.4
+"GCAM-CGS","IRA.High","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3400.119301,1.4
+"GCAM-CGS","IRA.High","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3192.551382,1.4
+"GCAM-CGS","IRA.Low","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3598.966026,1.4
+"GCAM-CGS","IRA.Low","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3254.084821,1.4
+"REGEN-EPRI","IRA","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3920.614514,1.4
+"REGEN-EPRI","IRA","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3158.192152,1.4
+"REGEN-EPRI","IRA.High","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3983.367536,1.4
+"REGEN-EPRI","IRA.High","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",2967.367261,1.4
+"REGEN-EPRI","IRA.Low","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",4076.569421,1.4
+"REGEN-EPRI","IRA.Low","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3609.048703,1.4
+"RIO-REPEAT","IRA","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3587,1.4
+"RIO-REPEAT","IRA","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",2653,1.4
+"RIO-REPEAT","IRA.High","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3464,1.4
+"RIO-REPEAT","IRA.High","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",2476,1.4
+"RIO-REPEAT","IRA.Low","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3629,1.4
+"RIO-REPEAT","IRA.Low","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",2877,1.4
+"USREP-ReEDS","IRA","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3493.680895,1.4
+"USREP-ReEDS","IRA","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3231.66939,1.4
+"USREP-ReEDS","IRA.High","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3477.093537,1.4
+"USREP-ReEDS","IRA.High","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3208.064153,1.4
+"USREP-ReEDS","IRA.Low","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3589.719854,1.4
+"USREP-ReEDS","IRA.Low","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3344.497042,1.4
+"GCAM-PNNL","High","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3660.16493032093,1.4
+"GCAM-PNNL","High","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3399.13130185384,1.4
+"GCAM-PNNL","Mod","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3565.9227730384,1.4
+"GCAM-PNNL","Mod","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3278.04747504044,1.4
+"GCAM-PNNL","Low","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3465.87471940557,1.4
+"GCAM-PNNL","Low","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3148.12348036985,1.4
+"GCAM-PNNL","High","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3432.74027833584,1.4
+"GCAM-PNNL","High","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3104.72513821295,1.4
+"GCAM-PNNL","Mod","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3565.9227730384,1.4
+"GCAM-PNNL","Mod","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3278.04747504044,1.4
+"GCAM-PNNL","Low","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3603.90689289084,1.4
+"GCAM-PNNL","Low","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3339.98474507485,1.4
+"USREP-ReEDS","All Adv","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3325.313438,1.4
+"USREP-ReEDS","All Adv","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",2947.398068,1.4
+"USREP-ReEDS","Mod","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3493.680895,1.4
+"USREP-ReEDS","Mod","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3231.66939,1.4
+"OP-NEMS","Mod","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3797.095947,1.4
+"OP-NEMS","Mod","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3331.534912,1.4
+"OP-NEMS","Opt-Adv","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3369.135986,1.4
+"OP-NEMS","Opt-Adv","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",2971.619385,1.4
+"USREP-ReEDS","Mod","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3493.680895,1.4
+"USREP-ReEDS","Mod","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3231.66939,1.4
+"USREP-ReEDS","Opt-Adv","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3294.518897,1.4
+"USREP-ReEDS","Opt-Adv","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",2984.003895,1.4
+"USREP-ReEDS","Pess-Adv","Mt CO2/yr",2030,"Emissions|CO2|Energy","United States",3391.754436,1.4
+"USREP-ReEDS","Pess-Adv","Mt CO2/yr",2035,"Emissions|CO2|Energy","United States",3028.01331,1.4

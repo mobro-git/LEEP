@@ -55,6 +55,8 @@ p3 = emis_stack(dta3, "Buildings CO2 Emissions") +
   scale_alpha_manual(values = c("Other Sectors" = 0.5, "Buildings: Indirect" = 1, "Buildings: Direct" = 1))
 p3
 
+dta3 = clean_supplemental_data(dta3, fig_no)
+
 saveall(p3, dta3, fig_no)
 ```
 
@@ -124,6 +126,10 @@ TotTab
 DirTab
 IndDirTab
 
+TotSpg$data = clean_supplemental_data(TotSpg$data, fig_no)
+DirSpg$data = clean_supplemental_data(DirSpg$data, fig_no)
+IndDirSpg$data = clean_supplemental_data(IndDirSpg$data, fig_no)
+
 savedata(TotSpg$data, paste(fig_no, "Total"))
 savedata(DirSpg$data, paste(fig_no, "Direct"))
 savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
@@ -185,6 +191,8 @@ fin = ggplot(data = data_sort[data_sort$variable_rename != "Reference",] , aes(x
     limits = c("Reference") 
   )
 fin
+
+data_sort = data_sort %>% mutate(figure_num = fig_no)
 
 saveall(fin, data_sort, fig_no)
 ```

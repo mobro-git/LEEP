@@ -52,6 +52,8 @@ p2 = emis_stack(dta2, "Transportation CO2 Emissions") +
   scale_alpha_manual(values = c("Other Sectors" = 0.5, "Transportation: Indirect" = 1, "Transportation: Direct" = 1))
 p2
 
+dta2 = clean_supplemental_data(dta2, fig_no)
+
 saveall(p2, dta2, fig_no)
 ```
 
@@ -70,6 +72,8 @@ fig = print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3, "U
 fig
 
 dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3, "United States")
+
+dta = clean_supplemental_data(dta, fig_no)
 
 saveall(fig, dta, fig_no)
 ```
@@ -96,6 +100,8 @@ TranSpg = spg(
 
 fig = dotted(TranSpg$data, TranSpg, "median", 0, 2500)
 fig
+
+TranSpg$data = clean_supplemental_data(TranSpg$data, fig_no)
 
 saveall(fig, TranSpg$data, fig_no)
 
@@ -160,6 +166,7 @@ clean_data4 = rbind(raw, atr_2022, nems) %>% filter(unit != "thousands") %>% mut
 fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
 fig
 dta = data_from_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
+dta = clean_supplemental_data(dta, fig_no)
 
 p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States", 0, 100, "EV Share", metric = "median", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 10), ira_coord = c(2027, 53), ylab = "EV Sales Share (%)")
 p$full
@@ -259,6 +266,8 @@ A = ggplot(data = data, aes(x = axe, y = value,  color = scenario)) +
   ylim(0, 700)
 
 print(A)
+
+data = clean_supplemental_data(data, fig_no)
 
 savefig(A, fig_no)
 savedata(data, fig_no)

@@ -52,6 +52,9 @@ p4 = emis_stack(dta4, "Industrial CO2 Emissions") +
   scale_alpha_manual(values = c("Other Sectors" = 0.5, "Industry: Indirect" = 1, "Industry: Direct" = 1))
 p4
 
+dta4 = clean_supplemental_data(dta4, fig_no)
+
+
 saveall(p4, dta4, fig_no)
 ```
 
@@ -80,6 +83,9 @@ IndDot = dotted(IndSpg$data, IndSpg, "median", 0, 2500)
 IndTab = html(IndSpg$data, "Industry CO<sub>2<sub>")
 IndDot
 
+IndSpg$data = clean_supplemental_data(IndSpg$data, fig_no)
+
+
 savefig(IndDot, fig_no)
 savedata(IndSpg$data, fig_no)
 IndTab
@@ -97,6 +103,7 @@ p1$full = p1$full + theme(plot.title = element_blank())
 p1$full
 
 dta = data_from_graph("time_series", config, clean_data6, figmap_leep_timeseries, 119, "United States")
+dta = clean_supplemental_data(dta, fig_no)
 
 saveall(p1$full, dta, fig_no)
 ```
