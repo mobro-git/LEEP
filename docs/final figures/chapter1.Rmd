@@ -50,6 +50,8 @@ df = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 9,
                                   levels = c("Industry: Direct", "Industry: Indirect", "Buildings: Direct", 
                                              "Buildings: Indirect", "Transportation: Direct", "Transportation: Indirect")))
 
+df = clean_supplemental_data(df, fig_no)
+  
 fig = emis_stack(df, "Economy-Wide CO2 Emissions", econwide = TRUE)
 fig
 
@@ -146,6 +148,12 @@ TranTab
 BuilTab
 IndTab
 
+EconSpg$data = clean_supplemental_data(EconSpg$data, fig_no)
+ElecSpg$data = clean_supplemental_data(ElecSpg$data, fig_no)
+TranSpg$data = clean_supplemental_data(TranSpg$data, fig_no)
+BuilSpg$data = clean_supplemental_data(BuilSpg$data, fig_no)
+IndSpg$data = clean_supplemental_data(IndSpg$data, fig_no)
+
 savedata(EconSpg$data, paste(fig_no, "EconWide"))
 savedata(ElecSpg$data, paste(fig_no, "Electricity"))
 savedata(TranSpg$data, paste(fig_no, "Transportation"))
@@ -218,6 +226,10 @@ CoalTab
 GasTab
 PetrolTab
 
+CoalSpg$data = clean_supplemental_data(CoalSpg$data, fig_no)
+GasSpg$data = clean_supplemental_data(GasSpg$data, fig_no)
+PetrolSpg$data = clean_supplemental_data(PetrolSpg$data, fig_no)
+
 savedata(CoalSpg$data, paste(fig_no, "Coal"))
 savedata(GasSpg$data, paste(fig_no, "Gas"))
 savedata(PetrolSpg$data, paste(fig_no, "Petroleum"))
@@ -227,10 +239,6 @@ savedata(PetrolSpg$data, paste(fig_no, "Petroleum"))
 
 ```{r}
 fig_no = 1.4
-
-# change dot labels to "Energy Price"
-# pessimistic emis label location
-# 
 
 # sensitivity dot plots
 panel1_scens = c("Core","IRA", "IRA.Low","IRA.High") # IRA Implementation
@@ -255,7 +263,7 @@ sens_dta_econ_panel2 = clean_data %>% filter(variable == "Emissions|CO2|Energy",
   filter(scenario %in% panel2_scens, 
          model == "GCAM-PNNL") %>%
   mutate(scenario = case_when(
-    scenario == "IRA" ~ "Core", TRUE ~ scenario
+    scenario == "IRA" ~ "Mod", TRUE ~ scenario
   )) %>%
   mutate(scenario = case_when(
     scenario == "High Growth" ~ "High",
@@ -267,7 +275,7 @@ sens_dta_econ_panel3 = clean_data %>%
   filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>% 
   filter(scenario %in% panel3_scens) %>% 
   filter(model %in% c("GCAM-PNNL")) %>% 
-  mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
   mutate(scenario = case_when(
     scenario == "High Energy Price" ~ "High",
     scenario == "Low Energy Price" ~ "Low",
@@ -278,7 +286,7 @@ sens_dta_econ_panel4 = clean_data %>%
   filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>% 
   filter(scenario %in% panel4_scens) %>% 
   filter(model %in% c("USREP-ReEDS")) %>% 
-  mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
     mutate(scenario = case_when(
     scenario == "All Advanced" ~ "All Adv",
     TRUE ~ scenario
@@ -288,7 +296,7 @@ sens_dta_econ_panel5 = clean_data %>%
   filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>%
   filter(scenario %in% panel5_scens) %>%
   filter(model %in% c("OP-NEMS", "USREP-ReEDS")) %>% 
-  mutate(scenario = case_when(scenario == "IRA" ~ "Core", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
   mutate(scenario = case_when(
     scenario == "Pess-IRA.Adv" ~ "Pess-Adv",
     scenario == "Opt-IRA.Adv" ~ "Opt-Adv",
@@ -381,6 +389,8 @@ fig
 
 dta = bind_rows(sens_dta_panel1, sens_dta_panel2,
                 sens_dta_panel3, sens_dta_panel4, sens_dta_panel5)
+dta = dta %>% mutate(figure_num = fig_no) %>%
+  select(-stagger, -datasrc)
 
 
 saveall(fig, dta, fig_no)
@@ -506,7 +516,7 @@ all_panels %>% write.csv("./output/final_figures/data/Fig1.4_Summary.csv", row.n
 all_panels = add_header_row(flextable(all_panels), values = c("", "IRA Implementation", "Technology", "Combined Technology + Implementation", "Economic Growth", "Energy Price"),
   colwidths = c(4,2,1,2,2,2), top = TRUE)
 
-all_panels = add_header_row(all_panels, values = c("","Difference from IRA Core Scenario (negative is reduced emissions)"), colwidths = c(4,9)) 
+all_panels = add_header_row(all_panels, values = c("","Difference from IRA Moderate Scenario (negative is reduced emissions)"), colwidths = c(4,9)) 
 
 all_panels
 

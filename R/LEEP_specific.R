@@ -614,6 +614,14 @@ compile_all_data = function() {
   return(data_list)
 }
 
+# trim down the data extracts
+clean_supplemental_data = function(df, fig_no) {
+  df_clean = df %>% data.frame() %>%
+    mutate(figure_num = fig_no) %>%
+    select(figure_num, model, scenario, variable, unit, year , variable_rename, value)
+  return(df_clean)
+}
+
 dot_plots_but_with_arrows = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric, labels = FALSE, hist_year = 2021, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0)) {
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
