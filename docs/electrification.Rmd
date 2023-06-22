@@ -19,13 +19,13 @@ devtools::load_all(here())
 
 tar_load(config)
 tar_load(clean_data)
+
+targets::tar_load(figmap_leep_timeseries)
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 ```
 
-# Electrification figure from raw data
-
-```{r}
+```{r data}
 elc = readxl::read_xlsx("data-extra/electrification_compiled.xlsx") %>%
-  filter(year %in%c(2030, 2035)) %>%
   rename(value = value100) %>%
   select(-variable) %>%
   rename(variable = variable_rename)
@@ -58,7 +58,16 @@ ref_elc = clean_data %>%
       TRUE ~ variable
     ))
 
-elc_all = rbind(elc, ref_elc) %>%
+elc_raw = rbind(elc, ref_elc) 
+```
+
+# Figures
+
+## 2030 and 2035 No IRA vs IRA
+
+```{r}
+elc_all = elc_raw %>%
+  filter(year %in% c(2030, 2035)) %>%
   mutate(
     year = case_when(
       year == 2020 ~ "2020 Reference",
@@ -88,36 +97,129 @@ fig_mod <- ggplot() +
   labs(title = "",
        x="", y = "Electricity Share in Final Energy (%)") +
   theme_emf() +
+  scale_subpalette(subpalettes, "Nox pct diff") + # random fig to get model colors
   scale_shape_manual(values = shapes) +
   theme(axis.text.x = element_text(angle = 90, hjust = .51)) +
   guides(color = guide_legend(ncol=1))
 fig_mod
 
 fig_sec <- ggplot() +
-  geom_line(data=mod_points %>% filter(year == 2030), aes(x=scenario,y=value, group = model, color = variable), linewidth = 1, alpha = .85) +
+  geom_line(data=mod_points, aes(x=scenario,y=value, group = model, color = variable), linewidth = 1, alpha = .85) +
   # geom_point(data=ref_points, aes(x=scenario,y=value, shape = year), size = 4, color = "black") +
   # geom_point(data = means, aes(x=scenario,y=value, shape = year), size = 3, color = "black") +
   # geom_point(data=mod_points, aes(x=scenario,y=value, color=model, shape = year)) +
-  facet_grid(~variable) +
+  facet_grid(year~variable) +
   labs(title = "",
-       x="", y = "2030 Electricity Share in Final Energy (%)") +
+       x="", y = "Electricity Share in Final Energy (%)") +
   theme_emf() +
+  scale_subpalette(subpalettes, "Electrification") + 
   scale_shape_manual(values = shapes) +
   theme(axis.text.x = element_text(angle = 90, hjust = .51)) +
   nolegend
 fig_sec
 ```
 
+## Timeseries
 
+```{r}
+hist = ref_elc %>% select(year, variable, value) %>%
+  pivot_wider(names_from = "year", values_from = "value")
 
+replace_hist = elc_raw %>%
+  filter(model != "AEO2021") %>%
+  full_join(hist, by = c("variable")) %>%
+  select(model,scenario,variable,`2020`) %>%
+  pivot_longer(cols = `2020`, names_to = "year", values_to = "value") %>%
+  distinct()
 
+elc_ts = rbind(elc_raw, replace_hist) %>%
+  filter(model != "AEO2021" &
+           year <= 2035) %>%
+  mutate(variable = factor(variable, levels = c("Total", "Transportation", "Buildings", "Industry")))
 
+ggplot() +
+  geom_line(data = elc_ts, aes(x = year, y = value, color = scenario, group = interaction(model,scenario))) +
+  facet_grid(~variable) +
+  theme_emf() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_subpalette(subpalettes, "Final Energy") +
+  labs(y = "% Electricity of Final Energy",
+       x="")
+```
 
+# Tables
 
+## % Share Tables
 
+```{r}
+stats = elc_ts %>%
+  filter(year != 2020) %>%
+  mutate(year = as.character(year)) %>%
+  group_by(scenario, variable, year) %>%
+  summarise(ab_med = median(value),
+            ab_min = min(value),
+            ab_max = max(value))
 
+total = stats %>%
+  filter(variable == "Total") %>%
+  pivot_longer(cols = 4:6, names_to = "stat", values_to = "value") %>%
+  pivot_wider(names_from = "scenario", values_from = "value")
+total
 
+transportation = stats %>%
+  filter(variable == "Transportation") %>%
+  pivot_longer(cols = 4:6, names_to = "stat", values_to = "value") %>%
+  pivot_wider(names_from = "scenario", values_from = "value")
+transportation
 
+buildings = stats %>%
+  filter(variable == "Buildings") %>%
+  pivot_longer(cols = 4:6, names_to = "stat", values_to = "value") %>%
+  pivot_wider(names_from = "scenario", values_from = "value")
+buildings
+
+industry = stats %>%
+  filter(variable == "Industry") %>%
+  pivot_longer(cols = 4:6, names_to = "stat", values_to = "value") %>%
+  pivot_wider(names_from = "scenario", values_from = "value")
+industry
+```
+
+## % Difference in Share IRA vs No IRA Tables
+
+```{r}
+stats_per = elc_ts %>%
+  filter(year != 2020) %>%
+  pivot_wider(names_from = "scenario", values_from = "value") %>%
+  mutate(
+    pp_diff = `IRA` - `No IRA`,
+    per_diff = (pp_diff/`No IRA`)*100) %>%
+  select(model,year,variable,pp_diff,per_diff) %>%
+  pivot_longer(cols = 4:5, names_to = "stat", values_to = "value") %>%
+  group_by(year,variable,stat) %>%
+  summarise(
+    median = median(value),
+    min = min(value),
+    max = max(value)
+  ) %>%
+  rename(indicator = stat) %>%
+  pivot_longer(cols = 4:6, names_to = "stat", values_to = "value") %>%
+  pivot_wider(names_from = "indicator", values_from = "value") %>%
+  rename(`percentage point difference` = pp_diff,
+         `percentage difference` = per_diff)
+
+total_per = stats_per %>% filter(variable == "Total")
+total_per
+
+transportation_per = stats_per %>% filter(variable == "Transportation")
+transportation_per
+
+buildings_per = stats_per %>% filter(variable == "Buildings")
+buildings_per
+
+industry_per = stats_per %>% filter(variable == "Industry")
+industry_per
+```
 
 
 

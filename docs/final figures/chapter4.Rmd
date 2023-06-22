@@ -195,7 +195,7 @@ fin
 
 data_sort = data_sort %>% mutate(figure_num = fig_no)
 
-saveall(fin, data_sort, fig_no)
+saveall(fin, data_sort, fig_no, wd = 9)
 ```
 
 
