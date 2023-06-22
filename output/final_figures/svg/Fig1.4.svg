@@ -139,13 +139,18 @@
 <polyline points='204.67,340.56 204.67,27.71 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <circle cx='161.10' cy='137.19' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='204.67' cy='158.69' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='161.10' cy='115.07' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='204.67' cy='127.65' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='161.10' cy='127.61' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='204.67' cy='142.52' r='2.49' style='stroke-width: 0.71;' />
-<line x1='159.04' y1='132.62' x2='159.65' y2='131.14' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<text x='159.35' y='145.03' style='font-size: 4.27px; font-family: "Arial";' textLength='13.03px' lengthAdjust='spacingAndGlyphs'>All Adv</text>
-<text x='202.77' y='166.51' style='font-size: 4.27px; font-family: "Arial";' textLength='13.03px' lengthAdjust='spacingAndGlyphs'>All Adv</text>
-<text x='148.95' y='134.69' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
-<text x='202.75' y='150.34' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
+<line x1='159.17' y1='120.71' x2='159.74' y2='119.04' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<line x1='158.97' y1='132.56' x2='159.63' y2='131.03' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<text x='159.21' y='145.05' style='font-size: 4.27px; font-family: "Arial";' textLength='13.03px' lengthAdjust='spacingAndGlyphs'>All Adv</text>
+<text x='202.78' y='166.57' style='font-size: 4.27px; font-family: "Arial";' textLength='13.03px' lengthAdjust='spacingAndGlyphs'>All Adv</text>
+<text x='144.82' y='122.87' style='font-size: 4.27px; font-family: "Arial";' textLength='12.55px' lengthAdjust='spacingAndGlyphs'>Constr</text>
+<text x='202.77' y='135.54' style='font-size: 4.27px; font-family: "Arial";' textLength='12.55px' lengthAdjust='spacingAndGlyphs'>Constr</text>
+<text x='148.88' y='134.60' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
+<text x='202.78' y='150.39' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
 <text x='147.16' y='45.27' style='font-size: 8.54px;fill: #A1A1A1; font-family: "Arial";' textLength='60.68px' lengthAdjust='spacingAndGlyphs'>USREP-ReEDS</text>
 <rect x='139.75' y='27.71' width='86.27' height='312.85' style='stroke-width: 1.07; stroke: #B3B3B3;' />
 <text x='161.10' y='351.94' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2030</text>

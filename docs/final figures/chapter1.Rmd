@@ -292,6 +292,7 @@ sens_dta_econ_panel4 = clean_data %>%
   mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
     mutate(scenario = case_when(
     scenario == "All Advanced" ~ "All Adv",
+    scenario == "Constrained Deployment" ~ "Constr",
     TRUE ~ scenario
   ))
 
@@ -467,18 +468,22 @@ econ_panel3_summ = sens_dta_econ_panel3 %>%
 econ_panel4_summ = sens_dta_econ_panel4 %>%
   select(-c(datasrc,region)) %>%
   mutate(scenario = case_when(scenario == "All Adv" ~ "Optimistic",
-                              scenario == "Cons" ~ "Pessimistic",
+                              scenario == "Constr" ~ "Pessimistic",
                               TRUE ~ "Core")) %>%
   pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
-  mutate(diff_opt = value_Optimistic - value_Core) %>%
+  mutate(diff_opt = value_Optimistic - value_Core,
+         diff_pess = value_Pessimistic - value_Core) %>%
   group_by(variable, unit, year) %>%
   summarize(opt_median = median(diff_opt),
             opt_min = min(diff_opt),
-            opt_max = max(diff_opt)) %>%
-  pivot_longer(cols = starts_with(c("opt_")), names_to = c("scen","metric"), names_sep = "_") %>%
+            opt_max = max(diff_opt),
+            pess_median = median(diff_pess),
+            pess_min = min(diff_pess),
+            pess_max = max(diff_pess)) %>%
+  pivot_longer(cols = starts_with(c("opt_", "pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
   mutate(value = round(value,1)) %>%
   pivot_wider(names_from = scen, values_from = value) %>%
-  rename(c("All-Adv" = "opt")) %>%
+  rename(c("All-Adv" = "opt", "Constr" = "pess")) %>%
   data.frame() %>%
   select(-c(variable,unit,year,metric))
 
@@ -516,9 +521,9 @@ all_panels %>% write.csv("./output/final_figures/data/Fig1.4_Summary.csv", row.n
 
 
 all_panels = add_header_row(flextable(all_panels), values = c("", "IRA Implementation", "Technology", "Combined Technology + Implementation", "Economic Growth", "Energy Price"),
-  colwidths = c(4,2,1,2,2,2), top = TRUE)
+  colwidths = c(4,2,2,2,2,2), top = TRUE)
 
-all_panels = add_header_row(all_panels, values = c("","Difference from IRA Moderate Scenario (negative is reduced emissions)"), colwidths = c(4,9)) 
+all_panels = add_header_row(all_panels, values = c("","Difference from IRA Moderate Scenario (negative is reduced emissions)"), colwidths = c(4,10)) 
 
 all_panels
 

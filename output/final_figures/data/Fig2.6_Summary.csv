@@ -1,7 +1,7 @@
 "variable","unit","year","metric","Optimistic","Pessimistic","Adv.Renew","Cons.Renew","Constrained","All.Adv","Opt.Adv","Pess.Adv","High.Growth","Low.Growth","High.Price","Low.Price"
-"Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"median",-59.9,78.8,-159.7,230.1,276.6,-173.5,-246.6,-132.8,8,-9,-53.8,65.8
-"Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"min",-263.4,-47,-159.7,230.1,276.6,-184.6,-271.1,-132.8,8,-9,-61.2,5.7
+"Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"median",-59.9,78.8,-159.7,230.1,211.7,-173.5,-246.6,-132.8,8,-9,-53.8,65.8
+"Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"min",-263.4,-47,-159.7,230.1,146.9,-184.6,-271.1,-132.8,8,-9,-61.2,5.7
 "Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"max",62.8,156,-159.7,230.1,276.6,-162.4,-222,-132.8,8,-9,-46.4,125.9
-"Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"median",-27.8,49,NA,NA,NA,-193.9,-182.5,-135.6,10,-11.2,-45.7,7.7
-"Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"min",-190.8,-33,NA,NA,NA,-193.9,-211.5,-135.6,10,-11.2,-45.7,7.7
-"Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"max",0.7,450.9,NA,NA,NA,-193.9,-153.5,-135.6,10,-11.2,-45.7,7.7
+"Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"median",-27.8,49,NA,NA,176.7,-193.9,-182.5,-135.6,10,-11.2,-45.7,7.7
+"Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"min",-190.8,-33,NA,NA,176.7,-193.9,-211.5,-135.6,10,-11.2,-45.7,7.7
+"Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"max",0.7,450.9,NA,NA,176.7,-193.9,-153.5,-135.6,10,-11.2,-45.7,7.7

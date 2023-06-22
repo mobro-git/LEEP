@@ -138,6 +138,8 @@
 <circle cx='157.61' cy='257.44' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='164.58' cy='249.51' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='208.15' cy='274.05' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='164.58' cy='190.58' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='208.15' cy='208.18' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='164.58' cy='216.70' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='208.15' cy='239.59' r='2.49' style='stroke-width: 0.71;' />
 <line x1='155.98' y1='226.21' x2='156.70' y2='221.94' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
@@ -151,8 +153,10 @@
 <text x='150.70' y='267.61' style='font-size: 4.27px; font-family: "Arial";' textLength='9.24px' lengthAdjust='spacingAndGlyphs'>Core</text>
 <text x='165.16' y='257.40' style='font-size: 4.27px; font-family: "Arial";' textLength='13.51px' lengthAdjust='spacingAndGlyphs'>All-Adv</text>
 <text x='206.26' y='281.93' style='font-size: 4.27px; font-family: "Arial";' textLength='13.51px' lengthAdjust='spacingAndGlyphs'>All-Adv</text>
+<text x='162.69' y='198.46' style='font-size: 4.27px; font-family: "Arial";' textLength='12.55px' lengthAdjust='spacingAndGlyphs'>Constr</text>
+<text x='206.26' y='216.04' style='font-size: 4.27px; font-family: "Arial";' textLength='12.55px' lengthAdjust='spacingAndGlyphs'>Constr</text>
 <text x='174.95' y='224.18' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
-<text x='206.26' y='247.46' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
+<text x='206.26' y='247.47' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
 <text x='147.16' y='45.88' style='font-size: 8.54px;fill: #A1A1A1; font-family: "Arial";' textLength='66.54px' lengthAdjust='spacingAndGlyphs'>ReEDS-NREL (L)</text>
 <text x='147.16' y='56.54' style='font-size: 8.54px;fill: #A1A1A1; font-family: "Arial";' textLength='74.90px' lengthAdjust='spacingAndGlyphs'>USREP-ReEDS (R)</text>
 <rect x='139.75' y='27.71' width='86.27' height='312.85' style='stroke-width: 1.07; stroke: #B3B3B3;' />
