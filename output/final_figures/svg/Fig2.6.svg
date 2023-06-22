@@ -144,14 +144,14 @@
 <circle cx='208.15' cy='239.59' r='2.49' style='stroke-width: 0.71;' />
 <line x1='155.98' y1='226.21' x2='156.70' y2='221.94' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
 <line x1='155.63' y1='215.70' x2='156.40' y2='212.82' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<line x1='156.32' y1='262.76' x2='156.46' y2='262.19' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<line x1='156.38' y1='262.76' x2='156.49' y2='262.28' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
 <line x1='173.15' y1='222.60' x2='166.30' y2='217.88' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
 <text x='143.33' y='281.02' style='font-size: 4.27px; font-family: "Arial";' textLength='21.79px' lengthAdjust='spacingAndGlyphs'>Adv Renew</text>
 <text x='155.72' y='294.18' style='font-size: 4.27px; font-family: "Arial";' textLength='13.51px' lengthAdjust='spacingAndGlyphs'>All-Adv</text>
 <text x='143.34' y='231.06' style='font-size: 4.27px; font-family: "Arial";' textLength='24.40px' lengthAdjust='spacingAndGlyphs'>Cons Renew</text>
 <text x='143.34' y='220.55' style='font-size: 4.27px; font-family: "Arial";' textLength='12.55px' lengthAdjust='spacingAndGlyphs'>Constr</text>
-<text x='150.72' y='267.61' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
-<text x='165.03' y='257.38' style='font-size: 4.27px; font-family: "Arial";' textLength='13.51px' lengthAdjust='spacingAndGlyphs'>All-Adv</text>
+<text x='150.70' y='267.61' style='font-size: 4.27px; font-family: "Arial";' textLength='9.24px' lengthAdjust='spacingAndGlyphs'>Core</text>
+<text x='165.16' y='257.40' style='font-size: 4.27px; font-family: "Arial";' textLength='13.51px' lengthAdjust='spacingAndGlyphs'>All-Adv</text>
 <text x='206.26' y='281.93' style='font-size: 4.27px; font-family: "Arial";' textLength='13.51px' lengthAdjust='spacingAndGlyphs'>All-Adv</text>
 <text x='162.69' y='198.46' style='font-size: 4.27px; font-family: "Arial";' textLength='12.55px' lengthAdjust='spacingAndGlyphs'>Constr</text>
 <text x='206.26' y='216.04' style='font-size: 4.27px; font-family: "Arial";' textLength='12.55px' lengthAdjust='spacingAndGlyphs'>Constr</text>
@@ -286,18 +286,18 @@
 <circle cx='436.09' cy='257.44' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='436.09' cy='268.32' r='2.49' style='stroke-width: 0.71;' />
 <circle cx='436.09' cy='235.06' r='2.49' style='stroke-width: 0.71;' />
-<line x1='426.99' y1='188.10' x2='427.56' y2='187.04' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<line x1='470.56' y1='194.98' x2='471.12' y2='193.97' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<line x1='427.08' y1='177.83' x2='427.70' y2='179.46' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<line x1='470.67' y1='184.48' x2='471.28' y2='186.08' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<line x1='433.96' y1='262.41' x2='434.62' y2='260.86' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<text x='427.38' y='200.29' style='font-size: 4.27px; font-family: "Arial";' textLength='8.77px' lengthAdjust='spacingAndGlyphs'>High</text>
-<text x='470.90' y='207.16' style='font-size: 4.27px; font-family: "Arial";' textLength='8.77px' lengthAdjust='spacingAndGlyphs'>High</text>
-<text x='416.90' y='190.02' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
-<text x='460.48' y='196.89' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
+<line x1='426.98' y1='188.11' x2='427.56' y2='187.04' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<line x1='470.54' y1='194.98' x2='471.12' y2='193.95' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<line x1='427.08' y1='177.83' x2='427.70' y2='179.47' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<line x1='470.67' y1='184.48' x2='471.28' y2='186.09' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<line x1='433.98' y1='262.44' x2='434.63' y2='260.91' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<text x='427.41' y='200.31' style='font-size: 4.27px; font-family: "Arial";' textLength='8.77px' lengthAdjust='spacingAndGlyphs'>High</text>
+<text x='470.87' y='207.17' style='font-size: 4.27px; font-family: "Arial";' textLength='8.77px' lengthAdjust='spacingAndGlyphs'>High</text>
+<text x='416.89' y='190.04' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
+<text x='460.46' y='196.88' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
 <text x='417.46' y='178.78' style='font-size: 4.27px; font-family: "Arial";' textLength='7.82px' lengthAdjust='spacingAndGlyphs'>Low</text>
 <text x='461.05' y='185.43' style='font-size: 4.27px; font-family: "Arial";' textLength='7.82px' lengthAdjust='spacingAndGlyphs'>Low</text>
-<text x='423.87' y='264.45' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
+<text x='422.95' y='264.49' style='font-size: 4.27px; font-family: "Arial";' textLength='9.24px' lengthAdjust='spacingAndGlyphs'>Core</text>
 <text x='434.21' y='276.19' style='font-size: 4.27px; font-family: "Arial";' textLength='8.77px' lengthAdjust='spacingAndGlyphs'>High</text>
 <text x='434.20' y='242.93' style='font-size: 4.27px; font-family: "Arial";' textLength='7.82px' lengthAdjust='spacingAndGlyphs'>Low</text>
 <text x='418.66' y='45.88' style='font-size: 8.54px;fill: #A1A1A1; font-family: "Arial";' textLength='63.68px' lengthAdjust='spacingAndGlyphs'>GCAM-PNNL (L)</text>

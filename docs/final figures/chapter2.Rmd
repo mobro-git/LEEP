@@ -801,7 +801,8 @@ median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - d
 stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
 
-data = rbind(df_21, df_30, df_35) 
+data = rbind(df_21, df_30, df_35) %>%
+  filter(!(model == "AEO.2023" & scenario == "No IRA"))
 
  
 

@@ -148,7 +148,7 @@ data_sort <- data %>%
   filter(year >= 2025) %>%
   mutate(scenario = case_when(
     scenario == "IRA-Low" ~ "IRA-Pessimistic", 
-    scenario == "IRA-Central" ~ "IRA-Core", 
+    scenario == "IRA-Central" ~ "IRA-Moderate", 
     scenario == "IRA-High" ~ "IRA-Optimistic"
   )) %>%
   rename(Reference = `Reference.Building.Emissions`,
@@ -162,7 +162,7 @@ data_sort <- data %>%
   
 ref <- data_sort[data_sort$variable_rename == "Reference",]
 
-data_sort$scenario <- factor(data_sort$scenario, levels = c("IRA-Pessimistic", "IRA-Core", "IRA-Optimistic"))
+data_sort$scenario <- factor(data_sort$scenario, levels = c("IRA-Pessimistic", "IRA-Moderate", "IRA-Optimistic"))
 data_sort$variable_rename <- factor(data_sort$variable_rename, levels = c("HVAC", "WaterHeating", "Other","Power", "Total", "Reference"))
 
 fin = ggplot(data = data_sort[data_sort$variable_rename != "Reference",] , aes(x=year, y=value, fill = variable_rename)) +
