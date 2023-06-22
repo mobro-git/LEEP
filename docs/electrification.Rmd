@@ -152,6 +152,8 @@ ggplot() +
 ## % Share Tables
 
 ```{r}
+per_share_wb <- createWorkbook()
+
 stats = elc_ts %>%
   filter(year != 2020) %>%
   mutate(year = as.character(year)) %>%
@@ -165,6 +167,8 @@ total = stats %>%
   pivot_longer(cols = 4:6, names_to = "stat", values_to = "value") %>%
   pivot_wider(names_from = "scenario", values_from = "value")
 total
+
+write_sheet(wb, "")
 
 transportation = stats %>%
   filter(variable == "Transportation") %>%

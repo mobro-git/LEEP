@@ -955,4 +955,9 @@ return(list(table1, ft_table1,
 }
 
 
+write_sheet = function(data, wb, sheetname) {
 
+  addWorksheet(wb, sheetName = sheetname)
+  writeData(wb, sheet = sheetname, data)
+
+}
