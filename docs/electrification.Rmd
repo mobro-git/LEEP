@@ -28,7 +28,11 @@ subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 elc = readxl::read_xlsx("data-extra/electrification_compiled.xlsx") %>%
   rename(value = value100) %>%
   select(-variable) %>%
-  rename(variable = variable_rename)
+  rename(variable = variable_rename) %>%
+  mutate(variable = case_when(
+    variable == "Total" ~ "Economy-Wide",
+    TRUE~variable
+  ))
 
 vars = c("Final Energy|Percent Electricity", 
          "Final Energy|Buildings|Percent Electricity",
@@ -51,7 +55,7 @@ ref_elc = clean_data %>%
   mutate(
     value = value * 100,
     variable = case_when(
-      variable == "Final Energy|Percent Electricity" ~ "Total",
+      variable == "Final Energy|Percent Electricity" ~ "Economy-Wide",
       variable == "Final Energy|Buildings|Percent Electricity" ~ "Buildings",
       variable == "Final Energy|Industry and Fuel Production|Percent Electricity" ~ "Industry",
       variable == "Final Energy|Transportation|Percent Electricity" ~ "Transportation",
@@ -74,7 +78,7 @@ elc_all = elc_raw %>%
       year == 2030 ~ "2030",
       year == 2035 ~ "2035"
     )) %>%
-  mutate(variable = factor(variable, levels = c("Total", "Transportation", "Buildings", "Industry")),
+  mutate(variable = factor(variable, levels = c("Economy-Wide", "Transportation", "Buildings", "Industry")),
          scenario = factor(scenario, levels = c("No IRA", "IRA")))
 
 means = elc_all %>%
@@ -135,7 +139,7 @@ replace_hist = elc_raw %>%
 elc_ts = rbind(elc_raw, replace_hist) %>%
   filter(model != "AEO2021" &
            year <= 2035) %>%
-  mutate(variable = factor(variable, levels = c("Total", "Transportation", "Buildings", "Industry")))
+  mutate(variable = factor(variable, levels = c("Economy-Wide", "Transportation", "Buildings", "Industry")))
 
 ggplot() +
   geom_line(data = elc_ts, aes(x = year, y = value, color = scenario, group = interaction(model,scenario))) +
@@ -158,71 +162,109 @@ stats = elc_ts %>%
   filter(year != 2020) %>%
   mutate(year = as.character(year)) %>%
   group_by(scenario, variable, year) %>%
-  summarise(ab_med = median(value),
-            ab_min = min(value),
-            ab_max = max(value))
+  summarise(Median = round(median(value),2),
+            Min = round(min(value),2),
+            Max = round(max(value),2)) %>%
+  rename(Sector = variable,
+         Year = year)
 
 total = stats %>%
-  filter(variable == "Total") %>%
-  pivot_longer(cols = 4:6, names_to = "stat", values_to = "value") %>%
+  filter(Sector == "Economy-Wide") %>%
+  pivot_longer(cols = 4:6, names_to = "Statistic", values_to = "value") %>%
   pivot_wider(names_from = "scenario", values_from = "value")
 total
 
-write_sheet(wb, "")
+write_sheet(total, per_share_wb, "Total")
 
 transportation = stats %>%
-  filter(variable == "Transportation") %>%
-  pivot_longer(cols = 4:6, names_to = "stat", values_to = "value") %>%
+  filter(Sector == "Transportation") %>%
+  pivot_longer(cols = 4:6, names_to = "Statistic", values_to = "value") %>%
   pivot_wider(names_from = "scenario", values_from = "value")
 transportation
 
+write_sheet(transportation, per_share_wb, "Transportation")
+
 buildings = stats %>%
-  filter(variable == "Buildings") %>%
-  pivot_longer(cols = 4:6, names_to = "stat", values_to = "value") %>%
+  filter(Sector == "Buildings") %>%
+  pivot_longer(cols = 4:6, names_to = "Statistic", values_to = "value") %>%
   pivot_wider(names_from = "scenario", values_from = "value")
 buildings
 
+write_sheet(buildings, per_share_wb, "Buildings")
+
 industry = stats %>%
-  filter(variable == "Industry") %>%
-  pivot_longer(cols = 4:6, names_to = "stat", values_to = "value") %>%
+  filter(Sector == "Industry") %>%
+  pivot_longer(cols = 4:6, names_to = "Statistic", values_to = "value") %>%
   pivot_wider(names_from = "scenario", values_from = "value")
 industry
+
+write_sheet(industry, per_share_wb, "Industry")
+
+all = rbind(total, transportation, buildings, industry) %>%
+  mutate(`IRA` = `IRA`/100,
+         `No IRA` = `No IRA`/100)
+
+write_sheet(all, per_share_wb, "All")
+
+saveWorkbook(per_share_wb, file = "output/final_figures/data/electrification_percentshare.xlsx", overwrite = TRUE)
 ```
 
 ## % Difference in Share IRA vs No IRA Tables
 
 ```{r}
+diff_wb <- createWorkbook()
+
 stats_per = elc_ts %>%
   filter(year != 2020) %>%
   pivot_wider(names_from = "scenario", values_from = "value") %>%
   mutate(
-    pp_diff = `IRA` - `No IRA`,
-    per_diff = (pp_diff/`No IRA`)*100) %>%
+    pp_diff = round((`IRA` - `No IRA`),2),
+    per_diff = round(((pp_diff/`No IRA`)*100),2)) %>%
   select(model,year,variable,pp_diff,per_diff) %>%
   pivot_longer(cols = 4:5, names_to = "stat", values_to = "value") %>%
   group_by(year,variable,stat) %>%
   summarise(
-    median = median(value),
-    min = min(value),
-    max = max(value)
+    Median = median(value),
+    Min = min(value),
+    Max = max(value)
   ) %>%
   rename(indicator = stat) %>%
   pivot_longer(cols = 4:6, names_to = "stat", values_to = "value") %>%
   pivot_wider(names_from = "indicator", values_from = "value") %>%
-  rename(`percentage point difference` = pp_diff,
-         `percentage difference` = per_diff)
+  rename(`Percentage Point Difference` = pp_diff,
+         `Percent Difference` = per_diff,
+         Year = year,
+         Statistic = stat,
+         Sector = variable) %>%
+  select(Sector, Year, Statistic, `Percent Difference`, `Percentage Point Difference`)
 
-total_per = stats_per %>% filter(variable == "Total")
+total_per = stats_per %>% filter(Sector == "Economy-Wide")
 total_per
 
-transportation_per = stats_per %>% filter(variable == "Transportation")
+write_sheet(total_per, diff_wb, "Economy-Wide")
+
+transportation_per = stats_per %>% filter(Sector == "Transportation")
 transportation_per
 
-buildings_per = stats_per %>% filter(variable == "Buildings")
+write_sheet(transportation_per, diff_wb, "Transportation")
+
+buildings_per = stats_per %>% filter(Sector == "Buildings")
 buildings_per
 
-industry_per = stats_per %>% filter(variable == "Industry")
+write_sheet(buildings_per, diff_wb, "Buildings")
+
+industry_per = stats_per %>% filter(Sector == "Industry")
 industry_per
+
+write_sheet(industry_per, diff_wb, "Industry")
+
+all_per = rbind(total_per, transportation_per, buildings_per, industry_per) %>%
+  mutate(`Percent Difference` = `Percent Difference`/100,
+         `Percentage Point Difference` = paste(`Percentage Point Difference`, "pp"))
+
+write_sheet(all_per, diff_wb, "All")
+
+saveWorkbook(diff_wb, file = "output/final_figures/data/electrification_differences.xlsx", overwrite = TRUE)
 ```
 
 
