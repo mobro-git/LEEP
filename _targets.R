@@ -182,9 +182,9 @@ tar_plan(
       make_clean_data() %>%
       make_calculated_vars(ratio_var, summation_var, cumulative_var, annual_growth_rate_var, per_diff_var)},
 
-  data_wide = {clean_data %>% pivot_wider(names_from = "year", values_from = "value")},
+  data_output = write_csv(clean_data, "output/data/leep_data_output.csv"),
 
-  data_output = write_csv(data_wide, "output/data/leep_data_output.csv"),
+  data_wide = {clean_data %>% pivot_wider(names_from = "year", values_from = "value")},
 
   # indexed version of clean_data. index_var determines which variables are indexed, only these are included
   clean_data_index = index_data_long(clean_data, index_var),

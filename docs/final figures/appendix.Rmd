@@ -38,7 +38,7 @@ subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
 ```{r}
 tab_a1 = summary_tables(
-  table_no = "A1. Economy-Wide Emissions",
+  table_no = "A1 Economy-Wide Emissions",
   var = "Emissions|CO2",
   suffix = "Economy-wide emissions",
   drop_mod = c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
