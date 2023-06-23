@@ -913,7 +913,7 @@ final = final +
 ) & theme(legend.position = "bottom")
 final
 
-savefig(final, fig_no)
+savefig(final, fig_no, wd = 8)
 ```
 
 ### Table 2.4 Total
