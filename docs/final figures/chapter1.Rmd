@@ -185,7 +185,7 @@ CoalTab = html(CoalSpg$data, "Coal")
 GasSpg = spg(
   93,
   "EIA",
-  expression(paste("Gas")),
+  expression(paste("Natural Gas")),
   "",
   gd = "none",
   c("RIO-REPEAT","EIAinEMF37.csv"),
