@@ -371,7 +371,7 @@ ad = function(diff_ID, title, yname, gd, drop) {
               ad_df = df))
 }
 
-four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no) {
+four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk) {
   if (metric == "Generation") {
     clean_data = clean_data %>%
       mutate(value = case_when(unit == "Quads" ~ value * 293.07, TRUE ~ value),
@@ -421,10 +421,12 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
     scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
     theme_emf() +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
     labs(title = "No IRA",
          y = paste0(metric," (",unit,")"),
          x = element_blank()) +
     theme(legend.position = "right",
+         plot.title = element_text(hjust = 0.5),
           axis.text.x = element_text(angle = 45, hjust = 1)) +
     geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
     geom_point(
@@ -440,10 +442,12 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
     scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
     theme_emf() +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
     labs(title = "IRA",
          y = paste0(metric," (",unit,")"),
          x = element_blank()) +
     theme(legend.position = "right",
+          plot.title = element_text(hjust = 0.5),
           axis.text.x = element_text(angle = 45, hjust = 1)) +
     geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
     geom_point(
