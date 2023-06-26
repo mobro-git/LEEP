@@ -542,7 +542,7 @@ savefig(fig$figure, fig_no)
 ```
 
 ## Other Generation Diff
-```{r Other Generation Difference} 
+```{r Alt Other Gen}
 fig_no = "Ap.15.OtherGen"
 
 ts_map_ID = 88
@@ -559,12 +559,158 @@ brk = c(250, 375, 500)
 
 fig = four_corners("Electricity Generation from Other", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
-fig$figure
+abdata = fig$ts_df %>%
+  group_by(model, year) %>%
+  summarize(abdif = value[scenario == "IRA"] - value[scenario == "No IRA"])
 
-write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
-write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
-write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+  hist <- abdata %>%
+    group_by(model) %>%
+    slice(1) %>%
+    mutate(scenario = "Historic",
+           diff = 0,
+           year = 2021)
+  
+    medians = abdata %>%
+    filter(year %in% c(2030, 2035)) %>%
+    group_by(year) %>%
+    summarize(median = median(abdif))
+    
+    abdata <- rbind(abdata, hist)
 
-savefig(fig$figure, fig_no)
+adfigure = ggplot() +
+    geom_line(data = abdata,
+              aes(
+                x = year,
+                y = abdif,
+                group = model,
+                color = model
+              ),
+              size = 0.75) +
+    geom_point(aes(x = 2021, y = 0), color = "black") +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA")+
+    theme_emf() +
+    theme(
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = "Absolute Difference (TWh)") 
+
+pbdata = fig$ts_df %>%
+  group_by(model, year) %>%
+  summarize(pbdif = (value[scenario == "IRA"] - value[scenario == "No IRA"])/value[scenario=="No IRA"])
+
+  hist <- pbdata %>%
+    group_by(model) %>%
+    slice(1) %>%
+    mutate(scenario = "Historic",
+           diff = 0,
+           year = 2021)
+  
+    medians = pbdata %>%
+    filter(year %in% c(2030, 2035)) %>%
+    group_by(year) %>%
+    summarize(median = median(pbdif))
+    
+    pbdata <- rbind(pbdata, hist)
+
+pdfigure = ggplot() +
+    geom_line(data = pbdata,
+              aes(
+                x = year,
+                y = pbdif,
+                group = model,
+                color = model
+              ),
+              size = 0.75) +
+    geom_point(aes(x = 2021, y = 0), color = "black") +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA")+
+    theme_emf() +
+    theme(
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = "Percent Difference (%)") 
+
+  #Time Series Dataframe
+  df = fig$ts_df
+  noIRAmedians = df[df$scenario == "No IRA",] %>%
+    filter(year == 2030 | year == 2035) %>%
+    group_by(year) %>%
+    summarize(median = median(value))
+
+  IRAmedians = df[df$scenario == "IRA",] %>%
+    filter(year == 2030 | year == 2035) %>%
+    group_by(year) %>%
+    summarize(median = median(value))
+
+  NoIRAfigure = ggplot(df[df$scenario == "No IRA", ], aes(year, value, color = model)) +
+    geom_line(size = 0.75) +
+    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+    theme_emf() +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    scale_y_continuous(limits = c(ymin, ymax), breaks = brk) + 
+    labs(title = "No IRA",
+         y = paste0(metric," (",unit,")"),
+         x = element_blank()) +
+    theme(legend.position = "right",
+         plot.title = element_text(hjust = 0.5),
+          axis.text.x = element_text(angle = 45, hjust = 1)) +
+    geom_point(aes(x = 2021, y = df$value[df$year == 2021][1]), color = "black") +
+    geom_point(
+      data = noIRAmedians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    )
+
+  IRAfigure = ggplot(df[df$scenario == "IRA", ], aes(year, value, color = model)) +
+    geom_line(size = 0.75) +
+    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+    theme_emf() +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
+    labs(title = "IRA",
+         y = paste0(metric," (",unit,")"),
+         x = element_blank()) +
+    theme(legend.position = "right",
+          plot.title = element_text(hjust = 0.5),
+          axis.text.x = element_text(angle = 45, hjust = 1)) +
+    geom_point(aes(x = 2021, y = df$value[df$year == 2021][1]), color = "black") +
+    geom_point(
+      data = IRAmedians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    )
+  
+  figure = (NoIRAfigure | IRAfigure) / (adfigure | pdfigure) + 
+    plot_layout(guides = "collect") +
+    plot_annotation(title = "Electricity Generation from Other")
+  
+  savefig(figure, fig_no)
 ```
 

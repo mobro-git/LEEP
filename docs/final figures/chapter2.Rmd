@@ -2848,10 +2848,10 @@ all_panels
 
 ```
 
-## 2.7 nox emissions
+## 2.7a nox emissions
 
 ```{r}
-fig_no = 2.7
+fig_no = "2.7a"
 
 clean_data7 = clean_data %>% duplicate_historical_data("EPA",2021, criteria = TRUE) %>%
   mutate(alpha = case_when(
@@ -2876,14 +2876,12 @@ print(nox_full$stats)
 dta1 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States")
 
 dta1 = clean_supplemental_data(dta1, fig_no)
-
-saveall(nox_full$full, dta1, fig_no)
 ```
 
-## 2.8 so2 emissions
+## 2.7b so2 emissions
 
 ```{r}
-fig_no = 2.8
+fig_no = "2.7b"
 
 sox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States") +
   scale_alpha(range = c(0.6, 1), guide = "none")
@@ -2895,10 +2893,7 @@ print(sox_full$full)
 print(sox_full$stats)
 
 dta2 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States")
-
 dta2 = clean_supplemental_data(dta2, fig_no)
-
-saveall(sox_full$full, dta2, fig_no)
 ```
 
 ## 2.7A nox and sox in one figure
@@ -2913,6 +2908,7 @@ combined = (wrap_elements(left) | wrap_elements(right)) +
   theme(plot.margin = margin(0,0,0,0))
 combined
 
+dta3 = rbind(dta1,dta2)
 
-
+saveall(combined, dta3, fig_no)
 ```

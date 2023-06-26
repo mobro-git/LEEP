@@ -732,73 +732,73 @@ dta %>% write.csv("output/final_figures/data/Fig6.2NEW_LTS_cone_indirect_emissio
 
 ```{r, eval = FALSE}
 # uncertainty plot - DEFUNCT
-model_labels = FALSE
-
-clean_data2 = clean_data %>% duplicate_historical_data("EIA-STEO",2020, criteria = TRUE) %>% mutate(alpha = 1)
-fig = print_graph("time_series", config, clean_data2, figmap_leep_timeseries, 116, "United States") +
-   scale_alpha(range = c(0.6, 1), guide = "none")
-dta = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 116, "United States")
-#fig
-
-sens = dot_plots_sens("time_series", config, clean_data2, figmap_leep_timeseries, 116, "United States", 0, 6000, "Emissions", metric = "median", 
-                      labels = model_labels, historic_coord = c(2015,5000), iralow_coord = c(2030, 4400), 
-                      irahigh_coord = c(2027, 2200))
-print(sens$full)
-
-ggsave(filename = "output/leep/time_series/Fig1.4_emis_sensitivity.svg",sens$full, width = 7, height = 5, units = "in")
+# model_labels = FALSE
+# 
+# clean_data2 = clean_data %>% duplicate_historical_data("EIA-STEO",2020, criteria = TRUE) %>% mutate(alpha = 1)
+# fig = print_graph("time_series", config, clean_data2, figmap_leep_timeseries, 116, "United States") +
+#    scale_alpha(range = c(0.6, 1), guide = "none")
+# dta = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 116, "United States")
+# #fig
+# 
+# sens = dot_plots_sens("time_series", config, clean_data2, figmap_leep_timeseries, 116, "United States", 0, 6000, "Emissions", metric = "median", 
+#                       labels = model_labels, historic_coord = c(2015,5000), iralow_coord = c(2030, 4400), 
+#                       irahigh_coord = c(2027, 2200))
+# print(sens$full)
+# 
+# ggsave(filename = "output/leep/time_series/Fig1.4_emis_sensitivity.svg",sens$full, width = 7, height = 5, units = "in")
 ```
 
 ## Figure 3.4
 ```{r}
-# EV share plot
-scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)
-
-raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
-  left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
-  select(-c(model, scenario)) %>%
-  rename(model = model_new) %>%
-  rename(scenario = scenario_new) %>%
-  filter(unit != "thousands") %>%
-  filter(!(model == "EPA-ATR" & year >= 2022))
-
-atr_2022 = raw %>% filter(model == "EPA-ATR", year == 2021) %>% mutate(year = 2022)
-clean_data4 = rbind(raw, iea_2022) %>% filter(unit != "thousands") %>% mutate(value = 100 * value) %>%
-  filter(model != "EIA-LTS") %>% 
-  duplicate_historical_data("EPA-ATR",2022, criteria = TRUE) %>% mutate(
-    variable = case_when(
-      variable %in% c("Energy Service|Transportation|Passenger|BEV|Sales Share",
-                      "Energy Service|Transportation|Passenger|FCEV|Sales Share",
-                      "Energy Service|Transportation|Passenger|HEV|Sales Share",
-                      "Energy Service|Transportation|Freight|BEV|Sales Share",
-                      "Energy Service|Transportation|Freight|FCEV|Sales Share",
-                      "Energy Service|Transportation|Passenger|PHEV|Sales Share") ~ 
-        "Energy Service|Transportation|EV|Sales Share")) %>%
-  mutate(alpha = case_when(
-    model == "USREP-ReEDS" ~ 1,
-    model == "GCAM-PNNL" ~ 1,
-    model == "IPM-EPA" ~ 1,
-    scenario == "Historic" ~ 1,
-    TRUE ~ 0.8)
-  )
-
-fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
-dta = data_from_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
-#fig
-
-      # annotate("text", x = 2015, y = 8, label = "Historic", color = "black", alpha = 1) +
-      # annotate("text", x = 2030, y = 16, label = "No IRA", color = "#0388B3", alpha = 1) +
-      # annotate("text", x = 2027, y = 45, label = "IRA", color = "#F28063", alpha = 1) +
-p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States", 0, 100, "EV Share", metric = "median", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 16), ira_coord = c(2027, 45))
-print(p$full)
-print(p$stats)
-
-
-ggsave(filename = "output/final_figures/svg/Fig3.4_ev_share.svg",p$full, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig3.4_ev_share.png",p$full, width = 7, height = 5, units = "in")
-
-# supporting data
-dta = data_from_graph("time_series", config, clean_data4, figmap_leep_cone, 118, "United States")
-dta %>% write.csv("output/final_figures/data/Fig3.4_ev_share.csv", row.names = FALSE)
+# # EV share plot
+# scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)
+# 
+# raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
+#   left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
+#   select(-c(model, scenario)) %>%
+#   rename(model = model_new) %>%
+#   rename(scenario = scenario_new) %>%
+#   filter(unit != "thousands") %>%
+#   filter(!(model == "EPA-ATR" & year >= 2022))
+# 
+# atr_2022 = raw %>% filter(model == "EPA-ATR", year == 2021) %>% mutate(year = 2022)
+# clean_data4 = rbind(raw, atr_2022) %>% filter(unit != "thousands") %>% mutate(value = 100 * value) %>%
+#   filter(model != "EIA-LTS") %>%
+#   duplicate_historical_data("EPA-ATR",2022, criteria = TRUE) %>% mutate(
+#     variable = case_when(
+#       variable %in% c("Energy Service|Transportation|Passenger|BEV|Sales Share",
+#                       "Energy Service|Transportation|Passenger|FCEV|Sales Share",
+#                       "Energy Service|Transportation|Passenger|HEV|Sales Share",
+#                       "Energy Service|Transportation|Freight|BEV|Sales Share",
+#                       "Energy Service|Transportation|Freight|FCEV|Sales Share",
+#                       "Energy Service|Transportation|Passenger|PHEV|Sales Share") ~
+#         "Energy Service|Transportation|EV|Sales Share")) %>%
+#   mutate(alpha = case_when(
+#     model == "USREP-ReEDS" ~ 1,
+#     model == "GCAM-PNNL" ~ 1,
+#     model == "IPM-EPA" ~ 1,
+#     scenario == "Historic" ~ 1,
+#     TRUE ~ 0.8)
+#   )
+# 
+# # fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
+# dta = data_from_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
+# #fig
+# 
+#       # annotate("text", x = 2015, y = 8, label = "Historic", color = "black", alpha = 1) +
+#       # annotate("text", x = 2030, y = 16, label = "No IRA", color = "#0388B3", alpha = 1) +
+#       # annotate("text", x = 2027, y = 45, label = "IRA", color = "#F28063", alpha = 1) +
+# p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States", 0, 100, "EV Share", metric = "median", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 16), ira_coord = c(2027, 45))
+# print(p$full)
+# print(p$stats)
+# 
+# 
+# ggsave(filename = "output/final_figures/svg/Fig3.4_ev_share.svg",p$full, width = 7, height = 5, units = "in")
+# ggsave(filename = "output/final_figures/png/Fig3.4_ev_share.png",p$full, width = 7, height = 5, units = "in")
+# 
+# # supporting data
+# dta = data_from_graph("time_series", config, clean_data4, figmap_leep_cone, 118, "United States")
+# dta %>% write.csv("output/final_figures/data/Fig3.4_ev_share.csv", row.names = FALSE)
 ```
 
 
@@ -1723,8 +1723,8 @@ p = dot_plots_but_with_arrows("time_series", config, clean_data7, figmap_leep_ti
                              0, 5, "Power Sector SO2 Emissions", metric = "median",
                              historic_coord = c(2017,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12) )
 
-p = dot_plots_but_with_arrows("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States",
-                             0, 100, "EV Share", metric = "mean", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 16), ira_coord = c(2027, 45))
+# p = dot_plots_but_with_arrows("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States",
+#                              0, 100, "EV Share", metric = "mean", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 16), ira_coord = c(2027, 45))
 
 p$full
 
@@ -1774,25 +1774,25 @@ pct_diff_graph = function(plot_type, config, raw_data, figmap, fignum, region, e
   
 }
 
-# Figure 2.6: NOx
-p1 = pct_diff_graph("time_series", config, clean_data, figmap_leep_timeseries, 125, "United States")
-p1
-ggsave(filename = "output/final_figures/svg/Pct_diff/Fig2.6_pctdiff.svg",p1, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Pct_diff/Fig2.6_pctdiff.png",p1, width = 7, height = 5, units = "in")
-
-
-# Figure 2.7: Sox
-p2 = pct_diff_graph("time_series", config, clean_data, figmap_leep_timeseries, 126, "United States")
-p2
-ggsave(filename = "output/final_figures/svg/Pct_diff/Fig2.7_pctdiff.svg",p2, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Pct_diff/Fig2.7_pctdiff.png",p2, width = 7, height = 5, units = "in")
-
-
-# Figure 5.3: Industrial Final Energy
-p3 = pct_diff_graph("time_series", config, clean_data, figmap_leep_timeseries, 124, "United States")
-p3
-ggsave(filename = "output/final_figures/svg/Pct_diff/Fig5.3_pctdiff.svg",p3, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Pct_diff/Fig5.3_pctdiff.png",p3, width = 7, height = 5, units = "in")
+# # Figure 2.6: NOx
+# p1 = pct_diff_graph("time_series", config, clean_data, figmap_leep_timeseries, 125, "United States")
+# p1
+# ggsave(filename = "output/final_figures/svg/Pct_diff/Fig2.6_pctdiff.svg",p1, width = 7, height = 5, units = "in")
+# ggsave(filename = "output/final_figures/png/Pct_diff/Fig2.6_pctdiff.png",p1, width = 7, height = 5, units = "in")
+# 
+# 
+# # Figure 2.7: Sox
+# p2 = pct_diff_graph("time_series", config, clean_data, figmap_leep_timeseries, 126, "United States")
+# p2
+# ggsave(filename = "output/final_figures/svg/Pct_diff/Fig2.7_pctdiff.svg",p2, width = 7, height = 5, units = "in")
+# ggsave(filename = "output/final_figures/png/Pct_diff/Fig2.7_pctdiff.png",p2, width = 7, height = 5, units = "in")
+# 
+# 
+# # Figure 5.3: Industrial Final Energy
+# p3 = pct_diff_graph("time_series", config, clean_data, figmap_leep_timeseries, 124, "United States")
+# p3
+# ggsave(filename = "output/final_figures/svg/Pct_diff/Fig5.3_pctdiff.svg",p3, width = 7, height = 5, units = "in")
+# ggsave(filename = "output/final_figures/png/Pct_diff/Fig5.3_pctdiff.png",p3, width = 7, height = 5, units = "in")
 
 
 ```
@@ -1858,7 +1858,7 @@ m1 = medians_table("time_series", config, clean_data, figmap_leep_timeseries, 9,
 View(m1)
 
 m2 = medians_table("time_series", config, clean_data, figmap_leep_timeseries, 4, "Unites States")
-View(m2)
+# View(m2)
 
 ```
 

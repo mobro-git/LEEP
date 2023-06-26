@@ -1,13 +1,13 @@
 "year","scenario","variable","unit","min","max","No.IRA.median","IRA.median","difference","pct.difference"
 "2021","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1541,1541,1541,1541,0,0
-"2022","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1428,1515,1488.5,1451.5,-37,-0.025
-"2023","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1316,1489,1436.5,1362,-74.5,-0.052
-"2024","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1203,1463,1384,1272.5,-111.5,-0.081
-"2025","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1091,1438,1331.5,1183.5,-148,-0.111
-"2026","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1068,1378,1305.5,1090.5,-215,-0.165
-"2027","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1046,1379,1258.5,1008,-250.5,-0.199
-"2028","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1024,1379,1229.5,936.5,-293,-0.238
-"2029","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1002,1379,1218,860.5,-357.5,-0.294
+"2022","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1428,1515,1487,1451.5,-35.5,-0.024
+"2023","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1316,1489,1433,1362,-71,-0.05
+"2024","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1203,1463,1378.5,1272.5,-106,-0.077
+"2025","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1091,1438,1324.5,1183.5,-141,-0.106
+"2026","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1068,1378,1301.5,1090.5,-211,-0.162
+"2027","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1046,1379,1258.5,1009.5,-249,-0.198
+"2028","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1024,1379,1229.5,944,-285.5,-0.232
+"2029","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",1002,1379,1218,867.5,-350.5,-0.288
 "2030","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",980,1380,1189,754.5,-434.5,-0.365
 "2031","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",940,1390,1181.5,712,-469.5,-0.397
 "2032","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",899,1400,1173,670,-503,-0.429
