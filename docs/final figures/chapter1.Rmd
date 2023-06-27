@@ -74,7 +74,7 @@ EconSpg = spg(
   7000,
   c(0, 2000, 4000, 6000),
   scales::comma) +
-  annotate("text", x = 2015, y = 4900, label = "Historic", color = "black") +
+  annotate("text", x = 2015, y = 4900, label = "Historical", color = "black") +
   annotate("text", x = 2027.5, y = 5500, label = "No IRA", color = "#F28063") +
   annotate("text", x = 2022, y = 3800, label = "IRA", color = "#0388B3")
 
@@ -193,7 +193,7 @@ GasSpg = spg(
   45,
   c(0, 10, 20 , 30 , 40),
   NULL)+
-  annotate("text", x = 2010, y = 35, label = "Historic", color = "black") +
+  annotate("text", x = 2010, y = 35, label = "Historical", color = "black") +
   annotate("text", x = 2027.5, y = 35, label = "No IRA", color = "#F28063") +
   annotate("text", x = 2022, y = 22.5, label = "IRA", color = "#0388B3")
 

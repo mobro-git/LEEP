@@ -286,7 +286,7 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
     scale_x_continuous(breaks = c(2005,2010, hist_year, 2025, 2030, 2035), labels = c(2005, 2010, hist_year, 2025, 2030, 2035)) +
     scale_alpha(range = c(0.6, 1), guide = "none") +
     labs(y = ylab) +
-    annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historic", color = "black", alpha = 1) +
+    annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historical", color = "black", alpha = 1) +
     annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#F28063", alpha = 1) +
     annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#0388B3", alpha = 1) +
     theme(legend.position = "none", plot.title = element_blank())

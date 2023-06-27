@@ -94,7 +94,7 @@ TranSpg = spg(
   2500,
   c(0, 500, 1000, 1500, 2000, 2500),
   scales::comma) + 
-  annotate("text", x = 2015, y = 2000, label = "Historic", color = "black") + 
+  annotate("text", x = 2015, y = 2000, label = "Historical", color = "black") + 
   annotate("text", x = 2030, y = 2100, label = "No IRA", color = "#F28063") + 
   annotate("text", x = 2025, y = 1250, label = "IRA", color = "#0388B3")
 
