@@ -73,9 +73,9 @@ EconSpg = spg(
   0,
   7000,
   c(0, 2000, 4000, 6000),
-  scales::comma) + 
-  annotate("text", x = 2015, y = 4900, label = "Historic", color = "black") + 
-  annotate("text", x = 2027.5, y = 5500, label = "No IRA", color = "#F28063") + 
+  scales::comma) +
+  annotate("text", x = 2015, y = 4900, label = "Historic", color = "black") +
+  annotate("text", x = 2027.5, y = 5500, label = "No IRA", color = "#F28063") +
   annotate("text", x = 2022, y = 3800, label = "IRA", color = "#0388B3")
 
 EconTab = html(EconSpg$data, "Economy-Wide CO<sub>2<sub>")
@@ -135,8 +135,8 @@ BuilSpg = spg(
   NULL)
 BuilTab = html(BuilSpg$data, "Building CO<sub>2<sub>")
 
-fig = (EconSpg | ElecSpg) / (TranSpg | BuilSpg | IndSpg) + 
-  plot_annotation(tag_levels = list(c("", "", "Sectoral Emissions: Direct + Indirect from Electricity", "", ""))) & 
+fig = (EconSpg | ElecSpg) / (TranSpg | BuilSpg | IndSpg) +
+  plot_annotation(tag_levels = list(c("", "", "Sectoral Emissions: Direct + Indirect from Electricity", "", ""))) &
   theme(plot.tag.position = c(1.09, 1.1))
 fig
 
@@ -193,8 +193,8 @@ GasSpg = spg(
   45,
   c(0, 10, 20 , 30 , 40),
   NULL)+
-  annotate("text", x = 2010, y = 35, label = "Historic", color = "black") + 
-  annotate("text", x = 2027.5, y = 35, label = "No IRA", color = "#F28063") + 
+  annotate("text", x = 2010, y = 35, label = "Historic", color = "black") +
+  annotate("text", x = 2027.5, y = 35, label = "No IRA", color = "#F28063") +
   annotate("text", x = 2022, y = 22.5, label = "IRA", color = "#0388B3")
 
 GasDot = dotted(GasSpg$data, GasSpg, "median", 0, 45)
@@ -217,7 +217,7 @@ PetrolDot = dotted(PetrolSpg$data, PetrolSpg, "median", 0, 45)
 
 PetrolTab = html(PetrolSpg$data, "Petroleum")
 
-fig = (CoalDot | GasDot | PetrolDot) 
+fig = (CoalDot | GasDot | PetrolDot)
 fig
 
 savefig(fig, fig_no)
@@ -263,7 +263,7 @@ sens_dta_econ = clean_data %>% filter(variable == "Emissions|CO2|Energy",
 
 sens_dta_econ_panel2 = clean_data %>% filter(variable == "Emissions|CO2|Energy",
                                              year %in% c(2030, 2035)) %>%
-  filter(scenario %in% panel2_scens, 
+  filter(scenario %in% panel2_scens,
          model == "GCAM-PNNL") %>%
   mutate(scenario = case_when(
     scenario == "IRA" ~ "Mod", TRUE ~ scenario
@@ -274,10 +274,10 @@ sens_dta_econ_panel2 = clean_data %>% filter(variable == "Emissions|CO2|Energy",
     TRUE ~ scenario
   ))
 
-sens_dta_econ_panel3 = clean_data %>% 
-  filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>% 
-  filter(scenario %in% panel3_scens) %>% 
-  filter(model %in% c("GCAM-PNNL")) %>% 
+sens_dta_econ_panel3 = clean_data %>%
+  filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>%
+  filter(scenario %in% panel3_scens) %>%
+  filter(model %in% c("GCAM-PNNL")) %>%
   mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
   mutate(scenario = case_when(
     scenario == "High Energy Price" ~ "High",
@@ -285,10 +285,10 @@ sens_dta_econ_panel3 = clean_data %>%
     TRUE ~ scenario
   ))
 
-sens_dta_econ_panel4 = clean_data %>% 
-  filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>% 
-  filter(scenario %in% panel4_scens) %>% 
-  filter(model %in% c("USREP-ReEDS")) %>% 
+sens_dta_econ_panel4 = clean_data %>%
+  filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>%
+  filter(scenario %in% panel4_scens) %>%
+  filter(model %in% c("USREP-ReEDS")) %>%
   mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
     mutate(scenario = case_when(
     scenario == "All Advanced" ~ "All Adv",
@@ -296,10 +296,10 @@ sens_dta_econ_panel4 = clean_data %>%
     TRUE ~ scenario
   ))
 
-sens_dta_econ_panel5 = clean_data %>% 
+sens_dta_econ_panel5 = clean_data %>%
   filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>%
   filter(scenario %in% panel5_scens) %>%
-  filter(model %in% c("OP-NEMS", "USREP-ReEDS")) %>% 
+  filter(model %in% c("OP-NEMS", "USREP-ReEDS")) %>%
   mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
   mutate(scenario = case_when(
     scenario == "Pess-IRA.Adv" ~ "Pess-Adv",
@@ -312,10 +312,9 @@ sens_dta_econ_panel5 = clean_data %>%
   mutate(stagger = case_when(model == "USREP-ReEDS" ~ 0.4,
                              model == "OP-NEMS" ~ -0.4,
                              TRUE ~ 0.0))
-  
 
-sens_dta_trans = clean_data %>% 
-  filter(variable == "Emissions|CO2|Energy|Demand|Transportation", year %in% c(2030, 2035)) %>% 
+sens_dta_trans = clean_data %>%
+  filter(variable == "Emissions|CO2|Energy|Demand|Transportation", year %in% c(2030, 2035)) %>%
   filter(scenario %in% panel1_scens) %>%
   filter(model %in% model_list) %>%
   mutate(stagger = case_when(
@@ -324,8 +323,8 @@ sens_dta_trans = clean_data %>%
     TRUE ~ 0
   ))
 
-sens_dta_build = clean_data %>% 
-  filter(variable == "Emissions|CO2|Energy|Demand|Buildings", year %in% c(2030, 2035)) %>% 
+sens_dta_build = clean_data %>%
+  filter(variable == "Emissions|CO2|Energy|Demand|Buildings", year %in% c(2030, 2035)) %>%
   filter(scenario %in% panel1_scens) %>%
   filter(model %in% model_list) %>%
   mutate(stagger = case_when(
@@ -334,8 +333,8 @@ sens_dta_build = clean_data %>%
     TRUE ~ 0
   ))
 
-sens_dta_ind = clean_data %>% 
-  filter(variable == "Emissions|CO2|Energy|Demand|Industry and Fuel Production", year %in% c(2030, 2035)) %>% 
+sens_dta_ind = clean_data %>%
+  filter(variable == "Emissions|CO2|Energy|Demand|Industry and Fuel Production", year %in% c(2030, 2035)) %>%
   filter(scenario %in% panel1_scens) %>%
   filter(model %in% model_list) %>%
   mutate(stagger = case_when(
@@ -344,8 +343,8 @@ sens_dta_ind = clean_data %>%
     TRUE ~ 0
   ))
 
-p7 = sens_dot_plot(sens_dta_econ, title = "\nIRA Implementation", ymin = 0, ymax = 5000, far_left = TRUE, single = FALSE, 
-                   ira_coord = c(2028.4,3220), low_coord = c(2031.3, 3760), 
+p7 = sens_dot_plot(sens_dta_econ, title = "\nIRA Implementation", ymin = 0, ymax = 5000, far_left = TRUE, single = FALSE,
+                   ira_coord = c(2028.4,3220), low_coord = c(2031.3, 3760),
                    high_coord = c(2030.6, 4070))
 #p7$plot
 
@@ -356,38 +355,38 @@ p7e = sens_dot_plot(sens_dta_econ_panel5, title = "Combined Technology\n + Imple
 #p7b$plot
 
 
-p7$plot = p7$plot + 
+p7$plot = p7$plot +
   annotate("text", x = 2028.4, y = 4995, size = 3,
-               label = "EPS-EI", color = "#A1A1A1", alpha = 1, hjust = 0) + 
+               label = "EPS-EI", color = "#A1A1A1", alpha = 1, hjust = 0) +
   annotate("text", x = 2028.4, y = 4845, size = 3,
              label = "GCAM-CGS", color = "#A1A1A1", alpha = 1, hjust = 0) +
   annotate("text", x = 2028.4, y = 4695, size = 3,
-             label = "REGEN-EPRI", color = "#A1A1A1", alpha = 1, hjust = 0) + 
+             label = "REGEN-EPRI", color = "#A1A1A1", alpha = 1, hjust = 0) +
   annotate("text", x = 2028.4, y = 4545, size = 3,
-             label = "RIO-REPEAT", color = "#A1A1A1", alpha = 1, hjust = 0) + 
+             label = "RIO-REPEAT", color = "#A1A1A1", alpha = 1, hjust = 0) +
   annotate("text", x = 2028.4, y = 4395, size = 3,
              label = "USREP-ReEDS", color = "#A1A1A1", alpha = 1, hjust = 0)
 
-p7b$plot = p7b$plot + 
+p7b$plot = p7b$plot +
   annotate("text", x = 2028.4, y = 4995, size = 3,
                label = "GCAM-PNNL", color = "#A1A1A1", alpha = 1, hjust = 0) #3cb44b
 
-p7c$plot = p7c$plot + 
+p7c$plot = p7c$plot +
   annotate("text", x = 2028.4, y = 4995, size = 3,
                label = "GCAM-PNNL", color = "#A1A1A1", alpha = 1, hjust = 0) #3cb44b
 
-p7d$plot = p7d$plot + 
+p7d$plot = p7d$plot +
   annotate("text", x = 2028.4, y = 4995, size = 3,
                label = "USREP-ReEDS", color = "#A1A1A1", alpha = 1, hjust = 0) #FFF362
 
-p7e$plot = p7e$plot + 
+p7e$plot = p7e$plot +
   annotate("text", x = 2028.4, y = 4995, size = 3,
                label = "OP-NEMS (L)", color = "#A1A1A1", alpha = 1, hjust = 0) + #469990
   annotate("text", x = 2028.4, y = 4845, size = 3,
              label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0) #FFF362
 
 fig = (p7$plot | p7d$plot | p7e$plot | p7b$plot | p7c$plot) +
-  plot_annotation(title = "Economy-Wide Emissions", 
+  plot_annotation(title = "Economy-Wide Emissions",
                   theme = theme(plot.title = element_blank()))
 fig
 
@@ -523,29 +522,25 @@ all_panels %>% write.csv("./output/final_figures/data/Fig1.4_Summary.csv", row.n
 all_panels = add_header_row(flextable(all_panels), values = c("", "IRA Implementation", "Technology", "Combined Technology + Implementation", "Economic Growth", "Energy Price"),
   colwidths = c(4,2,2,2,2,2), top = TRUE)
 
-all_panels = add_header_row(all_panels, values = c("","Difference from IRA Moderate Scenario (negative is reduced emissions)"), colwidths = c(4,10)) 
+all_panels = add_header_row(all_panels, values = c("","Difference from IRA Moderate Scenario (negative is reduced emissions)"), colwidths = c(4,10))
 
 all_panels
-
-
 ```
-
-
 
 ## 1.x Playing around with arrows
 ```{r, eval = FALSE}
 # Economy-wide emissions
 clean_data12 = clean_data %>% duplicate_historical_data("EPA-GHGI", 2021, criteria = TRUE)
 p = dot_plots_but_with_arrows("time_series", config, clean_data12, figmap_leep_timeseries, 99,
-                              "United States", 0, 6000, "Economy-wide Emissions", 
-                              metric = "median", historic_coord = c(2017,5540), 
+                              "United States", 0, 6000, "Economy-wide Emissions",
+                              metric = "median", historic_coord = c(2017,5540),
                               preira_coord = c(2030, 4750), ira_coord = c(2029, 3230) )
 p$full
 
-p2 = dot_plots_but_with_arrows("time_series", config, clean_data12, 
+p2 = dot_plots_but_with_arrows("time_series", config, clean_data12,
                                figmap_leep_timeseries, 98,
-                              "United States", 0, 2600, "Economy-wide Emissions", 
-                              metric = "median", historic_coord = c(2017,2100), 
+                              "United States", 0, 2600, "Economy-wide Emissions",
+                              metric = "median", historic_coord = c(2017,2100),
                               preira_coord = c(2030, 1520), ira_coord = c(2029, 300) )
 p2$full
 ```

@@ -207,14 +207,16 @@ tar_plan(
 
   # Final Figures
 
-  # tar_render(
-  #   chapter1,
-  #   "docs/final figures/chapter1.Rmd",
-  #   output_dir = "output/final_figures/rmd",
-  #   output_file = "chapter1",
-  #   params = list(
-  #     mode = "targets"),
-  # ),
+  tar_render(
+    chapter1,
+    "docs/final figures/chapter1.Rmd",
+    output_dir = "output/final_figures/rmd",
+    output_file = "chapter1",
+    params = list(
+      mode = "targets"),
+  ),
+
+  all_data = compile_all_data(), # compiles all .csvs in final_figures/data into one workbook
 
   # Plot maps
 

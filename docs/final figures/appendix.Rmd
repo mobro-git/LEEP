@@ -32,7 +32,7 @@ targets::tar_load(figmap_leep_diffbar)
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 ```
 
-# Appendix
+# Appendix A
 
 ## Emissions Summary Tables
 
@@ -84,8 +84,13 @@ tab_a5 = summary_tables(
 )
 ```
 
-## Economy-Wide Diff
-```{r EconWide Differnce}
+# Appendix F
+
+## Emissions
+
+### Economy-Wide
+
+```{r}
 fig_no = "Ap.1.EconWideEmis"
 
 ts_map_ID = 99
@@ -110,8 +115,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Electricity Diff
-```{r Electricity Differnce}
+### Electricity
+
+```{r}
 fig_no = "Ap.2.ElecEmis"
 
 ts_map_ID = 98
@@ -136,8 +142,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Transportation Diff
-```{r Transportation Differnce}
+### Transportation
+
+```{r}
 fig_no = "Ap.3.TranEmis"
 
 ts_map_ID = 19
@@ -162,8 +169,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Building Diff
-```{r Building Difference}
+### Building
+
+```{r}
 fig_no = "Ap.4.BuilEmis"
 
 ts_map_ID = 23
@@ -188,8 +196,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Industry Diff
-```{r Industry Differnce}
+### Industry
+
+```{r}
 fig_no = "Ap.5.IndEmis"
 
 ts_map_ID = 21
@@ -215,8 +224,11 @@ savefig(fig$figure, fig_no)
 
 ```
 
-## Coal Diff
-```{r Coal Emissions Difference} 
+## Primary Energy
+
+### Coal
+
+```{r} 
 fig_no = "Ap.6.Coal"
 
 ts_map_ID = 94
@@ -241,8 +253,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Gas Diff
-```{r Gas Emissions Difference} 
+### Gas
+
+```{r} 
 fig_no = "Ap.7.Gas"
 
 ts_map_ID = 93
@@ -267,8 +280,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Petrol Diff
-```{r Petrol Emissions Difference} 
+### Petroleum
+
+```{r} 
 fig_no = "Ap.8.Petrol"
 
 ts_map_ID = 92
@@ -293,8 +307,11 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Nuclear Generation Diff
-```{r Nuclear Generation Difference} 
+## Generation
+
+### Nuclear
+
+```{r} 
 fig_no = "Ap.9.NuclearGen"
 
 ts_map_ID = 91
@@ -319,8 +336,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Solar Generation Diff
-```{r Solar Generation Difference} 
+### Solar
+
+```{r} 
 fig_no = "Ap.10.SolarGen"
 
 ts_map_ID = 90
@@ -345,8 +363,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Wind Generation Diff
-```{r Wind Generation Difference} 
+### Wind
+
+```{r} 
 fig_no = "Ap.11.WindGen"
 
 ts_map_ID = 89
@@ -371,8 +390,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## CCS Generation Diff
-```{r CCS Generation Difference, eval = FALSE} 
+### CCS
+
+```{r} 
 fig_no = "Ap.12.CCSGen"
 
 #there is no historic data here so gotta do a lil manual work 
@@ -487,8 +507,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig, fig_no)
 ```
 
-## Coal Generation Diff
-```{r Coal Generation Difference} 
+### Coal
+
+```{r#} 
 fig_no = "Ap.13.CoalGen"
 
 ts_map_ID = 82
@@ -514,8 +535,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Gas Generation Diff
-```{r Gas Generation Difference} 
+### Gas
+
+```{r} 
 fig_no = "Ap.14.GasGen"
 
 ts_map_ID = 81
@@ -541,8 +563,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Other Generation Diff
-```{r Alt Other Gen}
+### Other
+
+```{r}
 fig_no = "Ap.15.OtherGen"
 
 ts_map_ID = 88
