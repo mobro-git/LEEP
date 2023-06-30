@@ -801,8 +801,7 @@ median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - d
 stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
 
-data = rbind(df_21, df_30, df_35) %>%
-  filter(!(model == "AEO.2023" & scenario == "No IRA"))
+data = rbind(df_21, df_30, df_35) 
 
  
 
@@ -913,7 +912,7 @@ final = final +
 ) & theme(legend.position = "bottom")
 final
 
-savefig(final, fig_no, wd = 8)
+savefig(final, fig_no)
 ```
 
 ### Table 2.4 Total
@@ -2567,7 +2566,8 @@ sens_dta_panel1 = sens_dta %>% filter(scenario %in% panel1_scens) %>%
 
 sens_dta_panel2 = sens_dta %>% filter(scenario %in% panel2_scens) %>% 
   filter(model == "GCAM-PNNL") %>% 
-  mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when((scenario == "IRA" | scenario == "Core") ~ "Mod", 
+                              TRUE ~ scenario)) %>%
   mutate(scenario = case_when(
     scenario == "High Growth" ~ "High",
     scenario == "Low Growth" ~ "Low",
@@ -2578,7 +2578,8 @@ sens_dta_panel2 = sens_dta %>% filter(scenario %in% panel2_scens) %>%
 sens_dta_panel3 = sens_dta %>% filter(scenario %in% panel3_scens) %>%
   filter(model %in% c("ReEDS-NREL", "GCAM-PNNL")) %>% 
   filter(datasrc != "bistline_ira_tall.csv") %>%
-  mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when((scenario == "IRA" | scenario == "Core") ~ "Mod", 
+                              TRUE ~ scenario)) %>%
   mutate(scenario = case_when(
     scenario == "High Energy Price" ~ "High",
     scenario == "Low Energy Price" ~ "Low",
@@ -2595,7 +2596,8 @@ sens_dta_panel3 = sens_dta %>% filter(scenario %in% panel3_scens) %>%
 sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>% 
   filter(model %in% c("ReEDS-NREL", "USREP-ReEDS")) %>% 
   filter(datasrc != "bistline_ira_tall.csv") %>%
-  mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when((scenario == "IRA" | scenario == "Core") ~ "Mod", 
+                              TRUE ~ scenario)) %>%
   mutate(scenario = case_when(
     scenario == "Constrained Deployment" ~ "Constr",
     scenario == "All Advanced" ~ "All-Adv",
@@ -2613,7 +2615,8 @@ sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>%
   
 sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
   filter(model %in% c("USREP-ReEDS","OP-NEMS")) %>% 
-  mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when((scenario == "IRA" | scenario == "Core") ~ "Mod", 
+                              TRUE ~ scenario)) %>%
   mutate(scenario = case_when(
     scenario == "Pess-IRA.Adv" ~ "Pess-Adv",
     scenario == "Opt-IRA.Adv" ~ "Opt-Adv",
