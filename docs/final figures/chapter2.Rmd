@@ -80,6 +80,7 @@ fig = ggplot(data, aes(fill = variable_rename, y = value, alpha = alpha, x = yea
                      values = c( "#003052", "#BC8F73", "#733D3D", "#DEDEDE")) +
   scale_fill_manual(breaks = c( "Coal", "Gas", "Petroleum", "Other Sectors"), 
                      values = c( "#003052", "#BC8F73", "#733D3D", "#DEDEDE")) 
+fig
 
 saveall(fig, data, fig_no)
 ```
@@ -100,7 +101,6 @@ fig = print_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14,
   labs(y = "Seconary Energy (TWh)") +
   theme(axis.text.x = element_text(angle = 0, hjust = 0.5), plot.title = element_blank()) +
   bottom1
-
 fig
 
 df = data_from_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14, "United States")
@@ -126,7 +126,7 @@ ElecSpg = spg(
   2500,
   c(0, 500, 1000, 1500, 2000, 2500),
   scales::comma) +
-  annotate("text", x = 2015, y = 2250, label = "Historic", color = "black") + 
+  annotate("text", x = 2015, y = 2250, label = "Historical", color = "black") + 
   annotate("text", x = 2027.5, y = 1750, label = "No IRA", color = "#F28063") + 
   annotate("text", x = 2023, y = 650, label = "IRA", color = "#0388B3")
 
@@ -257,8 +257,6 @@ stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean
 
 data = rbind(df_21, df_30, df_35) 
 
- 
-
 data_total <- data %>%
   mutate(axe = case_when(
     year == 2021 ~ 1, 
@@ -289,15 +287,17 @@ dots_Total = ggplot(data = data_total, aes(x = axe, y = value,  color = scenario
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
+
 savedata(data_total, paste(fig_no, "Total"))
+
 ##### Low Total #####
+
 df_21 = low %>%
   filter(year %in% c(2021))
 df_stat_21 = df_21 %>%
   group_by(scenario,year,variable_rename) %>%
   summarise(mean = mean(value),
             median = median(value))
-  
 
 df_30 = low %>%
   filter(year %in% c(2030))
@@ -306,7 +306,6 @@ df_stat_30 = df_30 %>%
   summarise(mean = mean(value),
             median = median(value))
   
-
 df_35 = low %>%
   filter(year %in% c(2035))
 df_stat_35 = df_35 %>%
@@ -314,7 +313,6 @@ df_stat_35 = df_35 %>%
   summarise(mean = mean(value),
             median = median(value))
   
-
 mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
 mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
 
@@ -325,8 +323,6 @@ stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean
                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
 
 data = rbind(df_21, df_30, df_35) 
-
- 
 
 data_Low <- data %>%
   mutate(axe = case_when(
@@ -392,8 +388,6 @@ stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean
                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
 
 data = rbind(df_21, df_30, df_35) 
-
- 
 
 data_High <- data %>%
   mutate(axe = case_when(
@@ -2851,10 +2845,10 @@ all_panels
 
 ```
 
-## 2.7 nox emissions
+## 2.7a nox emissions
 
 ```{r}
-fig_no = 2.7
+fig_no = "2.7a"
 
 clean_data7 = clean_data %>% duplicate_historical_data("EPA",2021, criteria = TRUE) %>%
   mutate(alpha = case_when(
@@ -2877,16 +2871,13 @@ print(nox_full$full)
 print(nox_full$stats)
 
 dta1 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States")
-
 dta1 = clean_supplemental_data(dta1, fig_no)
-
-saveall(nox_full$full, dta1, fig_no)
 ```
 
-## 2.8 so2 emissions
+## 2.7b so2 emissions
 
 ```{r}
-fig_no = 2.8
+fig_no = "2.7b"
 
 sox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States") +
   scale_alpha(range = c(0.6, 1), guide = "none")
@@ -2898,24 +2889,22 @@ print(sox_full$full)
 print(sox_full$stats)
 
 dta2 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States")
-
 dta2 = clean_supplemental_data(dta2, fig_no)
-
-saveall(sox_full$full, dta2, fig_no)
 ```
 
-## 2.7A nox and sox in one figure
+## 2.7 nox and sox in one figure
 ```{r}
 fig_no= 2.7
 left = nox_full$full + theme(plot.margin = margin(0,0,0,0))
 right = sox_full$full + theme(plot.margin = margin(0,0,0,0))
 
 combined = (wrap_elements(left) | wrap_elements(right)) +     
-    plot_annotation(title = "NOx                                                                                 SO2", 
+    plot_annotation(title = "NOx                                                                                     SO2", 
                   theme = theme(plot.title = element_text(hjust = 0.5, size = 10))) +
   theme(plot.margin = margin(0,0,0,0))
 combined
 
+dta3 = rbind(dta1,dta2)
 
-
+saveall(combined, dta3, fig_no)
 ```

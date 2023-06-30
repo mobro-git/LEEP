@@ -94,7 +94,7 @@ TranSpg = spg(
   2500,
   c(0, 500, 1000, 1500, 2000, 2500),
   scales::comma) + 
-  annotate("text", x = 2015, y = 2000, label = "Historic", color = "black") + 
+  annotate("text", x = 2015, y = 2000, label = "Historical", color = "black") + 
   annotate("text", x = 2030, y = 2100, label = "No IRA", color = "#F28063") + 
   annotate("text", x = 2025, y = 1250, label = "IRA", color = "#0388B3")
 
@@ -114,7 +114,7 @@ html(TranSpg$data, "Transportation CO<sub>2<sub>")
 # Add NEMS
 fig_no = 3.4
 
-# TODO: OP-NEMS should be showing up here, but its removed when year colums are dropped in raw
+# TODO: OP-NEMS should be showing up here, but its removed when year columns are dropped in raw
 # Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share
 
 scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)

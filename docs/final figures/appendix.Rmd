@@ -32,7 +32,7 @@ targets::tar_load(figmap_leep_diffbar)
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 ```
 
-# Appendix
+# Appendix A
 
 ## Emissions Summary Tables
 
@@ -84,8 +84,13 @@ tab_a5 = summary_tables(
 )
 ```
 
-## Economy-Wide Diff
-```{r EconWide Differnce}
+# Appendix F
+
+## Emissions
+
+### Economy-Wide
+
+```{r}
 fig_no = "Ap.1.EconWideEmis"
 
 ts_map_ID = 99
@@ -95,8 +100,11 @@ drop = ""
 histsrc = "EPA-GHGI"
 metric = "Emissions"
 unit = "Mt CO2/yr"
+ymin = 2950
+ymax = 5050
+brk = c(3000, 4000, 5000)
 
-fig = four_corners("Economy-wide CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no)
+fig = four_corners("Economy-wide CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -107,8 +115,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Electricity Diff
-```{r Electricity Differnce}
+### Electricity
+
+```{r}
 fig_no = "Ap.2.ElecEmis"
 
 ts_map_ID = 98
@@ -118,8 +127,11 @@ drop = ""
 histsrc = "EPA-GHGI"
 metric = "Emissions"
 unit = "Mt CO2/yr"
+ymin = 300
+ymax = 1650
+brk = c(400, 800, 1200, 1600)
 
-fig = four_corners("Electricity CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no)
+fig = four_corners("Electricity CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -130,8 +142,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Transportation Diff
-```{r Transportation Differnce}
+### Transportation
+
+```{r}
 fig_no = "Ap.3.TranEmis"
 
 ts_map_ID = 19
@@ -141,8 +154,11 @@ drop = c("IPM-EPA","IPM-NRDC")
 histsrc = "EPA-GHGI"
 metric = "Emissions"
 unit = "Mt CO2/yr"
+ymin = 1150
+ymax = 1900
+brk = c(1200, 1500, 1800)
 
-fig = four_corners("Transportation CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no)
+fig = four_corners("Transportation CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -153,19 +169,23 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Building Diff
-```{r Building Difference}
+### Building
+
+```{r}
 fig_no = "Ap.4.BuilEmis"
 
 ts_map_ID = 23
 pd_map_ID = 29
 ad_map_ID = 7
-drop = ""
+drop = c("IPM-EPA", "IPM-NRDC")
 histsrc = "EPA-GHGI"
 metric = "Emissions"
 unit = "Mt CO2/yr"
+ymin = 400
+ymax = 1800
+brk = c(400, 800, 1200, 1600)
 
-fig = four_corners("Buildings CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no)
+fig = four_corners("Buildings CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -176,19 +196,23 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Industry Diff
-```{r Industry Differnce}
+### Industry
+
+```{r}
 fig_no = "Ap.5.IndEmis"
 
 ts_map_ID = 21
 pd_map_ID = 28
 ad_map_ID = 6
-drop = ""
+drop = c("IPM-EPA", "IPM-NRDC")
 histsrc = "EPA-GHGI"
 metric = "Emissions"
 unit = "Mt CO2/yr"
+ymin = 0
+ymax = 1600
+brk = c(0, 500, 1000, 1500)
 
-fig = four_corners("Industry CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no)
+fig = four_corners("Industry CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -200,19 +224,25 @@ savefig(fig$figure, fig_no)
 
 ```
 
-## Coal Diff
-```{r Coal Emissions Difference} 
+## Primary Energy
+
+### Coal
+
+```{r} 
 fig_no = "Ap.6.Coal"
 
 ts_map_ID = 94
 pd_map_ID = 32
 ad_map_ID = 20
-drop = "EIAinEMF37.csv"
+drop = c("EIAinEMF37.csv")
 histsrc = "EIA"
 metric = "Emissions"
 unit = "Mt CO2/yr"
+ymin = 0
+ymax = 20
+brk = c(0, 5, 10, 15, 20)
 
-fig = four_corners("Primary Energy: Coal",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no)
+fig = four_corners("Emissions from Coal",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -223,19 +253,23 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Gas Diff
-```{r Gas Emissions Difference} 
+### Gas
+
+```{r} 
 fig_no = "Ap.7.Gas"
 
 ts_map_ID = 93
 pd_map_ID = 31
 ad_map_ID = 21
-drop = "EIAinEMF37.csv"
+drop = c("EIAinEMF37.csv", "RIO-REPEAT")
 histsrc = "EIA"
 metric = "Emissions"
 unit = "Mt CO2/yr"
+ymin = 20
+ymax = 35
+brk = c(20, 25, 30, 35)
 
-fig = four_corners("Primary Energy: Gas",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no)
+fig = four_corners("Emissions from Gas",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -246,8 +280,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Petrol Diff
-```{r Petrol Emissions Difference} 
+### Petroleum
+
+```{r} 
 fig_no = "Ap.8.Petrol"
 
 ts_map_ID = 92
@@ -257,8 +292,11 @@ drop = "EIAinEMF37.csv"
 histsrc = "EIA"
 metric = "Emissions"
 unit = "Mt CO2/yr"
+ymin = 20
+ymax = 40
+brk = c(20, 30, 40)
 
-fig = four_corners("Primary Energy: Petroleum", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no)
+fig = four_corners("Emissions from Petroleum", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -269,8 +307,11 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Nuclear Generation Diff
-```{r Nuclear Generation Difference} 
+## Generation
+
+### Nuclear
+
+```{r} 
 fig_no = "Ap.9.NuclearGen"
 
 ts_map_ID = 91
@@ -280,8 +321,11 @@ drop = "EIAinEMF37.csv"
 histsrc = "EIA"
 metric = "Generation"
 unit = "TWh"
+ymin = 0
+ymax = 850
+brk = c(0, 200, 400, 600, 800)
 
-fig = four_corners("Nuclear Generation", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no)
+fig = four_corners("Electricity Generation from Nuclear", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -292,8 +336,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Solar Generation Diff
-```{r Solar Generation Difference} 
+### Solar
+
+```{r} 
 fig_no = "Ap.10.SolarGen"
 
 ts_map_ID = 90
@@ -303,8 +348,11 @@ drop = c("EIAinEMF37.csv", "IPM-EPA")
 histsrc = "EIA"
 metric = "Generation"
 unit = "TWh"
+ymin = 100
+ymax = 2200
+brk = c(500, 1000, 1500, 2000)
 
-fig = four_corners("Solar Generation", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no)
+fig = four_corners("Electricity Generation from Solar", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -315,8 +363,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Wind Generation Diff
-```{r Wind Generation Difference} 
+### Wind
+
+```{r} 
 fig_no = "Ap.11.WindGen"
 
 ts_map_ID = 89
@@ -326,8 +375,11 @@ drop = c("EIAinEMF37.csv", "IPM-EPA")
 histsrc = "EIA"
 metric = "Generation"
 unit = "TWh"
+ymin = 350
+ymax = 2600
+brk = c(500, 1000, 1500, 2000, 2500)
 
-fig = four_corners("Wind Generation", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no)
+fig = four_corners("Electricity Generation from Wind", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -338,117 +390,154 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## CCS Generation Diff
-```{r CCS Generation Difference, eval = FALSE} 
+### CCS
+
+```{r} 
 fig_no = "Ap.12.CCSGen"
 
-#there is no historic data here so gotta do a lil manual work 
+#there is no historic data here so gotta do a lil manual work
 ts_map_ID = 85
 pd_map_ID = 76
 ad_map_ID = 14
 drop = c("EIAinEMF37.csv", "IPM-EPA")
 histsrc = "EIA"
-unit = "Quads"
+unit = "Generation (Quads)"
+ymin = 0
+ymax = 5
+brk = c(0, 1, 2, 3, 4, 5)
 
- #Time Series Dataframe
-    ts_df = data_from_graph(
-    "time_series",
-    config,
-    clean_data,
-    figmap_leep_timeseries,
-    ts_map_ID,
-    "United States"
-  ) %>%
-    filter(!model %in% drop) %>%
-    filter(!datasrc %in% drop)%>%
-    filter(year >= 2021) %>%
-    filter(year <= 2021 &
-             model == histsrc |
-             year > 2021 & scenario != "Historic") %>%
-      group_by(model, scenario, year, variable_rename) %>%
-      summarize(value = sum(value)) %>%
-    pivot_wider(names_from = year, values_from = value)
-    
-    ts_df = ts_df %>%
-    mutate(`2021` = 0) %>%
-    pivot_longer(cols = starts_with("20"),
-                 names_to = "year",
-                 values_to = "value") %>%
-    filter(!is.na(value)) %>%
-    mutate(year = as.numeric(year)) 
-      
-    noIRAmedians = ts_df[ts_df$scenario == "No IRA",] %>%
-      filter(year == 2030 | year == 2035) %>%
-      group_by(year) %>%
-      summarize(median = median(value))
-    
-    IRAmedians = ts_df[ts_df$scenario == "IRA",] %>%
-      filter(year == 2030 | year == 2035) %>%
-      group_by(year) %>%
-      summarize(median = median(value))
-    
-    NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA", ], aes(year, value, color = model)) +
-      geom_line(size = 0.75) +
-      scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
-      theme_emf() +
-      scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
-      labs(title = "No IRA",
-           y = unit,
-           x = element_blank()) +
-      theme(legend.position = "right",
-            axis.text.x = element_text(angle = 45, hjust = 1)) +
-      geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
-      geom_point(
-        data = noIRAmedians,
-        aes(x = year, y = median),
-        color = "black",
-        shape = 16,
-        size = 2
-      )
-    
-    IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA", ], aes(year, value, color = model)) +
-      geom_line(size = 0.75) +
-      scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
-      theme_emf() +
-      scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
-      labs(title = "IRA",
-           y = unit,
-           x = element_blank()) +
-      theme(legend.position = "right",
-            axis.text.x = element_text(angle = 45, hjust = 1)) +
-      geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
-      geom_point(
-        data = IRAmedians,
-        aes(x = year, y = median),
-        color = "black",
-        shape = 16,
-        size = 2
-      )
-    
-    #Percent Difference
-      
+#Time Series Dataframe
+ts_df = data_from_graph(
+  "time_series",
+  config,
+  clean_data,
+  figmap_leep_timeseries,
+  ts_map_ID,
+  "United States"
+) %>%
+  filter(!model %in% drop) %>%
+  filter(!datasrc %in% drop) %>%
+  filter(year >= 2021) %>%
+  filter(year <= 2021 &
+           model == histsrc |
+           year > 2021 & scenario != "Historic") %>%
+  group_by(model, scenario, year, variable_rename) %>%
+  summarize(value = sum(value)) %>%
+  pivot_wider(names_from = year, values_from = value)
+
+ts_df = ts_df %>%
+  mutate(`2021` = 0) %>%
+  pivot_longer(cols = starts_with("20"),
+               names_to = "year",
+               values_to = "value") %>%
+  filter(!is.na(value)) %>%
+  mutate(year = as.numeric(year))
+
+noIRAmedians = ts_df[ts_df$scenario == "No IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+IRAmedians = ts_df[ts_df$scenario == "IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA",], aes(year, value, color = model)) +
+  geom_line(size = 0.75) +
+  scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+  theme_emf() +
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+  scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
+  labs(title = "No IRA",
+       y = unit,
+       x = element_blank()) +
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = noIRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA",], aes(year, value, color = model)) +
+  geom_line(size = 0.75) +
+  scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+  theme_emf() +
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+  scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
+  labs(title = "IRA",
+       y = unit,
+       x = element_blank()) +
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = IRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+#Percent Difference
+
 pdfigure = pd(pd_map_ID, "", expression(paste("Percent Difference (%)")), "none", drop)
-    
-    #Absolute Difference
+
+#Absolute Difference
 adfigure = ad(diff_ID = ad_map_ID, "", expression(paste("Absolute Difference (Quads)")), "none", drop)
-  
-fig = (NoIRAfigure | IRAfigure) / (adfigure$figure | pdfigure$figure)+ 
+
+fig = (NoIRAfigure |
+         IRAfigure) / (adfigure$figure | pdfigure$figure) +
   plot_layout(guides = "collect") +
-  plot_annotation(title = "CCS Generation")
+  plot_annotation(title = "Electricity Generation from Coal with CCS")
 
 fig
 
 # TODO: This entire figure is broken and saves off data that doesnt exist. I fixed the figure, but the whole thing should be rewritten to fit the format of the rest of the figures and actually output the correct data
 
-write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
-write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
-write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+write.csv(
+  fig$ts_df,
+  file = paste("output/final_figures/data/Fig", fig_no, "a_Scen.csv", sep =
+                 ""),
+  row.names = FALSE
+)
+write.csv(
+  fig$pd_df,
+  file = paste(
+    "output/final_figures/data/Fig",
+    fig_no,
+    "b_PercDiff.csv",
+    sep = ""
+  ),
+  row.names = FALSE
+)
+write.csv(
+  fig$ad_df,
+  file = paste(
+    "output/final_figures/data/Fig",
+    fig_no,
+    "c_AbsDiff.csv",
+    sep = ""
+  ),
+  row.names = FALSE
+)
 
 savefig(fig, fig_no)
 ```
 
-## Coal Generation Diff
-```{r Coal Generation Difference} 
+### Coal
+
+```{r#} 
 fig_no = "Ap.13.CoalGen"
 
 ts_map_ID = 82
@@ -458,9 +547,12 @@ drop = c("EIAinEMF37.csv", "IPM-EPA")
 histsrc = "EIA"
 metric = "Generation"
 unit = "TWh"
+ymin = 0
+ymax = 1100
+brk = c(0, 250, 500, 750, 1000)
 
 
-fig = four_corners("Coal Generation", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no)
+fig = four_corners("Coal Generation", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -471,20 +563,24 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Gas Generation Diff
-```{r Gas Generation Difference} 
+### Gas
+
+```{r} 
 fig_no = "Ap.14.GasGen"
 
 ts_map_ID = 81
 pd_map_ID = 70
 ad_map_ID = 18
-drop = c("EIAinEMF37.csv", "IPM-EPA")
+drop = c("EIAinEMF37.csv", "IPM-EPA", "AEO.2023")
 histsrc = "EIA"
 metric = "Generation"
 unit = "TWh"
+ymin = 0
+ymax = 2500
+brk = c(0, 500, 1000, 1500, 2000, 2500)
 
 
-fig = four_corners("Gas Generation", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no)
+fig = four_corners("Electricity Generation from Gas", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -495,8 +591,9 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-## Other Generation Diff
-```{r Other Generation Difference} 
+### Other
+
+```{r}
 fig_no = "Ap.15.OtherGen"
 
 ts_map_ID = 88
@@ -506,26 +603,310 @@ drop = c("EIAinEMF37.csv", "IPM-EPA")
 histsrc = "EIA"
 metric = "Generation"
 unit = "TWh"
+ymin = 250
+ymax = 500
+brk = c(250, 375, 500)
 
 
-fig = four_corners("Other Generation", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no)
+fig = four_corners("Electricity Generation from Other", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
-fig$figure
+abdata = fig$ts_df %>%
+  group_by(model, year) %>%
+  summarize(abdif = value[scenario == "IRA"] - value[scenario == "No IRA"])
 
-write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
-write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
-write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+  hist <- abdata %>%
+    group_by(model) %>%
+    slice(1) %>%
+    mutate(scenario = "Historic",
+           diff = 0,
+           year = 2021)
+  
+    medians = abdata %>%
+    filter(year %in% c(2030, 2035)) %>%
+    group_by(year) %>%
+    summarize(median = median(abdif))
+    
+    abdata <- rbind(abdata, hist)
 
-savefig(fig$figure, fig_no)
+adfigure = ggplot() +
+    geom_line(data = abdata,
+              aes(
+                x = year,
+                y = abdif,
+                group = model,
+                color = model
+              ),
+              size = 0.75) +
+    geom_point(aes(x = 2021, y = 0), color = "black") +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA")+
+    theme_emf() +
+    theme(
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = "Absolute Difference (TWh)") 
+
+pbdata = fig$ts_df %>%
+  group_by(model, year) %>%
+  summarize(pbdif = (value[scenario == "IRA"] - value[scenario == "No IRA"])/value[scenario=="No IRA"])
+
+  hist <- pbdata %>%
+    group_by(model) %>%
+    slice(1) %>%
+    mutate(scenario = "Historic",
+           diff = 0,
+           year = 2021)
+  
+    medians = pbdata %>%
+    filter(year %in% c(2030, 2035)) %>%
+    group_by(year) %>%
+    summarize(median = median(pbdif))
+    
+    pbdata <- rbind(pbdata, hist)
+
+pdfigure = ggplot() +
+    geom_line(data = pbdata,
+              aes(
+                x = year,
+                y = pbdif,
+                group = model,
+                color = model
+              ),
+              size = 0.75) +
+    geom_point(aes(x = 2021, y = 0), color = "black") +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA")+
+    theme_emf() +
+    theme(
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = "Percent Difference (%)") 
+
+  #Time Series Dataframe
+  df = fig$ts_df
+  noIRAmedians = df[df$scenario == "No IRA",] %>%
+    filter(year == 2030 | year == 2035) %>%
+    group_by(year) %>%
+    summarize(median = median(value))
+
+  IRAmedians = df[df$scenario == "IRA",] %>%
+    filter(year == 2030 | year == 2035) %>%
+    group_by(year) %>%
+    summarize(median = median(value))
+
+  NoIRAfigure = ggplot(df[df$scenario == "No IRA", ], aes(year, value, color = model)) +
+    geom_line(size = 0.75) +
+    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+    theme_emf() +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    scale_y_continuous(limits = c(ymin, ymax), breaks = brk) + 
+    labs(title = "No IRA",
+         y = paste0(metric," (",unit,")"),
+         x = element_blank()) +
+    theme(legend.position = "right",
+         plot.title = element_text(hjust = 0.5),
+          axis.text.x = element_text(angle = 45, hjust = 1)) +
+    geom_point(aes(x = 2021, y = df$value[df$year == 2021][1]), color = "black") +
+    geom_point(
+      data = noIRAmedians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    )
+
+  IRAfigure = ggplot(df[df$scenario == "IRA", ], aes(year, value, color = model)) +
+    geom_line(size = 0.75) +
+    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+    theme_emf() +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
+    labs(title = "IRA",
+         y = paste0(metric," (",unit,")"),
+         x = element_blank()) +
+    theme(legend.position = "right",
+          plot.title = element_text(hjust = 0.5),
+          axis.text.x = element_text(angle = 45, hjust = 1)) +
+    geom_point(aes(x = 2021, y = df$value[df$year == 2021][1]), color = "black") +
+    geom_point(
+      data = IRAmedians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    )
+  
+  figure = (NoIRAfigure | IRAfigure) / (adfigure | pdfigure) + 
+    plot_layout(guides = "collect") +
+    plot_annotation(title = "Electricity Generation from Other")
+  
+  savefig(figure, fig_no)
 ```
 
+# Appendix G 
 
+## Electrification Figure
 
+```{r}
+hist = ref_elc %>% select(year, variable, value) %>%
+  pivot_wider(names_from = "year", values_from = "value")
 
+replace_hist = elc_raw %>%
+  filter(model != "AEO2021") %>%
+  full_join(hist, by = c("variable")) %>%
+  select(model,scenario,variable,`2020`) %>%
+  pivot_longer(cols = `2020`, names_to = "year", values_to = "value") %>%
+  distinct()
 
+elc_ts = rbind(elc_raw, replace_hist) %>%
+  filter(model != "AEO2021" &
+           year <= 2035) %>%
+  mutate(variable = factor(variable, levels = c("Economy-Wide", "Transportation", "Buildings", "Industry")))
 
+ggplot() +
+  geom_line(data = elc_ts, aes(x = year, y = value, color = scenario, group = interaction(model,scenario))) +
+  facet_grid(~variable) +
+  theme_emf() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_subpalette(subpalettes, "Final Energy") +
+  labs(y = "% Electricity of Final Energy",
+       x="")
+```
 
+## Tables
 
+### % Share Tables
 
+```{r}
+per_share_wb <- createWorkbook()
 
+stats = elc_ts %>%
+  filter(year != 2020) %>%
+  mutate(year = as.character(year)) %>%
+  group_by(scenario, variable, year) %>%
+  summarise(Median = round(median(value),2),
+            Min = round(min(value),2),
+            Max = round(max(value),2)) %>%
+  rename(Sector = variable,
+         Year = year)
 
+total = stats %>%
+  filter(Sector == "Economy-Wide") %>%
+  pivot_longer(cols = 4:6, names_to = "Statistic", values_to = "value") %>%
+  pivot_wider(names_from = "scenario", values_from = "value")
+total
+
+write_sheet(total, per_share_wb, "Total")
+
+transportation = stats %>%
+  filter(Sector == "Transportation") %>%
+  pivot_longer(cols = 4:6, names_to = "Statistic", values_to = "value") %>%
+  pivot_wider(names_from = "scenario", values_from = "value")
+transportation
+
+write_sheet(transportation, per_share_wb, "Transportation")
+
+buildings = stats %>%
+  filter(Sector == "Buildings") %>%
+  pivot_longer(cols = 4:6, names_to = "Statistic", values_to = "value") %>%
+  pivot_wider(names_from = "scenario", values_from = "value")
+buildings
+
+write_sheet(buildings, per_share_wb, "Buildings")
+
+industry = stats %>%
+  filter(Sector == "Industry") %>%
+  pivot_longer(cols = 4:6, names_to = "Statistic", values_to = "value") %>%
+  pivot_wider(names_from = "scenario", values_from = "value")
+industry
+
+write_sheet(industry, per_share_wb, "Industry")
+
+all = rbind(total, transportation, buildings, industry) %>%
+  mutate(`IRA` = `IRA`/100,
+         `No IRA` = `No IRA`/100)
+
+write_sheet(all, per_share_wb, "All")
+
+saveWorkbook(per_share_wb, file = "output/final_figures/data/electrification_percentshare.xlsx", overwrite = TRUE)
+```
+
+### % Difference in Share IRA vs No IRA Tables
+
+```{r}
+diff_wb <- createWorkbook()
+
+stats_per = elc_ts %>%
+  filter(year != 2020) %>%
+  pivot_wider(names_from = "scenario", values_from = "value") %>%
+  mutate(
+    pp_diff = round((`IRA` - `No IRA`),2),
+    per_diff = round(((pp_diff/`No IRA`)*100),2)) %>%
+  select(model,year,variable,pp_diff,per_diff) %>%
+  pivot_longer(cols = 4:5, names_to = "stat", values_to = "value") %>%
+  group_by(year,variable,stat) %>%
+  summarise(
+    Median = median(value),
+    Min = min(value),
+    Max = max(value)
+  ) %>%
+  rename(indicator = stat) %>%
+  pivot_longer(cols = 4:6, names_to = "stat", values_to = "value") %>%
+  pivot_wider(names_from = "indicator", values_from = "value") %>%
+  rename(`Percentage Point Difference` = pp_diff,
+         `Percent Difference` = per_diff,
+         Year = year,
+         Statistic = stat,
+         Sector = variable) %>%
+  select(Sector, Year, Statistic, `Percent Difference`, `Percentage Point Difference`)
+
+total_per = stats_per %>% filter(Sector == "Economy-Wide")
+total_per
+
+write_sheet(total_per, diff_wb, "Economy-Wide")
+
+transportation_per = stats_per %>% filter(Sector == "Transportation")
+transportation_per
+
+write_sheet(transportation_per, diff_wb, "Transportation")
+
+buildings_per = stats_per %>% filter(Sector == "Buildings")
+buildings_per
+
+write_sheet(buildings_per, diff_wb, "Buildings")
+
+industry_per = stats_per %>% filter(Sector == "Industry")
+industry_per
+
+write_sheet(industry_per, diff_wb, "Industry")
+
+all_per = rbind(total_per, transportation_per, buildings_per, industry_per) %>%
+  mutate(`Percent Difference` = `Percent Difference`/100,
+         `Percentage Point Difference` = paste(`Percentage Point Difference`, "pp"))
+
+write_sheet(all_per, diff_wb, "All")
+
+saveWorkbook(diff_wb, file = "output/final_figures/data/electrification_differences.xlsx", overwrite = TRUE)
+```

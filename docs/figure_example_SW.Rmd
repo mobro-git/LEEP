@@ -512,24 +512,24 @@ p = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 15, 16, "United
   facet_grid(~factor(variable_rename, levels=c('Electricity', 'Non-Electric'))) +
   theme(plot.title = element_blank())
 p
-ggsave(filename = "output/final_figures/svg/Fig6.4_LTS_cone_buildings_facet.svg",p, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig6.4_LTS_cone_buildings_facet.png",p, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/svg/Fig6.4_LTS_cone_buildings_facet.svg",p, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/png/Fig6.4_LTS_cone_buildings_facet.png",p, width = 7, height = 5, units = "in")
 
 # Transportation Energy: Figure 6.3
 p3 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 11, 12, "United States", 0, 30, title = "Transportation Sector Final Energy" , "median", facet = TRUE) +
   facet_grid(~factor(variable_rename, levels=c('Fossil', 'Electricity', 'Alternative Fuels'))) +
   theme(plot.title = element_blank())
 p3
-ggsave(filename = "output/final_figures/svg/Fig6.3_LTS_cone_transport_facet.svg",p3, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig6.3_LTS_cone_transport_facet.png",p3, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/svg/Fig6.3_LTS_cone_transport_facet.svg",p3, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/png/Fig6.3_LTS_cone_transport_facet.png",p3, width = 7, height = 5, units = "in")
 
 # Industrial Energy: Figure 6.5
 p4 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 13, 14, "United States", 0, 23, title = "Industrial Sector Final Energy", "median", facet = TRUE) +
   facet_grid(~factor(variable_rename, levels=c('Fossil', 'Electricity', 'Alternative Fuels'))) +
   theme(plot.title = element_blank())
 p4
-ggsave(filename = "output/final_figures/svg/Fig6.5_LTS_cone_industry_facet.svg", p4, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig6.5_LTS_cone_industry_facet.png", p4, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/svg/Fig6.5_LTS_cone_industry_facet.svg", p4, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/png/Fig6.5_LTS_cone_industry_facet.png", p4, width = 7, height = 5, units = "in")
 
 # # Economy-wide Emissions
 # p5 = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 9, 10, "United States", -100, 2500, title = "Economy-Wide Combustions Emissions by Sector", "median", facet = TRUE) +
@@ -577,17 +577,17 @@ ggsave(filename = "output/final_figures/png/Fig6.5_LTS_cone_industry_facet.png",
 dta1 = data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 15, "United States")
 dta2 = data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 16, "United States")
 dta = rbind(dta1, dta2)
-dta %>% write.csv("output/final_figures/data/Fig6.4_LTS_cone_buildings_facet.csv", row.names = FALSE)
+dta %>% write.csv("output/sw_figures/data/Fig6.4_LTS_cone_buildings_facet.csv", row.names = FALSE)
 
 dta1 = data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 11, "United States")
 dta2 = data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 12, "United States")
 dta = rbind(dta1, dta2)
-dta %>% write.csv("output/final_figures/data/Fig6.3_LTS_cone_transport_facet.csv", row.names = FALSE)
+dta %>% write.csv("output/sw_figures/data/Fig6.3_LTS_cone_transport_facet.csv", row.names = FALSE)
 
 dta1 = data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 13, "United States")
 dta2 = data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, 14, "United States")
 dta = rbind(dta1, dta2)
-dta %>% write.csv("output/final_figures/data/Fig6.5_LTS_cone_industry_facet.csv", row.names = FALSE)
+dta %>% write.csv("output/sw_figures/data/Fig6.5_LTS_cone_industry_facet.csv", row.names = FALSE)
 
 ```
 
@@ -715,9 +715,9 @@ bottom
 combined = (wrap_elements(top) / wrap_elements(bottom))
 combined
 
-ggsave(filename = "output/final_figures/svg/Fig6.2NEW_LTS_cone_indirect_emissions_TOTAL.svg", 
+ggsave(filename = "output/sw_figures/svg/Fig6.2NEW_LTS_cone_indirect_emissions_TOTAL.svg", 
        combined, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig6.2NEW_LTS_cone_indirect_emissions_TOTAL.png", 
+ggsave(filename = "output/sw_figures/png/Fig6.2NEW_LTS_cone_indirect_emissions_TOTAL.png", 
        combined, width = 7, height = 5, units = "in")
 
 # supporting data
@@ -725,80 +725,80 @@ dta = data.frame()
 for (i in c(seq(19,26,by = 1))) {
   dta = rbind(dta, data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, i, "United States"))
 }
-dta %>% write.csv("output/final_figures/data/Fig6.2NEW_LTS_cone_indirect_emissions_TOTAL.csv", row.names = FALSE)
+dta %>% write.csv("output/sw_figures/data/Fig6.2NEW_LTS_cone_indirect_emissions_TOTAL.csv", row.names = FALSE)
 
 ```
 
 
 ```{r, eval = FALSE}
 # uncertainty plot - DEFUNCT
-model_labels = FALSE
-
-clean_data2 = clean_data %>% duplicate_historical_data("EIA-STEO",2020, criteria = TRUE) %>% mutate(alpha = 1)
-fig = print_graph("time_series", config, clean_data2, figmap_leep_timeseries, 116, "United States") +
-   scale_alpha(range = c(0.6, 1), guide = "none")
-dta = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 116, "United States")
-#fig
-
-sens = dot_plots_sens("time_series", config, clean_data2, figmap_leep_timeseries, 116, "United States", 0, 6000, "Emissions", metric = "median", 
-                      labels = model_labels, historic_coord = c(2015,5000), iralow_coord = c(2030, 4400), 
-                      irahigh_coord = c(2027, 2200))
-print(sens$full)
-
-ggsave(filename = "output/leep/time_series/Fig1.4_emis_sensitivity.svg",sens$full, width = 7, height = 5, units = "in")
+# model_labels = FALSE
+# 
+# clean_data2 = clean_data %>% duplicate_historical_data("EIA-STEO",2020, criteria = TRUE) %>% mutate(alpha = 1)
+# fig = print_graph("time_series", config, clean_data2, figmap_leep_timeseries, 116, "United States") +
+#    scale_alpha(range = c(0.6, 1), guide = "none")
+# dta = data_from_graph("time_series", config, clean_data, figmap_leep_timeseries, 116, "United States")
+# #fig
+# 
+# sens = dot_plots_sens("time_series", config, clean_data2, figmap_leep_timeseries, 116, "United States", 0, 6000, "Emissions", metric = "median", 
+#                       labels = model_labels, historic_coord = c(2015,5000), iralow_coord = c(2030, 4400), 
+#                       irahigh_coord = c(2027, 2200))
+# print(sens$full)
+# 
+# ggsave(filename = "output/leep/time_series/Fig1.4_emis_sensitivity.svg",sens$full, width = 7, height = 5, units = "in")
 ```
 
 ## Figure 3.4
 ```{r}
-# EV share plot
-scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)
-
-raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
-  left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
-  select(-c(model, scenario)) %>%
-  rename(model = model_new) %>%
-  rename(scenario = scenario_new) %>%
-  filter(unit != "thousands") %>%
-  filter(!(model == "EPA-ATR" & year >= 2022))
-
-atr_2022 = raw %>% filter(model == "EPA-ATR", year == 2021) %>% mutate(year = 2022)
-clean_data4 = rbind(raw, iea_2022) %>% filter(unit != "thousands") %>% mutate(value = 100 * value) %>%
-  filter(model != "EIA-LTS") %>% 
-  duplicate_historical_data("EPA-ATR",2022, criteria = TRUE) %>% mutate(
-    variable = case_when(
-      variable %in% c("Energy Service|Transportation|Passenger|BEV|Sales Share",
-                      "Energy Service|Transportation|Passenger|FCEV|Sales Share",
-                      "Energy Service|Transportation|Passenger|HEV|Sales Share",
-                      "Energy Service|Transportation|Freight|BEV|Sales Share",
-                      "Energy Service|Transportation|Freight|FCEV|Sales Share",
-                      "Energy Service|Transportation|Passenger|PHEV|Sales Share") ~ 
-        "Energy Service|Transportation|EV|Sales Share")) %>%
-  mutate(alpha = case_when(
-    model == "USREP-ReEDS" ~ 1,
-    model == "GCAM-PNNL" ~ 1,
-    model == "IPM-EPA" ~ 1,
-    scenario == "Historic" ~ 1,
-    TRUE ~ 0.8)
-  )
-
-fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
-dta = data_from_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
-#fig
-
-      # annotate("text", x = 2015, y = 8, label = "Historic", color = "black", alpha = 1) +
-      # annotate("text", x = 2030, y = 16, label = "No IRA", color = "#0388B3", alpha = 1) +
-      # annotate("text", x = 2027, y = 45, label = "IRA", color = "#F28063", alpha = 1) +
-p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States", 0, 100, "EV Share", metric = "median", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 16), ira_coord = c(2027, 45))
-print(p$full)
-print(p$stats)
-
-
-ggsave(filename = "output/final_figures/svg/Fig3.4_ev_share.svg",p$full, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig3.4_ev_share.png",p$full, width = 7, height = 5, units = "in")
-
-# supporting data
-dta = data_from_graph("time_series", config, clean_data4, figmap_leep_cone, 118, "United States")
-dta %>% write.csv("output/final_figures/data/Fig3.4_ev_share.csv", row.names = FALSE)
+# # EV share plot
+# scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)
+# 
+# raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
+#   left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
+#   select(-c(model, scenario)) %>%
+#   rename(model = model_new) %>%
+#   rename(scenario = scenario_new) %>%
+#   filter(unit != "thousands") %>%
+#   filter(!(model == "EPA-ATR" & year >= 2022))
+# 
+# atr_2022 = raw %>% filter(model == "EPA-ATR", year == 2021) %>% mutate(year = 2022)
+# clean_data4 = rbind(raw, atr_2022) %>% filter(unit != "thousands") %>% mutate(value = 100 * value) %>%
+#   filter(model != "EIA-LTS") %>%
+#   duplicate_historical_data("EPA-ATR",2022, criteria = TRUE) %>% mutate(
+#     variable = case_when(
+#       variable %in% c("Energy Service|Transportation|Passenger|BEV|Sales Share",
+#                       "Energy Service|Transportation|Passenger|FCEV|Sales Share",
+#                       "Energy Service|Transportation|Passenger|HEV|Sales Share",
+#                       "Energy Service|Transportation|Freight|BEV|Sales Share",
+#                       "Energy Service|Transportation|Freight|FCEV|Sales Share",
+#                       "Energy Service|Transportation|Passenger|PHEV|Sales Share") ~
+#         "Energy Service|Transportation|EV|Sales Share")) %>%
+#   mutate(alpha = case_when(
+#     model == "USREP-ReEDS" ~ 1,
+#     model == "GCAM-PNNL" ~ 1,
+#     model == "IPM-EPA" ~ 1,
+#     scenario == "Historic" ~ 1,
+#     TRUE ~ 0.8)
+#   )
+# 
+# # fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
+# dta = data_from_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
+# #fig
+# 
+#       # annotate("text", x = 2015, y = 8, label = "Historic", color = "black", alpha = 1) +
+#       # annotate("text", x = 2030, y = 16, label = "No IRA", color = "#0388B3", alpha = 1) +
+#       # annotate("text", x = 2027, y = 45, label = "IRA", color = "#F28063", alpha = 1) +
+# p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States", 0, 100, "EV Share", metric = "median", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 16), ira_coord = c(2027, 45))
+# print(p$full)
+# print(p$stats)
+# 
+# 
+# ggsave(filename = "output/sw_figures/svg/Fig3.4_ev_share.svg",p$full, width = 7, height = 5, units = "in")
+# ggsave(filename = "output/sw_figures/png/Fig3.4_ev_share.png",p$full, width = 7, height = 5, units = "in")
+# 
+# # supporting data
+# dta = data_from_graph("time_series", config, clean_data4, figmap_leep_cone, 118, "United States")
+# dta %>% write.csv("output/sw_figures/data/Fig3.4_ev_share.csv", row.names = FALSE)
 ```
 
 
@@ -837,12 +837,12 @@ dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3
 # print(p$stats)
 
 
-ggsave(filename = "output/final_figures/svg/Fig3.2_trans_co2.svg",fig, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig3.2_trans_co2.png",fig, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/svg/Fig3.2_trans_co2.svg",fig, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/png/Fig3.2_trans_co2.png",fig, width = 7, height = 5, units = "in")
 
 # supporting data
 dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3, "United States")
-dta %>% write.csv("output/final_figures/data/Fig3.2_trans_co2.csv", row.names = FALSE)
+dta %>% write.csv("output/sw_figures/data/Fig3.2_trans_co2.csv", row.names = FALSE)
 ```
 
 ## Figure 2.4 (and ES2)
@@ -911,14 +911,14 @@ combined =
 combined
 
 
-ggsave(filename = "output/final_figures/svg/Fig2.4_capacity.svg",combined, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig2.4_capacity.png",combined, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/svg/Fig2.4_capacity.svg",combined, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/png/Fig2.4_capacity.png",combined, width = 7, height = 5, units = "in")
 print(stats)
 
 #suporting data for plot
 dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States")
-dta %>% write.csv("output/final_figures/data/Fig2.4_capacity_bars.csv", row.names = FALSE)
-dta4 %>% write.csv("output/final_figures/data/Fig2.4_capacity_dots.csv", row.names = FALSE)
+dta %>% write.csv("output/sw_figures/data/Fig2.4_capacity_bars.csv", row.names = FALSE)
+dta4 %>% write.csv("output/sw_figures/data/Fig2.4_capacity_dots.csv", row.names = FALSE)
 
 ```
 
@@ -933,8 +933,8 @@ clean_data6 = clean_data %>% duplicate_historical_data("EIA-LTS", 2020) #%>%
 p1 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 119, "United States", 0, 30, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,17), preira_coord = c(2030, 16), ira_coord = c(2027, 23))
 p1$full = p1$full + theme(plot.title = element_blank())
 print(p1$full)
-ggsave(filename = "output/final_figures/svg/Fig5.3_industrial_energy_fossil.svg",p1$full, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig5.3_industrial_energy_fossil.png",p1$full, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/svg/Fig5.3_industrial_energy_fossil.svg",p1$full, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/png/Fig5.3_industrial_energy_fossil.png",p1$full, width = 7, height = 5, units = "in")
 print(p1$stats)
 
 # p2 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 120, "United States", 0, 5, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,3.2), preira_coord = c(2030, 3), ira_coord = c(2027, 4))
@@ -955,7 +955,7 @@ print(p1$stats)
 
 # supporting data for plot
 dta = data_from_graph("time_series", config, clean_data6, figmap_leep_timeseries, 119, "United States")
-dta %>% write.csv("output/final_figures/data/Fig5.3_industrial_energy_fossil.csv", row.names = FALSE)
+dta %>% write.csv("output/sw_figures/data/Fig5.3_industrial_energy_fossil.csv", row.names = FALSE)
 
 
 
@@ -1064,22 +1064,22 @@ nox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries,
                      historic_coord = c(2015,1.8), preira_coord = c(2030, 0.95), ira_coord = c(2029, 0.15))
 print(nox_full$full)
 print(nox_full$stats)
-ggsave(filename = "output/final_figures/svg/Fig2.6_nox.svg",nox_full$full, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig2.6_nox.png",nox_full$full, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/svg/Fig2.6_nox.svg",nox_full$full, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/png/Fig2.6_nox.png",nox_full$full, width = 7, height = 5, units = "in")
 
 sox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States", 0, 5, "Power Sector SO2 Emissions", metric = "median", 
                      historic_coord = c(2017,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12))
 print(sox_full$full)
 print(sox_full$stats)
-ggsave(filename = "output/final_figures/svg/Fig2.7_sox.svg",sox_full$full, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig2.7_sox.png",sox_full$full, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/svg/Fig2.7_sox.svg",sox_full$full, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/png/Fig2.7_sox.png",sox_full$full, width = 7, height = 5, units = "in")
 
 
 
 dta1 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States")
 dta2 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States")
-dta1 %>% write.csv("output/final_figures/data/Fig2.6_nox.csv", row.names = FALSE)
-dta2 %>% write.csv("output/final_figures/data/Fig2.7_sox.csv", row.names = FALSE)
+dta1 %>% write.csv("output/sw_figures/data/Fig2.6_nox.csv", row.names = FALSE)
+dta2 %>% write.csv("output/sw_figures/data/Fig2.7_sox.csv", row.names = FALSE)
 
 # View(dta)
 ```
@@ -1140,8 +1140,8 @@ dta1 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 
 
 p1 = emis_stack(dta1, "Economy-Wide CO2 Emissions", econwide = TRUE)
 p1
-ggsave(filename = "output/final_figures/svg/Fig1.1_emis.svg",p1, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig1.1_emis.png",p1, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/svg/Fig1.1_emis.svg",p1, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/png/Fig1.1_emis.png",p1, width = 7, height = 5, units = "in")
 
 # p1a = emis_stack(dta1a, "Economy-Wide GHG Emissions")
 # p1a
@@ -1162,8 +1162,8 @@ p2 = emis_stack(dta2, "Transportation CO2 Emissions") +
   scale_color_manual(values = c("Other Sectors" = "#CECECE", "Transportation: Indirect" = subpalettes$`Emissions Stack`[["Transportation: Indirect"]], "Transportation: Direct" = subpalettes$`Emissions Stack`[["Transportation: Direct"]])) +
   scale_alpha_manual(values = c("Other Sectors" = 0.5, "Transportation: Indirect" = 1, "Transportation: Direct" = 1))
 p2
-ggsave(filename = "output/final_figures/svg/Fig3.1_emis_trans.svg",p2, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig3.1_emis_trans.png",p2, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/svg/Fig3.1_emis_trans.svg",p2, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/png/Fig3.1_emis_trans.png",p2, width = 7, height = 5, units = "in")
 
 
 # 4.1
@@ -1181,8 +1181,8 @@ p3 = emis_stack(dta3, "Buildings CO2 Emissions") +
   scale_color_manual(values = c("Other Sectors" = "#CECECE", "Buildings: Indirect" = subpalettes$`Emissions Stack`[["Buildings: Indirect"]], "Buildings: Direct" = subpalettes$`Emissions Stack`[["Buildings: Direct"]])) +
   scale_alpha_manual(values = c("Other Sectors" = 0.5, "Buildings: Indirect" = 1, "Buildings: Direct" = 1))
 p3
-ggsave(filename = "output/final_figures/svg/Fig4.1_emis_build.svg",p3, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig4.1_emis_build.png",p3, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/svg/Fig4.1_emis_build.svg",p3, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/png/Fig4.1_emis_build.png",p3, width = 7, height = 5, units = "in")
 
 
 # 5.1
@@ -1200,8 +1200,8 @@ p4 = emis_stack(dta4, "Industrial CO2 Emissions") +
   scale_color_manual(values = c("Other Sectors" = "#CECECE", "Industry: Indirect" = subpalettes$`Emissions Stack`[["Industry: Indirect"]], "Industry: Direct" = subpalettes$`Emissions Stack`[["Industry: Direct"]])) +
   scale_alpha_manual(values = c("Other Sectors" = 0.5, "Industry: Indirect" = 1, "Industry: Direct" = 1))
 p4
-ggsave(filename = "output/final_figures/svg/Fig5.1_emis_ind.svg",p4, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig5.1_emis_ind.png",p4, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/svg/Fig5.1_emis_ind.svg",p4, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/png/Fig5.1_emis_ind.png",p4, width = 7, height = 5, units = "in")
 
 
 # # 2.1 (MAYBE)
@@ -1221,7 +1221,7 @@ ggsave(filename = "output/final_figures/png/Fig5.1_emis_ind.png",p4, width = 7, 
 
 
 # supporting data for figures
-dta1 %>% write.csv("output/final_figures/data/Fig1.1_emis.csv", row.names = FALSE)
+dta1 %>% write.csv("output/sw_figures/data/Fig1.1_emis.csv", row.names = FALSE)
 
 
 ```
@@ -1400,12 +1400,12 @@ combined = (p1$plot | p2$plot | p3$plot | p4$plot | p5$plot) +
   
 combined
 
-ggsave(filename = "output/final_figures/svg/Fig2.5_elec_sensitivity_dots.svg",combined, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig2.5_elec_sensitivity_dots.png",combined, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/svg/Fig2.5_elec_sensitivity_dots.svg",combined, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/png/Fig2.5_elec_sensitivity_dots.png",combined, width = 7, height = 5, units = "in")
 
 # supporting data for figure
 dta = bind_rows(sens_dta_panel1, sens_dta_panel3, sens_dta_panel4, sens_dta_panel5)
-dta %>% write.csv("output/final_figures/data/Fig2.5_elec_sensitivity_dots.csv", row.names = FALSE)
+dta %>% write.csv("output/sw_figures/data/Fig2.5_elec_sensitivity_dots.csv", row.names = FALSE)
 
 
 #View(sens_dta)
@@ -1483,8 +1483,8 @@ combined = (p7$plot | p7b$plot) +
 combined
 
 
-ggsave(filename = "output/final_figures/svg/Fig1.4_econwide_sensitivity_dots.svg",combined, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig1.4_econwide_sensitivity_dots.png",combined, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/svg/Fig1.4_econwide_sensitivity_dots.svg",combined, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/png/Fig1.4_econwide_sensitivity_dots.png",combined, width = 7, height = 5, units = "in")
 
 
 p8 = sens_dot_plot(sens_dta_trans, title = "Transportation CO2 Emissions", ymin = 0, ymax = 2000, far_left = TRUE, single = TRUE,
@@ -1514,7 +1514,7 @@ ggsave(filename = "output/leep/dots/FigZ_ind_sensitivity_dots.svg",p10$plot, wid
 ggsave(filename = "output/leep/dots/FigZ_ind_sensitivity_dots.png",p10$plot, width = 7, height = 5, units = "in")
 
 sens_dta_econ_rpt = bind_rows(sens_dta_econ, sens_dta_econ_panel2)
-sens_dta_econ_rpt %>% write.csv("output/final_figures/data/Fig1.4_econwide_sensitivity_dots.csv", row.names = FALSE)
+sens_dta_econ_rpt %>% write.csv("output/sw_figures/data/Fig1.4_econwide_sensitivity_dots.csv", row.names = FALSE)
 
 
 ```
@@ -1533,12 +1533,12 @@ fig = print_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14,
 fig
 #dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3, "United States")
 
-ggsave(filename = "output/final_figures/svg/Fig2.2_hist_generation_mix.svg",fig, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig2.2_hist_generation_mix.png",fig, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/svg/Fig2.2_hist_generation_mix.svg",fig, width = 7, height = 5, units = "in")
+ggsave(filename = "output/sw_figures/png/Fig2.2_hist_generation_mix.png",fig, width = 7, height = 5, units = "in")
 
 # supporting data
 dta = data_from_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14, "United States")
-dta %>% write.csv("output/final_figures/data/Fig2.2_hist_generation_mix.csv", row.names = FALSE)
+dta %>% write.csv("output/sw_figures/data/Fig2.2_hist_generation_mix.csv", row.names = FALSE)
 ```
 
 summary tables
@@ -1723,8 +1723,8 @@ p = dot_plots_but_with_arrows("time_series", config, clean_data7, figmap_leep_ti
                              0, 5, "Power Sector SO2 Emissions", metric = "median",
                              historic_coord = c(2017,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12) )
 
-p = dot_plots_but_with_arrows("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States",
-                             0, 100, "EV Share", metric = "mean", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 16), ira_coord = c(2027, 45))
+# p = dot_plots_but_with_arrows("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States",
+#                              0, 100, "EV Share", metric = "mean", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 16), ira_coord = c(2027, 45))
 
 p$full
 
@@ -1774,25 +1774,25 @@ pct_diff_graph = function(plot_type, config, raw_data, figmap, fignum, region, e
   
 }
 
-# Figure 2.6: NOx
-p1 = pct_diff_graph("time_series", config, clean_data, figmap_leep_timeseries, 125, "United States")
-p1
-ggsave(filename = "output/final_figures/svg/Pct_diff/Fig2.6_pctdiff.svg",p1, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Pct_diff/Fig2.6_pctdiff.png",p1, width = 7, height = 5, units = "in")
-
-
-# Figure 2.7: Sox
-p2 = pct_diff_graph("time_series", config, clean_data, figmap_leep_timeseries, 126, "United States")
-p2
-ggsave(filename = "output/final_figures/svg/Pct_diff/Fig2.7_pctdiff.svg",p2, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Pct_diff/Fig2.7_pctdiff.png",p2, width = 7, height = 5, units = "in")
-
-
-# Figure 5.3: Industrial Final Energy
-p3 = pct_diff_graph("time_series", config, clean_data, figmap_leep_timeseries, 124, "United States")
-p3
-ggsave(filename = "output/final_figures/svg/Pct_diff/Fig5.3_pctdiff.svg",p3, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Pct_diff/Fig5.3_pctdiff.png",p3, width = 7, height = 5, units = "in")
+# # Figure 2.6: NOx
+# p1 = pct_diff_graph("time_series", config, clean_data, figmap_leep_timeseries, 125, "United States")
+# p1
+# ggsave(filename = "output/sw_figures/svg/Pct_diff/Fig2.6_pctdiff.svg",p1, width = 7, height = 5, units = "in")
+# ggsave(filename = "output/sw_figures/png/Pct_diff/Fig2.6_pctdiff.png",p1, width = 7, height = 5, units = "in")
+# 
+# 
+# # Figure 2.7: Sox
+# p2 = pct_diff_graph("time_series", config, clean_data, figmap_leep_timeseries, 126, "United States")
+# p2
+# ggsave(filename = "output/sw_figures/svg/Pct_diff/Fig2.7_pctdiff.svg",p2, width = 7, height = 5, units = "in")
+# ggsave(filename = "output/sw_figures/png/Pct_diff/Fig2.7_pctdiff.png",p2, width = 7, height = 5, units = "in")
+# 
+# 
+# # Figure 5.3: Industrial Final Energy
+# p3 = pct_diff_graph("time_series", config, clean_data, figmap_leep_timeseries, 124, "United States")
+# p3
+# ggsave(filename = "output/sw_figures/svg/Pct_diff/Fig5.3_pctdiff.svg",p3, width = 7, height = 5, units = "in")
+# ggsave(filename = "output/sw_figures/png/Pct_diff/Fig5.3_pctdiff.png",p3, width = 7, height = 5, units = "in")
 
 
 ```
@@ -1858,7 +1858,7 @@ m1 = medians_table("time_series", config, clean_data, figmap_leep_timeseries, 9,
 View(m1)
 
 m2 = medians_table("time_series", config, clean_data, figmap_leep_timeseries, 4, "Unites States")
-View(m2)
+# View(m2)
 
 ```
 

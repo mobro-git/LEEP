@@ -74,7 +74,7 @@ IndSpg = spg(
   2500,
   c(0, 500, 1000, 1500, 2000, 2500),
   scales::comma) +
-  annotate("text", x = 2015, y = 1550, label = "Historic", color = "black") + 
+  annotate("text", x = 2015, y = 1550, label = "Historical", color = "black") + 
   annotate("text", x = 2030, y = 1575, label = "No IRA", color = "#F28063") + 
   annotate("text", x = 2020, y = 750, label = "IRA", color = "#0388B3")
 

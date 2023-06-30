@@ -216,6 +216,8 @@ tar_plan(
   #     mode = "targets"),
   # ),
 
+  all_data = compile_all_data(), # compiles all .csvs in final_figures/data into one workbook
+
   # Plot maps
 
   ts = create_graph("leep", "time_series", config, clean_data, figmap_leep_timeseries),
