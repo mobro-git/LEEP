@@ -344,7 +344,7 @@ fig_no = "Ap.10.SolarGen"
 ts_map_ID = 90
 pd_map_ID = 79
 ad_map_ID = 9
-drop = c("EIAinEMF37.csv", "IPM-EPA")
+drop = c("EIAinEMF37.csv")
 histsrc = "EIA"
 metric = "Generation"
 unit = "TWh"
@@ -371,7 +371,7 @@ fig_no = "Ap.11.WindGen"
 ts_map_ID = 89
 pd_map_ID = 78
 ad_map_ID = 10
-drop = c("EIAinEMF37.csv", "IPM-EPA")
+drop = c("EIAinEMF37.csv")
 histsrc = "EIA"
 metric = "Generation"
 unit = "TWh"
@@ -399,7 +399,7 @@ fig_no = "Ap.12.CCSGen"
 ts_map_ID = 85
 pd_map_ID = 76
 ad_map_ID = 14
-drop = c("EIAinEMF37.csv", "IPM-EPA")
+drop = c("EIAinEMF37.csv")
 histsrc = "EIA"
 unit = "Generation (Quads)"
 ymin = 0
@@ -537,13 +537,13 @@ savefig(fig, fig_no)
 
 ### Coal
 
-```{r#} 
+```{r} 
 fig_no = "Ap.13.CoalGen"
 
 ts_map_ID = 82
 pd_map_ID = 71
 ad_map_ID = 17
-drop = c("EIAinEMF37.csv", "IPM-EPA")
+drop = c("EIAinEMF37.csv")
 histsrc = "EIA"
 metric = "Generation"
 unit = "TWh"
@@ -571,7 +571,7 @@ fig_no = "Ap.14.GasGen"
 ts_map_ID = 81
 pd_map_ID = 70
 ad_map_ID = 18
-drop = c("EIAinEMF37.csv", "IPM-EPA", "AEO.2023")
+drop = c("EIAinEMF37.csv", "AEO.2023")
 histsrc = "EIA"
 metric = "Generation"
 unit = "TWh"
@@ -599,7 +599,7 @@ fig_no = "Ap.15.OtherGen"
 ts_map_ID = 88
 pd_map_ID = 77
 ad_map_ID = 11
-drop = c("EIAinEMF37.csv", "IPM-EPA")
+drop = c("EIAinEMF37.csv")
 histsrc = "EIA"
 metric = "Generation"
 unit = "TWh"

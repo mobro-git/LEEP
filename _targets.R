@@ -78,6 +78,7 @@ tar_plan(
     # time intervals
     usa = "United States",
     ira_2035 = c(seq(2021,2035,by=1)),
+    ira_2030_2035 = c(2030,2035),
     ira_2050 = c(seq(2021,2050,by=1)),
 
     fives = c(seq(2005,2020,by = 1),seq(2025,2050,by = 5)),
@@ -216,8 +217,6 @@ tar_plan(
   #     mode = "targets"),
   # ),
 
-  all_data = compile_all_data(), # compiles all .csvs in final_figures/data into one workbook
-
   # Plot maps
 
   ts = create_graph("leep", "time_series", config, clean_data, figmap_leep_timeseries),
@@ -229,3 +228,5 @@ tar_plan(
 
 # view Targets pipeline in flow-chart style with dependency links
 # tar_visnetwork(targets_only=TRUE)
+
+# compile_all_data() # compiles all .csvs in final_figures/data into one workbook

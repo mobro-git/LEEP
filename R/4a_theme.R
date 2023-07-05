@@ -33,6 +33,17 @@ slantx <- theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9))
 bottom1 <- theme(legend.position = "bottom", legend.title = element_blank())
 nolegend <- theme(legend.position='none')
 
+blank_theme <- theme_minimal()+
+  theme(
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    axis.text.x=element_blank(),
+    panel.border = element_blank(),
+    panel.grid=element_blank(),
+    axis.ticks = element_blank(),
+    plot.title=element_text(size=14, face="bold")
+  )
+
 # Color Palette
 
 master_palette <- c(
