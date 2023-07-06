@@ -52,7 +52,7 @@ df = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 9,
 
 df = clean_supplemental_data(df, fig_no)
   
-fig = emis_stack(df, "Economy-Wide CO2 Emissions", econwide = TRUE)
+fig = emis_stack(df, "Economy-Wide CO2 Emissions", figmap_leep_stackbar, config, econwide = TRUE)
 fig
 
 saveall(fig, df, fig_no)
@@ -343,15 +343,20 @@ sens_dta_ind = clean_data %>%
     TRUE ~ 0
   ))
 
-p7 = sens_dot_plot(sens_dta_econ, title = "\nIRA Implementation", ymin = 0, ymax = 5000, far_left = TRUE, single = FALSE,
+p7 = sens_dot_plot(sens_dta_econ, title = "\nIRA Implementation", figmap_leep_timeseries, config, 
+                   ymin = 0, ymax = 5000, far_left = TRUE, single = FALSE,
                    ira_coord = c(2028.4,3220), low_coord = c(2031.3, 3760),
                    high_coord = c(2030.6, 4070))
 #p7$plot
 
-p7b = sens_dot_plot(sens_dta_econ_panel2, title = "\nEconomic Growth", ymin = 0, ymax = 5000)
-p7c = sens_dot_plot(sens_dta_econ_panel3, title = "\nEnergy Price", ymin = 0, ymax = 5000)
-p7d = sens_dot_plot(sens_dta_econ_panel4, title = "\nTechnology", ymin = 0, ymax = 5000)
-p7e = sens_dot_plot(sens_dta_econ_panel5, title = "Combined Technology\n + Implementation", ymin = 0, ymax = 5000)
+p7b = sens_dot_plot(sens_dta_econ_panel2, title = "\nEconomic Growth", figmap_leep_timeseries, config, 
+                    ymin = 0, ymax = 5000)
+p7c = sens_dot_plot(sens_dta_econ_panel3, title = "\nEnergy Price", figmap_leep_timeseries, config,
+                    ymin = 0, ymax = 5000)
+p7d = sens_dot_plot(sens_dta_econ_panel4, title = "\nTechnology", figmap_leep_timeseries, config, 
+                    ymin = 0, ymax = 5000)
+p7e = sens_dot_plot(sens_dta_econ_panel5, title = "Combined Technology\n + Implementation", figmap_leep_timeseries, config,
+                    ymin = 0, ymax = 5000)
 #p7b$plot
 
 

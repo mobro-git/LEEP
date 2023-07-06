@@ -46,7 +46,7 @@ dta4 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 
   mutate(variable_rename = factor(variable_rename, 
                                   levels = c("Industry: Direct","Industry: Indirect", "Other Sectors")))
 
-p4 = emis_stack(dta4, "Industrial CO2 Emissions") + 
+p4 = emis_stack(dta4, "Industrial CO2 Emissions", figmap_leep_stackbar, config) + 
   scale_fill_manual(values = c("Other Sectors" = "white", "Industry: Indirect" = subpalettes$`Emissions Stack`[["Industry: Indirect"]], "Industry: Direct" = subpalettes$`Emissions Stack`[["Industry: Direct"]])) +
   scale_color_manual(values = c("Other Sectors" = "#CECECE", "Industry: Indirect" = subpalettes$`Emissions Stack`[["Industry: Indirect"]], "Industry: Direct" = subpalettes$`Emissions Stack`[["Industry: Direct"]])) +
   scale_alpha_manual(values = c("Other Sectors" = 0.5, "Industry: Indirect" = 1, "Industry: Direct" = 1))

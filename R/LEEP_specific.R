@@ -40,7 +40,7 @@ saveall = function(figure, df, fig_no, format = c("svg","png"), wd = 7, ht = 5, 
 #   plot_title: manually set the plot title of the combined plot
 #   metric: what centrality metric to show on the dot plots: "mean" or "median"
 dot_plots_sens = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric, labels = FALSE, historic_coord = c(0,0), iralow_coord = c(0,0), irahigh_coord = c(0,0)) {
-  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+  subpalettes = create_subpalettes(figmap, config)
 
   # make the spagetti plot
   fig = print_graph(plot_type, config, emf_data_long, figmap, figure_num, reg)
@@ -180,8 +180,8 @@ dot_plots_sens = function(plot_type, config, emf_data_long, figmap, figure_num, 
 # p = dot_plots("time_series", config, clean_data, figmap_leep_timeseries, 4, "United States", 0, 2500, "Emissions|CO2|Energy|Demand|Electricity", metric = "median")
 # print(p$full)
 # print(p$stats)
-sens_dot_plot = function(dta, title, far_left = FALSE, single = FALSE, ymin = 0, ymax = 0, ira_coord = c(0,0), low_coord = c(0,0), high_coord = c(0,0)) {
-  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = FALSE, ymin = 0, ymax = 0, ira_coord = c(0,0), low_coord = c(0,0), high_coord = c(0,0)) {
+  subpalettes = create_subpalettes(figmap, config)
   if (far_left) {
     point_code = geom_point(aes(x = year + stagger, y = value, color = scenario), shape = 1, size = 2)
   } else {
@@ -277,7 +277,7 @@ sens_dot_plot = function(dta, title, far_left = FALSE, single = FALSE, ymin = 0,
 
 # function for spaghetti plots + dot plots
 dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric, labels = FALSE, hist_year = 2021, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0), ylab = "") {
-  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+  subpalettes = create_subpalettes(figmap, config)
 
   # make the spagetti plot
   fig = print_graph(plot_type, config, emf_data_long, figmap, figure_num, reg)
@@ -346,7 +346,7 @@ dot_plots = function(plot_type, config, emf_data_long, figmap, figure_num, reg, 
   #                    "percent difference" = c(mean_pctdiff_30, mean_pctdiff_35, med_pctdiff_30, med_pctdiff_35))
 
   # still not entirely sure what this does...
-  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+  subpalettes = create_subpalettes(figmap, config)
 
   # a few of the ggplot lines of code vary based on the year or on the metric chosen, so conditionally choose the right one here
   if (metric == "mean") {
@@ -562,7 +562,8 @@ medians_table = function(plot_type, config, data, figmap, plot_num, region, mode
 
 #medians_table("time_series", config, clean_data, figmap_leep_timeseries, 9, "United States")
 
-emis_stack = function(dta, title, econwide = FALSE) {
+emis_stack = function(dta, title, figmap, config, econwide = FALSE) {
+  subpalettes = create_subpalettes(figmap, config)
   totals = dta %>% group_by(year) %>%
     summarize(value = sum(value))
 
@@ -623,7 +624,7 @@ clean_supplemental_data = function(df, fig_no) {
 }
 
 dot_plots_but_with_arrows = function(plot_type, config, emf_data_long, figmap, figure_num, reg, ymin, ymax, plot_title, metric, labels = FALSE, hist_year = 2021, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0)) {
-  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+  subpalettes = create_subpalettes(figmap, config)
 
   # make the spagetti plot
   fig = print_graph(plot_type, config, emf_data_long, figmap, figure_num, reg)

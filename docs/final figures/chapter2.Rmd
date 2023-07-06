@@ -2625,17 +2625,19 @@ sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
   bind_rows(filler)
 
 p1 = sens_dot_plot(sens_dta_panel1, title = "\nIRA Implementation", 
+                   figmap_leep_timeseries, config, 
                    ymin = 0, ymax = 1600, far_left = TRUE, 
                    ira_coord = c(2030.1,965), low_coord = c(2028.7, 1190), 
                    high_coord = c(2030, 190))
 # p1
-p2 = sens_dot_plot(sens_dta_panel2, title = "\nEconomic Growth", ymin = 0, ymax = 1600,)
+p2 = sens_dot_plot(sens_dta_panel2, title = "\nEconomic Growth", figmap_leep_timeseries, config, ymin = 0, ymax = 1600,)
 #p2
-p3 = sens_dot_plot(sens_dta_panel3, title = "\nEnergy Price", ymin = 0, ymax = 1600,)
+p3 = sens_dot_plot(sens_dta_panel3, title = "\nEnergy Price", figmap_leep_timeseries, config, ymin = 0, ymax = 1600,)
 # p3
-p4 = sens_dot_plot(sens_dta_panel4, title = "\nTechnology", ymin = 0, ymax = 1600,)
+p4 = sens_dot_plot(sens_dta_panel4, title = "\nTechnology", figmap_leep_timeseries, config, ymin = 0, ymax = 1600,)
 # p4
-p5 = sens_dot_plot(sens_dta_panel5, title = "Combined Technology\n + Implementation", ymin = 0, ymax = 1600,)
+p5 = sens_dot_plot(sens_dta_panel5, title = "Combined Technology\n + Implementation", 
+                   figmap_leep_timeseries, config, ymin = 0, ymax = 1600,)
 # p5
 
 # annotations
