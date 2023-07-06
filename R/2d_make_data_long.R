@@ -341,12 +341,12 @@ make_per_diff_variables <- function(data_long, per_diff_var) {
 
     if (!new_record$ref_type %in% grouping_variables) {
       rlang::error(paste("make per diff variables: ref_type for ",  new_record$variable,
-                         " unknown. Please choose year, scenario, region, or model.", sep = ""))
+                         " unknown. Please choose value, year, scenario, region, or model.", sep = ""))
     }
 
     if (!new_record$per_type %in% c("of", "difference")) {
       rlang::error(paste("make per diff variables: per_type for ",  new_record$variable,
-                         " unknown. Please choose of or difference.", sep = ""))
+                         " unknown. Please choose 'of' or 'difference'.", sep = ""))
     }
 
 

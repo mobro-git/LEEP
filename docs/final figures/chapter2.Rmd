@@ -1053,10 +1053,6 @@ write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
 
 IRA %>%
 tableHTML(caption = paste(title), rownames = F)
-
-
-
-
 ```
 
 ### Table 2.4 Low
