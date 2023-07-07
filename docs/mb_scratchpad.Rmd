@@ -20,6 +20,7 @@ devtools::load_all(here())
 tar_load(config)
 tar_load(clean_data)
 tar_load(figmap_leep_timeseries)
+tar_load(figmap_leep_stackbar)
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 ```
 
@@ -278,7 +279,19 @@ ElecDot
 
 ```
 
+# Figs for Jim
 
+```{r}
+print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 15, "United States") +
+  scale_x_continuous(breaks = c(2030,2035)) +
+  theme(axis.text.x = element_text(vjust = .51))
+# ggsave("electricity_capacity.png", height = 5, width = 18)
+
+print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 18, "United States") +
+  scale_x_continuous(breaks = c(2030,2035)) +
+  theme(axis.text.x = element_text(vjust = .51))
+# ggsave("electricity_generation.png", height = 5, width = 18)
+```
 
 
 

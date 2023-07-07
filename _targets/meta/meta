@@ -2,7 +2,7 @@ name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iterat
 "%|||%"|function|28bdb9a1b5a6acc2|||||||||||||||
 %forwhich%|function|9320d517f0334dd8|||||||||||||||
 .__DEVTOOLS__|object|4da1907b175080ea|||||||||||||||
-.Random.seed|object|797100afe58455a3|||||||||||||||
+.Random.seed|object|f4259464eb89c3b7|||||||||||||||
 ad|function|260e04c823626c3c|||||||||||||||
 all_blank_or_zero|function|8a29bb3328acf8f3|||||||||||||||
 all_calculated|stem|231bfc43b20d5ba2|3bab5870f004d48e|1a61e4b6d41163b3|677961423||t19545.7844239132s|eb85c2f129ff4db9|2253|rds|local|vector|||0||
@@ -40,12 +40,12 @@ clean_text_for_md|function|d6603a7ab6c9a0de|||||||||||||||
 color_map|object|2881875b002661b5|||||||||||||||
 compile_all_data|function|77d1dd407246a36b|||||||||||||||
 complete_implicit_na|function|9c5a89b2d3e975c4|||||||||||||||
-cone|stem|794be3614d98cc38|1adb55f4ef685c6a|a72681a1ba28256a|1799025940||t19545.7879589752s|a1c456b03adbfbf8|44|rds|local|vector|||22.79|Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown or uninitialised column shape.. Unknown or uninitialised column position.. number of items to replace is not a multiple of replacement length. Unknown|
+cone|object|9193875023f1d307|||||||||||||||
 cone_uncertainty_figure_specific_data_processing|function|15ef96323bb79e08|||||||||||||||
 cone_uncertainty_grid_fn|function|616c8584da742bdc|||||||||||||||
 cone_uncertainty_single_fn|function|491913b3ae04803d|||||||||||||||
 cone_uncertainty_wrap_fn|function|d1e0404f79786ae5|||||||||||||||
-config|stem|ca8c19a33892a8f0|1ca82fea90417ceb|0a995547a49294eb|1264390909||t19545.7845984729s|2716c93f54c3d3b7|62109|rds|local|vector|||0.09||
+config|stem|ca8c19a33892a8f0|1ca82fea90417ceb|0a995547a49294eb|1264390909||t19545.8738618415s|2716c93f54c3d3b7|62109|rds|local|vector|||0.03||
 conv_units_case|function|2f5df7cef2e056ad|||||||||||||||
 convert_units|function|4fe7079ce3a837bb|||||||||||||||
 corrplot|object|937a2188c51d5076|||||||||||||||
@@ -60,7 +60,7 @@ cumulate|function|d2a32fcd881895a9|||||||||||||||
 cumulative_var|stem|9e264a76ef5fb161|6f568addbab17bb7|7049f10a873ca00f|-802968985||t19545.7844171066s|e8324796932fa831|400|rds|local|vector|||0.05||
 cumulative_var_list|stem|7ff9797507a15215|3f5dd26ad0381bb4|ef46db3751d8e999|-232057156|data-raw/process_data/cumulative_variables.csv|t19487.6458296593s|a60e113d72b0b5b8|248|file|local|vector|||0||
 data_files|stem|ebc258b343dde609|ea2c63a76a444ff2|8da35908be9cd1bc|31038078|data-raw/model-runs/2023-03-30_data_IAMC_format-IRA_USAonly.xlsx*data-raw/model-runs/AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx*data-raw/model-runs/bistline_ira_tall.csv*data-raw/model-runs/EIA-EPA-bistline_historic.csv*data-raw/model-runs/EIAinEMF37.csv*data-raw/model-runs/EPA-GHGI_wide.csv*data-raw/model-runs/EPA-nonco2.xlsx*data-raw/model-runs/LTS_data_small.xlsx*data-raw/model-runs/OP-NEMS IRA 5cenario outputs updated 06-29-23.xlsx*data-raw/model-runs/PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx*data-raw/model-runs/ReEDS_compiled.csv*data-raw/model-runs/usrep_reeds_allscen.csv|t19545.7864531988s|0987b5627c824e35|5685244|file|local|vector|||0.02||
-data_folder|stem|ebc258b343dde609|97416003d6084b3e|79bb15b6a98b2097|-1589943188|data-raw/model-runs|t19545.7864531988s|0987b5627c824e35|5685244|file|local|vector|||0||
+data_folder|stem|ebc258b343dde609|97416003d6084b3e|79bb15b6a98b2097|-1589943188|data-raw/model-runs|t19545.7864766768s|c7827d29f759aa2c|8192|file|local|vector|||0||
 data_from_graph|function|ee5b2c612805abc4|||||||||||||||
 data_long|stem|a86f95d056d0591d|eab797916025fe48|f01173be9f0b54c4|1053362806||t19545.787145099s|4328b87d9c08a7cd|971601|rds|local|vector|||0.5||
 data_long_read|stem|1611ea1c357a5c91|bccb3a0cb7aaa375|44ddcd2dc1a6e66c|1127857077||t19545.7871286047s|ebaff62065822fd5|986353|rds|local|vector|||6.04||
@@ -73,7 +73,7 @@ def_from_variable_factory|function|3d4b34e942400071|||||||||||||||
 def_var_from_variable|function|6aecc0579a5f70af|||||||||||||||
 def_x_from_variable_factory|function|558bdc79a17c46b1|||||||||||||||
 diff_bar_figure_specific_data_processing|function|738fdd2bd119c37e|||||||||||||||
-diffbar|stem|794be3614d98cc38|c97b121e63a7d26f|5ebdfaef3f235d97|347903424||t19545.7894366467s|a1c456b03adbfbf8|44|rds|local|vector|||38.66|Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.|
+diffbar|object|cd21c69edc622281|||||||||||||||
 distinct_models_in_data|function|89a0baa99e36321b|||||||||||||||
 dot_plots|function|18540198883522a2|||||||||||||||
 dot_plots_but_with_arrows|function|7d9788b5ee476f28|||||||||||||||
@@ -175,8 +175,8 @@ sens_dot_plot|function|3f142f4e714bec43|||||||||||||||
 set_default_page_filter|function|0bc6a32a0b7240ad|||||||||||||||
 slantx|object|9fad8cd5ffeac321|||||||||||||||
 smyr_filter|function|48ceb3094bb39a84|||||||||||||||
-spg|function|3790cfcf70a6e65e|||||||||||||||
-stackbar|stem|794be3614d98cc38|513594b634347568|a1c31f9310bfa8ef|-450720414||t19545.788215585s|a1c456b03adbfbf8|44|rds|local|vector|||17.65|Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. there are multiple units for Capacity Additions2. Figure not printed.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. there are multiple units for Total GHGs. Figure not printed.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. there are multiple units for Capacity Additions Alt. Figure not printed.|
+spg|function|b28a75004bc85865|||||||||||||||
+stackbar|object|7878d816c0ecaf3c|||||||||||||||
 stacked_bar_batch_grid_plot_fn1|function|cc7994bfcb749536|||||||||||||||
 stacked_bar_batch_grid_plot_fn2|function|36834078d6f8f20c|||||||||||||||
 stacked_bar_batch_plot_fn|function|02fe238c044f4b17|||||||||||||||
