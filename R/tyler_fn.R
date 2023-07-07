@@ -28,7 +28,7 @@ spg = function(ts_map_ID, histsrc, title, yname, gd, drop, ymin, ymax, ybreaks, 
         model == "GCAM-PNNL" ~ 1,
         model == "IPM-EPA" ~ 1,
         scenario == "Historic" ~ 1,
-        T ~ 0.6
+        T ~ 0.4
       )
     ) %>%
     filter(year <= 2021 &
