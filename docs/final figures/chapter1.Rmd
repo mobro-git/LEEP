@@ -135,6 +135,7 @@ BuilSpg = spg(
   NULL)
 BuilTab = html(BuilSpg$data, "Building CO<sub>2<sub>")
 
+# TODO: put more spacing between the top two figures and the bottom three
 fig = (EconSpg | ElecSpg) / (TranSpg | BuilSpg | IndSpg) +
   plot_annotation(tag_levels = list(c("", "", "Sectoral Emissions: Direct + Indirect from Electricity", "", ""))) &
   theme(plot.tag.position = c(1.09, 1.1))
