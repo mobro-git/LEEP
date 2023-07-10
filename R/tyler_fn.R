@@ -6,9 +6,64 @@ drop_warn = function(drop) {
   }
 }
 
+spg_clean = function(ts_map_ID, drop, histsrc, config, clean_data, figmap_leep_timeseries) { #add in parameters from other functions being called in
 
+  df = data_from_graph(
+    "time_series",
+    config,
+    clean_data,
+    figmap_leep_timeseries,
+    ts_map_ID,
+    "United States"
+  ) %>%
+    filter(!model %in% drop) %>%
+    filter(!datasrc %in% drop) %>%
+    mutate(
+      alpha = case_when(
+        model == "USREP-ReEDS" ~ 1,
+        model == "GCAM-PNNL" ~ 1,
+        model == "IPM-EPA" ~ 1,
+        scenario == "Historic" ~ 1,
+        T ~ 0.6
+      )
+    ) %>%
+    filter(year <= 2021 &
+             model == histsrc |
+             year >= 2021 & scenario != "Historic") %>%
+    pivot_wider(names_from = year, values_from = value) %>%
+    mutate(`2021` = case_when(T ~ `2021`[model == histsrc])) %>%
+    pivot_longer(cols = starts_with("20"),
+                 names_to = "year",
+                 values_to = "value") %>%
+    filter(!is.na(value)) %>%
+    mutate(year = as.numeric(year))
 
-spg = function(ts_map_ID, histsrc, title, yname, gd, drop, ymin, ymax, ybreaks, yax) {
+  return(data = df)
+}
+
+spg2 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0), config, figmap_leep_timeseries) {
+
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+
+  figure = ggplot(df, aes(year,value, color = scenario, group = interaction(model, scenario))) + geom_line(aes(alpha = alpha), size = 0.5) +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme_emf() +
+    scale_x_continuous(breaks = c(2005, 2010, 2021, 2025, 2030, 2035)) +
+    scale_y_continuous(limits = c(ymin, ymax), breaks = ybreaks, labels = yax_format) +
+    scale_alpha(range = c(0.5, 1), guide = F) +
+    labs(title = title,
+         x = element_blank(),
+         y = yname) +
+    theme(legend.position = gd,
+          axis.text.x = element_text(angle = 45, hjust = 1))+
+    annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historical", color = "black", alpha = annotate) +
+    annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#F28063", alpha = annotate) +
+    annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#0388B3", alpha = annotate)
+
+  return(list(figure = figure, data = df))
+}
+
+spg = function(ts_map_ID, histsrc, title, yname, gd, drop, ymin, ymax, ybreaks, yax, config, clean_data, figmap_leep_timeseries) {
 
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
@@ -59,7 +114,7 @@ spg = function(ts_map_ID, histsrc, title, yname, gd, drop, ymin, ymax, ybreaks, 
 
 
 
-dotted = function(df, spg, metric, ymin, ymax) {
+dotted = function(df, spg, metric, ymin, ymax, config, figmap_leep_timeseries) {
 
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
@@ -248,7 +303,7 @@ html = function(df, title) {
 }
 
 #Function to create standard percent difference figs
-pd = function(ts_map_ID, title, yname, gd, drop) {
+pd = function(ts_map_ID, title, yname, gd, drop, config, clean_data, figmap_leep_timeseries) {
   #Take data from leep_timeseries map based on ID.
   df = data_from_graph(
     "time_series",
@@ -312,7 +367,7 @@ pd = function(ts_map_ID, title, yname, gd, drop) {
               pd_df = df))
 }
 
-ad = function(diff_ID, title, yname, gd, drop) {
+ad = function(diff_ID, title, yname, gd, drop, config, clean_data, figmap_leep_dffbar) {
 
   df = data_from_graph("diff_bar",
                        config,
@@ -371,7 +426,7 @@ ad = function(diff_ID, title, yname, gd, drop) {
               ad_df = df))
 }
 
-four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk) {
+four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk, config, clean_data, figmap_leep_timeseries) {
   if (metric == "Generation") {
     clean_data = clean_data %>%
       mutate(value = case_when(unit == "Quads" ~ value * 293.07, TRUE ~ value),
@@ -477,3 +532,7 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
     pd_df = pdfigure$pd_df
   ))
 }
+
+
+
+
