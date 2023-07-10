@@ -63,7 +63,7 @@ subpalettes = create_subpalettes(figmap_leep_timeseries, config)
   return(list(figure = figure, data = df))
 }
 
-spg = function(ts_map_ID, histsrc, title, yname, gd, drop, ymin, ymax, ybreaks, yax, config, clean_data, figmap_leep_timeseries) {
+spg = function(ts_map_ID, histsrc, title, yname, gd, drop, ymin, ymax, ybreaks, yax) {
 
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
@@ -114,7 +114,7 @@ spg = function(ts_map_ID, histsrc, title, yname, gd, drop, ymin, ymax, ybreaks, 
 
 
 
-dotted = function(df, spg, metric, ymin, ymax, config, figmap_leep_timeseries) {
+dotted = function(df, spg, metric, ymin, ymax) {
 
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
@@ -303,7 +303,7 @@ html = function(df, title) {
 }
 
 #Function to create standard percent difference figs
-pd = function(ts_map_ID, title, yname, gd, drop, config, clean_data, figmap_leep_timeseries) {
+pd = function(ts_map_ID, title, yname, gd, drop) {
   #Take data from leep_timeseries map based on ID.
   df = data_from_graph(
     "time_series",
@@ -367,7 +367,7 @@ pd = function(ts_map_ID, title, yname, gd, drop, config, clean_data, figmap_leep
               pd_df = df))
 }
 
-ad = function(diff_ID, title, yname, gd, drop, config, clean_data, figmap_leep_dffbar) {
+ad = function(diff_ID, title, yname, gd, drop) {
 
   df = data_from_graph("diff_bar",
                        config,
@@ -426,7 +426,7 @@ ad = function(diff_ID, title, yname, gd, drop, config, clean_data, figmap_leep_d
               ad_df = df))
 }
 
-four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk, config, clean_data, figmap_leep_timeseries) {
+four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk) {
   if (metric == "Generation") {
     clean_data = clean_data %>%
       mutate(value = case_when(unit == "Quads" ~ value * 293.07, TRUE ~ value),
