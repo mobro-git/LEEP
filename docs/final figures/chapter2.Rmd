@@ -2846,55 +2846,94 @@ all_panels
 ## 2.7a nox emissions
 
 ```{r}
+# testing Tyler's new spg functions
 fig_no = "2.7a"
+clean_data_nox = spg_clean(ts_map_ID = 122, drop = c("ReEDS-NREL"), histsrc = "EPA", 
+                           config = config, clean_data = clean_data, figmap_leep_timeseries = figmap_leep_timeseries)
+output = spg2(df = clean_data_nox, title = "", yname = "Emissions (Mt NOx/yr)", gd = "none", ymin = 0, ymax = 5, 
+              ybreaks = waiver(), yax_format = waiver(), annotate = 1, 
+              historic_coord = c(2016,1.8), preira_coord = c(2030, 0.95), ira_coord = c(2029, 0.15), 
+              config = config, figmap_leep_timeseries = figmap_leep_timeseries)
+figure = output$figure
+nox_data = output$data
+nox_full = dotted(clean_data_nox, figure, "median", ymin = 0, ymax = 5, 
+                config = config, figmap_leep_timeseries = figmap_leep_timeseries)
+nox_full
 
-clean_data7 = clean_data %>% duplicate_historical_data("EPA",2021, criteria = TRUE) %>%
-  mutate(alpha = case_when(
-    model == "USREP-ReEDS" ~ 1,
-    model == "GCAM-PNNL" ~ 1,
-    model == "IPM-EPA" ~ 1,
-    scenario == "Historic" ~ 1,
-    TRUE ~ 0.8)
-  ) %>%
-  filter(value > 1e-4)
 
-nox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States") +
-  scale_alpha(range = c(0.6, 1), guide = "none")
-#nox
+```
 
-nox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States", 0, 5, 
-                     "Power Sector NOx Emissions", metric = "median", 
-                     historic_coord = c(2015,1.8), preira_coord = c(2030, 0.95), ira_coord = c(2029, 0.15), ylab = "Emissions (Mt NOx/yr)")
-print(nox_full$full)
-print(nox_full$stats)
-
-dta1 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States")
-dta1 = clean_supplemental_data(dta1, fig_no)
+```{r, eval = FALSE}
+## OLD ##
+# fig_no = "2.7a"
+# 
+# clean_data7 = clean_data %>% duplicate_historical_data("EPA",2021, criteria = TRUE) %>%
+#   mutate(alpha = case_when(
+#     model == "USREP-ReEDS" ~ 1,
+#     model == "GCAM-PNNL" ~ 1,
+#     model == "IPM-EPA" ~ 1,
+#     scenario == "Historic" ~ 1,
+#     TRUE ~ 0.8)
+#   ) %>%
+#   filter(value > 1e-4)
+# 
+# nox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States") +
+#   scale_alpha(range = c(0.6, 1), guide = "none")
+# #nox
+# 
+# nox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States", 0, 5, 
+#                      "Power Sector NOx Emissions", metric = "median", 
+#                      historic_coord = c(2015,1.8), preira_coord = c(2030, 0.95), ira_coord = c(2029, 0.15), ylab = "Emissions (Mt NOx/yr)")
+# print(nox_full$full)
+# print(nox_full$stats)
+# 
+# dta1 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States")
+# dta1 = clean_supplemental_data(dta1, fig_no)
 ```
 
 ## 2.7b so2 emissions
 
 ```{r}
 fig_no = "2.7b"
+clean_data_sox = spg_clean(ts_map_ID = 123, drop = c("ReEDS-NREL"), histsrc = "EPA", 
+                           config = config, clean_data = clean_data, figmap_leep_timeseries = figmap_leep_timeseries)
+output = spg2(df = clean_data_sox, title = "", yname = "Emissions (Mt SOx/yr)", gd = "none", ymin = 0, ymax = 5, 
+              ybreaks = waiver(), yax_format = waiver(), annotate = 1, 
+              historic_coord = c(2020,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12), 
+              config = config, figmap_leep_timeseries = figmap_leep_timeseries)
+figure = output$figure
+sox_data = output$data
+sox_full = dotted(clean_data_sox, figure, "median", ymin = 0, ymax = 5, 
+                config = config, figmap_leep_timeseries = figmap_leep_timeseries)
+sox_full
 
-sox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States") +
-  scale_alpha(range = c(0.6, 1), guide = "none")
-#sox
 
-sox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States", 0, 5, "Power Sector SO2 Emissions", metric = "median", 
-                     historic_coord = c(2019,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12), ylab = "Emissions (Mt SOx/yr)")
-print(sox_full$full)
-print(sox_full$stats)
 
-dta2 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States")
-dta2 = clean_supplemental_data(dta2, fig_no)
+
+```
+
+
+```{r, eval = FALSE}
+# fig_no = "2.7b"
+# 
+# sox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States") +
+#   scale_alpha(range = c(0.6, 1), guide = "none")
+# #sox
+# 
+# sox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States", 0, 5, "Power Sector SO2 Emissions", metric = "median", 
+#                      historic_coord = c(2019,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12), ylab = "Emissions (Mt SOx/yr)")
+# print(sox_full$full)
+# print(sox_full$stats)
+# 
+# dta2 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States")
+# dta2 = clean_supplemental_data(dta2, fig_no)
 ```
 
 ## 2.7 nox and sox in one figure
 ```{r}
 fig_no= 2.7
-left = nox_full$full + theme(plot.margin = margin(0,0,0,0))
-right = sox_full$full + theme(plot.margin = margin(0,0,0,0))
+left = nox_full + theme(plot.margin = margin(0,0,0,0))
+right = sox_full + theme(plot.margin = margin(0,0,0,0))
 
 combined = (wrap_elements(left) | wrap_elements(right)) +     
     plot_annotation(title = "NOx                                                                                     SO2", 
@@ -2902,7 +2941,7 @@ combined = (wrap_elements(left) | wrap_elements(right)) +
   theme(plot.margin = margin(0,0,0,0))
 combined
 
-dta3 = rbind(dta1,dta2)
+full_data = rbind(nox_data,sox_data)
 
-saveall(combined, dta3, fig_no)
+saveall(combined, full_data, fig_no)
 ```

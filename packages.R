@@ -33,4 +33,5 @@ library(ggbreak)
 library(openxlsx)
 library(flextable)
 library(naniar)
+library(gt)
 

@@ -111,14 +111,11 @@ html(TranSpg$data, "Transportation CO<sub>2<sub>")
 ## 3.4 electric vehicle percent share of new sales
 
 ```{r}
-# Add NEMS
-fig_no = 3.4
+fig_no = "3.4"
 
-# TODO: OP-NEMS should be showing up here, but its removed when year columns are dropped in raw
-# Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share
-
+# clean_data_evshare = spg_clean(ts_map_ID = 118, drop = c(""), histsrc = "EPA-ATR", 
+#                            config = config, clean_data = clean_data4, figmap_leep_timeseries = figmap_leep_timeseries)
 scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)
-
 raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
   left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
   select(-c(model, scenario)) %>%
@@ -129,14 +126,17 @@ raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year
 
 atr_2022 = raw %>% filter(model == "EPA-ATR", year == 2021) %>% mutate(year = 2022)
 nems = data_min %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
-  filter(model == "OP-NEMS", grepl("Sales Share", variable),
+  filter(model == "OP-NEMS", 
+         scenario %in% c("IRA", "No IRA"),
+         datasrc != "LTS_data_small.xlsx",
+         grepl("Sales Share", variable),
          unit == "%") %>%
   left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
   select(-c(model, scenario)) %>%
   rename(model = model_new) %>%
   rename(scenario = scenario_new)
 
-clean_data4 = rbind(raw, atr_2022, nems) %>% 
+clean_data_evshare = rbind(raw, atr_2022, nems) %>% 
   filter(unit != "thousands") %>% 
   mutate(value = 100 * value) %>%
   filter(model != "EIA-LTS") %>% 
@@ -155,27 +155,102 @@ clean_data4 = rbind(raw, atr_2022, nems) %>%
   group_by(model, scenario, unit, datasrc, year, region, variable) %>%
   summarize(value = sum(value)) %>%
   filter(!(is.na(variable))) %>%
+  filter(year <= 2035) %>%
+#  filter(!(model %in% c("OP-NEMS-LTS"))) %>%
+  filter(!(datasrc %in% c("LTS_data_small.xlsx"))) %>%
+  mutate(variable_rename = variable) %>%
   mutate(alpha = case_when(
-    model == "USREP-ReEDS" ~ 1,
-    model == "GCAM-PNNL" ~ 1,
-    model == "OP-NEMS" ~ 1,
-    scenario == "Historic" ~ 1,
-    TRUE ~ 0.8)
-  ) %>%
+      model == "USREP-ReEDS" ~ 1,
+      model == "GCAM-PNNL" ~ 1,
+      model == "IPM-EPA" ~ 1,
+      scenario == "Historic" ~ 1,
+      T ~ 0.6
+  )) %>%
   mutate(value = case_when(year == 2022 & model == "OP-NEMS" ~ 100 * atr_2022$value[1], 
                            TRUE ~ value))
 
-fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
-fig
-dta = data_from_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
-dta = clean_supplemental_data(dta, fig_no)
+output = spg2(df = clean_data_evshare, title = "", yname = "EV Sales Share (%)", gd = "none", ymin = 0, ymax = 100, 
+              ybreaks = waiver(), yax_format = waiver(), annotate = 1, 
+              historic_coord = c(2015,8), preira_coord = c(2030, 10), ira_coord = c(2027, 74),
+              config = config, figmap_leep_timeseries = figmap_leep_timeseries)
+output$figure
 
-p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States", 0, 100, "EV Share", metric = "median", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 10), ira_coord = c(2027, 53), ylab = "EV Sales Share (%)")
-p$full
+figure = output$figure
 
-print(p$stats)
+ev_share_data = output$data
+ev_share_data = clean_supplemental_data(ev_share_data, fig_no)
+figure_full = dotted(clean_data_evshare, figure, "median", ymin = 0, ymax = 100, 
+                config = config, figmap_leep_timeseries = figmap_leep_timeseries)
+figure_full
 
-saveall(p$full, dta, fig_no)
+saveall(figure_full, ev_share_data, fig_no)
+
+```
+
+
+Older version
+```{r, eval = FALSE}
+# fig_no = 3.4
+# 
+# scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)
+# 
+# raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
+#   left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
+#   select(-c(model, scenario)) %>%
+#   rename(model = model_new) %>%
+#   rename(scenario = scenario_new) %>%
+#   filter(unit != "thousands") %>%
+#   filter(!(model == "EPA-ATR" & year >= 2022))
+# 
+# atr_2022 = raw %>% filter(model == "EPA-ATR", year == 2021) %>% mutate(year = 2022)
+# nems = data_min %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
+#   filter(model == "OP-NEMS", grepl("Sales Share", variable),
+#          unit == "%") %>%
+#   left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
+#   select(-c(model, scenario)) %>%
+#   rename(model = model_new) %>%
+#   rename(scenario = scenario_new)
+# 
+# clean_data4 = rbind(raw, atr_2022, nems) %>% 
+#   filter(unit != "thousands") %>% 
+#   mutate(value = 100 * value) %>%
+#   filter(model != "EIA-LTS") %>% 
+#   duplicate_historical_data("EPA-ATR", 2022, criteria = TRUE) %>% mutate(
+#     variable = case_when(
+#       variable %in% c(
+#         "Energy Service|Transportation|Passenger|BEV|Sales Share",
+#         # "Energy Service|Transportation|Passenger|FCEV|Sales Share",
+#         # "Energy Service|Transportation|Passenger|HEV|Sales Share",
+#         # "Energy Service|Transportation|Freight|BEV|Sales Share",
+#         # "Energy Service|Transportation|Freight|FCEV|Sales Share",
+#         "Energy Service|Transportation|Passenger|PHEV|Sales Share",
+#         "Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share"
+#         ) ~ 
+#         "Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share")) %>%
+#   group_by(model, scenario, unit, datasrc, year, region, variable) %>%
+#   summarize(value = sum(value)) %>%
+#   filter(!(is.na(variable))) %>%
+#   mutate(alpha = case_when(
+#     model == "USREP-ReEDS" ~ 1,
+#     model == "GCAM-PNNL" ~ 1,
+#     model == "OP-NEMS" ~ 1,
+#     scenario == "Historic" ~ 1,
+#     TRUE ~ 0.8)
+#   ) %>%
+#   mutate(value = case_when(year == 2022 & model == "OP-NEMS" ~ 100 * atr_2022$value[1], 
+#                            TRUE ~ value))
+# 
+# fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
+# fig
+# dta = data_from_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
+# dta = clean_supplemental_data(dta, fig_no)
+# 
+# p = dot_plots("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States", 0, 100, "EV Share", metric = "median", hist_year = 2022, historic_coord = c(2015,8), preira_coord = c(2030, 10), ira_coord = c(2027, 53), ylab = "EV Sales Share (%)")
+# p$full
+# 
+# print(p$stats)
+# 
+# saveall(p$full, dta, fig_no)
 ```
 
 ## 3.5 electricity demand from light-duty vehicles in the transportation sector

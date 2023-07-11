@@ -43,9 +43,10 @@ spg_clean = function(ts_map_ID, drop, histsrc, config, clean_data, figmap_leep_t
 
 spg2 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0), config, figmap_leep_timeseries) {
 
-subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
-  figure = ggplot(df, aes(year,value, color = scenario, group = interaction(model, scenario))) + geom_line(aes(alpha = alpha), size = 0.5) +
+  figure = ggplot(df, aes(year,value, color = scenario, group = interaction(model, scenario))) +
+    geom_line(aes(alpha = alpha), size = 0.5) +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme_emf() +
     scale_x_continuous(breaks = c(2005, 2010, 2021, 2025, 2030, 2035)) +

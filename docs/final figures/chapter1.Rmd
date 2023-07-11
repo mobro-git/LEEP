@@ -509,7 +509,6 @@ econ_panel5_summ = sens_dta_econ_panel5 %>%
                              diff_constr = c(0), diff_alladv = c(0))) %>%
   group_by(variable, unit, year) %>%
   summarize(opt_median = median(diff_opt, na.rm = T),
-            opt_min = min(diff_opt, na.rm = T),
             opt_max = max(diff_opt, na.rm = T),
             pess_median = median(diff_pess, na.rm = T),
             pess_min = min(diff_pess, na.rm = T),
@@ -531,6 +530,80 @@ all_panels = add_header_row(flextable(all_panels), values = c("", "IRA Implement
 all_panels = add_header_row(all_panels, values = c("","Difference from IRA Moderate Scenario (negative is reduced emissions)"), colwidths = c(4,10))
 
 all_panels
+```
+
+## 1.4 Display table
+```{r, eval = FALSE}
+all_panels = cbind(econ_panel1_summ, econ_panel4_summ, econ_panel5_summ, econ_panel2_summ, econ_panel3_summ)
+all_panels = all_panels %>% 
+  mutate(metric = case_when(
+    metric == "min" ~ "Min",
+    metric == "max" ~ "Max",
+    metric == "median" ~ "Median"
+  )) %>%
+  mutate(metric = factor(metric, levels = c("Min", "Median", "Max"))) %>%
+  rename("Year" = "year", "Metric" = "metric") %>%
+  arrange(Year, Metric)
+
+all_panels = all_panels %>% data.frame() %>% select(-c(variable, unit)) %>%
+  mutate_if(is.numeric, round)
+#all_panels$Pess.Adv[1] = ""
+all_panels
+
+#gt(rowname_col = "year") %>%
+
+all_panels_gt = all_panels %>% gt() %>% 
+  tab_spanner(label = gt::html("IRA <br> Implementation"), columns = c(Optimistic, Pessimistic)) %>%
+  tab_spanner(label = gt::html("<br>Technology"), columns = c(All.Adv, Constr)) %>%
+  tab_spanner(label = gt::html("Implementation <br> + Tech"), columns = c(Opt.Adv, Pess.Adv)) %>%
+  tab_spanner(label = gt::html("Economic <br> Growth"), columns = c(High.Growth, Low.Growth)) %>%
+  tab_spanner(label = gt::html("Energy <br> Prices"), columns = c(High.Price, Low.Price)) %>%
+  cols_label(All.Adv = "Advanced",
+             Constr = "Constrained",
+             High.Growth = "High",
+             Low.Growth = "Low",
+             High.Price = "High",
+             Low.Price = "Low"
+  ) %>% tab_style(
+    style = list(
+      cell_borders(sides = "all", color = "#F2F2F2"),
+      cell_fill(color = "#F2F2F2", alpha = NULL)
+    ), locations = cells_body()
+  ) %>% tab_style(
+    style = list(
+      cell_borders(sides = "bottom", color = "#DCDCDC", weight = "2px")
+    ), 
+    locations = cells_body(rows = c(3))
+  ) %>% tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "normal")
+    ), locations = cells_column_labels()
+  ) %>% tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+    ), locations = cells_column_spanners()
+  ) %>% tab_style(
+    style = list(
+      cell_text(weight = "bold", align = "right")
+    ), locations = cells_body(columns = 1:2)
+  ) %>% tab_style(
+    style = list(
+      cell_text(align = "center")
+    ), locations = cells_body(columns = 3:12)
+  )
+
+
+#%>% opt_stylize(style = 6, color = "blue")
+  
+  #tab_row_group(label = "2030", rows = 1:3) %>%
+  #tab_row_group(label = "2035", rows = 4:6)
+
+all_panels_gt
+
+all_panels_gt %>% gtsave("test.html")
+
 ```
 
 ## 1.x Playing around with arrows
