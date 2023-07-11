@@ -47,9 +47,9 @@ tar_plan(
     # Use models_leep for all initial plots
     # USREP-ReEDS, GCAM-PNNL, OP-NEMS - averages for CAP-ADD
     models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
-                    "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP","AEO.2023",
+                    "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "AEO.2023",
                     "EIA-LTS", "EIA-STEO", "EPA-ATR", "EPA", "EPA-GHGI", "EIA"),
-
+    #"Scout-LEEP" removing scout from everything except scout-specific figure in chapter 4
     models_per_elc = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
                        "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP"),
 
