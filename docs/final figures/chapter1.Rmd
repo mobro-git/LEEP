@@ -519,7 +519,7 @@ dta = dta %>% mutate(figure_num = fig_no) %>%
 saveall(fig, dta, fig_no)
 ```
 
-### table for Figure 1.4
+## 1.4 Display table
 ```{r}
 econ_panel1_summ = sens_dta_econ %>%
   select(-c(stagger,datasrc,region)) %>%
@@ -636,20 +636,22 @@ econ_panel5_summ = sens_dta_econ_panel5 %>%
   select(-c(variable,unit,year,metric))
 
 all_panels = cbind(econ_panel1_summ, econ_panel4_summ, econ_panel5_summ, econ_panel2_summ, econ_panel3_summ)
-all_panels %>% write.csv("./output/final_figures/data/Fig1.4_Summary.csv", row.names = FALSE)
-
-
-all_panels = add_header_row(flextable(all_panels), values = c("", "IRA Implementation", "Technology", "Combined Technology + Implementation", "Economic Growth", "Energy Price"),
-  colwidths = c(4,2,2,2,2,2), top = TRUE)
-
-all_panels = add_header_row(all_panels, values = c("","Difference from IRA Moderate Scenario (negative is reduced emissions)"), colwidths = c(4,10))
-
-all_panels
+# all_panels %>% write.csv("./output/final_figures/data/Fig1.4_Summary.csv", row.names = FALSE)
+# 
+# 
+# all_panels = add_header_row(flextable(all_panels), values = c("", "IRA Implementation", "Technology", "Combined Technology + Implementation", "Economic Growth", "Energy Price"),
+#   colwidths = c(4,2,2,2,2,2), top = TRUE)
+# 
+# all_panels = add_header_row(all_panels, values = c("","Difference from IRA Moderate Scenario (negative is reduced emissions)"), colwidths = c(4,10))
+# 
+# all_panels
 ```
 
-## 1.4 Display table
-```{r, eval = FALSE}
-all_panels = cbind(econ_panel1_summ, econ_panel4_summ, econ_panel5_summ, econ_panel2_summ, econ_panel3_summ)
+
+```{r}
+fig_no = 1.4
+
+# all_panels is created in the previous code chunk
 all_panels = all_panels %>% 
   mutate(metric = case_when(
     metric == "min" ~ "Min",
@@ -663,11 +665,18 @@ all_panels = all_panels %>%
 all_panels = all_panels %>% data.frame() %>% select(-c(variable, unit)) %>%
   mutate_if(is.numeric, round)
 #all_panels$Pess.Adv[1] = ""
+all_panels$Year[1] = ""
+all_panels$Year[3] = ""
+all_panels$Year[4] = ""
+all_panels$Year[6] = ""
 all_panels
 
 #gt(rowname_col = "year") %>%
 
 all_panels_gt = all_panels %>% gt() %>% 
+  tab_header(
+    title = gt::html("Economy-wide CO<sub>2</sub> Emissions (Mt CO<sub>2</sub>/yr)")
+  ) %>%
   tab_spanner(label = gt::html("IRA <br> Implementation"), columns = c(Optimistic, Pessimistic)) %>%
   tab_spanner(label = gt::html("<br>Technology"), columns = c(All.Adv, Constr)) %>%
   tab_spanner(label = gt::html("Implementation <br> + Tech"), columns = c(Opt.Adv, Pess.Adv)) %>%
@@ -717,7 +726,7 @@ all_panels_gt = all_panels %>% gt() %>%
 
 all_panels_gt
 
-all_panels_gt %>% gtsave("test.html")
+all_panels_gt %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
 
 ```
 
