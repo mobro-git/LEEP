@@ -83,22 +83,32 @@ saveall(fig, dta, fig_no)
 ```{r}
 fig_no = 3.3
 
-TranSpg = spg(
-  19,
-  "EPA-GHGI",
+Tran_data = spg_clean(
+  19, 
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+  "EPA-GHGI", 
+  config, 
+  clean_data, 
+  figmap_leep_timeseries
+)
+
+TranSpg = spg2(
+  Tran_data,
   "",
   expression(paste("Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
   0,
   2500,
   c(0, 500, 1000, 1500, 2000, 2500),
-  scales::comma) + 
-  annotate("text", x = 2015, y = 2000, label = "Historical", color = "black") + 
-  annotate("text", x = 2030, y = 2100, label = "No IRA", color = "#F28063") + 
-  annotate("text", x = 2025, y = 1250, label = "IRA", color = "#0388B3")
+  scales::comma, 
+  1, 
+  c(2015, 2000), 
+  c(2030, 2100), 
+  c(2025, 1250), 
+  config, 
+  figmap_leep_timeseries) 
 
-fig = dotted(TranSpg$data, TranSpg, "median", 0, 2500)
+fig = dotted(TranSpg$data, TranSpg$figure, "median", 0, 2500, config, figmap_leep_timeseries)
 fig
 
 TranSpg$data = clean_supplemental_data(TranSpg$data, fig_no)

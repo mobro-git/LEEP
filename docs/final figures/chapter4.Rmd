@@ -65,56 +65,91 @@ saveall(p3, dta3, fig_no)
 ```{r}
 fig_no = 4.2
 
-TotSpg = spg(
+Tot_data = spg_clean(
   23,
-  "EPA-GHGI",
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Haiku-RFF"),
+  "EPA-GHGI", 
+  config, 
+  clean_data,
+  figmap_leep_timeseries
+  )
+
+TotSpg = spg2(
+  Tot_data,
   expression(paste("Total Building C", O[2])),
   expression(paste("Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Haiku-RFF"),
   0,
   2500,
   c(0, 500, 1000, 1500, 2000, 2500),
-  scales::comma) + 
-  annotate("text", x = 2015, y = 2250, label = "Historical", color = "black") + 
-  annotate("text", x = 2030, y = 1675, label = "No IRA", color = "#F28063") + 
-  annotate("text", x = 2022.5, y = 1000, label = "IRA", color = "#0388B3")
+  scales::comma, 
+  1, 
+  c(2015, 2250), 
+  c(2030, 1675), 
+  c(2022.5, 1000), 
+  config, 
+  figmap_leep_timeseries)
 
-TotDot = dotted(TotSpg$data, TotSpg, "median", 0, 2500)
+TotDot = dotted(TotSpg$data, TotSpg$figure, "median", 0, 2500, config, figmap_leep_timeseries)
 TotDot
 
 TotTab = html(TotSpg$data, "Total Building CO<sub>2<sub>")
 
-DirSpg = spg(
-  95,
-  "EPA-GHGI",
+Dir_data = spg_clean(
+  95, 
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  "EPA-GHGI", 
+  config, 
+  clean_data, 
+  figmap_leep_timeseries)
+
+DirSpg = spg2(
+  Dir_data,
   expression(paste("Direct Combustion")),
   expression(paste("Emissions(Mt C", O[2], "/yr)")),
   gd = "none",
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
   0,
   2000,
   c(0, 500, 1000, 1500, 2000),
+  scales::comma, 
+  0, 
+  c(2015, 1000), 
+  c(2030, 1000), 
+  c(2022.5, 1000), 
+  config,
+  figmap_leep_timeseries)
 
-  scales::comma)
-
-DirDot = dotted(DirSpg$data, DirSpg, "median", 0, 2000)
+DirDot = dotted(DirSpg$data, DirSpg$figure, "median", 0, 2000, config, figmap_leep_timeseries)
 
 DirTab = html(DirSpg$data, "Direct Building CO<sub>2<sub>")
 
-IndDirSpg = spg(
-  22,
-  "EPA-GHGI",
+IndDir_data = spg_clean(
+  22, 
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  "EPA-GHGI", 
+  config, 
+  clean_data, 
+  figmap_leep_timeseries
+)
+
+
+IndDirSpg = spg2(
+  IndDir_data,
   expression(paste("Indirect from Electricity")),
   "",
   gd = "none",
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
   0,
   2000,
   c(0, 500, 1000, 1500, 2000),
-  NULL)
+  NULL, 
+  0, 
+  c(2015, 1000), 
+  c(2030, 1000), 
+  c(2022.5, 1000), 
+  config,
+  figmap_leep_timeseries)
 
-IndDirDot = dotted(IndDirSpg$data, IndDirSpg, "median", 0, 2000)
+IndDirDot = dotted(IndDirSpg$data, IndDirSpg$figure, "median", 0, 2000, config, figmap_leep_timeseries)
 
 IndDirTab = html(IndDirSpg$data, "Indirect Building CO<sub>2<sub>")
 

@@ -115,22 +115,32 @@ saveall(fig, df, fig_no)
 ```{r}
 fig_no = 2.3
 
-ElecSpg = spg(
+Elec_data = spg_clean(
   98,
+  c("Scout-LEEP"),
   "EPA-GHGI",
+  config,
+  clean_data,
+  figmap_leep_timeseries
+)
+
+ElecSpg = spg2(
+  Elec_data, 
   "",
   expression(paste("Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
-  c("Scout-LEEP"),
   0,
   2500,
   c(0, 500, 1000, 1500, 2000, 2500),
-  scales::comma) +
-  annotate("text", x = 2015, y = 2250, label = "Historical", color = "black") + 
-  annotate("text", x = 2027.5, y = 1750, label = "No IRA", color = "#F28063") + 
-  annotate("text", x = 2023, y = 650, label = "IRA", color = "#0388B3")
+  scales::comma, 
+  1,
+  c(2015, 2250), 
+  c(2027.5, 1750), 
+  c(2023, 650), 
+  config,
+  figmap_leep_timeseries) 
 
-ElecDot = dotted(ElecSpg$data, ElecSpg, "median", 0, 2500)
+ElecDot = dotted(ElecSpg$data, ElecSpg$figure, "median", 0, 2500, config, figmap_leep_timeseries)
 ElecDot
 
 ElecTab = html(ElecSpg$data, "Electricity CO<sub>2<sub>")
