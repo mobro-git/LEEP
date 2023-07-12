@@ -771,6 +771,45 @@ pdfigure = ggplot() +
 ## Electrification Figure
 
 ```{r}
+elc = readxl::read_xlsx("data-extra/electrification_compiled.xlsx") %>%
+  rename(value = value100) %>%
+  select(-variable) %>%
+  rename(variable = variable_rename) %>%
+  mutate(variable = case_when(
+    variable == "Total" ~ "Economy-Wide",
+    TRUE~variable
+  ))
+
+vars = c("Final Energy|Percent Electricity", 
+         "Final Energy|Buildings|Percent Electricity",
+         "Final Energy|Industry and Fuel Production|Percent Electricity",
+         "Final Energy|Transportation|Percent Electricity")
+
+ref_elc = clean_data %>%
+  filter(variable %in% c(vars, "Final Energy|Industry|Percent Electricity") & 
+           year == 2020 & 
+           model == "AEO2021") %>%
+  mutate(value = case_when(
+    variable == "Final Energy|Buildings|Percent Electricity" ~ 0.47, # number from Chioke, our number is wrong
+    variable == "Final Energy|Industry|Percent Electricity" ~ 0.13, # number calculated from AEO 2021, ~3 quads elc ~25 quads total
+    TRUE~value)) %>%
+  mutate(variable = case_when(
+    variable == "Final Energy|Industry|Percent Electricity" ~ "Final Energy|Industry and Fuel Production|Percent Electricity",
+    TRUE~variable
+  )) %>%
+  select(model,scenario,year,value,variable) %>%
+  mutate(
+    value = value * 100,
+    variable = case_when(
+      variable == "Final Energy|Percent Electricity" ~ "Economy-Wide",
+      variable == "Final Energy|Buildings|Percent Electricity" ~ "Buildings",
+      variable == "Final Energy|Industry and Fuel Production|Percent Electricity" ~ "Industry",
+      variable == "Final Energy|Transportation|Percent Electricity" ~ "Transportation",
+      TRUE ~ variable
+    ))
+
+elc_raw = rbind(elc, ref_elc) 
+
 hist = ref_elc %>% select(year, variable, value) %>%
   pivot_wider(names_from = "year", values_from = "value")
 
@@ -794,6 +833,8 @@ ggplot() +
   scale_subpalette(subpalettes, "Final Energy") +
   labs(y = "% Electricity of Final Energy",
        x="")
+# TODO: save off this data for the final report
+# TODO: remove REGEN from industry, apples to oranges
 ```
 
 ## Tables

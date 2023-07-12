@@ -123,6 +123,8 @@ html(TranSpg$data, "Transportation CO<sub>2<sub>")
 ```{r}
 fig_no = "3.4"
 
+# TODO: OP-NEMS should only have reporting every 5 years
+
 # clean_data_evshare = spg_clean(ts_map_ID = 118, drop = c(""), histsrc = "EPA-ATR", 
 #                            config = config, clean_data = clean_data4, figmap_leep_timeseries = figmap_leep_timeseries)
 scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)

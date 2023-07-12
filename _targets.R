@@ -176,6 +176,7 @@ tar_plan(
   data_long = make_data_long(data_long_read),
 
   # data_long but can add in transformations or filter out models/variables
+  # TODO: add bistline % electricity variables back in here
   clean_data = {
     data_long %>%
       unit_conversion() %>%
