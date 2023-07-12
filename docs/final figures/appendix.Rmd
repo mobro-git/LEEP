@@ -45,6 +45,7 @@ tab_a1 = summary_tables(
   data = clean_data,
   config = config
 )
+tab_a1
 
 tab_a2 = summary_tables(
   table_no = "A2 Power Sector Emissions",

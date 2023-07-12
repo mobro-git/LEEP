@@ -798,6 +798,43 @@ tableit = function(table, table_name, col_names) {
 
 }
 
+tablegt = function(table, table_name, col_names, num_decimals) {
+  table_gt = table %>% gt() %>%
+    tab_header(
+      title = gt::html(table_name)
+    ) %>%
+    tab_spanner(label = col_names[2], columns = c(Min, Median, Max)) %>%
+    tab_spanner(label = col_names[3], columns = c(`Min\r`, `Median\r`, `Max\r`)) %>%
+    cols_label() %>%
+    tab_style(
+      style = list(
+        cell_borders(sides = "all", color = "#F2F2F2"),
+        cell_fill(color = "#F2F2F2", alpha = NULL),
+        cell_text(align = "center")
+      ), locations = cells_body()
+    ) %>% tab_style(
+      style = list(
+        cell_fill(color = "black"),
+        cell_text(color = "white", weight = "normal", align = "center")
+      ), locations = cells_column_labels()
+    ) %>% tab_style(
+      style = list(
+        cell_fill(color = "black"),
+        cell_text(color = "white", weight = "bold")
+      ), locations = cells_column_spanners()
+    ) %>% tab_style(
+      style = list(
+        cell_borders(sides = "right", color = "#DCDCDC", weight = "2px")
+      ), locations = cells_body(columns = c(1,4))
+    ) %>% tab_style(
+      style = list(
+        cell_text(weight = "bold")
+      ), locations = cells_body(columns = c(1))
+    ) %>% fmt_number(decimals = num_decimals, use_seps = TRUE, columns = 2:7)
+
+  return(table_gt)
+}
+
 # TODO: change to per_reduction
 
 summary_tables = function(table_no, var, suffix, drop_mod = NULL, drop_datasrc = NULL, data, config) {
@@ -909,49 +946,83 @@ summary_tables = function(table_no, var, suffix, drop_mod = NULL, drop_datasrc =
     select(year, median_diff_2005, min_diff_2005, max_diff_2005, median_diff_2021, min_diff_2021, max_diff_2021)
   colnames(table4) = colnames
 
-  ft_table1 = tableit(
+  # ft_table1 = tableit(
+  #   table = table1,
+  #   table_name = as_paragraph(suffix," (",var_unit,")"),
+  #   col_names = c("", "No IRA", "IRA")
+  # )
+  #print(as_paragraph(suffix," (",var_unit,")"))
+  gt_table1 = tablegt(
     table = table1,
-    table_name = as_paragraph(suffix," (",var_unit,")"),
-    col_names = c("", "No IRA", "IRA")
+    table_name = paste0(suffix, " (", var_unit, ")"),
+    col_names = c("", "No IRA", "IRA"),
+    num_decimals = 0
   )
-  ft_table1
+  gt_table1
 
-  cols_table2 = as_paragraph(as_chunk(c("",
-                                        paste("Absolute Difference (",var_unit,")",sep=""),
-                                        "% Difference")))
-
-  ft_table2 = tableit(
+  # cols_table2 = as_paragraph(as_chunk(c("",
+  #                                       paste("Absolute Difference (",var_unit,")",sep=""),
+  #                                       "% Difference")))
+  cols_table2 = c("",paste0("Absolute Difference (", var_unit, ")"), "% Difference")
+  # ft_table2 = tableit(
+  #   table = table2,
+  #   table_name = as_paragraph("Difference between No IRA and IRA ",suffix),
+  #   col_names = cols_table2)
+  gt_table2 = tablegt(
     table = table2,
-    table_name = as_paragraph("Difference between No IRA and IRA ",suffix),
-    col_names = cols_table2)
-  ft_table2
+    table_name = paste0("Difference between No IRA and IRA: ", suffix),
+    col_names = cols_table2,
+    num_decimals = 1
+  )
+  gt_table2
 
-  ft_table3 = tableit(
+  # ft_table3 = tableit(
+  #   table = table3,
+  #   table_name = as_paragraph("% Difference in ",suffix," from 2005 and 2021 for the No IRA scenario"),
+  #   col_names = c("","2005","2021")
+  # )
+  # ft_table3
+  gt_table3 = tablegt(
     table = table3,
-    table_name = as_paragraph("% Difference in ",suffix," from 2005 and 2021 for the No IRA scenario"),
-    col_names = c("","2005","2021")
+    table_name = paste0("Difference in ", suffix, " from 2005 and 2021 for the No IRA scenario"),
+    col_names = c("","2005","2021"),
+    num_decimals = 1
   )
-  ft_table3
+  gt_table3
 
-  ft_table4 = tableit(
+  # ft_table4 = tableit(
+  #   table = table4,
+  #   table_name = as_paragraph("% Difference in ",suffix," from 2005 and 2021 for the IRA scenario"),
+  #   col_names = c("","2005","2021")
+  # )
+  # ft_table4
+
+  gt_table4 = tablegt(
     table = table4,
-    table_name = as_paragraph("% Difference in ",suffix," from 2005 and 2021 for the IRA scenario"),
-    col_names = c("","2005","2021")
+    table_name = paste0("Difference in ", suffix, " from 2005 and 2021 for the IRA scenario"),
+    col_names = c("","2005","2021"),
+    num_decimals = 1
   )
-  ft_table4
+  gt_table4
 
-save_as_html(
-  ft_table1,
-  ft_table2,
-  ft_table3,
-  ft_table4,
-  path = paste("output/final_figures/data/Table",table_no,".html",sep="")
-)
+# save_as_html(
+#   gt_table1,
+#   gt_table2,
+#   gt_table3,
+#   gt_table4,
+#   path = paste("output/final_figures/data/Table",table_no,".html",sep="")
+# )
 
-return(list(table1, ft_table1,
-            table2, ft_table2,
-            table3, ft_table3,
-            table4, ft_table4))
+  gt_table1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",table_no,".1.html"))
+  gt_table2 %>% gtsave(paste0("./output/final_figures/display_tables/Table",table_no,".2.html"))
+  gt_table3 %>% gtsave(paste0("./output/final_figures/display_tables/Table",table_no,".3.html"))
+  gt_table4 %>% gtsave(paste0("./output/final_figures/display_tables/Table",table_no,".4.html"))
+
+
+return(list(table1, gt_table1,
+            table2, gt_table2,
+            table3, gt_table3,
+            table4, gt_table4))
 
 }
 
