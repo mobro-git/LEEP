@@ -63,13 +63,13 @@
 3.3,"GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1504.65588533
 3.3,"GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1363.27993754
 3.3,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
-3.3,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1734.97114051709
-3.3,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1523.0652292164
-3.3,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1297.70146225238
+3.3,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1714.23884362917
+3.3,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1504.76477565588
+3.3,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1283.05267565183
 3.3,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
-3.3,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1761.55973
-3.3,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1606.16433
-3.3,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1435.26368
+3.3,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1724.82862
+3.3,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1561.15556
+3.3,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1376.82109
 3.3,"MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
 3.3,"MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1602.975889
 3.3,"MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1493.4011168
@@ -87,35 +87,35 @@
 3.3,"NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1533.1896163
 3.3,"NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1423.41741792
 3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
-3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2022,"Total Transportation Emissions",1806.582275
-3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2023,"Total Transportation Emissions",1818.687622
-3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2024,"Total Transportation Emissions",1806.199951
-3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1795.930786
-3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2026,"Total Transportation Emissions",1772.863525
-3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2027,"Total Transportation Emissions",1741.97876
-3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2028,"Total Transportation Emissions",1709.892456
-3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2029,"Total Transportation Emissions",1671.923096
-3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1634.299072
-3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2031,"Total Transportation Emissions",1596.484497
-3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2032,"Total Transportation Emissions",1559.907715
-3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2033,"Total Transportation Emissions",1525.598145
-3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2034,"Total Transportation Emissions",1486.073486
-3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1450.618286
+3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2022,"Total Transportation Emissions",1806.671387
+3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2023,"Total Transportation Emissions",1818.748535
+3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2024,"Total Transportation Emissions",1806.677246
+3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1798.255859
+3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2026,"Total Transportation Emissions",1778.614136
+3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2027,"Total Transportation Emissions",1752.722412
+3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2028,"Total Transportation Emissions",1725.976318
+3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2029,"Total Transportation Emissions",1694.6604
+3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1662.926758
+3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2031,"Total Transportation Emissions",1631.084106
+3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2032,"Total Transportation Emissions",1599.708618
+3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2033,"Total Transportation Emissions",1570.158081
+3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2034,"Total Transportation Emissions",1537.963135
+3.3,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1508.971802
 3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
-3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2022,"Total Transportation Emissions",1807.583374
-3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2023,"Total Transportation Emissions",1819.734009
-3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2024,"Total Transportation Emissions",1811.533936
-3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1800.883057
-3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2026,"Total Transportation Emissions",1783.37146
-3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2027,"Total Transportation Emissions",1761.358765
-3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2028,"Total Transportation Emissions",1741.427734
-3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2029,"Total Transportation Emissions",1720.286865
-3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1701.130493
-3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2031,"Total Transportation Emissions",1683.193481
-3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2032,"Total Transportation Emissions",1666.378174
-3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2033,"Total Transportation Emissions",1650.185547
-3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2034,"Total Transportation Emissions",1630.141968
-3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1610.456665
+3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2022,"Total Transportation Emissions",1806.733765
+3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2023,"Total Transportation Emissions",1819.720093
+3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2024,"Total Transportation Emissions",1811.35083
+3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1800.763306
+3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2026,"Total Transportation Emissions",1783.9375
+3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2027,"Total Transportation Emissions",1762.32251
+3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2028,"Total Transportation Emissions",1742.844727
+3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2029,"Total Transportation Emissions",1721.062378
+3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1701.325806
+3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2031,"Total Transportation Emissions",1682.512939
+3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2032,"Total Transportation Emissions",1664.421265
+3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2033,"Total Transportation Emissions",1646.101074
+3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2034,"Total Transportation Emissions",1623.404663
+3.3,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1601.090576
 3.3,"REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
 3.3,"REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1732.86935396
 3.3,"REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1569.14666048

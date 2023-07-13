@@ -63,13 +63,13 @@
 5.2,"GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1498.2663569
 5.2,"GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1533.3296146
 5.2,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
-5.2,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1119.7335107452
-5.2,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1045.25740112757
-5.2,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1023.11608646295
+5.2,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1120.51609047441
+5.2,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1048.83853933875
+5.2,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1015.29209318346
 5.2,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
-5.2,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1157.51901672254
-5.2,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1135.04946776163
-5.2,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1119.6795316039
+5.2,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1158.1532940004
+5.2,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1145.34480080117
+5.2,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1109.9553081067
 5.2,"MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
 5.2,"MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1316.8174649
 5.2,"MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1314.6462098
@@ -87,35 +87,35 @@
 5.2,"NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1070.7417609
 5.2,"NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1049.8547982
 5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
-5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2022,"Total Industry Emissions",1381.951416
-5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2023,"Total Industry Emissions",1368.644043
-5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2024,"Total Industry Emissions",1324.078003
-5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1290.757446
-5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2026,"Total Industry Emissions",1265.446533
-5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2027,"Total Industry Emissions",1234.540161
-5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2028,"Total Industry Emissions",1208.079712
-5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2029,"Total Industry Emissions",1170.78418
-5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1146.979248
-5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2031,"Total Industry Emissions",1129.796753
-5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2032,"Total Industry Emissions",1123.962402
-5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2033,"Total Industry Emissions",1107.81189
-5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2034,"Total Industry Emissions",1079.847412
-5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1066.524902
+5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2022,"Total Industry Emissions",1381.777344
+5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2023,"Total Industry Emissions",1368.440918
+5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2024,"Total Industry Emissions",1325.816895
+5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1286.283691
+5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2026,"Total Industry Emissions",1258.696045
+5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2027,"Total Industry Emissions",1227.862671
+5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2028,"Total Industry Emissions",1196.720337
+5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2029,"Total Industry Emissions",1163.026855
+5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1140.677856
+5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2031,"Total Industry Emissions",1124.132812
+5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2032,"Total Industry Emissions",1121.139648
+5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2033,"Total Industry Emissions",1100.387329
+5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2034,"Total Industry Emissions",1080.058594
+5.2,"OP-NEMS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1067.079956
 5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
-5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2022,"Total Industry Emissions",1382.125977
-5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2023,"Total Industry Emissions",1368.256958
-5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2024,"Total Industry Emissions",1329.564453
-5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1314.090576
-5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2026,"Total Industry Emissions",1302.894531
-5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2027,"Total Industry Emissions",1287.601318
-5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2028,"Total Industry Emissions",1283.514648
-5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2029,"Total Industry Emissions",1273.452026
-5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1264.990967
-5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2031,"Total Industry Emissions",1260.465332
-5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2032,"Total Industry Emissions",1264.094482
-5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2033,"Total Industry Emissions",1263.117188
-5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2034,"Total Industry Emissions",1251.128662
-5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1239.155518
+5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2022,"Total Industry Emissions",1381.830078
+5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2023,"Total Industry Emissions",1367.626709
+5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2024,"Total Industry Emissions",1328.830566
+5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1312.890137
+5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2026,"Total Industry Emissions",1300.769043
+5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2027,"Total Industry Emissions",1287.614624
+5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2028,"Total Industry Emissions",1283.276489
+5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2029,"Total Industry Emissions",1270.223267
+5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1263.367188
+5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2031,"Total Industry Emissions",1258.88208
+5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2032,"Total Industry Emissions",1261.87561
+5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2033,"Total Industry Emissions",1259.097534
+5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2034,"Total Industry Emissions",1244.157593
+5.2,"OP-NEMS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1233.428223
 5.2,"REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
 5.2,"REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1389.5173745
 5.2,"REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1279.6354461
