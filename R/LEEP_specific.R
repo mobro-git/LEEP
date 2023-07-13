@@ -1018,6 +1018,11 @@ summary_tables = function(table_no, var, suffix, drop_mod = NULL, drop_datasrc =
   gt_table3 %>% gtsave(paste0("./output/final_figures/display_tables/Table",table_no,".3.html"))
   gt_table4 %>% gtsave(paste0("./output/final_figures/display_tables/Table",table_no,".4.html"))
 
+  gt_table1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",table_no,".1.png"))
+  gt_table2 %>% gtsave(paste0("./output/final_figures/display_tables/Table",table_no,".2.png"))
+  gt_table3 %>% gtsave(paste0("./output/final_figures/display_tables/Table",table_no,".3.png"))
+  gt_table4 %>% gtsave(paste0("./output/final_figures/display_tables/Table",table_no,".4.png"))
+
 
 return(list(table1, gt_table1,
             table2, gt_table2,

@@ -894,7 +894,61 @@ write_sheet(all, per_share_wb, "All")
 
 saveWorkbook(per_share_wb, file = "output/final_figures/data/electrification_percentshare.xlsx", overwrite = TRUE)
 ```
+```{R}
+# display table for appendix G1
+fig_no = "G1 Electricity Share.1"
+tab_dta = all %>% 
+  data.frame() %>%
+  pivot_wider(names_from = Statistic, values_from = c(IRA, No.IRA)) %>%
+  select(c(Sector, Year, No.IRA_Min, No.IRA_Median, No.IRA_Max, IRA_Min, IRA_Median, IRA_Max))
+colnames(tab_dta) = c("Sector", "Year", "Min", "Median", "Max", "Min\r", "Median\r", "Max\r")
+col_names = c("","No IRA", "IRA")
 
+table1 = tab_dta %>% gt() %>%
+    tab_header(
+      title = gt::html("Summary of Electricity Share (%) of Final Energy")
+    ) %>%
+    tab_spanner(label = col_names[2], columns = c(Min, Median, Max)) %>%
+    tab_spanner(label = col_names[3], columns = c(`Min\r`, `Median\r`, `Max\r`)) %>%
+    cols_label() %>%
+    tab_style(
+      style = list(
+        cell_borders(sides = "all", color = "#F2F2F2"),
+        cell_fill(color = "#F2F2F2", alpha = NULL),
+        cell_text(align = "center")
+      ), locations = cells_body(rows = c(1:3, 7:9))
+    ) %>% tab_style(
+      style = list(
+        cell_borders(sides = "all", color = "white"),
+        cell_fill(color = "white", alpha = NULL),
+        cell_text(align = "center")
+      ), locations = cells_body(rows = c(4:6, 10:12))
+    ) %>% tab_style(
+      style = list(
+        cell_fill(color = "black"),
+        cell_text(color = "white", weight = "normal", align = "center")
+      ), locations = cells_column_labels()
+    ) %>% tab_style(
+      style = list(
+        cell_fill(color = "black"),
+        cell_text(color = "white", weight = "bold")
+      ), locations = cells_column_spanners()
+    ) %>% tab_style(
+      style = list(
+        cell_borders(sides = "right", color = "#DCDCDC", weight = "2px")
+      ), locations = cells_body(columns = c(2,5))
+    ) %>% tab_style(
+      style = list(
+        cell_text(weight = "bold", align = "left")
+      ), locations = cells_body(columns = 1:2)
+    ) %>% fmt_percent(decimals = 1, use_seps = TRUE, columns = 3:8)
+    
+table1
+
+table1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
+table1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
+
+```
 ### % Difference in Share IRA vs No IRA Tables
 
 ```{r}
@@ -951,4 +1005,61 @@ all_per = rbind(total_per, transportation_per, buildings_per, industry_per) %>%
 write_sheet(all_per, diff_wb, "All")
 
 saveWorkbook(diff_wb, file = "output/final_figures/data/electrification_differences.xlsx", overwrite = TRUE)
+```
+```{R}
+# display table for appendix G2
+fig_no = "G1 Electricity Share.2"
+tab_dta = all_per %>% 
+  data.frame() %>%
+  pivot_wider(names_from = Statistic, values_from = c(Percent.Difference, Percentage.Point.Difference)) %>%
+  select(c(Sector, Year, Percent.Difference_Min, Percent.Difference_Median, Percent.Difference_Max,
+           Percentage.Point.Difference_Min, Percentage.Point.Difference_Median,
+           Percentage.Point.Difference_Max))
+colnames(tab_dta) = c("Sector", "Year", "Min", "Median", "Max", "Min\r", "Median\r", "Max\r")
+col_names = c("","Percent Difference", "Percentage Point Difference")
+
+table2 = tab_dta %>% gt() %>%
+    tab_header(
+      title = gt::html("Differences in Electricity Share of Final Energy Between IRA and No IRA Scenarios")
+    ) %>%
+    tab_spanner(label = col_names[2], columns = c(Min, Median, Max)) %>%
+    tab_spanner(label = col_names[3], columns = c(`Min\r`, `Median\r`, `Max\r`)) %>%
+    cols_label() %>%
+    tab_style(
+      style = list(
+        cell_borders(sides = "all", color = "#F2F2F2"),
+        cell_fill(color = "#F2F2F2", alpha = NULL),
+        cell_text(align = "center")
+      ), locations = cells_body(rows = c(1:3, 7:9))
+    ) %>% tab_style(
+      style = list(
+        cell_borders(sides = "all", color = "white"),
+        cell_fill(color = "white", alpha = NULL),
+        cell_text(align = "center")
+      ), locations = cells_body(rows = c(4:6, 10:12))
+    ) %>% tab_style(
+      style = list(
+        cell_fill(color = "black"),
+        cell_text(color = "white", weight = "normal", align = "center")
+      ), locations = cells_column_labels()
+    ) %>% tab_style(
+      style = list(
+        cell_fill(color = "black"),
+        cell_text(color = "white", weight = "bold")
+      ), locations = cells_column_spanners()
+    ) %>% tab_style(
+      style = list(
+        cell_borders(sides = "right", color = "#DCDCDC", weight = "2px")
+      ), locations = cells_body(columns = c(2,5))
+    ) %>% tab_style(
+      style = list(
+        cell_text(weight = "bold", align = "left")
+      ), locations = cells_body(columns = 1:2)
+    ) %>% fmt_percent(decimals = 1, use_seps = TRUE, columns = 3:8)
+    
+table2
+
+table2 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
+table2 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
+
 ```

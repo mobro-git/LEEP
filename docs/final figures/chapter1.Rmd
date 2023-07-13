@@ -726,7 +726,12 @@ all_panels_gt = all_panels %>% gt() %>%
 
 all_panels_gt
 
-all_panels_gt %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
+all_panels_gt %>% 
+  gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
+
+all_panels_gt %>% 
+  gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
+
 
 ```
 
