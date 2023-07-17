@@ -220,10 +220,10 @@ savedata(BuilSpg$data, paste(fig_no, "Buildings"))
 savedata(IndSpg$data, paste(fig_no, "Industry"))
 ```
 
-## 1.3 fossil energy consumption by fuel
+## 1.4 fossil energy consumption by fuel
 
 ```{r}
-fig_no = 1.3
+fig_no = 1.4
 
 Coal_data = spg_clean(
   ts_map_ID = 94,
@@ -351,10 +351,10 @@ savedata(GasSpg$data, paste(fig_no, "Gas"))
 savedata(PetrolSpg$data, paste(fig_no, "Petroleum"))
 ```
 
-## 1.4 economy-wide co2 emissions sensitivities
+## 1.5 economy-wide co2 emissions sensitivities
 
 ```{r}
-fig_no = 1.4
+fig_no = 1.5
 
 # sensitivity dot plots
 panel1_scens = c("Core","IRA", "IRA.Low","IRA.High") # IRA Implementation
@@ -460,7 +460,7 @@ sens_dta_ind = clean_data %>%
   ))
 
 p7 = sens_dot_plot(sens_dta_econ, title = "\nIRA Implementation", figmap_leep_timeseries, config, 
-                   ymin = 0, ymax = 5000, far_left = TRUE, single = FALSE,
+                   ymin = 0, ymax = 5000, far_left = TRUE, single = FALSE, ps = FALSE,
                    ira_coord = c(2028.4,3220), low_coord = c(2031.3, 3760),
                    high_coord = c(2030.6, 4070))
 #p7$plot
@@ -519,7 +519,7 @@ dta = dta %>% mutate(figure_num = fig_no) %>%
 saveall(fig, dta, fig_no)
 ```
 
-## 1.4 Display table
+## 1.5 Display table
 ```{r}
 econ_panel1_summ = sens_dta_econ %>%
   select(-c(stagger,datasrc,region)) %>%
@@ -649,7 +649,7 @@ all_panels = cbind(econ_panel1_summ, econ_panel4_summ, econ_panel5_summ, econ_pa
 
 
 ```{r}
-fig_no = 1.4
+fig_no = 1.5
 
 # all_panels is created in the previous code chunk
 all_panels = all_panels %>% 

@@ -225,7 +225,8 @@ fin = ggplot(data = data_sort[data_sort$variable_rename != "Reference",] , aes(x
     breaks = c("HVAC", "WaterHeating", "Other","ower", "Total", "Reference"), 
     values = c("#75FF8E", '#f58231', "#FFF362",  '#42d4f4', "#DEDEDE", "#767684"),
     limits = c("Reference") 
-  )
+  ) + 
+  theme(axis.ticks = element_blank())
 fin
 
 data_sort = data_sort %>% mutate(figure_num = fig_no)

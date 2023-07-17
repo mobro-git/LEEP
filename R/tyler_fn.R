@@ -56,7 +56,8 @@ spg2 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
          x = element_blank(),
          y = yname) +
     theme(legend.position = gd,
-          axis.text.x = element_text(angle = 45, hjust = 1))+
+          axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.ticks = element_blank()) +
     annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historical", color = "black", alpha = annotate) +
     annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#F28063", alpha = annotate) +
     annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#0388B3", alpha = annotate)

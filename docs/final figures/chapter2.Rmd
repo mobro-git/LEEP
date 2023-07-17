@@ -71,15 +71,16 @@ fig = ggplot(data, aes(fill = variable_rename, y = value, alpha = alpha, x = yea
   theme_emf() +
   labs(title = "",
          x = "",
-         y = expression(paste("Emissions (Mt C", O[2], "/yr)"))) +
-    scale_y_continuous(limits = c(0, 6000), labels = scales::comma) +
+         y = expression(paste("Power Sector Emissions (Mt C", O[2], "/yr)"))) +
+    scale_y_continuous(expand = c(0,0), limits = c(0, 6000), labels = scales::comma) +
     scale_x_continuous(breaks = c(2005, 2021)) + 
     theme(panel.spacing.x = unit(4, "mm"), legend.position = "bottom") +
     scale_alpha(range = c(0.6, 1), guide = F)+
   scale_color_manual(breaks = c( "Coal", "Gas", "Petroleum", "Other Sectors"), 
                      values = c( "#003052", "#BC8F73", "#733D3D", "#DEDEDE")) +
   scale_fill_manual(breaks = c( "Coal", "Gas", "Petroleum", "Other Sectors"), 
-                     values = c( "#003052", "#BC8F73", "#733D3D", "#DEDEDE")) 
+                     values = c( "#003052", "#BC8F73", "#733D3D", "#DEDEDE")) +
+  theme(axis.ticks = element_blank())
 fig
 
 saveall(fig, data, fig_no)
@@ -98,8 +99,10 @@ clean_data10 = clean_data %>%
 
 fig = print_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14, "United States", 
                   level_var = c("Other", "Renewables", "Nuclear", "Oil", "Natural Gas", "Coal")) +
-  labs(y = "Seconary Energy (TWh)") +
-  theme(axis.text.x = element_text(angle = 0, hjust = 0.5), plot.title = element_blank()) +
+  labs(y = expression("Electricity Generation (TWh)")) +
+  scale_y_continuous(expand = c(0,0), limits = c(0,4500), labels = scales::comma) +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5), plot.title = element_blank(),
+        axis.ticks = element_blank()) +
   bottom1
 fig
 
@@ -2468,7 +2471,7 @@ fig = print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "U
   scale_y_continuous(limits = c(ymin, ymax)) +
   ggtitle("Historical Annual Capacity Changes") +
   theme(legend.position = "none", plot.title = element_text(hjust = 0.5, size = 10),
-        axis.text.x = element_text(angle = 45))
+        axis.text.x = element_text(angle = 45), axis.ticks = element_blank())
 
 dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States")
 
@@ -2953,7 +2956,8 @@ all_panels_gt %>%
 fig_no = "2.7a"
 clean_data_nox = spg_clean(ts_map_ID = 122, drop = c("ReEDS-NREL"), histsrc = "EPA", 
                            config = config, clean_data = clean_data, figmap_leep_timeseries = figmap_leep_timeseries)
-output = spg2(df = clean_data_nox, title = "", yname = "Emissions (Mt NOx/yr)", gd = "none", ymin = 0, ymax = 5, 
+output = spg2(df = clean_data_nox, title = "", yname = expression(paste("Emissions (Mt N",O[x],"/yr)")),
+              gd = "none", ymin = 0, ymax = 5, 
               ybreaks = waiver(), yax_format = waiver(), annotate = 1, 
               historic_coord = c(2016,1.8), preira_coord = c(2030, 0.95), ira_coord = c(2029, 0.15), 
               config = config, figmap_leep_timeseries = figmap_leep_timeseries)
@@ -3000,7 +3004,8 @@ nox_full
 fig_no = "2.7b"
 clean_data_sox = spg_clean(ts_map_ID = 123, drop = c("ReEDS-NREL"), histsrc = "EPA", 
                            config = config, clean_data = clean_data, figmap_leep_timeseries = figmap_leep_timeseries)
-output = spg2(df = clean_data_sox, title = "", yname = "Emissions (Mt SOx/yr)", gd = "none", ymin = 0, ymax = 5, 
+output = spg2(df = clean_data_sox, title = "", yname = expression(paste("Emissions (Mt S", O[x], "/yr)")), 
+                                                                        gd = "none", ymin = 0, ymax = 5, 
               ybreaks = waiver(), yax_format = waiver(), annotate = 1, 
               historic_coord = c(2020,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12), 
               config = config, figmap_leep_timeseries = figmap_leep_timeseries)

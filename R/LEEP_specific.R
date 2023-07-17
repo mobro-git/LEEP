@@ -180,7 +180,7 @@ dot_plots_sens = function(plot_type, config, emf_data_long, figmap, figure_num, 
 # p = dot_plots("time_series", config, clean_data, figmap_leep_timeseries, 4, "United States", 0, 2500, "Emissions|CO2|Energy|Demand|Electricity", metric = "median")
 # print(p$full)
 # print(p$stats)
-sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = FALSE, ymin = 0, ymax = 0, ira_coord = c(0,0), low_coord = c(0,0), high_coord = c(0,0)) {
+sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = FALSE, ps = FALSE, ymin = 0, ymax = 0, ira_coord = c(0,0), low_coord = c(0,0), high_coord = c(0,0)) {
   subpalettes = create_subpalettes(figmap, config)
   if (far_left) {
     point_code = geom_point(aes(x = year + stagger, y = value, color = scenario), shape = 1, size = 2)
@@ -226,14 +226,18 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
     point_code +
     segment_code +
     scale_x_continuous(breaks = c(2030, 2035), labels = c(2030, 2035), limits = c(2028, 2037)) +
-    scale_y_continuous(limits = c(ymin, ymax)) +
+    scale_y_continuous(limits = c(ymin, ymax), labels = scales::comma) +
     #scale_subpalette(subpalettes,"ZZZZZ") +
     theme_emf() +
     ggtitle(title) +
     theme(axis.title.x = element_blank(),
           plot.title = element_text(hjust = 0.5, size = 8), axis.ticks = element_blank(),
           plot.margin = margin(0.7,1,0.7,left_margin), legend.position = "none")
-
+  ylabel = expression(paste("Power Sector Emissions (Mt C", O[2], "/yr)"))
+  if (!ps) {
+    ylabel = expression(paste("Economy-Wide Emissions (Mt C", O[2], "/yr)"))
+  }
+  #     labs(y = expression(paste("Sectoral Direct + Indirect Emissions (Mt C", O[2], "/yr)")), title = title) +
   if (!far_left) {
     p = p +
       geom_text_repel(aes(x = year + stagger, y = value, label = scenario, segment.alpha = 0.6, segment.size = 0.2), point.padding = 0.2,
@@ -245,7 +249,7 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
     pes_label = "Pessimistic Emis"
   } else {
     p = p +
-      labs(y = "Emissions (Mt CO2/yr)") +
+      labs(y = ylabel) +
       #scale_subpalette(subpalettes, "Sensitivity Dots") +
       scale_color_manual(values = c("IRA" = "black", "IRA.Low" = "#42d4f4", "IRA.High" = "#883192"), guide = "none")
     opt_label = "Optimistic Emis"
@@ -582,7 +586,9 @@ emis_stack = function(dta, title, figmap, config, econwide = FALSE) {
     #geom_text(aes(x = year, y = value, label = round(value, 0), fill = variable_rename), size = 2.5, position = position_stack(vjust = 0.5, reverse = FALSE)) +
     #geom_text(data = totals, aes(x = year, y = value, label = round(value, 0)), vjust = -0.4, stat = "identity", size = 2.5) +
     scale_x_continuous(breaks = c(2005, 2021), labels = c(2005, 2021)) +
-    labs(y = "Emissions (Mt CO2/yr)", title = title) +
+    scale_y_continuous(expand = c(0,0), limits = c(0,6000), labels = scales::comma) +
+    labs(y = expression(paste("Sectoral Direct + Indirect Emissions (Mt C", O[2], "/yr)")), title = title) +
+    # expression(paste("Economy-Wide C", O[2])),
     scale_subpalette(subpalettes, "Emissions Stack") +
     theme_emf() +
     theme(axis.ticks = element_blank(), axis.title.x = element_blank(), plot.title = element_blank()) +
