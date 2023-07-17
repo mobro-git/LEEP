@@ -87,7 +87,8 @@ tar_plan(
     long_history = c(seq(1950,2020,by = 1)),
     five_twentyone = c(2005, 2021),
     five_twentyone_inclusive = c(seq(2005,2021,by = 1)),
-    twentyone_only = c(2021)
+    twentyone_only = c(2021),
+    thirtyfive_only = c(2035)
 
   ),
 

@@ -766,7 +766,8 @@ pdfigure = ggplot() +
   savefig(figure, fig_no)
 ```
 
-# Appendix G 
+-# Appendix G 6
+
 
 ## Electrification Figure
 
@@ -782,7 +783,7 @@ elc = readxl::read_xlsx("data-extra/electrification_compiled.xlsx") %>%
 
 vars = c("Final Energy|Percent Electricity", 
          "Final Energy|Buildings|Percent Electricity",
-         "Final Energy|Industry and Fuel Production|Percent Electricity",
+         "Final Energy|Industry and Fuel Production|Percent Electricit+",
          "Final Energy|Transportation|Percent Electricity")
 
 ref_elc = clean_data %>%

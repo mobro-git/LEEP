@@ -219,6 +219,125 @@ savedata(TranSpg$data, paste(fig_no, "Transportation"))
 savedata(BuilSpg$data, paste(fig_no, "Buildings"))
 savedata(IndSpg$data, paste(fig_no, "Industry"))
 ```
+## 1.3/ES.3 key indicators
+```{r}
+fig_no = 1.3
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+
+indicators_econ = Econ_data %>% filter(year %in% c(2030, 2035))
+indicators_econ_baseline = Econ_data %>% filter(year == 2005)
+
+indicators_elec = Elec_data %>% filter(year %in% c(2030, 2035))
+indicators_elec_baseline = Elec_data %>% filter(year == 2005)
+
+indicators_tran = Tran_data %>% filter(year %in% c(2030, 2035))
+indicators_tran_baseline = Tran_data %>% filter(year == 2005)
+
+indicators_ind = Ind_data %>% filter(year %in% c(2030, 2035))
+indicators_ind_baseline = Ind_data %>% filter(year == 2005)
+
+indicators_buil = Buil_data %>% filter(year %in% c(2030, 2035))
+indicators_buil_baseline = Buil_data %>% filter(year == 2005)
+
+indicators_all = bind_rows(indicators_econ, indicators_elec, 
+                           indicators_tran, indicators_ind, indicators_buil)
+indicators_all_baseline = bind_rows(indicators_econ_baseline, 
+                                    indicators_elec_baseline, indicators_tran_baseline,
+                                    indicators_ind_baseline, indicators_buil_baseline)
+
+variable_rename = data.frame("variable" = c("Emissions|CO2", "Emissions|CO2|Energy|Demand|Transportation|Total",
+                                            "Emissions|CO2|Energy|Supply|Electricity",
+                                            "Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total",
+                                            "Emissions|CO2|Energy|Demand|Buildings|Total"), 
+                             "sector" = c("Economy-Wide", "Transportation", 
+                                          "Electricity", "Industry", "Buildings"))
+
+indicators_all = indicators_all %>% left_join(
+  (indicators_all_baseline %>%
+     mutate(value_2005 = value) %>%
+     select(variable, value_2005)), 
+  by = c("variable")) %>%
+  # we're plotting reductions - so multiplying this by -1
+  mutate(pct_diff = -100 * (value - value_2005) / value_2005) %>%
+  left_join(variable_rename, by = "variable") %>%
+  select(-variable) %>%
+  mutate(category = interaction(sector, scenario)) %>%
+  mutate(category = factor(category, levels = c(
+    "Industry.No IRA", "Industry.IRA",
+    "Buildings.No IRA", "Buildings.IRA",
+    "Transportation.No IRA", "Transportation.IRA",
+    "Electricity.No IRA", "Electricity.IRA",
+    "Economy-Wide.No IRA", "Economy-Wide.IRA"
+  )))
+
+indicators_summ = indicators_all %>% 
+  group_by(category, year, sector, scenario) %>%
+  summarize(min = min(pct_diff),
+            max = max(pct_diff),
+            median = median(pct_diff))
+
+indicator_small = function(filter_variable, bottom = FALSE) {
+  data_small = indicators_all %>% filter(sector == filter_variable)
+  summ_small = indicators_summ %>% filter(sector == filter_variable)
+  p = data_small %>% 
+    ggplot() +
+      geom_point(aes(x = pct_diff, y = scenario, color = scenario), shape = 16, alpha = 0.8, size = 1) +
+      geom_segment(data = summ_small,
+                   aes(x = min, xend = max, y = scenario, yend = scenario, color = scenario),
+                   alpha = 0.3, linewidth = 3) +
+      geom_point(data = summ_small, aes(x = min, y = scenario, color = scenario),
+                 shape = 16, size = 3) +
+      geom_point(data = summ_small, aes(x = max, y = scenario, color = scenario),
+                 shape = 16, size = 3) +
+      geom_point(data = summ_small, aes(x = median, y = scenario, color = scenario),
+                shape = "|", size = 1, stroke = 3) +
+      scale_x_continuous(limits = c(0,100), expand = c(0,0), 
+                         name = expression("Percent Reduction from 2005 Levels (%)")) +
+      # scale_y_discrete(name = filter_variable) +
+      ggtitle(filter_variable) +
+      scale_color_manual(values = c(subpalettes$`Economy-Wide Emissions`[['IRA']], 
+                                    subpalettes$`Economy-Wide Emissions`[['No IRA']]), 
+                         breaks = c("IRA", "No IRA")) +
+      facet_grid(year ~ ., switch = "y") +
+      theme_emf() +
+      theme(axis.ticks = element_blank(), axis.text.y = element_blank(), 
+            #axis.title.y = element_text(size = 8), 
+            axis.title.y = element_blank(),
+            plot.title = element_text(size = 10, hjust = 0, face = "bold", 
+                                      margin = margin(0,0,1,0)),
+            strip.text.y.left = element_text(size = 8, face = "plain", angle = 0),
+            axis.text.x = element_text(face = "plain"),
+            panel.grid.major.x = element_blank(),
+            panel.grid.minor.x = element_blank(),
+            panel.border = element_blank(),
+            axis.line.x = element_line(color = "#59+5959", linewidth = 0.25),
+            plot.margin = margin(0,0,5,0))
+  
+  if (!(bottom)){
+    p = p + theme(axis.text.x = element_blank(), axis.title.x = element_blank())
+  }
+  
+  return(p)
+}
+
+p1 = indicator_small("Economy-Wide")
+p2 = indicator_small("Electricity")
+p3 = indicator_small("Transportation")
+p4 = indicator_small("Buildings")
+p5 = indicator_small("Industry", bottom = TRUE)
+
+combined = (p1 / p2 / p3 / p4 / p5) +
+  plot_layout(guides = "collect") +
+  theme(plot.margin = margin(0, 0, 0, 0))
+
+combined
+saveall(combined, indicators_all, fig_no)
+fig_no = "ES.3"
+savefig(combined, fig_no)
+
+
+
+```
 
 ## 1.4 fossil energy consumption by fuel
 

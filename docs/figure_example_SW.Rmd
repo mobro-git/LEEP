@@ -1867,3 +1867,81 @@ m2 = medians_table("time_series", config, clean_data, figmap_leep_timeseries, 4,
 test = compile_all_data()
 
 ```
+## ARCHIVE: old capacity addition
+```{r}
+fig_no = 2.5
+
+# capacity addition plot
+
+ymin = -40
+ymax = 130
+
+subpalettes = create_subpalettes(figmap_leep_stackbar, config)
+
+fig = print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States") +
+  geom_hline(yintercept = 0, linewidth = 0.25, color = "black") +
+  labs(y = "Capacity Change (GW/yr)") +
+  scale_subpalette(subpalettes, "Capacity Additions2") +
+  scale_y_continuous(limits = c(ymin, ymax)) +
+  ggtitle("Historical Annual Capacity Changes") +
+  theme(legend.position = "none", plot.title = element_text(hjust = 0.5, size = 10),
+        axis.text.x = element_text(angle = 45), axis.ticks = element_blank())
+
+dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States")
+
+#fig
+
+dta4 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 6, "United States")
+dta_ttl = dta4 %>% 
+  mutate(temp = case_when(
+    grepl("Additions",variable) ~ "Capacity Additions",
+    TRUE ~ "Capacity Retirements")) %>%
+  group_by(model, scenario, region, datasrc, unit, temp) %>%
+  summarize(value = sum(value)) %>% 
+  select(-temp) %>%
+  mutate(variable_rename = "Total")
+
+dta4 = rbind(dta4,dta_ttl) %>% mutate(variable_rename = factor(variable_rename, 
+                                  levels = c("Total", "Solar", "Wind", "Storage", "Nuclear", "Hydro", "Gas CCS", "Gas", "Coal CCS", "Coal"))) %>%
+  mutate(stagger = case_when((variable_rename %in% c("Coal", "Nuclear", "Gas", "Total") & (value >= 0)) ~ -0.1,
+                             (variable_rename %in% c("Coal", "Nuclear", "Gas", "Total") & (value < 0)) ~ 0.1,
+                             TRUE ~ 0))
+
+stats = dta4 %>% group_by(variable_rename, stagger) %>% summarize(mean = mean(value), median = median(value))
+
+dotplot2 = dta4 %>% ggplot() + 
+  geom_point(aes(x = (as.numeric(variable_rename) + stagger), y = value, color = variable_rename), shape = 16, size = 2) + 
+  #geom_point(data = stats, aes(x = variable_rename, y = median, color = variable_rename), shape = 3, size = 2) +
+  geom_segment(data = stats, aes(x = as.numeric(variable_rename) - 0.25 + stagger, xend = as.numeric(variable_rename) + 0.25 + stagger, 
+                                 y = median, yend = median, color = variable_rename), linewidth = 0.5) +
+  geom_hline(yintercept = 0, linewidth = 0.25, color = "black") +
+  scale_x_continuous(breaks = seq(1,10), labels = c("Total", "Solar", "Wind", "Storage", "Nuclear", "Hydro", "Gas CCS", "Gas", "Coal CCS", "Coal")) +
+  scale_y_continuous(limits = c(ymin, ymax)) +
+  scale_subpalette(subpalettes, "Capacity Additions2") +
+  ggtitle("Average Annual Capacity Changes (2021-2035)") +
+  theme_emf() +
+  theme(plot.title = element_text(hjust = 0.5, size = 10), axis.text.y = element_blank(),
+        axis.title.y = element_blank(), axis.ticks = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "none")
+#dotplot2
+  
+
+combined = 
+  fig + dotplot2 + 
+  plot_annotation(theme = theme(plot.title = element_text(hjust = 0.5))) +
+    plot_layout(widths = c(1,1)) +
+    theme(plot.margin = margin(0,0,0,0))
+    # bottom1
+combined
+
+savefig(combined, fig_no)
+
+print(stats)
+
+dta = clean_supplemental_data(dta, fig_no)
+dta4 = clean_supplemental_data(dta4, fig_no)
+
+savedata(dta, paste0(fig_no,"bars"))
+savedata(dta4, paste0(fig_no, "dots"))
+```
