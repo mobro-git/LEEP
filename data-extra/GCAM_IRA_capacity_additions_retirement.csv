@@ -1,0 +1,151 @@
+,Units,scenario,region,Variable,2020,2025,2030,2035,2040,2045,2050
+1,GW/yr,IRA,USA,Capacity Additions|Electricity|Bioenergy,0.11200473,0.381190162,0.14948059,0.37946607,0.355004095,0.454905851,0.39967315
+2,GW/yr,IRA,USA,Capacity Additions|Electricity|Coal,0,0,0,0,0,0,0
+3,GW/yr,IRA,USA,Capacity Additions|Electricity|Coal CCS,0,0,4.486935569,1.50621512,0.55492136,0,0
+4,GW/yr,IRA,USA,Capacity Additions|Electricity|Gas,10.62413284,0,0,0,1.077204624,2.560896093,7.56165923
+5,GW/yr,IRA,USA,Capacity Additions|Electricity|Gas CCS,0,1.284246576,3.186834097,2.037354137,1.1891172,1.260464232,2.378234401
+6,GW/yr,IRA,USA,Capacity Additions|Electricity|Geothermal,0.484098597,0.533176194,0.411058966,0.369615678,0.225108589,0.042140904,0.261678576
+7,GW/yr,IRA,USA,Capacity Additions|Electricity|Hydro,0.140057144,0.140073834,0.140057144,0.140057144,0.140073834,0.140057144,0.140073834
+8,GW/yr,IRA,USA,Capacity Additions|Electricity|Nuclear,0,0,0,0,0,0,0
+9,GW/yr,IRA,USA,Capacity Additions|Electricity|Oil,0.327049773,0.002348561,0.004341846,0.079808965,0.111427403,0.413978341,0.780976311
+10,GW/yr,IRA,USA,Capacity Additions|Electricity|Solar,24.08188287,37.16650235,24.3419099,20.66211025,11.72750023,15.61737012,1.877773231
+11,GW/yr,IRA,USA,Capacity Additions|Electricity|Wind,20.68429371,39.33953722,26.9725552,24.73237714,13.2703834,13.76208645,5.52941087
+12,GW/yr,IRA_AdvancedTech,USA,Capacity Additions|Electricity|Bioenergy,0.112625049,0.337773175,0.082452118,0.304381068,0.229544848,0.347400267,0.29471374
+13,GW/yr,IRA_AdvancedTech,USA,Capacity Additions|Electricity|Coal,0,0,0,0,0,0,0
+14,GW/yr,IRA_AdvancedTech,USA,Capacity Additions|Electricity|Coal CCS,0,0,4.486935569,1.50621512,0.55492136,0,0
+15,GW/yr,IRA_AdvancedTech,USA,Capacity Additions|Electricity|Gas,10.62429111,0,0,0,0.726439299,2.016901507,5.711870663
+16,GW/yr,IRA_AdvancedTech,USA,Capacity Additions|Electricity|Gas CCS,0,1.284246576,3.186834097,2.037354137,1.1891172,1.260464232,2.378234401
+17,GW/yr,IRA_AdvancedTech,USA,Capacity Additions|Electricity|Geothermal,0.484899797,0.577458566,0.448284853,0.395650826,0.197908986,0.033094453,0.199249676
+18,GW/yr,IRA_AdvancedTech,USA,Capacity Additions|Electricity|Hydro,0.140057144,0.140073834,0.140057144,0.140057144,0.140073834,0.140057144,0.140073834
+19,GW/yr,IRA_AdvancedTech,USA,Capacity Additions|Electricity|Nuclear,0,0,0,0,0,0,0
+20,GW/yr,IRA_AdvancedTech,USA,Capacity Additions|Electricity|Oil,0.328541084,0.001847517,0,0.06057376,0.045303317,0.353315512,0.574176052
+21,GW/yr,IRA_AdvancedTech,USA,Capacity Additions|Electricity|Solar,24.12179629,42.58534957,28.2852346,23.8749507,10.80088898,17.59323664,5.7677457
+22,GW/yr,IRA_AdvancedTech,USA,Capacity Additions|Electricity|Wind,20.71818011,45.36647569,32.30832318,29.82151395,12.63282557,15.53349139,5.824382214
+23,GW/yr,IRA_HighEnergySupply,USA,Capacity Additions|Electricity|Bioenergy,0.11200473,0.314158996,0.157832727,0.277471313,0.314689096,0.274526307,0.273126134
+24,GW/yr,IRA_HighEnergySupply,USA,Capacity Additions|Electricity|Coal,0,0,0,0,0,0,0
+25,GW/yr,IRA_HighEnergySupply,USA,Capacity Additions|Electricity|Coal CCS,0,0,4.486935569,1.50621512,0.55492136,0,0
+26,GW/yr,IRA_HighEnergySupply,USA,Capacity Additions|Electricity|Gas,10.62413284,0,0,0,2.566653006,4.524994827,10.21406461
+27,GW/yr,IRA_HighEnergySupply,USA,Capacity Additions|Electricity|Gas CCS,0,1.284246576,3.186834097,2.037354137,1.1891172,1.260464232,2.378234401
+28,GW/yr,IRA_HighEnergySupply,USA,Capacity Additions|Electricity|Geothermal,0.484098597,0.495017335,0.405697193,0.32036121,0.255578246,0.005569649,0.191557797
+29,GW/yr,IRA_HighEnergySupply,USA,Capacity Additions|Electricity|Hydro,0.140057144,0.140073834,0.140057144,0.140057144,0.140073834,0.140057144,0.140073834
+30,GW/yr,IRA_HighEnergySupply,USA,Capacity Additions|Electricity|Nuclear,0,0,0,0,0,0,0
+31,GW/yr,IRA_HighEnergySupply,USA,Capacity Additions|Electricity|Oil,0.327049773,0.004265534,0.036729213,0.079354245,0.211448481,0.418044722,0.788787251
+32,GW/yr,IRA_HighEnergySupply,USA,Capacity Additions|Electricity|Solar,24.08188287,35.38265971,24.44679546,18.37905115,14.66295398,14.76414217,1.441312546
+33,GW/yr,IRA_HighEnergySupply,USA,Capacity Additions|Electricity|Wind,20.68429371,37.38241737,26.94685583,21.79027746,15.66629876,11.49637091,3.8605125
+34,GW/yr,IRA_HighGrowth,USA,Capacity Additions|Electricity|Bioenergy,0.11200473,0.54066966,0.207412486,0.47507953,0.457564949,0.517162362,0.469500325
+35,GW/yr,IRA_HighGrowth,USA,Capacity Additions|Electricity|Coal,0,0,0,0,0,0,0
+36,GW/yr,IRA_HighGrowth,USA,Capacity Additions|Electricity|Coal CCS,0,0,4.486935569,1.50621512,0.55492136,0,0
+37,GW/yr,IRA_HighGrowth,USA,Capacity Additions|Electricity|Gas,10.62413284,0,0,0,1.403088162,2.981597644,8.24466073
+38,GW/yr,IRA_HighGrowth,USA,Capacity Additions|Electricity|Gas CCS,0,1.284246576,3.186834097,2.037354137,1.1891172,1.260464232,2.378234401
+39,GW/yr,IRA_HighGrowth,USA,Capacity Additions|Electricity|Geothermal,0.484098597,0.605697898,0.457792153,0.412213203,0.260155096,0.060080895,0.295257202
+40,GW/yr,IRA_HighGrowth,USA,Capacity Additions|Electricity|Hydro,0.140057144,0.140073834,0.140057144,0.140057144,0.140073834,0.140057144,0.140073834
+41,GW/yr,IRA_HighGrowth,USA,Capacity Additions|Electricity|Nuclear,0,0,0,0,0,0,0
+42,GW/yr,IRA_HighGrowth,USA,Capacity Additions|Electricity|Oil,0.327049773,0.023970256,0.00717938,0.100773952,0.145179635,0.45345195,0.878840987
+43,GW/yr,IRA_HighGrowth,USA,Capacity Additions|Electricity|Solar,24.08188287,40.75236863,26.12608368,22.71065204,13.70184124,17.56679868,2.223282669
+44,GW/yr,IRA_HighGrowth,USA,Capacity Additions|Electricity|Wind,20.68429371,43.30007464,29.38081001,27.60355903,15.65197703,16.28449025,7.886571861
+45,GW/yr,IRA_LowEnergySupply,USA,Capacity Additions|Electricity|Bioenergy,0.11200473,0.763869505,0.137595489,0.578796987,0.24150171,0.720612893,0.976509143
+46,GW/yr,IRA_LowEnergySupply,USA,Capacity Additions|Electricity|Coal,0,0,0,0,0,0,0
+47,GW/yr,IRA_LowEnergySupply,USA,Capacity Additions|Electricity|Coal CCS,0,0,4.486935569,1.50621512,0.55492136,0,0
+48,GW/yr,IRA_LowEnergySupply,USA,Capacity Additions|Electricity|Gas,10.62413284,0,0,0,0.009392813,0.785665067,1.625306766
+49,GW/yr,IRA_LowEnergySupply,USA,Capacity Additions|Electricity|Gas CCS,0,1.284246576,3.186834097,2.037354137,1.1891172,1.260464232,2.378234401
+50,GW/yr,IRA_LowEnergySupply,USA,Capacity Additions|Electricity|Geothermal,0.484098597,0.743314872,0.455559079,0.448272874,0.150815435,0.098337702,0.334946235
+51,GW/yr,IRA_LowEnergySupply,USA,Capacity Additions|Electricity|Hydro,0.140057144,0.140073834,0.140057144,0.140057144,0.140073834,0.140057144,0.140073834
+52,GW/yr,IRA_LowEnergySupply,USA,Capacity Additions|Electricity|Nuclear,0,0,0,0,0,0,0
+53,GW/yr,IRA_LowEnergySupply,USA,Capacity Additions|Electricity|Oil,0.327049773,0.049634091,0,0.071294523,0,0.425895739,0.653989305
+54,GW/yr,IRA_LowEnergySupply,USA,Capacity Additions|Electricity|Solar,24.08188287,45.0961316,24.69268629,23.59234972,6.712310833,16.9689295,2.920489037
+55,GW/yr,IRA_LowEnergySupply,USA,Capacity Additions|Electricity|Wind,20.68429371,48.40722787,28.11464469,29.08589526,8.510675442,17.65479053,6.599673344
+56,GW/yr,IRA_LowGrowth,USA,Capacity Additions|Electricity|Bioenergy,0.11200473,0.221394254,0.09223612,0.284451603,0.255152558,0.417986696,0.375053117
+57,GW/yr,IRA_LowGrowth,USA,Capacity Additions|Electricity|Coal,0,0,0,0,0,0,0
+58,GW/yr,IRA_LowGrowth,USA,Capacity Additions|Electricity|Coal CCS,0,0,4.486935569,1.50621512,0.55492136,0,0
+59,GW/yr,IRA_LowGrowth,USA,Capacity Additions|Electricity|Gas,10.62413284,0,0,0,0.751818511,2.245068849,7.119213803
+60,GW/yr,IRA_LowGrowth,USA,Capacity Additions|Electricity|Gas CCS,0,1.284246576,3.186834097,2.037354137,1.1891172,1.260464232,2.378234401
+61,GW/yr,IRA_LowGrowth,USA,Capacity Additions|Electricity|Geothermal,0.484098597,0.457922516,0.358465105,0.321180027,0.186145569,0.029151164,0.245534416
+62,GW/yr,IRA_LowGrowth,USA,Capacity Additions|Electricity|Hydro,0.140057144,0.140073834,0.140057144,0.140057144,0.140073834,0.140057144,0.140073834
+63,GW/yr,IRA_LowGrowth,USA,Capacity Additions|Electricity|Nuclear,0,0,0,0,0,0,0
+64,GW/yr,IRA_LowGrowth,USA,Capacity Additions|Electricity|Oil,0.327049773,0,0.001114602,0.058817735,0.077605802,0.38811244,0.716937559
+65,GW/yr,IRA_LowGrowth,USA,Capacity Additions|Electricity|Solar,24.08188287,33.26856505,22.34385573,18.49990609,9.681128029,14.15204803,1.60824659
+66,GW/yr,IRA_LowGrowth,USA,Capacity Additions|Electricity|Wind,20.68429371,35.08477007,24.32836827,21.71063782,10.8161428,11.84363485,4.194903272
+67,GW/yr,NoIRA,USA,Capacity Additions|Electricity|Bioenergy,0.112000179,0.341304341,0.15189326,0.467001504,0.446337306,0.313140302,0.495862271
+68,GW/yr,NoIRA,USA,Capacity Additions|Electricity|Coal,0,0,0,0,0,0,0
+69,GW/yr,NoIRA,USA,Capacity Additions|Electricity|Gas,10.62414077,3.740882272,3.203362779,1.684889213,1.476359605,1.933919313,7.181523876
+70,GW/yr,NoIRA,USA,Capacity Additions|Electricity|Geothermal,0.484098597,0.302769886,0.286863972,0.327798072,0.32563927,0.043581938,0.331433494
+71,GW/yr,NoIRA,USA,Capacity Additions|Electricity|Hydro,0.140057144,0.140073834,0.140057144,0.140057144,0.140073834,0.140057144,0.140073834
+72,GW/yr,NoIRA,USA,Capacity Additions|Electricity|Nuclear,0,0,0,0,0,0,0
+73,GW/yr,NoIRA,USA,Capacity Additions|Electricity|Oil,0.327049926,0.007753462,0.019705539,0.125070427,0.125302599,0.277380367,0.826190735
+74,GW/yr,NoIRA,USA,Capacity Additions|Electricity|Solar,24.08191459,24.15594343,21.63151382,21.4963299,18.44199189,16.29099547,2.13519947
+75,GW/yr,NoIRA,USA,Capacity Additions|Electricity|Wind,20.68429371,21.29993092,19.86904675,22.63753665,21.84984439,15.52342354,9.538307055
+76,GW/yr,IRA,USA,Capacity Retirements|Electricity|Bioenergy,-0.261929635,0,0,0,0,0,0
+77,GW/yr,IRA,USA,Capacity Retirements|Electricity|Coal,-16.96948795,-3.130236793,-5.9611565,0,0,0,0
+78,GW/yr,IRA,USA,Capacity Retirements|Electricity|Coal CCS,0,0,0,0,0,-6.54807205,0
+79,GW/yr,IRA,USA,Capacity Retirements|Electricity|Gas,-0.002129183,-0.292793306,0,-0.088656708,0,0,0
+80,GW/yr,IRA,USA,Capacity Retirements|Electricity|Gas CCS,0,0,0,0,0,0,0
+81,GW/yr,IRA,USA,Capacity Retirements|Electricity|Geothermal,0,0,0,0,0,0,0
+82,GW/yr,IRA,USA,Capacity Retirements|Electricity|Hydro,0,0,0,0,0,0,0
+83,GW/yr,IRA,USA,Capacity Retirements|Electricity|Nuclear,0,0,0,0,0,0,0
+84,GW/yr,IRA,USA,Capacity Retirements|Electricity|Oil,-0.030743567,-0.555787325,-0.047830147,0,0,0,0
+85,GW/yr,IRA,USA,Capacity Retirements|Electricity|Solar,0,0,0,0,0,0,0
+86,GW/yr,IRA,USA,Capacity Retirements|Electricity|Wind,0,0,0,0,0,0,0
+87,GW/yr,IRA_AdvancedTech,USA,Capacity Retirements|Electricity|Bioenergy,-0.261143008,-0.002867253,-0.009929269,0,0,0,-0.012072403
+88,GW/yr,IRA_AdvancedTech,USA,Capacity Retirements|Electricity|Coal,-16.96948049,-3.130244628,-5.961148368,0,0,0,0
+89,GW/yr,IRA_AdvancedTech,USA,Capacity Retirements|Electricity|Coal CCS,0,0,0,0,0,-6.54807205,0
+90,GW/yr,IRA_AdvancedTech,USA,Capacity Retirements|Electricity|Gas,-0.002121722,-0.386004706,0,-0.142505345,0,0,0
+91,GW/yr,IRA_AdvancedTech,USA,Capacity Retirements|Electricity|Gas CCS,0,0,0,0,0,0,0
+92,GW/yr,IRA_AdvancedTech,USA,Capacity Retirements|Electricity|Geothermal,0,0,0,0,0,0,0
+93,GW/yr,IRA_AdvancedTech,USA,Capacity Retirements|Electricity|Hydro,0,0,0,0,0,0,0
+94,GW/yr,IRA_AdvancedTech,USA,Capacity Retirements|Electricity|Nuclear,0,0,0,0,0,0,0
+95,GW/yr,IRA_AdvancedTech,USA,Capacity Retirements|Electricity|Oil,-0.030665878,-0.595361384,-0.062412427,-0.001590793,-0.000342624,0,0
+96,GW/yr,IRA_AdvancedTech,USA,Capacity Retirements|Electricity|Solar,0,0,0,0,0,0,0
+97,GW/yr,IRA_AdvancedTech,USA,Capacity Retirements|Electricity|Wind,0,0,0,0,0,0,0
+98,GW/yr,IRA_HighEnergySupply,USA,Capacity Retirements|Electricity|Bioenergy,-0.261929635,0,0,0,0,0,-0.031132898
+99,GW/yr,IRA_HighEnergySupply,USA,Capacity Retirements|Electricity|Coal,-16.96948795,-3.130236346,-5.961157321,0,0,0,0
+100,GW/yr,IRA_HighEnergySupply,USA,Capacity Retirements|Electricity|Coal CCS,0,0,0,0,0,-6.54807205,0
+101,GW/yr,IRA_HighEnergySupply,USA,Capacity Retirements|Electricity|Gas,-0.002129183,-0.118262052,0,-0.005652342,0,0,-0.000441368
+102,GW/yr,IRA_HighEnergySupply,USA,Capacity Retirements|Electricity|Gas CCS,0,0,0,0,0,0,0
+103,GW/yr,IRA_HighEnergySupply,USA,Capacity Retirements|Electricity|Geothermal,0,0,0,0,0,0,0
+104,GW/yr,IRA_HighEnergySupply,USA,Capacity Retirements|Electricity|Hydro,0,0,0,0,0,0,0
+105,GW/yr,IRA_HighEnergySupply,USA,Capacity Retirements|Electricity|Nuclear,0,0,0,0,0,0,0
+106,GW/yr,IRA_HighEnergySupply,USA,Capacity Retirements|Electricity|Oil,-0.030743567,-0.520995517,-0.011302908,0,0,0,0
+107,GW/yr,IRA_HighEnergySupply,USA,Capacity Retirements|Electricity|Solar,0,0,0,0,0,0,0
+108,GW/yr,IRA_HighEnergySupply,USA,Capacity Retirements|Electricity|Wind,0,0,0,0,0,0,0
+109,GW/yr,IRA_HighGrowth,USA,Capacity Retirements|Electricity|Bioenergy,-0.261929635,0,0,0,0,0,0
+110,GW/yr,IRA_HighGrowth,USA,Capacity Retirements|Electricity|Coal,-16.96948795,-3.130266041,-5.961122702,0,0,0,0
+111,GW/yr,IRA_HighGrowth,USA,Capacity Retirements|Electricity|Coal CCS,0,0,0,0,0,-6.54807205,0
+112,GW/yr,IRA_HighGrowth,USA,Capacity Retirements|Electricity|Gas,-0.002129183,-0.274869346,0,-0.092731137,0,0,0
+113,GW/yr,IRA_HighGrowth,USA,Capacity Retirements|Electricity|Gas CCS,0,0,0,0,0,0,0
+114,GW/yr,IRA_HighGrowth,USA,Capacity Retirements|Electricity|Geothermal,0,0,0,0,0,0,0
+115,GW/yr,IRA_HighGrowth,USA,Capacity Retirements|Electricity|Hydro,0,0,0,0,0,0,0
+116,GW/yr,IRA_HighGrowth,USA,Capacity Retirements|Electricity|Nuclear,0,0,0,0,0,0,0
+117,GW/yr,IRA_HighGrowth,USA,Capacity Retirements|Electricity|Oil,-0.030743567,-0.513802682,-0.050359082,0,0,0,0
+118,GW/yr,IRA_HighGrowth,USA,Capacity Retirements|Electricity|Solar,0,0,0,0,0,0,0
+119,GW/yr,IRA_HighGrowth,USA,Capacity Retirements|Electricity|Wind,0,0,0,0,0,0,0
+120,GW/yr,IRA_LowEnergySupply,USA,Capacity Retirements|Electricity|Bioenergy,-0.261929635,0,-0.003673859,0,0,0,0
+121,GW/yr,IRA_LowEnergySupply,USA,Capacity Retirements|Electricity|Coal,-16.96948795,-3.130237763,-5.961147398,0,0,0,0
+122,GW/yr,IRA_LowEnergySupply,USA,Capacity Retirements|Electricity|Coal CCS,0,0,0,0,0,-6.54807205,0
+123,GW/yr,IRA_LowEnergySupply,USA,Capacity Retirements|Electricity|Gas,-0.002129183,-4.069325032,0,-0.71357874,0,0,0
+124,GW/yr,IRA_LowEnergySupply,USA,Capacity Retirements|Electricity|Gas CCS,0,0,0,0,0,0,0
+125,GW/yr,IRA_LowEnergySupply,USA,Capacity Retirements|Electricity|Geothermal,0,0,0,0,0,0,0
+126,GW/yr,IRA_LowEnergySupply,USA,Capacity Retirements|Electricity|Hydro,0,0,0,0,0,0,0
+127,GW/yr,IRA_LowEnergySupply,USA,Capacity Retirements|Electricity|Nuclear,0,0,0,0,0,0,0
+128,GW/yr,IRA_LowEnergySupply,USA,Capacity Retirements|Electricity|Oil,-0.030743567,-0.484598939,-0.147876477,-0.000168855,-0.033987127,0,0
+129,GW/yr,IRA_LowEnergySupply,USA,Capacity Retirements|Electricity|Solar,0,0,0,0,0,0,0
+130,GW/yr,IRA_LowEnergySupply,USA,Capacity Retirements|Electricity|Wind,0,0,0,0,0,0,0
+131,GW/yr,IRA_LowGrowth,USA,Capacity Retirements|Electricity|Bioenergy,-0.261929635,-0.000872222,0,0,0,0,0
+132,GW/yr,IRA_LowGrowth,USA,Capacity Retirements|Electricity|Coal,-16.96948795,-3.130237166,-5.961151427,0,0,0,0
+133,GW/yr,IRA_LowGrowth,USA,Capacity Retirements|Electricity|Coal CCS,0,0,0,0,0,-6.54807205,0
+134,GW/yr,IRA_LowGrowth,USA,Capacity Retirements|Electricity|Gas,-0.002129183,-0.315966403,0,-0.086745774,0,0,0
+135,GW/yr,IRA_LowGrowth,USA,Capacity Retirements|Electricity|Gas CCS,0,0,0,0,0,0,0
+136,GW/yr,IRA_LowGrowth,USA,Capacity Retirements|Electricity|Geothermal,0,0,0,0,0,0,0
+137,GW/yr,IRA_LowGrowth,USA,Capacity Retirements|Electricity|Hydro,0,0,0,0,0,0,0
+138,GW/yr,IRA_LowGrowth,USA,Capacity Retirements|Electricity|Nuclear,0,0,0,0,0,0,0
+139,GW/yr,IRA_LowGrowth,USA,Capacity Retirements|Electricity|Oil,-0.030743567,-0.61886431,-0.045024567,0,0,0,0
+140,GW/yr,IRA_LowGrowth,USA,Capacity Retirements|Electricity|Solar,0,0,0,0,0,0,0
+141,GW/yr,IRA_LowGrowth,USA,Capacity Retirements|Electricity|Wind,0,0,0,0,0,0,0
+142,GW/yr,NoIRA,USA,Capacity Retirements|Electricity|Bioenergy,-0.261932396,0,0,0,0,0,0
+143,GW/yr,NoIRA,USA,Capacity Retirements|Electricity|Coal,-16.96948795,-1.901984114,-0.233574423,0,0,0,0
+144,GW/yr,NoIRA,USA,Capacity Retirements|Electricity|Gas,-0.002129183,-0.022386827,0,-0.009161131,0,0,0
+145,GW/yr,NoIRA,USA,Capacity Retirements|Electricity|Geothermal,0,0,0,0,0,0,0
+146,GW/yr,NoIRA,USA,Capacity Retirements|Electricity|Hydro,0,0,0,0,0,0,0
+147,GW/yr,NoIRA,USA,Capacity Retirements|Electricity|Nuclear,0,0,0,0,0,0,0
+148,GW/yr,NoIRA,USA,Capacity Retirements|Electricity|Oil,-0.030743567,-0.455380482,-0.058419854,0,0,0,0
+149,GW/yr,NoIRA,USA,Capacity Retirements|Electricity|Solar,0,0,0,0,0,0,0
+150,GW/yr,NoIRA,USA,Capacity Retirements|Electricity|Wind,0,0,0,0,0,0,0
