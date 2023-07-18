@@ -843,7 +843,7 @@ tablegt = function(table, table_name, col_names, num_decimals) {
 
 # TODO: change to per_reduction
 
-summary_tables = function(table_no, var, suffix, drop_mod = NULL, drop_datasrc = NULL, data, config) {
+summary_tables = function(table_no, var, suffix, drop_mod = NULL, drop_datasrc = NULL, short_circuit = FALSE, data, config) {
 
   var_df = clean_data %>% filter(variable == var)
 
@@ -918,6 +918,13 @@ summary_tables = function(table_no, var, suffix, drop_mod = NULL, drop_datasrc =
 
   stats_ira = stats_all %>%
     filter(scenario == "IRA")
+
+  if (short_circuit) {
+    return(list(
+      "IRA" = stats_ira,
+      "noIRA" = stats_noira
+    ))
+  }
 
   diff_scenarios = raw %>%
     select(model, scenario, year, value) %>%
