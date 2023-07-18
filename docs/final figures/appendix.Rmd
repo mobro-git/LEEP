@@ -85,6 +85,70 @@ tab_a5 = summary_tables(
 )
 ```
 
+# Appendix D
+
+## Emissions reudctions by end use type from scout modeling
+
+```{r}
+fig_no = "D.1"
+
+data <- read.csv("./data-extra/scout_buildings_IRA_scenario_emissions_wedges.csv")
+
+data_sort <- data %>%
+  filter(year <= 2035) %>%
+  filter(year >= 2025) %>%
+  mutate(scenario = case_when(
+    scenario == "IRA-Low" ~ "Low", 
+    scenario == "IRA-Central" ~ "Central", 
+    scenario == "IRA-High" ~ "High"
+  )) %>%
+  rename(Reference = `Reference.Building.Emissions`,
+         Total = `Total.Building.Emissions`, 
+         Power = `Power.Supply.Decarbonization`, 
+         WaterHeating = `Water.Heating`, 
+         HVAC = HVAC.Env) %>%
+  pivot_longer(
+    cols = c(Reference, Total, Power, Other, WaterHeating, HVAC), names_to = "variable_rename"
+  )
+  
+ref <- data_sort[data_sort$variable_rename == "Reference",]
+
+data_sort$scenario <- factor(data_sort$scenario, levels = c("Low", "Central", "High"))
+data_sort$variable_rename <- factor(data_sort$variable_rename, levels = c("HVAC", "WaterHeating", "Other","Power", "Total", "Reference"))
+
+fin = ggplot(data = data_sort[data_sort$variable_rename != "Reference",] , aes(x=year, y=value, fill = variable_rename)) +
+  geom_area() +
+  facet_grid(~scenario) +
+  labs(title = "",
+         x = "",
+         y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+         color = "") +
+    scale_y_continuous(limits = c(0, 1500), labels = scales::comma, expand = c(0,0)) +
+    theme_emf() +
+    scale_x_continuous(breaks = c(2025, 2030, 2035)) + 
+    theme(axis.text.x = element_text(angle = 45, hjust=1)) +
+    theme(panel.spacing.x = unit(4, "mm"), legend.position = "bottom") + 
+  guides(fill = guide_legend(nrow = 2)) + 
+  scale_fill_manual(name = "", 
+    labels = c("HVAC/Env", "Water Heating", "Other" , "Power Supply Decarbonizaiton", "Total Building Emissions", "Reference"),
+    breaks = c("HVAC", "WaterHeating", "Other","Power", "Total", "Reference"), 
+    values = c("#75FF8E", '#f58231', "#FFF362",  '#42d4f4', "#DEDEDE", "#767684"),
+    limits = c("HVAC", "WaterHeating", "Other", "Power", "Total") 
+  ) + 
+  geom_line(data = data_sort[data_sort$variable_rename == "Reference",],  aes(x=year, y=value, color = variable_rename),linetype="dashed") +
+  scale_color_manual(name = "", 
+    labels = c("HVAC/Env", "Water Heating", "Other" , "Power Supply Decarbonizaiton", "Total Building Emissions", "Reference"),
+    breaks = c("HVAC", "WaterHeating", "Other","ower", "Total", "Reference"), 
+    values = c("#75FF8E", '#f58231', "#FFF362",  '#42d4f4', "#DEDEDE", "#767684"),
+    limits = c("Reference") 
+  )
+fin
+
+data_sort = data_sort %>% mutate(figure_num = fig_no)
+
+saveall(fin, data_sort, fig_no, wd = 9)
+```
+
 # Appendix F
 
 ## Emissions
