@@ -2460,7 +2460,7 @@ fig_no = 2.5
 # capacity addition plot
 
 ymin = -40
-ymax = 130
+ymax = 140
 
 subpalettes = create_subpalettes(figmap_leep_stackbar, config)
 sp = subpalettes$`Capacity Additions2`
@@ -2492,7 +2492,7 @@ fig = dta3 %>% ggplot() +
   scale_alpha_manual(values = c(0.6,1), breaks = c("Capacity Retirements", "Capacity Additions"), guide = F) +
   ggtitle("Historical Annual Capacity Changes") +
   theme(legend.position = "bottom", plot.title = element_text(hjust = 0.5, size = 10),
-        axis.text.x = element_text(angle = 0, hjust = 1, size = 6), axis.ticks = element_blank(),
+        axis.text.x = element_text(angle = 0, hjust = 0.5, size = 6), axis.ticks = element_blank(),
         axis.title.x = element_blank())
 
 #dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States")
@@ -2545,8 +2545,7 @@ dta5 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 
 
 filler_row = data.frame("model" = c(""), value = 0)
 dta5 = bind_rows(dta5, filler_row) %>%
-  mutate(model = factor(model, levels = c("RIO-REPEAT", "EPS-EI", "NEMS-RHG", "GCAM-PNNL", "GCAM-CGS", "NEMS-OP", "ReEDS-NREL", "REGEN-EPRI", "Haiku-RFF", "IPM-EPA", "USREP-ReEDS", "IPM-NRDC", "MARKAL-NETL"
-                                          #,"NEMS-EIA"
+  mutate(model = factor(model, levels = c("GCAM-PNNL", "RIO-REPEAT", "EPS-EI", "NEMS-RHG", "NEMS-OP", "GCAM-CGS", "ReEDS-NREL", "REGEN-EPRI", "Haiku-RFF", "IPM-EPA", "NEMS-EIA", "USREP-ReEDS", "IPM-NRDC", "MARKAL-NETL"
                                           ,"")))
 
 stats = dta5 %>% group_by(model, temp) %>% 
