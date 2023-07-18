@@ -81,7 +81,7 @@ make_clean_data = function(df) {
   cap_add_avg = df %>%
     filter(model %in% c("USREP-ReEDS", "GCAM-PNNL", "OP-NEMS", "AEO 2023"),
            (grepl("Capacity Additions", variable) | grepl("Capacity Retirements", variable)),
-           (year >= 2021 | year <= 2035)) %>%
+           (year >= 2021 & year <= 2035)) %>%
     filter(!(variable %in% c("Capacity Additions|Electricity|Biomass", "Capacity Additions|Electricity|Biomass|w/ CCS", "Capacity Additions|Electricity|Biomass|w/o CCS",
                              "Capacity Additions|Electricity|Coal", "Capacity Additions|Electricity|Gas",
                              "Capacity Additions|Electricity|Geothermal",
