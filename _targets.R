@@ -45,16 +45,16 @@ tar_plan(
     models_ghgi = c("EPA-GHGI"),
 
     # Use models_leep for all initial plots
-    # USREP-ReEDS, GCAM-PNNL, OP-NEMS - averages for CAP-ADD
+    # USREP-ReEDS, GCAM-PNNL, NEMS-OP - averages for CAP-ADD
     models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
-                    "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "AEO.2023",
+                    "NEMS-OP", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "NEMS-EIA",
                     "EIA-LTS", "EIA-STEO", "EPA-ATR", "EPA", "EPA-GHGI", "EIA"),
     #"Scout-LEEP" removing scout from everything except scout-specific figure in chapter 4
     models_per_elc = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
-                       "OP-NEMS", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP"),
+                       "NEMS-OP", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP"),
 
-    #models_leep_sens = c("USREP-ReEDS", "ReEDS", "Scout v0.8", "GCAM-USA v6.0", "OP-NEMS"),
-    models_lts = c("GCAM-LTS", "OP-NEMS-LTS", "EIA-LTS"),
+    #models_leep_sens = c("USREP-ReEDS", "ReEDS", "Scout v0.8", "GCAM-USA v6.0", "NEMS-OP"),
+    models_lts = c("GCAM-LTS", "NEMS-OP-LTS", "EIA-LTS"),
     models_eia_only = c("EIA"),
     models_ghgi_only = c("EPA-GHGI"),
 

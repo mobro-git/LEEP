@@ -6960,9 +6960,9 @@ IRA <- clean_data %>%
     value = sum(value)
   ) %>%
   filter(!model == "USREP-ReEDS") %>%
-  filter(!model== "OP-NEMS") %>%
+  filter(!model== "NEMS-OP") %>%
   filter(model != "MARKAL-NETL") %>%
-  filter(!model == "AEO.2023")
+  filter(!model == "NEMS-EIA")
   
 histcon <- IRA %>%
   group_by(model, scenario) %>%
@@ -7095,9 +7095,9 @@ base <- as.data.frame(base) %>%
 
 NoIRA <- clean_data %>%
   filter(!model == "USREP-ReEDS") %>%
-  filter(!model== "OP-NEMS") %>%
+  filter(!model== "NEMS-OP") %>%
   filter(model != "MARKAL-NETL") %>%
-  filter(!model == "AEO.2023") %>%
+  filter(!model == "NEMS-EIA") %>%
   filter(variable == "Emissions|GHG") %>%
   filter(year == 2030 | year == 2035) %>%
   filter(scenario == "No IRA") %>%
@@ -7117,9 +7117,9 @@ NoIRA <- clean_data %>%
 
 IRA <- clean_data %>%
   filter(!model == "USREP-ReEDS") %>%
-  filter(!model== "OP-NEMS") %>%
+  filter(!model== "NEMS-OP") %>%
   filter(model != "MARKAL-NETL") %>%
-  filter(!model == "AEO.2023") %>%
+  filter(!model == "NEMS-EIA") %>%
   filter(variable == "Emissions|GHG") %>%
   filter(year == 2030 | year == 2035) %>%
   filter(scenario == "IRA") %>%

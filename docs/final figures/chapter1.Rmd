@@ -552,7 +552,7 @@ sens_dta_econ_panel4 = clean_data %>%
 sens_dta_econ_panel5 = clean_data %>%
   filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>%
   filter(scenario %in% panel5_scens) %>%
-  filter(model %in% c("OP-NEMS", "USREP-ReEDS")) %>%
+  filter(model %in% c("NEMS-OP", "USREP-ReEDS")) %>%
   mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
   mutate(scenario = case_when(
     scenario == "Pess-IRA.Adv" ~ "Pess-Adv",
@@ -560,10 +560,10 @@ sens_dta_econ_panel5 = clean_data %>%
     TRUE ~ scenario
   )) %>%
   # mutate(scenario = case_when(model == "USREP-ReEDS" ~ paste0("UR.",scenario),
-  #                          model == "OP-NEMS" ~ paste0("ON.",scenario),
+  #                          model == "NEMS-OP" ~ paste0("ON.",scenario),
   #                          TRUE ~ scenario)) %>%
   mutate(stagger = case_when(model == "USREP-ReEDS" ~ 0.4,
-                             model == "OP-NEMS" ~ -0.4,
+                             model == "NEMS-OP" ~ -0.4,
                              TRUE ~ 0.0))
 
 sens_dta_trans = clean_data %>%
@@ -639,7 +639,7 @@ p7d$plot = p7d$plot +
 
 p7e$plot = p7e$plot +
   annotate("text", x = 2028.4, y = 4995, size = 3,
-               label = "OP-NEMS (L)", color = "#A1A1A1", alpha = 1, hjust = 0) + #469990
+               label = "NEMS-OP (L)", color = "#A1A1A1", alpha = 1, hjust = 0) + #469990
   annotate("text", x = 2028.4, y = 4845, size = 3,
              label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0) #FFF362
 

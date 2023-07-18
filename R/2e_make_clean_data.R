@@ -40,7 +40,7 @@ make_clean_data = function(df) {
   print("Making clean data")
 
   # sum industry and fuel production emissions for internal models
-  ind_emissions = df %>% filter(model %in% c("USREP-ReEDS","GCAM-PNNL", "OP-NEMS")) %>%
+  ind_emissions = df %>% filter(model %in% c("USREP-ReEDS","GCAM-PNNL", "NEMS-OP")) %>%
     filter(variable %in% c("Emissions|CO2|Energy|Demand|Industry",
                            "Emissions|CO2|Energy|Supply|Biogas",
                            "Emissions|CO2|Energy|Supply|Biomass Liqids",
@@ -58,7 +58,7 @@ make_clean_data = function(df) {
     mutate(datasrc = "calculated") %>%
     select(model,scenario,unit,year,datasrc,variable,region,value)
 
-  ind_emissions_indirect = df %>% filter(model %in% c("USREP-ReEDS","GCAM-PNNL","OP-NEMS")) %>%
+  ind_emissions_indirect = df %>% filter(model %in% c("USREP-ReEDS","GCAM-PNNL","NEMS-OP")) %>%
     filter(variable %in% c("Emissions|CO2|Energy|Demand|Industry|Indirect",
                            "Emissions|CO2|Energy|Supply|Indirect")) %>%
     select(model,scenario,unit,year,datasrc,variable,region,value) %>%
@@ -79,9 +79,9 @@ make_clean_data = function(df) {
 
   # calculate average capacity additions 2021-2035 for internal models
   cap_add_avg = df %>%
-    filter(model %in% c("USREP-ReEDS", "GCAM-PNNL", "OP-NEMS"),
+    filter(model %in% c("USREP-ReEDS", "GCAM-PNNL", "NEMS-OP", "NEMS-EIA"),
            (grepl("Capacity Additions", variable) | grepl("Capacity Retirements", variable)),
-           (year >= 2021 | year <= 2035)) %>%
+           (year >= 2021 & year <= 2035)) %>%
     filter(!(variable %in% c("Capacity Additions|Electricity|Biomass", "Capacity Additions|Electricity|Biomass|w/ CCS", "Capacity Additions|Electricity|Biomass|w/o CCS",
                              "Capacity Additions|Electricity|Coal", "Capacity Additions|Electricity|Gas",
                              "Capacity Additions|Electricity|Geothermal",
@@ -117,7 +117,7 @@ make_clean_data = function(df) {
   df2 = rbind(df, ind_var, gcampnnl_nonco2, cap_add_avg) %>%
     arrange(model) %>%
     filter(!(model == "MARKAL-NETL" & variable %in% c("Emissions|Non-CO2 GHG"))) %>% # remove, #s too low
-    filter(!(model == "OP-NEMS" & variable %in% c("Emissions|CO2|Industrial Processes"))) # remove, reported as 0
+    filter(!(model == "NEMS-OP" & variable %in% c("Emissions|CO2|Industrial Processes"))) # remove, reported as 0
 
   # copy nonco2 and land sink gcam numbers for other models
   gcam_netghg = df2 %>%
@@ -127,7 +127,7 @@ make_clean_data = function(df) {
              year %in% c(2025, 2030, 2035, 2040, 2045, 2050)) %>%
     mutate(datasrc = "GCAM-PNNL values")
 
-  op_nems = gcam_netghg %>% mutate(model = "OP-NEMS")
+  op_nems = gcam_netghg %>% mutate(model = "NEMS-OP")
   regen = gcam_netghg %>% mutate(model = "REGEN-EPRI")
   usrep = gcam_netghg %>% mutate(model = "USREP-ReEDS")
   markal = gcam_netghg %>% filter(variable == "Emissions|Non-CO2 GHG") %>% mutate(model = "MARKAL-NETL")
@@ -136,7 +136,7 @@ make_clean_data = function(df) {
 
   df3 = rbind(df2, copied_netghg)
 
-  # make Emissions|CO2 for OP-NEMS and REGEN-EPRI
+  # make Emissions|CO2 for NEMS-OP and REGEN-EPRI
   gcam_nonenergyco2 = df3 %>%
     filter(model == "GCAM-PNNL" &
              variable == "Emissions|CO2|Industrial Processes" &
@@ -145,11 +145,11 @@ make_clean_data = function(df) {
     mutate(datasrc = "GCAM-PNNL values")
   gcam_yrs = unique(gcam_nonenergyco2$year)
 
-  op_nems_ind = gcam_nonenergyco2 %>% mutate(model = "OP-NEMS")
+  op_nems_ind = gcam_nonenergyco2 %>% mutate(model = "NEMS-OP")
   regen_ind = gcam_nonenergyco2 %>% mutate(model = "REGEN-EPRI")
 
   total_co2 = df3 %>%
-    filter(model %in% c("OP-NEMS", "REGEN-EPRI") &
+    filter(model %in% c("NEMS-OP", "REGEN-EPRI") &
              variable %in% c("Emissions|CO2|Energy") &
              year %in% gcam_yrs &
              scenario %in% c("No IRA", "IRA")) %>%

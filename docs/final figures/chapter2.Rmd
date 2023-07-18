@@ -2688,7 +2688,7 @@ sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>%
   bind_rows(filler)
   
 sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
-  filter(model %in% c("USREP-ReEDS","OP-NEMS")) %>% 
+  filter(model %in% c("USREP-ReEDS","NEMS-OP")) %>% 
   mutate(scenario = case_when((scenario == "IRA" | scenario == "Core") ~ "Mod", 
                               TRUE ~ scenario)) %>%
   mutate(scenario = case_when(
@@ -2697,10 +2697,10 @@ sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
     TRUE ~ scenario
   )) %>%
   # mutate(scenario = case_when(model == "USREP-ReEDS" ~ paste0("UR.",scenario),
-  #                          model == "OP-NEMS" ~ paste0("ON.",scenario),
+  #                          model == "NEMS-OP" ~ paste0("ON.",scenario),
   #                          TRUE ~ scenario)) %>%
   mutate(stagger = case_when(model == "USREP-ReEDS" ~ 0.4,
-                             model == "OP-NEMS" ~ -0.4,
+                             model == "NEMS-OP" ~ -0.4,
                              TRUE ~ 0.0))
   bind_rows(filler)
 
@@ -2754,7 +2754,7 @@ p4$plot = p4$plot +
 
 p5$plot = p5$plot + 
   annotate("text", x = 2028.4, y = 1595, size = 3,
-               label = "OP-NEMS (L)", color = "#A1A1A1", alpha = 1, hjust = 0) +
+               label = "NEMS-OP (L)", color = "#A1A1A1", alpha = 1, hjust = 0) +
     annotate("text", x = 2028.4, y = 1535, size = 3,
                label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0)
 

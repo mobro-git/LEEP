@@ -131,7 +131,7 @@ html(TranSpg$data, "Transportation CO<sub>2<sub>")
 ```{r}
 fig_no = "3.4"
 
-# TODO: OP-NEMS should only have reporting every 5 years
+# TODO: NEMS-OP should only have reporting every 5 years
 
 # clean_data_evshare = spg_clean(ts_map_ID = 118, drop = c(""), histsrc = "EPA-ATR", 
 #                            config = config, clean_data = clean_data4, figmap_leep_timeseries = figmap_leep_timeseries)
@@ -146,7 +146,7 @@ raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year
 
 atr_2022 = raw %>% filter(model == "EPA-ATR", year == 2021) %>% mutate(year = 2022)
 nems = data_min %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
-  filter(model == "OP-NEMS", 
+  filter(model == "NEMS-OP", 
          scenario %in% c("IRA", "No IRA"),
          datasrc != "LTS_data_small.xlsx",
          grepl("Sales Share", variable),
@@ -176,7 +176,7 @@ clean_data_evshare = rbind(raw, atr_2022, nems) %>%
   summarize(value = sum(value)) %>%
   filter(!(is.na(variable))) %>%
   filter(year <= 2035) %>%
-#  filter(!(model %in% c("OP-NEMS-LTS"))) %>%
+#  filter(!(model %in% c("NEMS-OP-LTS"))) %>%
   filter(!(datasrc %in% c("LTS_data_small.xlsx"))) %>%
   mutate(variable_rename = variable) %>%
   mutate(alpha = case_when(
@@ -186,7 +186,7 @@ clean_data_evshare = rbind(raw, atr_2022, nems) %>%
       scenario == "Historic" ~ 1,
       T ~ 0.6
   )) %>%
-  mutate(value = case_when(year == 2022 & model == "OP-NEMS" ~ 100 * atr_2022$value[1], 
+  mutate(value = case_when(year == 2022 & model == "NEMS-OP" ~ 100 * atr_2022$value[1], 
                            TRUE ~ value))
 
 output = spg2(df = clean_data_evshare, title = "", yname = expression("EV Sales Share (%)"), gd = "none", ymin = 0, ymax = 100, 
@@ -224,7 +224,7 @@ Older version
 # 
 # atr_2022 = raw %>% filter(model == "EPA-ATR", year == 2021) %>% mutate(year = 2022)
 # nems = data_min %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
-#   filter(model == "OP-NEMS", grepl("Sales Share", variable),
+#   filter(model == "NEMS-OP", grepl("Sales Share", variable),
 #          unit == "%") %>%
 #   left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
 #   select(-c(model, scenario)) %>%
@@ -253,11 +253,11 @@ Older version
 #   mutate(alpha = case_when(
 #     model == "USREP-ReEDS" ~ 1,
 #     model == "GCAM-PNNL" ~ 1,
-#     model == "OP-NEMS" ~ 1,
+#     model == "NEMS-OP" ~ 1,
 #     scenario == "Historic" ~ 1,
 #     TRUE ~ 0.8)
 #   ) %>%
-#   mutate(value = case_when(year == 2022 & model == "OP-NEMS" ~ 100 * atr_2022$value[1], 
+#   mutate(value = case_when(year == 2022 & model == "NEMS-OP" ~ 100 * atr_2022$value[1], 
 #                            TRUE ~ value))
 # 
 # fig = print_graph("time_series", config, clean_data4, figmap_leep_timeseries, 118, "United States")
