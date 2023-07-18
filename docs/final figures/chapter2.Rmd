@@ -2477,7 +2477,7 @@ fig = dta3 %>% ggplot() +
                group = interaction(variable_rename, temp), width = 0.75),
            position="stack", stat="identity", linewidth = 0.25) +
   theme_emf() +
-  geom_hline(yintercept = 0, linewidth = 0.25, color = "black") +
+  geom_hline(yintercept = 0, linewidth = 0.5, color = "black") +
   labs(y = expression("Avg. Annual Capacity Change (GW/yr)")) +
   scale_fill_manual(drop = F, breaks = c("Solar", "Wind", "Storage", "Nuclear", "Hydro", "Gas CCS", "Gas", 
                                "Coal CCS", "Coal", "Other"),
@@ -2489,10 +2489,10 @@ fig = dta3 %>% ggplot() +
                                sp[["Gas CCS"]], sp[["Gas"]], sp[["Coal CCS"]], sp[["Coal"]], sp[["Other"]])) +
   scale_y_continuous(limits = c(ymin, ymax)) +
   scale_x_continuous(expand = c(0,0)) +
-  scale_alpha_manual(values = c(0,1), breaks = c("Capacity Retirements", "Capacity Additions"), guide = F) +
+  scale_alpha_manual(values = c(0.6,1), breaks = c("Capacity Retirements", "Capacity Additions"), guide = F) +
   ggtitle("Historical Annual Capacity Changes") +
   theme(legend.position = "bottom", plot.title = element_text(hjust = 0.5, size = 10),
-        axis.text.x = element_text(angle = 45, hjust = 1), axis.ticks = element_blank(),
+        axis.text.x = element_text(angle = 0, hjust = 1, size = 6), axis.ticks = element_blank(),
         axis.title.x = element_blank())
 
 #dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States")
@@ -2541,18 +2541,31 @@ dta5 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 
   mutate(value = case_when((model == "USREP-ReEDS") & (temp == "Capacity Retirements") ~ -1 * value, TRUE ~ value)) %>%
   mutate(variable_rename = factor(variable_rename, 
                                   levels = c("Solar", "Wind", "Storage", "Nuclear", 
-                                             "Hydro", "Gas CCS", "Gas", "Coal CCS", "Coal", "Other"))) %>%
-  mutate(model = factor(model, levels = c("RIO-REPEAT", "EPS-EI", "NEMS-RHG", "GCAM-PNNL", "GCAM-CGS", "OP-NEMS", "ReEDS-NREL", "REGEN-EPRI", "Haiku-RFF", "IPM-EPA", "USREP-ReEDS", "IPM-NRDC", "MARKAL-NETL")))
+                                             "Hydro", "Gas CCS", "Gas", "Coal CCS", "Coal", "Other")))
+
+filler_row = data.frame("model" = c(""), value = 0)
+dta5 = bind_rows(dta5, filler_row) %>%
+  mutate(model = factor(model, levels = c("RIO-REPEAT", "EPS-EI", "NEMS-RHG", "GCAM-PNNL", "GCAM-CGS", "NEMS-OP", "ReEDS-NREL", "REGEN-EPRI", "Haiku-RFF", "IPM-EPA", "USREP-ReEDS", "IPM-NRDC", "MARKAL-NETL"
+                                          #,"NEMS-EIA"
+                                          ,"")))
 
 stats = dta5 %>% group_by(model, temp) %>% 
   summarize(sum = sum(value), mean = mean(value), median = median(value))  
 
 fig2 = dta5 %>% ggplot() +
   geom_bar(aes(x = model, y = value, fill = variable_rename, color = variable_rename, alpha = temp,
-               group = interaction(variable_rename, temp)),
+               group = interaction(variable_rename, temp), width = 0.75),
            position="stack", stat="identity", linewidth = 0.25) +
   theme_emf() +
-  geom_hline(yintercept = 0, linewidth = 0.25, color = "black") +
+  geom_hline(yintercept = 0, linewidth = 0.5, color = "black") +
+  geom_segment(aes(x = "", xend = "", y = 2, yend = 35), linewidth = 0.3, 
+               arrow = arrow(type = "closed", angle = 20, length = unit(3, "points"))) +
+  geom_segment(aes(x = "", xend = "", y = -2, yend = -35), linewidth = 0.3, 
+               arrow = arrow(type = "closed", angle = 20, length = unit(3, "points"))) +
+  annotate("text", x = "", y = 2, size = 2,
+               label = "Additions", color = "black", alpha = 1, hjust = 1, vjust = -0.5, angle = -90) + 
+  annotate("text", x = "", y = -2, size = 2,
+               label = "Retirements", color = "black", alpha = 1, hjust = 0, vjust = -0.5, angle = -90) + 
   scale_fill_manual(drop = F, breaks = c("Solar", "Wind", "Storage", "Nuclear", "Hydro", "Gas CCS", "Gas", 
                                "Coal CCS", "Coal", "Other"),
                     values = c(sp[["Solar"]], sp[["Wind"]], sp[["Storage"]], sp[["Nuclear"]], sp[["Hydro"]],
@@ -2562,10 +2575,10 @@ fig2 = dta5 %>% ggplot() +
                     values = c(sp[["Solar"]], sp[["Wind"]], sp[["Storage"]], sp[["Nuclear"]], sp[["Hydro"]],
                                sp[["Gas CCS"]], sp[["Gas"]], sp[["Coal CCS"]], sp[["Coal"]], sp[["Other"]])) +
   scale_y_continuous(limits = c(ymin, ymax)) +
-  scale_alpha_manual(values = c(0,1), breaks = c("Capacity Retirements", "Capacity Additions"), guide = F) +
+  scale_alpha_manual(values = c(0.6,1), breaks = c("Capacity Retirements", "Capacity Additions"), guide = F) +
   ggtitle("Avg. Annual Capacity Changes (2021-35)") +
   theme(legend.position = "bottom", plot.title = element_text(hjust = 0.5, size = 10),
-        axis.text.x = element_text(angle = 45, hjust = 1, size = 6), axis.ticks = element_blank(),
+        axis.text.x = element_text(angle = 90, hjust = 1, size = 6), axis.ticks = element_blank(),
         axis.text.y = element_blank(), axis.title.y = element_blank(), axis.title.x = element_blank())
 
 fig2
@@ -2586,8 +2599,8 @@ print(stats)
 dta3 = clean_supplemental_data(dta3, fig_no)
 dta5 = clean_supplemental_data(dta5, fig_no)
 
-savedata(dta, paste0(fig_no,"hist"))
-savedata(dta4, paste0(fig_no, "proj"))
+savedata(dta3, paste0(fig_no,"hist"))
+savedata(dta5, paste0(fig_no, "proj"))
 ```
 
 ## 2.6 sensitivity of electric sector emissions
@@ -2761,16 +2774,29 @@ saveall(combined, dta, fig_no)
 ```
 
 
-### table for Figure 2.6
+## 2.6.1 Display Table
 ```{r}
+metric = "absolute"
+#metric = "percent"
+
 panel1_summ = sens_dta_panel1 %>%
   select(-c(stagger,datasrc,region)) %>%
   mutate(scenario = case_when(scenario == "IRA.High" ~ "Optimistic",
                               scenario == "IRA.Low" ~ "Pessimistic",
                               TRUE ~ "Core")) %>%
-  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
-  mutate(diff_opt = value_Optimistic - value_Core,
-         diff_pess = value_Pessimistic - value_Core) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_")
+
+if (metric == "absolute") {
+  panel1_summ = panel1_summ %>%
+      mutate(diff_opt = value_Optimistic - value_Core,
+             diff_pess = value_Pessimistic - value_Core)
+} else if (metric == "percent") {
+  panel1_summ = panel1_summ %>%
+      mutate(diff_opt = (value_Optimistic - value_Core) / value_Core,
+             diff_pess = (value_Pessimistic - value_Core) / value_Core) 
+}
+
+panel1_summ = panel1_summ %>%
   group_by(variable, unit, year) %>%
   summarize(opt_median = median(diff_opt),
             opt_min = min(diff_opt),
@@ -2779,7 +2805,7 @@ panel1_summ = sens_dta_panel1 %>%
             pess_min = min(diff_pess),
             pess_max = max(diff_pess)) %>%
   pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
-  mutate(value = round(value,1)) %>%
+  #mutate(value = round(value,1)) %>%
   pivot_wider(names_from = scen, values_from = value) %>%
   rename(c("Optimistic" = "opt", "Pessimistic" = "pess"))
 
@@ -2788,9 +2814,19 @@ panel2_summ = sens_dta_panel2 %>%
   mutate(scenario = case_when(scenario == "High" ~ "Optimistic",
                               scenario == "Low" ~ "Pessimistic",
                               TRUE ~ "Core")) %>%
-  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
-  mutate(diff_opt = value_Optimistic - value_Core,
-         diff_pess = value_Pessimistic - value_Core) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_")
+
+if (metric == "absolute") {
+  panel2_summ = panel2_summ %>%
+      mutate(diff_opt = value_Optimistic - value_Core,
+             diff_pess = value_Pessimistic - value_Core)
+} else if (metric == "percent") {
+  panel2_summ = panel2_summ %>%
+      mutate(diff_opt = (value_Optimistic - value_Core) / value_Core,
+             diff_pess = (value_Pessimistic - value_Core) / value_Core) 
+}
+
+panel2_summ = panel2_summ %>%
   group_by(variable, unit, year) %>%
   summarize(opt_median = median(diff_opt),
             opt_min = min(diff_opt),
@@ -2799,7 +2835,7 @@ panel2_summ = sens_dta_panel2 %>%
             pess_min = min(diff_pess),
             pess_max = max(diff_pess)) %>%
   pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
-  mutate(value = round(value,1)) %>%
+  #mutate(value = round(value,1)) %>%
   pivot_wider(names_from = scen, values_from = value) %>%
   rename(c("High Growth" = "opt", "Low Growth" = "pess")) %>%
   data.frame() %>%
@@ -2810,9 +2846,19 @@ panel3_summ = sens_dta_panel3 %>%
   mutate(scenario = case_when(scenario == "High" ~ "Optimistic",
                               scenario == "Low" ~ "Pessimistic",
                               TRUE ~ "Core")) %>%
-  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
-  mutate(diff_opt = value_Optimistic - value_Core,
-         diff_pess = value_Pessimistic - value_Core) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_")
+
+if (metric == "absolute") {
+  panel3_summ = panel3_summ %>%
+      mutate(diff_opt = value_Optimistic - value_Core,
+             diff_pess = value_Pessimistic - value_Core)
+} else if (metric == "percent") {
+  panel3_summ = panel3_summ %>%
+      mutate(diff_opt = (value_Optimistic - value_Core) / value_Core,
+             diff_pess = (value_Pessimistic - value_Core) / value_Core) 
+}
+
+panel3_summ = panel3_summ %>%
   group_by(variable, unit, year) %>%
   summarize(opt_median = median(diff_opt),
             opt_min = min(diff_opt),
@@ -2821,7 +2867,7 @@ panel3_summ = sens_dta_panel3 %>%
             pess_min = min(diff_pess),
             pess_max = max(diff_pess)) %>%
   pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
-  mutate(value = round(value,1)) %>%
+  #mutate(value = round(value,1)) %>%
   pivot_wider(names_from = scen, values_from = value) %>%
   rename(c("High Price" = "opt", "Low Price" = "pess")) %>%
   data.frame() %>%
@@ -2840,11 +2886,23 @@ panel4_summ = sens_dta_panel4 %>%
          value_Pessimistic = case_when(is.na(value_Pessimistic) ~ value_Core
                                             , TRUE ~ value_Pessimistic),
          value_Constr = case_when(is.na(value_Constr) ~ value_Core
-                                            , TRUE ~ value_Constr)) %>%
-  mutate(diff_opt = value_Optimistic - value_Core,
-         diff_pess = value_Pessimistic - value_Core,
-         diff_constr = value_Constr - value_Core,
-         diff_alladv = value_AllAdv - value_Core) %>%
+                                            , TRUE ~ value_Constr))
+
+if (metric == "absolute") {
+  panel4_summ = panel4_summ %>%
+      mutate(diff_opt = value_Optimistic - value_Core,
+             diff_pess = value_Pessimistic - value_Core,
+             diff_constr = value_Constr - value_Core,
+             diff_alladv = value_AllAdv - value_Core)
+} else if (metric == "percent") {
+  panel4_summ = panel4_summ %>%
+      mutate(diff_opt = (value_Optimistic - value_Core) / value_Core,
+             diff_pess = (value_Pessimistic - value_Core) / value_Core,
+             diff_constr = (value_Constr - value_Core) / value_Core,
+             diff_alladv = (value_AllAdv - value_Core) / value_Core) 
+}
+
+panel4_summ = panel4_summ %>%
   replace_with_na(replace = list(diff_opt = c(0), diff_pess = c(0),
                              diff_constr = c(0), diff_alladv = c(0))) %>%
   group_by(variable, unit, year) %>%
@@ -2861,7 +2919,7 @@ panel4_summ = sens_dta_panel4 %>%
             alladv_min = min(diff_alladv, na.rm = T),
             alladv_max = max(diff_alladv, na.rm = T)) %>%
   pivot_longer(cols = starts_with(c("opt_","pess_","constr_","alladv_")), names_to = c("scen","metric"), names_sep = "_") %>%
-  mutate(value = round(value,1)) %>%
+  #mutate(value = round(value,1)) %>%
   pivot_wider(names_from = scen, values_from = value)  %>%
   mutate(opt = case_when((opt == Inf | opt == -Inf) ~ NA, TRUE ~ opt),
          pess = case_when((pess == Inf | pess == -Inf) ~ NA, TRUE ~ pess),
@@ -2881,9 +2939,19 @@ panel5_summ = sens_dta_panel5 %>%
   mutate(value_Optimistic = case_when(is.na(value_Optimistic) ~ value_Core
                                             , TRUE ~ value_Optimistic),
          value_Pessimistic = case_when(is.na(value_Pessimistic) ~ value_Core
-                                            , TRUE ~ value_Pessimistic)) %>%
-  mutate(diff_opt = value_Optimistic - value_Core,
-         diff_pess = value_Pessimistic - value_Core) %>%
+                                            , TRUE ~ value_Pessimistic))
+
+if (metric == "absolute") {
+  panel5_summ = panel5_summ %>%
+      mutate(diff_opt = value_Optimistic - value_Core,
+             diff_pess = value_Pessimistic - value_Core)
+} else if (metric == "percent") {
+  panel5_summ = panel5_summ %>%
+      mutate(diff_opt = (value_Optimistic - value_Core) / value_Core,
+             diff_pess = (value_Pessimistic - value_Core) / value_Core) 
+}
+
+panel5_summ = panel5_summ %>%
   replace_with_na(replace = list(diff_opt = c(0), diff_pess = c(0),
                              diff_constr = c(0), diff_alladv = c(0))) %>%
   group_by(variable, unit, year) %>%
@@ -2894,7 +2962,7 @@ panel5_summ = sens_dta_panel5 %>%
             pess_min = min(diff_pess, na.rm = T),
             pess_max = max(diff_pess, na.rm = T)) %>%
   pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
-  mutate(value = round(value,1)) %>%
+  #mutate(value = round(value,1)) %>%
   pivot_wider(names_from = scen, values_from = value) %>%
   rename(c("Opt-Adv" = "opt", "Pess-Adv" = "pess")) %>%
   data.frame() %>%
@@ -2914,9 +2982,9 @@ all_panels = cbind(panel1_summ, panel4_summ, panel5_summ, panel2_summ, panel3_su
 
 ```
 
-## 2.6 Display Table
+part 2
 ```{r}
-fig_no = 2.6
+fig_no = "2.6.1"
 
 # all_panels is created in the previous code chunk
 all_panels = cbind(panel1_summ, panel4_summ, panel5_summ, panel2_summ, panel3_summ)
@@ -2930,8 +2998,7 @@ all_panels = all_panels %>%
   rename("Year" = "year", "Metric" = "metric") %>%
   arrange(Year, Metric)
 
-all_panels = all_panels %>% data.frame() %>% select(-c(variable, unit)) %>%
-  mutate_if(is.numeric, round)
+all_panels = all_panels %>% data.frame() %>% select(-c(variable, unit))
 #all_panels$Pess.Adv[1] = ""
 all_panels$Year[1] = ""
 all_panels$Year[3] = ""
@@ -2990,6 +3057,11 @@ all_panels_gt = all_panels %>% gt() %>%
     ), locations = cells_body(columns = 3:14)
   )
 
+if (metric == "percent") {
+  all_panels_gt = all_panels_gt %>% fmt_percent(decimals = 1, use_seps = TRUE, columns = 3:14)
+} else if (metric == "absolute") {
+  all_panels_gt = all_panels_gt %>% fmt_number(decimals = 1, use_seps = TRUE, columns = 3:14)
+}
 
 #%>% opt_stylize(style = 6, color = "blue")
   
@@ -2999,10 +3071,10 @@ all_panels_gt = all_panels %>% gt() %>%
 all_panels_gt
 
 all_panels_gt %>% 
-  gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
+  gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".html"))
 
 all_panels_gt %>% 
-  gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
+  gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".png"))
 
 
 ```
