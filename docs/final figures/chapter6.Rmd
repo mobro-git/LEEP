@@ -89,8 +89,8 @@ IRA <- clean_data %>%
                            "Carbon Sequestration|CCS|Biomass|Energy",
                            "Carbon Sequestration|LULUCF",
                            "Carbon Sequestration|Direct Air Capture|Net")) %>%
-  # MARKAL non-co2 too low, regen doesnt report non-energy co2, op-nems doesnt report non-energy co2
-  filter(!model %in% c("AEO.2023","MARKAL-NETL")) %>% #"REGEN-EPRI", "OP-NEMS", 
+  # MARKAL non-co2 too low, regen doesnt report non-energy co2, nems-op doesnt report non-energy co2
+  filter(!model %in% c("NEMS-EIA","MARKAL-NETL")) %>% #"REGEN-EPRI", "NEMS-OP", 
   group_by(year, model, scenario) %>%
   summarise(value = sum(value)/1000)
   
