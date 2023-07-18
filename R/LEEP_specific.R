@@ -587,7 +587,7 @@ emis_stack = function(dta, title, figmap, config, econwide = FALSE) {
     #geom_text(data = totals, aes(x = year, y = value, label = round(value, 0)), vjust = -0.4, stat = "identity", size = 2.5) +
     scale_x_continuous(breaks = c(2005, 2021), labels = c(2005, 2021)) +
     scale_y_continuous(expand = c(0,0), limits = c(0,6000), labels = scales::comma) +
-    labs(y = expression(paste("Sectoral Direct + Indirect Emissions (Mt C", O[2], "/yr)")), title = title) +
+    labs(y = expression(paste("Sectoral Emissions (Mt C", O[2], "/yr)")), title = title) +
     # expression(paste("Economy-Wide C", O[2])),
     scale_subpalette(subpalettes, "Emissions Stack") +
     theme_emf() +
@@ -843,7 +843,7 @@ tablegt = function(table, table_name, col_names, num_decimals) {
 
 # TODO: change to per_reduction
 
-summary_tables = function(table_no, var, suffix, drop_mod = NULL, drop_datasrc = NULL, data, config) {
+summary_tables = function(table_no, var, suffix, drop_mod = NULL, drop_datasrc = NULL, short_circuit = FALSE, data, config) {
 
   var_df = clean_data %>% filter(variable == var)
 
@@ -918,6 +918,13 @@ summary_tables = function(table_no, var, suffix, drop_mod = NULL, drop_datasrc =
 
   stats_ira = stats_all %>%
     filter(scenario == "IRA")
+
+  if (short_circuit) {
+    return(list(
+      "IRA" = stats_ira,
+      "noIRA" = stats_noira
+    ))
+  }
 
   diff_scenarios = raw %>%
     select(model, scenario, year, value) %>%

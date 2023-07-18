@@ -268,7 +268,8 @@ indicators_all = indicators_all %>% left_join(
     "Transportation.No IRA", "Transportation.IRA",
     "Electricity.No IRA", "Electricity.IRA",
     "Economy-Wide.No IRA", "Economy-Wide.IRA"
-  )))
+  ))) %>%
+  mutate(scenario = factor(scenario, levels = c("IRA", "No IRA")))
 
 indicators_summ = indicators_all %>% 
   group_by(category, year, sector, scenario) %>%
@@ -276,9 +277,9 @@ indicators_summ = indicators_all %>%
             max = max(pct_diff),
             median = median(pct_diff))
 
-indicator_small = function(filter_variable, bottom = FALSE) {
-  data_small = indicators_all %>% filter(sector == filter_variable)
-  summ_small = indicators_summ %>% filter(sector == filter_variable)
+indicator_small = function(all_data, summary_data, filter_variable, subtitle = "", top = FALSE, bottom = FALSE) {
+  data_small = all_data %>% filter(sector == filter_variable)
+  summ_small = summary_data %>% filter(sector == filter_variable)
   p = data_small %>% 
     ggplot() +
       geom_point(aes(x = pct_diff, y = scenario, color = scenario), shape = 16, alpha = 0.8, size = 1) +
@@ -290,14 +291,13 @@ indicator_small = function(filter_variable, bottom = FALSE) {
       geom_point(data = summ_small, aes(x = max, y = scenario, color = scenario),
                  shape = 16, size = 3) +
       geom_point(data = summ_small, aes(x = median, y = scenario, color = scenario),
-                shape = "|", size = 1, stroke = 3) +
-      scale_x_continuous(limits = c(0,100), expand = c(0,0), 
-                         name = expression("Percent Reduction from 2005 Levels (%)")) +
+                shape = "|", size = 1.5, stroke = 3.5) +
+      geom_vline(xintercept = 50, color = "black", linewidth = 0.1, alpha = 0.4) +
       # scale_y_discrete(name = filter_variable) +
-      ggtitle(filter_variable) +
-      scale_color_manual(values = c(subpalettes$`Economy-Wide Emissions`[['IRA']], 
-                                    subpalettes$`Economy-Wide Emissions`[['No IRA']]), 
-                         breaks = c("IRA", "No IRA")) +
+      ggtitle(subtitle) +
+      scale_color_manual(values = c(subpalettes$`Economy-Wide Emissions`[['No IRA']], 
+                                    subpalettes$`Economy-Wide Emissions`[['IRA']]), 
+                         breaks = c("No IRA", "IRA")) +
       facet_grid(year ~ ., switch = "y") +
       theme_emf() +
       theme(axis.ticks = element_blank(), axis.text.y = element_blank(), 
@@ -305,38 +305,56 @@ indicator_small = function(filter_variable, bottom = FALSE) {
             axis.title.y = element_blank(),
             plot.title = element_text(size = 10, hjust = 0, face = "bold", 
                                       margin = margin(0,0,1,0)),
-            strip.text.y.left = element_text(size = 8, face = "plain", angle = 0),
-            axis.text.x = element_text(face = "plain"),
+            strip.text.y.left = element_text(size = 6, face = "plain", angle = 0),
+            strip.text.y.right = element_text(size = 6, face = "plain", angle = 0),
+            axis.text.x = element_text(face = "plain", size = 6),
+            axis.title.x = element_text(face = "plain", size = 8),
             panel.grid.major.x = element_blank(),
             panel.grid.minor.x = element_blank(),
             panel.border = element_blank(),
-            axis.line.x = element_line(color = "#59+5959", linewidth = 0.25),
+            # axis.line.x = element_line(color = "#595959", linewidth = 0.25),
+            axis.line.x = element_line(color = "white", linewidth = 0.25),
             plot.margin = margin(0,0,5,0))
   
   if (!(bottom)){
-    p = p + theme(axis.text.x = element_blank(), axis.title.x = element_blank())
+    p = p + theme(axis.title.x = element_blank()) +
+          scale_x_continuous(limits = c(0,100), expand = c(0,0), position = "top",
+                         name = expression("Percent Reduction from 2005 Levels (%)"))
+  }
+  if (!(top) & !(bottom)) {
+    p = p + theme(axis.text.x = element_blank()) +
+            scale_x_continuous(limits = c(0,100), expand = c(0,0), position = "bottom",
+                         name = expression("Percent Reduction from 2005 Levels (%)"))
+  }
+  if (bottom) {
+    p = p + scale_x_continuous(limits = c(0,100), expand = c(0,0), position = "bottom",
+                         name = expression("Percent Reduction from 2005 Levels (%)"))
   }
   
   return(p)
 }
 
-p1 = indicator_small("Economy-Wide")
-p2 = indicator_small("Electricity")
-p3 = indicator_small("Transportation")
-p4 = indicator_small("Buildings")
-p5 = indicator_small("Industry", bottom = TRUE)
-
+p1 = indicator_small(indicators_all, indicators_summ, "Economy-Wide", bottom = FALSE, top = TRUE,
+                     subtitle = expression(paste("Economy-Wide C",O[2], " Emissions Reductions")))
+p2 = indicator_small(indicators_all, indicators_summ, "Electricity", 
+                     subtitle = expression(paste("Electricity C", O[2], " Emissions Reductions")))
+p3 = indicator_small(indicators_all, indicators_summ, "Transportation", 
+                     subtitle = expression(paste("Transportation C", O[2], " Emissions Reductions (Direct + Indirect)")))
+p4 = indicator_small(indicators_all, indicators_summ, "Buildings", 
+                     subtitle = expression(paste("Buildings C", O[2], " Emissions Reductions (Direct + Indirect)")))
+p5 = indicator_small(indicators_all, indicators_summ, "Industry", bottom = TRUE, top = FALSE,
+                     subtitle = expression(paste("Industry C", O[2], " Emissions Reductions (Direct + Indirect)")))
+p1
 combined = (p1 / p2 / p3 / p4 / p5) +
   plot_layout(guides = "collect") +
+#  annotate("segment", x = 50, xend = 50, y = 0, yend = 100, color = "blue") +
+#  plot_annotation(theme = theme(legend.position = "top")) + 
   theme(plot.margin = margin(0, 0, 0, 0))
 
 combined
 saveall(combined, indicators_all, fig_no)
 fig_no = "ES.3"
 savefig(combined, fig_no)
-
-
-
 ```
 
 ## 1.4 fossil energy consumption by fuel
@@ -638,16 +656,29 @@ dta = dta %>% mutate(figure_num = fig_no) %>%
 saveall(fig, dta, fig_no)
 ```
 
-## 1.5 Display table
+## 1.2.1 Display table
 ```{r}
+#metric = "absolute"
+metric = "percent"
+
 econ_panel1_summ = sens_dta_econ %>%
   select(-c(stagger,datasrc,region)) %>%
   mutate(scenario = case_when(scenario == "IRA.High" ~ "Optimistic",
                               scenario == "IRA.Low" ~ "Pessimistic",
                               TRUE ~ "Core")) %>%
-  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
-  mutate(diff_opt = value_Optimistic - value_Core,
-         diff_pess = value_Pessimistic - value_Core) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_")
+
+if (metric == "absolute") {
+  econ_panel1_summ = econ_panel1_summ %>%
+      mutate(diff_opt = value_Optimistic - value_Core,
+             diff_pess = value_Pessimistic - value_Core)
+} else if (metric == "percent") {
+  econ_panel1_summ = econ_panel1_summ %>%
+      mutate(diff_opt = (value_Optimistic - value_Core) / value_Core,
+             diff_pess = (value_Pessimistic - value_Core) / value_Core) 
+}
+
+econ_panel1_summ = econ_panel1_summ %>%
   group_by(variable, unit, year) %>%
   summarize(opt_median = median(diff_opt),
             opt_min = min(diff_opt),
@@ -656,7 +687,7 @@ econ_panel1_summ = sens_dta_econ %>%
             pess_min = min(diff_pess),
             pess_max = max(diff_pess)) %>%
   pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
-  mutate(value = round(value,1)) %>%
+  #mutate(value = round(value,1)) %>%
   pivot_wider(names_from = scen, values_from = value) %>%
   rename(c("Optimistic" = "opt", "Pessimistic" = "pess"))
 
@@ -665,9 +696,19 @@ econ_panel2_summ = sens_dta_econ_panel2 %>%
   mutate(scenario = case_when(scenario == "High" ~ "Optimistic",
                               scenario == "Low" ~ "Pessimistic",
                               TRUE ~ "Core")) %>%
-  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
-  mutate(diff_opt = value_Optimistic - value_Core,
-         diff_pess = value_Pessimistic - value_Core) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_")
+
+if (metric == "absolute") {
+  econ_panel2_summ = econ_panel2_summ %>%
+      mutate(diff_opt = value_Optimistic - value_Core,
+             diff_pess = value_Pessimistic - value_Core)
+} else if (metric == "percent") {
+  econ_panel2_summ = econ_panel2_summ %>%
+      mutate(diff_opt = (value_Optimistic - value_Core) / value_Core,
+             diff_pess = (value_Pessimistic - value_Core) / value_Core) 
+}
+
+econ_panel2_summ = econ_panel2_summ %>%
   group_by(variable, unit, year) %>%
   summarize(opt_median = median(diff_opt),
             opt_min = min(diff_opt),
@@ -676,7 +717,7 @@ econ_panel2_summ = sens_dta_econ_panel2 %>%
             pess_min = min(diff_pess),
             pess_max = max(diff_pess)) %>%
   pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
-  mutate(value = round(value,1)) %>%
+  #mutate(value = round(value,1)) %>%
   pivot_wider(names_from = scen, values_from = value) %>%
   rename(c("High Growth" = "opt", "Low Growth" = "pess")) %>%
   data.frame() %>%
@@ -687,9 +728,19 @@ econ_panel3_summ = sens_dta_econ_panel3 %>%
   mutate(scenario = case_when(scenario == "High" ~ "Optimistic",
                               scenario == "Low" ~ "Pessimistic",
                               TRUE ~ "Core")) %>%
-  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
-  mutate(diff_opt = value_Optimistic - value_Core,
-         diff_pess = value_Pessimistic - value_Core) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_")
+
+if (metric == "absolute") {
+  econ_panel3_summ = econ_panel3_summ %>%
+      mutate(diff_opt = value_Optimistic - value_Core,
+             diff_pess = value_Pessimistic - value_Core)
+} else if (metric == "percent") {
+  econ_panel3_summ = econ_panel3_summ %>%
+      mutate(diff_opt = (value_Optimistic - value_Core) / value_Core,
+             diff_pess = (value_Pessimistic - value_Core) / value_Core) 
+}
+
+econ_panel3_summ = econ_panel3_summ %>%
   group_by(variable, unit, year) %>%
   summarize(opt_median = median(diff_opt),
             opt_min = min(diff_opt),
@@ -698,7 +749,7 @@ econ_panel3_summ = sens_dta_econ_panel3 %>%
             pess_min = min(diff_pess),
             pess_max = max(diff_pess)) %>%
   pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
-  mutate(value = round(value,1)) %>%
+  #mutate(value = round(value,1)) %>%
   pivot_wider(names_from = scen, values_from = value) %>%
   rename(c("High Price" = "opt", "Low Price" = "pess")) %>%
   data.frame() %>%
@@ -709,9 +760,19 @@ econ_panel4_summ = sens_dta_econ_panel4 %>%
   mutate(scenario = case_when(scenario == "All Adv" ~ "Optimistic",
                               scenario == "Constr" ~ "Pessimistic",
                               TRUE ~ "Core")) %>%
-  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_") %>%
-  mutate(diff_opt = value_Optimistic - value_Core,
-         diff_pess = value_Pessimistic - value_Core) %>%
+  pivot_wider(names_from = scenario, values_from = value, names_prefix = "value_")
+
+if (metric == "absolute") {
+  econ_panel4_summ = econ_panel4_summ %>%
+      mutate(diff_opt = value_Optimistic - value_Core,
+             diff_pess = value_Pessimistic - value_Core)
+} else if (metric == "percent") {
+  econ_panel4_summ = econ_panel4_summ %>%
+      mutate(diff_opt = (value_Optimistic - value_Core) / value_Core,
+             diff_pess = (value_Pessimistic - value_Core) / value_Core) 
+}
+
+econ_panel4_summ = econ_panel4_summ %>%
   group_by(variable, unit, year) %>%
   summarize(opt_median = median(diff_opt),
             opt_min = min(diff_opt),
@@ -720,7 +781,7 @@ econ_panel4_summ = sens_dta_econ_panel4 %>%
             pess_min = min(diff_pess),
             pess_max = max(diff_pess)) %>%
   pivot_longer(cols = starts_with(c("opt_", "pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
-  mutate(value = round(value,1)) %>%
+  #mutate(value = round(value,1)) %>%
   pivot_wider(names_from = scen, values_from = value) %>%
   rename(c("All-Adv" = "opt", "Constr" = "pess")) %>%
   data.frame() %>%
@@ -736,9 +797,19 @@ econ_panel5_summ = sens_dta_econ_panel5 %>%
   mutate(value_Optimistic = case_when(is.na(value_Optimistic) ~ value_Core
                                             , TRUE ~ value_Optimistic),
          value_Pessimistic = case_when(is.na(value_Pessimistic) ~ value_Core
-                                            , TRUE ~ value_Pessimistic)) %>%
-  mutate(diff_opt = value_Optimistic - value_Core,
-         diff_pess = value_Pessimistic - value_Core) %>%
+                                            , TRUE ~ value_Pessimistic))
+
+if (metric == "absolute") {
+  econ_panel5_summ = econ_panel5_summ %>%
+      mutate(diff_opt = value_Optimistic - value_Core,
+             diff_pess = value_Pessimistic - value_Core)
+} else if (metric == "percent") {
+  econ_panel5_summ = econ_panel5_summ %>%
+      mutate(diff_opt = (value_Optimistic - value_Core) / value_Core,
+             diff_pess = (value_Pessimistic - value_Core) / value_Core) 
+}
+
+econ_panel5_summ = econ_panel5_summ %>%
   replace_with_na(replace = list(diff_opt = c(0), diff_pess = c(0),
                              diff_constr = c(0), diff_alladv = c(0))) %>%
   group_by(variable, unit, year) %>%
@@ -748,7 +819,7 @@ econ_panel5_summ = sens_dta_econ_panel5 %>%
             pess_min = min(diff_pess, na.rm = T),
             pess_max = max(diff_pess, na.rm = T)) %>%
   pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
-  mutate(value = round(value,1)) %>%
+  #mutate(value = round(value,1)) %>%
   pivot_wider(names_from = scen, values_from = value) %>%
   rename(c("Opt-Adv" = "opt", "Pess-Adv" = "pess")) %>%
   data.frame() %>%
@@ -768,7 +839,7 @@ all_panels = cbind(econ_panel1_summ, econ_panel4_summ, econ_panel5_summ, econ_pa
 
 
 ```{r}
-fig_no = 1.5
+fig_no = "1.2.1"
 
 # all_panels is created in the previous code chunk
 all_panels = all_panels %>% 
@@ -781,8 +852,8 @@ all_panels = all_panels %>%
   rename("Year" = "year", "Metric" = "metric") %>%
   arrange(Year, Metric)
 
-all_panels = all_panels %>% data.frame() %>% select(-c(variable, unit)) %>%
-  mutate_if(is.numeric, round)
+all_panels = all_panels %>% data.frame() %>% select(-c(variable, unit)) #%>%
+  #mutate_if(is.numeric, round)
 #all_panels$Pess.Adv[1] = ""
 all_panels$Year[1] = ""
 all_panels$Year[3] = ""
@@ -835,8 +906,13 @@ all_panels_gt = all_panels %>% gt() %>%
     style = list(
       cell_text(align = "center")
     ), locations = cells_body(columns = 3:12)
-  )
+  ) 
 
+if (metric == "percent") {
+  all_panels_gt = all_panels_gt %>% fmt_percent(decimals = 1, use_seps = TRUE, columns = 3:12)
+} else if (metric == "absolute") {
+  all_panels_gt = all_panels_gt %>% fmt_number(decimals = 1, use_seps = TRUE, columns = 3:12)
+}
 
 #%>% opt_stylize(style = 6, color = "blue")
   
@@ -846,10 +922,10 @@ all_panels_gt = all_panels %>% gt() %>%
 all_panels_gt
 
 all_panels_gt %>% 
-  gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
+  gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".html"))
 
 all_panels_gt %>% 
-  gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
+  gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".png"))
 
 
 ```

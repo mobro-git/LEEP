@@ -34,6 +34,7 @@ subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
 # Appendix A
 
+
 ## Emissions Summary Tables
 
 ```{r}
@@ -83,6 +84,112 @@ tab_a5 = summary_tables(
   data = clean_data,
   config = config
 )
+```
+## Table ES1 - for lack of a better place to put it
+```{r}
+fig_no = "ES.1"
+
+tab_es1_ew = summary_tables(
+  table_no = "ES1 Economy-Wide Emissions",
+  var = "Emissions|CO2",
+  suffix = "Economy-wide emissions",
+  drop_mod = c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+  short_circuit = TRUE,
+  data = clean_data,
+  config = config
+)
+
+ew_ira = (tab_es1_ew$IRA) %>% 
+  select(year, min_diff_2005, median_diff_2005, max_diff_2005) %>%
+  filter(year %in% c(2030, 2035))
+
+ew_noira = (tab_es1_ew$noIRA) %>%
+  select(year, min_diff_2005, median_diff_2005, max_diff_2005) %>%
+  filter(year %in% c(2030, 2035))
+
+tab_es1_elec = summary_tables(
+  table_no = "ES1 Power Sector Emissions",
+  var = "Emissions|CO2|Energy|Supply|Electricity",
+  suffix = "Power sector emissions",
+  drop_mod = c("Scout-LEEP"),
+  drop_datasrc = c("ReEDS_compiled.csv"), # remove duplicate values for ReEDS-NREL - basically same values
+  short_circuit = TRUE,
+  data = clean_data,
+  config = config
+)
+
+elec_ira = (tab_es1_elec$IRA) %>% 
+  select(year, min_diff_2005, median_diff_2005, max_diff_2005) %>%
+  filter(year %in% c(2030, 2035))
+
+elec_noira = (tab_es1_elec$noIRA) %>%
+  select(year, min_diff_2005, median_diff_2005, max_diff_2005) %>%
+  filter(year %in% c(2030, 2035))
+
+es1_full = bind_cols(bind_rows(ew_noira, elec_noira), bind_rows(ew_ira, elec_ira), 
+                     data.frame("sector" = c("a","a","b","b"))) %>%
+  select(-year...5)
+                       
+                       
+                       
+  #                      expression(paste("Economy-Wide C", O[2], " from Energy Use")),
+  #                                            expression(paste("Economy-Wide C", O[2], " from Energy Use")), 
+  #                                            expression(paste("Power Sector C", O[2])), 
+  #                                            expression(paste("Power Sector C", O[2]))))) %>%
+  # select(-year...5)
+
+colnames(es1_full) = c("Year", "Min", "Median", "Max", "Min\r", "Median\r", "Max\r", "Sector")
+es1_full = es1_full %>% group_by(Sector)
+
+table_es1 = es1_full %>% gt() %>%
+  tab_header(
+    title = gt::html("Multi-model range of emission reductions<br>(% reduction from 2005)")
+  ) %>%
+  tab_spanner(label = "No IRA", columns = c(Min, Median, Max)) %>%
+  tab_spanner(label = "IRA", columns = c(`Min\r`, `Median\r`, `Max\r`)) %>%
+  cols_label() %>% 
+  tab_row_group(label = gt::html("Economy-Wide CO<sub>2</sub> from Energy Use"),
+                rows = 1:2, id = "ew") %>%
+  tab_row_group(label = gt::html("Power Sector CO<sub>2</sub>"),
+                rows = 3:4, id = "elec") %>%
+  row_group_order(groups = c("ew","elec")) %>%
+  tab_style(
+      style = list(
+        cell_borders(sides = "all", color = "#F2F2F2"),
+        cell_fill(color = "#F2F2F2", alpha = NULL),
+        cell_text(align = "center")
+      ), locations = cells_body()
+    ) %>% tab_style(
+      style = list(
+        cell_fill(color = "black"),
+        cell_text(color = "white", weight = "normal", align = "center")
+      ), locations = cells_column_labels()
+    ) %>% tab_style(
+      style = list(
+        cell_fill(color = "black"),
+        cell_text(color = "white", weight = "bold")
+      ), locations = cells_column_spanners()
+    ) %>% tab_style(
+      style = list(
+        cell_borders(sides = "right", color = "#DCDCDC", weight = "2px")
+      ), locations = cells_body(columns = c(1,4))
+    ) %>% tab_style(
+      style = list(
+        cell_text(weight = "bold")
+      ), locations = cells_body(columns = c(1))
+    ) %>% tab_style(
+      style = list(
+        cell_text(weight = "normal", color = "black", align = "left"),
+        cell_fill(color = "#C9C9C9")
+      ), locations = cells_row_groups()
+    ) %>% fmt_number(decimals = 0, use_seps = TRUE, columns = 2:7)
+
+table_es1
+
+table_es1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
+table_es1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
+
+
 ```
 
 # Appendix D
