@@ -219,6 +219,61 @@ savedata(TranSpg$data, paste(fig_no, "Transportation"))
 savedata(BuilSpg$data, paste(fig_no, "Buildings"))
 savedata(IndSpg$data, paste(fig_no, "Industry"))
 ```
+### 1.2.1
+```{r}
+fig_no = "1.2.1"
+
+Econ_data = spg_clean(
+  99,
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+  "EPA-GHGI",
+  config,
+  clean_data,
+  figmap_leep_timeseries
+)
+
+EconSpg = spg2(Econ_data,
+  "",
+  expression(paste("Economy-wide C", O[2], "Emissions (Mt C", O[2], "/yr)")),
+  gd = "none",
+  0,
+  7000,
+  c(0, 2000, 4000, 6000),
+  scales::comma,
+  1, 
+  c(2015, 4900), 
+  c(2027.5, 5500), 
+  c(2022, 3800), 
+  config, 
+  figmap_leep_timeseries) 
+
+EconDot = dotted(EconSpg$data, EconSpg$figure, "median", 0, 7000, config, figmap_leep_timeseries)
+
+
+delta = delta(25, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
+saveall(delta$figure, delta$df, paste(fig_no, "delta"))
+
+
+EconTab = html(EconSpg$data, "Economy-Wide CO<sub>2<sub>")
+EconSpg
+EconDot
+delta
+EconTab
+
+
+
+EconSpg$data = clean_supplemental_data(EconSpg$data, fig_no)
+savedata(EconSpg$data, paste(fig_no, "EconWide"))
+savefig(EconDot, fig_no)
+
+fig_no = "ES.2"
+savedata(EconSpg$data, fig_no)
+savefig(EconDot, fig_no)
+saveall(delta$figure, delta$df, paste(fig_no, "delta"))
+
+```
+
+
 ## 1.3/ES.3 key indicators
 ```{r}
 fig_no = 1.3
