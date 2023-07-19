@@ -536,6 +536,10 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
 }
 
 delta = function(pd_map_ID, drop, config, clean_data, figmap_leep_timeseries) {
+
+  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+
+
   df = data_from_graph(
     "time_series",
     config,
