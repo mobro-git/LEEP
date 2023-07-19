@@ -1235,3 +1235,181 @@ table2 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".
 table2 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
 
 ```
+
+
+## Gas and Coal generation capacity factors
+```{r}
+# Table X.1: Gas and Coal generation
+fig_no = "Ap.X.1"
+
+exclude_models = c(
+  "AEO2020",
+  "AEO2021"
+)
+
+generation_data = clean_data %>%
+  filter(year %in% c(2030, 2035),
+         !model %in% exclude_models,
+         variable %in% c("Secondary Energy|Electricity|Coal", "Secondary Energy|Electricity|Gas"),
+         scenario %in% c("IRA","No IRA","Core")) %>%
+  # convert from quads to TWh
+  mutate(value = value * 293.07107,
+         unit = "TWh") %>%
+  mutate(scenario = case_when(
+    scenario == "Core" ~ "IRA",
+    TRUE ~ scenario
+  )) %>%
+  select(-c(region, datasrc, unit)) %>%
+  mutate(variable = case_when(
+    variable == "Secondary Energy|Electricity|Coal" ~ "Coal",
+    TRUE ~ "Gas"
+  )) %>%
+  pivot_wider(names_from = c("scenario", "year"), values_from = value) %>%
+  arrange(model, variable) %>% 
+  group_by(variable)
+  
+  #pivot_wider(names_from = model, values_from = value) %>%
+  #group_by(variable)
+colnames(generation_data) = c("Model", "Generation.Fuel", "2030", "2035", "2030\r", "2035\r")
+
+generation_table = gt_elec_table(generation_data, "Electricity Generation (TWh)", percent = FALSE)
+generation_table
+
+# having trouble saving this as a png for some reason...
+#generation_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
+generation_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
+```
+```{r}
+# Table X.2: Gas and Coal capacity
+fig_no = "Ap.X.2"
+
+exclude_models = c(
+  "AEO2020",
+  "AEO2021"
+)
+
+capacity_data = clean_data %>%
+  filter(year %in% c(2030, 2035),
+         !model %in% exclude_models,
+         variable %in% c("Capacity|Electricity|Coal","Capacity|Electricity|Gas"),
+         #variable %in% c("Secondary Energy|Electricity|Coal", "Secondary Energy|Electricity|Gas"),
+         scenario %in% c("IRA","No IRA","Core")) %>%
+  # # convert from GW to TWh
+  # mutate(value = value * 293.07107,
+  #        unit = "TWh") %>%
+  mutate(scenario = case_when(
+    scenario == "Core" ~ "IRA",
+    TRUE ~ scenario
+  )) %>%
+  select(-c(region, datasrc, unit)) %>%
+  mutate(variable = case_when(
+    variable == "Capacity|Electricity|Coal" ~ "Coal",
+    TRUE ~ "Gas"
+  )) %>%
+  pivot_wider(names_from = c("scenario", "year"), values_from = value) %>%
+  arrange(model, variable) %>% 
+  group_by(variable)
+  
+colnames(capacity_data) = c("Model", "Generation.Fuel", "2030", "2035", "2030\r", "2035\r")
+
+capacity_table = gt_elec_table(capacity_data, "Electricity Generation Capacity (GW)", percent = FALSE)
+
+capacity_table
+
+# having trouble saving this as a png for some reason...
+# capacity_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
+capacity_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
+
+
+```
+
+```{r}
+# Table X.3: Gas and Coal capacity factors
+fig_no = "Ap.X.3"
+
+exclude_models = c(
+  "AEO2020",
+  "AEO2021"
+)
+
+# need to run the 2 above code chunks first
+
+# generation in TWh
+generation_data_temp = generation_data
+colnames(generation_data_temp) = c("Model", "Generation.Fuel",
+                                   "Gen.NoIRA.2030","Gen.NoIRA.2035","Gen.IRA.2030","Gen.IRA.2035")
+# capacity in GW
+capacity_data_temp = capacity_data
+colnames(capacity_data_temp) = c("Model", "Generation.Fuel",
+                                   "Cap.NoIRA.2030","Cap.NoIRA.2035","Cap.IRA.2030","Cap.IRA.2035")
+
+cf_data = generation_data_temp %>% inner_join(capacity_data_temp, by = c("Model", "Generation.Fuel")) %>%
+  mutate(CF.NoIRA.2030 = ((1000 * Gen.NoIRA.2030) / (8760 * Cap.NoIRA.2030)),
+         CF.NoIRA.2035 = ((1000 * Gen.NoIRA.2035) / (8760 * Cap.NoIRA.2035)),
+         CF.IRA.2030 = ((1000 * Gen.IRA.2030) / (8760 * Cap.IRA.2030)),
+         CF.IRA.2035 = ((1000 * Gen.IRA.2035) / (8760 * Cap.IRA.2035))) %>%
+  select(-c("Cap.NoIRA.2030","Cap.NoIRA.2035","Cap.IRA.2030","Cap.IRA.2035",
+            "Gen.NoIRA.2030","Gen.NoIRA.2035","Gen.IRA.2030","Gen.IRA.2035")) %>%
+  filter(!(Model %in% exclude_models))
+
+colnames(cf_data) = c("Model", "Generation.Fuel", "2030", "2035", "2030\r", "2035\r")
+
+cf_table = gt_elec_table(cf_data, "Electricity Generation Capacity Factors (%)", percent = TRUE)
+cf_table
+
+# having trouble saving this as a png for some reason...
+# capacity_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
+cf_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
+
+
+
+
+```
+
+
+```{r}
+gt_elec_table = function(raw_data, tab_title, percent = FALSE) {
+  my_table = raw_data %>% gt() %>%
+    tab_header(
+        title = gt::html(tab_title)
+    ) %>%
+    tab_spanner(label = "No IRA", columns = c("2030", "2035")) %>%
+    tab_spanner(label = "IRA", columns = c("2030\r", "2035\r")) %>%
+    tab_style(
+        style = list(
+          cell_borders(sides = "all", color = "#F2F2F2"),
+          cell_fill(color = "#F2F2F2", alpha = NULL),
+          cell_text(align = "center")
+        ), locations = cells_body()
+      ) %>% tab_style(
+        style = list(
+          cell_fill(color = "black"),
+          cell_text(color = "white", weight = "normal", align = "center")
+        ), locations = cells_column_labels()
+      ) %>% tab_style(
+        style = list(
+          cell_fill(color = "black"),
+          cell_text(color = "white", weight = "bold")
+        ), locations = cells_column_spanners()
+      ) %>% tab_style(
+        style = list(
+          cell_borders(sides = "right", color = "#DCDCDC", weight = "2px"),
+          cell_text(weight = "normal", align = "left")
+        ), locations = cells_body(columns = c(1))
+      ) %>% tab_style(
+        style = list(
+          cell_text(weight = "normal", color = "black", align = "left"),
+          cell_fill(color = "#C9C9C9")
+        ), locations = cells_row_groups()
+      ) %>%
+    sub_missing(columns = 2:6, missing_text = "-")
+  
+  if (percent) {
+    my_table = my_table %>% fmt_percent(decimals = 0, use_seps = TRUE, columns = 2:6)
+  } else {
+    my_table = my_table %>% fmt_number(decimals = 0, use_seps = TRUE, columns = 2:6)
+  }
+  return(my_table)
+}
+
+```
