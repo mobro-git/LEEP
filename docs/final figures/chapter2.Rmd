@@ -143,8 +143,14 @@ ElecSpg = spg2(
   config,
   figmap_leep_timeseries) 
 
+delta = delta(26, "", config, clean_data, figmap_leep_timeseries)
+saveall(delta$figure, delta$df, paste(fig_no, "delta"))
+
+
+
 ElecDot = dotted(ElecSpg$data, ElecSpg$figure, "median", 0, 2500, config, figmap_leep_timeseries)
 ElecDot
+delta
 
 ElecTab = html(ElecSpg$data, "Electricity CO<sub>2<sub>")
 ElecTab
@@ -153,6 +159,12 @@ ElecSpg$data = clean_supplemental_data(ElecSpg$data, fig_no)
 
 savedata(ElecSpg$data, fig_no)
 savefig(ElecDot, fig_no)
+
+fig_no = "ES.1"
+savedata(ElecSpg$data, fig_no)
+savefig(ElecDot, fig_no)
+saveall(delta$figure, delta$df, paste(fig_no, "delta"))
+
 ```
 
 ## 2.4 us power sector generation from high and low/zero emitting generation
