@@ -1036,12 +1036,14 @@ p
 
 ```
 
--# Appendix G 6
+# Appendix G
 
 
 ## Electrification Figure
 
 ```{r}
+fig_no = "G.1"
+
 elc = readxl::read_xlsx("data-extra/electrification_compiled.xlsx") %>%
   rename(value = value100) %>%
   select(-variable) %>%
@@ -1096,6 +1098,8 @@ elc_ts = rbind(elc_raw, replace_hist) %>%
            year <= 2035) %>%
   mutate(variable = factor(variable, levels = c("Economy-Wide", "Transportation", "Buildings", "Industry")))
 
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+
 ggplot() +
   geom_line(data = elc_ts, aes(x = year, y = value, color = scenario, group = interaction(model,scenario))) +
   facet_grid(~variable) +
@@ -1104,6 +1108,109 @@ ggplot() +
   scale_subpalette(subpalettes, "Final Energy") +
   labs(y = "% Electricity of Final Energy",
        x="")
+
+elc_ts = elc_ts %>%
+  mutate(alpha = 1) %>%
+  filter(!model %in% "REGEN-EPRI") %>%
+  mutate(year = as.numeric(year))
+
+
+Econ_ts = elc_ts %>%
+  filter(variable == "Economy-Wide") %>%
+  mutate(variable_rename = "Economy-Wide")
+
+EconSpg = spg3(df = Econ_ts, 
+               title = "Economy-Wide", 
+               yname = "% Electricity of Final Energy",
+               gd = "none", 
+               ymin = 0,
+               ymax = 70, 
+               ybreaks = c(0, 20, 40, 60), 
+               yax_format = scales::comma, 
+               annotate = 0, 
+               c(2025, 0),
+               c(2025, 0), 
+               c(2025, 0), 
+               config = config, 
+               figmap_leep_timeseries = figmap_leep_timeseries)
+
+savedata(EconSpg$data, paste0(fig_no, "EconWide"))
+
+EconDot = dotted(EconSpg$data, EconSpg$figure, "median", 0, 70, config, figmap_leep_timeseries)
+
+Tran_ts = elc_ts %>%
+  filter(variable == "Transportation")%>%
+  mutate(variable_rename = "Transportation")
+
+TranSpg = spg3(df = Tran_ts, 
+               title = "Transportation", 
+               yname = "",
+               gd = "none", 
+               ymin = 0,
+               ymax = 70, 
+               ybreaks = c(0, 20, 40, 60), 
+               yax_format = scales::comma, 
+               annotate = 0, 
+               c(2025, 0),
+               c(2025, 0), 
+               c(2025, 0), 
+               config = config, 
+               figmap_leep_timeseries = figmap_leep_timeseries)
+
+savedata(TranSpg$data, paste0(fig_no, "Transportation"))
+
+TranDot = dotted(TranSpg$data, TranSpg$figure, "median", 0, 70, config, figmap_leep_timeseries)
+
+Buil_ts = elc_ts %>%
+  filter(variable == "Buildings")%>%
+  mutate(variable_rename = "Buildings")
+
+BuilSpg = spg3(df = Buil_ts, 
+               title = "Buildings", 
+               yname = "",
+               gd = "none", 
+               ymin = 0,
+               ymax = 70, 
+               ybreaks = c(0, 20, 40, 60), 
+               yax_format = scales::comma, 
+               annotate = 0, 
+               c(2025, 0),
+               c(2025, 0), 
+               c(2025, 0), 
+               config = config, 
+               figmap_leep_timeseries = figmap_leep_timeseries)
+
+savedata(BuilSpg$data, paste0(fig_no, "Buildings"))
+
+
+BuilDot = dotted(BuilSpg$data, BuilSpg$figure, "median", 0, 70, config, figmap_leep_timeseries)
+
+Ind_ts = elc_ts %>%
+  filter(variable == "Industry")%>%
+  mutate(variable_rename = "Industry")
+
+IndSpg = spg3(df = Ind_ts, 
+               title = "Industry", 
+               yname = "",
+               gd = "none", 
+               ymin = 0,
+               ymax = 70, 
+               ybreaks = c(0, 20, 40, 60), 
+               yax_format = scales::comma, 
+               annotate = 0, 
+               c(2025, 0),
+               c(2025, 0), 
+               c(2025, 0), 
+               config = config, 
+               figmap_leep_timeseries = figmap_leep_timeseries)
+
+savedata(IndSpg$data, paste0(fig_no, "Industry"))
+
+IndDot = dotted(IndSpg$data, IndSpg$figure, "median", 0, 70, config, figmap_leep_timeseries)
+
+Econ = (EconDot | TranDot | BuilDot | IndDot)
+
+savefig(Econ, fig_no, wd = 9, ht = 4)
 # TODO: save off this data for the final report
 # TODO: remove REGEN from industry, apples to oranges
 ```
