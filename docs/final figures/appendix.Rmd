@@ -1248,16 +1248,19 @@ exclude_models = c(
 )
 
 exclude_models_bistline = c(
-  "ReEDS-NREL"
+  "ReEDS-NREL",
+  "IPM-ERA"
 )
 
 generation_data_bis = clean_data %>%
   filter(datasrc == "bistline_ira_tall.csv", 
          !(model %in% exclude_models_bistline),
-  variable %in% c("Secondary Energy|Electricity|Coal|w/ CCS",
-                         "Secondary Energy|Electricity|Coal|w/o CCS",
-                         "Secondary Energy|Electricity|Gas|w/ CCS",
-                         "Secondary Energy|Electricity|Gas|w/o CCS")) %>%
+  variable %in% c(
+    #"Secondary Energy|Electricity|Coal|w/ CCS",
+    "Secondary Energy|Electricity|Coal|w/o CCS",
+    #"Secondary Energy|Electricity|Gas|w/ CCS",
+    "Secondary Energy|Electricity|Gas|w/o CCS"
+  )) %>%
   mutate(variable = case_when(
     grepl("Coal",variable) ~ "Secondary Energy|Electricity|Coal",
     TRUE ~ "Secondary Energy|Electricity|Gas"
@@ -1286,6 +1289,7 @@ generation_data = bind_rows(generation_data_bis, generation_data_other) %>%
   )) %>%
   pivot_wider(names_from = c("scenario", "year"), values_from = value) %>%
   arrange(model, variable) %>% 
+  select(c("model", "variable", "No IRA_2030", "No IRA_2035", "IRA_2030", "IRA_2035")) %>%
   group_by(variable)
   
   #pivot_wider(names_from = model, values_from = value) %>%
@@ -1299,6 +1303,7 @@ generation_table
 #generation_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
 generation_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
 ```
+Next
 ```{r}
 # Table X.2: Gas and Coal capacity
 fig_no = "Ap.X.2"
@@ -1309,16 +1314,19 @@ exclude_models = c(
 )
 
 exclude_models_bistline = c(
-  "ReEDS-NREL"
+  "ReEDS-NREL",
+  "IPM-ERA"
 )
 
 capacity_data_bis = clean_data %>%
   filter(datasrc == "bistline_ira_tall.csv", 
          !(model %in% exclude_models_bistline),
-  variable %in% c("Capacity|Electricity|Coal|w/ CCS",
-                         "Capacity|Electricity|Coal|w/o CCS",
-                         "Capacity|Electricity|Gas|w/ CCS",
-                         "Capacity|Electricity|Gas|w/o CCS")) %>%
+  variable %in% c(
+   #"Capacity|Electricity|Coal|w/ CCS",
+    "Capacity|Electricity|Coal|w/o CCS",
+   #"Capacity|Electricity|Gas|w/ CCS",
+    "Capacity|Electricity|Gas|w/o CCS"
+  )) %>%
   mutate(variable = case_when(
     grepl("Coal",variable) ~ "Capacity|Electricity|Coal",
     TRUE ~ "Capacity|Electricity|Gas"
@@ -1344,6 +1352,7 @@ capacity_data = bind_rows(capacity_data_bis, capacity_data_other) %>%
   )) %>%
   pivot_wider(names_from = c("scenario", "year"), values_from = value) %>%
   arrange(model, variable) %>% 
+  select(c("model", "variable", "No IRA_2030", "No IRA_2035", "IRA_2030", "IRA_2035")) %>%
   group_by(variable)
   
 colnames(capacity_data) = c("Model", "Generation.Fuel", "2030", "2035", "2030\r", "2035\r")
@@ -1390,9 +1399,13 @@ cf_data = generation_data_temp %>% inner_join(capacity_data_temp,
   filter(!(Model %in% exclude_models))
 
 colnames(cf_data) = c("Model", "Generation.Fuel", "2030", "2035", "2030\r", "2035\r")
+ 
+cf_data$"2035\r"[cf_data$Model == "GCAM-CGS" & cf_data$Generation.Fuel == "Coal"] = 0
 
 cf_table = gt_elec_table(cf_data, "Electricity Generation Capacity Factors (%)", 
-                         percent = TRUE)
+                         percent = TRUE, 
+                         footnote_text = "GCAM-CGS coal generation and capacity are beneath 
+                         rounding tolerance, so CF has been set to 0%.")
 cf_table
 
 # having trouble saving this as a png for some reason...
