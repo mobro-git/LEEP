@@ -937,6 +937,105 @@ pdfigure = ggplot() +
   savefig(figure, fig_no)
 ```
 
+### Electricity generation by model
+```{r}
+# Appendix F: figure 16
+fig_no = "Ap.16.Generation"
+
+exclude_models = c()
+
+clean_data15 = clean_data %>%
+  mutate(value = case_when(
+    unit == "Quads" ~ value * 293.07107,
+    TRUE ~ value
+  )) %>% mutate(unit = case_when(
+    unit == "Quads" ~ "TWh",
+    TRUE ~ unit
+  )) %>%
+  filter(!(model %in% exclude_models))
+
+models_alph = sort(unique(clean_data15$model))
+
+p = print_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 18, "United States",
+                level_mod = models_alph) +
+  facet_grid(scenario ~ model, switch = "x") + 
+  scale_x_continuous(breaks = c(2030, 2035), labels = c("2030", "2035"), position = "top") + 
+  scale_y_continuous(expand = c(0,0), labels = scales::comma, 
+                     name = expression("Electricity Generation (TWh)")) +
+  theme(axis.ticks = element_blank(), 
+        strip.text.x = element_text(face = "plain", angle = 90, hjust = 1, size = 7),
+        axis.text.x = element_text(hjust = 0, vjust = 0.5))
+
+dta = data_from_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 18, "United States")
+
+p
+
+saveall(p, dta, fig_no)
+```
+
+### Electricity capacity by model
+```{r}
+# Appendix F: figure 17
+fig_no = "Ap.17.Capacity"
+
+p = print_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 15, "United States",
+                level_mod = models_alph) +
+  facet_grid(scenario ~ model, switch = "x") + 
+  scale_x_continuous(breaks = c(2030, 2035), labels = c("2030", "2035"), position = "top") + 
+  scale_y_continuous(expand = c(0,0), labels = scales::comma, 
+                     name = expression("Electricity Capacity (GW)")) +
+  theme(axis.ticks = element_blank(), 
+        strip.text.x = element_text(face = "plain", angle = 90, hjust = 1, size = 7),
+        axis.text.x = element_text(hjust = 0, vjust = 0.5))
+
+dta = data_from_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 15, "United States")
+
+p
+
+saveall(p, dta, fig_no)
+
+
+```
+### Electricity generation difference from noIRA
+```{r}
+# Appendix F: figure 18
+fig_no = "Ap.18.Generation_diff"
+
+subpalettes = create_subpalettes(figmap_leep_stackbar, config)
+
+dta = data_from_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 18, "United States")
+
+dta_ira = dta %>% filter(scenario == "IRA") %>%
+  ungroup() %>%
+  select(model, year, variable_rename, value) %>%
+  rename(value_ira = value)
+
+dta_noira = dta %>% filter(scenario == "No IRA") %>%
+  ungroup() %>%
+  select(model, year, variable_rename, value) %>%
+  rename(value_noira= value)
+
+dta_full = dta_ira %>% inner_join(dta_noira, by = c("model", "year", "variable_rename")) %>%
+  mutate(diff = value_ira - value_noira) %>%
+  mutate(model = factor(model, levels = models_alph))
+
+p = dta_full %>% ggplot() +
+  geom_bar(aes(x = year, y = diff, fill = variable_rename), 
+           position="stack", stat="identity") + 
+  scale_x_continuous(breaks = c(2030, 2035), labels = c("2030", "2035"), position = "top") + 
+  scale_y_continuous(expand = c(0,0), limits = c(-3100,3100), labels = scales::comma, 
+                     name = expression("Difference in Generation from No IRA (TWh)")) +
+  scale_subpalette(subpalettes, "Electricity Generation") +
+  facet_grid(. ~ model, switch = "x") +
+  theme_emf() + 
+  theme(axis.ticks = element_blank(), axis.text.x = element_text(angle = 90, hjust = 1),
+        strip.text.x = element_text(face = "plain", angle = 90, hjust = 1, size = 7),
+        axis.title.x = element_blank())
+
+p
+
+```
+
 -# Appendix G 6
 
 
@@ -1244,7 +1343,8 @@ fig_no = "Ap.X.1"
 
 exclude_models = c(
   "AEO2020",
-  "AEO2021"
+  "AEO2021",
+  "AEO2022"
 )
 
 exclude_models_bistline = c(
@@ -1310,7 +1410,8 @@ fig_no = "Ap.X.2"
 
 exclude_models = c(
   "AEO2020",
-  "AEO2021"
+  "AEO2021",
+  "AEO2022"
 )
 
 exclude_models_bistline = c(
@@ -1374,7 +1475,8 @@ fig_no = "Ap.X.3"
 
 exclude_models = c(
   "AEO2020",
-  "AEO2021"
+  "AEO2021",
+  "AEO2022"
 )
 
 # need to run the 2 above code chunks first
@@ -1405,7 +1507,8 @@ cf_data$"2035\r"[cf_data$Model == "GCAM-CGS" & cf_data$Generation.Fuel == "Coal"
 cf_table = gt_elec_table(cf_data, "Electricity Generation Capacity Factors (%)", 
                          percent = TRUE, 
                          footnote_text = "GCAM-CGS coal generation and capacity are beneath 
-                         rounding tolerance, so CF has been set to 0%.")
+                         rounding tolerance, so CF has been set to 0%.",
+                         footnote_column = 6, footnote_row = 3)
 cf_table
 
 # having trouble saving this as a png for some reason...
@@ -1417,8 +1520,3 @@ cf_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,
 
 ```
 
-
-```{r}
-
-
-```

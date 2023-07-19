@@ -1052,7 +1052,7 @@ write_sheet = function(data, wb, sheetname) {
 
 }
 
-gt_elec_table = function(raw_data, tab_title, percent = FALSE, footnote_text = "") {
+gt_elec_table = function(raw_data, tab_title, percent = FALSE, footnote_text = "", footnote_column = NA, footnote_row = NA) {
   my_table = raw_data %>% gt() %>%
     tab_header(
       title = gt::html(tab_title)
@@ -1099,8 +1099,8 @@ gt_elec_table = function(raw_data, tab_title, percent = FALSE, footnote_text = "
       tab_footnote(
         footnote = footnote_text,
         locations = cells_body(
-          columns = "2035\r",
-          rows = 4
+          columns = footnote_column,
+          rows = footnote_row
         )
       )
   }
