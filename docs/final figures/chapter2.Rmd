@@ -2460,7 +2460,7 @@ fig_no = 2.5
 # capacity addition plot
 
 ymin = -40
-ymax = 140
+ymax = 130
 
 subpalettes = create_subpalettes(figmap_leep_stackbar, config)
 sp = subpalettes$`Capacity Additions2`
@@ -2538,14 +2538,16 @@ dta5 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 
   mutate(temp = case_when(
     grepl("Additions",variable) ~ "Capacity Additions",
     TRUE ~ "Capacity Retirements")) %>%
-  mutate(value = case_when((model == "USREP-ReEDS") & (temp == "Capacity Retirements") ~ -1 * value, TRUE ~ value)) %>%
+  mutate(value = case_when((model == "USREP-ReEDS") & (temp == "Capacity Retirements") ~ -1 * value, 
+                           (model == "NEMS-OP") & (temp == "Capacity Retirements") ~ -1 * value, 
+                           TRUE ~ value)) %>%
   mutate(variable_rename = factor(variable_rename, 
                                   levels = c("Solar", "Wind", "Storage", "Nuclear", 
                                              "Hydro", "Gas CCS", "Gas", "Coal CCS", "Coal", "Other")))
 
 filler_row = data.frame("model" = c(""), value = 0)
 dta5 = bind_rows(dta5, filler_row) %>%
-  mutate(model = factor(model, levels = c("GCAM-PNNL", "RIO-REPEAT", "EPS-EI", "NEMS-RHG", "NEMS-OP", "GCAM-CGS", "ReEDS-NREL", "REGEN-EPRI", "Haiku-RFF", "IPM-EPA", "NEMS-EIA", "USREP-ReEDS", "IPM-NRDC", "MARKAL-NETL"
+  mutate(model = factor(model, levels = c("RIO-REPEAT", "EPS-EI", "NEMS-RHG", "NEMS-OP", "GCAM-CGS", "ReEDS-NREL", "GCAM-PNNL", "REGEN-EPRI", "Haiku-RFF", "IPM-EPA", "NEMS-EIA", "USREP-ReEDS", "IPM-NRDC", "MARKAL-NETL"
                                           ,"")))
 
 stats = dta5 %>% group_by(model, temp) %>% 
