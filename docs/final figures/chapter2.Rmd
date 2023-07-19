@@ -3258,7 +3258,7 @@ total = total %>%
   pivot_wider(
     names_from = scenario, values_from = value
   ) %>%
-  mutate(abs_dif = `No IRA` - IRA)
+  mutate(abs_dif = IRA - `No IRA`)
 
 low <- fig$data %>%
   filter(variable_rename == "CCS" | 
@@ -3282,7 +3282,7 @@ low = low %>%
   pivot_wider(
     names_from = scenario, values_from = value
   ) %>%
-  mutate(abs_dif = `No IRA` - IRA)
+  mutate(abs_dif = IRA - `No IRA`)
 
 high <- fig$data %>%
   filter(variable_rename == "Coal" |
@@ -3304,7 +3304,7 @@ high = high %>%
   pivot_wider(
     names_from = scenario, values_from = value
   ) %>%
-  mutate(abs_dif = `No IRA` - IRA)
+  mutate(abs_dif = IRA - `No IRA`)
 
 
 individual <- fig$data %>%
@@ -3326,7 +3326,7 @@ individual = individual %>%
   pivot_wider(
     names_from = scenario, values_from = value
   ) %>%
-  mutate(abs_dif = `No IRA` - IRA)
+  mutate(abs_dif = IRA - `No IRA`)
 
 ##### All Total #####
 
@@ -3334,14 +3334,16 @@ df_30 = total %>%
   filter(year %in% c(2030))
 df_stat_30 = df_30 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif)) %>%
+  mutate(scenario = "IRA")
   
 
 df_35 = total %>%
   filter(year %in% c(2035))
 df_stat_35 = df_35 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 # 
 # mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
@@ -3365,13 +3367,14 @@ data_total <- data %>%
 
 dots_Total = ggplot(data = data_total, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
     facet_wrap(~"Total Generation") +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
-    labs(y = "Generation (TWh)") +
+    labs(y = "Difference in Generation (TWh) from No IRA") +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme(
           axis.title.x = element_blank(),
@@ -3390,13 +3393,15 @@ df_30 = low %>%
   filter(year %in% c(2030))
 df_stat_30 = df_30 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 df_35 = low %>%
   filter(year %in% c(2035))
 df_stat_35 = df_35 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 # mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
 # mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
@@ -3418,8 +3423,9 @@ data_Low <- data %>%
 
 dots_Low = ggplot(data = data_Low, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"Low or Zero Emitting Generation") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
@@ -3443,13 +3449,15 @@ df_30 = high %>%
   filter(year %in% c(2030))
 df_stat_30 = df_30 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
 
 df_35 = high %>%
   filter(year %in% c(2035))
 df_stat_35 = df_35 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 
 # mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
@@ -3472,8 +3480,9 @@ data_High <- data %>%
 
 dots_High = ggplot(data = data_High, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"High Emitting Generation") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
@@ -3497,14 +3506,16 @@ df_30 = individual[individual$variable_rename == "Nuclear", ] %>%
   filter(year %in% c(2030))
 df_stat_30 = df_30 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 
 df_35 = individual[individual$variable_rename == "Nuclear", ] %>%
   filter(year %in% c(2035))
 df_stat_35 = df_35 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 
 # mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
@@ -3529,8 +3540,9 @@ data_Nuclear <- data %>%
 
 dots_Nuclear = ggplot(data = data_Nuclear, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"Nuclear") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
@@ -3554,14 +3566,16 @@ df_30 = individual[individual$variable_rename == "Solar", ] %>%
   filter(year %in% c(2030))
 df_stat_30 = df_30 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 
 df_35 = individual[individual$variable_rename == "Solar", ] %>%
   filter(year %in% c(2035))
 df_stat_35 = df_35 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 
 # mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
@@ -3586,8 +3600,9 @@ data_Solar <- data %>%
 
 dots_Solar = ggplot(data = data_Solar, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"Solar") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
@@ -3611,14 +3626,16 @@ df_30 = individual[individual$variable_rename == "Wind", ] %>%
   filter(year %in% c(2030))
 df_stat_30 = df_30 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 
 df_35 = individual[individual$variable_rename == "Wind", ] %>%
   filter(year %in% c(2035))
 df_stat_35 = df_35 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 
 # mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
@@ -3643,13 +3660,14 @@ data_Wind <- data %>%
 
 dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"Wind") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
-    labs(y = "Generation (TWh)") +
+    labs(y = "Difference in Generation (TWh) from No IRA") +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme(
           axis.title.x = element_blank(),
@@ -3668,14 +3686,16 @@ df_30 = individual[individual$variable_rename == "CCS", ] %>%
   filter(year %in% c(2030))
 df_stat_30 = df_30 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 
 df_35 = individual[individual$variable_rename == "CCS", ] %>%
   filter(year %in% c(2035))
 df_stat_35 = df_35 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 
 # mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
@@ -3700,8 +3720,9 @@ data_CCS <- data %>%
 
 dots_CCS = ggplot(data = data_CCS, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"CCS") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
@@ -3725,14 +3746,16 @@ df_30 = individual[individual$variable_rename == "Coal", ] %>%
   filter(year %in% c(2030))
 df_stat_30 = df_30 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 
 df_35 = individual[individual$variable_rename == "Coal", ] %>%
   filter(year %in% c(2035))
 df_stat_35 = df_35 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 
 # mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
@@ -3757,13 +3780,14 @@ data_Coal <- data %>%
 
 dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"Coal") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
-    labs(y = "Generation (TWh)") +
+    labs(y = "Difference in Generation (TWh) from No IRA") +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme(
           axis.title.x = element_blank(),
@@ -3782,14 +3806,16 @@ df_30 = individual[individual$variable_rename == "Natural Gas", ] %>%
   filter(year %in% c(2030))
 df_stat_30 = df_30 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 
 df_35 = individual[individual$variable_rename == "Natural Gas", ] %>%
   filter(year %in% c(2035))
 df_stat_35 = df_35 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 
 # mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
@@ -3814,8 +3840,9 @@ data_Gas <- data %>%
 
 dots_Gas = ggplot(data = data_Gas, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"Natural Gas") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
@@ -3839,14 +3866,16 @@ df_30 = individual[individual$variable_rename == "Other", ] %>%
   filter(year %in% c(2030))
 df_stat_30 = df_30 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 
 df_35 = individual[individual$variable_rename == "Other", ] %>%
   filter(year %in% c(2035))
 df_stat_35 = df_35 %>%
   summarise(mean = mean(abs_dif),
-            median = median(abs_dif))
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
   
 
 # mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
@@ -3871,8 +3900,9 @@ data_Other <- data %>%
 
 dots_Other = ggplot(data = data_Other, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"Other") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
