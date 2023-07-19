@@ -3364,16 +3364,16 @@ data_total <- data %>%
 
 
 dots_Total = ggplot(data = data_total, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
     facet_wrap(~"Total Generation") +
-    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-1000, -500, 0, 500, 1000, 2000), labels = scales::comma) +
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
     labs(y = "Generation (TWh)") +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+    theme(
           axis.title.x = element_blank(),
           axis.title.y = element_text(size = 7),
           axis.ticks = element_blank(),
@@ -3417,7 +3417,7 @@ data_Low <- data %>%
   mutate(scenario = "IRA")
 
 dots_Low = ggplot(data = data_Low, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
@@ -3425,7 +3425,7 @@ dots_Low = ggplot(data = data_Low, aes(x = axe, y = abs_dif)) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+    theme(
           axis.title.y = element_blank(), 
           axis.text.y = element_blank(),
           axis.title.x = element_blank(),
@@ -3467,10 +3467,11 @@ data_High <- data %>%
   mutate(axe = case_when(
     year == 2030 ~ 1, 
     year == 2035 ~ 2
-  )) 
+  )) %>%
+  mutate(scenario = "IRA")
 
 dots_High = ggplot(data = data_High, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
@@ -3478,7 +3479,7 @@ dots_High = ggplot(data = data_High, aes(x = axe, y = abs_dif)) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+    theme(
           axis.title.y = element_blank(), 
           axis.text.y = element_blank(),
           axis.title.x = element_blank(),
@@ -3527,7 +3528,7 @@ data_Nuclear <- data %>%
   mutate(scenario = "IRA")
 
 dots_Nuclear = ggplot(data = data_Nuclear, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
@@ -3535,7 +3536,7 @@ dots_Nuclear = ggplot(data = data_Nuclear, aes(x = axe, y = abs_dif)) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+    theme(
           axis.title.y = element_blank(), 
           axis.text.y = element_blank(),
           axis.title.x = element_blank(),
@@ -3584,7 +3585,7 @@ data_Solar <- data %>%
   mutate(scenario = "IRA")
 
 dots_Solar = ggplot(data = data_Solar, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
@@ -3592,7 +3593,7 @@ dots_Solar = ggplot(data = data_Solar, aes(x = axe, y = abs_dif)) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+    theme(
           axis.title.y = element_blank(), 
           axis.text.y = element_blank(),
           axis.title.x = element_blank(),
@@ -3641,7 +3642,7 @@ data_Wind <- data %>%
   mutate(scenario = "IRA")
 
 dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
@@ -3650,7 +3651,7 @@ dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = abs_dif)) +
     theme_emf() +
     labs(y = "Generation (TWh)") +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+    theme(
           axis.title.x = element_blank(),
           axis.title.y = element_text(size = 7),
           axis.ticks = element_blank(),
@@ -3698,7 +3699,7 @@ data_CCS <- data %>%
   mutate(scenario = "IRA")
 
 dots_CCS = ggplot(data = data_CCS, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
@@ -3706,7 +3707,7 @@ dots_CCS = ggplot(data = data_CCS, aes(x = axe, y = abs_dif)) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+    theme(
           axis.title.y = element_blank(), 
           axis.text.y = element_blank(),
           axis.title.x = element_blank(),
@@ -3755,7 +3756,7 @@ data_Coal <- data %>%
   mutate(scenario = "IRA")
 
 dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
@@ -3764,7 +3765,7 @@ dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = abs_dif)) +
     theme_emf() +
     labs(y = "Generation (TWh)") +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+    theme(
           axis.title.x = element_blank(),
           axis.title.y = element_text(size = 7),
           axis.ticks = element_blank(),
@@ -3812,7 +3813,7 @@ data_Gas <- data %>%
   mutate(scenario = "IRA")
 
 dots_Gas = ggplot(data = data_Gas, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
@@ -3820,7 +3821,7 @@ dots_Gas = ggplot(data = data_Gas, aes(x = axe, y = abs_dif)) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+    theme(
           axis.title.y = element_blank(), 
           axis.text.y = element_blank(),
           axis.title.x = element_blank(),
@@ -3869,7 +3870,7 @@ data_Other <- data %>%
   mutate(scenario = "IRA")
 
 dots_Other = ggplot(data = data_Other, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median), size = 0.5) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
@@ -3877,7 +3878,7 @@ dots_Other = ggplot(data = data_Other, aes(x = axe, y = abs_dif)) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+    theme(
           axis.title.y = element_blank(), 
           axis.text.y = element_blank(),
           axis.title.x = element_blank(),
