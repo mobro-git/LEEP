@@ -1247,10 +1247,30 @@ exclude_models = c(
   "AEO2021"
 )
 
-generation_data = clean_data %>%
+exclude_models_bistline = c(
+  "ReEDS-NREL"
+)
+
+generation_data_bis = clean_data %>%
+  filter(datasrc == "bistline_ira_tall.csv", 
+         !(model %in% exclude_models_bistline),
+  variable %in% c("Secondary Energy|Electricity|Coal|w/ CCS",
+                         "Secondary Energy|Electricity|Coal|w/o CCS",
+                         "Secondary Energy|Electricity|Gas|w/ CCS",
+                         "Secondary Energy|Electricity|Gas|w/o CCS")) %>%
+  mutate(variable = case_when(
+    grepl("Coal",variable) ~ "Secondary Energy|Electricity|Coal",
+    TRUE ~ "Secondary Energy|Electricity|Gas"
+  )) %>% group_by(model, scenario, unit, year, datasrc, variable, region) %>%
+  summarize(value = sum(value)) %>% ungroup()
+
+generation_data_other = clean_data %>%
+  filter(variable %in% c("Secondary Energy|Electricity|Coal", 
+                         "Secondary Energy|Electricity|Gas"))
+
+generation_data = bind_rows(generation_data_bis, generation_data_other) %>%
   filter(year %in% c(2030, 2035),
-         !model %in% exclude_models,
-         variable %in% c("Secondary Energy|Electricity|Coal", "Secondary Energy|Electricity|Gas"),
+         !(model %in% exclude_models),
          scenario %in% c("IRA","No IRA","Core")) %>%
   # convert from quads to TWh
   mutate(value = value * 293.07107,
@@ -1288,15 +1308,31 @@ exclude_models = c(
   "AEO2021"
 )
 
-capacity_data = clean_data %>%
+exclude_models_bistline = c(
+  "ReEDS-NREL"
+)
+
+capacity_data_bis = clean_data %>%
+  filter(datasrc == "bistline_ira_tall.csv", 
+         !(model %in% exclude_models_bistline),
+  variable %in% c("Capacity|Electricity|Coal|w/ CCS",
+                         "Capacity|Electricity|Coal|w/o CCS",
+                         "Capacity|Electricity|Gas|w/ CCS",
+                         "Capacity|Electricity|Gas|w/o CCS")) %>%
+  mutate(variable = case_when(
+    grepl("Coal",variable) ~ "Capacity|Electricity|Coal",
+    TRUE ~ "Capacity|Electricity|Gas"
+  )) %>% group_by(model, scenario, unit, year, datasrc, variable, region) %>%
+  summarize(value = sum(value)) %>% ungroup()
+
+capacity_data_other = clean_data %>%
+  filter(variable %in% c("Capacity|Electricity|Coal", 
+                         "Capacity|Electricity|Gas"))
+
+capacity_data = bind_rows(capacity_data_bis, capacity_data_other) %>%
   filter(year %in% c(2030, 2035),
          !model %in% exclude_models,
-         variable %in% c("Capacity|Electricity|Coal","Capacity|Electricity|Gas"),
-         #variable %in% c("Secondary Energy|Electricity|Coal", "Secondary Energy|Electricity|Gas"),
          scenario %in% c("IRA","No IRA","Core")) %>%
-  # # convert from GW to TWh
-  # mutate(value = value * 293.07107,
-  #        unit = "TWh") %>%
   mutate(scenario = case_when(
     scenario == "Core" ~ "IRA",
     TRUE ~ scenario
@@ -1337,13 +1373,14 @@ exclude_models = c(
 # generation in TWh
 generation_data_temp = generation_data
 colnames(generation_data_temp) = c("Model", "Generation.Fuel",
-                                   "Gen.NoIRA.2030","Gen.NoIRA.2035","Gen.IRA.2030","Gen.IRA.2035")
+                            "Gen.NoIRA.2030","Gen.NoIRA.2035","Gen.IRA.2030","Gen.IRA.2035")
 # capacity in GW
 capacity_data_temp = capacity_data
 colnames(capacity_data_temp) = c("Model", "Generation.Fuel",
-                                   "Cap.NoIRA.2030","Cap.NoIRA.2035","Cap.IRA.2030","Cap.IRA.2035")
+                            "Cap.NoIRA.2030","Cap.NoIRA.2035","Cap.IRA.2030","Cap.IRA.2035")
 
-cf_data = generation_data_temp %>% inner_join(capacity_data_temp, by = c("Model", "Generation.Fuel")) %>%
+cf_data = generation_data_temp %>% inner_join(capacity_data_temp, 
+                                              by = c("Model", "Generation.Fuel")) %>%
   mutate(CF.NoIRA.2030 = ((1000 * Gen.NoIRA.2030) / (8760 * Cap.NoIRA.2030)),
          CF.NoIRA.2035 = ((1000 * Gen.NoIRA.2035) / (8760 * Cap.NoIRA.2035)),
          CF.IRA.2030 = ((1000 * Gen.IRA.2030) / (8760 * Cap.IRA.2030)),
@@ -1354,7 +1391,8 @@ cf_data = generation_data_temp %>% inner_join(capacity_data_temp, by = c("Model"
 
 colnames(cf_data) = c("Model", "Generation.Fuel", "2030", "2035", "2030\r", "2035\r")
 
-cf_table = gt_elec_table(cf_data, "Electricity Generation Capacity Factors (%)", percent = TRUE)
+cf_table = gt_elec_table(cf_data, "Electricity Generation Capacity Factors (%)", 
+                         percent = TRUE)
 cf_table
 
 # having trouble saving this as a png for some reason...
@@ -1368,48 +1406,6 @@ cf_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,
 
 
 ```{r}
-gt_elec_table = function(raw_data, tab_title, percent = FALSE) {
-  my_table = raw_data %>% gt() %>%
-    tab_header(
-        title = gt::html(tab_title)
-    ) %>%
-    tab_spanner(label = "No IRA", columns = c("2030", "2035")) %>%
-    tab_spanner(label = "IRA", columns = c("2030\r", "2035\r")) %>%
-    tab_style(
-        style = list(
-          cell_borders(sides = "all", color = "#F2F2F2"),
-          cell_fill(color = "#F2F2F2", alpha = NULL),
-          cell_text(align = "center")
-        ), locations = cells_body()
-      ) %>% tab_style(
-        style = list(
-          cell_fill(color = "black"),
-          cell_text(color = "white", weight = "normal", align = "center")
-        ), locations = cells_column_labels()
-      ) %>% tab_style(
-        style = list(
-          cell_fill(color = "black"),
-          cell_text(color = "white", weight = "bold")
-        ), locations = cells_column_spanners()
-      ) %>% tab_style(
-        style = list(
-          cell_borders(sides = "right", color = "#DCDCDC", weight = "2px"),
-          cell_text(weight = "normal", align = "left")
-        ), locations = cells_body(columns = c(1))
-      ) %>% tab_style(
-        style = list(
-          cell_text(weight = "normal", color = "black", align = "left"),
-          cell_fill(color = "#C9C9C9")
-        ), locations = cells_row_groups()
-      ) %>%
-    sub_missing(columns = 2:6, missing_text = "-")
-  
-  if (percent) {
-    my_table = my_table %>% fmt_percent(decimals = 0, use_seps = TRUE, columns = 2:6)
-  } else {
-    my_table = my_table %>% fmt_number(decimals = 0, use_seps = TRUE, columns = 2:6)
-  }
-  return(my_table)
-}
+
 
 ```

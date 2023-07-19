@@ -1051,3 +1051,47 @@ write_sheet = function(data, wb, sheetname) {
   writeData(wb, sheet = sheetname, data)
 
 }
+
+gt_elec_table = function(raw_data, tab_title, percent = FALSE) {
+  my_table = raw_data %>% gt() %>%
+    tab_header(
+      title = gt::html(tab_title)
+    ) %>%
+    tab_spanner(label = "No IRA", columns = c("2030", "2035")) %>%
+    tab_spanner(label = "IRA", columns = c("2030\r", "2035\r")) %>%
+    tab_style(
+      style = list(
+        cell_borders(sides = "all", color = "#F2F2F2"),
+        cell_fill(color = "#F2F2F2", alpha = NULL),
+        cell_text(align = "center")
+      ), locations = cells_body()
+    ) %>% tab_style(
+      style = list(
+        cell_fill(color = "black"),
+        cell_text(color = "white", weight = "normal", align = "center")
+      ), locations = cells_column_labels()
+    ) %>% tab_style(
+      style = list(
+        cell_fill(color = "black"),
+        cell_text(color = "white", weight = "bold")
+      ), locations = cells_column_spanners()
+    ) %>% tab_style(
+      style = list(
+        cell_borders(sides = "right", color = "#DCDCDC", weight = "2px"),
+        cell_text(weight = "normal", align = "left")
+      ), locations = cells_body(columns = c(1))
+    ) %>% tab_style(
+      style = list(
+        cell_text(weight = "normal", color = "black", align = "left"),
+        cell_fill(color = "#C9C9C9")
+      ), locations = cells_row_groups()
+    ) %>%
+    sub_missing(columns = 2:6, missing_text = "-")
+
+  if (percent) {
+    my_table = my_table %>% fmt_percent(decimals = 0, use_seps = TRUE, columns = 2:6)
+  } else {
+    my_table = my_table %>% fmt_number(decimals = 0, use_seps = TRUE, columns = 2:6)
+  }
+  return(my_table)
+}
