@@ -24,7 +24,7 @@ spg_clean = function(ts_map_ID, drop, histsrc, config, clean_data, figmap_leep_t
         model == "GCAM-PNNL" ~ 1,
         model == "IPM-EPA" ~ 1,
         scenario == "Historic" ~ 1,
-        T ~ 0.6
+        T ~ 1
       )
     ) %>%
     filter(year <= 2021 &
@@ -51,7 +51,7 @@ spg2 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
     theme_emf() +
     scale_x_continuous(breaks = c(2005, 2010, 2021, 2025, 2030, 2035)) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = ybreaks, labels = yax_format) +
-    scale_alpha(range = c(0.5, 1), guide = F) +
+    scale_alpha(range = c(1, 1), guide = F) +
     labs(title = title,
          x = element_blank(),
          y = yname) +
@@ -85,7 +85,7 @@ spg2 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
 #         model == "GCAM-PNNL" ~ 1,
 #         model == "IPM-EPA" ~ 1,
 #         scenario == "Historic" ~ 1,
-#         T ~ 0.4
+#         T ~ 1
 #       )
 #     ) %>%
 #     filter(year <= 2021 &
@@ -104,7 +104,7 @@ spg2 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
 #     theme_emf() +
 #     scale_x_continuous(breaks = c(2005, 2021, 2025, 2030, 2035)) +
 #     scale_y_continuous(limits = c(ymin, ymax), breaks = ybreaks, labels = yax) +
-#     scale_alpha(range = c(0.5, 1), guide = F) +
+#     scale_alpha(range = c(1, 1), guide = F) +
 #     labs(title = title,
 #          x = element_blank(),
 #          y = yname) +
@@ -169,7 +169,7 @@ dotted = function(df, spg, metric, ymin, ymax, config, figmap_leep_timeseries) {
           axis.title.y = element_blank(), axis.title.x = element_blank(),
           axis.ticks = element_blank(), panel.border = element_blank(),
           legend.position = "none", plot.margin = margin(0,0,0,0))+
-    scale_alpha(range = c(0.6, 1), guide = F)
+    scale_alpha(range = c(1, 1), guide = F)
 
   # dot plot for 2035
   dots_35 = ggplot() +
@@ -185,7 +185,7 @@ dotted = function(df, spg, metric, ymin, ymax, config, figmap_leep_timeseries) {
           axis.title.y = element_blank(), axis.title.x = element_blank(),
           axis.ticks = element_blank(), panel.border = element_blank(),
           legend.position = "none", plot.margin = margin(0,0,0,0))+
-    scale_alpha(range = c(0.6, 1), guide = F)
+    scale_alpha(range = c(1, 1), guide = F)
 
   figure = spg + dots_30 + dots_35 +
     plot_layout(widths = c(10,1,1)) +
@@ -535,6 +535,79 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
   ))
 }
 
+delta = function(pd_map_ID, drop, config, clean_data, figmap_leep_timeseries) {
 
+  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+
+
+  df = data_from_graph(
+    "time_series",
+    config,
+    clean_data,
+    figmap_leep_timeseries,
+    pd_map_ID,
+    "United States"
+  ) %>%
+    filter(!scenario == "No IRA") %>%
+    filter(year > 2021) %>%
+    filter(!model %in% drop) %>%
+    group_by(model, year, scenario, variable_rename) %>%
+    summarize(value= sum(value))
+
+  medians = df %>%
+    group_by(year) %>%
+    summarize(median = median(value))
+  med_hist = medians %>%
+    filter(year == 2030) %>%
+    mutate(year = 2021) %>%
+    mutate(median = 0)
+
+  medians = rbind(medians, med_hist)
+
+  medians = medians %>%
+    filter(year %in% c(2021, 2025, 2030, 2035))
+
+  #Set 2021 value to zero for all models
+  hist <- df %>%
+    group_by(model) %>%
+    slice(1) %>%
+    mutate(scenario = "IRA",
+           value = 0,
+           year = 2021)
+
+  #Stitch it back together with main data
+  df <- rbind(df, hist)
+
+  df = df %>%
+    filter(year %in% c(2021, 2025, 2030, 2035))
+
+  figure = ggplot() +
+    geom_line(data = df, aes(
+      x = year,
+      y = value,
+      group = model,
+      color = scenario,
+      alpha = 0.5),
+      size = 0.75) +
+    #    geom_point(aes(x = 2021, y = 0), color = "black") +
+    geom_line(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black", size = 0.75
+    ) +
+    scale_subpalette(subpalettes, "Final Energy")+ #Standard subpallete
+    labs(title = "",
+         x = "",
+         y = expression("% Difference from No IRA")) +
+    theme_emf() +
+    theme(
+      axis.ticks = element_blank(),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))
+  return(list(figure = figure, medians = medians, df = df))
+}
 
 

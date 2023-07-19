@@ -76,8 +76,8 @@ Tot_data = spg_clean(
 
 TotSpg = spg2(
   Tot_data,
-  expression(paste("Total Building C", O[2])),
-  expression(paste("Emissions (Mt C", O[2], "/yr)")),
+  "",
+  expression(paste("Building C", O[2], "Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
   0,
   2500,
@@ -92,6 +92,9 @@ TotSpg = spg2(
 
 TotDot = dotted(TotSpg$data, TotSpg$figure, "median", 0, 2500, config, figmap_leep_timeseries)
 TotDot
+
+delta = delta(29, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
+saveall(delta$figure, delta$df, paste(fig_no, "delta"))
 
 TotTab = html(TotSpg$data, "Total Building CO<sub>2<sub>")
 
