@@ -103,7 +103,7 @@ Tran_data = spg_clean(
 TranSpg = spg2(
   Tran_data,
   "",
-  expression(paste("Emissions (Mt C", O[2], "/yr)")),
+  expression(paste("Transportation C", O[2], "Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
   0,
   2500,
@@ -118,6 +118,9 @@ TranSpg = spg2(
 
 fig = dotted(TranSpg$data, TranSpg$figure, "median", 0, 2500, config, figmap_leep_timeseries)
 fig
+
+delta = delta(27, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
+saveall(delta$figure, delta$df, paste(fig_no, "delta"))
 
 TranSpg$data = clean_supplemental_data(TranSpg$data, fig_no)
 

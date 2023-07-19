@@ -58,10 +58,10 @@ dta4 = clean_supplemental_data(dta4, fig_no)
 saveall(p4, dta4, fig_no)
 ```
 
-## 5.2 industry total co2 emissions 
+## 5.3 industry total co2 emissions 
 
 ```{r}
-fig_no = 5.2
+fig_no = 5.3
 
 Ind_data = spg_clean(
   21, 
@@ -74,7 +74,7 @@ Ind_data = spg_clean(
 IndSpg = spg2(
   Ind_data,
   "",
-  expression(paste("Emissions (Mt C", O[2], "/yr)")),
+  expression(paste("Industry C", O[2], "Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
   0,
   2500,
@@ -95,6 +95,8 @@ IndDot
 
 IndSpg$data = clean_supplemental_data(IndSpg$data, fig_no)
 
+delta = delta(28, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
+saveall(delta$figure, delta$df, paste(fig_no, "delta"))
 
 savefig(IndDot, fig_no)
 savedata(IndSpg$data, fig_no)
