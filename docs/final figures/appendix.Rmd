@@ -380,9 +380,9 @@ drop = c("IPM-EPA", "IPM-NRDC")
 histsrc = "EPA-GHGI"
 metric = "Emissions"
 unit = "Mt CO2/yr"
-ymin = 0
+ymin = 500
 ymax = 1600
-brk = c(0, 500, 1000, 1500)
+brk = c(500, 1000, 1500)
 
 fig = four_corners("Industry CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
