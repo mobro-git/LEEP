@@ -1,0 +1,142 @@
+"figure_num","model","scenario","variable","unit","year","variable_rename","value"
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2005,"Total Building Emissions",2245
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2006,"Total Building Emissions",2161.9
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2007,"Total Building Emissions",2255.4
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2008,"Total Building Emissions",2233.4
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2009,"Total Building Emissions",2103.6
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2010,"Total Building Emissions",2172.4
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2011,"Total Building Emissions",2079.7
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2012,"Total Building Emissions",1908.9
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2013,"Total Building Emissions",1992.5
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2014,"Total Building Emissions",2018.6
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2015,"Total Building Emissions",1908.7
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2016,"Total Building Emissions",1811.4
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2017,"Total Building Emissions",1748.7
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2018,"Total Building Emissions",1831.3
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2019,"Total Building Emissions",1728.5
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2020,"Total Building Emissions",1567.3
+4.2,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"EPS-EI","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"EPS-EI","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1386.2317499
+4.2,"EPS-EI","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",919.1842197
+4.2,"EPS-EI","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",723.3525795
+4.2,"EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1535.0775291
+4.2,"EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1396.5540182
+4.2,"EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1358.8167987
+4.2,"GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1250.4103539
+4.2,"GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",924.9101101
+4.2,"GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",752.9288417
+4.2,"GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1559.6870112
+4.2,"GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1479.3062611
+4.2,"GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1428.9594397
+4.2,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1279.29474111474
+4.2,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1039.45558035695
+4.2,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",974.247574611141
+4.2,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1391.5012
+4.2,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1346.2546
+4.2,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1261.0282
+4.2,"MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1323.266646
+4.2,"MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1140.9326735
+4.2,"MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",778.0950571
+4.2,"MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1348.870899
+4.2,"MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1296.974445
+4.2,"MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1335.512155
+4.2,"NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1502.789795
+4.2,"NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1127.282226
+4.2,"NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1077.198486
+4.2,"NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2022,"Total Building Emissions",1681.863647
+4.2,"NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2023,"Total Building Emissions",1597.620667
+4.2,"NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2024,"Total Building Emissions",1575.418457
+4.2,"NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2026,"Total Building Emissions",1405.377929
+4.2,"NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2027,"Total Building Emissions",1306.146607
+4.2,"NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2028,"Total Building Emissions",1228.785217
+4.2,"NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2029,"Total Building Emissions",1169.081665
+4.2,"NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2031,"Total Building Emissions",1111.676117
+4.2,"NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2032,"Total Building Emissions",1106.754303
+4.2,"NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2033,"Total Building Emissions",1100.851685
+4.2,"NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2034,"Total Building Emissions",1085.891388
+4.2,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1528.168823
+4.2,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1420.761658
+4.2,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1353.036682
+4.2,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2022,"Total Building Emissions",1682.544067
+4.2,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2023,"Total Building Emissions",1603.311218
+4.2,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2024,"Total Building Emissions",1577.72168
+4.2,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2026,"Total Building Emissions",1492.344483
+4.2,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2027,"Total Building Emissions",1465.398133
+4.2,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2028,"Total Building Emissions",1451.571838
+4.2,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2029,"Total Building Emissions",1441.355224
+4.2,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2031,"Total Building Emissions",1395.739258
+4.2,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2032,"Total Building Emissions",1375.646667
+4.2,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2033,"Total Building Emissions",1369.787903
+4.2,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2034,"Total Building Emissions",1363.819031
+4.2,"NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1392.498596
+4.2,"NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",996.53479
+4.2,"NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",823.456421
+4.2,"NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2022,"Total Building Emissions",1673.600891
+4.2,"NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2023,"Total Building Emissions",1627.560058
+4.2,"NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2024,"Total Building Emissions",1501.470459
+4.2,"NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2026,"Total Building Emissions",1308.940308
+4.2,"NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2027,"Total Building Emissions",1233.439514
+4.2,"NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2028,"Total Building Emissions",1150.805115
+4.2,"NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2029,"Total Building Emissions",1064.17279
+4.2,"NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2031,"Total Building Emissions",964.739807
+4.2,"NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2032,"Total Building Emissions",947.274231
+4.2,"NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2033,"Total Building Emissions",900.058502
+4.2,"NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2034,"Total Building Emissions",856.770294
+4.2,"NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1458.917358
+4.2,"NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1297.052856
+4.2,"NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1214.528747
+4.2,"NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2022,"Total Building Emissions",1673.424256
+4.2,"NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2023,"Total Building Emissions",1627.039551
+4.2,"NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2024,"Total Building Emissions",1520.964721
+4.2,"NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2026,"Total Building Emissions",1417.56836
+4.2,"NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2027,"Total Building Emissions",1390.483032
+4.2,"NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2028,"Total Building Emissions",1368.510743
+4.2,"NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2029,"Total Building Emissions",1328.103393
+4.2,"NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2031,"Total Building Emissions",1289.804749
+4.2,"NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2032,"Total Building Emissions",1279.435669
+4.2,"NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2033,"Total Building Emissions",1268.216857
+4.2,"NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2034,"Total Building Emissions",1242.344604
+4.2,"NEMS-RHG","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"NEMS-RHG","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1448.5280226
+4.2,"NEMS-RHG","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",915.6847613
+4.2,"NEMS-RHG","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",967.4751029
+4.2,"NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1377.4218872
+4.2,"NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1281.0621768
+4.2,"NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1210.8780336
+4.2,"REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1337.1696388
+4.2,"REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1071.8324072
+4.2,"REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",737.8205431
+4.2,"REGEN-EPRI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"REGEN-EPRI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1364.4889913
+4.2,"REGEN-EPRI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1180.6008859
+4.2,"REGEN-EPRI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1104.5819103
+4.2,"RIO-REPEAT","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"RIO-REPEAT","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1696.011948
+4.2,"RIO-REPEAT","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1091.908867
+4.2,"RIO-REPEAT","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",759.9757046
+4.2,"RIO-REPEAT","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"RIO-REPEAT","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1691.670964
+4.2,"RIO-REPEAT","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1317.4864301
+4.2,"RIO-REPEAT","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1133.3756825
+4.2,"USREP-ReEDS","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"USREP-ReEDS","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1240.8256929
+4.2,"USREP-ReEDS","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",826.8316008
+4.2,"USREP-ReEDS","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",666.1815082
+4.2,"USREP-ReEDS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+4.2,"USREP-ReEDS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1475.6308269
+4.2,"USREP-ReEDS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1276.5641196
+4.2,"USREP-ReEDS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1136.7822893
