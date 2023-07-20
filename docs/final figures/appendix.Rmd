@@ -2101,9 +2101,9 @@ savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 
 # Appendix YY
 
-### yy.1
+### YY.1
 ```{r}
-fig_no = "yy.1"
+fig_no = "YY.1"
 
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 names(subpalettes$`Emissions|CO2|Energy|Demand|Industry`) = c("2021", "No IRA", "IRA")
@@ -2860,9 +2860,9 @@ savefig(final, fig_no, wd = 8)
 
 ```
 
-### yy.2
+### YY.2
 ```{r}
-fig_no = "yy.2"
+fig_no = "YY.2"
 
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
@@ -3568,6 +3568,1536 @@ savefig(final, fig_no, wd = 8)
 
 ```
 
+
+### Table YY Total
+
+```{r}
+
+title = "YY.Total Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  group_by(scenario, model, year) %>%
+  summarise(value = sum(value)) %>%
+  mutate(variable_rename = "Total")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+```
+
+### Table YY Low
+
+```{r}
+
+title = "YY.Low Emitting Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  filter(variable_rename == "CCS" | 
+         variable_rename == "Other" |
+         variable_rename == "Nuclear" |
+         variable_rename == "Solar" |
+         variable_rename == "Wind"
+) %>%
+  group_by(scenario, model, year) %>%
+  summarise(value = sum(value)) %>%
+  mutate(variable_rename = "Total_Low")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+
+
+
+
+```
+
+### Table YY High
+
+```{r}
+
+title = "YY.High Emitting Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  filter(variable_rename == "Coal" |
+         variable_rename == "Natural Gas" |
+         variable_rename == "Oil"
+) %>%
+  group_by(scenario, model, year) %>%
+  summarise(value = sum(value)) %>%
+  mutate(variable_rename = "Total_High")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+
+
+
+
+```
+
+### Table YY Wind
+
+```{r}
+
+title = "YY.Wind Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value)) %>%
+  filter(variable_rename == "Wind")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+
+
+
+
+```
+
+### Table YY Solar
+
+```{r}
+
+title = "YY.Solar Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value)) %>%
+  filter(variable_rename == "Solar")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+
+
+
+
+```
+
+### Table YY Nuclear
+
+```{r}
+
+title = "YY.Nuclear Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value)) %>%
+  filter(variable_rename == "Nuclear")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+
+
+
+
+```
+
+### Table YY CCS
+
+```{r}
+
+title = "YY.CCS Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value)) %>%
+  filter(variable_rename == "CCS")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+
+
+
+
+```
+
+### Table YY Coal
+
+```{r}
+
+title = "YY.Coal Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value)) %>%
+  filter(variable_rename == "Coal")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+
+
+
+
+```
+
+### Table YY Gas
+
+```{r}
+
+title = "YY.Nautural Gas Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value)) %>%
+  filter(variable_rename == "Natural Gas")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+
+
+
+
+```
+
+### Table YY Other
+
+```{r}
+
+title = "YY.Other Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value)) %>%
+  filter(variable_rename == "Other")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+```
 
 
 
