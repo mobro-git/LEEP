@@ -179,6 +179,22 @@ clean_data15 = clean_data %>%
   )) %>%
   filter(!(model %in% exclude_models))
 
+clean_data_hist_ira = clean_data15 %>%
+  filter(model == "EIA",
+         scenario == "Historic",
+         datasrc == "EIA-EPA-bistline_historic.csv",
+         year == 2021) %>%
+  mutate(scenario = "IRA", year = 2035)
+
+clean_data_hist_noira = clean_data15 %>%
+  filter(model == "EIA",
+         scenario == "Historic",
+         datasrc == "EIA-EPA-bistline_historic.csv",
+         year == 2021) %>%
+  mutate(scenario = "No IRA", year = 2035)
+
+clean_data15 = bind_rows(clean_data15, clean_data_hist_noira, clean_data_hist_ira)
+
 models_alph = sort(unique(clean_data15$model))
 
 model_renamer = c(
@@ -215,7 +231,8 @@ dta_noira = dta %>% filter(scenario == "No IRA") %>%
   select(model, year, variable_rename, value) %>%
   rename(value_noira= value)
 
-dta_full = dta_ira %>% inner_join(dta_noira, by = c("model", "year", "variable_rename")) %>%
+dta_full = dta_ira %>% 
+  inner_join(dta_noira, by = c("model", "year", "variable_rename")) %>%
   mutate(diff = value_ira - value_noira) %>%
   mutate(model = factor(model, levels = models_alph)) %>%
   pivot_longer(cols = c("value_ira", "value_noira", "diff"), names_to = "metric") %>%
@@ -233,7 +250,7 @@ p = dta_full %>% ggplot() +
   geom_hline(yintercept = 0, color = "black", linewidth = 0.5) +
   scale_x_continuous(breaks = c(2030, 2035), labels = c("2030", "2035"), position = "top") + 
   scale_y_continuous(expand = expansion(mult = c(0.02,0.02)), labels = scales::comma, #limits = c(-3000, 7500),
-                    name = expression("Difference in Generation from No IRA (TWh)")) +
+                    name = expression("Generation (TWh)")) +
   # facetted_pos_scales(
   #   y = list(
   #     metric == "value_ira" ~ scale_y_continuous(limits = c(0,6500), expand = expansion(mult = c(0.02, 0.02)), labels = scales::comma,
@@ -246,14 +263,12 @@ p = dta_full %>% ggplot() +
   theme(axis.ticks = element_blank(), axis.text.x = element_text(angle = 90, hjust = 1),
         strip.text.x = element_text(face = "plain", angle = 90, hjust = 1, size = 7),
         axis.title.x = element_blank())
-
 p
 
 saveall(p, dta_full, fig_no)
 ```
 
-
-## F2.5 historical and projected capacity additions by technology
+## F2.5 capacity additions by technology
 
 ```{r}
 fig_no = 2.5

@@ -2915,715 +2915,6 @@ savefig(final, fig_no, wd = 8)
 
 ```
 
-## Differences
-
-```{r}
-fig_no = "I.2"
-
-subpalettes = create_subpalettes(figmap_leep_timeseries, config)
-
-fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
-
-fig$data <- fig$data %>%
-  filter(year == 2030 | year == 2035)%>%
-  filter(!model == "EIA") %>%
-  filter(!model == "EIA-STEO") %>%
-  mutate(value = value/0.0036, 
-         unit = "TWh")
-
-ymin = -2000
-ymax = 2000
-metric = "median"
-
-total <- fig$data %>%
-  group_by(scenario, model, year) %>%
-  summarise(value = sum(value)) %>%
-  mutate(variable_rename = "Total")%>%
-  mutate(alpha = case_when(
-    model == "USREP-ReEDS" ~ 1, 
-    model == "GCAM-PNNL" ~ 1, 
-    model == "IPM-EPA" ~ 1,
-    scenario == "Historic" ~ 1,
-    T ~ 1
-  )) %>% ungroup()
-
-total = total %>%
-  pivot_wider(
-    names_from = scenario, values_from = value
-  ) %>%
-  mutate(abs_dif = IRA - `No IRA`)
-
-low <- fig$data %>%
-  filter(variable_rename == "CCS" | 
-         variable_rename == "Other" |
-         variable_rename == "Nuclear" |
-         variable_rename == "Solar" |
-         variable_rename == "Wind"
-) %>%
-  group_by(scenario, model, year) %>%
-  summarise(value = sum(value)) %>%
-  mutate(variable_rename = "Total_Low")%>%
-  mutate(alpha = case_when(
-    model == "USREP-ReEDS" ~ 1, 
-    model == "GCAM-PNNL" ~ 1, 
-    model == "IPM-EPA" ~ 1,
-    scenario == "Historic" ~ 1,
-    T ~ 1
-  )) %>% ungroup()
-
-low = low %>%
-  pivot_wider(
-    names_from = scenario, values_from = value
-  ) %>%
-  mutate(abs_dif = IRA - `No IRA`)
-
-high <- fig$data %>%
-  filter(variable_rename == "Coal" |
-         variable_rename == "Natural Gas" |
-         variable_rename == "Oil"
-) %>%
-  group_by(scenario, model, year) %>%
-  summarise(value = sum(value)) %>%
-  mutate(variable_rename = "Total_High")%>%
-  mutate(alpha = case_when(
-    model == "USREP-ReEDS" ~ 1, 
-    model == "GCAM-PNNL" ~ 1, 
-    model == "IPM-EPA" ~ 1,
-    scenario == "Historic" ~ 1,
-    T ~ 1
-  ))%>% ungroup()
-
-high = high %>%
-  pivot_wider(
-    names_from = scenario, values_from = value
-  ) %>%
-  mutate(abs_dif = IRA - `No IRA`)
-
-
-individual <- fig$data %>%
-  mutate(
-    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
-                                T ~ variable_rename)
-  ) %>%
-  group_by(year, variable_rename, model, scenario) %>%
-  summarise(value = sum(value))%>%
-  mutate(alpha = case_when(
-    model == "USREP-ReEDS" ~ 1, 
-    model == "GCAM-PNNL" ~ 1, 
-    model == "IPM-EPA" ~ 1,
-    scenario == "Historic" ~ 1,
-    T ~ 1
-  ))%>% ungroup()
-
-individual = individual %>%
-  pivot_wider(
-    names_from = scenario, values_from = value
-  ) %>%
-  mutate(abs_dif = IRA - `No IRA`)
-
-##### All Total #####
-
-df_30 = total %>%
-  filter(year %in% c(2030))
-df_stat_30 = df_30 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif)) %>%
-  mutate(scenario = "IRA")
-  
-
-df_35 = total %>%
-  filter(year %in% c(2035))
-df_stat_35 = df_35 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-# 
-# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
-# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
-# 
-# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
-# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
-# 
-# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
-#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
-
-data = rbind(df_30, df_35) 
-
-data_total <- data %>%
-  mutate(axe = case_when(
-    year == 2030 ~ 1, 
-    year == 2035 ~ 2
-  )) %>%
-  mutate(scenario = "IRA")
-
-
-dots_Total = ggplot(data = data_total, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
-    facet_wrap(~"Total Generation") +
-    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
-    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
-    theme_emf() +
-    labs(y = "Difference in Generation (TWh) from No IRA") +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(
-          axis.title.x = element_blank(),
-          axis.title.y = element_text(size = 7),
-          axis.ticks = element_blank(),
-          legend.position = "none", 
-          plot.margin = margin(0,0,0,0)) + 
-  scale_alpha(range = c(0.6, 1), guide = F)
-
-savedata(data_total, paste(fig_no, "Total"))
-
-##### Low Total #####
-
-
-df_30 = low %>%
-  filter(year %in% c(2030))
-df_stat_30 = df_30 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-df_35 = low %>%
-  filter(year %in% c(2035))
-df_stat_35 = df_35 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
-# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
-# 
-# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
-# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
-# 
-# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
-#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
-
-data = rbind(df_30, df_35) 
-
-data_Low <- data %>%
-  mutate(axe = case_when(
-    year == 2030 ~ 1, 
-    year == 2035 ~ 2
-  )) %>%
-  mutate(scenario = "IRA")
-
-dots_Low = ggplot(data = data_Low, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
-    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
-    facet_wrap(~"Low or Zero Emitting Generation") +
-    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
-    theme_emf() +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(
-          axis.title.y = element_blank(), 
-          axis.text.y = element_blank(),
-          axis.title.x = element_blank(),
-          axis.ticks = element_blank(),
-          legend.position = "none", 
-          plot.margin = margin(0,0,0,0)) + 
-  scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Low, paste(fig_no, "Low"))
-
-##### High Total #####
- 
-  
-
-df_30 = high %>%
-  filter(year %in% c(2030))
-df_stat_30 = df_30 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-
-df_35 = high %>%
-  filter(year %in% c(2035))
-df_stat_35 = df_35 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-
-# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
-# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
-# 
-# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
-# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
-# 
-# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
-#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
-
-data = rbind(df_30, df_35) 
-
-data_High <- data %>%
-  mutate(axe = case_when(
-    year == 2030 ~ 1, 
-    year == 2035 ~ 2
-  )) %>%
-  mutate(scenario = "IRA")
-
-dots_High = ggplot(data = data_High, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
-    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
-    facet_wrap(~"High Emitting Generation") +
-    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
-    theme_emf() +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(
-          axis.title.y = element_blank(), 
-          axis.text.y = element_blank(),
-          axis.title.x = element_blank(),
-          axis.ticks = element_blank(),
-          legend.position = "none", 
-          plot.margin = margin(0,0,0,0)) + 
-  scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_High, paste(fig_no, "High"))
-
-##### Nuclear #####
- 
-  
-
-df_30 = individual[individual$variable_rename == "Nuclear", ] %>%
-  filter(year %in% c(2030))
-df_stat_30 = df_30 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-
-df_35 = individual[individual$variable_rename == "Nuclear", ] %>%
-  filter(year %in% c(2035))
-df_stat_35 = df_35 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-
-# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
-# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
-# 
-# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
-# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
-# 
-# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
-#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
-
-data = rbind(df_30, df_35) 
-
- 
-
-data_Nuclear <- data %>%
-  mutate(axe = case_when(
-    year == 2030 ~ 1, 
-    year == 2035 ~ 2
-  )) %>%
-  mutate(scenario = "IRA")
-
-dots_Nuclear = ggplot(data = data_Nuclear, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
-    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
-    facet_wrap(~"Nuclear") +
-    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
-    theme_emf() +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(
-          axis.title.y = element_blank(), 
-          axis.text.y = element_blank(),
-          axis.title.x = element_blank(),
-          axis.ticks = element_blank(),
-          legend.position = "none", 
-          plot.margin = margin(0,0,0,0)) + 
-  scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Nuclear, paste(fig_no, "Nuclear"))
-
-##### Solar #####
- 
-  
-
-df_30 = individual[individual$variable_rename == "Solar", ] %>%
-  filter(year %in% c(2030))
-df_stat_30 = df_30 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-
-df_35 = individual[individual$variable_rename == "Solar", ] %>%
-  filter(year %in% c(2035))
-df_stat_35 = df_35 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-
-# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
-# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
-# 
-# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
-# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
-# 
-# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
-#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
-
-data = rbind(df_30, df_35) 
-
- 
-
-data_Solar <- data %>%
-  mutate(axe = case_when(
-    year == 2030 ~ 1, 
-    year == 2035 ~ 2
-  )) %>%
-  mutate(scenario = "IRA")
-
-dots_Solar = ggplot(data = data_Solar, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
-    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
-    facet_wrap(~"Solar") +
-    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
-    theme_emf() +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(
-          axis.title.y = element_blank(), 
-          axis.text.y = element_blank(),
-          axis.title.x = element_blank(),
-          axis.ticks = element_blank(),
-          legend.position = "none", 
-          plot.margin = margin(0,0,0,0)) + 
-  scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Solar, paste(fig_no, "Solar"))
-
-##### Wind #####
- 
-  
-
-df_30 = individual[individual$variable_rename == "Wind", ] %>%
-  filter(year %in% c(2030))
-df_stat_30 = df_30 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-
-df_35 = individual[individual$variable_rename == "Wind", ] %>%
-  filter(year %in% c(2035))
-df_stat_35 = df_35 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-
-# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
-# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
-# 
-# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
-# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
-# 
-# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
-#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
-
-data = rbind(df_30, df_35) 
-
- 
-
-data_Wind <- data %>%
-  mutate(axe = case_when(
-    year == 2030 ~ 1, 
-    year == 2035 ~ 2
-  )) %>%
-  mutate(scenario = "IRA")
-
-dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
-    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
-    facet_wrap(~"Wind") +
-    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
-    theme_emf() +
-    labs(y = "Difference in Generation (TWh) from No IRA") +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(
-          axis.title.x = element_blank(),
-          axis.title.y = element_text(size = 7),
-          axis.ticks = element_blank(),
-          legend.position = "none", 
-          plot.margin = margin(0,0,0,0)) + 
-  scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Wind, paste(fig_no, "Wind"))
-
-##### CCS #####
- 
-  
-
-df_30 = individual[individual$variable_rename == "CCS", ] %>%
-  filter(year %in% c(2030))
-df_stat_30 = df_30 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-
-df_35 = individual[individual$variable_rename == "CCS", ] %>%
-  filter(year %in% c(2035))
-df_stat_35 = df_35 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-
-# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
-# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
-# 
-# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
-# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
-# 
-# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
-#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
-
-data = rbind(df_30, df_35) 
-
- 
-
-data_CCS <- data %>%
-  mutate(axe = case_when(
-    year == 2030 ~ 1, 
-    year == 2035 ~ 2
-  )) %>%
-  mutate(scenario = "IRA")
-
-dots_CCS = ggplot(data = data_CCS, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
-    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
-    facet_wrap(~"CCS") +
-    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
-    theme_emf() +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(
-          axis.title.y = element_blank(), 
-          axis.text.y = element_blank(),
-          axis.title.x = element_blank(),
-          axis.ticks = element_blank(),
-          legend.position = "none", 
-          plot.margin = margin(0,0,0,0)) + 
-  scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_CCS, paste(fig_no, "CCS"))
-
-##### Coal #####
- 
-  
-
-df_30 = individual[individual$variable_rename == "Coal", ] %>%
-  filter(year %in% c(2030))
-df_stat_30 = df_30 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-
-df_35 = individual[individual$variable_rename == "Coal", ] %>%
-  filter(year %in% c(2035))
-df_stat_35 = df_35 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-
-# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
-# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
-# 
-# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
-# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
-# 
-# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
-#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
-
-data = rbind(df_30, df_35) 
-
- 
-
-data_Coal <- data %>%
-  mutate(axe = case_when(
-    year == 2030 ~ 1, 
-    year == 2035 ~ 2
-  )) %>%
-  mutate(scenario = "IRA")
-
-dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
-    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
-    facet_wrap(~"Coal") +
-    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
-    theme_emf() +
-    labs(y = "Difference in Generation (TWh) from No IRA") +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(
-          axis.title.x = element_blank(),
-          axis.title.y = element_text(size = 7),
-          axis.ticks = element_blank(),
-          legend.position = "none", 
-          plot.margin = margin(0,0,0,0)) + 
-  scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Coal, paste(fig_no, "Coal"))
-
-##### Gas #####
- 
-  
-
-df_30 = individual[individual$variable_rename == "Natural Gas", ] %>%
-  filter(year %in% c(2030))
-df_stat_30 = df_30 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-
-df_35 = individual[individual$variable_rename == "Natural Gas", ] %>%
-  filter(year %in% c(2035))
-df_stat_35 = df_35 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-
-# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
-# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
-# 
-# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
-# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
-# 
-# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
-#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
-
-data = rbind(df_30, df_35) 
-
- 
-
-data_Gas <- data %>%
-  mutate(axe = case_when(
-    year == 2030 ~ 1, 
-    year == 2035 ~ 2
-  )) %>%
-  mutate(scenario = "IRA")
-
-dots_Gas = ggplot(data = data_Gas, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
-    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
-    facet_wrap(~"Natural Gas") +
-    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
-    theme_emf() +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(
-          axis.title.y = element_blank(), 
-          axis.text.y = element_blank(),
-          axis.title.x = element_blank(),
-          axis.ticks = element_blank(),
-          legend.position = "none", 
-          plot.margin = margin(0,0,0,0)) + 
-  scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Gas, paste(fig_no, "Gas"))
-
-##### Other #####
- 
-  
-
-df_30 = individual[individual$variable_rename == "Other", ] %>%
-  filter(year %in% c(2030))
-df_stat_30 = df_30 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-
-df_35 = individual[individual$variable_rename == "Other", ] %>%
-  filter(year %in% c(2035))
-df_stat_35 = df_35 %>%
-  summarise(mean = mean(abs_dif),
-            median = median(abs_dif))%>%
-  mutate(scenario = "IRA")
-  
-
-# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
-# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
-# 
-# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
-# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
-# 
-# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
-#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
-
-data = rbind(df_30, df_35) 
-
- 
-
-data_Other <- data %>%
-  mutate(axe = case_when(
-    year == 2030 ~ 1, 
-    year == 2035 ~ 2
-  )) %>%
-  mutate(scenario = "IRA")
-
-dots_Other = ggplot(data = data_Other, aes(x = axe, y = abs_dif)) +
-  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
-  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
-    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
-    facet_wrap(~"Other") +
-    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
-    theme_emf() +
-    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(
-          axis.title.y = element_blank(), 
-          axis.text.y = element_blank(),
-          axis.title.x = element_blank(),
-          axis.ticks = element_blank(),
-          legend.position = "none", 
-          plot.margin = margin(0,0,0,0)) + 
-  scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Other, paste(fig_no, "Other"))
-
-##### Final #####
-final = (dots_Total | dots_Low | dots_High) / (dots_Wind | dots_Solar | dots_Nuclear | dots_CCS) / (dots_Coal | dots_Gas | dots_Other) 
-
-final = final + 
-  plot_layout(
-  guides = "collect"
-) & theme(legend.position = "bottom")
-final
-
-savefig(final, fig_no, wd = 8)
-
-```
-
 ### Tables
 
 ```{r}
@@ -5134,6 +4425,716 @@ write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
 IRA %>%
 tableHTML(caption = paste(title), rownames = F)
 ```
+
+## Differences
+
+```{r}
+fig_no = "I.2"
+
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+ymin = -2000
+ymax = 2000
+metric = "median"
+
+total <- fig$data %>%
+  group_by(scenario, model, year) %>%
+  summarise(value = sum(value)) %>%
+  mutate(variable_rename = "Total")%>%
+  mutate(alpha = case_when(
+    model == "USREP-ReEDS" ~ 1, 
+    model == "GCAM-PNNL" ~ 1, 
+    model == "IPM-EPA" ~ 1,
+    scenario == "Historic" ~ 1,
+    T ~ 1
+  )) %>% ungroup()
+
+total = total %>%
+  pivot_wider(
+    names_from = scenario, values_from = value
+  ) %>%
+  mutate(abs_dif = IRA - `No IRA`)
+
+low <- fig$data %>%
+  filter(variable_rename == "CCS" | 
+         variable_rename == "Other" |
+         variable_rename == "Nuclear" |
+         variable_rename == "Solar" |
+         variable_rename == "Wind"
+) %>%
+  group_by(scenario, model, year) %>%
+  summarise(value = sum(value)) %>%
+  mutate(variable_rename = "Total_Low")%>%
+  mutate(alpha = case_when(
+    model == "USREP-ReEDS" ~ 1, 
+    model == "GCAM-PNNL" ~ 1, 
+    model == "IPM-EPA" ~ 1,
+    scenario == "Historic" ~ 1,
+    T ~ 1
+  )) %>% ungroup()
+
+low = low %>%
+  pivot_wider(
+    names_from = scenario, values_from = value
+  ) %>%
+  mutate(abs_dif = IRA - `No IRA`)
+
+high <- fig$data %>%
+  filter(variable_rename == "Coal" |
+         variable_rename == "Natural Gas" |
+         variable_rename == "Oil"
+) %>%
+  group_by(scenario, model, year) %>%
+  summarise(value = sum(value)) %>%
+  mutate(variable_rename = "Total_High")%>%
+  mutate(alpha = case_when(
+    model == "USREP-ReEDS" ~ 1, 
+    model == "GCAM-PNNL" ~ 1, 
+    model == "IPM-EPA" ~ 1,
+    scenario == "Historic" ~ 1,
+    T ~ 1
+  ))%>% ungroup()
+
+high = high %>%
+  pivot_wider(
+    names_from = scenario, values_from = value
+  ) %>%
+  mutate(abs_dif = IRA - `No IRA`)
+
+
+individual <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value))%>%
+  mutate(alpha = case_when(
+    model == "USREP-ReEDS" ~ 1, 
+    model == "GCAM-PNNL" ~ 1, 
+    model == "IPM-EPA" ~ 1,
+    scenario == "Historic" ~ 1,
+    T ~ 1
+  ))%>% ungroup()
+
+individual = individual %>%
+  pivot_wider(
+    names_from = scenario, values_from = value
+  ) %>%
+  mutate(abs_dif = IRA - `No IRA`)
+
+##### All Total #####
+
+df_30 = total %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif)) %>%
+  mutate(scenario = "IRA")
+  
+
+df_35 = total %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+# 
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+data_total <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+
+dots_Total = ggplot(data = data_total, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    facet_wrap(~"Total Generation") +
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    labs(y = "Difference in Generation (TWh) from No IRA") +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.x = element_blank(),
+          axis.title.y = element_text(size = 7),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+
+savedata(data_total, paste(fig_no, "Total"))
+
+##### Low Total #####
+
+
+df_30 = low %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+df_35 = low %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+data_Low <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_Low = ggplot(data = data_Low, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"Low or Zero Emitting Generation") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Low, paste(fig_no, "Low"))
+
+##### High Total #####
+ 
+  
+
+df_30 = high %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+
+df_35 = high %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+data_High <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_High = ggplot(data = data_High, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"High Emitting Generation") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_High, paste(fig_no, "High"))
+
+##### Nuclear #####
+ 
+  
+
+df_30 = individual[individual$variable_rename == "Nuclear", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+df_35 = individual[individual$variable_rename == "Nuclear", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Nuclear <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_Nuclear = ggplot(data = data_Nuclear, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"Nuclear") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Nuclear, paste(fig_no, "Nuclear"))
+
+##### Solar #####
+ 
+  
+
+df_30 = individual[individual$variable_rename == "Solar", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+df_35 = individual[individual$variable_rename == "Solar", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Solar <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_Solar = ggplot(data = data_Solar, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"Solar") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Solar, paste(fig_no, "Solar"))
+
+##### Wind #####
+ 
+  
+
+df_30 = individual[individual$variable_rename == "Wind", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+df_35 = individual[individual$variable_rename == "Wind", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Wind <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"Wind") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    labs(y = "Difference in Generation (TWh) from No IRA") +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.x = element_blank(),
+          axis.title.y = element_text(size = 7),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Wind, paste(fig_no, "Wind"))
+
+##### CCS #####
+ 
+  
+
+df_30 = individual[individual$variable_rename == "CCS", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+df_35 = individual[individual$variable_rename == "CCS", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_CCS <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_CCS = ggplot(data = data_CCS, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"CCS") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_CCS, paste(fig_no, "CCS"))
+
+##### Coal #####
+ 
+  
+
+df_30 = individual[individual$variable_rename == "Coal", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+df_35 = individual[individual$variable_rename == "Coal", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Coal <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"Coal") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    labs(y = "Difference in Generation (TWh) from No IRA") +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.x = element_blank(),
+          axis.title.y = element_text(size = 7),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Coal, paste(fig_no, "Coal"))
+
+##### Gas #####
+ 
+  
+
+df_30 = individual[individual$variable_rename == "Natural Gas", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+df_35 = individual[individual$variable_rename == "Natural Gas", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Gas <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_Gas = ggplot(data = data_Gas, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"Natural Gas") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Gas, paste(fig_no, "Gas"))
+
+##### Other #####
+ 
+  
+
+df_30 = individual[individual$variable_rename == "Other", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+df_35 = individual[individual$variable_rename == "Other", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Other <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_Other = ggplot(data = data_Other, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"Other") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Other, paste(fig_no, "Other"))
+
+##### Final #####
+final = (dots_Total | dots_Low | dots_High) / (dots_Wind | dots_Solar | dots_Nuclear | dots_CCS) / (dots_Coal | dots_Gas | dots_Other) 
+
+final = final + 
+  plot_layout(
+  guides = "collect"
+) & theme(legend.position = "bottom")
+final
+
+savefig(final, fig_no, wd = 8)
+
+```
+
 
 
 
