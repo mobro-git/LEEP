@@ -1945,6 +1945,83 @@ cf_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,
 
 # Appendix XX
 
+## EconWide Direct/Indirect
+```{r}
+fig_no = "XX.1"
+
+Econ_data = spg_clean(
+  99,
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+  "EPA-GHGI",
+  config,
+  clean_data,
+  figmap_leep_timeseries
+)
+
+Elec_data = spg_clean(
+  98,
+  c("Scout-LEEP"),
+  "EPA-GHGI",
+  config,
+  clean_data,
+  figmap_leep_timeseries
+)
+
+Econ_merge = merge(Econ_data, Elec_data, by = c("model", "scenario", "year")) %>%
+  select(model, scenario, year, 
+         Econ = value.x, 
+         Power = value.y) %>%
+  mutate(value = Econ - Power) %>%
+  select(model, scenario, year, value) %>%
+  mutate(alpha = 1) %>%
+  mutate(variable_rename = "Non-Electricity")
+  
+
+EconSpg = spg2(
+  Econ_merge,
+  "Non-Electricity",
+  expression(paste("Emissions (Mt C", O[2], "/yr)")),
+  gd = "none",
+  0,
+  4000,
+  c(0, 2000, 4000),
+  scales::comma,
+  1,
+  c(2015, 3000),
+  c(2027.5, 3900),
+  c(2022, 2800),
+  config,
+  figmap_leep_timeseries)
+
+EconDot = dotted(EconSpg$data, EconSpg$figure, "median", 0, 4000, config, figmap_leep_timeseries)
+
+savedata(EconSpg$data, paste(fig_no, "EconWide"))
+
+  
+ElecSpg = spg2(Elec_data,
+  expression("Electricity"),
+  "",
+  gd = "none",
+  0,
+  4000,
+  c(0, 2000, 4000),
+  NULL,
+  0, 
+  c(2015, 3000), 
+  c(2027.5, 3900), 
+  c(2022, 3800), 
+  config, 
+  figmap_leep_timeseries)
+
+savedata(ElecSpg$data, paste(fig_no, "Electricity"))
+
+ElecDot = dotted(ElecSpg$data, ElecSpg$figure, "median", 0, 4000, config, figmap_leep_timeseries)
+
+fig = EconDot | ElecDot
+
+savefig(fig, fig_no)
+```
+
 ## Transportation Direct/Indirect
 ```{r}
 fig_no = "XX.2"
