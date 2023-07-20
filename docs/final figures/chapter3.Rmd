@@ -187,7 +187,7 @@ clean_data_evshare = rbind(raw, atr_2022, nems) %>%
       model == "GCAM-PNNL" ~ 1,
       model == "IPM-EPA" ~ 1,
       scenario == "Historic" ~ 1,
-      T ~ 0.6
+      T ~ 1
   )) %>%
   mutate(value = case_when(year == 2022 & model == "NEMS-OP" ~ 100 * atr_2022$value[1], 
                            TRUE ~ value))
