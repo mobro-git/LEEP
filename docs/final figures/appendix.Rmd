@@ -27,13 +27,14 @@ targets::tar_load(figmap_leep_timeseries)
 targets::tar_load(figmap_leep_cone)
 targets::tar_load(figmap_leep_stackbar)
 targets::tar_load(figmap_leep_diffbar)
+targets::tar_load(data_raw)
+targets::tar_load(data_min)
 
 # palettes
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 ```
 
 # Appendix A
-
 
 ## Emissions Summary Tables
 
@@ -85,7 +86,9 @@ tab_a5 = summary_tables(
   config = config
 )
 ```
+
 ## Table ES1 - for lack of a better place to put it
+
 ```{r}
 fig_no = "ES.1"
 
@@ -400,7 +403,7 @@ savefig(fig$figure, fig_no)
 
 ### Coal
 
-```{r} 
+```{r}
 fig_no = "Ap.6.Coal"
 
 ts_map_ID = 94
@@ -427,7 +430,7 @@ savefig(fig$figure, fig_no)
 
 ### Gas
 
-```{r} 
+```{r}
 fig_no = "Ap.7.Gas"
 
 ts_map_ID = 93
@@ -454,7 +457,7 @@ savefig(fig$figure, fig_no)
 
 ### Petroleum
 
-```{r} 
+```{r}
 fig_no = "Ap.8.Petrol"
 
 ts_map_ID = 92
@@ -483,7 +486,7 @@ savefig(fig$figure, fig_no)
 
 ### Nuclear
 
-```{r} 
+```{r}
 fig_no = "Ap.9.NuclearGen"
 
 ts_map_ID = 91
@@ -510,7 +513,7 @@ savefig(fig$figure, fig_no)
 
 ### Solar
 
-```{r} 
+```{r}
 fig_no = "Ap.10.SolarGen"
 
 ts_map_ID = 90
@@ -537,7 +540,7 @@ savefig(fig$figure, fig_no)
 
 ### Wind
 
-```{r} 
+```{r}
 fig_no = "Ap.11.WindGen"
 
 ts_map_ID = 89
@@ -564,7 +567,7 @@ savefig(fig$figure, fig_no)
 
 ### CCS
 
-```{r} 
+```{r}
 fig_no = "Ap.12.CCSGen"
 
 #there is no historic data here so gotta do a lil manual work
@@ -709,7 +712,7 @@ savefig(fig, fig_no)
 
 ### Coal
 
-```{r} 
+```{r}
 fig_no = "Ap.13.CoalGen"
 
 ts_map_ID = 82
@@ -737,7 +740,7 @@ savefig(fig$figure, fig_no)
 
 ### Gas
 
-```{r} 
+```{r}
 fig_no = "Ap.14.GasGen"
 
 ts_map_ID = 81
@@ -938,6 +941,7 @@ pdfigure = ggplot() +
 ```
 
 ### Electricity generation by model
+
 ```{r}
 # Appendix F: figure 16
 fig_no = "Ap.16.Generation"
@@ -1015,6 +1019,7 @@ saveall(p, dta, fig_no)
 ```
 
 ### Electricity capacity by model
+
 ```{r}
 # Appendix F: figure 17
 fig_no = "Ap.17.Capacity"
@@ -1038,7 +1043,9 @@ saveall(p, dta, fig_no)
 
 
 ```
+
 ### Electricity generation difference from noIRA
+
 ```{r}
 # Appendix F: figure 18
 fig_no = "2.4"
@@ -1093,17 +1100,260 @@ p = dta_full %>% ggplot() +
 p
 
 saveall(p, dta_full, fig_no)
-
 ```
+## Transportation
+
+### EV Share
+
 ```{r}
-# Figure 2.4 - ira on top, differences on the bottom
-```
--# Appendix G 6
+# fig_no = "Ap.15.EvSalesShare"
+# 
+# # TODO: NEMS-OP should only have reporting every 5 years
+# 
+# # clean_data_evshare = spg_clean(ts_map_ID = 118, drop = c(""), histsrc = "EPA-ATR", 
+# #                            config = config, clean_data = clean_data4, figmap_leep_timeseries = figmap_leep_timeseries)
+# scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)
+# raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
+#   left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
+#   select(-c(model, scenario)) %>%
+#   rename(model = model_new) %>%
+#   rename(scenario = scenario_new) %>%
+#   filter(unit != "thousands") %>%
+#   filter(!(model == "EPA-ATR" & year >= 2022))
+# 
+# atr_2022 = raw %>% filter(model == "EPA-ATR", year == 2021) %>% mutate(year = 2022)
+# nems = data_min %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
+#   filter(model == "NEMS-OP", 
+#          scenario %in% c("IRA", "No IRA"),
+#          datasrc != "LTS_data_small.xlsx",
+#          grepl("Sales Share", variable),
+#          unit == "%") %>%
+#   left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
+#   select(-c(model, scenario)) %>%
+#   rename(model = model_new) %>%
+#   rename(scenario = scenario_new)
+# 
+# clean_data_evshare = rbind(raw, atr_2022, nems) %>% 
+#   filter(unit != "thousands") %>% 
+#   mutate(value = 100 * value) %>%
+#   filter(model != "EIA-LTS") %>% 
+#   duplicate_historical_data("EPA-ATR", 2022, criteria = TRUE) %>% mutate(
+#     variable = case_when(
+#       variable %in% c(
+#         "Energy Service|Transportation|Passenger|BEV|Sales Share",
+#         # "Energy Service|Transportation|Passenger|FCEV|Sales Share",
+#         # "Energy Service|Transportation|Passenger|HEV|Sales Share",
+#         # "Energy Service|Transportation|Freight|BEV|Sales Share",
+#         # "Energy Service|Transportation|Freight|FCEV|Sales Share",
+#         "Energy Service|Transportation|Passenger|PHEV|Sales Share",
+#         "Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share"
+#         ) ~ 
+#         "Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share")) %>%
+#   group_by(model, scenario, unit, datasrc, year, region, variable) %>%
+#   summarize(value = sum(value)) %>%
+#   filter(!(is.na(variable))) %>%
+#   filter(year <= 2035) %>%
+# #  filter(!(model %in% c("NEMS-OP-LTS"))) %>%
+#   filter(!(datasrc %in% c("LTS_data_small.xlsx"))) %>%
+#   mutate(variable_rename = variable) %>%
+#   mutate(alpha = case_when(
+#       model == "USREP-ReEDS" ~ 1,
+#       model == "GCAM-PNNL" ~ 1,
+#       model == "IPM-EPA" ~ 1,
+#       scenario == "Historic" ~ 1,
+#       T ~ 1
+#   )) %>%
+#   mutate(value = case_when(year == 2022 & model == "NEMS-OP" ~ 100 * atr_2022$value[1], 
+#                            TRUE ~ value))
+# 
+# clean_data_evshare = clean_data_evshare %>%
+#   filter(year >= 2021) %>%
+#   filter(year %in% c(2021, 2025, 2030, 2035))
+# 
+# hist = clean_data_evshare %>%
+#   group_by(model) %>%
+#   slice(1) %>%
+#   ungroup %>%
+#   mutate(year = 2021) %>%
+#   mutate(value = value[scenario == "Historic"][1]) %>%
+#   mutate(scenario = "Historic")
+# 
+# EV_IRA = clean_data_evshare %>%
+#   filter(scenario != "No IRA")
+# 
+# EV_IRA = rbind(EV_IRA, hist)
+# 
+# EV_noIRA = clean_data_evshare %>%
+#   filter(scenario != "IRA")
+# 
+# EV_noIRA = rbind(EV_noIRA, hist)
+# 
+#   noIRAmedians = EV_noIRA %>%
+#     filter(year == 2030 | year == 2035) %>%
+#     group_by(year) %>%
+#     summarize(median = median(value))
+# 
+#   IRAmedians = EV_IRA %>%
+#     filter(year == 2030 | year == 2035) %>%
+#     group_by(year) %>%
+#     summarize(median = median(value))
+# 
+#   NoIRAfigure = ggplot(EV_noIRA, aes(year, value, color = model)) +
+#     geom_line(size = 0.75) +
+#     scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+#     theme_emf() +
+#     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+#     scale_y_continuous(limits = c(0, 85), breaks = c(0, 20, 40, 60, 80)) +
+#     labs(title = "No IRA",
+#          y = expression(`EV Sales Share (%)`),
+#          x = element_blank()) +
+#     theme(legend.position = "right",
+#          plot.title = element_text(hjust = 0.5),
+#           axis.text.x = element_text(angle = 45, hjust = 1)) +
+#     geom_point(aes(x = 2021, y = EV_noIRA$value[EV_noIRA$year == 2021][1]), color = "black") +
+#     geom_point(
+#       data = noIRAmedians,
+#       aes(x = year, y = median),
+#       color = "black",
+#       shape = 16,
+#       size = 2
+#     )
+# 
+#   IRAfigure = ggplot(EV_IRA, aes(year, value, color = model)) +
+#     geom_line(size = 0.75) +
+#     scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+#     theme_emf() +
+#     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+#     scale_y_continuous(limits = c(0, 85), breaks = c(0, 20, 40, 60, 80)) +
+#     labs(title = "IRA",
+#          y = expression(`EV Sales Share (%)`),
+#          x = element_blank()) +
+#     theme(legend.position = "right",
+#           plot.title = element_text(hjust = 0.5),
+#           axis.text.x = element_text(angle = 45, hjust = 1)) +
+#     geom_point(aes(x = 2021, y = EV_IRA$value[EV_IRA$year == 2021][1]), color = "black") +
+#     geom_point(
+#       data = IRAmedians,
+#       aes(x = year, y = median),
+#       color = "black",
+#       shape = 16,
+#       size = 2
+#     )
+#   
+# dif = rbind(EV_IRA, EV_noIRA)
+# 
+# dif_hist = dif %>%
+#   filter(scenario == "Historic") %>%
+#   slice(1) %>%
+#   ungroup() %>%
+#   mutate(value = 0) %>%
+#   select(model, year, value) %>%
+#   mutate(name = "historic")
+# 
+# dif = dif %>%
+#   filter(scenario != "Historic") %>%
+#   pivot_wider(names_from = scenario, values_from = value) %>%
+#   mutate(absdif = IRA - `No IRA`) %>%
+#   mutate(pdif = ((IRA - `No IRA`) / IRA) * 100) %>%
+#   ungroup() %>%
+#   select(model, year, absdif, pdif)
+# 
+# dif_clean = dif %>%
+#   pivot_longer(cols = c(absdif, pdif))
+# 
+# dif_fin = rbind(dif_clean, dif_hist)
+# 
+# df = dif_fin %>%
+#   filter(name != "pdif")
+# 
+# medians = df %>%
+#     filter(year %in% c(2030, 2035)) %>%
+#     group_by(year) %>%
+#     summarize(median = median(value))
+# 
+# 
+# EV_abdif_figure = ggplot() +
+#     geom_line(data = df,
+#               aes(
+#                 x = year,
+#                 y = value,
+#                 group = model,
+#                 color = model
+#               ),
+#               size = 0.75) +
+#     geom_point(aes(x = 2021, y = 0), color = "black") +
+#     geom_point(
+#       data = medians,
+#       aes(x = year, y = median),
+#       color = "black",
+#       shape = 16,
+#       size = 2
+#     ) +
+#     scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+#     labs(title = "",
+#          x = "",
+#          y = expression(`Absolute Difference (%)`)) +
+#     theme_emf() +
+#     theme(
+#       axis.text.x = element_text(angle = 45, hjust = 1),
+#       panel.spacing.x = unit(4, "mm"),
+#       legend.position = "none"
+#     ) +
+#     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))
+# 
+# df = dif_fin %>%
+#   filter(name != "absdif")
+# 
+# medians = df %>%
+#     filter(year %in% c(2030, 2035)) %>%
+#     group_by(year) %>%
+#     summarize(median = median(value))
+# 
+# 
+# EV_pdif_figure = ggplot() +
+#     geom_line(data = df,
+#               aes(
+#                 x = year,
+#                 y = value,
+#                 group = model,
+#                 color = model
+#               ),
+#               size = 0.75) +
+#     geom_point(aes(x = 2021, y = 0), color = "black") +
+#     geom_point(
+#       data = medians,
+#       aes(x = year, y = median),
+#       color = "black",
+#       shape = 16,
+#       size = 2
+#     ) +
+#     scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+#     labs(title = "",
+#          x = "",
+#          y = expression(`Percent Difference (%)`)) +
+#     theme_emf() +
+#     theme(
+#       axis.text.x = element_text(angle = 45, hjust = 1),
+#       panel.spacing.x = unit(4, "mm"),
+#       legend.position = "none"
+#     ) +
+#     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))
+# 
+#   figure = (NoIRAfigure | IRAfigure) / (EV_abdif_figure | EV_pdif_figure)+
+#     plot_layout(guides = "collect") +
+#     plot_annotation(title = "EV Sales Share")
+#   
+# savefig(figure, fig_no)
 
+```
+
+# Appendix G
 
 ## Electrification Figure
 
 ```{r}
+fig_no = "G.1"
+
 elc = readxl::read_xlsx("data-extra/electrification_compiled.xlsx") %>%
   rename(value = value100) %>%
   select(-variable) %>%
@@ -1158,6 +1408,8 @@ elc_ts = rbind(elc_raw, replace_hist) %>%
            year <= 2035) %>%
   mutate(variable = factor(variable, levels = c("Economy-Wide", "Transportation", "Buildings", "Industry")))
 
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+
 ggplot() +
   geom_line(data = elc_ts, aes(x = year, y = value, color = scenario, group = interaction(model,scenario))) +
   facet_grid(~variable) +
@@ -1166,6 +1418,109 @@ ggplot() +
   scale_subpalette(subpalettes, "Final Energy") +
   labs(y = "% Electricity of Final Energy",
        x="")
+
+elc_ts = elc_ts %>%
+  mutate(alpha = 1) %>%
+  filter(!model %in% "REGEN-EPRI") %>%
+  mutate(year = as.numeric(year))
+
+
+Econ_ts = elc_ts %>%
+  filter(variable == "Economy-Wide") %>%
+  mutate(variable_rename = "Economy-Wide")
+
+EconSpg = spg3(df = Econ_ts, 
+               title = "Economy-Wide", 
+               yname = "% Electricity of Final Energy",
+               gd = "none", 
+               ymin = 0,
+               ymax = 70, 
+               ybreaks = c(0, 20, 40, 60), 
+               yax_format = scales::comma, 
+               annotate = 0, 
+               c(2025, 0),
+               c(2025, 0), 
+               c(2025, 0), 
+               config = config, 
+               figmap_leep_timeseries = figmap_leep_timeseries)
+
+savedata(EconSpg$data, paste0(fig_no, "EconWide"))
+
+EconDot = dotted(EconSpg$data, EconSpg$figure, "median", 0, 70, config, figmap_leep_timeseries)
+
+Tran_ts = elc_ts %>%
+  filter(variable == "Transportation")%>%
+  mutate(variable_rename = "Transportation")
+
+TranSpg = spg3(df = Tran_ts, 
+               title = "Transportation", 
+               yname = "",
+               gd = "none", 
+               ymin = 0,
+               ymax = 70, 
+               ybreaks = c(0, 20, 40, 60), 
+               yax_format = NULL, 
+               annotate = 0, 
+               c(2025, 0),
+               c(2025, 0), 
+               c(2025, 0), 
+               config = config, 
+               figmap_leep_timeseries = figmap_leep_timeseries)
+
+savedata(TranSpg$data, paste0(fig_no, "Transportation"))
+
+TranDot = dotted(TranSpg$data, TranSpg$figure, "median", 0, 70, config, figmap_leep_timeseries)
+
+Buil_ts = elc_ts %>%
+  filter(variable == "Buildings")%>%
+  mutate(variable_rename = "Buildings")
+
+BuilSpg = spg3(df = Buil_ts, 
+               title = "Buildings", 
+               yname = "",
+               gd = "none", 
+               ymin = 0,
+               ymax = 70, 
+               ybreaks = c(0, 20, 40, 60), 
+               yax_format = NULL, 
+               annotate = 0, 
+               c(2025, 0),
+               c(2025, 0), 
+               c(2025, 0), 
+               config = config, 
+               figmap_leep_timeseries = figmap_leep_timeseries)
+
+savedata(BuilSpg$data, paste0(fig_no, "Buildings"))
+
+
+BuilDot = dotted(BuilSpg$data, BuilSpg$figure, "median", 0, 70, config, figmap_leep_timeseries)
+
+Ind_ts = elc_ts %>%
+  filter(variable == "Industry")%>%
+  mutate(variable_rename = "Industry")
+
+IndSpg = spg3(df = Ind_ts, 
+               title = "Industry", 
+               yname = "",
+               gd = "none", 
+               ymin = 0,
+               ymax = 70, 
+               ybreaks = c(0, 20, 40, 60), 
+               yax_format = NULL, 
+               annotate = 0, 
+               c(2025, 0),
+               c(2025, 0), 
+               c(2025, 0), 
+               config = config, 
+               figmap_leep_timeseries = figmap_leep_timeseries)
+
+savedata(IndSpg$data, paste0(fig_no, "Industry"))
+
+IndDot = dotted(IndSpg$data, IndSpg$figure, "median", 0, 70, config, figmap_leep_timeseries)
+
+Econ = (EconDot | TranDot | BuilDot | IndDot)
+
+savefig(Econ, fig_no, wd = 9, ht = 4)
 # TODO: save off this data for the final report
 # TODO: remove REGEN from industry, apples to oranges
 ```
@@ -1227,6 +1582,7 @@ write_sheet(all, per_share_wb, "All")
 
 saveWorkbook(per_share_wb, file = "output/final_figures/data/electrification_percentshare.xlsx", overwrite = TRUE)
 ```
+
 ```{R}
 # display table for appendix G1
 fig_no = "G1 Electricity Share.1"
@@ -1282,6 +1638,7 @@ table1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".
 table1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
 
 ```
+
 ### % Difference in Share IRA vs No IRA Tables
 
 ```{r}
@@ -1339,6 +1696,7 @@ write_sheet(all_per, diff_wb, "All")
 
 saveWorkbook(diff_wb, file = "output/final_figures/data/electrification_differences.xlsx", overwrite = TRUE)
 ```
+
 ```{R}
 # display table for appendix G2
 fig_no = "G1 Electricity Share.2"
@@ -1397,8 +1755,8 @@ table2 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".
 
 ```
 
-
 ## Gas and Coal generation capacity factors
+
 ```{r}
 # Table X.1: Gas and Coal generation
 fig_no = "Ap.X.1"
@@ -1465,7 +1823,9 @@ generation_table
 #generation_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
 generation_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
 ```
+
 Next
+
 ```{r}
 # Table X.2: Gas and Coal capacity
 fig_no = "Ap.X.2"
@@ -1581,4 +1941,3221 @@ cf_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,
 
 
 ```
+
+
+# Appendix XX
+
+## Transportation Direct/Indirect
+```{r}
+fig_no = "XX.2"
+
+Dir_data = spg_clean(
+  97, 
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  "EPA-GHGI", 
+  config, 
+  clean_data, 
+  figmap_leep_timeseries)
+
+DirSpg = spg2(
+  Dir_data,
+  expression(paste("Direct Combustion")),
+  expression(paste("Emissions(Mt C", O[2], "/yr)")),
+  gd = "none",
+  0,
+  2000,
+  c(0, 500, 1000, 1500, 2000),
+  scales::comma, 
+  1, 
+  c(2015, 1900), 
+  c(2030, 1850), 
+  c(2022.5, 1300), 
+  config,
+  figmap_leep_timeseries)
+
+DirDot = dotted(DirSpg$data, DirSpg$figure, "median", 0, 2000, config, figmap_leep_timeseries)
+
+DirTab = html(DirSpg$data, "Direct Transportation CO<sub>2<sub>")
+
+IndDir_data = spg_clean(
+  18, 
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  "EPA-GHGI", 
+  config, 
+  clean_data, 
+  figmap_leep_timeseries
+)
+
+
+IndDirSpg = spg2(
+  IndDir_data,
+  expression(paste("Indirect from Electricity")),
+  "",
+  gd = "none",
+  0,
+  2000,
+  c(0, 500, 1000, 1500, 2000),
+  NULL, 
+  0, 
+  c(2015, 1000), 
+  c(2030, 1000), 
+  c(2022.5, 1000), 
+  config,
+  figmap_leep_timeseries)
+
+IndDirDot = dotted(IndDirSpg$data, IndDirSpg$figure, "median", 0, 2000, config, figmap_leep_timeseries)
+
+IndDirTab = html(IndDirSpg$data, "Indirect Transportation CO<sub>2<sub>")
+
+
+fig = DirDot | IndDirDot
+
+savefig(fig, fig_no)
+savedata(DirSpg$data, paste(fig_no, "Direct"))
+savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
+```
+
+## Building Direct/Indirect
+
+```{r}
+fig_no = "XX.3"
+
+Dir_data = spg_clean(
+  95, 
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  "EPA-GHGI", 
+  config, 
+  clean_data, 
+  figmap_leep_timeseries)
+
+DirSpg = spg2(
+  Dir_data,
+  expression(paste("Direct Combustion")),
+  expression(paste("Emissions(Mt C", O[2], "/yr)")),
+  gd = "none",
+  0,
+  2000,
+  c(0, 500, 1000, 1500, 2000),
+  scales::comma, 
+  1, 
+  c(2013, 750), 
+  c(2030, 800), 
+  c(2022.5, 350), 
+  config,
+  figmap_leep_timeseries)
+
+DirDot = dotted(DirSpg$data, DirSpg$figure, "median", 0, 2000, config, figmap_leep_timeseries)
+
+DirTab = html(DirSpg$data, "Direct Building CO<sub>2<sub>")
+
+IndDir_data = spg_clean(
+  22, 
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  "EPA-GHGI", 
+  config, 
+  clean_data, 
+  figmap_leep_timeseries
+)
+
+
+IndDirSpg = spg2(
+  IndDir_data,
+  expression(paste("Indirect from Electricity")),
+  "",
+  gd = "none",
+  0,
+  2000,
+  c(0, 500, 1000, 1500, 2000),
+  NULL, 
+  0, 
+  c(2015, 1000), 
+  c(2030, 1000), 
+  c(2022.5, 1000), 
+  config,
+  figmap_leep_timeseries)
+
+IndDirDot = dotted(IndDirSpg$data, IndDirSpg$figure, "median", 0, 2000, config, figmap_leep_timeseries)
+
+IndDirTab = html(IndDirSpg$data, "Indirect Building CO<sub>2<sub>")
+
+
+fig = DirDot | IndDirDot
+
+savefig(fig, fig_no)
+savedata(DirSpg$data, paste(fig_no, "Direct"))
+savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
+```
+
+## Industry Direct/Indirect
+
+```{r}
+fig_no = "XX.4"
+
+Dir_data = spg_clean(
+  96, 
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  "EPA-GHGI", 
+  config, 
+  clean_data, 
+  figmap_leep_timeseries)
+
+DirSpg = spg2(
+  Dir_data,
+  expression(paste("Direct Combustion")),
+  expression(paste("Emissions(Mt C", O[2], "/yr)")),
+  gd = "none",
+  0,
+  1500,
+  c(0, 500, 1000, 1500),
+  scales::comma, 
+  1, 
+  c(2015, 1000), 
+  c(2030, 1300), 
+  c(2022.5, 650), 
+  config,
+  figmap_leep_timeseries)
+
+DirDot = dotted(DirSpg$data, DirSpg$figure, "median", 0, 1500, config, figmap_leep_timeseries)
+
+DirTab = html(DirSpg$data, "Direct Industry CO<sub>2<sub>")
+
+IndDir_data = spg_clean(
+  20, 
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  "EPA-GHGI", 
+  config, 
+  clean_data, 
+  figmap_leep_timeseries
+)
+
+
+IndDirSpg = spg2(
+  IndDir_data,
+  expression(paste("Indirect from Electricity")),
+  "",
+  gd = "none",
+  0,
+  1500,
+  c(0, 500, 1000, 1500),
+  NULL, 
+  0, 
+  c(2015, 1000), 
+  c(2030, 1000), 
+  c(2022.5, 1000), 
+  config,
+  figmap_leep_timeseries)
+
+IndDirDot = dotted(IndDirSpg$data, IndDirSpg$figure, "median", 0, 1500, config, figmap_leep_timeseries)
+
+IndDirTab = html(IndDirSpg$data, "Indirect Industry CO<sub>2<sub>")
+
+
+fig = DirDot | IndDirDot
+
+savefig(fig, fig_no)
+savedata(DirSpg$data, paste(fig_no, "Direct"))
+savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
+```
+
+# Appendix YY
+
+### YY.1
+```{r}
+fig_no = "YY.1"
+
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+names(subpalettes$`Emissions|CO2|Energy|Demand|Industry`) = c("2021", "No IRA", "IRA")
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+ymin = 0
+ymax = 2600
+metric = "median"
+
+total <- fig$data %>%
+  group_by(scenario, model, year) %>%
+  summarise(value = sum(value)) %>%
+  mutate(variable_rename = "Total")%>%
+  mutate(alpha = case_when(
+    model == "USREP-ReEDS" ~ 1, 
+    model == "GCAM-PNNL" ~ 1, 
+    model == "IPM-EPA" ~ 1,
+    scenario == "Historic" ~ 1,
+    T ~ 1
+  ))
+
+low <- fig$data %>%
+  filter(variable_rename == "CCS" | 
+         variable_rename == "Other" |
+         variable_rename == "Nuclear" |
+         variable_rename == "Solar" |
+         variable_rename == "Wind"
+) %>%
+  group_by(scenario, model, year) %>%
+  summarise(value = sum(value)) %>%
+  mutate(variable_rename = "Total_Low")%>%
+  mutate(alpha = case_when(
+    model == "USREP-ReEDS" ~ 1, 
+    model == "GCAM-PNNL" ~ 1, 
+    model == "IPM-EPA" ~ 1,
+    scenario == "Historic" ~ 1,
+    T ~ 1
+  ))
+
+high <- fig$data %>%
+  filter(variable_rename == "Coal" |
+         variable_rename == "Natural Gas" |
+         variable_rename == "Oil"
+) %>%
+  group_by(scenario, model, year) %>%
+  summarise(value = sum(value)) %>%
+  mutate(variable_rename = "Total_High")%>%
+  mutate(alpha = case_when(
+    model == "USREP-ReEDS" ~ 1, 
+    model == "GCAM-PNNL" ~ 1, 
+    model == "IPM-EPA" ~ 1,
+    scenario == "Historic" ~ 1,
+    T ~ 1
+  ))
+
+individual <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value))%>%
+  mutate(alpha = case_when(
+    model == "USREP-ReEDS" ~ 1, 
+    model == "GCAM-PNNL" ~ 1, 
+    model == "IPM-EPA" ~ 1,
+    scenario == "Historic" ~ 1,
+    T ~ 1
+  ))
+
+##### All Total #####
+df_21 = total %>%
+  filter(year %in% c(2021))
+df_stat_21 = df_21 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value)) %>%
+  mutate(scenario = "2021") %>%
+  mutate(median = median(median)) %>%
+  mutate(mean = mean(mean))
+  
+
+df_30 = total %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+df_35 = total %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+
+median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+
+stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+                   "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+data_total <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) 
+
+
+dots_Total = ggplot(data = data_total, aes(x = axe, y = value,  color = scenario)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
+    facet_wrap(~"Total Generation") +
+    scale_y_continuous(limits = c(ymin, 6500), breaks = c(0, 3250 , 6500), labels = scales::comma) +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    labs(y = "Generation (TWh)") +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.title.x = element_blank(),
+          axis.title.y = element_text(size = 7),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+
+savedata(data_total, paste(fig_no, "Total"))
+
+##### Low Total #####
+
+df_21 = low %>%
+  filter(year %in% c(2021))
+df_stat_21 = df_21 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value)) %>%
+  mutate(scenario = "2021") %>%
+  mutate(median = median(median)) %>%
+  mutate(mean = mean(mean))
+
+df_30 = low %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+df_35 = low %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+
+median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+
+stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+                   "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+data_Low <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) 
+
+dots_Low = ggplot(data = data_Low, aes(x = axe, y = value,  color = scenario)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+    geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
+    facet_wrap(~"Low or Zero Emitting Generation") +
+    scale_y_continuous(limits = c(ymin, 6500), breaks = c(0, 3250 , 6500)) +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Low, paste(fig_no, "Low"))
+
+##### High Total #####
+df_21 = high %>%
+  filter(year %in% c(2021))
+df_stat_21 = df_21 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value)) %>%
+  mutate(scenario = "2021") %>%
+  mutate(median = median(median)) %>%
+  mutate(mean = mean(mean))
+  
+
+df_30 = high %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+
+df_35 = high %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+
+median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+
+stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+                   "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+data_High <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) 
+
+dots_High = ggplot(data = data_High, aes(x = axe, y = value,  color = scenario)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
+    facet_wrap(~"High Emitting Generation") +
+    scale_y_continuous(limits = c(ymin, 6500), breaks = c(0, 3250 , 6500)) +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_High, paste(fig_no, "High"))
+
+##### Nuclear #####
+df_21 = individual[individual$variable_rename == "Nuclear", ] %>%
+  filter(year %in% c(2021))
+df_stat_21 = df_21 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value)) %>%
+  mutate(scenario = "2021") %>%
+  mutate(median = median(median)) %>%
+  mutate(mean = mean(mean))
+  
+
+df_30 = individual[individual$variable_rename == "Nuclear", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+df_35 = individual[individual$variable_rename == "Nuclear", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+
+median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+
+stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+                   "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Nuclear <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) 
+
+dots_Nuclear = ggplot(data = data_Nuclear, aes(x = axe, y = value,  color = scenario)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
+    facet_wrap(~"Nuclear") +
+    scale_y_continuous(limits = c(ymin, 2600), breaks = c(0, 1300 , 2600)) +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Nuclear, paste(fig_no, "Nuclear"))
+
+##### Solar #####
+df_21 = individual[individual$variable_rename == "Solar", ] %>%
+  filter(year %in% c(2021))
+df_stat_21 = df_21 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value)) %>%
+  mutate(scenario = "2021") %>%
+  mutate(median = median(median)) %>%
+  mutate(mean = mean(mean))
+  
+
+df_30 = individual[individual$variable_rename == "Solar", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+df_35 = individual[individual$variable_rename == "Solar", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+
+median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+
+stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+                   "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Solar <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) 
+
+dots_Solar = ggplot(data = data_Solar, aes(x = axe, y = value,  color = scenario)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
+    facet_wrap(~"Solar") +
+    scale_y_continuous(limits = c(ymin, 2600), breaks = c(0, 1300 , 2600)) +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Solar, paste(fig_no, "Solar"))
+
+##### Wind #####
+
+df_21 = individual[individual$variable_rename == "Wind", ] %>%
+  filter(year %in% c(2021))
+df_stat_21 = df_21 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value)) %>%
+  mutate(scenario = "2021") %>%
+  mutate(median = median(median)) %>%
+  mutate(mean = mean(mean))
+  
+
+df_30 = individual[individual$variable_rename == "Wind", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+df_35 = individual[individual$variable_rename == "Wind", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+
+median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+
+stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+                   "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Wind <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) 
+
+dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = value,  color = scenario)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
+    facet_wrap(~"Wind") +
+    scale_y_continuous(limits = c(ymin, 2600), breaks = c(0, 1300 , 2600), labels = scales::comma) +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    labs(y = "Generation (TWh)") +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.title.x = element_blank(),
+          axis.title.y = element_text(size = 7),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Wind, paste(fig_no, "Wind"))
+
+##### CCS #####
+
+df_21 = individual[individual$variable_rename == "CCS", ] %>%
+  filter(year %in% c(2021))
+df_stat_21 = df_21 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value)) %>%
+  mutate(scenario = "2021") %>%
+  mutate(median = median(median)) %>%
+  mutate(mean = mean(mean))
+  
+
+df_30 = individual[individual$variable_rename == "CCS", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+df_35 = individual[individual$variable_rename == "CCS", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+
+median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+
+stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+                   "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_CCS <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) 
+
+dots_CCS = ggplot(data = data_CCS, aes(x = axe, y = value,  color = scenario)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
+    facet_wrap(~"CCS") +
+    scale_y_continuous(limits = c(ymin, 2600), breaks = c(0, 1300 , 2600)) +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_CCS, paste(fig_no, "CCS"))
+
+##### Coal #####
+df_21 = individual[individual$variable_rename == "Coal", ] %>%
+  filter(year %in% c(2021))
+df_stat_21 = df_21 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value)) %>%
+  mutate(scenario = "2021") %>%
+  mutate(median = median(median)) %>%
+  mutate(mean = mean(mean))
+  
+
+df_30 = individual[individual$variable_rename == "Coal", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+df_35 = individual[individual$variable_rename == "Coal", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+
+median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+
+stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+                   "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Coal <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) 
+
+dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = value,  color = scenario)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
+    facet_wrap(~"Coal") +
+    scale_y_continuous(limits = c(ymin, 2600), breaks = c(0, 1300 , 2600), labels = scales::comma) +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    labs(y = "Generation (TWh)") +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.title.x = element_blank(),
+          axis.title.y = element_text(size = 7),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Coal, paste(fig_no, "Coal"))
+
+##### Gas #####
+df_21 = individual[individual$variable_rename == "Natural Gas", ] %>%
+  filter(year %in% c(2021))
+df_stat_21 = df_21 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value)) %>%
+  mutate(scenario = "2021") %>%
+  mutate(median = median(median)) %>%
+  mutate(mean = mean(mean))
+  
+
+df_30 = individual[individual$variable_rename == "Natural Gas", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+df_35 = individual[individual$variable_rename == "Natural Gas", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+
+median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+
+stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+                   "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Gas <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) 
+
+dots_Gas = ggplot(data = data_Gas, aes(x = axe, y = value,  color = scenario)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
+    facet_wrap(~"Natural Gas") +
+    scale_y_continuous(limits = c(ymin, 2600), breaks = c(0, 1300 , 2600)) +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Gas, paste(fig_no, "Gas"))
+
+##### Other #####
+df_21 = individual[individual$variable_rename == "Other", ] %>%
+  filter(year %in% c(2021))
+df_stat_21 = df_21 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value)) %>%
+  mutate(scenario = "2021") %>%
+  mutate(median = median(median)) %>%
+  mutate(mean = mean(mean))
+  
+
+df_30 = individual[individual$variable_rename == "Other", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+df_35 = individual[individual$variable_rename == "Other", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  group_by(scenario,year,variable_rename) %>%
+  summarise(mean = mean(value),
+            median = median(value))
+  
+
+mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+
+median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+
+stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+                   "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Other <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) 
+
+dots_Other = ggplot(data = data_Other, aes(x = axe, y = value,  color = scenario)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
+    facet_wrap(~"Other") +
+    scale_y_continuous(limits = c(ymin, 2600), breaks = c(0, 1300 , 2600)) +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Other, paste(fig_no, "Other"))
+
+##### Final #####
+final = (dots_Total | dots_Low | dots_High) / (dots_Wind | dots_Solar | dots_Nuclear | dots_CCS) / (dots_Coal | dots_Gas | dots_Other) 
+
+final = final + 
+  plot_layout(
+  guides = "collect"
+) & theme(legend.position = "bottom")
+final
+
+savefig(final, fig_no, wd = 8)
+
+```
+
+### YY.2
+```{r}
+fig_no = "YY.2"
+
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+ymin = -2000
+ymax = 2000
+metric = "median"
+
+total <- fig$data %>%
+  group_by(scenario, model, year) %>%
+  summarise(value = sum(value)) %>%
+  mutate(variable_rename = "Total")%>%
+  mutate(alpha = case_when(
+    model == "USREP-ReEDS" ~ 1, 
+    model == "GCAM-PNNL" ~ 1, 
+    model == "IPM-EPA" ~ 1,
+    scenario == "Historic" ~ 1,
+    T ~ 1
+  )) %>% ungroup()
+
+total = total %>%
+  pivot_wider(
+    names_from = scenario, values_from = value
+  ) %>%
+  mutate(abs_dif = IRA - `No IRA`)
+
+low <- fig$data %>%
+  filter(variable_rename == "CCS" | 
+         variable_rename == "Other" |
+         variable_rename == "Nuclear" |
+         variable_rename == "Solar" |
+         variable_rename == "Wind"
+) %>%
+  group_by(scenario, model, year) %>%
+  summarise(value = sum(value)) %>%
+  mutate(variable_rename = "Total_Low")%>%
+  mutate(alpha = case_when(
+    model == "USREP-ReEDS" ~ 1, 
+    model == "GCAM-PNNL" ~ 1, 
+    model == "IPM-EPA" ~ 1,
+    scenario == "Historic" ~ 1,
+    T ~ 1
+  )) %>% ungroup()
+
+low = low %>%
+  pivot_wider(
+    names_from = scenario, values_from = value
+  ) %>%
+  mutate(abs_dif = IRA - `No IRA`)
+
+high <- fig$data %>%
+  filter(variable_rename == "Coal" |
+         variable_rename == "Natural Gas" |
+         variable_rename == "Oil"
+) %>%
+  group_by(scenario, model, year) %>%
+  summarise(value = sum(value)) %>%
+  mutate(variable_rename = "Total_High")%>%
+  mutate(alpha = case_when(
+    model == "USREP-ReEDS" ~ 1, 
+    model == "GCAM-PNNL" ~ 1, 
+    model == "IPM-EPA" ~ 1,
+    scenario == "Historic" ~ 1,
+    T ~ 1
+  ))%>% ungroup()
+
+high = high %>%
+  pivot_wider(
+    names_from = scenario, values_from = value
+  ) %>%
+  mutate(abs_dif = IRA - `No IRA`)
+
+
+individual <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value))%>%
+  mutate(alpha = case_when(
+    model == "USREP-ReEDS" ~ 1, 
+    model == "GCAM-PNNL" ~ 1, 
+    model == "IPM-EPA" ~ 1,
+    scenario == "Historic" ~ 1,
+    T ~ 1
+  ))%>% ungroup()
+
+individual = individual %>%
+  pivot_wider(
+    names_from = scenario, values_from = value
+  ) %>%
+  mutate(abs_dif = IRA - `No IRA`)
+
+##### All Total #####
+
+df_30 = total %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif)) %>%
+  mutate(scenario = "IRA")
+  
+
+df_35 = total %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+# 
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+data_total <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+
+dots_Total = ggplot(data = data_total, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    facet_wrap(~"Total Generation") +
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    labs(y = "Difference in Generation (TWh) from No IRA") +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.x = element_blank(),
+          axis.title.y = element_text(size = 7),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+
+savedata(data_total, paste(fig_no, "Total"))
+
+##### Low Total #####
+
+
+df_30 = low %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+df_35 = low %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+data_Low <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_Low = ggplot(data = data_Low, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"Low or Zero Emitting Generation") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Low, paste(fig_no, "Low"))
+
+##### High Total #####
+ 
+  
+
+df_30 = high %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+
+df_35 = high %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+data_High <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_High = ggplot(data = data_High, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"High Emitting Generation") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_High, paste(fig_no, "High"))
+
+##### Nuclear #####
+ 
+  
+
+df_30 = individual[individual$variable_rename == "Nuclear", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+df_35 = individual[individual$variable_rename == "Nuclear", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Nuclear <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_Nuclear = ggplot(data = data_Nuclear, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"Nuclear") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Nuclear, paste(fig_no, "Nuclear"))
+
+##### Solar #####
+ 
+  
+
+df_30 = individual[individual$variable_rename == "Solar", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+df_35 = individual[individual$variable_rename == "Solar", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Solar <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_Solar = ggplot(data = data_Solar, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"Solar") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Solar, paste(fig_no, "Solar"))
+
+##### Wind #####
+ 
+  
+
+df_30 = individual[individual$variable_rename == "Wind", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+df_35 = individual[individual$variable_rename == "Wind", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Wind <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"Wind") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    labs(y = "Difference in Generation (TWh) from No IRA") +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.x = element_blank(),
+          axis.title.y = element_text(size = 7),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Wind, paste(fig_no, "Wind"))
+
+##### CCS #####
+ 
+  
+
+df_30 = individual[individual$variable_rename == "CCS", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+df_35 = individual[individual$variable_rename == "CCS", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_CCS <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_CCS = ggplot(data = data_CCS, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"CCS") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_CCS, paste(fig_no, "CCS"))
+
+##### Coal #####
+ 
+  
+
+df_30 = individual[individual$variable_rename == "Coal", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+df_35 = individual[individual$variable_rename == "Coal", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Coal <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"Coal") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    labs(y = "Difference in Generation (TWh) from No IRA") +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.x = element_blank(),
+          axis.title.y = element_text(size = 7),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Coal, paste(fig_no, "Coal"))
+
+##### Gas #####
+ 
+  
+
+df_30 = individual[individual$variable_rename == "Natural Gas", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+df_35 = individual[individual$variable_rename == "Natural Gas", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Gas <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_Gas = ggplot(data = data_Gas, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"Natural Gas") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Gas, paste(fig_no, "Gas"))
+
+##### Other #####
+ 
+  
+
+df_30 = individual[individual$variable_rename == "Other", ] %>%
+  filter(year %in% c(2030))
+df_stat_30 = df_30 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+df_35 = individual[individual$variable_rename == "Other", ] %>%
+  filter(year %in% c(2035))
+df_stat_35 = df_35 %>%
+  summarise(mean = mean(abs_dif),
+            median = median(abs_dif))%>%
+  mutate(scenario = "IRA")
+  
+
+# mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
+# mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
+# 
+# median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
+# median_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","median"]$median - df_stat_35[df_stat_35$scenario == "IRA","median"]$median
+# 
+# stats = data.frame("year" = c(2030, 2035, 2030, 2035), "metric" = c("mean","mean","median","median"), 
+#                    "difference" = c(mean_diff_30, mean_diff_35,median_diff_30, median_diff_35))
+
+data = rbind(df_30, df_35) 
+
+ 
+
+data_Other <- data %>%
+  mutate(axe = case_when(
+    year == 2030 ~ 1, 
+    year == 2035 ~ 2
+  )) %>%
+  mutate(scenario = "IRA")
+
+dots_Other = ggplot(data = data_Other, aes(x = axe, y = abs_dif)) +
+  geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
+  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
+    facet_wrap(~"Other") +
+    scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
+    theme_emf() +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme(
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks = element_blank(),
+          legend.position = "none", 
+          plot.margin = margin(0,0,0,0)) + 
+  scale_alpha(range = c(0.6, 1), guide = F)
+savedata(data_Other, paste(fig_no, "Other"))
+
+##### Final #####
+final = (dots_Total | dots_Low | dots_High) / (dots_Wind | dots_Solar | dots_Nuclear | dots_CCS) / (dots_Coal | dots_Gas | dots_Other) 
+
+final = final + 
+  plot_layout(
+  guides = "collect"
+) & theme(legend.position = "bottom")
+final
+
+savefig(final, fig_no, wd = 8)
+
+```
+
+
+### Table YY Total
+
+```{r}
+
+title = "YY.Total Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  group_by(scenario, model, year) %>%
+  summarise(value = sum(value)) %>%
+  mutate(variable_rename = "Total")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+```
+
+### Table YY Low
+
+```{r}
+
+title = "YY.Low Emitting Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  filter(variable_rename == "CCS" | 
+         variable_rename == "Other" |
+         variable_rename == "Nuclear" |
+         variable_rename == "Solar" |
+         variable_rename == "Wind"
+) %>%
+  group_by(scenario, model, year) %>%
+  summarise(value = sum(value)) %>%
+  mutate(variable_rename = "Total_Low")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+
+
+
+
+```
+
+### Table YY High
+
+```{r}
+
+title = "YY.High Emitting Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  filter(variable_rename == "Coal" |
+         variable_rename == "Natural Gas" |
+         variable_rename == "Oil"
+) %>%
+  group_by(scenario, model, year) %>%
+  summarise(value = sum(value)) %>%
+  mutate(variable_rename = "Total_High")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+
+
+
+
+```
+
+### Table YY Wind
+
+```{r}
+
+title = "YY.Wind Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value)) %>%
+  filter(variable_rename == "Wind")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+
+
+
+
+```
+
+### Table YY Solar
+
+```{r}
+
+title = "YY.Solar Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value)) %>%
+  filter(variable_rename == "Solar")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+
+
+
+
+```
+
+### Table YY Nuclear
+
+```{r}
+
+title = "YY.Nuclear Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value)) %>%
+  filter(variable_rename == "Nuclear")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+
+
+
+
+```
+
+### Table YY CCS
+
+```{r}
+
+title = "YY.CCS Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value)) %>%
+  filter(variable_rename == "CCS")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+
+
+
+
+```
+
+### Table YY Coal
+
+```{r}
+
+title = "YY.Coal Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value)) %>%
+  filter(variable_rename == "Coal")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+
+
+
+
+```
+
+### Table YY Gas
+
+```{r}
+
+title = "YY.Nautural Gas Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value)) %>%
+  filter(variable_rename == "Natural Gas")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+
+
+
+
+```
+
+### Table YY Other
+
+```{r}
+
+title = "YY.Other Electricity Generation"
+
+fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
+
+fig$data <- fig$data %>%
+  filter(year == 2005 | year == 2021 | year == 2030 | year == 2035)%>%
+  filter(!model == "EIA") %>%
+  filter(!model == "EIA-STEO") %>%
+  mutate(value = value/0.0036, 
+         unit = "TWh")
+
+total <- fig$data %>%
+  mutate(
+    variable_rename = case_when(variable_rename == "Oil" ~ "Other", 
+                                T ~ variable_rename)
+  ) %>%
+  group_by(year, variable_rename, model, scenario) %>%
+  summarise(value = sum(value)) %>%
+  filter(variable_rename == "Other")
+
+base <- total %>%
+  filter(year == 2005 & model == "EIA-LTS")
+
+baseline = base$value[1]
+
+base <- as.data.frame(base) %>%
+  select(Year = year, 
+         `Absolute Level (TWh)` = value) %>%
+  mutate(Scenario = "Baseline", 
+    `% Reductions from 2005` = NA,
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA)  %>%
+  select(Year, Scenario, `Absolute Level (TWh)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (TWh)`)
+
+NoIRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "No IRA") %>%
+  group_by(year) %>%
+  summarize(`No IRA Median` = median(value), 
+            `No IRA Min` = min(value),
+            `No IRA Max` =  max(value))%>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(`2005_perc_red` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100) %>%
+  mutate(
+    Year = year, 
+    `% Reductions from 2005` = `2005_perc_red`, 
+    `% Reductions from No IRA` = NA, 
+    `Reductions from No IRA (TWh)` = NA
+  ) %>%
+  select(!year & !`2005_perc_red`)
+
+IRA <- total %>%
+  filter(year == 2021 | year == 2030 | year == 2035) %>%
+  filter(scenario == "IRA") %>%
+  select(!scenario) %>%
+  group_by(year) %>%
+  summarize(
+    `IRA Max` = max(value), 
+    `IRA Min` = min(value), 
+    `IRA Median` = median(value)) %>%
+  pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (TWh)") %>%
+  mutate(
+    `% Reductions from 2005` = ((baseline-`Absolute Level (TWh)`)/baseline) * 100
+  )%>%
+  mutate(
+    `% Reductions from No IRA` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100, 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        ((NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)/NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+    ), 
+
+    `Reductions from No IRA (TWh)` = case_when(
+            year == 2021 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2021 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2021 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+      year == 2030 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2030 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`),
+      
+            year == 2035 & Scenario == "IRA Max" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Median" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (TWh)`), 
+      
+      year == 2035 & Scenario == "IRA Min" ~ 
+        (NoIRA$`Absolute Level (TWh)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (TWh)`)
+    )
+  ) %>%
+  rename(Year = year)
+
+IRA = rbind(NoIRA, IRA)
+
+
+
+IRA <- IRA %>%
+  arrange(desc(IRA)) %>%
+  arrange(Year)
+
+IRA = rbind(base, IRA)
+
+IRA$`Absolute Level (TWh)` = round(IRA$`Absolute Level (TWh)`, 3)
+IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
+
+write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+
+IRA %>%
+tableHTML(caption = paste(title), rownames = F)
+```
+
+
 

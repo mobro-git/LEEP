@@ -248,9 +248,10 @@ EconSpg = spg2(Econ_data,
   figmap_leep_timeseries) 
 
 EconDot = dotted(EconSpg$data, EconSpg$figure, "median", 0, 7000, config, figmap_leep_timeseries)
-
+EconDot
 
 delta = delta(25, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
+delta
 saveall(delta$figure, delta$df, paste(fig_no, "delta"))
 
 
@@ -259,8 +260,6 @@ EconSpg
 EconDot
 delta
 EconTab
-
-
 
 EconSpg$data = clean_supplemental_data(EconSpg$data, fig_no)
 savedata(EconSpg$data, paste(fig_no, "EconWide"))
@@ -273,8 +272,8 @@ saveall(delta$figure, delta$df, paste(fig_no, "delta"))
 
 ```
 
-
 ## 1.3/ES.3 key indicators
+
 ```{r}
 fig_no = 1.3
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)

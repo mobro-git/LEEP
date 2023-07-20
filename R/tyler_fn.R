@@ -65,6 +65,30 @@ spg2 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
   return(list(figure = figure, data = df))
 }
 
+spg3 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0), config, figmap_leep_timeseries) {
+
+  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+
+  figure = ggplot(df, aes(year,value, color = scenario, group = interaction(model, scenario))) +
+    geom_line(aes(alpha = alpha), size = 0.5) +
+    scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    theme_emf() +
+    scale_x_continuous(breaks = c(2020, 2025, 2030, 2035)) +
+    scale_y_continuous(limits = c(ymin, ymax), breaks = ybreaks, labels = yax_format) +
+    scale_alpha(range = c(1, 1), guide = F) +
+    labs(title = title,
+         x = element_blank(),
+         y = yname) +
+    theme(legend.position = gd,
+          axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.ticks = element_blank()) +
+    annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historical", color = "black", alpha = annotate) +
+    annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#F28063", alpha = annotate) +
+    annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#0388B3", alpha = annotate)
+
+  return(list(figure = figure, data = df))
+}
+
 # spg = function(ts_map_ID, histsrc, title, yname, gd, drop, ymin, ymax, ybreaks, yax, config, figmap_leep_timeseries) {
 #
 #   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
