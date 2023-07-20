@@ -58,6 +58,30 @@ dta4 = clean_supplemental_data(dta4, fig_no)
 saveall(p4, dta4, fig_no)
 ```
 
+## 5.2
+
+## 5.x Emissions breakout pie chart
+
+```{r}
+pie = readxl::read_xlsx("data-extra/industry_piechart.xlsx")
+pie1 = pie %>% filter(Table == 1) %>%
+  rename(value = `% Energy-related Emissions`) %>%
+  mutate(value = round(value*100,0))
+
+ggplot(data = pie1, aes(x = "", y = value, fill = Industry)) +
+  geom_bar(width = 1, stat = "identity", color = "white") +
+  coord_polar("y", start = 0) +
+  scale_fill_brewer(palette = "Dark2") +
+  blank_theme +
+  geom_text(aes(label = paste(value,"%",sep=""), x = 1.2),
+            position = position_stack(vjust = 0.5),
+            size=4)
+# TODO: turn into horizontal bar chart with labels for %, maybe labels for industry too?
+
+# ggplot() +
+#   geom_bar(data = pie1, aes(x=value,y=1,fill=Industry,position="fill"))
+```
+
 ## 5.3 industry total co2 emissions 
 
 ```{r}
@@ -103,23 +127,6 @@ savedata(IndSpg$data, fig_no)
 IndTab
 ```
 
-## 5.x Emissions breakout pie chart
-
-```{r}
-pie = readxl::read_xlsx("data-extra/industry_piechart.xlsx")
-pie1 = pie %>% filter(Table == 1) %>%
-  rename(value = `% Energy-related Emissions`) %>%
-  mutate(value = round(value*100,0))
-
-ggplot(data = pie1, aes(x = "", y = value, fill = Industry)) +
-  geom_bar(width = 1, stat = "identity", color = "white") +
-  coord_polar("y", start = 0) +
-  scale_fill_brewer(palette = "Dark2") +
-  blank_theme +
-  geom_text(aes(label = paste(value,"%",sep=""), x = 1.2),
-            position = position_stack(vjust = 0.5),
-            size=4)
-```
 
 ## 5.x energy used in the industry sector, by fuel, over time (NO LONGER IN USE)
 
