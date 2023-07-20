@@ -1048,244 +1048,244 @@ p
 ### EV Share
 
 ```{r}
-fig_no = "Ap.15.EvSalesShare"
-
-# TODO: NEMS-OP should only have reporting every 5 years
-
-# clean_data_evshare = spg_clean(ts_map_ID = 118, drop = c(""), histsrc = "EPA-ATR", 
-#                            config = config, clean_data = clean_data4, figmap_leep_timeseries = figmap_leep_timeseries)
-scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)
-raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
-  left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
-  select(-c(model, scenario)) %>%
-  rename(model = model_new) %>%
-  rename(scenario = scenario_new) %>%
-  filter(unit != "thousands") %>%
-  filter(!(model == "EPA-ATR" & year >= 2022))
-
-atr_2022 = raw %>% filter(model == "EPA-ATR", year == 2021) %>% mutate(year = 2022)
-nems = data_min %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
-  filter(model == "NEMS-OP", 
-         scenario %in% c("IRA", "No IRA"),
-         datasrc != "LTS_data_small.xlsx",
-         grepl("Sales Share", variable),
-         unit == "%") %>%
-  left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
-  select(-c(model, scenario)) %>%
-  rename(model = model_new) %>%
-  rename(scenario = scenario_new)
-
-clean_data_evshare = rbind(raw, atr_2022, nems) %>% 
-  filter(unit != "thousands") %>% 
-  mutate(value = 100 * value) %>%
-  filter(model != "EIA-LTS") %>% 
-  duplicate_historical_data("EPA-ATR", 2022, criteria = TRUE) %>% mutate(
-    variable = case_when(
-      variable %in% c(
-        "Energy Service|Transportation|Passenger|BEV|Sales Share",
-        # "Energy Service|Transportation|Passenger|FCEV|Sales Share",
-        # "Energy Service|Transportation|Passenger|HEV|Sales Share",
-        # "Energy Service|Transportation|Freight|BEV|Sales Share",
-        # "Energy Service|Transportation|Freight|FCEV|Sales Share",
-        "Energy Service|Transportation|Passenger|PHEV|Sales Share",
-        "Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share"
-        ) ~ 
-        "Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share")) %>%
-  group_by(model, scenario, unit, datasrc, year, region, variable) %>%
-  summarize(value = sum(value)) %>%
-  filter(!(is.na(variable))) %>%
-  filter(year <= 2035) %>%
-#  filter(!(model %in% c("NEMS-OP-LTS"))) %>%
-  filter(!(datasrc %in% c("LTS_data_small.xlsx"))) %>%
-  mutate(variable_rename = variable) %>%
-  mutate(alpha = case_when(
-      model == "USREP-ReEDS" ~ 1,
-      model == "GCAM-PNNL" ~ 1,
-      model == "IPM-EPA" ~ 1,
-      scenario == "Historic" ~ 1,
-      T ~ 1
-  )) %>%
-  mutate(value = case_when(year == 2022 & model == "NEMS-OP" ~ 100 * atr_2022$value[1], 
-                           TRUE ~ value))
-
-clean_data_evshare = clean_data_evshare %>%
-  filter(year >= 2021) %>%
-  filter(year %in% c(2021, 2025, 2030, 2035))
-
-hist = clean_data_evshare %>%
-  group_by(model) %>%
-  slice(1) %>%
-  ungroup %>%
-  mutate(year = 2021) %>%
-  mutate(value = value[scenario == "Historic"][1]) %>%
-  mutate(scenario = "Historic")
-
-EV_IRA = clean_data_evshare %>%
-  filter(scenario != "No IRA")
-
-EV_IRA = rbind(EV_IRA, hist)
-
-EV_noIRA = clean_data_evshare %>%
-  filter(scenario != "IRA")
-
-EV_noIRA = rbind(EV_noIRA, hist)
-
-  noIRAmedians = EV_noIRA %>%
-    filter(year == 2030 | year == 2035) %>%
-    group_by(year) %>%
-    summarize(median = median(value))
-
-  IRAmedians = EV_IRA %>%
-    filter(year == 2030 | year == 2035) %>%
-    group_by(year) %>%
-    summarize(median = median(value))
-
-  NoIRAfigure = ggplot(EV_noIRA, aes(year, value, color = model)) +
-    geom_line(size = 0.75) +
-    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
-    theme_emf() +
-    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
-    scale_y_continuous(limits = c(0, 85), breaks = c(0, 20, 40, 60, 80)) +
-    labs(title = "No IRA",
-         y = expression(`EV Sales Share (%)`),
-         x = element_blank()) +
-    theme(legend.position = "right",
-         plot.title = element_text(hjust = 0.5),
-          axis.text.x = element_text(angle = 45, hjust = 1)) +
-    geom_point(aes(x = 2021, y = EV_noIRA$value[EV_noIRA$year == 2021][1]), color = "black") +
-    geom_point(
-      data = noIRAmedians,
-      aes(x = year, y = median),
-      color = "black",
-      shape = 16,
-      size = 2
-    )
-
-  IRAfigure = ggplot(EV_IRA, aes(year, value, color = model)) +
-    geom_line(size = 0.75) +
-    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
-    theme_emf() +
-    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
-    scale_y_continuous(limits = c(0, 85), breaks = c(0, 20, 40, 60, 80)) +
-    labs(title = "IRA",
-         y = expression(`EV Sales Share (%)`),
-         x = element_blank()) +
-    theme(legend.position = "right",
-          plot.title = element_text(hjust = 0.5),
-          axis.text.x = element_text(angle = 45, hjust = 1)) +
-    geom_point(aes(x = 2021, y = EV_IRA$value[EV_IRA$year == 2021][1]), color = "black") +
-    geom_point(
-      data = IRAmedians,
-      aes(x = year, y = median),
-      color = "black",
-      shape = 16,
-      size = 2
-    )
-  
-dif = rbind(EV_IRA, EV_noIRA)
-
-dif_hist = dif %>%
-  filter(scenario == "Historic") %>%
-  slice(1) %>%
-  ungroup() %>%
-  mutate(value = 0) %>%
-  select(model, year, value) %>%
-  mutate(name = "historic")
-
-dif = dif %>%
-  filter(scenario != "Historic") %>%
-  pivot_wider(names_from = scenario, values_from = value) %>%
-  mutate(absdif = IRA - `No IRA`) %>%
-  mutate(pdif = ((IRA - `No IRA`) / IRA) * 100) %>%
-  ungroup() %>%
-  select(model, year, absdif, pdif)
-
-dif_clean = dif %>%
-  pivot_longer(cols = c(absdif, pdif))
-
-dif_fin = rbind(dif_clean, dif_hist)
-
-df = dif_fin %>%
-  filter(name != "pdif")
-
-medians = df %>%
-    filter(year %in% c(2030, 2035)) %>%
-    group_by(year) %>%
-    summarize(median = median(value))
-
-
-EV_abdif_figure = ggplot() +
-    geom_line(data = df,
-              aes(
-                x = year,
-                y = value,
-                group = model,
-                color = model
-              ),
-              size = 0.75) +
-    geom_point(aes(x = 2021, y = 0), color = "black") +
-    geom_point(
-      data = medians,
-      aes(x = year, y = median),
-      color = "black",
-      shape = 16,
-      size = 2
-    ) +
-    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
-    labs(title = "",
-         x = "",
-         y = expression(`Absolute Difference (%)`)) +
-    theme_emf() +
-    theme(
-      axis.text.x = element_text(angle = 45, hjust = 1),
-      panel.spacing.x = unit(4, "mm"),
-      legend.position = "none"
-    ) +
-    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))
-
-df = dif_fin %>%
-  filter(name != "absdif")
-
-medians = df %>%
-    filter(year %in% c(2030, 2035)) %>%
-    group_by(year) %>%
-    summarize(median = median(value))
-
-
-EV_pdif_figure = ggplot() +
-    geom_line(data = df,
-              aes(
-                x = year,
-                y = value,
-                group = model,
-                color = model
-              ),
-              size = 0.75) +
-    geom_point(aes(x = 2021, y = 0), color = "black") +
-    geom_point(
-      data = medians,
-      aes(x = year, y = median),
-      color = "black",
-      shape = 16,
-      size = 2
-    ) +
-    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
-    labs(title = "",
-         x = "",
-         y = expression(`Percent Difference (%)`)) +
-    theme_emf() +
-    theme(
-      axis.text.x = element_text(angle = 45, hjust = 1),
-      panel.spacing.x = unit(4, "mm"),
-      legend.position = "none"
-    ) +
-    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))
-
-  figure = (NoIRAfigure | IRAfigure) / (EV_abdif_figure | EV_pdif_figure)+
-    plot_layout(guides = "collect") +
-    plot_annotation(title = "EV Sales Share")
-  
-savefig(figure, fig_no)
+# fig_no = "Ap.15.EvSalesShare"
+# 
+# # TODO: NEMS-OP should only have reporting every 5 years
+# 
+# # clean_data_evshare = spg_clean(ts_map_ID = 118, drop = c(""), histsrc = "EPA-ATR", 
+# #                            config = config, clean_data = clean_data4, figmap_leep_timeseries = figmap_leep_timeseries)
+# scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)
+# raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
+#   left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
+#   select(-c(model, scenario)) %>%
+#   rename(model = model_new) %>%
+#   rename(scenario = scenario_new) %>%
+#   filter(unit != "thousands") %>%
+#   filter(!(model == "EPA-ATR" & year >= 2022))
+# 
+# atr_2022 = raw %>% filter(model == "EPA-ATR", year == 2021) %>% mutate(year = 2022)
+# nems = data_min %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
+#   filter(model == "NEMS-OP", 
+#          scenario %in% c("IRA", "No IRA"),
+#          datasrc != "LTS_data_small.xlsx",
+#          grepl("Sales Share", variable),
+#          unit == "%") %>%
+#   left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
+#   select(-c(model, scenario)) %>%
+#   rename(model = model_new) %>%
+#   rename(scenario = scenario_new)
+# 
+# clean_data_evshare = rbind(raw, atr_2022, nems) %>% 
+#   filter(unit != "thousands") %>% 
+#   mutate(value = 100 * value) %>%
+#   filter(model != "EIA-LTS") %>% 
+#   duplicate_historical_data("EPA-ATR", 2022, criteria = TRUE) %>% mutate(
+#     variable = case_when(
+#       variable %in% c(
+#         "Energy Service|Transportation|Passenger|BEV|Sales Share",
+#         # "Energy Service|Transportation|Passenger|FCEV|Sales Share",
+#         # "Energy Service|Transportation|Passenger|HEV|Sales Share",
+#         # "Energy Service|Transportation|Freight|BEV|Sales Share",
+#         # "Energy Service|Transportation|Freight|FCEV|Sales Share",
+#         "Energy Service|Transportation|Passenger|PHEV|Sales Share",
+#         "Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share"
+#         ) ~ 
+#         "Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share")) %>%
+#   group_by(model, scenario, unit, datasrc, year, region, variable) %>%
+#   summarize(value = sum(value)) %>%
+#   filter(!(is.na(variable))) %>%
+#   filter(year <= 2035) %>%
+# #  filter(!(model %in% c("NEMS-OP-LTS"))) %>%
+#   filter(!(datasrc %in% c("LTS_data_small.xlsx"))) %>%
+#   mutate(variable_rename = variable) %>%
+#   mutate(alpha = case_when(
+#       model == "USREP-ReEDS" ~ 1,
+#       model == "GCAM-PNNL" ~ 1,
+#       model == "IPM-EPA" ~ 1,
+#       scenario == "Historic" ~ 1,
+#       T ~ 1
+#   )) %>%
+#   mutate(value = case_when(year == 2022 & model == "NEMS-OP" ~ 100 * atr_2022$value[1], 
+#                            TRUE ~ value))
+# 
+# clean_data_evshare = clean_data_evshare %>%
+#   filter(year >= 2021) %>%
+#   filter(year %in% c(2021, 2025, 2030, 2035))
+# 
+# hist = clean_data_evshare %>%
+#   group_by(model) %>%
+#   slice(1) %>%
+#   ungroup %>%
+#   mutate(year = 2021) %>%
+#   mutate(value = value[scenario == "Historic"][1]) %>%
+#   mutate(scenario = "Historic")
+# 
+# EV_IRA = clean_data_evshare %>%
+#   filter(scenario != "No IRA")
+# 
+# EV_IRA = rbind(EV_IRA, hist)
+# 
+# EV_noIRA = clean_data_evshare %>%
+#   filter(scenario != "IRA")
+# 
+# EV_noIRA = rbind(EV_noIRA, hist)
+# 
+#   noIRAmedians = EV_noIRA %>%
+#     filter(year == 2030 | year == 2035) %>%
+#     group_by(year) %>%
+#     summarize(median = median(value))
+# 
+#   IRAmedians = EV_IRA %>%
+#     filter(year == 2030 | year == 2035) %>%
+#     group_by(year) %>%
+#     summarize(median = median(value))
+# 
+#   NoIRAfigure = ggplot(EV_noIRA, aes(year, value, color = model)) +
+#     geom_line(size = 0.75) +
+#     scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+#     theme_emf() +
+#     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+#     scale_y_continuous(limits = c(0, 85), breaks = c(0, 20, 40, 60, 80)) +
+#     labs(title = "No IRA",
+#          y = expression(`EV Sales Share (%)`),
+#          x = element_blank()) +
+#     theme(legend.position = "right",
+#          plot.title = element_text(hjust = 0.5),
+#           axis.text.x = element_text(angle = 45, hjust = 1)) +
+#     geom_point(aes(x = 2021, y = EV_noIRA$value[EV_noIRA$year == 2021][1]), color = "black") +
+#     geom_point(
+#       data = noIRAmedians,
+#       aes(x = year, y = median),
+#       color = "black",
+#       shape = 16,
+#       size = 2
+#     )
+# 
+#   IRAfigure = ggplot(EV_IRA, aes(year, value, color = model)) +
+#     geom_line(size = 0.75) +
+#     scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+#     theme_emf() +
+#     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+#     scale_y_continuous(limits = c(0, 85), breaks = c(0, 20, 40, 60, 80)) +
+#     labs(title = "IRA",
+#          y = expression(`EV Sales Share (%)`),
+#          x = element_blank()) +
+#     theme(legend.position = "right",
+#           plot.title = element_text(hjust = 0.5),
+#           axis.text.x = element_text(angle = 45, hjust = 1)) +
+#     geom_point(aes(x = 2021, y = EV_IRA$value[EV_IRA$year == 2021][1]), color = "black") +
+#     geom_point(
+#       data = IRAmedians,
+#       aes(x = year, y = median),
+#       color = "black",
+#       shape = 16,
+#       size = 2
+#     )
+#   
+# dif = rbind(EV_IRA, EV_noIRA)
+# 
+# dif_hist = dif %>%
+#   filter(scenario == "Historic") %>%
+#   slice(1) %>%
+#   ungroup() %>%
+#   mutate(value = 0) %>%
+#   select(model, year, value) %>%
+#   mutate(name = "historic")
+# 
+# dif = dif %>%
+#   filter(scenario != "Historic") %>%
+#   pivot_wider(names_from = scenario, values_from = value) %>%
+#   mutate(absdif = IRA - `No IRA`) %>%
+#   mutate(pdif = ((IRA - `No IRA`) / IRA) * 100) %>%
+#   ungroup() %>%
+#   select(model, year, absdif, pdif)
+# 
+# dif_clean = dif %>%
+#   pivot_longer(cols = c(absdif, pdif))
+# 
+# dif_fin = rbind(dif_clean, dif_hist)
+# 
+# df = dif_fin %>%
+#   filter(name != "pdif")
+# 
+# medians = df %>%
+#     filter(year %in% c(2030, 2035)) %>%
+#     group_by(year) %>%
+#     summarize(median = median(value))
+# 
+# 
+# EV_abdif_figure = ggplot() +
+#     geom_line(data = df,
+#               aes(
+#                 x = year,
+#                 y = value,
+#                 group = model,
+#                 color = model
+#               ),
+#               size = 0.75) +
+#     geom_point(aes(x = 2021, y = 0), color = "black") +
+#     geom_point(
+#       data = medians,
+#       aes(x = year, y = median),
+#       color = "black",
+#       shape = 16,
+#       size = 2
+#     ) +
+#     scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+#     labs(title = "",
+#          x = "",
+#          y = expression(`Absolute Difference (%)`)) +
+#     theme_emf() +
+#     theme(
+#       axis.text.x = element_text(angle = 45, hjust = 1),
+#       panel.spacing.x = unit(4, "mm"),
+#       legend.position = "none"
+#     ) +
+#     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))
+# 
+# df = dif_fin %>%
+#   filter(name != "absdif")
+# 
+# medians = df %>%
+#     filter(year %in% c(2030, 2035)) %>%
+#     group_by(year) %>%
+#     summarize(median = median(value))
+# 
+# 
+# EV_pdif_figure = ggplot() +
+#     geom_line(data = df,
+#               aes(
+#                 x = year,
+#                 y = value,
+#                 group = model,
+#                 color = model
+#               ),
+#               size = 0.75) +
+#     geom_point(aes(x = 2021, y = 0), color = "black") +
+#     geom_point(
+#       data = medians,
+#       aes(x = year, y = median),
+#       color = "black",
+#       shape = 16,
+#       size = 2
+#     ) +
+#     scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+#     labs(title = "",
+#          x = "",
+#          y = expression(`Percent Difference (%)`)) +
+#     theme_emf() +
+#     theme(
+#       axis.text.x = element_text(angle = 45, hjust = 1),
+#       panel.spacing.x = unit(4, "mm"),
+#       legend.position = "none"
+#     ) +
+#     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))
+# 
+#   figure = (NoIRAfigure | IRAfigure) / (EV_abdif_figure | EV_pdif_figure)+
+#     plot_layout(guides = "collect") +
+#     plot_annotation(title = "EV Sales Share")
+#   
+# savefig(figure, fig_no)
 
 ```
 
