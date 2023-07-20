@@ -362,7 +362,7 @@ A = ggplot(data = data, aes(x = axe, y = value,  color = scenario)) +
           axis.title.x = element_blank(),
           axis.ticks = element_blank(),
           legend.position = "none") + 
-  scale_alpha(range = c(0.6, 1), guide = F) + 
+  scale_alpha(range = c(1, 1), guide = F) + 
   annotate("text", x = 1.77, y = 325, label = "No IRA", color = "#F28063", alpha = 1) +
   annotate("text", x = 2.17, y = 375, label = "IRA", color = "#0388B3", alpha = 1) +
   ylim(0, 700)

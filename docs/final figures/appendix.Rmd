@@ -266,7 +266,7 @@ saveall(fin, data_sort, fig_no, wd = 9)
 ### Economy-Wide
 
 ```{r}
-fig_no = "Ap.1.EconWideEmis"
+fig_no = "F.1.EconWideEmis"
 
 ts_map_ID = 99
 pd_map_ID = 25
@@ -293,7 +293,7 @@ savefig(fig$figure, fig_no)
 ### Electricity
 
 ```{r}
-fig_no = "Ap.2.ElecEmis"
+fig_no = "F.2.ElecEmis"
 
 ts_map_ID = 98
 pd_map_ID = 26
@@ -320,7 +320,7 @@ savefig(fig$figure, fig_no)
 ### Transportation
 
 ```{r}
-fig_no = "Ap.3.TranEmis"
+fig_no = "F.3.TranEmis"
 
 ts_map_ID = 19
 pd_map_ID = 27
@@ -347,7 +347,7 @@ savefig(fig$figure, fig_no)
 ### Building
 
 ```{r}
-fig_no = "Ap.4.BuilEmis"
+fig_no = "F.4.BuilEmis"
 
 ts_map_ID = 23
 pd_map_ID = 29
@@ -374,7 +374,7 @@ savefig(fig$figure, fig_no)
 ### Industry
 
 ```{r}
-fig_no = "Ap.5.IndEmis"
+fig_no = "F.5.IndEmis"
 
 ts_map_ID = 21
 pd_map_ID = 28
@@ -404,7 +404,7 @@ savefig(fig$figure, fig_no)
 ### Coal
 
 ```{r}
-fig_no = "Ap.6.Coal"
+fig_no = "F.6.Coal"
 
 ts_map_ID = 94
 pd_map_ID = 32
@@ -431,7 +431,7 @@ savefig(fig$figure, fig_no)
 ### Gas
 
 ```{r}
-fig_no = "Ap.7.Gas"
+fig_no = "F.7.Gas"
 
 ts_map_ID = 93
 pd_map_ID = 31
@@ -458,7 +458,7 @@ savefig(fig$figure, fig_no)
 ### Petroleum
 
 ```{r}
-fig_no = "Ap.8.Petrol"
+fig_no = "F.8.Petrol"
 
 ts_map_ID = 92
 pd_map_ID = 30
@@ -487,7 +487,7 @@ savefig(fig$figure, fig_no)
 ### Nuclear
 
 ```{r}
-fig_no = "Ap.9.NuclearGen"
+fig_no = "F.9.NuclearGen"
 
 ts_map_ID = 91
 pd_map_ID = 80
@@ -514,7 +514,7 @@ savefig(fig$figure, fig_no)
 ### Solar
 
 ```{r}
-fig_no = "Ap.10.SolarGen"
+fig_no = "F.10.SolarGen"
 
 ts_map_ID = 90
 pd_map_ID = 79
@@ -541,7 +541,7 @@ savefig(fig$figure, fig_no)
 ### Wind
 
 ```{r}
-fig_no = "Ap.11.WindGen"
+fig_no = "F.11.WindGen"
 
 ts_map_ID = 89
 pd_map_ID = 78
@@ -568,7 +568,7 @@ savefig(fig$figure, fig_no)
 ### CCS
 
 ```{r}
-fig_no = "Ap.12.CCSGen"
+fig_no = "F.12.CCSGen"
 
 #there is no historic data here so gotta do a lil manual work
 ts_map_ID = 85
@@ -713,7 +713,7 @@ savefig(fig, fig_no)
 ### Coal
 
 ```{r}
-fig_no = "Ap.13.CoalGen"
+fig_no = "F.13.CoalGen"
 
 ts_map_ID = 82
 pd_map_ID = 71
@@ -741,7 +741,7 @@ savefig(fig$figure, fig_no)
 ### Gas
 
 ```{r}
-fig_no = "Ap.14.GasGen"
+fig_no = "F.14.GasGen"
 
 ts_map_ID = 81
 pd_map_ID = 70
@@ -769,7 +769,7 @@ savefig(fig$figure, fig_no)
 ### Other
 
 ```{r}
-fig_no = "Ap.15.OtherGen"
+fig_no = "F.15.OtherGen"
 
 ts_map_ID = 88
 pd_map_ID = 77
@@ -943,8 +943,7 @@ pdfigure = ggplot() +
 ### Electricity generation by model
 
 ```{r}
-# Appendix F: figure 16
-fig_no = "Ap.16.Generation"
+fig_no = "F.16.Generation"
 
 exclude_models = c()
 
@@ -1021,8 +1020,7 @@ saveall(p, dta, fig_no)
 ### Electricity capacity by model
 
 ```{r}
-# Appendix F: figure 17
-fig_no = "Ap.17.Capacity"
+fig_no = "F.17.Capacity"
 
 p = print_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 15, "United States",
                 level_mod = models_alph) +
@@ -1044,69 +1042,10 @@ saveall(p, dta, fig_no)
 
 ```
 
-### Electricity generation difference from noIRA
-
-```{r}
-# Appendix F: figure 18
-fig_no = "2.4"
-
-subpalettes = create_subpalettes(figmap_leep_stackbar, config)
-
-dta = data_from_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 18, "United States")
-
-dta_ira = dta %>% filter(scenario == "IRA") %>%
-  ungroup() %>%
-  select(model, year, variable_rename, value) %>%
-  rename(value_ira = value)
-
-dta_noira = dta %>% filter(scenario == "No IRA") %>%
-  ungroup() %>%
-  select(model, year, variable_rename, value) %>%
-  rename(value_noira= value)
-
-dta_full = dta_ira %>% inner_join(dta_noira, by = c("model", "year", "variable_rename")) %>%
-  mutate(diff = value_ira - value_noira) %>%
-  mutate(model = factor(model, levels = models_alph)) %>%
-  pivot_longer(cols = c("value_ira", "value_noira", "diff"), names_to = "metric") %>%
-  filter(metric != "value_noira") %>%
-  mutate(metric = factor(metric, levels = c("value_ira", "diff")))
-# pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
-
-facet_renamer = c(
-  "value_ira" = "IRA",
-  "diff" = "Difference from No IRA"
-)
-
-p = dta_full %>% ggplot() +
-  geom_bar(aes(x = year, y = value, fill = variable_rename), 
-           position="stack", stat="identity") + 
-  geom_hline(yintercept = 0, color = "black", linewidth = 0.5) +
-  scale_x_continuous(breaks = c(2030, 2035), labels = c("2030", "2035"), position = "top") + 
-  scale_y_continuous(expand = expansion(mult = c(0.02,0.02)), labels = scales::comma, #limits = c(-3000, 7500),
-                    name = expression("Difference in Generation from No IRA (TWh)")) +
-  # facetted_pos_scales(
-  #   y = list(
-  #     metric == "value_ira" ~ scale_y_continuous(limits = c(0,6500), expand = expansion(mult = c(0.02, 0.02)), labels = scales::comma,
-  #                                                name = expression("Difference in Generation from No IRA (TWh)")),
-  #     metric == "diff" ~ scale_y_continuous(limits = c(-3100,6500))
-  #   )) +
-  scale_subpalette(subpalettes, "Electricity Generation") +
-  facet_grid(metric ~ model, switch = "x", labeller = labeller(metric = facet_renamer, model = model_renamer), scales = "free_y") +
-  theme_emf() + 
-  theme(axis.ticks = element_blank(), axis.text.x = element_text(angle = 90, hjust = 1),
-        strip.text.x = element_text(face = "plain", angle = 90, hjust = 1, size = 7),
-        axis.title.x = element_blank())
-
-p
-
-saveall(p, dta_full, fig_no)
-```
-## Transportation
-
 ### EV Share
 
 ```{r}
-fig_no = "Ap.15.EvSalesShare"
+fig_no = "F.18.EvSalesShare"
 
 subpalettes_ev = create_subpalettes(figmap_leep_timeseries, config)
 # TODO: NEMS-OP should only have reporting every 5 years
@@ -1348,6 +1287,185 @@ savefig(figure, fig_no)
 
 ```
 
+## Gas and Coal generation capacity factors
+
+### Generation
+
+```{r}
+fig_no = "F.19"
+
+exclude_models = c(
+  "AEO2020",
+  "AEO2021",
+  "AEO2022"
+)
+
+exclude_models_bistline = c(
+  "ReEDS-NREL",
+  "IPM-ERA"
+)
+
+generation_data_bis = clean_data %>%
+  filter(datasrc == "bistline_ira_tall.csv", 
+         !(model %in% exclude_models_bistline),
+  variable %in% c(
+    #"Secondary Energy|Electricity|Coal|w/ CCS",
+    "Secondary Energy|Electricity|Coal|w/o CCS",
+    #"Secondary Energy|Electricity|Gas|w/ CCS",
+    "Secondary Energy|Electricity|Gas|w/o CCS"
+  )) %>%
+  mutate(variable = case_when(
+    grepl("Coal",variable) ~ "Secondary Energy|Electricity|Coal",
+    TRUE ~ "Secondary Energy|Electricity|Gas"
+  )) %>% group_by(model, scenario, unit, year, datasrc, variable, region) %>%
+  summarize(value = sum(value)) %>% ungroup()
+
+generation_data_other = clean_data %>%
+  filter(variable %in% c("Secondary Energy|Electricity|Coal", 
+                         "Secondary Energy|Electricity|Gas"))
+
+generation_data = bind_rows(generation_data_bis, generation_data_other) %>%
+  filter(year %in% c(2030, 2035),
+         !(model %in% exclude_models),
+         scenario %in% c("IRA","No IRA","Core")) %>%
+  # convert from quads to TWh
+  mutate(value = value * 293.07107,
+         unit = "TWh") %>%
+  mutate(scenario = case_when(
+    scenario == "Core" ~ "IRA",
+    TRUE ~ scenario
+  )) %>%
+  select(-c(region, datasrc, unit)) %>%
+  mutate(variable = case_when(
+    variable == "Secondary Energy|Electricity|Coal" ~ "Coal",
+    TRUE ~ "Gas"
+  )) %>%
+  pivot_wider(names_from = c("scenario", "year"), values_from = value) %>%
+  arrange(model, variable) %>% 
+  select(c("model", "variable", "No IRA_2030", "No IRA_2035", "IRA_2030", "IRA_2035")) %>%
+  group_by(variable)
+  
+  #pivot_wider(names_from = model, values_from = value) %>%
+  #group_by(variable)
+colnames(generation_data) = c("Model", "Generation.Fuel", "2030", "2035", "2030\r", "2035\r")
+
+generation_table = gt_elec_table(generation_data, "Electricity Generation (TWh)", percent = FALSE)
+generation_table
+
+generation_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
+generation_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
+```
+
+### Capacity
+
+```{r}
+fig_no = "F.20"
+
+exclude_models = c(
+  "AEO2020",
+  "AEO2021",
+  "AEO2022"
+)
+
+exclude_models_bistline = c(
+  "ReEDS-NREL",
+  "IPM-ERA"
+)
+
+capacity_data_bis = clean_data %>%
+  filter(datasrc == "bistline_ira_tall.csv", 
+         !(model %in% exclude_models_bistline),
+  variable %in% c(
+   #"Capacity|Electricity|Coal|w/ CCS",
+    "Capacity|Electricity|Coal|w/o CCS",
+   #"Capacity|Electricity|Gas|w/ CCS",
+    "Capacity|Electricity|Gas|w/o CCS"
+  )) %>%
+  mutate(variable = case_when(
+    grepl("Coal",variable) ~ "Capacity|Electricity|Coal",
+    TRUE ~ "Capacity|Electricity|Gas"
+  )) %>% group_by(model, scenario, unit, year, datasrc, variable, region) %>%
+  summarize(value = sum(value)) %>% ungroup()
+
+capacity_data_other = clean_data %>%
+  filter(variable %in% c("Capacity|Electricity|Coal", 
+                         "Capacity|Electricity|Gas"))
+
+capacity_data = bind_rows(capacity_data_bis, capacity_data_other) %>%
+  filter(year %in% c(2030, 2035),
+         !model %in% exclude_models,
+         scenario %in% c("IRA","No IRA","Core")) %>%
+  mutate(scenario = case_when(
+    scenario == "Core" ~ "IRA",
+    TRUE ~ scenario
+  )) %>%
+  select(-c(region, datasrc, unit)) %>%
+  mutate(variable = case_when(
+    variable == "Capacity|Electricity|Coal" ~ "Coal",
+    TRUE ~ "Gas"
+  )) %>%
+  pivot_wider(names_from = c("scenario", "year"), values_from = value) %>%
+  arrange(model, variable) %>% 
+  select(c("model", "variable", "No IRA_2030", "No IRA_2035", "IRA_2030", "IRA_2035")) %>%
+  group_by(variable)
+  
+colnames(capacity_data) = c("Model", "Generation.Fuel", "2030", "2035", "2030\r", "2035\r")
+
+capacity_table = gt_elec_table(capacity_data, "Electricity Generation Capacity (GW)", percent = FALSE)
+
+capacity_table
+
+capacity_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
+capacity_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
+```
+
+### Capacity Factor
+
+```{r}
+fig_no = "F.21"
+
+exclude_models = c(
+  "AEO2020",
+  "AEO2021",
+  "AEO2022"
+)
+
+# need to run the 2 above code chunks first
+
+# generation in TWh
+generation_data_temp = generation_data
+colnames(generation_data_temp) = c("Model", "Generation.Fuel",
+                            "Gen.NoIRA.2030","Gen.NoIRA.2035","Gen.IRA.2030","Gen.IRA.2035")
+# capacity in GW
+capacity_data_temp = capacity_data
+colnames(capacity_data_temp) = c("Model", "Generation.Fuel",
+                            "Cap.NoIRA.2030","Cap.NoIRA.2035","Cap.IRA.2030","Cap.IRA.2035")
+
+cf_data = generation_data_temp %>% inner_join(capacity_data_temp, 
+                                              by = c("Model", "Generation.Fuel")) %>%
+  mutate(CF.NoIRA.2030 = ((1000 * Gen.NoIRA.2030) / (8760 * Cap.NoIRA.2030)),
+         CF.NoIRA.2035 = ((1000 * Gen.NoIRA.2035) / (8760 * Cap.NoIRA.2035)),
+         CF.IRA.2030 = ((1000 * Gen.IRA.2030) / (8760 * Cap.IRA.2030)),
+         CF.IRA.2035 = ((1000 * Gen.IRA.2035) / (8760 * Cap.IRA.2035))) %>%
+  select(-c("Cap.NoIRA.2030","Cap.NoIRA.2035","Cap.IRA.2030","Cap.IRA.2035",
+            "Gen.NoIRA.2030","Gen.NoIRA.2035","Gen.IRA.2030","Gen.IRA.2035")) %>%
+  filter(!(Model %in% exclude_models))
+
+colnames(cf_data) = c("Model", "Generation.Fuel", "2030", "2035", "2030\r", "2035\r")
+ 
+cf_data$"2035\r"[cf_data$Model == "GCAM-CGS" & cf_data$Generation.Fuel == "Coal"] = 0
+
+cf_table = gt_elec_table(cf_data, "Electricity Generation Capacity Factors (%)", 
+                         percent = TRUE, 
+                         footnote_text = "GCAM-CGS coal generation and capacity are beneath 
+                         rounding tolerance, so CF has been set to 0%.",
+                         footnote_column = 6, footnote_row = 3)
+cf_table
+
+cf_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
+cf_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
+```
+
 # Appendix G
 
 ## Electrification Figure
@@ -1411,20 +1529,10 @@ elc_ts = rbind(elc_raw, replace_hist) %>%
 
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
-ggplot() +
-  geom_line(data = elc_ts, aes(x = year, y = value, color = scenario, group = interaction(model,scenario))) +
-  facet_grid(~variable) +
-  theme_emf() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  scale_subpalette(subpalettes, "Final Energy") +
-  labs(y = "% Electricity of Final Energy",
-       x="")
-
 elc_ts = elc_ts %>%
   mutate(alpha = 1) %>%
   filter(!model %in% "REGEN-EPRI") %>%
   mutate(year = as.numeric(year))
-
 
 Econ_ts = elc_ts %>%
   filter(variable == "Economy-Wide") %>%
@@ -1493,7 +1601,6 @@ BuilSpg = spg3(df = Buil_ts,
 
 savedata(BuilSpg$data, paste0(fig_no, "Buildings"))
 
-
 BuilDot = dotted(BuilSpg$data, BuilSpg$figure, "median", 0, 70, config, figmap_leep_timeseries)
 
 Ind_ts = elc_ts %>%
@@ -1519,11 +1626,10 @@ savedata(IndSpg$data, paste0(fig_no, "Industry"))
 
 IndDot = dotted(IndSpg$data, IndSpg$figure, "median", 0, 70, config, figmap_leep_timeseries)
 
-Econ = (EconDot | TranDot | BuilDot | IndDot)
+Full = (EconDot | TranDot | BuilDot | IndDot)
+Full
 
-savefig(Econ, fig_no, wd = 9, ht = 4)
-# TODO: save off this data for the final report
-# TODO: remove REGEN from industry, apples to oranges
+savefig(Full, fig_no, wd = 9, ht = 4)
 ```
 
 ## Tables
@@ -1581,7 +1687,7 @@ all = rbind(total, transportation, buildings, industry) %>%
 
 write_sheet(all, per_share_wb, "All")
 
-saveWorkbook(per_share_wb, file = "output/final_figures/data/electrification_percentshare.xlsx", overwrite = TRUE)
+saveWorkbook(per_share_wb, file = paste("output/final_figures/data/",fig_no,"share.xlsx",sep=")"), overwrite = TRUE)
 ```
 
 ```{R}
@@ -1637,7 +1743,6 @@ table1
 
 table1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
 table1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
-
 ```
 
 ### % Difference in Share IRA vs No IRA Tables
@@ -1695,7 +1800,7 @@ all_per = rbind(total_per, transportation_per, buildings_per, industry_per) %>%
 
 write_sheet(all_per, diff_wb, "All")
 
-saveWorkbook(diff_wb, file = "output/final_figures/data/electrification_differences.xlsx", overwrite = TRUE)
+saveWorkbook(per_share_wb, file = paste("output/final_figures/data/",fig_no,"differences.xlsx",sep=")"), overwrite = TRUE)
 ```
 
 ```{R}
@@ -1756,199 +1861,12 @@ table2 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".
 
 ```
 
-## Gas and Coal generation capacity factors
-
-```{r}
-# Table X.1: Gas and Coal generation
-fig_no = "Ap.X.1"
-
-exclude_models = c(
-  "AEO2020",
-  "AEO2021",
-  "AEO2022"
-)
-
-exclude_models_bistline = c(
-  "ReEDS-NREL",
-  "IPM-ERA"
-)
-
-generation_data_bis = clean_data %>%
-  filter(datasrc == "bistline_ira_tall.csv", 
-         !(model %in% exclude_models_bistline),
-  variable %in% c(
-    #"Secondary Energy|Electricity|Coal|w/ CCS",
-    "Secondary Energy|Electricity|Coal|w/o CCS",
-    #"Secondary Energy|Electricity|Gas|w/ CCS",
-    "Secondary Energy|Electricity|Gas|w/o CCS"
-  )) %>%
-  mutate(variable = case_when(
-    grepl("Coal",variable) ~ "Secondary Energy|Electricity|Coal",
-    TRUE ~ "Secondary Energy|Electricity|Gas"
-  )) %>% group_by(model, scenario, unit, year, datasrc, variable, region) %>%
-  summarize(value = sum(value)) %>% ungroup()
-
-generation_data_other = clean_data %>%
-  filter(variable %in% c("Secondary Energy|Electricity|Coal", 
-                         "Secondary Energy|Electricity|Gas"))
-
-generation_data = bind_rows(generation_data_bis, generation_data_other) %>%
-  filter(year %in% c(2030, 2035),
-         !(model %in% exclude_models),
-         scenario %in% c("IRA","No IRA","Core")) %>%
-  # convert from quads to TWh
-  mutate(value = value * 293.07107,
-         unit = "TWh") %>%
-  mutate(scenario = case_when(
-    scenario == "Core" ~ "IRA",
-    TRUE ~ scenario
-  )) %>%
-  select(-c(region, datasrc, unit)) %>%
-  mutate(variable = case_when(
-    variable == "Secondary Energy|Electricity|Coal" ~ "Coal",
-    TRUE ~ "Gas"
-  )) %>%
-  pivot_wider(names_from = c("scenario", "year"), values_from = value) %>%
-  arrange(model, variable) %>% 
-  select(c("model", "variable", "No IRA_2030", "No IRA_2035", "IRA_2030", "IRA_2035")) %>%
-  group_by(variable)
-  
-  #pivot_wider(names_from = model, values_from = value) %>%
-  #group_by(variable)
-colnames(generation_data) = c("Model", "Generation.Fuel", "2030", "2035", "2030\r", "2035\r")
-
-generation_table = gt_elec_table(generation_data, "Electricity Generation (TWh)", percent = FALSE)
-generation_table
-
-# having trouble saving this as a png for some reason...
-#generation_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
-generation_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
-```
-
-Next
-
-```{r}
-# Table X.2: Gas and Coal capacity
-fig_no = "Ap.X.2"
-
-exclude_models = c(
-  "AEO2020",
-  "AEO2021",
-  "AEO2022"
-)
-
-exclude_models_bistline = c(
-  "ReEDS-NREL",
-  "IPM-ERA"
-)
-
-capacity_data_bis = clean_data %>%
-  filter(datasrc == "bistline_ira_tall.csv", 
-         !(model %in% exclude_models_bistline),
-  variable %in% c(
-   #"Capacity|Electricity|Coal|w/ CCS",
-    "Capacity|Electricity|Coal|w/o CCS",
-   #"Capacity|Electricity|Gas|w/ CCS",
-    "Capacity|Electricity|Gas|w/o CCS"
-  )) %>%
-  mutate(variable = case_when(
-    grepl("Coal",variable) ~ "Capacity|Electricity|Coal",
-    TRUE ~ "Capacity|Electricity|Gas"
-  )) %>% group_by(model, scenario, unit, year, datasrc, variable, region) %>%
-  summarize(value = sum(value)) %>% ungroup()
-
-capacity_data_other = clean_data %>%
-  filter(variable %in% c("Capacity|Electricity|Coal", 
-                         "Capacity|Electricity|Gas"))
-
-capacity_data = bind_rows(capacity_data_bis, capacity_data_other) %>%
-  filter(year %in% c(2030, 2035),
-         !model %in% exclude_models,
-         scenario %in% c("IRA","No IRA","Core")) %>%
-  mutate(scenario = case_when(
-    scenario == "Core" ~ "IRA",
-    TRUE ~ scenario
-  )) %>%
-  select(-c(region, datasrc, unit)) %>%
-  mutate(variable = case_when(
-    variable == "Capacity|Electricity|Coal" ~ "Coal",
-    TRUE ~ "Gas"
-  )) %>%
-  pivot_wider(names_from = c("scenario", "year"), values_from = value) %>%
-  arrange(model, variable) %>% 
-  select(c("model", "variable", "No IRA_2030", "No IRA_2035", "IRA_2030", "IRA_2035")) %>%
-  group_by(variable)
-  
-colnames(capacity_data) = c("Model", "Generation.Fuel", "2030", "2035", "2030\r", "2035\r")
-
-capacity_table = gt_elec_table(capacity_data, "Electricity Generation Capacity (GW)", percent = FALSE)
-
-capacity_table
-
-# having trouble saving this as a png for some reason...
-# capacity_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
-capacity_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
-
-
-```
-
-```{r}
-# Table X.3: Gas and Coal capacity factors
-fig_no = "Ap.X.3"
-
-exclude_models = c(
-  "AEO2020",
-  "AEO2021",
-  "AEO2022"
-)
-
-# need to run the 2 above code chunks first
-
-# generation in TWh
-generation_data_temp = generation_data
-colnames(generation_data_temp) = c("Model", "Generation.Fuel",
-                            "Gen.NoIRA.2030","Gen.NoIRA.2035","Gen.IRA.2030","Gen.IRA.2035")
-# capacity in GW
-capacity_data_temp = capacity_data
-colnames(capacity_data_temp) = c("Model", "Generation.Fuel",
-                            "Cap.NoIRA.2030","Cap.NoIRA.2035","Cap.IRA.2030","Cap.IRA.2035")
-
-cf_data = generation_data_temp %>% inner_join(capacity_data_temp, 
-                                              by = c("Model", "Generation.Fuel")) %>%
-  mutate(CF.NoIRA.2030 = ((1000 * Gen.NoIRA.2030) / (8760 * Cap.NoIRA.2030)),
-         CF.NoIRA.2035 = ((1000 * Gen.NoIRA.2035) / (8760 * Cap.NoIRA.2035)),
-         CF.IRA.2030 = ((1000 * Gen.IRA.2030) / (8760 * Cap.IRA.2030)),
-         CF.IRA.2035 = ((1000 * Gen.IRA.2035) / (8760 * Cap.IRA.2035))) %>%
-  select(-c("Cap.NoIRA.2030","Cap.NoIRA.2035","Cap.IRA.2030","Cap.IRA.2035",
-            "Gen.NoIRA.2030","Gen.NoIRA.2035","Gen.IRA.2030","Gen.IRA.2035")) %>%
-  filter(!(Model %in% exclude_models))
-
-colnames(cf_data) = c("Model", "Generation.Fuel", "2030", "2035", "2030\r", "2035\r")
- 
-cf_data$"2035\r"[cf_data$Model == "GCAM-CGS" & cf_data$Generation.Fuel == "Coal"] = 0
-
-cf_table = gt_elec_table(cf_data, "Electricity Generation Capacity Factors (%)", 
-                         percent = TRUE, 
-                         footnote_text = "GCAM-CGS coal generation and capacity are beneath 
-                         rounding tolerance, so CF has been set to 0%.",
-                         footnote_column = 6, footnote_row = 3)
-cf_table
-
-# having trouble saving this as a png for some reason...
-# capacity_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
-cf_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
-
-
-
-
-```
-
-
-# Appendix XX
+# Appendix H
 
 ## EconWide Direct/Indirect
+
 ```{r}
-fig_no = "XX.1"
+fig_no = "H.1"
 
 Econ_data = spg_clean(
   99,
@@ -2025,7 +1943,7 @@ savefig(fig, fig_no)
 
 ## Transportation Direct/Indirect
 ```{r}
-fig_no = "XX.2"
+fig_no = "H.2"
 
 Dir_data = spg_clean(
   97, 
@@ -2096,7 +2014,7 @@ savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 ## Building Direct/Indirect
 
 ```{r}
-fig_no = "XX.3"
+fig_no = "H.3"
 
 Dir_data = spg_clean(
   95, 
@@ -2167,7 +2085,7 @@ savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 ## Industry Direct/Indirect
 
 ```{r}
-fig_no = "XX.4"
+fig_no = "H.4"
 
 Dir_data = spg_clean(
   96, 
@@ -2235,11 +2153,12 @@ savedata(DirSpg$data, paste(fig_no, "Direct"))
 savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 ```
 
-# Appendix YY
+# Appendix I Generation dot plots
 
-### YY.1
+## with 2021
+
 ```{r}
-fig_no = "YY.1"
+fig_no = "I.1"
 
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 names(subpalettes$`Emissions|CO2|Energy|Demand|Industry`) = c("2021", "No IRA", "IRA")
@@ -2996,9 +2915,10 @@ savefig(final, fig_no, wd = 8)
 
 ```
 
-### YY.2
+## Differences
+
 ```{r}
-fig_no = "YY.2"
+fig_no = "I.2"
 
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
@@ -3704,12 +3624,10 @@ savefig(final, fig_no, wd = 8)
 
 ```
 
-
-### Table YY Total
+### Tables
 
 ```{r}
-
-title = "YY.Total Electricity Generation"
+title = "I.Total Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
 
@@ -3851,11 +3769,9 @@ IRA %>%
 tableHTML(caption = paste(title), rownames = F)
 ```
 
-### Table YY Low
-
 ```{r}
 
-title = "YY.Low Emitting Electricity Generation"
+title = "I.Low Emitting Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
 
@@ -4007,11 +3923,9 @@ tableHTML(caption = paste(title), rownames = F)
 
 ```
 
-### Table YY High
-
 ```{r}
 
-title = "YY.High Emitting Electricity Generation"
+title = "I.High Emitting Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
 
@@ -4161,11 +4075,9 @@ tableHTML(caption = paste(title), rownames = F)
 
 ```
 
-### Table YY Wind
-
 ```{r}
 
-title = "YY.Wind Electricity Generation"
+title = "I.Wind Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
 
@@ -4315,11 +4227,9 @@ tableHTML(caption = paste(title), rownames = F)
 
 ```
 
-### Table YY Solar
-
 ```{r}
 
-title = "YY.Solar Electricity Generation"
+title = "I.Solar Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
 
@@ -4469,11 +4379,9 @@ tableHTML(caption = paste(title), rownames = F)
 
 ```
 
-### Table YY Nuclear
-
 ```{r}
 
-title = "YY.Nuclear Electricity Generation"
+title = "I.Nuclear Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
 
@@ -4623,11 +4531,9 @@ tableHTML(caption = paste(title), rownames = F)
 
 ```
 
-### Table YY CCS
-
 ```{r}
 
-title = "YY.CCS Electricity Generation"
+title = "I.CCS Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
 
@@ -4777,11 +4683,9 @@ tableHTML(caption = paste(title), rownames = F)
 
 ```
 
-### Table YY Coal
-
 ```{r}
 
-title = "YY.Coal Electricity Generation"
+title = "I.Coal Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
 
@@ -4931,11 +4835,9 @@ tableHTML(caption = paste(title), rownames = F)
 
 ```
 
-### Table YY Gas
-
 ```{r}
 
-title = "YY.Nautural Gas Electricity Generation"
+title = "I.Nautural Gas Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
 
@@ -5085,11 +4987,9 @@ tableHTML(caption = paste(title), rownames = F)
 
 ```
 
-### Table YY Other
-
 ```{r}
 
-title = "YY.Other Electricity Generation"
+title = "I.Other Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
 

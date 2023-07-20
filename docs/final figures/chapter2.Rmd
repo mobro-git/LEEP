@@ -163,9 +163,95 @@ saveall(delta$figure, delta$df, paste(fig_no, "delta"))
 ## F2.4 generation by model and difference from no ira
 
 ```{r}
-fig_no = 2.4
-# placeholder for figure shane is working on
+fig_no = "2.4"
+
+subpalettes = create_subpalettes(figmap_leep_stackbar, config)
+
+exclude_models = c()
+
+clean_data15 = clean_data %>%
+  mutate(value = case_when(
+    unit == "Quads" ~ value * 293.07107,
+    TRUE ~ value
+  )) %>% mutate(unit = case_when(
+    unit == "Quads" ~ "TWh",
+    TRUE ~ unit
+  )) %>%
+  filter(!(model %in% exclude_models))
+
+models_alph = sort(unique(clean_data15$model))
+
+model_renamer = c(
+  "EIA" = "2021",
+  "EIA-LTS" = "EIA-LTS",
+  "EIA-STEO" = "EIA-STEO",
+  "EPA-ATR" = "EPA-ATR",
+  "EPS-EI" = "EPS-EI",
+  "GCAM-CGS" = "GCAM-CGS",
+  "GCAM-PNNL" = "GCAM-PNNL",
+  "Haiku-RFF" = "Haiku-RFF",
+  "IPM-EPA" = "IPM-EPA",
+  "IPM-NRDC" = "IPM-NRDC",
+  "MARKAL-NETL" = "MARKAL-NETL",
+  "NEMS-EIA" = "NEMS-EIA",
+  "NEMS-OP" = "NEMS-OP",
+  "NEMS-RHG" = "NEMS-RHG",
+  "ReEDS-NREL" = "ReEDS-NREL",
+  "REGEN-EPRI" = "REGEN-EPRI",
+  "RIO-REPEAT" = "RIO-REPEAT",
+  "Scout-LEEP" = "Scout-LEEP",
+  "USREP-ReEDS" = "USREP-ReEDS"
+)
+
+dta = data_from_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 18, "United States")
+
+dta_ira = dta %>% filter(scenario == "IRA") %>%
+  ungroup() %>%
+  select(model, year, variable_rename, value) %>%
+  rename(value_ira = value)
+
+dta_noira = dta %>% filter(scenario == "No IRA") %>%
+  ungroup() %>%
+  select(model, year, variable_rename, value) %>%
+  rename(value_noira= value)
+
+dta_full = dta_ira %>% inner_join(dta_noira, by = c("model", "year", "variable_rename")) %>%
+  mutate(diff = value_ira - value_noira) %>%
+  mutate(model = factor(model, levels = models_alph)) %>%
+  pivot_longer(cols = c("value_ira", "value_noira", "diff"), names_to = "metric") %>%
+  filter(metric != "value_noira") %>%
+  mutate(metric = factor(metric, levels = c("value_ira", "diff")))
+
+facet_renamer = c(
+  "value_ira" = "IRA",
+  "diff" = "Difference from No IRA"
+)
+
+p = dta_full %>% ggplot() +
+  geom_bar(aes(x = year, y = value, fill = variable_rename), 
+           position="stack", stat="identity") + 
+  geom_hline(yintercept = 0, color = "black", linewidth = 0.5) +
+  scale_x_continuous(breaks = c(2030, 2035), labels = c("2030", "2035"), position = "top") + 
+  scale_y_continuous(expand = expansion(mult = c(0.02,0.02)), labels = scales::comma, #limits = c(-3000, 7500),
+                    name = expression("Difference in Generation from No IRA (TWh)")) +
+  # facetted_pos_scales(
+  #   y = list(
+  #     metric == "value_ira" ~ scale_y_continuous(limits = c(0,6500), expand = expansion(mult = c(0.02, 0.02)), labels = scales::comma,
+  #                                                name = expression("Difference in Generation from No IRA (TWh)")),
+  #     metric == "diff" ~ scale_y_continuous(limits = c(-3100,6500))
+  #   )) +
+  scale_subpalette(subpalettes, "Electricity Generation") +
+  facet_grid(metric ~ model, switch = "x", labeller = labeller(metric = facet_renamer, model = model_renamer), scales = "free_y") +
+  theme_emf() + 
+  theme(axis.ticks = element_blank(), axis.text.x = element_text(angle = 90, hjust = 1),
+        strip.text.x = element_text(face = "plain", angle = 90, hjust = 1, size = 7),
+        axis.title.x = element_blank())
+
+p
+
+saveall(p, dta_full, fig_no)
 ```
+
 
 ## F2.5 historical and projected capacity additions by technology
 
