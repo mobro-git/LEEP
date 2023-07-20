@@ -1139,6 +1139,8 @@ EV_noIRA = rbind(EV_noIRA, hist)
     filter(year == 2030 | year == 2035) %>%
     group_by(year) %>%
     summarize(median = median(value))
+  
+  subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
   NoIRAfigure = ggplot(EV_noIRA, aes(year, value, color = model)) +
     geom_line(size = 0.75) +
