@@ -606,7 +606,7 @@ delta = function(pd_map_ID, drop, config, clean_data, figmap_leep_timeseries) {
     filter(year %in% c(2021, 2025, 2030, 2035))
 
   figure = ggplot() +
-    geom_hline(aes(yintercept=0), color = "#646464", size = 0.75) +
+    geom_hline(aes(yintercept=0), color = "#9E9E9E", size = 0.75) +
     geom_line(data = df, aes(
       x = year,
       y = value,
