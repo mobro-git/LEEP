@@ -801,4 +801,21 @@ final
 savefig(final, fig_no)
 ```
 
+## 1.x Playing around with arrows
+```{r, eval = FALSE}
+# Economy-wide emissions
+clean_data12 = clean_data %>% duplicate_historical_data("EPA-GHGI", 2021, criteria = TRUE)
+p = dot_plots_but_with_arrows("time_series", config, clean_data12, figmap_leep_timeseries, 99,
+                              "United States", 0, 6000, "Economy-wide Emissions",
+                              metric = "median", historic_coord = c(2017,5540),
+                              preira_coord = c(2030, 4750), ira_coord = c(2029, 3230) )
+p$full
+
+p2 = dot_plots_but_with_arrows("time_series", config, clean_data12,
+                               figmap_leep_timeseries, 98,
+                              "United States", 0, 2600, "Economy-wide Emissions",
+                              metric = "median", historic_coord = c(2017,2100),
+                              preira_coord = c(2030, 1520), ira_coord = c(2029, 300) )
+p2$full
+```
 

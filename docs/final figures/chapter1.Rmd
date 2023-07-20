@@ -34,7 +34,7 @@ targets::tar_load(data_min)
 targets::tar_load(data_raw)
 ```
 
-## 1.1 economy-wide co2 emissions from fossil fuel combustion by sector
+## F1.1 economy-wide co2 emissions from fossil fuel combustion by sector
 
 ```{r}
 fig_no = 1.1
@@ -58,170 +58,10 @@ fig
 saveall(fig, df, fig_no)
 ```
 
-## 1.2 economy-wide, electricity, and sector co2 emissions
+## F1.2 economy-wide co2 emissions
 
 ```{r}
-fig_no = 1.2
-
-Econ_data = spg_clean(
-  99,
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
-  "EPA-GHGI",
-  config,
-  clean_data,
-  figmap_leep_timeseries
-)
-
-EconSpg = spg2(Econ_data,
-  expression(paste("Economy-Wide C", O[2])),
-  expression(paste("Emissions (Mt C", O[2], "/yr)")),
-  gd = "none",
-  0,
-  7000,
-  c(0, 2000, 4000, 6000),
-  scales::comma,
-  1, 
-  c(2015, 4900), 
-  c(2027.5, 5500), 
-  c(2022, 3800), 
-  config, 
-  figmap_leep_timeseries) 
-
-EconTab = html(EconSpg$data, "Economy-Wide CO<sub>2<sub>")
-
-Elec_data = spg_clean(
-  98,
-  c("Scout-LEEP"),
-  "EPA-GHGI",
-  config,
-  clean_data,
-  figmap_leep_timeseries
-)
-
-ElecSpg = spg2(Elec_data,
-  expression(paste("Electricity C", O[2])),
-  "",
-  gd = "none",
-  0,
-  7000,
-  c(0, 2000, 4000, 6000),
-  NULL,
-  0, 
-  c(2015, 4900), 
-  c(2027.5, 5500), 
-  c(2022, 3800), 
-  config, 
-  figmap_leep_timeseries)
-
-ElecTab = html(ElecSpg$data, "Electricity CO<sub>2<sub>")
-
-Tran_data = spg_clean(
-  19,
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),  
-  "EPA-GHGI",
-  config,
-  clean_data,
-  figmap_leep_timeseries
-)
-
-TranSpg = spg2(Tran_data,
-  expression(paste("Transportation C", O[2])),
-  expression(paste("Emissions (Mt C", O[2], "/yr)")),
-  gd = "none",
-  0,
-  2500,
-  c(0, 1250, 2500),
-  scales::comma,
-  0, 
-  c(2015, 1250), 
-  c(2027.5, 1250), 
-  c(2022, 1250), 
-  config, 
-  figmap_leep_timeseries)
-
-TranTab = html(TranSpg$data, "Transportation CO<sub>2<sub>")
-
-Ind_data = spg_clean(
-  21, 
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),
-  "EPA-GHGI", 
-  config,
-  clean_data, 
-  figmap_leep_timeseries)
-
-IndSpg = spg2(
-  Ind_data, 
-  expression(paste("Industry C", O[2])),
-  "",
-  gd = "none",
-  0,
-  2500,
-  c(0, 1250, 2500),
-  NULL, 
-  0, 
-  c(2021, 1250), 
-  c(2021, 1250), 
-  c(2021, 1250), 
-  config, 
-  figmap_leep_timeseries)
-
-IndTab = html(IndSpg$data, "Industry CO<sub>2<sub>")
-
-Buil_data = spg_clean(
-  23, 
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL"), 
-  "EPA-GHGI", 
-  config, 
-  clean_data, 
-  figmap_leep_timeseries)
-
-BuilSpg = spg2(
-  Buil_data,
-  expression(paste("Building C", O[2])),
-  "",
-  gd = "none",
-  0,
-  2500,
-  c(0, 1250, 2500),
-  NULL, 
-  0, 
-  c(2021, 1250), 
-  c(2021, 1250), 
-  c(2021, 1250), 
-  config, 
-  figmap_leep_timeseries)
-
-BuilTab = html(BuilSpg$data, "Building CO<sub>2<sub>")
-
-# TODO: put more spacing between the top two figures and the bottom three
-fig = (EconSpg$figure | ElecSpg$figure) / (TranSpg$figure | BuilSpg$figure | IndSpg$figure) +
-  plot_annotation(tag_levels = list(c("", "", "Sectoral Emissions: Direct + Indirect from Electricity", "", ""))) &
-  theme(plot.tag.position = c(1.09, 1.1))
-fig
-
-savefig(fig, fig_no)
-
-EconTab
-ElecTab
-TranTab
-BuilTab
-IndTab
-
-EconSpg$data = clean_supplemental_data(EconSpg$data, fig_no)
-ElecSpg$data = clean_supplemental_data(ElecSpg$data, fig_no)
-TranSpg$data = clean_supplemental_data(TranSpg$data, fig_no)
-BuilSpg$data = clean_supplemental_data(BuilSpg$data, fig_no)
-IndSpg$data = clean_supplemental_data(IndSpg$data, fig_no)
-
-savedata(EconSpg$data, paste(fig_no, "EconWide"))
-savedata(ElecSpg$data, paste(fig_no, "Electricity"))
-savedata(TranSpg$data, paste(fig_no, "Transportation"))
-savedata(BuilSpg$data, paste(fig_no, "Buildings"))
-savedata(IndSpg$data, paste(fig_no, "Industry"))
-```
-### 1.2.1
-```{r}
-fig_no = "1.2.1"
+fig_no = "1.2."
 
 Econ_data = spg_clean(
   99,
@@ -234,7 +74,7 @@ Econ_data = spg_clean(
 
 EconSpg = spg2(Econ_data,
   "",
-  expression(paste("Economy-wide C", O[2], "Emissions (Mt C", O[2], "/yr)")),
+  expression(paste("Economy-wide C", O[2], " Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
   0,
   7000,
@@ -254,11 +94,7 @@ delta = delta(25, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RF
 delta
 saveall(delta$figure, delta$df, paste(fig_no, "delta"))
 
-
 EconTab = html(EconSpg$data, "Economy-Wide CO<sub>2<sub>")
-EconSpg
-EconDot
-delta
 EconTab
 
 EconSpg$data = clean_supplemental_data(EconSpg$data, fig_no)
@@ -272,10 +108,61 @@ saveall(delta$figure, delta$df, paste(fig_no, "delta"))
 
 ```
 
-## 1.3/ES.3 key indicators
+## F1.3/ES.3 key indicators
 
 ```{r}
 fig_no = 1.3
+
+Elec_data = spg_clean(
+  98,
+  c("Scout-LEEP"),
+  "EPA-GHGI",
+  config,
+  clean_data,
+  figmap_leep_timeseries
+)
+ElecTab = html(Elec_data, "Electricity CO<sub>2<sub>")
+
+Tran_data = spg_clean(
+  19,
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),  
+  "EPA-GHGI",
+  config,
+  clean_data,
+  figmap_leep_timeseries
+)
+TranTab = html(Tran_data, "Transportation CO<sub>2<sub>")
+
+Ind_data = spg_clean(
+  21, 
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),
+  "EPA-GHGI", 
+  config,
+  clean_data, 
+  figmap_leep_timeseries)
+IndTab = html(Ind_data, "Industry CO<sub>2<sub>")
+
+Buil_data = spg_clean(
+  23, 
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL"), 
+  "EPA-GHGI", 
+  config, 
+  clean_data, 
+  figmap_leep_timeseries)
+BuilTab = html(Buil_data, "Building CO<sub>2<sub>")
+
+EconSpg$data = clean_supplemental_data(EconSpg$data, fig_no)
+Elec_data = clean_supplemental_data(Elec_data, fig_no)
+Tran_data = clean_supplemental_data(Tran_data, fig_no)
+Buil_data = clean_supplemental_data(Buil_data, fig_no)
+Ind_data = clean_supplemental_data(Ind_data, fig_no)
+
+savedata(EconSpg$data, paste(fig_no, "EconWide"))
+savedata(Elec_data, paste(fig_no, "Electricity"))
+savedata(Tran_data, paste(fig_no, "Transportation"))
+savedata(Buil_data, paste(fig_no, "Buildings"))
+savedata(Ind_data, paste(fig_no, "Industry"))
+
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
 indicators_econ = Econ_data %>% filter(year %in% c(2030, 2035))
@@ -406,12 +293,21 @@ combined = (p1 / p2 / p3 / p4 / p5) +
   theme(plot.margin = margin(0, 0, 0, 0))
 
 combined
-saveall(combined, indicators_all, fig_no)
+indicators_all_clean = indicators_all %>% 
+  select(model,scenario,unit,region,title_name.y,year,value,value_2005,pct_diff) %>% 
+  rename(`percent diff 2005` = pct_diff)
+saveall(combined, indicators_all_clean, fig_no)
 fig_no = "ES.3"
-savefig(combined, fig_no)
+saveall(combined, indicators_all_clean, fig_no)
+
+EconTab
+ElecTab
+TranTab
+BuilTab
+IndTab
 ```
 
-## 1.4 fossil energy consumption by fuel
+## F1.4 fossil energy consumption by fuel
 
 ```{r}
 fig_no = 1.4
@@ -542,7 +438,7 @@ savedata(GasSpg$data, paste(fig_no, "Gas"))
 savedata(PetrolSpg$data, paste(fig_no, "Petroleum"))
 ```
 
-## 1.5 economy-wide co2 emissions sensitivities
+## F1.5 economy-wide co2 emissions sensitivities
 
 ```{r}
 fig_no = 1.5
@@ -710,7 +606,8 @@ dta = dta %>% mutate(figure_num = fig_no) %>%
 saveall(fig, dta, fig_no)
 ```
 
-## 1.2.1 Display table
+### T1.2.1 Display table
+
 ```{r}
 #metric = "absolute"
 #metric = "percent"
@@ -1008,22 +905,4 @@ all_panels_gt %>%
    gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".png"), vwidth = 1500, vheight = 1000)
 
 
-```
-
-## 1.x Playing around with arrows
-```{r, eval = FALSE}
-# Economy-wide emissions
-clean_data12 = clean_data %>% duplicate_historical_data("EPA-GHGI", 2021, criteria = TRUE)
-p = dot_plots_but_with_arrows("time_series", config, clean_data12, figmap_leep_timeseries, 99,
-                              "United States", 0, 6000, "Economy-wide Emissions",
-                              metric = "median", historic_coord = c(2017,5540),
-                              preira_coord = c(2030, 4750), ira_coord = c(2029, 3230) )
-p$full
-
-p2 = dot_plots_but_with_arrows("time_series", config, clean_data12,
-                               figmap_leep_timeseries, 98,
-                              "United States", 0, 2600, "Economy-wide Emissions",
-                              metric = "median", historic_coord = c(2017,2100),
-                              preira_coord = c(2030, 1520), ira_coord = c(2029, 300) )
-p2$full
 ```

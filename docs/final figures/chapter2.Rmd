@@ -30,7 +30,7 @@ targets::tar_load(data_min)
 targets::tar_load(data_raw)
 ```
 
-## 2.1 co2 emissions from the power sector in the us, compared to economy-wide co2 emissions
+## F2.1 co2 emissions from the power sector in the us, compared to economy-wide co2 emissions
 
 ```{r}
 fig_no = 2.1
@@ -86,7 +86,7 @@ fig
 saveall(fig, data, fig_no)
 ```
 
-## 2.2 us electricity generation and capacity shares by fuel type, 2021
+## F2.2 us electricity generation and capacity shares by fuel type, 2021
 
 ```{r}
 fig_no = 2.2
@@ -113,7 +113,7 @@ df = clean_supplemental_data(df, fig_no)
 saveall(fig, df, fig_no)
 ```
 
-## 2.3 us power sector co2 emissions
+## F2.3 us power sector co2 emissions
 
 ```{r}
 fig_no = 2.3
@@ -130,7 +130,7 @@ Elec_data = spg_clean(
 ElecSpg = spg2(
   Elec_data, 
   "",
-  expression(paste("Emissions (Mt C", O[2], "/yr)")),
+  expression(paste("Power Sector Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
   0,
   2500,
@@ -143,35 +143,31 @@ ElecSpg = spg2(
   config,
   figmap_leep_timeseries) 
 
-delta = delta(26, "", config, clean_data, figmap_leep_timeseries)
-saveall(delta$figure, delta$df, paste(fig_no, "delta"))
-
 ElecDot = dotted(ElecSpg$data, ElecSpg$figure, "median", 0, 2500, config, figmap_leep_timeseries)
 ElecDot
+ElecSpg$data = clean_supplemental_data(ElecSpg$data, fig_no)
+saveall(ElecDot,ElecSpg$data, fig_no)
+
+delta = delta(26, "", config, clean_data, figmap_leep_timeseries)
 delta
+saveall(delta$figure, delta$df, paste(fig_no, "delta"))
 
 ElecTab = html(ElecSpg$data, "Electricity CO<sub>2<sub>")
 ElecTab
 
-ElecSpg$data = clean_supplemental_data(ElecSpg$data, fig_no)
-
-savedata(ElecSpg$data, fig_no)
-savefig(ElecDot, fig_no)
-
 fig_no = "ES.1"
-savedata(ElecSpg$data, fig_no)
-savefig(ElecDot, fig_no)
+saveall(ElecDot, ElecSpg$data, fig_no)
 saveall(delta$figure, delta$df, paste(fig_no, "delta"))
-
 ```
 
-## 2.4 generation by model and difference from no ira
+## F2.4 generation by model and difference from no ira
 
 ```{r}
+fig_no = 2.4
 # placeholder for figure shane is working on
 ```
 
-## 2.5 historical and projected capacity additions by technology
+## F2.5 historical and projected capacity additions by technology
 
 ```{r}
 fig_no = 2.5
@@ -323,7 +319,7 @@ savedata(dta3, paste0(fig_no,"hist"))
 savedata(dta5, paste0(fig_no, "proj"))
 ```
 
-## 2.6 sensitivity of electric sector emissions
+## F2.6 sensitivity of electric sector emissions
 
 ```{r}
 fig_no = 2.6
@@ -493,7 +489,7 @@ dta = dta %>% mutate(figure_num = fig_no) %>%
 saveall(combined, dta, fig_no)
 ```
 
-## 2.6.1 Display Table
+### T2.1 Display Table
 
 ```{r}
 metric = "absolute"
@@ -829,11 +825,12 @@ all_panels_gt %>%
 
 ```
 
-## 2.7a nox emissions
+## F2.7 nox and so2 emissions
 
 ```{r}
-# testing Tyler's new spg functions
-fig_no = "2.7a"
+fig_no= 2.7
+
+# nox
 clean_data_nox = spg_clean(ts_map_ID = 122, drop = c("ReEDS-NREL"), histsrc = "EPA", 
                            config = config, clean_data = clean_data, figmap_leep_timeseries = figmap_leep_timeseries)
 output = spg2(df = clean_data_nox, title = "", yname = expression(paste("Emissions (Mt N",O[x],"/yr)")),
@@ -845,43 +842,8 @@ figure = output$figure
 nox_data = output$data
 nox_full = dotted(clean_data_nox, figure, "median", ymin = 0, ymax = 5, 
                 config = config, figmap_leep_timeseries = figmap_leep_timeseries)
-nox_full
 
-
-```
-
-```{r, eval = FALSE}
-## OLD ##
-# fig_no = "2.7a"
-# 
-# clean_data7 = clean_data %>% duplicate_historical_data("EPA",2021, criteria = TRUE) %>%
-#   mutate(alpha = case_when(
-#     model == "USREP-ReEDS" ~ 1,
-#     model == "GCAM-PNNL" ~ 1,
-#     model == "IPM-EPA" ~ 1,
-#     scenario == "Historic" ~ 1,
-#     TRUE ~ 0.8)
-#   ) %>%
-#   filter(value > 1e-4)
-# 
-# nox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States") +
-#   scale_alpha(range = c(0.6, 1), guide = "none")
-# #nox
-# 
-# nox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States", 0, 5, 
-#                      "Power Sector NOx Emissions", metric = "median", 
-#                      historic_coord = c(2015,1.8), preira_coord = c(2030, 0.95), ira_coord = c(2029, 0.15), ylab = "Emissions (Mt NOx/yr)")
-# print(nox_full$full)
-# print(nox_full$stats)
-# 
-# dta1 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 122, "United States")
-# dta1 = clean_supplemental_data(dta1, fig_no)
-```
-
-## 2.7b so2 emissions
-
-```{r}
-fig_no = "2.7b"
+#so2
 clean_data_sox = spg_clean(ts_map_ID = 123, drop = c("ReEDS-NREL"), histsrc = "EPA", 
                            config = config, clean_data = clean_data, figmap_leep_timeseries = figmap_leep_timeseries)
 output = spg2(df = clean_data_sox, title = "", yname = expression(paste("Emissions (Mt S", O[x], "/yr)")), 
@@ -893,33 +855,8 @@ figure = output$figure
 sox_data = output$data
 sox_full = dotted(clean_data_sox, figure, "median", ymin = 0, ymax = 5, 
                 config = config, figmap_leep_timeseries = figmap_leep_timeseries)
-sox_full
 
-
-
-
-```
-
-
-```{r, eval = FALSE}
-# fig_no = "2.7b"
-# 
-# sox = print_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States") +
-#   scale_alpha(range = c(0.6, 1), guide = "none")
-# #sox
-# 
-# sox_full = dot_plots("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States", 0, 5, "Power Sector SO2 Emissions", metric = "median", 
-#                      historic_coord = c(2019,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12), ylab = "Emissions (Mt SOx/yr)")
-# print(sox_full$full)
-# print(sox_full$stats)
-# 
-# dta2 = data_from_graph("time_series", config, clean_data7, figmap_leep_timeseries, 123, "United States")
-# dta2 = clean_supplemental_data(dta2, fig_no)
-```
-
-## 2.7 nox and sox in one figure
-```{r}
-fig_no= 2.7
+# combined
 left = nox_full + theme(plot.margin = margin(0,0,0,0))
 right = sox_full + theme(plot.margin = margin(0,0,0,0))
 
@@ -929,7 +866,8 @@ combined = (wrap_elements(left) | wrap_elements(right)) +
   theme(plot.margin = margin(0,0,0,0))
 combined
 
-full_data = rbind(nox_data,sox_data)
+full_data = rbind(nox_data,sox_data) %>%
+  select(model,scenario,unit,region,variable_rename,year,value)
 
 saveall(combined, full_data, fig_no)
 ```
