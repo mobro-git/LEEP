@@ -954,19 +954,60 @@ clean_data15 = clean_data %>%
   )) %>%
   filter(!(model %in% exclude_models))
 
+clean_data_hist_ira = clean_data15 %>%
+  filter(model == "EIA",
+         scenario == "Historic",
+         datasrc == "EIA-EPA-bistline_historic.csv",
+         year == 2021) %>%
+  mutate(scenario = "IRA", year = 2035)
+
+clean_data_hist_noira = clean_data15 %>%
+  filter(model == "EIA",
+         scenario == "Historic",
+         datasrc == "EIA-EPA-bistline_historic.csv",
+         year == 2021) %>%
+  mutate(scenario = "No IRA", year = 2035)
+
+clean_data15 = bind_rows(clean_data15, clean_data_hist_noira, clean_data_hist_ira)
+
 models_alph = sort(unique(clean_data15$model))
+
+dta = data_from_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 18, "United States")
+
+model_renamer = c(
+  "EIA" = "2021",
+  "EIA-LTS" = "EIA-LTS",
+  "EIA-STEO" = "EIA-STEO",
+  "EPA-ATR" = "EPA-ATR",
+  "EPS-EI" = "EPS-EI",
+  "GCAM-CGS" = "GCAM-CGS",
+  "GCAM-PNNL" = "GCAM-PNNL",
+  "Haiku-RFF" = "Haiku-RFF",
+  "IPM-EPA" = "IPM-EPA",
+  "IPM-NRDC" = "IPM-NRDC",
+  "MARKAL-NETL" = "MARKAL-NETL",
+  "NEMS-EIA" = "NEMS-EIA",
+  "NEMS-OP" = "NEMS-OP",
+  "NEMS-RHG" = "NEMS-RHG",
+  "ReEDS-NREL" = "ReEDS-NREL",
+  "REGEN-EPRI" = "REGEN-EPRI",
+  "RIO-REPEAT" = "RIO-REPEAT",
+  "Scout-LEEP" = "Scout-LEEP",
+  "USREP-ReEDS" = "USREP-ReEDS"
+)
 
 p = print_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 18, "United States",
                 level_mod = models_alph) +
-  facet_grid(scenario ~ model, switch = "x") + 
-  scale_x_continuous(breaks = c(2030, 2035), labels = c("2030", "2035"), position = "top") + 
-  scale_y_continuous(expand = c(0,0), labels = scales::comma, 
+  facet_grid(scenario ~ model, switch = "x",labeller = labeller(
+    model = model_renamer)) + 
+    scale_x_continuous(breaks = c(2030, 2035), labels = c("2030", "2035"), position = "top") + 
+  scale_y_continuous(expand = c(0,0), labels = scales::comma, limits = c(0,6500),
                      name = expression("Electricity Generation (TWh)")) +
   theme(axis.ticks = element_blank(), 
         strip.text.x = element_text(face = "plain", angle = 90, hjust = 1, size = 7),
-        axis.text.x = element_text(hjust = 0, vjust = 0.5))
+        axis.text.x = element_text(hjust = 0, vjust = 0.5),
+        plot.title = element_blank())
 
-dta = data_from_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 18, "United States")
 
 p
 
@@ -980,7 +1021,8 @@ fig_no = "Ap.17.Capacity"
 
 p = print_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 15, "United States",
                 level_mod = models_alph) +
-  facet_grid(scenario ~ model, switch = "x") + 
+  facet_grid(scenario ~ model, switch = "x",labeller = labeller(
+    model = model_renamer)) + 
   scale_x_continuous(breaks = c(2030, 2035), labels = c("2030", "2035"), position = "top") + 
   scale_y_continuous(expand = c(0,0), labels = scales::comma, 
                      name = expression("Electricity Capacity (GW)")) +
@@ -999,7 +1041,7 @@ saveall(p, dta, fig_no)
 ### Electricity generation difference from noIRA
 ```{r}
 # Appendix F: figure 18
-fig_no = "Ap.18.Generation_diff"
+fig_no = "2.4"
 
 subpalettes = create_subpalettes(figmap_leep_stackbar, config)
 
@@ -1017,16 +1059,32 @@ dta_noira = dta %>% filter(scenario == "No IRA") %>%
 
 dta_full = dta_ira %>% inner_join(dta_noira, by = c("model", "year", "variable_rename")) %>%
   mutate(diff = value_ira - value_noira) %>%
-  mutate(model = factor(model, levels = models_alph))
+  mutate(model = factor(model, levels = models_alph)) %>%
+  pivot_longer(cols = c("value_ira", "value_noira", "diff"), names_to = "metric") %>%
+  filter(metric != "value_noira") %>%
+  mutate(metric = factor(metric, levels = c("value_ira", "diff")))
+# pivot_longer(cols = starts_with(c("opt_","pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
+
+facet_renamer = c(
+  "value_ira" = "IRA",
+  "diff" = "Difference from No IRA"
+)
 
 p = dta_full %>% ggplot() +
-  geom_bar(aes(x = year, y = diff, fill = variable_rename), 
+  geom_bar(aes(x = year, y = value, fill = variable_rename), 
            position="stack", stat="identity") + 
+  geom_hline(yintercept = 0, color = "black", linewidth = 0.5) +
   scale_x_continuous(breaks = c(2030, 2035), labels = c("2030", "2035"), position = "top") + 
-  scale_y_continuous(expand = c(0,0), limits = c(-3100,3100), labels = scales::comma, 
-                     name = expression("Difference in Generation from No IRA (TWh)")) +
+  scale_y_continuous(expand = expansion(mult = c(0.02,0.02)), labels = scales::comma, #limits = c(-3000, 7500),
+                    name = expression("Difference in Generation from No IRA (TWh)")) +
+  # facetted_pos_scales(
+  #   y = list(
+  #     metric == "value_ira" ~ scale_y_continuous(limits = c(0,6500), expand = expansion(mult = c(0.02, 0.02)), labels = scales::comma,
+  #                                                name = expression("Difference in Generation from No IRA (TWh)")),
+  #     metric == "diff" ~ scale_y_continuous(limits = c(-3100,6500))
+  #   )) +
   scale_subpalette(subpalettes, "Electricity Generation") +
-  facet_grid(. ~ model, switch = "x") +
+  facet_grid(metric ~ model, switch = "x", labeller = labeller(metric = facet_renamer, model = model_renamer), scales = "free_y") +
   theme_emf() + 
   theme(axis.ticks = element_blank(), axis.text.x = element_text(angle = 90, hjust = 1),
         strip.text.x = element_text(face = "plain", angle = 90, hjust = 1, size = 7),
@@ -1034,8 +1092,12 @@ p = dta_full %>% ggplot() +
 
 p
 
-```
+saveall(p, dta_full, fig_no)
 
+```
+```{r}
+# Figure 2.4 - ira on top, differences on the bottom
+```
 -# Appendix G 6
 
 

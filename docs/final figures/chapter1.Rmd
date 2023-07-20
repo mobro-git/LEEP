@@ -367,7 +367,7 @@ indicator_small = function(all_data, summary_data, filter_variable, subtitle = "
             panel.grid.major.x = element_blank(),
             panel.grid.minor.x = element_blank(),
             panel.border = element_blank(),
-            # axis.line.x = element_line(color = "#595959", linewidth = 0.25),
+            #axis.line.x = element_line(color = "#595959", linewidth = 0.25),
             axis.line.x = element_line(color = "white", linewidth = 0.25),
             plot.margin = margin(0,0,5,0))
   
@@ -394,11 +394,11 @@ p1 = indicator_small(indicators_all, indicators_summ, "Economy-Wide", bottom = F
 p2 = indicator_small(indicators_all, indicators_summ, "Electricity", 
                      subtitle = expression(paste("Electricity C", O[2], " Emissions Reductions")))
 p3 = indicator_small(indicators_all, indicators_summ, "Transportation", 
-                     subtitle = expression(paste("Transportation C", O[2], " Emissions Reductions (Direct + Indirect)")))
+                     subtitle = expression(paste("Transportation C", O[2], " Emissions Reductions (Direct + Indirect from Electricity)")))
 p4 = indicator_small(indicators_all, indicators_summ, "Buildings", 
-                     subtitle = expression(paste("Buildings C", O[2], " Emissions Reductions (Direct + Indirect)")))
+                     subtitle = expression(paste("Buildings C", O[2], " Emissions Reductions (Direct + Indirect from Electricity)")))
 p5 = indicator_small(indicators_all, indicators_summ, "Industry", bottom = TRUE, top = FALSE,
-                     subtitle = expression(paste("Industry C", O[2], " Emissions Reductions (Direct + Indirect)")))
+                     subtitle = expression(paste("Industry C", O[2], " Emissions Reductions (Direct + Indirect from Electricity)")))
 p1
 combined = (p1 / p2 / p3 / p4 / p5) +
   plot_layout(guides = "collect") +
@@ -714,7 +714,14 @@ saveall(fig, dta, fig_no)
 ## 1.2.1 Display table
 ```{r}
 #metric = "absolute"
-metric = "percent"
+#metric = "percent"
+metric = "percent_2005"
+
+historic_emissions = (clean_data %>%
+  filter(model == "EPA-GHGI",
+         scenario == "Historic",
+         variable == "Emissions|CO2",
+         year == 2005))$value
 
 econ_panel1_summ = sens_dta_econ %>%
   select(-c(stagger,datasrc,region)) %>%
@@ -731,8 +738,11 @@ if (metric == "absolute") {
   econ_panel1_summ = econ_panel1_summ %>%
       mutate(diff_opt = (value_Optimistic - value_Core) / value_Core,
              diff_pess = (value_Pessimistic - value_Core) / value_Core) 
+} else if (metric == "percent_2005") {
+  econ_panel1_summ = econ_panel1_summ %>%
+      mutate(diff_opt = (value_Optimistic - value_Core) / historic_emissions,
+             diff_pess = (value_Pessimistic - value_Core) / historic_emissions)
 }
-
 econ_panel1_summ = econ_panel1_summ %>%
   group_by(variable, unit, year) %>%
   summarize(opt_median = median(diff_opt),
@@ -761,6 +771,10 @@ if (metric == "absolute") {
   econ_panel2_summ = econ_panel2_summ %>%
       mutate(diff_opt = (value_Optimistic - value_Core) / value_Core,
              diff_pess = (value_Pessimistic - value_Core) / value_Core) 
+} else if (metric == "percent_2005") {
+  econ_panel2_summ = econ_panel2_summ %>%
+      mutate(diff_opt = (value_Optimistic - value_Core) / historic_emissions,
+             diff_pess = (value_Pessimistic - value_Core) / historic_emissions)
 }
 
 econ_panel2_summ = econ_panel2_summ %>%
@@ -793,6 +807,10 @@ if (metric == "absolute") {
   econ_panel3_summ = econ_panel3_summ %>%
       mutate(diff_opt = (value_Optimistic - value_Core) / value_Core,
              diff_pess = (value_Pessimistic - value_Core) / value_Core) 
+} else if (metric == "percent_2005") {
+  econ_panel3_summ = econ_panel3_summ %>%
+      mutate(diff_opt = (value_Optimistic - value_Core) / historic_emissions,
+             diff_pess = (value_Pessimistic - value_Core) / historic_emissions)
 }
 
 econ_panel3_summ = econ_panel3_summ %>%
@@ -825,6 +843,10 @@ if (metric == "absolute") {
   econ_panel4_summ = econ_panel4_summ %>%
       mutate(diff_opt = (value_Optimistic - value_Core) / value_Core,
              diff_pess = (value_Pessimistic - value_Core) / value_Core) 
+} else if (metric == "percent_2005") {
+  econ_panel4_summ = econ_panel4_summ %>%
+      mutate(diff_opt = (value_Optimistic - value_Core) / historic_emissions,
+             diff_pess = (value_Pessimistic - value_Core) / historic_emissions)
 }
 
 econ_panel4_summ = econ_panel4_summ %>%
@@ -862,6 +884,10 @@ if (metric == "absolute") {
   econ_panel5_summ = econ_panel5_summ %>%
       mutate(diff_opt = (value_Optimistic - value_Core) / value_Core,
              diff_pess = (value_Pessimistic - value_Core) / value_Core) 
+} else if (metric == "percent_2005") {
+  econ_panel5_summ = econ_panel5_summ %>%
+      mutate(diff_opt = (value_Optimistic - value_Core) / historic_emissions,
+             diff_pess = (value_Pessimistic - value_Core) / historic_emissions)
 }
 
 econ_panel5_summ = econ_panel5_summ %>%
@@ -961,9 +987,9 @@ all_panels_gt = all_panels %>% gt() %>%
     style = list(
       cell_text(align = "center")
     ), locations = cells_body(columns = 3:12)
-  ) 
+  ) %>% sub_missing(columns = 3:12, missing_text = "-")
 
-if (metric == "percent") {
+if (metric == "percent" | metric == "percent_2005") {
   all_panels_gt = all_panels_gt %>% fmt_percent(decimals = 1, use_seps = TRUE, columns = 3:12)
 } else if (metric == "absolute") {
   all_panels_gt = all_panels_gt %>% fmt_number(decimals = 1, use_seps = TRUE, columns = 3:12)
@@ -980,7 +1006,7 @@ all_panels_gt %>%
   gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".html"))
 
 all_panels_gt %>% 
-  gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".png"))
+   gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".png"), vwidth = 1500, vheight = 1000)
 
 
 ```
