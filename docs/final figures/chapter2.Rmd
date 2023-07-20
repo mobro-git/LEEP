@@ -146,8 +146,6 @@ ElecSpg = spg2(
 delta = delta(26, "", config, clean_data, figmap_leep_timeseries)
 saveall(delta$figure, delta$df, paste(fig_no, "delta"))
 
-
-
 ElecDot = dotted(ElecSpg$data, ElecSpg$figure, "median", 0, 2500, config, figmap_leep_timeseries)
 ElecDot
 delta
