@@ -165,7 +165,11 @@ saveall(delta$figure, delta$df, paste(fig_no, "delta"))
 
 ```
 
+## 2.4 generation by model and difference from no ira
 
+```{r}
+# placeholder for figure shane is working on
+```
 
 ## 2.5 historical and projected capacity additions by technology
 
