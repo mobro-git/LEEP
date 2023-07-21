@@ -58,8 +58,10 @@ ipm_epa_gen_cap = read_xlsx(bistline_wrkbk, sheet = "gen cap IPM-EPA") %>%
     unit = case_when(
       unit == "TWh" ~ "EJ/yr",
       TRUE~unit)) %>%
-  relocate_standard_col_order() %>%
-  select(-`variable-bistline`)
+  select(-`variable-bistline`) %>%
+  group_by(model,scenario,region,variable,unit,year) %>%
+  summarise(value = sum(value)) %>%
+  relocate_standard_col_order()
 
 gen_cap = rbind(generation,capacity,capacity_change,ipm_epa_gen_cap)
 

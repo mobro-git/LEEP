@@ -25,13 +25,13 @@
 "1.2.","EPS-EI","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4446.092957
 "1.2.","EPS-EI","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",4246.979551
 "1.2.","GCAM-CGS","IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
-"1.2.","GCAM-CGS","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4143.321311
-"1.2.","GCAM-CGS","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3535.151172
-"1.2.","GCAM-CGS","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3265.139396
+"1.2.","GCAM-CGS","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4143.32131119463
+"1.2.","GCAM-CGS","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3535.15117247745
+"1.2.","GCAM-CGS","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3265.13939647775
 "1.2.","GCAM-CGS","No IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
-"1.2.","GCAM-CGS","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4678.342801
-"1.2.","GCAM-CGS","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4515.631571
-"1.2.","GCAM-CGS","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",4358.333181
+"1.2.","GCAM-CGS","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4678.3428009427
+"1.2.","GCAM-CGS","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4515.63157057819
+"1.2.","GCAM-CGS","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",4358.33318134285
 "1.2.","GCAM-PNNL","IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
 "1.2.","GCAM-PNNL","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4150.86876799247
 "1.2.","GCAM-PNNL","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3631.81913612816
@@ -49,13 +49,13 @@
 "1.2.","MARKAL-NETL","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4171.2
 "1.2.","MARKAL-NETL","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",4163.41
 "1.2.","NEMS-RHG","IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
-"1.2.","NEMS-RHG","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4617.66278
-"1.2.","NEMS-RHG","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3731.423416
-"1.2.","NEMS-RHG","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3572.575636
+"1.2.","NEMS-RHG","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4617.66277995179
+"1.2.","NEMS-RHG","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3731.42341620699
+"1.2.","NEMS-RHG","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3572.57563575272
 "1.2.","NEMS-RHG","No IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
-"1.2.","NEMS-RHG","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4516.989884
-"1.2.","NEMS-RHG","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4267.337931
-"1.2.","NEMS-RHG","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",4069.215131
+"1.2.","NEMS-RHG","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4516.98988352657
+"1.2.","NEMS-RHG","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4267.33793080568
+"1.2.","NEMS-RHG","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",4069.21513053717
 "1.2.","RIO-REPEAT","IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
 "1.2.","RIO-REPEAT","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4771.5
 "1.2.","RIO-REPEAT","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3693
@@ -73,18 +73,18 @@
 "1.2.","USREP-ReEDS","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4231.719803
 "1.2.","USREP-ReEDS","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",4012.490192
 "1.2.","NEMS-OP","IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
-"1.2.","NEMS-OP","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4540.78964304377
-"1.2.","NEMS-OP","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3869.90643333595
-"1.2.","NEMS-OP","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3465.71799582152
+"1.2.","NEMS-OP","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4547.97323704377
+"1.2.","NEMS-OP","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3836.38348433595
+"1.2.","NEMS-OP","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3402.58860082152
 "1.2.","NEMS-OP","No IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
 "1.2.","NEMS-OP","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4635.118241
 "1.2.","NEMS-OP","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4330.458905
 "1.2.","NEMS-OP","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",4114.083147
 "1.2.","REGEN-EPRI","IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
-"1.2.","REGEN-EPRI","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4523.30792404377
-"1.2.","REGEN-EPRI","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3990.38178733595
-"1.2.","REGEN-EPRI","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3224.40184682152
+"1.2.","REGEN-EPRI","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4523.30792416533
+"1.2.","REGEN-EPRI","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3990.38178732904
+"1.2.","REGEN-EPRI","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3224.40184675108
 "1.2.","REGEN-EPRI","No IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
-"1.2.","REGEN-EPRI","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4563.701017
-"1.2.","REGEN-EPRI","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4187.818229
-"1.2.","REGEN-EPRI","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3948.077038
+"1.2.","REGEN-EPRI","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4563.70101682317
+"1.2.","REGEN-EPRI","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4187.81822874878
+"1.2.","REGEN-EPRI","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3948.07703792527

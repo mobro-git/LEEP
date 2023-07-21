@@ -325,8 +325,12 @@ html = function(df, title) {
   tab = IRA %>%
     tableHTML(caption = paste(title), rownames = F)
 
+  write.csv(IRA, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
+
   return(tab)
 }
+
+
 
 #Function to create standard percent difference figs
 pd = function(ts_map_ID, title, yname, gd, drop) {
@@ -606,12 +610,13 @@ delta = function(pd_map_ID, drop, config, clean_data, figmap_leep_timeseries) {
     filter(year %in% c(2021, 2025, 2030, 2035))
 
   figure = ggplot() +
+    geom_hline(aes(yintercept=0), color = "#9E9E9E", size = 0.75) +
     geom_line(data = df, aes(
       x = year,
       y = value,
       group = model,
       color = scenario,
-      alpha = 0.5),
+      alpha = 1),
       size = 0.75) +
     #    geom_point(aes(x = 2021, y = 0), color = "black") +
     geom_line(

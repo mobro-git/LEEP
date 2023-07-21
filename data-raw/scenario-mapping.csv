@@ -43,8 +43,6 @@ bistline_ira_tall.csv,Haiku-RFF,IRA,Haiku-RFF,IRA,Bistline IRA comparison paper,
 bistline_ira_tall.csv,Haiku-RFF,Reference,Haiku-RFF,No IRA,Bistline IRA comparison paper,
 bistline_ira_tall.csv,IPM-EPA,IRA,IPM-EPA,IRA,From 2nd Bistline paper - but same IPM runs,x
 bistline_ira_tall.csv,IPM-EPA,Reference,IPM-EPA,No IRA,From 2nd Bistline paper - but same IPM runs,x
-bistline_ira_tall.csv,IPM-EPA,IRA,IPM-ERA,IRA,Bistline IRA comparison paper,x
-bistline_ira_tall.csv,IPM-EPA,Reference,IPM-ERA,No IRA,Bistline IRA comparison paper,x
 bistline_ira_tall.csv,IPM-NRDC,IRA,IPM-NRDC,IRA,Bistline IRA comparison paper,
 bistline_ira_tall.csv,IPM-NRDC,Reference,IPM-NRDC,No IRA,Bistline IRA comparison paper,
 bistline_ira_tall.csv,MARKAL-NETL,IRA.Low,MARKAL-NETL,IRA.Low,,
@@ -54,9 +52,9 @@ AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx,AEO 2023,AEO23 No IRA,NEMS-EIA
 AEO2023 IRA 5cenario outputs by OnL 05-12-23.xlsx,AEO 2023,AEO23 Ref,NEMS-EIA,IRA,,
 bistline_ira_tall.csv,NEMS-RHG,IRA,NEMS-RHG,IRA,Bistline IRA comparison paper,
 bistline_ira_tall.csv,NEMS-RHG,Reference,NEMS-RHG,No IRA,Bistline IRA comparison paper,
-OP-NEMS IRA 5cenario outputs w retire 07-18-23.xlsx,OP-NEMS,OP IRA Moderate,NEMS-OP,IRA,,
-OP-NEMS IRA 5cenario outputs w retire 07-18-23.xlsx,OP-NEMS,OP IRA Advanced,NEMS-OP,Opt-IRA.Adv,Changing this mapping per JM's instructionms,
-OP-NEMS IRA 5cenario outputs w retire 07-18-23.xlsx,OP-NEMS,OP No New Policies,NEMS-OP,No IRA,,
+OP-NEMS IRA 5cenario outputs w retire 07-19-23 - June cases.xlsx,OP-NEMS,OP IRA Moderate,NEMS-OP,IRA,,
+OP-NEMS IRA 5cenario outputs w retire 07-19-23 - June cases.xlsx,OP-NEMS,OP IRA Advanced,NEMS-OP,Opt-IRA.Adv,Changing this mapping per JM's instructionms,
+OP-NEMS IRA 5cenario outputs w retire 07-19-23 - June cases.xlsx,OP-NEMS,OP No New Policies,NEMS-OP,No IRA,,
 LTS_data_small.xlsx,OP-NEMS,AM.HiRem.AdvPwr,NEMS-OP-LTS,LTS.High,LTS,
 LTS_data_small.xlsx,OP-NEMS,AM.LowRem.AllAdv,NEMS-OP-LTS,LTS.Low,LTS,
 ReEDS_compiled.csv,ReEDS,IRA-BIL - AdvAllClean,ReEDS-NREL,All Advanced,,

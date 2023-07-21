@@ -152,7 +152,7 @@ delta = delta(26, "", config, clean_data, figmap_leep_timeseries)
 delta
 saveall(delta$figure, delta$df, paste(fig_no, "delta"))
 
-ElecTab = html(ElecSpg$data, "Electricity CO<sub>2<sub>")
+ElecTab = html(ElecSpg$data, "Electricity CO2")
 ElecTab
 
 fig_no = "ES.1"
@@ -236,7 +236,10 @@ model_renamer = c(
   "USREP-ReEDS" = "USREP-ReEDS"
 )
 
-dta = data_from_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 18, "United States")
+dta1 = data_from_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 18, "United States")
+
+dta = dta1 %>%
+  mutate(model = factor(model, levels = factor_order))
 
 dta_ira = dta %>% filter(scenario == "IRA") %>%
   ungroup() %>%
@@ -248,13 +251,29 @@ dta_noira = dta %>% filter(scenario == "No IRA") %>%
   select(model, year, variable_rename, value) %>%
   rename(value_noira= value)
 
-dta_full = dta_ira %>% 
+dta_full1 = dta_ira %>% 
   inner_join(dta_noira, by = c("model", "year", "variable_rename")) %>%
   mutate(diff = value_ira - value_noira) %>%
   mutate(model = factor(model, levels = models_alph)) %>%
   pivot_longer(cols = c("value_ira", "value_noira", "diff"), names_to = "metric") %>%
   filter(metric != "value_noira") %>%
-  mutate(metric = factor(metric, levels = c("value_ira", "diff")))
+  mutate(metric = factor(metric, levels = c("value_ira", "diff"))) %>% 
+  mutate(model = factor(model, levels = c(
+    "2021",
+    "RIO-REPEAT",
+    "GCAM-PNNL",
+    "EPS-EI",
+    "MARKAL-NETL",
+    "GCAM-CGS",
+    "NEMS-OP",
+    "IPM-EPA",
+    "ReEDS-NREL",
+    "NEMS-EIA",
+    "REGEN-EPRI",
+    "NEMS-RHG",
+    "USREP-ReEDS",
+    "IPM-NRDC",
+    "Haiku-RFF")))
 
 facet_renamer = c(
   "value_ira" = "IRA",

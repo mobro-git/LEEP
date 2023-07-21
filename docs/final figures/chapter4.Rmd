@@ -96,7 +96,7 @@ TotDot
 delta = delta(29, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
 saveall(delta$figure, delta$df, paste(fig_no, "delta"))
 
-TotTab = html(TotSpg$data, "Total Building CO<sub>2<sub>")
+TotTab = html(TotSpg$data, "Total Building CO2")
 
 savefig(TotDot, fig_no) # only using total, not using direct/indirect anymore
 
