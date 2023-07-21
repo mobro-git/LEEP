@@ -193,24 +193,7 @@ clean_data_hist_noira = clean_data15 %>%
          year == 2021) %>%
   mutate(scenario = "No IRA", year = 2035)
 
-clean_data15 = bind_rows(clean_data15, clean_data_hist_noira, clean_data_hist_ira) %>%
-  mutate(model = factor(model, levels = c(
-    "EIA",
-    "RIO-REPEAT",
-    "GCAM-PNNL",
-    "EPS-EI",
-    "GCAM-CGS",
-    "MARKAL-NETL",
-    "NEMS-OP",
-    "IPM-EPA",
-    "ReEDS-NREL",
-    "NEMS-EIA",
-    "NEMS-RHG",
-    "REGEN-EPRI",
-    "USREP-ReEDS",
-    "IPM-NRDC",
-    "Haiku-RFF"
-  )))
+clean_data15 = bind_rows(clean_data15, clean_data_hist_noira, clean_data_hist_ira) 
 
 models_alph = sort(unique(clean_data15$model))
 
@@ -254,7 +237,23 @@ dta_full = dta_ira %>%
   mutate(model = factor(model, levels = models_alph)) %>%
   pivot_longer(cols = c("value_ira", "value_noira", "diff"), names_to = "metric") %>%
   filter(metric != "value_noira") %>%
-  mutate(metric = factor(metric, levels = c("value_ira", "diff")))
+  mutate(metric = factor(metric, levels = c("value_ira", "diff"))) %>% 
+  mutate(model = factor(model, levels = c(
+    "EIA",
+    "RIO-REPEAT",
+    "GCAM-PNNL",
+    "EPS-EI",
+    "MARKAL-NETL",
+    "GCAM-CGS",
+    "NEMS-OP",
+    "IPM-EPA",
+    "ReEDS-NREL",
+    "NEMS-EIA",
+    "REGEN-EPRI",
+    "NEMS-RHG",
+    "USREP-ReEDS",
+    "IPM-NRDC",
+    "Haiku-RFF")))
 
 facet_renamer = c(
   "value_ira" = "IRA",
