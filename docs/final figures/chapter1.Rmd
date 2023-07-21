@@ -593,7 +593,7 @@ p7e$plot = p7e$plot +
   annotate("text", x = 2028.4, y = 4845, size = 3,
              label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0) #FFF362
 
-fig = (p7$plot | p7d$plot | p7e$plot | p7b$plot | p7c$plot) +
+fig = (p7$plot | p7d$plot | p7e$plot | p7c$plot | p7b$plot) +
   plot_annotation(title = "Economy-Wide Emissions",
                   theme = theme(plot.title = element_blank()))
 fig
@@ -802,7 +802,7 @@ econ_panel5_summ = econ_panel5_summ %>%
   data.frame() %>%
   select(-c(variable,unit,year,metric))
 
-all_panels = cbind(econ_panel1_summ, econ_panel4_summ, econ_panel5_summ, econ_panel2_summ, econ_panel3_summ)
+all_panels = cbind(econ_panel1_summ, econ_panel4_summ, econ_panel5_summ, econ_panel3_summ, econ_panel2_summ)
 # all_panels %>% write.csv("./output/final_figures/data/Fig1.4_Summary.csv", row.names = FALSE)
 # 
 # 
@@ -829,20 +829,28 @@ all_panels = all_panels %>%
   rename("Year" = "year", "Metric" = "metric") %>%
   arrange(Year, Metric)
 
-all_panels = all_panels %>% data.frame() %>% select(-c(variable, unit)) #%>%
-  #mutate_if(is.numeric, round)
+all_panels = all_panels %>% data.frame() %>% select(-c(variable, unit)) 
 #all_panels$Pess.Adv[1] = ""
 all_panels$Year[1] = ""
 all_panels$Year[3] = ""
 all_panels$Year[4] = ""
 all_panels$Year[6] = ""
+
+# manually merging cells in the dumbest way possible
+for (col_num in c(5,6,8,9,10,11,12)) {
+  col = colnames(all_panels[col_num])
+  for (row in c(1,3,4,6)) {
+    all_panels[row,col] = NA
+  }
+}
+
 all_panels
 
 #gt(rowname_col = "year") %>%
 
 all_panels_gt = all_panels %>% gt() %>% 
   tab_header(
-    title = gt::html("Economy-wide CO<sub>2</sub> Emissions (Mt CO<sub>2</sub>/yr)")
+    title = gt::html("Economy-wide Incremental CO<sub>2</sub> Emissions (Mt CO<sub>2</sub>/yr) Relative to 2005 Levels")
   ) %>%
   tab_spanner(label = gt::html("IRA <br> Implementation"), columns = c(Optimistic, Pessimistic)) %>%
   tab_spanner(label = gt::html("<br>Technology"), columns = c(All.Adv, Constr)) %>%
@@ -883,10 +891,12 @@ all_panels_gt = all_panels %>% gt() %>%
     style = list(
       cell_text(align = "center")
     ), locations = cells_body(columns = 3:12)
-  ) %>% sub_missing(columns = 3:12, missing_text = "-")
+  ) %>% sub_missing(columns = 3:12, missing_text = "")
 
 if (metric == "percent" | metric == "percent_2005") {
-  all_panels_gt = all_panels_gt %>% fmt_percent(decimals = 1, use_seps = TRUE, columns = 3:12)
+  all_panels_gt = all_panels_gt %>% fmt_number(decimals = 1, scale_by = 100, 
+                                               use_seps = TRUE, columns = 3:12)
+  #all_panels_gt = all_panels_gt %>% fmt_percent(decimals = 1, use_seps = TRUE, columns = 3:12)
 } else if (metric == "absolute") {
   all_panels_gt = all_panels_gt %>% fmt_number(decimals = 1, use_seps = TRUE, columns = 3:12)
 }
