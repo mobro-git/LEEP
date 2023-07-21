@@ -58,17 +58,15 @@ dta4 = clean_supplemental_data(dta4, fig_no)
 saveall(p4, dta4, fig_no)
 ```
 
-## 5.2
-
-## 5.x Emissions breakout pie chart
+## 5.2 industry breakdown
 
 ```{r}
-pie = readxl::read_xlsx("data-extra/industry_piechart.xlsx")
-pie1 = pie %>% filter(Table == 1) %>%
+df = readxl::read_xlsx("data-extra/industry_piechart.xlsx")
+df1 = df %>% filter(Table == 1) %>%
   rename(value = `% Energy-related Emissions`) %>%
   mutate(value = round(value*100,0))
 
-ggplot(data = pie1, aes(x = "", y = value, fill = Industry)) +
+ggplot(data = df1, aes(x = "", y = value, fill = Industry)) +
   geom_bar(width = 1, stat = "identity", color = "white") +
   coord_polar("y", start = 0) +
   scale_fill_brewer(palette = "Dark2") +

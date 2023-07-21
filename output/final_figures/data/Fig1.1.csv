@@ -1,0 +1,103 @@
+"figure_num","model","scenario","variable","unit","year","variable_rename","value"
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2005,"Buildings: Direct",586
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2005,"Buildings: Indirect",1659
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2005,"Industry: Direct",850.8
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2005,"Industry: Indirect",736.3
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2005,"Transportation: Direct",1858.6
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2005,"Transportation: Indirect",4.7
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2006,"Buildings: Direct",533.5
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2006,"Buildings: Indirect",1628.4
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2006,"Industry: Direct",875.1
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2006,"Industry: Indirect",711.4
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2006,"Transportation: Direct",1859.1
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2006,"Transportation: Indirect",4.5
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2007,"Buildings: Direct",564.3
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2007,"Buildings: Indirect",1691.1
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2007,"Industry: Direct",866.4
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2007,"Industry: Indirect",714.9
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2007,"Transportation: Direct",1860.7
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2007,"Transportation: Indirect",5.1
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2008,"Buildings: Direct",575.4
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2008,"Buildings: Indirect",1658
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2008,"Industry: Direct",819
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2008,"Industry: Indirect",696.7
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2008,"Transportation: Direct",1759.7
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2008,"Transportation: Indirect",4.7
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2009,"Buildings: Direct",564.4
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2009,"Buildings: Indirect",1539.2
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2009,"Industry: Direct",742.5
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2009,"Industry: Indirect",601.7
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2009,"Transportation: Direct",1688.5
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2009,"Transportation: Indirect",4.5
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2010,"Buildings: Direct",559.3
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2010,"Buildings: Indirect",1613.1
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2010,"Industry: Direct",795.9
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2010,"Industry: Indirect",641
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2010,"Transportation: Direct",1696.6
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2010,"Transportation: Indirect",4.5
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2011,"Buildings: Direct",550.7
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2011,"Buildings: Indirect",1529
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2011,"Industry: Direct",796.7
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2011,"Industry: Indirect",624.8
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2011,"Transportation: Direct",1670.4
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2011,"Transportation: Indirect",4.3
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2012,"Buildings: Direct",482.7
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2012,"Buildings: Indirect",1426.2
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2012,"Industry: Direct",806.2
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2012,"Industry: Indirect",593.1
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2012,"Transportation: Direct",1659.4
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2012,"Transportation: Indirect",4
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2013,"Buildings: Direct",553.3
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2013,"Buildings: Indirect",1439.2
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2013,"Industry: Direct",834.2
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2013,"Industry: Indirect",594.8
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2013,"Transportation: Direct",1669
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2013,"Transportation: Indirect",4.3
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2014,"Buildings: Direct",578.9
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2014,"Buildings: Indirect",1439.7
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2014,"Industry: Direct",813.7
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2014,"Industry: Indirect",593
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2014,"Transportation: Direct",1707.2
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2014,"Transportation: Indirect",4.4
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2015,"Buildings: Direct",561.9
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2015,"Buildings: Indirect",1346.8
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2015,"Industry: Direct",798
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2015,"Industry: Indirect",549.5
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2015,"Transportation: Direct",1718.2
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2015,"Transportation: Indirect",4.3
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2016,"Buildings: Direct",524.3
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2016,"Buildings: Indirect",1287.1
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2016,"Industry: Direct",792.9
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2016,"Industry: Indirect",517.6
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2016,"Transportation: Direct",1757.7
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2016,"Transportation: Indirect",4.2
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2017,"Buildings: Direct",525.4
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2017,"Buildings: Indirect",1223.3
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2017,"Industry: Direct",789
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2017,"Industry: Indirect",504.4
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2017,"Transportation: Direct",1780.1
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2017,"Transportation: Indirect",4.3
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2018,"Buildings: Direct",584
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2018,"Buildings: Indirect",1247.3
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2018,"Industry: Direct",813.5
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2018,"Industry: Indirect",501.3
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2018,"Transportation: Direct",1812.9
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2018,"Transportation: Indirect",4.8
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2019,"Buildings: Direct",592.1
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2019,"Buildings: Indirect",1136.4
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2019,"Industry: Direct",815.9
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2019,"Industry: Indirect",465.5
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2019,"Transportation: Direct",1816.4
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2019,"Transportation: Indirect",4.8
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2020,"Buildings: Direct",541.7
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2020,"Buildings: Indirect",1025.6
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2020,"Industry: Direct",767.9
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2020,"Industry: Indirect",409.8
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2020,"Transportation: Direct",1572.5
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2020,"Transportation: Indirect",4.1
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2021,"Buildings: Direct",546.3
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2021,"Buildings: Indirect",1090.7
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2021,"Industry: Direct",775.6
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr",2021,"Industry: Indirect",445.1
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation","Mt CO2/yr",2021,"Transportation: Direct",1752.4
+1.1,"EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Indirect","Mt CO2/yr",2021,"Transportation: Indirect",5

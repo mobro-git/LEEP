@@ -1,0 +1,67 @@
+"figure_num","model","scenario","variable","unit","year","variable_rename","value"
+3.5,"EPS-EI","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",43.73698924
+3.5,"EPS-EI","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",43.54041552
+3.5,"GCAM-CGS","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",58.7406762857185
+3.5,"GCAM-CGS","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",36.4835030572875
+3.5,"GCAM-PNNL","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",77.0200232911667
+3.5,"GCAM-PNNL","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",43.5738675944444
+3.5,"Haiku-RFF","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",10.4396165287255
+3.5,"Haiku-RFF","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",10.4396165287255
+3.5,"IPM-EPA","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",165.417634956361
+3.5,"IPM-EPA","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",165.417634956361
+3.5,"IPM-NRDC","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",26.9437484694
+3.5,"IPM-NRDC","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",26.9437484694
+3.5,"MARKAL-NETL","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",306.75002564724
+3.5,"MARKAL-NETL","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",295.75282489256
+3.5,"NEMS-RHG","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",22.4524230886284
+3.5,"NEMS-RHG","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",25.3350412303634
+3.5,"REGEN-EPRI","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",59.7513212421146
+3.5,"REGEN-EPRI","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",47.0386095067161
+3.5,"RIO-REPEAT","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",82.4586
+3.5,"RIO-REPEAT","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",74.8762
+3.5,"USREP-ReEDS","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",25.8308996831667
+3.5,"USREP-ReEDS","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",25.0980307095
+3.5,"EPS-EI","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",161.9297344
+3.5,"EPS-EI","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",147.5260178
+3.5,"GCAM-CGS","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",181.577883288433
+3.5,"GCAM-CGS","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",102.255441398202
+3.5,"GCAM-PNNL","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",273.796046198889
+3.5,"GCAM-PNNL","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",149.9045219
+3.5,"Haiku-RFF","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",19.0639591695936
+3.5,"Haiku-RFF","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",19.0639591695936
+3.5,"IPM-EPA","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",290.335545158754
+3.5,"IPM-EPA","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",290.335545158754
+3.5,"IPM-NRDC","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",47.1784529356
+3.5,"IPM-NRDC","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",47.1784529356
+3.5,"MARKAL-NETL","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",338.41206449708
+3.5,"MARKAL-NETL","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",295.72123130648
+3.5,"NEMS-RHG","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",81.8063716522275
+3.5,"NEMS-RHG","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",75.7974635444899
+3.5,"REGEN-EPRI","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",164.163750175937
+3.5,"REGEN-EPRI","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",122.73344110896
+3.5,"RIO-REPEAT","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",272.0186
+3.5,"RIO-REPEAT","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",235.0544
+3.5,"USREP-ReEDS","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",129.628646686778
+3.5,"USREP-ReEDS","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2030,"Light-Duty Vehicles",125.034058233778
+3.5,"EPS-EI","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",308.4349716
+3.5,"EPS-EI","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",279.2512618
+3.5,"GCAM-CGS","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",227.219476336599
+3.5,"GCAM-CGS","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",152.588200624636
+3.5,"GCAM-PNNL","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",480.899730998556
+3.5,"GCAM-PNNL","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",328.313707555556
+3.5,"Haiku-RFF","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",32.7675832131815
+3.5,"Haiku-RFF","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",32.7675832131815
+3.5,"IPM-EPA","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",399.706691921044
+3.5,"IPM-EPA","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",399.706691921044
+3.5,"IPM-NRDC","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",68.306159397
+3.5,"IPM-NRDC","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",68.306159397
+3.5,"MARKAL-NETL","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",368.0126218552
+3.5,"MARKAL-NETL","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",297.25878582904
+3.5,"NEMS-RHG","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",178.217476006389
+3.5,"NEMS-RHG","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",153.97476094238
+3.5,"REGEN-EPRI","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",278.085961490069
+3.5,"REGEN-EPRI","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",207.294389088388
+3.5,"RIO-REPEAT","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",607.5398
+3.5,"RIO-REPEAT","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",472.9522
+3.5,"USREP-ReEDS","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",280.073940879056
+3.5,"USREP-ReEDS","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2035,"Light-Duty Vehicles",252.005656354278
