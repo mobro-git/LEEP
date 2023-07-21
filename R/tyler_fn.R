@@ -325,8 +325,12 @@ html = function(df, title) {
   tab = IRA %>%
     tableHTML(caption = paste(title), rownames = F)
 
+  write.csv(IRA, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
+
   return(tab)
 }
+
+
 
 #Function to create standard percent difference figs
 pd = function(ts_map_ID, title, yname, gd, drop) {

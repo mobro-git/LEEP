@@ -114,7 +114,7 @@ IndSpg = spg2(
 IndDot = dotted(IndSpg$data, IndSpg$figure, "median", 0, 2500, config, figmap_leep_timeseries)
 IndDot
 
-IndTab = html(IndSpg$data, "Industry CO<sub>2<sub>")
+IndTab = html(IndSpg$data, "Industry CO2")
 IndDot
 
 IndSpg$data = clean_supplemental_data(IndSpg$data, fig_no)

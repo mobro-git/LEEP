@@ -126,7 +126,7 @@ TranSpg$data = clean_supplemental_data(TranSpg$data, fig_no)
 
 saveall(fig, TranSpg$data, fig_no)
 
-html(TranSpg$data, "Transportation CO<sub>2<sub>")
+html(TranSpg$data, "Transportation CO2")
 ```
 
 ## 3.4 electric vehicle percent share of new sales

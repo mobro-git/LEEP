@@ -1937,6 +1937,7 @@ ElecSpg = spg2(Elec_data,
 savedata(ElecSpg$data, paste(fig_no, "Electricity"))
 
 ElecTab = html(ElecSpg$data, "Electricity")
+
 ElecTab
 
 ElecDot = dotted(ElecSpg$data, ElecSpg$figure, "median", 0, 4000, config, figmap_leep_timeseries)
@@ -1976,7 +1977,7 @@ DirSpg = spg2(
 
 DirDot = dotted(DirSpg$data, DirSpg$figure, "median", 0, 2000, config, figmap_leep_timeseries)
 
-DirTab = html(DirSpg$data, "Direct Transportation CO<sub>2<sub>")
+DirTab = html(DirSpg$data, "Direct Transportation CO2")
 DirTab
 
 IndDir_data = spg_clean(
@@ -2007,7 +2008,7 @@ IndDirSpg = spg2(
 
 IndDirDot = dotted(IndDirSpg$data, IndDirSpg$figure, "median", 0, 2000, config, figmap_leep_timeseries)
 
-IndDirTab = html(IndDirSpg$data, "Indirect Transportation CO<sub>2<sub>")
+IndDirTab = html(IndDirSpg$data, "Indirect Transportation CO2")
 IndDirTab
 
 
@@ -2049,7 +2050,7 @@ DirSpg = spg2(
 
 DirDot = dotted(DirSpg$data, DirSpg$figure, "median", 0, 2000, config, figmap_leep_timeseries)
 
-DirTab = html(DirSpg$data, "Direct Building CO<sub>2<sub>")
+DirTab = html(DirSpg$data, "Direct Building CO2")
 DirTab
 
 IndDir_data = spg_clean(
@@ -2080,7 +2081,7 @@ IndDirSpg = spg2(
 
 IndDirDot = dotted(IndDirSpg$data, IndDirSpg$figure, "median", 0, 2000, config, figmap_leep_timeseries)
 
-IndDirTab = html(IndDirSpg$data, "Indirect Building CO<sub>2<sub>")
+IndDirTab = html(IndDirSpg$data, "Indirect Building CO2")
 IndDirTab
 
 
@@ -2122,7 +2123,7 @@ DirSpg = spg2(
 
 DirDot = dotted(DirSpg$data, DirSpg$figure, "median", 0, 1500, config, figmap_leep_timeseries)
 
-DirTab = html(DirSpg$data, "Direct Industry CO<sub>2<sub>")
+DirTab = html(DirSpg$data, "Direct Industry CO2")
 DirTab
 
 IndDir_data = spg_clean(
@@ -2153,7 +2154,7 @@ IndDirSpg = spg2(
 
 IndDirDot = dotted(IndDirSpg$data, IndDirSpg$figure, "median", 0, 1500, config, figmap_leep_timeseries)
 
-IndDirTab = html(IndDirSpg$data, "Indirect Industry CO<sub>2<sub>")
+IndDirTab = html(IndDirSpg$data, "Indirect Industry CO2")
 IndDirTab
 
 
@@ -2295,7 +2296,7 @@ data_total <- data %>%
 
 
 dots_Total = ggplot(data = data_total, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
@@ -2359,7 +2360,7 @@ data_Low <- data %>%
   )) 
 
 dots_Low = ggplot(data = data_Low, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
     geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
@@ -2423,7 +2424,7 @@ data_High <- data %>%
   )) 
 
 dots_High = ggplot(data = data_High, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
@@ -2490,7 +2491,7 @@ data_Nuclear <- data %>%
   )) 
 
 dots_Nuclear = ggplot(data = data_Nuclear, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
@@ -2557,7 +2558,7 @@ data_Solar <- data %>%
   )) 
 
 dots_Solar = ggplot(data = data_Solar, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
@@ -2625,7 +2626,7 @@ data_Wind <- data %>%
   )) 
 
 dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
@@ -2693,7 +2694,7 @@ data_CCS <- data %>%
   )) 
 
 dots_CCS = ggplot(data = data_CCS, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
@@ -2760,7 +2761,7 @@ data_Coal <- data %>%
   )) 
 
 dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
@@ -2827,7 +2828,7 @@ data_Gas <- data %>%
   )) 
 
 dots_Gas = ggplot(data = data_Gas, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
@@ -2894,7 +2895,7 @@ data_Other <- data %>%
   )) 
 
 dots_Other = ggplot(data = data_Other, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
+  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
@@ -4584,7 +4585,7 @@ dots_Total = ggplot(data = data_total, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    geom_hline(aes(yintercept=0), color = "#9E9E9E", size = 0.75) +
     facet_wrap(~"Total Generation") +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
@@ -4640,7 +4641,7 @@ dots_Low = ggplot(data = data_Low, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    geom_hline(aes(yintercept=0), color = "#9E9E9E", size = 0.75) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"Low or Zero Emitting Generation") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
@@ -4697,7 +4698,7 @@ dots_High = ggplot(data = data_High, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    geom_hline(aes(yintercept=0), color = "#9E9E9E", size = 0.75) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"High Emitting Generation") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
@@ -4757,7 +4758,7 @@ dots_Nuclear = ggplot(data = data_Nuclear, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    geom_hline(aes(yintercept=0), color = "#9E9E9E", size = 0.75) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"Nuclear") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
@@ -4817,7 +4818,7 @@ dots_Solar = ggplot(data = data_Solar, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    geom_hline(aes(yintercept=0), color = "#9E9E9E", size = 0.75) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"Solar") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
@@ -4877,7 +4878,7 @@ dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    geom_hline(aes(yintercept=0), color = "#9E9E9E", size = 0.75) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"Wind") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
@@ -4937,7 +4938,7 @@ dots_CCS = ggplot(data = data_CCS, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    geom_hline(aes(yintercept=0), color = "#9E9E9E", size = 0.75) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"CCS") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
@@ -4997,7 +4998,7 @@ dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    geom_hline(aes(yintercept=0), color = "#9E9E9E", size = 0.75) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"Coal") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
@@ -5057,7 +5058,7 @@ dots_Gas = ggplot(data = data_Gas, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    geom_hline(aes(yintercept=0), color = "#9E9E9E", size = 0.75) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"Natural Gas") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
@@ -5117,7 +5118,7 @@ dots_Other = ggplot(data = data_Other, aes(x = axe, y = abs_dif)) +
   geom_point(aes(alpha = alpha, color = scenario), shape = 1, size = 1.5, position = position_dodge(width = -0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
-  geom_hline(aes(yintercept = 0, alpha = 0.6))+
+    geom_hline(aes(yintercept=0), color = "#9E9E9E", size = 0.75) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     facet_wrap(~"Other") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
