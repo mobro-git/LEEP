@@ -152,7 +152,7 @@ delta = delta(26, "", config, clean_data, figmap_leep_timeseries)
 delta
 saveall(delta$figure, delta$df, paste(fig_no, "delta"))
 
-ElecTab = html(ElecSpg$data, "Electricity CO<sub>2<sub>")
+ElecTab = html(ElecSpg$data, "Electricity CO2")
 ElecTab
 
 fig_no = "ES.1"
