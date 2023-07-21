@@ -635,7 +635,9 @@ delta = function(pd_map_ID, drop, config, clean_data, figmap_leep_timeseries) {
       panel.spacing.x = unit(4, "mm"),
       legend.position = "none"
     ) +
-    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    scale_y_continuous(name = NULL, sec.axis = sec_axis(~., name = expression("% Difference from No IRA"))) +
+    guides(y = "none")
   return(list(figure = figure, medians = medians, df = df))
 }
 

@@ -120,7 +120,7 @@ fig = dotted(TranSpg$data, TranSpg$figure, "median", 0, 2500, config, figmap_lee
 fig
 
 delta = delta(27, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
-saveall(delta$figure, delta$df, paste(fig_no, "delta"))
+saveall(delta$figure, delta$df, paste(fig_no, "delta"), wd = 3.012, ht = 3)
 
 TranSpg$data = clean_supplemental_data(TranSpg$data, fig_no)
 

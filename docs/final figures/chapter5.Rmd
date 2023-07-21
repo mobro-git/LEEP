@@ -120,7 +120,7 @@ IndDot
 IndSpg$data = clean_supplemental_data(IndSpg$data, fig_no)
 
 delta = delta(28, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
-saveall(delta$figure, delta$df, paste(fig_no, "delta"))
+saveall(delta$figure, delta$df, paste(fig_no, "delta"), wd = 3.012, ht = 3)
 
 savefig(IndDot, fig_no)
 savedata(IndSpg$data, fig_no)

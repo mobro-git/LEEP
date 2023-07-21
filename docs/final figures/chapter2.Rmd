@@ -150,14 +150,14 @@ saveall(ElecDot,ElecSpg$data, fig_no)
 
 delta = delta(26, "", config, clean_data, figmap_leep_timeseries)
 delta
-saveall(delta$figure, delta$df, paste(fig_no, "delta"))
+saveall(delta$figure, delta$df, paste(fig_no, "delta"), wd = 3.012, ht = 3)
 
 ElecTab = html(ElecSpg$data, "Electricity CO2")
 ElecTab
 
 fig_no = "ES.1"
 saveall(ElecDot, ElecSpg$data, fig_no)
-saveall(delta$figure, delta$df, paste(fig_no, "delta"))
+saveall(delta$figure, delta$df, paste(fig_no, "delta"), wd = 3.012, ht = 3)
 ```
 
 ## F2.4 generation by model and difference from no ira

@@ -94,7 +94,7 @@ TotDot = dotted(TotSpg$data, TotSpg$figure, "median", 0, 2500, config, figmap_le
 TotDot
 
 delta = delta(29, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
-saveall(delta$figure, delta$df, paste(fig_no, "delta"))
+saveall(delta$figure, delta$df, paste(fig_no, "delta"), wd = 3.012, ht = 3)
 
 TotTab = html(TotSpg$data, "Total Building CO2")
 
