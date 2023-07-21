@@ -5516,3 +5516,56 @@ data_table = data_Other %>%
   write.csv(data_table, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
 ```
 
+# Appendix J
+## J.1
+
+```{r}
+hist = readxl::read_xlsx("data-extra/ira_comparison_raw/input_assumptions.xlsx", sheet = "natural gas price", range = "K1:AJ2") %>%
+  mutate(unit = "2020$/MMBtu") %>%
+  pivot_longer(cols = !unit, names_to = "year") %>%
+  mutate(model = "Historic") %>%
+  mutate(year = as.numeric(year))
+
+hist_clean = hist %>%
+  filter(year >= 2005) %>%
+  filter(year <= 2035)
+
+proj = readxl::read_xlsx("data-extra/ira_comparison_raw/input_assumptions.xlsx", sheet = "natural gas price", range = "A1:J29") %>%
+  pivot_longer(cols = c("2015", "2020", "2025", "2030", "2035", "2040", "2045", "2050"), names_to = "year") %>%
+  filter(model != "Historic") %>%
+  mutate(year = as.numeric(year))
+
+mods_clean = proj %>%
+  filter(!grepl("aeo", model)) %>%
+  filter(!grepl("eea", model))%>%
+  filter(year <= 2035)
+
+mods = unique(mods_clean$model)
+
+proj_clean = proj %>%
+  filter(!model %in% mods)%>%
+  filter(year <= 2035)
+
+ggplot() + 
+  geom_line(data = hist_clean, aes(x = year, y = value), color = "black", size = 0.6) + 
+  geom_line(data = mods_clean, aes(x = year, y = value, color = model), size = 0.6) + 
+  geom_line(data = proj_clean, aes(x = year, y = value, group = model,  fill = "gray"), alpha = 0.2) + 
+  scale_y_continuous(limits = c(0, 12), breaks = c(0, 2, 4, 6, 8, 10, 12), 
+                     labels = scales::dollar_format()) + 
+  scale_x_continuous(breaks = c(2005, 2010, 2015, 2020, 2025, 2030, 2035)) + 
+  scale_color_discrete(name = "") + 
+  labs(
+    y = expression(paste("Natural Gas Prices (2020$/MMBtu)")), 
+    x = "", 
+    title = ""
+  ) + 
+  theme_classic() + 
+  annotate("text", x = 2010, y = 11.5, label = "Historical", color = "black") + 
+  annotate("text", x = 2020, y = 10, label = "AEO reference", color = "gray") + 
+  annotate("text", x = 2020, y = 9.3, label = "projections (2015-2020)", color = "gray") + 
+      theme(axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.ticks = element_blank())
+  
+
+
+```
