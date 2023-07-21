@@ -1555,7 +1555,7 @@ EconSpg = spg3(df = Econ_ts,
 
 savedata(EconSpg$data, paste0(fig_no, "EconWide"))
 
-EconDot = dotted(EconSpg$data, EconSpg$figure, "median", 0, 70, config, figmap_leep_timeseries)
+EconDot = dotted(EconSpg$data, EconSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
 
 Tran_ts = elc_ts %>%
   filter(variable == "Transportation")%>%
@@ -1578,7 +1578,7 @@ TranSpg = spg3(df = Tran_ts,
 
 savedata(TranSpg$data, paste0(fig_no, "Transportation"))
 
-TranDot = dotted(TranSpg$data, TranSpg$figure, "median", 0, 70, config, figmap_leep_timeseries)
+TranDot = dotted(TranSpg$data, TranSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
 
 Buil_ts = elc_ts %>%
   filter(variable == "Buildings")%>%
@@ -1601,7 +1601,7 @@ BuilSpg = spg3(df = Buil_ts,
 
 savedata(BuilSpg$data, paste0(fig_no, "Buildings"))
 
-BuilDot = dotted(BuilSpg$data, BuilSpg$figure, "median", 0, 70, config, figmap_leep_timeseries)
+BuilDot = dotted(BuilSpg$data, BuilSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
 
 Ind_ts = elc_ts %>%
   filter(variable == "Industry")%>%
@@ -1624,7 +1624,7 @@ IndSpg = spg3(df = Ind_ts,
 
 savedata(IndSpg$data, paste0(fig_no, "Industry"))
 
-IndDot = dotted(IndSpg$data, IndSpg$figure, "median", 0, 70, config, figmap_leep_timeseries)
+IndDot = dotted(IndSpg$data, IndSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
 
 Full = (EconDot | TranDot | BuilDot | IndDot)
 Full
@@ -3066,7 +3066,7 @@ IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
 IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
 IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
 
-write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+  write.csv(IRA, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
 
 IRA %>%
 tableHTML(caption = paste(title), rownames = F)
@@ -3216,7 +3216,7 @@ IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
 IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
 IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
 
-write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+  write.csv(IRA, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
 
 IRA %>%
 tableHTML(caption = paste(title), rownames = F)
@@ -3368,7 +3368,7 @@ IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
 IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
 IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
 
-write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+  write.csv(IRA, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
 
 IRA %>%
 tableHTML(caption = paste(title), rownames = F)
@@ -3520,7 +3520,7 @@ IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
 IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
 IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
 
-write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+  write.csv(IRA, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
 
 IRA %>%
 tableHTML(caption = paste(title), rownames = F)
@@ -3672,7 +3672,7 @@ IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
 IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
 IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
 
-write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+  write.csv(IRA, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
 
 IRA %>%
 tableHTML(caption = paste(title), rownames = F)
@@ -3824,7 +3824,7 @@ IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
 IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
 IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
 
-write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+  write.csv(IRA, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
 
 IRA %>%
 tableHTML(caption = paste(title), rownames = F)
@@ -3976,7 +3976,7 @@ IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
 IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
 IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
 
-write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+  write.csv(IRA, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
 
 IRA %>%
 tableHTML(caption = paste(title), rownames = F)
@@ -4128,7 +4128,7 @@ IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
 IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
 IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
 
-write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+  write.csv(IRA, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
 
 IRA %>%
 tableHTML(caption = paste(title), rownames = F)
@@ -4280,7 +4280,7 @@ IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
 IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
 IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
 
-write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+  write.csv(IRA, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
 
 IRA %>%
 tableHTML(caption = paste(title), rownames = F)
@@ -4432,7 +4432,7 @@ IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
 IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
 IRA$`Reductions from No IRA (TWh)` = round(IRA$`Reductions from No IRA (TWh)`,3)
 
-write.csv(IRA, paste0("./output/leep/", title, ".csv"), row.names = F)
+  write.csv(IRA, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
 
 IRA %>%
 tableHTML(caption = paste(title), rownames = F)
@@ -5147,6 +5147,6 @@ savefig(final, fig_no, wd = 8)
 
 ```
 
-
+### Tables
 
 
