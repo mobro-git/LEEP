@@ -1916,6 +1916,8 @@ EconDot = dotted(EconSpg$data, EconSpg$figure, "median", 0, 4000, config, figmap
 
 savedata(EconSpg$data, paste(fig_no, "EconWide"))
 
+EconTab = html(EconSpg$data, "Non-Electricity")
+EconTab
   
 ElecSpg = spg2(Elec_data,
   expression("Electricity"),
@@ -1933,6 +1935,9 @@ ElecSpg = spg2(Elec_data,
   figmap_leep_timeseries)
 
 savedata(ElecSpg$data, paste(fig_no, "Electricity"))
+
+ElecTab = html(ElecSpg$data, "Electricity")
+ElecTab
 
 ElecDot = dotted(ElecSpg$data, ElecSpg$figure, "median", 0, 4000, config, figmap_leep_timeseries)
 
@@ -1972,6 +1977,7 @@ DirSpg = spg2(
 DirDot = dotted(DirSpg$data, DirSpg$figure, "median", 0, 2000, config, figmap_leep_timeseries)
 
 DirTab = html(DirSpg$data, "Direct Transportation CO<sub>2<sub>")
+DirTab
 
 IndDir_data = spg_clean(
   18, 
@@ -2002,6 +2008,7 @@ IndDirSpg = spg2(
 IndDirDot = dotted(IndDirSpg$data, IndDirSpg$figure, "median", 0, 2000, config, figmap_leep_timeseries)
 
 IndDirTab = html(IndDirSpg$data, "Indirect Transportation CO<sub>2<sub>")
+IndDirTab
 
 
 fig = DirDot | IndDirDot
@@ -2043,6 +2050,7 @@ DirSpg = spg2(
 DirDot = dotted(DirSpg$data, DirSpg$figure, "median", 0, 2000, config, figmap_leep_timeseries)
 
 DirTab = html(DirSpg$data, "Direct Building CO<sub>2<sub>")
+DirTab
 
 IndDir_data = spg_clean(
   22, 
@@ -2073,6 +2081,7 @@ IndDirSpg = spg2(
 IndDirDot = dotted(IndDirSpg$data, IndDirSpg$figure, "median", 0, 2000, config, figmap_leep_timeseries)
 
 IndDirTab = html(IndDirSpg$data, "Indirect Building CO<sub>2<sub>")
+IndDirTab
 
 
 fig = DirDot | IndDirDot
@@ -2114,6 +2123,7 @@ DirSpg = spg2(
 DirDot = dotted(DirSpg$data, DirSpg$figure, "median", 0, 1500, config, figmap_leep_timeseries)
 
 DirTab = html(DirSpg$data, "Direct Industry CO<sub>2<sub>")
+DirTab
 
 IndDir_data = spg_clean(
   20, 
@@ -2144,6 +2154,7 @@ IndDirSpg = spg2(
 IndDirDot = dotted(IndDirSpg$data, IndDirSpg$figure, "median", 0, 1500, config, figmap_leep_timeseries)
 
 IndDirTab = html(IndDirSpg$data, "Indirect Industry CO<sub>2<sub>")
+IndDirTab
 
 
 fig = DirDot | IndDirDot
