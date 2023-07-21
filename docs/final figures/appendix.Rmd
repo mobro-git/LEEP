@@ -5229,4 +5229,291 @@ savefig(p2,fig_no)
 ### Tables
 
 
+```{r}
+fig_no = "I.2"
+title = "I.Low Emitting Electricity Generation"
+
+data_table = data_Low %>%
+  group_by(year) %>%
+  summarize(max_IRA = max(IRA), 
+            min_IRA = min(IRA), 
+            med_IRA = median(IRA), 
+            max_diff = max(abs_dif), 
+            min_diff = min(abs_dif), 
+            med_diff = median(abs_dif), 
+            max_noIRA = max(`No IRA`), 
+            min_noIRA = min(`No IRA`), 
+            med_noIRA = median(`No IRA`)) %>%
+  pivot_longer(cols = !year) %>%
+  mutate(stat = case_when(
+    grepl("min", name) ~ "Min", 
+    grepl("max", name) ~ "Max", 
+    grepl("med", name) ~ "Median"
+  ))%>%
+  mutate(name = case_when(
+    grepl("noIRA", name) ~ "No IRA", 
+    grepl("IRA", name) ~ "IRA", 
+    T ~ "Difference"
+  ))%>%
+  pivot_wider(names_from = stat, values_from = value) %>%
+  select(Year = year, Scenario = name, Minimum = Min, Maximum = Max, Median)
+  
+  write.csv(data_table, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
+```
+
+```{r}
+fig_no = "I.2"
+title = "I.High Emitting Electricity Generation"
+
+data_table = data_High %>%
+  group_by(year) %>%
+  summarize(max_IRA = max(IRA), 
+            min_IRA = min(IRA), 
+            med_IRA = median(IRA), 
+            max_diff = max(abs_dif), 
+            min_diff = min(abs_dif), 
+            med_diff = median(abs_dif), 
+            max_noIRA = max(`No IRA`), 
+            min_noIRA = min(`No IRA`), 
+            med_noIRA = median(`No IRA`)) %>%
+  pivot_longer(cols = !year) %>%
+  mutate(stat = case_when(
+    grepl("min", name) ~ "Min", 
+    grepl("max", name) ~ "Max", 
+    grepl("med", name) ~ "Median"
+  ))%>%
+  mutate(name = case_when(
+    grepl("noIRA", name) ~ "No IRA", 
+    grepl("IRA", name) ~ "IRA", 
+    T ~ "Difference"
+  ))%>%
+  pivot_wider(names_from = stat, values_from = value) %>%
+  select(Year = year, Scenario = name, Minimum = Min, Maximum = Max, Median)
+  
+  write.csv(data_table, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
+```
+
+```{r}
+fig_no = "I.2"
+title = "I.Wind Electricity Generation"
+
+data_table = data_Wind %>%
+  group_by(year) %>%
+  summarize(max_IRA = max(IRA), 
+            min_IRA = min(IRA), 
+            med_IRA = median(IRA), 
+            max_diff = max(abs_dif), 
+            min_diff = min(abs_dif), 
+            med_diff = median(abs_dif), 
+            max_noIRA = max(`No IRA`), 
+            min_noIRA = min(`No IRA`), 
+            med_noIRA = median(`No IRA`)) %>%
+  pivot_longer(cols = !year) %>%
+  mutate(stat = case_when(
+    grepl("min", name) ~ "Min", 
+    grepl("max", name) ~ "Max", 
+    grepl("med", name) ~ "Median"
+  ))%>%
+  mutate(name = case_when(
+    grepl("noIRA", name) ~ "No IRA", 
+    grepl("IRA", name) ~ "IRA", 
+    T ~ "Difference"
+  ))%>%
+  pivot_wider(names_from = stat, values_from = value) %>%
+  select(Year = year, Scenario = name, Minimum = Min, Maximum = Max, Median)
+  
+  write.csv(data_table, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
+```
+
+```{r}
+fig_no = "I.2"
+title = "I.Solar Electricity Generation"
+
+data_table = data_Solar %>%
+  group_by(year) %>%
+  summarize(max_IRA = max(IRA), 
+            min_IRA = min(IRA), 
+            med_IRA = median(IRA), 
+            max_diff = max(abs_dif), 
+            min_diff = min(abs_dif), 
+            med_diff = median(abs_dif), 
+            max_noIRA = max(`No IRA`), 
+            min_noIRA = min(`No IRA`), 
+            med_noIRA = median(`No IRA`)) %>%
+  pivot_longer(cols = !year) %>%
+  mutate(stat = case_when(
+    grepl("min", name) ~ "Min", 
+    grepl("max", name) ~ "Max", 
+    grepl("med", name) ~ "Median"
+  ))%>%
+  mutate(name = case_when(
+    grepl("noIRA", name) ~ "No IRA", 
+    grepl("IRA", name) ~ "IRA", 
+    T ~ "Difference"
+  ))%>%
+  pivot_wider(names_from = stat, values_from = value) %>%
+  select(Year = year, Scenario = name, Minimum = Min, Maximum = Max, Median)
+  
+  write.csv(data_table, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
+```
+
+```{r}
+fig_no = "I.2"
+title = "I.Nuclear Electricity Generation"
+
+data_table = data_Nuclear %>%
+  group_by(year) %>%
+  summarize(max_IRA = max(IRA), 
+            min_IRA = min(IRA), 
+            med_IRA = median(IRA), 
+            max_diff = max(abs_dif), 
+            min_diff = min(abs_dif), 
+            med_diff = median(abs_dif), 
+            max_noIRA = max(`No IRA`), 
+            min_noIRA = min(`No IRA`), 
+            med_noIRA = median(`No IRA`)) %>%
+  pivot_longer(cols = !year) %>%
+  mutate(stat = case_when(
+    grepl("min", name) ~ "Min", 
+    grepl("max", name) ~ "Max", 
+    grepl("med", name) ~ "Median"
+  ))%>%
+  mutate(name = case_when(
+    grepl("noIRA", name) ~ "No IRA", 
+    grepl("IRA", name) ~ "IRA", 
+    T ~ "Difference"
+  ))%>%
+  pivot_wider(names_from = stat, values_from = value) %>%
+  select(Year = year, Scenario = name, Minimum = Min, Maximum = Max, Median)
+  
+  write.csv(data_table, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
+```
+
+```{r}
+fig_no = "I.2"
+title = "I.CCS Electricity Generation"
+
+data_table = data_CCS %>%
+  group_by(year) %>%
+  summarize(max_IRA = max(IRA), 
+            min_IRA = min(IRA), 
+            med_IRA = median(IRA), 
+            max_diff = max(abs_dif), 
+            min_diff = min(abs_dif), 
+            med_diff = median(abs_dif), 
+            max_noIRA = max(`No IRA`), 
+            min_noIRA = min(`No IRA`), 
+            med_noIRA = median(`No IRA`)) %>%
+  pivot_longer(cols = !year) %>%
+  mutate(stat = case_when(
+    grepl("min", name) ~ "Min", 
+    grepl("max", name) ~ "Max", 
+    grepl("med", name) ~ "Median"
+  ))%>%
+  mutate(name = case_when(
+    grepl("noIRA", name) ~ "No IRA", 
+    grepl("IRA", name) ~ "IRA", 
+    T ~ "Difference"
+  ))%>%
+  pivot_wider(names_from = stat, values_from = value) %>%
+  select(Year = year, Scenario = name, Minimum = Min, Maximum = Max, Median)
+  
+  write.csv(data_table, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
+```
+
+```{r}
+fig_no = "I.2"
+title = "I.Coal Electricity Generation"
+
+data_table = data_Coal %>%
+  group_by(year) %>%
+  summarize(max_IRA = max(IRA), 
+            min_IRA = min(IRA), 
+            med_IRA = median(IRA), 
+            max_diff = max(abs_dif), 
+            min_diff = min(abs_dif), 
+            med_diff = median(abs_dif), 
+            max_noIRA = max(`No IRA`), 
+            min_noIRA = min(`No IRA`), 
+            med_noIRA = median(`No IRA`)) %>%
+  pivot_longer(cols = !year) %>%
+  mutate(stat = case_when(
+    grepl("min", name) ~ "Min", 
+    grepl("max", name) ~ "Max", 
+    grepl("med", name) ~ "Median"
+  ))%>%
+  mutate(name = case_when(
+    grepl("noIRA", name) ~ "No IRA", 
+    grepl("IRA", name) ~ "IRA", 
+    T ~ "Difference"
+  ))%>%
+  pivot_wider(names_from = stat, values_from = value) %>%
+  select(Year = year, Scenario = name, Minimum = Min, Maximum = Max, Median)
+  
+  write.csv(data_table, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
+```
+
+```{r}
+fig_no = "I.2"
+title = "I.Natural Gas Electricity Generation"
+
+data_table = data_Gas %>%
+  group_by(year) %>%
+  summarize(max_IRA = max(IRA), 
+            min_IRA = min(IRA), 
+            med_IRA = median(IRA), 
+            max_diff = max(abs_dif), 
+            min_diff = min(abs_dif), 
+            med_diff = median(abs_dif), 
+            max_noIRA = max(`No IRA`), 
+            min_noIRA = min(`No IRA`), 
+            med_noIRA = median(`No IRA`)) %>%
+  pivot_longer(cols = !year) %>%
+  mutate(stat = case_when(
+    grepl("min", name) ~ "Min", 
+    grepl("max", name) ~ "Max", 
+    grepl("med", name) ~ "Median"
+  ))%>%
+  mutate(name = case_when(
+    grepl("noIRA", name) ~ "No IRA", 
+    grepl("IRA", name) ~ "IRA", 
+    T ~ "Difference"
+  ))%>%
+  pivot_wider(names_from = stat, values_from = value) %>%
+  select(Year = year, Scenario = name, Minimum = Min, Maximum = Max, Median)
+  
+  write.csv(data_table, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
+```
+
+```{r}
+fig_no = "I.2"
+title = "I.Other Electricity Generation"
+
+data_table = data_Other %>%
+  group_by(year) %>%
+  summarize(max_IRA = max(IRA), 
+            min_IRA = min(IRA), 
+            med_IRA = median(IRA), 
+            max_diff = max(abs_dif), 
+            min_diff = min(abs_dif), 
+            med_diff = median(abs_dif), 
+            max_noIRA = max(`No IRA`), 
+            min_noIRA = min(`No IRA`), 
+            med_noIRA = median(`No IRA`)) %>%
+  pivot_longer(cols = !year) %>%
+  mutate(stat = case_when(
+    grepl("min", name) ~ "Min", 
+    grepl("max", name) ~ "Max", 
+    grepl("med", name) ~ "Median"
+  ))%>%
+  mutate(name = case_when(
+    grepl("noIRA", name) ~ "No IRA", 
+    grepl("IRA", name) ~ "IRA", 
+    T ~ "Difference"
+  ))%>%
+  pivot_wider(names_from = stat, values_from = value) %>%
+  select(Year = year, Scenario = name, Minimum = Min, Maximum = Max, Median)
+  
+  write.csv(data_table, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
+```
 
