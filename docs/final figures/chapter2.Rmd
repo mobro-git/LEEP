@@ -194,24 +194,6 @@ clean_data_hist_noira = clean_data15 %>%
   mutate(scenario = "No IRA", year = 2035)
 
 clean_data15 = bind_rows(clean_data15, clean_data_hist_noira, clean_data_hist_ira) 
-# %>%
-#   mutate(model = factor(model, levels = c(
-#     "EIA",
-#     "IPM-EPA",
-#     "GCAM-PNNL",
-#     "RIO-REPEAT",
-#     "EPS-EI",
-#     "MARKAL-NETL",
-#     "GCAM-CGS",
-#     "NEMS-OP",
-#     "NEMS-EIA",
-#     "NEMS-RHG",
-#     "ReEDS-NREL",
-#     "REGEN-EPRI",
-#     "USREP-ReEDS",
-#     "IPM-NRDC",
-#     "Haiku-RFF"
-#   )))
 
 models_alph = sort(unique(clean_data15$model))
 
