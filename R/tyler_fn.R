@@ -140,7 +140,7 @@ spg3 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
 
 
 
-dotted = function(df, spg, metric, ymin, ymax, config, figmap_leep_timeseries) {
+dotted = function(df, spg, metric, ymin, ymax, config, figmap_leep_timeseries, ddge = 0.2) {
 
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
@@ -181,7 +181,7 @@ dotted = function(df, spg, metric, ymin, ymax, config, figmap_leep_timeseries) {
   }
 
   dots_30 = ggplot() +
-    geom_point(data = df_30, aes(x = year, y = value, color = scenario, alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.2)) +
+    geom_point(data = df_30, aes(x = year, y = value, color = scenario, alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = ddge)) +
     segment_code_30 +
     scale_x_continuous(breaks = c(2030), labels = c("2030"), limits = c(2029.9, 2030.1)) +
     scale_y_continuous(limits = c(ymin, ymax)) +
@@ -197,7 +197,7 @@ dotted = function(df, spg, metric, ymin, ymax, config, figmap_leep_timeseries) {
 
   # dot plot for 2035
   dots_35 = ggplot() +
-    geom_point(data = df_35, aes(x = year, y = value, color = scenario, alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.2)) +
+    geom_point(data = df_35, aes(x = year, y = value, color = scenario, alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = ddge)) +
     segment_code_35 +
     scale_x_continuous(breaks = c(2035), labels = c("2035"), limits = c(2034.9, 2035.1)) +
     scale_y_continuous(limits = c(ymin,ymax)) +
