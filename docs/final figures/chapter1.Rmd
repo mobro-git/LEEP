@@ -61,7 +61,7 @@ saveall(fig, df, fig_no)
 ## F1.2 economy-wide co2 emissions
 
 ```{r}
-fig_no = "1.2."
+fig_no = "1.2"
 
 Econ_data = spg_clean(
   99,
@@ -94,7 +94,7 @@ delta = delta(25, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RF
 delta
 saveall(delta$figure, delta$df, paste(fig_no, "delta"))
 
-EconTab = html(EconSpg$data, "Economy-Wide CO<sub>2<sub>")
+EconTab = html(EconSpg$data, "Economy-Wide CO2")
 EconTab
 
 EconSpg$data = clean_supplemental_data(EconSpg$data, fig_no)
@@ -121,7 +121,7 @@ Elec_data = spg_clean(
   clean_data,
   figmap_leep_timeseries
 )
-ElecTab = html(Elec_data, "Electricity CO<sub>2<sub>")
+ElecTab = html(Elec_data, "Electricity CO2")
 
 Tran_data = spg_clean(
   19,
@@ -131,7 +131,7 @@ Tran_data = spg_clean(
   clean_data,
   figmap_leep_timeseries
 )
-TranTab = html(Tran_data, "Transportation CO<sub>2<sub>")
+TranTab = html(Tran_data, "Transportation CO2")
 
 Ind_data = spg_clean(
   21, 
@@ -140,7 +140,7 @@ Ind_data = spg_clean(
   config,
   clean_data, 
   figmap_leep_timeseries)
-IndTab = html(Ind_data, "Industry CO<sub>2<sub>")
+IndTab = html(Ind_data, "Industry CO2")
 
 Buil_data = spg_clean(
   23, 
@@ -149,7 +149,7 @@ Buil_data = spg_clean(
   config, 
   clean_data, 
   figmap_leep_timeseries)
-BuilTab = html(Buil_data, "Building CO<sub>2<sub>")
+BuilTab = html(Buil_data, "Building CO2")
 
 EconSpg$data = clean_supplemental_data(EconSpg$data, fig_no)
 Elec_data = clean_supplemental_data(Elec_data, fig_no)

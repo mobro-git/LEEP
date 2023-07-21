@@ -325,113 +325,12 @@ html = function(df, title) {
   tab = IRA %>%
     tableHTML(caption = paste(title), rownames = F)
 
+  write.csv(IRA, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
+
   return(tab)
 }
 
-savehtml = function(df, fig_no) {
-  base = df %>%
-    filter(year == 2005)
 
-  baseline = base$value[1]
-
-  base <- as.data.frame(base) %>%
-    select(Year = year,
-           `Absolute Level (Mt CO2)` = value) %>%
-    mutate(Scenario = "Baseline",
-           `% Reductions from 2005` = NA,
-           `% Reductions from No IRA` = NA,
-           `Reductions from No IRA (Mt CO2)` = NA)  %>%
-    select(Year, Scenario, `Absolute Level (Mt CO2)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (Mt CO2)`)
-
-  NoIRA <- df %>%
-    filter(year == 2030 | year == 2035) %>%
-    filter(scenario == "No IRA") %>%
-    group_by(year) %>%
-    summarize(`No IRA Median` = median(value),
-              `No IRA Min` = min(value),
-              `No IRA Max` =  max(value))%>%
-    pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (Mt CO2)") %>%
-    mutate(`2005_perc_red` = ((baseline-`Absolute Level (Mt CO2)`)/baseline) * 100) %>%
-    mutate(
-      Year = year,
-      `% Reductions from 2005` = `2005_perc_red`,
-      `% Reductions from No IRA` = NA,
-      `Reductions from No IRA (Mt CO2)` = NA
-    ) %>%
-    select(!year & !`2005_perc_red`)
-
-  IRA <- df %>%
-    filter(year == 2030 | year == 2035) %>%
-    filter(scenario == "IRA") %>%
-    select(!scenario) %>%
-    group_by(year) %>%
-    summarize(
-      `IRA Max` = max(value),
-      `IRA Min` = min(value),
-      `IRA Median` = median(value)) %>%
-    pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (Mt CO2)") %>%
-    mutate(
-      `% Reductions from 2005` = ((baseline-`Absolute Level (Mt CO2)`)/baseline) * 100
-    )%>%
-    mutate(
-      `% Reductions from No IRA` = case_when(
-        year == 2030 & Scenario == "IRA Max" ~
-          ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100,
-
-        year == 2030 & Scenario == "IRA Median" ~
-          ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100,
-
-        year == 2030 & Scenario == "IRA Min" ~
-          ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
-
-        year == 2035 & Scenario == "IRA Max" ~
-          ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100,
-
-        year == 2035 & Scenario == "IRA Median" ~
-          ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100,
-
-        year == 2035 & Scenario == "IRA Min" ~
-          ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
-      ),
-
-      `Reductions from No IRA (Mt CO2)` = case_when(
-        year == 2030 & Scenario == "IRA Max" ~
-          (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`),
-
-        year == 2030 & Scenario == "IRA Median" ~
-          (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`),
-
-        year == 2030 & Scenario == "IRA Min" ~
-          (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`),
-
-        year == 2035 & Scenario == "IRA Max" ~
-          (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`),
-
-        year == 2035 & Scenario == "IRA Median" ~
-          (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`),
-
-        year == 2035 & Scenario == "IRA Min" ~
-          (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`)
-      )
-    ) %>%
-    rename(Year = year)
-
-  IRA = rbind(NoIRA, IRA)
-
-  IRA <- IRA %>%
-    arrange(desc(IRA)) %>%
-    arrange(Year)
-
-  IRA = rbind(base, IRA)
-
-  IRA$`Absolute Level (Mt CO2)` = round(IRA$`Absolute Level (Mt CO2)`, 3)
-  IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
-  IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
-  IRA$`Reductions from No IRA (Mt CO2)` = round(IRA$`Reductions from No IRA (Mt CO2)`,3)
-
-  write.csv(IRA, paste("output/final_figures/display_tables/SummaryTable",fig_no,".csv",sep=""))
-
-}
 
 #Function to create standard percent difference figs
 pd = function(ts_map_ID, title, yname, gd, drop) {
