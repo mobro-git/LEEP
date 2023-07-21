@@ -1687,7 +1687,7 @@ all = rbind(total, transportation, buildings, industry) %>%
 
 write_sheet(all, per_share_wb, "All")
 
-saveWorkbook(per_share_wb, file = paste("output/final_figures/data/",fig_no,"share.xlsx",sep=")"), overwrite = TRUE)
+saveWorkbook(per_share_wb, file = "output/final_figures/data/FigG.1.share.xlsx", overwrite = TRUE)
 ```
 
 ```{R}
@@ -1800,7 +1800,7 @@ all_per = rbind(total_per, transportation_per, buildings_per, industry_per) %>%
 
 write_sheet(all_per, diff_wb, "All")
 
-saveWorkbook(per_share_wb, file = paste("output/final_figures/data/",fig_no,"differences.xlsx",sep=")"), overwrite = TRUE)
+saveWorkbook(per_share_wb, file = "output/final_figures/data/FigG.1.difference.xlsx", overwrite = TRUE)
 ```
 
 ```{R}
@@ -1858,7 +1858,6 @@ table2
 
 table2 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
 table2 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
-
 ```
 
 # Appendix H

@@ -98,13 +98,9 @@ saveall(delta$figure, delta$df, paste(fig_no, "delta"), wd = 3.012, ht = 3)
 
 EconTab = html(EconSpg$data, "Economy-Wide CO2")
 EconTab
-
-fig_no = "ES.2"
-saveall(EconDot, EconSpg$data, fig_no)
-saveall(delta$figure, delta$df, paste(fig_no, "delta"), wd = 3.012, ht = 3)
 ```
 
-## F1.3/ES.3 key indicators
+## F1.3/ES.2 key indicators
 
 ```{r}
 fig_no = 1.3
@@ -293,7 +289,7 @@ indicators_all_clean = indicators_all %>%
   select(model,scenario,unit,region,title_name.y,year,value,value_2005,pct_diff) %>% 
   rename(`percent diff 2005` = pct_diff)
 saveall(combined, indicators_all_clean, fig_no)
-fig_no = "ES.3"
+fig_no = "ES.2"
 saveall(combined, indicators_all_clean, fig_no)
 
 EconTab

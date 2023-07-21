@@ -401,8 +401,7 @@ print(A)
 
 data = clean_supplemental_data(data, fig_no)
 
-savefig(A, fig_no)
-savedata(data, fig_no)
+saveall(A, data, fig_no, wd = 4, ht = 4)
 ```
 
 ### Table 3.5

@@ -981,7 +981,7 @@ nox_full = dotted(clean_data_nox, figure, "median", ymin = 0, ymax = 5,
 #so2
 clean_data_sox = spg_clean(ts_map_ID = 123, drop = c("ReEDS-NREL"), histsrc = "EPA", 
                            config = config, clean_data = clean_data, figmap_leep_timeseries = figmap_leep_timeseries)
-output = spg2(df = clean_data_sox, title = "", yname = expression(paste("Emissions (Mt S", O[x], "/yr)")), 
+output = spg2(df = clean_data_sox, title = "", yname = expression(paste("Emissions (Mt S", O[2], "/yr)")), 
                                                                         gd = "none", ymin = 0, ymax = 5, 
               ybreaks = waiver(), yax_format = waiver(), annotate = 1, 
               historic_coord = c(2020,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12), 
