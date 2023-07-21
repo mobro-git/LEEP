@@ -184,7 +184,7 @@ color_map <- c(
   "IPM-ERA" = "maroonD",
   "IPM-NRDC" = "mintD",
   "MARKAL-NETL" = "m.violet",
-  "NEMS-RGH" = "navyD",
+  "NEMS-RHG" = "navyD",
   "NEMS-OP" = "tealD",
   "NEMS-OP-LTS" = "tealD",
   "REGEN-EPRI" = "apricotD",
