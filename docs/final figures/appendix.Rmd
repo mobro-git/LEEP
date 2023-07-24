@@ -5203,7 +5203,7 @@ p = dta_top %>% ggplot() +
   facet_grid(. ~ variable, labeller = labeller(variable = tech_renamer)) +
   theme_emf() +
   theme(axis.ticks = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1),
-        axis.title.x = element_blank(), strip.text.x = element_text(face = "plain"))
+        axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8))
         
 p
 
@@ -5216,7 +5216,7 @@ p2 = dta_bottom %>% ggplot() +
   facet_grid(. ~ variable, labeller = labeller(variable = tech_renamer), scales = "free_y") +
   theme_emf() +
   theme(axis.ticks = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1),
-        axis.title.x = element_blank(), strip.text.x = element_text(face = "plain"))
+        axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8))
 
 p2
 

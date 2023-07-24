@@ -177,3 +177,11 @@ stackbar,19,Capacity Additions Alt,Capacity Additions|Electricity|Wind|Average 2
 stackbar,19,Capacity Additions Alt,Capacity Retirements|Electricity|Wind|Average 2021-2035,0,Wind,usa,models_leep,thirtyfive_only,ira_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,19,Capacity Additions Alt,Capacity Additions|Electricity|Storage Capacity|Average 2021-2035,0,Storage,usa,models_leep,thirtyfive_only,ira_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,19,Capacity Additions Alt,Capacity Retirements|Electricity|Storage Capacity|Average 2021-2035,0,Storage,usa,models_leep,thirtyfive_only,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,20,Industrial Emissions,Emissions|CO2|Energy|Demand|Industry,0,Cement,usa,models_leep,ghgi_yrs,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,20,Industrial Emissions,Emissions|CO2|Energy|Demand|Transportation,0,Food Processing,usa,models_leep,ghgi_yrs,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,20,Industrial Emissions,Emissions|CO2|Energy|Demand|Buildings,0,Other Heavy Industry,usa,models_leep,ghgi_yrs,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,20,Industrial Emissions,Emissions|CO2|Energy|Supply|Electricity,0,Iron and Steel,usa,models_leep,ghgi_yrs,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,20,Industrial Emissions,Emissions|CO2,0,Paper,usa,models_leep,ghgi_yrs,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,20,Industrial Emissions,Emissions|CO2|Energy|Demand|Industry and Fuel Production,0,Other Light Industry,usa,models_leep,ghgi_yrs,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,20,Industrial Emissions,Emissions|CO,0,Refining,usa,models_leep,ghgi_yrs,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,20,Industrial Emissions,Emissions|CH4,0,Chemicals,usa,models_leep,ghgi_yrs,ira_only,single,stack,year,value,,,variable_rename,region,fixed

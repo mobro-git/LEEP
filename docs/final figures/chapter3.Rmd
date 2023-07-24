@@ -178,7 +178,7 @@ pnnl = data_min %>% select(model, scenario, region, variable, unit, datasrc, yea
 
 eia = data_min %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
   filter(model == "AEO 2023", 
-         scenario %in% c("AEO23 Ref"),
+         scenario %in% c("AEO23 Ref", "AEO23 No IRA"),
          grepl("Sales Share", variable),
          unit == "%") %>%
   filter(grepl("BEV", variable) | grepl("PHEV", variable)) %>%
@@ -224,7 +224,7 @@ clean_data_evshare = rbind(raw, atr_2022, nems, pnnl, eia) %>%
 
 output = spg2(df = clean_data_evshare, title = "", yname = expression("EV Sales Share (%)"), gd = "none", ymin = 0, ymax = 100, 
               ybreaks = waiver(), yax_format = waiver(), annotate = 1, 
-              historic_coord = c(2015,8), preira_coord = c(2030, 10), ira_coord = c(2027, 74),
+              historic_coord = c(2015,8), preira_coord = c(2030, 9), ira_coord = c(2027, 52),
               config = config, figmap_leep_timeseries = figmap_leep_timeseries)
 output$figure
 

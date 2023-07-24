@@ -281,7 +281,7 @@ color_map <- c(
   "BECCS" = "m.violet",
   "Fossil CCS" = "brown",
   "Chemical Feedstocks" = "very dark teal",
-  "Refining" = "very dark teal",
+  "Refining" = "m.yellow",
   "Petroleum Refining" = "very dark blue",
   "Industrial Processes" = "slate",
   "Energy" = "teal blue",
@@ -375,7 +375,18 @@ color_map <- c(
   "Quintile 2" = "hue2",
   "Quintile 3" = "hue3",
   "Quintile 4" = "hue4",
-  "Quintile 5" = "hue5") %>%
+  "Quintile 5" = "hue5",
+
+  # industrial emissions
+  "Cement" = "mintD",
+  "Food Processing" = "m.violet",
+  "Other Heavy Industry" = "cinnamon",
+  "Iron and Steel" = "m.green",
+  "Paper" = "light orange",
+  "Other Light Industry" = "dark salmon",
+  "Refining" = "m.yellow",
+  "Chemicals" = "teal blue"
+  ) %>%
   find_color(master_palette)
 
 sub_palettes <- list(

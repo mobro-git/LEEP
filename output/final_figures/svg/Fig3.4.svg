@@ -70,13 +70,14 @@
 <polyline points='225.84,292.04 264.91,265.08 330.04,227.76 395.16,211.97 ' style='stroke-width: 1.07; stroke: #F28063; stroke-linecap: butt;' />
 <polyline points='225.84,292.04 264.91,273.96 330.04,241.43 395.16,234.45 ' style='stroke-width: 1.07; stroke: #F28063; stroke-linecap: butt;' />
 <polyline points='225.84,292.04 264.91,283.13 330.04,249.91 395.16,204.80 ' style='stroke-width: 1.07; stroke: #F28063; stroke-linecap: butt;' />
+<polyline points='225.84,292.04 238.86,287.06 251.89,285.62 264.91,283.54 277.94,281.73 290.96,279.21 303.99,276.60 317.01,274.03 330.04,271.91 343.06,270.92 356.09,269.57 369.11,268.01 382.14,266.49 395.16,265.09 ' style='stroke-width: 1.07; stroke: #F28063; stroke-linecap: butt;' />
 <polyline points='225.84,292.04 238.86,286.00 251.89,273.01 264.91,247.91 277.94,235.33 290.96,236.03 303.99,231.21 317.01,225.70 330.04,218.86 343.06,213.62 356.09,208.86 369.11,202.94 382.14,199.03 395.16,195.20 ' style='stroke-width: 1.07; stroke: #F28063; stroke-linecap: butt;' />
 <polyline points='225.84,292.04 264.91,273.80 330.04,246.34 395.16,227.41 ' style='stroke-width: 1.07; stroke: #F28063; stroke-linecap: butt;' />
 <polyline points='225.84,292.04 264.91,260.85 330.04,219.86 395.16,191.69 ' style='stroke-width: 1.07; stroke: #F28063; stroke-linecap: butt;' />
 <polyline points='225.84,292.04 264.91,257.57 330.04,193.03 395.16,152.05 ' style='stroke-width: 1.07; stroke: #F28063; stroke-linecap: butt;' />
 <text x='134.67' y='286.69' text-anchor='middle' style='font-size: 11.04px; font-family: "Arial";' textLength='45.35px' lengthAdjust='spacingAndGlyphs'>Historical</text>
-<text x='330.04' y='281.53' text-anchor='middle' style='font-size: 11.04px;fill: #F28063; font-family: "Arial";' textLength='35.55px' lengthAdjust='spacingAndGlyphs'>No IRA</text>
-<text x='290.96' y='116.26' text-anchor='middle' style='font-size: 11.04px;fill: #0388B3; font-family: "Arial";' textLength='18.39px' lengthAdjust='spacingAndGlyphs'>IRA</text>
+<text x='330.04' y='284.11' text-anchor='middle' style='font-size: 11.04px;fill: #F28063; font-family: "Arial";' textLength='35.55px' lengthAdjust='spacingAndGlyphs'>No IRA</text>
+<text x='290.96' y='173.07' text-anchor='middle' style='font-size: 11.04px;fill: #0388B3; font-family: "Arial";' textLength='18.39px' lengthAdjust='spacingAndGlyphs'>IRA</text>
 <rect x='53.26' y='32.26' width='358.18' height='284.06' style='stroke-width: 1.07; stroke: #B3B3B3;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
@@ -116,6 +117,7 @@
 <circle cx='433.91' cy='210.74' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
 <circle cx='450.19' cy='249.91' r='1.95' style='stroke-width: 0.71; stroke: #F28063;' />
 <circle cx='433.91' cy='264.36' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
+<circle cx='450.19' cy='271.91' r='1.95' style='stroke-width: 0.71; stroke: #F28063;' />
 <circle cx='433.91' cy='163.96' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
 <circle cx='450.19' cy='218.86' r='1.95' style='stroke-width: 0.71; stroke: #F28063;' />
 <circle cx='433.91' cy='221.55' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
@@ -125,7 +127,7 @@
 <circle cx='433.91' cy='168.19' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
 <circle cx='450.19' cy='193.03' r='1.95' style='stroke-width: 0.71; stroke: #F28063;' />
 <line x1='425.77' y1='201.94' x2='458.33' y2='201.94' style='stroke-width: 2.13; stroke: #0388B3; stroke-linecap: butt;' />
-<line x1='425.77' y1='227.76' x2='458.33' y2='227.76' style='stroke-width: 2.13; stroke: #F28063; stroke-linecap: butt;' />
+<line x1='425.77' y1='234.59' x2='458.33' y2='234.59' style='stroke-width: 2.13; stroke: #F28063; stroke-linecap: butt;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
 <text transform='translate(446.61,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2030</text>
@@ -154,6 +156,7 @@
 <circle cx='472.47' cy='178.63' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
 <circle cx='488.75' cy='204.80' r='1.95' style='stroke-width: 0.71; stroke: #F28063;' />
 <circle cx='472.47' cy='258.02' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
+<circle cx='488.75' cy='265.09' r='1.95' style='stroke-width: 0.71; stroke: #F28063;' />
 <circle cx='472.47' cy='189.97' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
 <circle cx='488.75' cy='195.20' r='1.95' style='stroke-width: 0.71; stroke: #F28063;' />
 <circle cx='472.47' cy='225.77' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
@@ -163,7 +166,7 @@
 <circle cx='472.47' cy='93.07' r='1.95' style='stroke-width: 0.71; stroke: #0388B3;' />
 <circle cx='488.75' cy='152.05' r='1.95' style='stroke-width: 0.71; stroke: #F28063;' />
 <line x1='464.33' y1='200.04' x2='496.89' y2='200.04' style='stroke-width: 2.13; stroke: #0388B3; stroke-linecap: butt;' />
-<line x1='464.33' y1='204.80' x2='496.89' y2='204.80' style='stroke-width: 2.13; stroke: #F28063; stroke-linecap: butt;' />
+<line x1='464.33' y1='208.39' x2='496.89' y2='208.39' style='stroke-width: 2.13; stroke: #F28063; stroke-linecap: butt;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
 <text transform='translate(485.17,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2035</text>
