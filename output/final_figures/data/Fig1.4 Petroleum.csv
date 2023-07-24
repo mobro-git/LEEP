@@ -17,118 +17,74 @@
 1.4,"EIA","Historic","Primary Energy|Oil","Quads",2020,"Oil",32.33055000777
 1.4,"EIA","Historic","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"EPS-EI","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"EPS-EI","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"GCAM-CGS","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"GCAM-CGS","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"GCAM-PNNL","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"GCAM-PNNL","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"MARKAL-NETL","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"MARKAL-NETL","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"NEMS-EIA","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"NEMS-OP","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"NEMS-OP","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"NEMS-RHG","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"NEMS-RHG","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"REGEN-EPRI","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"REGEN-EPRI","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"USREP-ReEDS","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+1.4,"USREP-ReEDS","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"EPS-EI","IRA","Primary Energy|Oil","Quads",2025,"Oil",32.2974096050097
 1.4,"EPS-EI","IRA","Primary Energy|Oil","Quads",2030,"Oil",30.0299205631474
 1.4,"EPS-EI","IRA","Primary Energy|Oil","Quads",2035,"Oil",27.771050365601
-1.4,"EPS-EI","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"EPS-EI","No IRA","Primary Energy|Oil","Quads",2025,"Oil",32.3437477679936
 1.4,"EPS-EI","No IRA","Primary Energy|Oil","Quads",2030,"Oil",30.2628053564997
 1.4,"EPS-EI","No IRA","Primary Energy|Oil","Quads",2035,"Oil",28.2335140120216
-1.4,"GCAM-CGS","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"GCAM-CGS","IRA","Primary Energy|Oil","Quads",2025,"Oil",30.7016539602896
 1.4,"GCAM-CGS","IRA","Primary Energy|Oil","Quads",2030,"Oil",28.2269403677296
 1.4,"GCAM-CGS","IRA","Primary Energy|Oil","Quads",2035,"Oil",27.7359160618507
-1.4,"GCAM-CGS","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"GCAM-CGS","No IRA","Primary Energy|Oil","Quads",2025,"Oil",32.6640260964821
 1.4,"GCAM-CGS","No IRA","Primary Energy|Oil","Quads",2030,"Oil",31.7768952014851
 1.4,"GCAM-CGS","No IRA","Primary Energy|Oil","Quads",2035,"Oil",28.8814593507008
-1.4,"GCAM-PNNL","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"GCAM-PNNL","IRA","Primary Energy|Oil","Quads",2025,"Oil",30.2657009335256
 1.4,"GCAM-PNNL","IRA","Primary Energy|Oil","Quads",2030,"Oil",26.7328592468796
 1.4,"GCAM-PNNL","IRA","Primary Energy|Oil","Quads",2035,"Oil",23.4338287973899
-1.4,"GCAM-PNNL","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"GCAM-PNNL","No IRA","Primary Energy|Oil","Quads",2025,"Oil",30.617939716
 1.4,"GCAM-PNNL","No IRA","Primary Energy|Oil","Quads",2030,"Oil",27.628455302
 1.4,"GCAM-PNNL","No IRA","Primary Energy|Oil","Quads",2035,"Oil",24.657803674
-1.4,"MARKAL-NETL","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"MARKAL-NETL","IRA","Primary Energy|Oil","Quads",2025,"Oil",36.3531243457704
 1.4,"MARKAL-NETL","IRA","Primary Energy|Oil","Quads",2030,"Oil",35.8960316023339
 1.4,"MARKAL-NETL","IRA","Primary Energy|Oil","Quads",2035,"Oil",35.4481996916172
-1.4,"MARKAL-NETL","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"MARKAL-NETL","No IRA","Primary Energy|Oil","Quads",2025,"Oil",36.3851727668729
 1.4,"MARKAL-NETL","No IRA","Primary Energy|Oil","Quads",2030,"Oil",35.9274410349787
 1.4,"MARKAL-NETL","No IRA","Primary Energy|Oil","Quads",2035,"Oil",35.4787991388928
-1.4,"NEMS-EIA","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"NEMS-EIA","IRA","Primary Energy|Oil","Quads",2025,"Oil",34.6576867023754
 1.4,"NEMS-EIA","IRA","Primary Energy|Oil","Quads",2030,"Oil",33.867923377951
 1.4,"NEMS-EIA","IRA","Primary Energy|Oil","Quads",2035,"Oil",33.1915445258329
-1.4,"NEMS-EIA","IRA","Primary Energy|Oil","Quads",2022,"Oil",35.1726583056864
-1.4,"NEMS-EIA","IRA","Primary Energy|Oil","Quads",2023,"Oil",35.2939147413563
-1.4,"NEMS-EIA","IRA","Primary Energy|Oil","Quads",2024,"Oil",34.7865401026889
-1.4,"NEMS-EIA","IRA","Primary Energy|Oil","Quads",2026,"Oil",34.5219363341606
-1.4,"NEMS-EIA","IRA","Primary Energy|Oil","Quads",2027,"Oil",34.3815199876613
-1.4,"NEMS-EIA","IRA","Primary Energy|Oil","Quads",2028,"Oil",34.3335382109695
-1.4,"NEMS-EIA","IRA","Primary Energy|Oil","Quads",2029,"Oil",34.1226701923538
-1.4,"NEMS-EIA","IRA","Primary Energy|Oil","Quads",2031,"Oil",33.662609333487
-1.4,"NEMS-EIA","IRA","Primary Energy|Oil","Quads",2032,"Oil",33.5156030176576
-1.4,"NEMS-EIA","IRA","Primary Energy|Oil","Quads",2033,"Oil",33.3841616293887
-1.4,"NEMS-EIA","IRA","Primary Energy|Oil","Quads",2034,"Oil",33.2979570305868
-1.4,"NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2025,"Oil",34.9365584045005
 1.4,"NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2030,"Oil",34.1920178696082
 1.4,"NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2035,"Oil",33.6007776212532
-1.4,"NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2022,"Oil",35.1767992864142
-1.4,"NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2023,"Oil",35.7472956313119
-1.4,"NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2024,"Oil",35.0970416576079
-1.4,"NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2026,"Oil",34.8360728721623
-1.4,"NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2027,"Oil",34.7423513083445
-1.4,"NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2028,"Oil",34.6088419297
-1.4,"NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2029,"Oil",34.4411397101898
-1.4,"NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2031,"Oil",33.9869398240459
-1.4,"NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2032,"Oil",33.8230035870087
-1.4,"NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2033,"Oil",33.7037601419703
-1.4,"NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2034,"Oil",33.6588773508558
-1.4,"NEMS-OP","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"NEMS-OP","IRA","Primary Energy|Oil","Quads",2025,"Oil",35.2257980583729
 1.4,"NEMS-OP","IRA","Primary Energy|Oil","Quads",2030,"Oil",32.7631155197507
 1.4,"NEMS-OP","IRA","Primary Energy|Oil","Quads",2035,"Oil",30.48896210371
-1.4,"NEMS-OP","IRA","Primary Energy|Oil","Quads",2022,"Oil",35.1500914107132
-1.4,"NEMS-OP","IRA","Primary Energy|Oil","Quads",2023,"Oil",35.5701804556097
-1.4,"NEMS-OP","IRA","Primary Energy|Oil","Quads",2024,"Oil",35.3257685931078
-1.4,"NEMS-OP","IRA","Primary Energy|Oil","Quads",2026,"Oil",34.8892016248999
-1.4,"NEMS-OP","IRA","Primary Energy|Oil","Quads",2027,"Oil",34.3896309499127
-1.4,"NEMS-OP","IRA","Primary Energy|Oil","Quads",2028,"Oil",33.909391184959
-1.4,"NEMS-OP","IRA","Primary Energy|Oil","Quads",2029,"Oil",33.3217689197657
-1.4,"NEMS-OP","IRA","Primary Energy|Oil","Quads",2031,"Oil",32.1854522082083
-1.4,"NEMS-OP","IRA","Primary Energy|Oil","Quads",2032,"Oil",31.668566613805
-1.4,"NEMS-OP","IRA","Primary Energy|Oil","Quads",2033,"Oil",31.250614558963
-1.4,"NEMS-OP","IRA","Primary Energy|Oil","Quads",2034,"Oil",30.8146755878324
-1.4,"NEMS-OP","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"NEMS-OP","No IRA","Primary Energy|Oil","Quads",2025,"Oil",35.2892207632022
 1.4,"NEMS-OP","No IRA","Primary Energy|Oil","Quads",2030,"Oil",33.7259680386142
 1.4,"NEMS-OP","No IRA","Primary Energy|Oil","Quads",2035,"Oil",32.0734867292981
-1.4,"NEMS-OP","No IRA","Primary Energy|Oil","Quads",2022,"Oil",35.1490384156139
-1.4,"NEMS-OP","No IRA","Primary Energy|Oil","Quads",2023,"Oil",35.5882403715585
-1.4,"NEMS-OP","No IRA","Primary Energy|Oil","Quads",2024,"Oil",35.398549254385
-1.4,"NEMS-OP","No IRA","Primary Energy|Oil","Quads",2026,"Oil",35.0477928868128
-1.4,"NEMS-OP","No IRA","Primary Energy|Oil","Quads",2027,"Oil",34.6998215062791
-1.4,"NEMS-OP","No IRA","Primary Energy|Oil","Quads",2028,"Oil",34.3990209062116
-1.4,"NEMS-OP","No IRA","Primary Energy|Oil","Quads",2029,"Oil",34.0361955948085
-1.4,"NEMS-OP","No IRA","Primary Energy|Oil","Quads",2031,"Oil",33.3977875659733
-1.4,"NEMS-OP","No IRA","Primary Energy|Oil","Quads",2032,"Oil",33.1511467138451
-1.4,"NEMS-OP","No IRA","Primary Energy|Oil","Quads",2033,"Oil",32.8223682439873
-1.4,"NEMS-OP","No IRA","Primary Energy|Oil","Quads",2034,"Oil",32.4430840091843
-1.4,"NEMS-RHG","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"NEMS-RHG","IRA","Primary Energy|Oil","Quads",2025,"Oil",36.8496073776916
 1.4,"NEMS-RHG","IRA","Primary Energy|Oil","Quads",2030,"Oil",34.7813997361668
 1.4,"NEMS-RHG","IRA","Primary Energy|Oil","Quads",2035,"Oil",32.9274832238558
-1.4,"NEMS-RHG","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"NEMS-RHG","No IRA","Primary Energy|Oil","Quads",2025,"Oil",36.828466759559
 1.4,"NEMS-RHG","No IRA","Primary Energy|Oil","Quads",2030,"Oil",35.154885989805
 1.4,"NEMS-RHG","No IRA","Primary Energy|Oil","Quads",2035,"Oil",33.6862505180804
-1.4,"REGEN-EPRI","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"REGEN-EPRI","IRA","Primary Energy|Oil","Quads",2025,"Oil",30.8394429405722
 1.4,"REGEN-EPRI","IRA","Primary Energy|Oil","Quads",2030,"Oil",27.4395043543872
 1.4,"REGEN-EPRI","IRA","Primary Energy|Oil","Quads",2035,"Oil",24.0195661294599
-1.4,"REGEN-EPRI","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"REGEN-EPRI","No IRA","Primary Energy|Oil","Quads",2025,"Oil",30.9094416761701
 1.4,"REGEN-EPRI","No IRA","Primary Energy|Oil","Quads",2030,"Oil",27.8694965873459
 1.4,"REGEN-EPRI","No IRA","Primary Energy|Oil","Quads",2035,"Oil",24.8195516791505
-1.4,"USREP-ReEDS","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"USREP-ReEDS","IRA","Primary Energy|Oil","Quads",2025,"Oil",34.924638345226
 1.4,"USREP-ReEDS","IRA","Primary Energy|Oil","Quads",2030,"Oil",32.78779374969
 1.4,"USREP-ReEDS","IRA","Primary Energy|Oil","Quads",2035,"Oil",30.860427028984
-1.4,"USREP-ReEDS","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
 1.4,"USREP-ReEDS","No IRA","Primary Energy|Oil","Quads",2025,"Oil",34.790376115488
 1.4,"USREP-ReEDS","No IRA","Primary Energy|Oil","Quads",2030,"Oil",33.082136176908
 1.4,"USREP-ReEDS","No IRA","Primary Energy|Oil","Quads",2035,"Oil",31.724095116518

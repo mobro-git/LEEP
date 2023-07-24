@@ -185,3 +185,5 @@ stackbar,20,Industrial Emissions,Emissions|CO2,0,Paper,usa,models_leep,ghgi_yrs,
 stackbar,20,Industrial Emissions,Emissions|CO2|Energy|Demand|Industry and Fuel Production,0,Other Light Industry,usa,models_leep,ghgi_yrs,ira_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,20,Industrial Emissions,Emissions|CO,0,Refining,usa,models_leep,ghgi_yrs,ira_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,20,Industrial Emissions,Emissions|CH4,0,Chemicals,usa,models_leep,ghgi_yrs,ira_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,21,Industrial CCS,Carbon Sequestration|CCS|Fossil|Energy|Demand|Industry,0,Industrial CCS,usa,models_leep,ira_2030_2035,ira_only,single,stack,year,value,,,model,region,fixed
+stackbar,21,Industrial CCS,Carbon Sequestration|CCS|Energy|Demand|Industry,0,Industrial CCS,usa,models_leep,ira_2030_2035,ira_only,single,stack,year,value,,,model,region,fixed

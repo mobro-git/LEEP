@@ -82,11 +82,11 @@ pie1 = pie %>% filter(Table == 1) %>%
 total = sum(pie1$value)
 p = pie1 %>% mutate(value = (100 * value) / total) %>% arrange(desc(value)) %>% ggplot() +
   geom_bar(aes(x = "2021", y = value, fill = fct_reorder(Industry, value)),
-           position = position_stack(), stat = "identity", width = 0.5) + 
+           position = position_stack(), stat = "identity", width = 0.4) + 
   geom_text(aes(x = "2021", y = value, label = paste0(Industry,": ", round(value,1), "%")), 
-                position = position_stack(vjust = 0.5), stat = "identity", size = 3.5) +
+                position = position_stack(vjust = 0.5), stat = "identity", size = 3) +
   scale_y_continuous(limits = c(0,100), expand = expansion(add = c(0,5)), 
-                     name = expression(paste("Percent of Industrial C ", O[2], " Emissions"))) +
+                     name = expression(paste("Percent of Industrial C", O[2], " Emissions"))) +
   scale_subpalette(subpalette,"Industrial Emissions") +
   #geom_bar(aes(x = year, y = value, fill = variable_rename), position = position_stack(), stat = "identity")
   theme_emf() + 
@@ -144,6 +144,33 @@ savedata(IndSpg$data, fig_no)
 IndTab
 ```
 
+## 5.4 industrial CCS
+```{r}
+fig_no = "5.4"
+exclude_models = c("GCAM-PNNL")
+
+subpalette = create_subpalettes(figmap_leep_stackbar, config)
+subpalettes$`Industrial CCS`[["2030"]] = "black"
+subpalettes$`Industrial CCS`[["2035"]] = "blue"
+
+dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 21, "United States") %>%
+  filter(!(model %in% exclude_models)) %>%
+  mutate(value = abs(value)) %>%
+  mutate(year = factor(year, levels = c("2030", "2035"))) %>%
+  mutate(model = factor(model, levels = c("EPS-EI", "NEMS-RHG", "USREP-ReEDS", "RIO-REPEAT", "GCAM-CGS", "NEMS-OP", "MARKAL-NETL")))
+
+p = dta %>% ggplot() +
+  geom_bar(aes(x = model, y = value, fill = year), stat = "identity", position = "dodge") + 
+  scale_y_continuous(expand = expansion(mult = c(0,0.05)), name = expression(paste("Carbon Sequestration (Mt C",O[2],"/yr)"))) +
+  scale_fill_manual(breaks = c("2030", "2035"), values = c("#003052", "#0388B3")) +
+  theme_emf() +
+  theme(axis.ticks = element_blank(), axis.title.x = element_blank(),
+        axis.text.x = element_text(size = 6))
+
+p
+
+saveall(p,dta,fig_no)
+```
 
 ## 5.x energy used in the industry sector, by fuel, over time (NO LONGER IN USE)
 

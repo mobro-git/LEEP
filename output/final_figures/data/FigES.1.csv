@@ -17,158 +17,114 @@
 2.3,"EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2020,"Electricity",1439.6
 2.3,"EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"EPS-EI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"EPS-EI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"GCAM-CGS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"GCAM-CGS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"Haiku-RFF","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"Haiku-RFF","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"IPM-EPA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"IPM-EPA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"IPM-NRDC","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"IPM-NRDC","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"MARKAL-NETL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"MARKAL-NETL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"NEMS-RHG","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"NEMS-RHG","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"REGEN-EPRI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"REGEN-EPRI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"RIO-REPEAT","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"RIO-REPEAT","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"ReEDS-NREL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"ReEDS-NREL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"USREP-ReEDS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+2.3,"USREP-ReEDS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"EPS-EI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1189.66
 2.3,"EPS-EI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",602.7
 2.3,"EPS-EI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",336.702
-2.3,"EPS-EI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"EPS-EI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1350.69
 2.3,"EPS-EI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1201.47
 2.3,"EPS-EI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1198.69
-2.3,"GCAM-CGS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"GCAM-CGS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1001.23988404397
 2.3,"GCAM-CGS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",679.659054813217
 2.3,"GCAM-CGS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",445.580298326782
-2.3,"GCAM-CGS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"GCAM-CGS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1325.31758286476
 2.3,"GCAM-CGS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1274.91028267317
 2.3,"GCAM-CGS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1293.1152861035
-2.3,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1160.58110564697
 2.3,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",831.998710072543
 2.3,"GCAM-PNNL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",784.368180921919
-2.3,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1283.991
 2.3,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1234.722
 2.3,"GCAM-PNNL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1182.894
-2.3,"Haiku-RFF","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"Haiku-RFF","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1205.45242155223
 2.3,"Haiku-RFF","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",852.658725492053
 2.3,"Haiku-RFF","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",767.701065402758
-2.3,"Haiku-RFF","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"Haiku-RFF","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1394.14921935611
 2.3,"Haiku-RFF","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1282.5776456571
 2.3,"Haiku-RFF","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1174.26339683437
-2.3,"IPM-EPA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"IPM-EPA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1176.7889391169
 2.3,"IPM-EPA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",971.719363965523
 2.3,"IPM-EPA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",608.299102727081
-2.3,"IPM-EPA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"IPM-EPA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1109.41619281777
 2.3,"IPM-EPA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1303.58284422178
 2.3,"IPM-EPA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1247.28769086048
-2.3,"IPM-NRDC","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"IPM-NRDC","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1176.7889391169
 2.3,"IPM-NRDC","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",827.389198560903
 2.3,"IPM-NRDC","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",772.508012550513
-2.3,"IPM-NRDC","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"IPM-NRDC","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1109.41619281777
 2.3,"IPM-NRDC","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1075.92232861268
 2.3,"IPM-NRDC","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1079.88005163251
-2.3,"MARKAL-NETL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"MARKAL-NETL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1410.01
 2.3,"MARKAL-NETL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1232.67
 2.3,"MARKAL-NETL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",749.4
-2.3,"MARKAL-NETL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"MARKAL-NETL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1377.84
 2.3,"MARKAL-NETL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1379.59
 2.3,"MARKAL-NETL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1430.05
-2.3,"NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1295.490356
 2.3,"NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",768.311584
 2.3,"NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",714.001099
-2.3,"NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2022,"Electricity",1507.019531
-2.3,"NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2023,"Electricity",1396.994263
-2.3,"NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2024,"Electricity",1395.245239
-2.3,"NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2026,"Electricity",1161.389648
-2.3,"NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2027,"Electricity",1024.768433
-2.3,"NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2028,"Electricity",913.385315
-2.3,"NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2029,"Electricity",828.363403
-2.3,"NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2031,"Electricity",748.608398
-2.3,"NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2032,"Electricity",743.979004
-2.3,"NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2033,"Electricity",739.65332
-2.3,"NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2034,"Electricity",722.299683
-2.3,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1317.436523
 2.3,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1177.160889
 2.3,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1100.493042
-2.3,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2022,"Electricity",1507.266113
-2.3,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2023,"Electricity",1396.958008
-2.3,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2024,"Electricity",1387.346802
-2.3,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2026,"Electricity",1269.72522
-2.3,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2027,"Electricity",1235.09375
-2.3,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2028,"Electricity",1214.805298
-2.3,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2029,"Electricity",1202.780518
-2.3,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2031,"Electricity",1144.698242
-2.3,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2032,"Electricity",1121.275391
-2.3,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2033,"Electricity",1117.068115
-2.3,"NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2034,"Electricity",1111.81311
-2.3,"NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1170.501465
 2.3,"NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",660.642334
 2.3,"NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",417.400726
-2.3,"NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2022,"Electricity",1498.034058
-2.3,"NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2023,"Electricity",1448.508301
-2.3,"NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2024,"Electricity",1287.602905
-2.3,"NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2026,"Electricity",1077.134277
-2.3,"NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2027,"Electricity",981.575256
-2.3,"NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2028,"Electricity",865.056091
-2.3,"NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2029,"Electricity",737.692566
-2.3,"NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2031,"Electricity",625.182068
-2.3,"NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2032,"Electricity",607.155884
-2.3,"NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2033,"Electricity",519.068909
-2.3,"NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2034,"Electricity",465.518219
-2.3,"NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1233.332031
 2.3,"NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1040.891113
 2.3,"NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",958.780945
-2.3,"NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2022,"Electricity",1497.152466
-2.3,"NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2023,"Electricity",1446.765747
-2.3,"NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2024,"Electricity",1305.732544
-2.3,"NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2026,"Electricity",1182.312988
-2.3,"NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2027,"Electricity",1147.578247
-2.3,"NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2028,"Electricity",1122.651978
-2.3,"NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2029,"Electricity",1075.179321
-2.3,"NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2031,"Electricity",1036.622681
-2.3,"NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2032,"Electricity",1029.636719
-2.3,"NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2033,"Electricity",1023.60083
-2.3,"NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2034,"Electricity",991.468872
-2.3,"NEMS-RHG","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"NEMS-RHG","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1194.8452781805
 2.3,"NEMS-RHG","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",482.81984665288
 2.3,"NEMS-RHG","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",588.535589412373
-2.3,"NEMS-RHG","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"NEMS-RHG","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1090.61392148052
 2.3,"NEMS-RHG","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",979.598572044581
 2.3,"NEMS-RHG","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",906.244227830616
-2.3,"REGEN-EPRI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"REGEN-EPRI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1325.90851008344
 2.3,"REGEN-EPRI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",999.666254194768
 2.3,"REGEN-EPRI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",500.03751964597
-2.3,"REGEN-EPRI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"REGEN-EPRI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1338.36588810703
 2.3,"REGEN-EPRI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1125.0574146029
 2.3,"REGEN-EPRI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1097.15035473422
-2.3,"RIO-REPEAT","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"RIO-REPEAT","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1460.5
 2.3,"RIO-REPEAT","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",741
 2.3,"RIO-REPEAT","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",370
-2.3,"RIO-REPEAT","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"RIO-REPEAT","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1437.5
 2.3,"RIO-REPEAT","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",981
 2.3,"RIO-REPEAT","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",775
-2.3,"ReEDS-NREL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"ReEDS-NREL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1152.97854629897
 2.3,"ReEDS-NREL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",413.513524771282
 2.3,"ReEDS-NREL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",323.38378502023
-2.3,"ReEDS-NREL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"ReEDS-NREL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1361.65313741276
 2.3,"ReEDS-NREL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1238.16547546738
 2.3,"ReEDS-NREL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1165.17798641427
-2.3,"USREP-ReEDS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"USREP-ReEDS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1063.271865
 2.3,"USREP-ReEDS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",616.834498
 2.3,"USREP-ReEDS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",488.0122266
-2.3,"USREP-ReEDS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
 2.3,"USREP-ReEDS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1324.274957
 2.3,"USREP-ReEDS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1154.603142
 2.3,"USREP-ReEDS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1060.287391
