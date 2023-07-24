@@ -359,8 +359,8 @@ GasSpg = spg2(
   c(0, 10, 20 , 30 , 40),
   NULL,
   1,
-  c(2010, 35),
-  c(2027.5, 35),
+  c(2012, 35),
+  c(2027.5, 37),
   c(2022, 22.5),
   config,
   figmap_leep_timeseries
@@ -415,7 +415,7 @@ PetrolTab = html(PetrolSpg$data, "Petroleum")
 fig = (CoalDot | GasDot | PetrolDot)
 fig
 
-savefig(fig, fig_no)
+savefig(fig, fig_no, wd = 8)
 
 CoalTab
 GasTab
