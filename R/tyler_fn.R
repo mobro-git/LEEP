@@ -43,6 +43,17 @@ spg_clean = function(ts_map_ID, drop, histsrc, config, clean_data, figmap_leep_t
 
 spg2 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0), config, figmap_leep_timeseries) {
 
+  hist = df %>%
+    filter(scenario == "Historic")
+  strt = df %>%
+    filter(scenario != "Historic") %>%
+    group_by(model, scenario) %>%
+    filter(year == min(year))
+  df = df %>%
+    filter(year %in% c(2025, 2030, 2035))
+
+  df = rbind(hist, strt, df)
+
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
   figure = ggplot(df, aes(year,value, color = scenario, group = interaction(model, scenario))) +
@@ -66,6 +77,17 @@ spg2 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
 }
 
 spg3 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate, historic_coord = c(0,0), preira_coord = c(0,0), ira_coord = c(0,0), config, figmap_leep_timeseries) {
+
+  hist = df %>%
+    filter(scenario == "Historic")
+  strt = df %>%
+    filter(scenario != "Historic") %>%
+    group_by(model, scenario) %>%
+    filter(year == min(year))
+  df = df %>%
+    filter(year %in% c(2025, 2030, 2035))
+
+  df = rbind(hist, strt, df)
 
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
@@ -397,7 +419,13 @@ pd = function(ts_map_ID, title, yname, gd, drop) {
               pd_df = df))
 }
 
-ad = function(diff_ID, title, yname, gd, drop) {
+ad = function(diff_ID, title, metric, gd, drop) {
+
+  if (metric == "Generation") {
+    clean_data = clean_data %>%
+      mutate(value = case_when(unit == "Quads" ~ value * 293.07, TRUE ~ value),
+             unit = case_when(unit == "Quads" ~ "TWh", TRUE ~ unit))
+  }
 
   df = data_from_graph("diff_bar",
                        config,
@@ -424,6 +452,7 @@ ad = function(diff_ID, title, yname, gd, drop) {
 
   df <- rbind(df, hist)
 
+  if (metric == "Generation") {
   figure = ggplot() +
     geom_line(data = df,
               aes(
@@ -444,7 +473,7 @@ ad = function(diff_ID, title, yname, gd, drop) {
     scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
     labs(title = title,
          x = "",
-         y = yname) +
+         y = expression(paste("Absoltue Difference (TWh)"))) +
     theme_emf() +
     theme(
       axis.text.x = element_text(angle = 45, hjust = 1),
@@ -452,6 +481,36 @@ ad = function(diff_ID, title, yname, gd, drop) {
       legend.position = gd
     ) +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))
+  } else {
+    figure = ggplot() +
+      geom_line(data = df,
+                aes(
+                  x = year,
+                  y = diff,
+                  group = model,
+                  color = model
+                ),
+                size = 0.75) +
+      geom_point(aes(x = 2021, y = 0), color = "black") +
+      geom_point(
+        data = medians,
+        aes(x = year, y = median),
+        color = "black",
+        shape = 16,
+        size = 2
+      ) +
+      scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+      labs(title = title,
+           x = "",
+           y = expression(paste("Absolute Difference (Mt C", O[2], "/yr)"))) +
+      theme_emf() +
+      theme(
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        panel.spacing.x = unit(4, "mm"),
+        legend.position = gd
+      ) +
+      scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))
+  }
   return(list(figure = figure,
               ad_df = df))
 }
@@ -501,6 +560,7 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
     group_by(year) %>%
     summarize(median = median(value))
 
+  if (metric == "Generation") {
   NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA", ], aes(year, value, color = model)) +
     geom_line(size = 0.75) +
     scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
@@ -508,7 +568,7 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
     labs(title = "No IRA",
-         y = paste0(metric," (",unit,")"),
+         y = expression(paste("Generation (TWh)")),
          x = element_blank()) +
     theme(legend.position = "right",
          plot.title = element_text(hjust = 0.5),
@@ -529,7 +589,7 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
     labs(title = "IRA",
-         y = paste0(metric," (",unit,")"),
+         y = expression(paste("Generation (TWh)")),
          x = element_blank()) +
     theme(legend.position = "right",
           plot.title = element_text(hjust = 0.5),
@@ -542,13 +602,56 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
       shape = 16,
       size = 2
     )
+  } else {
+    NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA", ], aes(year, value, color = model)) +
+      geom_line(size = 0.75) +
+      scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+      theme_emf() +
+      scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+      scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
+      labs(title = "No IRA",
+           y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+           x = element_blank()) +
+      theme(legend.position = "right",
+            plot.title = element_text(hjust = 0.5),
+            axis.text.x = element_text(angle = 45, hjust = 1)) +
+      geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+      geom_point(
+        data = noIRAmedians,
+        aes(x = year, y = median),
+        color = "black",
+        shape = 16,
+        size = 2
+      )
+
+    IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA", ], aes(year, value, color = model)) +
+      geom_line(size = 0.75) +
+      scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+      theme_emf() +
+      scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+      scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
+      labs(title = "IRA",
+           y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+           x = element_blank()) +
+      theme(legend.position = "right",
+            plot.title = element_text(hjust = 0.5),
+            axis.text.x = element_text(angle = 45, hjust = 1)) +
+      geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+      geom_point(
+        data = IRAmedians,
+        aes(x = year, y = median),
+        color = "black",
+        shape = 16,
+        size = 2
+      )
+  }
 
   #Percent Difference
   pdfigure = pd(pd_map_ID, "", expression(paste("Percent Difference (%)")), "none", drop)
   pdfigure$pd_df = pdfigure$pd_df %>% mutate(figure_num = fig_no)
 
   #Absolute Difference
-  adfigure = ad(diff_ID = ad_map_ID, "", paste0("Absolute Difference (",unit,")"), "none", drop)
+  adfigure = ad(diff_ID = ad_map_ID, "", metric, "none", drop)
   adfigure$ad_df = adfigure$ad_df %>% mutate(figure_num = fig_no)
 
   figure = (NoIRAfigure | IRAfigure) / (adfigure$figure | pdfigure$figure)+
