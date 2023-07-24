@@ -576,10 +576,10 @@ pd_map_ID = 76
 ad_map_ID = 14
 drop = c("EIAinEMF37.csv")
 histsrc = "EIA"
-unit = "Generation (Quads)"
+unit = "Generation (TWh)"
 ymin = 0
-ymax = 5
-brk = c(0, 1, 2, 3, 4, 5)
+ymax = 1500
+brk = c(0,500,1000, 1500)
 
 #Time Series Dataframe
 ts_df = data_from_graph(
@@ -596,6 +596,8 @@ ts_df = data_from_graph(
   filter(year <= 2021 &
            model == histsrc |
            year > 2021 & scenario != "Historic") %>%
+      mutate(value = case_when(unit == "Quads" ~ value * 293.07, TRUE ~ value),
+             unit = case_when(unit == "Quads" ~ "TWh", TRUE ~ unit)) %>%
   group_by(model, scenario, year, variable_rename) %>%
   summarize(value = sum(value)) %>%
   pivot_wider(names_from = year, values_from = value)
@@ -625,7 +627,7 @@ NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA",], aes(year, value, color 
   scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
   scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
   labs(title = "No IRA",
-       y = unit,
+       y = expression(paste("Generation (TWh)")),
        x = element_blank()) +
   theme(
     plot.title = element_text(hjust = 0.5),
@@ -648,7 +650,7 @@ IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA",], aes(year, value, color = mod
   scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
   scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
   labs(title = "IRA",
-       y = unit,
+       y = expression(paste("Generation (TWh)")),
        x = element_blank()) +
   theme(
     plot.title = element_text(hjust = 0.5),
@@ -669,7 +671,7 @@ IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA",], aes(year, value, color = mod
 pdfigure = pd(pd_map_ID, "", expression(paste("Percent Difference (%)")), "none", drop)
 
 #Absolute Difference
-adfigure = ad(diff_ID = ad_map_ID, "", expression(paste("Absolute Difference (Quads)")), "none", drop)
+adfigure = ad(diff_ID = ad_map_ID, "", "Generation", "none", drop)
 
 fig = (NoIRAfigure |
          IRAfigure) / (adfigure$figure | pdfigure$figure) +
@@ -1555,7 +1557,7 @@ EconSpg = spg3(df = Econ_ts,
 
 savedata(EconSpg$data, paste0(fig_no, "EconWide"))
 
-EconDot = dotted(EconSpg$data, EconSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
+EconDot = dotted(Econ_ts, EconSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
 
 Tran_ts = elc_ts %>%
   filter(variable == "Transportation")%>%
@@ -1578,7 +1580,7 @@ TranSpg = spg3(df = Tran_ts,
 
 savedata(TranSpg$data, paste0(fig_no, "Transportation"))
 
-TranDot = dotted(TranSpg$data, TranSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
+TranDot = dotted(Tran_ts, TranSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
 
 Buil_ts = elc_ts %>%
   filter(variable == "Buildings")%>%
@@ -1601,7 +1603,7 @@ BuilSpg = spg3(df = Buil_ts,
 
 savedata(BuilSpg$data, paste0(fig_no, "Buildings"))
 
-BuilDot = dotted(BuilSpg$data, BuilSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
+BuilDot = dotted(Buil_ts, BuilSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
 
 Ind_ts = elc_ts %>%
   filter(variable == "Industry")%>%
@@ -1624,7 +1626,7 @@ IndSpg = spg3(df = Ind_ts,
 
 savedata(IndSpg$data, paste0(fig_no, "Industry"))
 
-IndDot = dotted(IndSpg$data, IndSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
+IndDot = dotted(Ind_ts, IndSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
 
 Full = (EconDot | TranDot | BuilDot | IndDot)
 Full
