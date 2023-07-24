@@ -28,6 +28,8 @@
 "3.4","REGEN-EPRI","No IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2022,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",4.4
 "3.4","RIO-REPEAT","IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2022,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",4.4
 "3.4","RIO-REPEAT","No IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2022,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",4.4
+"3.4","USREP-ReEDS","IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2022,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",4.4
+"3.4","USREP-ReEDS","No IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2022,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",4.4
 "3.4","EPS-EI","IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2025,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",15.2719
 "3.4","EPS-EI","IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2030,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",34.12818
 "3.4","EPS-EI","IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2035,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",36.1236
@@ -76,3 +78,9 @@
 "3.4","RIO-REPEAT","No IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2025,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",17.75
 "3.4","RIO-REPEAT","No IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2030,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",42.74
 "3.4","RIO-REPEAT","No IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2035,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",58.61
+"3.4","USREP-ReEDS","IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2025,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",5.7868429
+"3.4","USREP-ReEDS","IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2030,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",22.9206242
+"3.4","USREP-ReEDS","IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2035,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",43.4143546
+"3.4","USREP-ReEDS","No IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2025,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",5.7444031
+"3.4","USREP-ReEDS","No IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2030,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",22.7559695
+"3.4","USREP-ReEDS","No IRA","Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share","%",2035,"Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share",38.5594719
