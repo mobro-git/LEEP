@@ -169,6 +169,9 @@ p = dta %>% ggplot() +
 
 p
 
+stats = clean_supplemental_data(dta, fig_no)
+print(stats)
+
 saveall(p,dta,fig_no)
 ```
 
