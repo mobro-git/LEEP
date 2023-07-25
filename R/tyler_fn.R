@@ -409,7 +409,7 @@ pd = function(ts_map_ID, title, yname, gd, drop) {
          x = "",
          y = yname) +
     theme_emf() +
-    theme(
+    theme( axis.ticks = element_blank(),
       axis.text.x = element_text(angle = 45, hjust = 1),
       panel.spacing.x = unit(4, "mm"),
       legend.position = gd
@@ -475,12 +475,13 @@ ad = function(diff_ID, title, metric, gd, drop) {
          x = "",
          y = expression(paste("Absoltue Difference (TWh)"))) +
     theme_emf() +
-    theme(
+    theme( axis.ticks = element_blank(),
       axis.text.x = element_text(angle = 45, hjust = 1),
       panel.spacing.x = unit(4, "mm"),
       legend.position = gd
     ) +
-    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    scale_y_continuous(labels = scales::comma)
   } else {
     figure = ggplot() +
       geom_line(data = df,
@@ -509,7 +510,8 @@ ad = function(diff_ID, title, metric, gd, drop) {
         panel.spacing.x = unit(4, "mm"),
         legend.position = gd
       ) +
-      scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))
+      scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))+
+      scale_y_continuous(labels = scales::comma)
   }
   return(list(figure = figure,
               ad_df = df))
@@ -566,11 +568,12 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
     scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
     theme_emf() +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
-    scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
+    scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
     labs(title = "No IRA",
          y = expression(paste("Generation (TWh)")),
          x = element_blank()) +
-    theme(legend.position = "right",
+    theme( axis.ticks = element_blank(),
+           legend.position = "right",
          plot.title = element_text(hjust = 0.5),
           axis.text.x = element_text(angle = 45, hjust = 1)) +
     geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
@@ -587,11 +590,12 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
     scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
     theme_emf() +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
-    scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
+    scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
     labs(title = "IRA",
          y = expression(paste("Generation (TWh)")),
          x = element_blank()) +
-    theme(legend.position = "right",
+    theme( axis.ticks = element_blank(),
+           legend.position = "right",
           plot.title = element_text(hjust = 0.5),
           axis.text.x = element_text(angle = 45, hjust = 1)) +
     geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
@@ -608,11 +612,12 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
       scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
       theme_emf() +
       scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
-      scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
+      scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
       labs(title = "No IRA",
            y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
            x = element_blank()) +
-      theme(legend.position = "right",
+      theme( axis.ticks = element_blank(),
+             legend.position = "right",
             plot.title = element_text(hjust = 0.5),
             axis.text.x = element_text(angle = 45, hjust = 1)) +
       geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
@@ -629,11 +634,12 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
       scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
       theme_emf() +
       scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
-      scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
+      scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
       labs(title = "IRA",
            y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
            x = element_blank()) +
-      theme(legend.position = "right",
+      theme( axis.ticks = element_blank(),
+             legend.position = "right",
             plot.title = element_text(hjust = 0.5),
             axis.text.x = element_text(angle = 45, hjust = 1)) +
       geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +

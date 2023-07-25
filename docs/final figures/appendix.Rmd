@@ -630,11 +630,11 @@ NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA",], aes(year, value, color 
   scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
   theme_emf() +
   scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
-  scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
+  scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
   labs(title = "No IRA",
        y = expression(paste("Generation (TWh)")),
        x = element_blank()) +
-  theme(
+  theme(axis.ticks = element_blank(),
     plot.title = element_text(hjust = 0.5),
     legend.position = "right",
     axis.text.x = element_text(angle = 45, hjust = 1)
@@ -653,11 +653,11 @@ IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA",], aes(year, value, color = mod
   scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
   theme_emf() +
   scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
-  scale_y_continuous(limits = c(ymin, ymax), breaks = brk) +
+  scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
   labs(title = "IRA",
        y = expression(paste("Generation (TWh)")),
        x = element_blank()) +
-  theme(
+  theme( axis.ticks = element_blank(),
     plot.title = element_text(hjust = 0.5),
     legend.position = "right",
     axis.text.x = element_text(angle = 45, hjust = 1)
@@ -5445,9 +5445,11 @@ data_table = data_Other %>%
 ```
 
 # Appendix J
-## J.1
+## J.1 natural gas
 
 ```{r}
+fig_no = "J.1"
+
 hist = readxl::read_xlsx("data-extra/ira_comparison_raw/input_assumptions.xlsx", sheet = "natural gas price", range = "K1:AJ2") %>%
   mutate(unit = "2020$/MMBtu") %>%
   pivot_longer(cols = !unit, names_to = "year") %>%
@@ -5474,7 +5476,7 @@ proj_clean = proj %>%
   filter(!model %in% mods)%>%
   filter(year <= 2035)
 
-ggplot() + 
+figure = ggplot() + 
   geom_line(data = hist_clean, aes(x = year, y = value), color = "black", size = 0.6) + 
   geom_line(data = mods_clean, aes(x = year, y = value, color = model), size = 0.6) + 
   geom_line(data = proj_clean, aes(x = year, y = value, group = model,  fill = "gray"), alpha = 0.2) + 
@@ -5494,10 +5496,10 @@ ggplot() +
       theme(axis.text.x = element_text(angle = 45, hjust = 1),
           axis.ticks = element_blank())
   
-
+savefig(figure, fig_no)
 
 ```
-### J.2 capital costs
+## J.2 capital costs
 ```{r} 
 fig_no = "J.2"
 dta = read_csv("./data-extra/ira_comparison_raw/costs_raw.csv")
