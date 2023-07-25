@@ -168,6 +168,7 @@ p = dta %>% ggplot() +
   geom_bar(aes(x = model, y = value, fill = year), stat = "identity", position = "dodge") + 
   scale_y_continuous(expand = expansion(mult = c(0,0.05)), name = expression(paste("Carbon Sequestration (Mt C",O[2],"/yr)"))) +
   scale_fill_manual(breaks = c("2030", "2035"), values = c("#003052", "#0388B3")) +
+  facet_grid(~ . scenario) +
   theme_emf() +
   theme(axis.ticks = element_blank(), axis.title.x = element_blank(),
         axis.text.x = element_text(size = 6))

@@ -134,34 +134,43 @@
 <polyline points='146.33,59.71 229.46,59.71 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='166.90,340.56 166.90,27.71 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='208.88,340.56 208.88,27.71 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
-<circle cx='163.54' cy='285.83' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='163.54' cy='286.31' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='163.54' cy='216.54' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='163.54' cy='208.28' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='163.54' cy='257.44' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='170.26' cy='249.51' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='212.24' cy='274.05' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='170.26' cy='190.58' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='212.24' cy='208.18' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='170.26' cy='216.70' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='212.24' cy='239.59' r='2.49' style='stroke-width: 0.71;' />
-<line x1='162.29' y1='226.02' x2='162.77' y2='222.39' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<line x1='161.67' y1='215.57' x2='162.33' y2='212.97' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<line x1='162.31' y1='262.76' x2='162.40' y2='262.37' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<line x1='178.66' y1='223.07' x2='171.96' y2='217.99' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<text x='149.91' y='281.02' style='font-size: 4.27px; font-family: "Arial";' textLength='21.79px' lengthAdjust='spacingAndGlyphs'>Adv Renew</text>
-<text x='161.65' y='294.19' style='font-size: 4.27px; font-family: "Arial";' textLength='13.51px' lengthAdjust='spacingAndGlyphs'>All-Adv</text>
-<text x='149.91' y='230.88' style='font-size: 4.27px; font-family: "Arial";' textLength='24.40px' lengthAdjust='spacingAndGlyphs'>Cons Renew</text>
-<text x='149.91' y='220.42' style='font-size: 4.27px; font-family: "Arial";' textLength='12.55px' lengthAdjust='spacingAndGlyphs'>Constr</text>
-<text x='156.90' y='267.61' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
-<text x='170.90' y='257.38' style='font-size: 4.27px; font-family: "Arial";' textLength='13.51px' lengthAdjust='spacingAndGlyphs'>All-Adv</text>
-<text x='210.35' y='281.93' style='font-size: 4.27px; font-family: "Arial";' textLength='13.51px' lengthAdjust='spacingAndGlyphs'>All-Adv</text>
-<text x='168.37' y='198.45' style='font-size: 4.27px; font-family: "Arial";' textLength='12.55px' lengthAdjust='spacingAndGlyphs'>Constr</text>
-<text x='210.35' y='216.03' style='font-size: 4.27px; font-family: "Arial";' textLength='12.55px' lengthAdjust='spacingAndGlyphs'>Constr</text>
-<text x='180.46' y='224.65' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
-<text x='210.36' y='247.45' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
-<text x='153.46' y='45.88' style='font-size: 8.54px;fill: #A1A1A1; font-family: "Arial";' textLength='66.54px' lengthAdjust='spacingAndGlyphs'>ReEDS-NREL (L)</text>
-<text x='153.46' y='56.54' style='font-size: 8.54px;fill: #A1A1A1; font-family: "Arial";' textLength='74.90px' lengthAdjust='spacingAndGlyphs'>USREP-ReEDS (R)</text>
+<circle cx='161.02' cy='177.41' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='203.00' cy='185.47' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='161.02' cy='178.45' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='203.00' cy='186.92' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='166.90' cy='285.83' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='166.90' cy='286.31' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='166.90' cy='216.54' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='166.90' cy='208.28' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='166.90' cy='257.44' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='172.78' cy='249.51' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='214.76' cy='274.05' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='172.78' cy='190.58' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='214.76' cy='208.18' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='172.78' cy='216.70' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='214.76' cy='239.59' r='2.49' style='stroke-width: 0.71;' />
+<line x1='165.15' y1='223.70' x2='165.72' y2='221.34' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<line x1='165.28' y1='215.76' x2='165.80' y2='213.34' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<line x1='165.74' y1='262.78' x2='165.80' y2='262.51' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<line x1='179.91' y1='222.55' x2='174.47' y2='218.09' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<text x='149.92' y='172.61' style='font-size: 4.27px; font-family: "Arial";' textLength='13.51px' lengthAdjust='spacingAndGlyphs'>All-Adv</text>
+<text x='190.28' y='180.67' style='font-size: 4.27px; font-family: "Arial";' textLength='13.51px' lengthAdjust='spacingAndGlyphs'>All-Adv</text>
+<text x='159.14' y='186.30' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
+<text x='201.11' y='194.79' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
+<text x='152.43' y='281.03' style='font-size: 4.27px; font-family: "Arial";' textLength='21.79px' lengthAdjust='spacingAndGlyphs'>Adv Renew</text>
+<text x='165.01' y='294.19' style='font-size: 4.27px; font-family: "Arial";' textLength='13.51px' lengthAdjust='spacingAndGlyphs'>All-Adv</text>
+<text x='150.18' y='228.55' style='font-size: 4.27px; font-family: "Arial";' textLength='24.40px' lengthAdjust='spacingAndGlyphs'>Cons Renew</text>
+<text x='150.93' y='218.08' style='font-size: 4.27px; font-family: "Arial";' textLength='12.55px' lengthAdjust='spacingAndGlyphs'>Constr</text>
+<text x='160.77' y='267.63' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
+<text x='173.33' y='257.39' style='font-size: 4.27px; font-family: "Arial";' textLength='13.51px' lengthAdjust='spacingAndGlyphs'>All-Adv</text>
+<text x='212.33' y='281.93' style='font-size: 4.27px; font-family: "Arial";' textLength='13.51px' lengthAdjust='spacingAndGlyphs'>All-Adv</text>
+<text x='170.89' y='198.44' style='font-size: 4.27px; font-family: "Arial";' textLength='12.55px' lengthAdjust='spacingAndGlyphs'>Constr</text>
+<text x='212.86' y='216.06' style='font-size: 4.27px; font-family: "Arial";' textLength='12.55px' lengthAdjust='spacingAndGlyphs'>Constr</text>
+<text x='181.71' y='224.14' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
+<text x='212.87' y='247.46' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
+<text x='153.46' y='45.88' style='font-size: 8.54px;fill: #A1A1A1; font-family: "Arial";' textLength='63.68px' lengthAdjust='spacingAndGlyphs'>GCAM-PNNL (L)</text>
+<text x='153.46' y='56.54' style='font-size: 8.54px;fill: #A1A1A1; font-family: "Arial";' textLength='68.90px' lengthAdjust='spacingAndGlyphs'>ReEDS-NREL (M)</text>
+<text x='153.46' y='67.21' style='font-size: 8.54px;fill: #A1A1A1; font-family: "Arial";' textLength='74.90px' lengthAdjust='spacingAndGlyphs'>USREP-ReEDS (R)</text>
 <rect x='146.33' y='27.71' width='83.13' height='312.85' style='stroke-width: 0.53; stroke: #B3B3B3;' />
 <text x='166.90' y='351.94' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2030</text>
 <text x='208.88' y='351.94' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2035</text>

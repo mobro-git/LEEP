@@ -487,13 +487,16 @@ sens_dta_econ_panel3 = clean_data %>%
 sens_dta_econ_panel4 = clean_data %>%
   filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>%
   filter(scenario %in% panel4_scens) %>%
-  filter(model %in% c("USREP-ReEDS")) %>%
+  filter(model %in% c("USREP-ReEDS", "GCAM-PNNL")) %>%
   mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
     mutate(scenario = case_when(
     scenario == "All Advanced" ~ "All Adv",
     scenario == "Constrained Deployment" ~ "Constr",
     TRUE ~ scenario
-  ))
+  )) %>%
+  mutate(stagger = case_when(model == "USREP-ReEDS" ~ 0.4,
+                             model == "GCAM-PNNL" ~ -0.4,
+                             TRUE ~ 0.0))
 
 sens_dta_econ_panel5 = clean_data %>%
   filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>%
@@ -581,7 +584,9 @@ p7c$plot = p7c$plot +
 
 p7d$plot = p7d$plot +
   annotate("text", x = 2028.4, y = 4995, size = 3,
-               label = "USREP-ReEDS", color = "#A1A1A1", alpha = 1, hjust = 0) #FFF362
+           label = "GCAM-PNNL (L)", color = "#A1A1A1", alpha = 1, hjust = 0) + 
+  annotate("text", x = 2028.4, y = 4845, size = 3,
+               label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0) #FFF362
 
 p7e$plot = p7e$plot +
   annotate("text", x = 2028.4, y = 4995, size = 3,
@@ -787,6 +792,7 @@ econ_panel5_summ = econ_panel5_summ %>%
                              diff_constr = c(0), diff_alladv = c(0))) %>%
   group_by(variable, unit, year) %>%
   summarize(opt_median = median(diff_opt, na.rm = T),
+            opt_min = min(diff_opt, na.rm = T),
             opt_max = max(diff_opt, na.rm = T),
             pess_median = median(diff_pess, na.rm = T),
             pess_min = min(diff_pess, na.rm = T),
@@ -833,7 +839,7 @@ all_panels$Year[4] = ""
 all_panels$Year[6] = ""
 
 # manually merging cells in the dumbest way possible
-for (col_num in c(5,6,8,9,10,11,12)) {
+for (col_num in c(6,8,9,10,11,12)) {
   col = colnames(all_panels[col_num])
   for (row in c(1,3,4,6)) {
     all_panels[row,col] = NA
@@ -907,8 +913,8 @@ all_panels_gt
 all_panels_gt %>% 
   gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".html"))
 
-all_panels_gt %>% 
-   gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".png"), vwidth = 1500, vheight = 1000)
+#all_panels_gt %>% 
+#   gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".png"), vwidth = 1500, vheight = 1000)
 
 
 ```

@@ -509,7 +509,7 @@ sens_dta_panel3 = sens_dta %>% filter(scenario %in% panel3_scens) %>%
   bind_rows(filler)
 
 sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>% 
-  filter(model %in% c("ReEDS-NREL", "USREP-ReEDS")) %>% 
+  filter(model %in% c("ReEDS-NREL", "USREP-ReEDS", "GCAM-PNNL")) %>% 
   filter(datasrc != "bistline_ira_tall.csv") %>%
   mutate(scenario = case_when((scenario == "IRA" | scenario == "Core") ~ "Mod", 
                               TRUE ~ scenario)) %>%
@@ -523,8 +523,9 @@ sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>%
   # mutate(scenario = case_when(model == "ReEDS-NREL" ~ paste0("R.",scenario),
   #                             model == "USREP-ReEDS" ~ paste0("UR.",scenario),
   #                             TRUE ~ scenario)) %>%
-  mutate(stagger = case_when(model == "ReEDS-NREL" ~ -0.4,
-                             model == "USREP-ReEDS" ~ +0.4,
+  mutate(stagger = case_when(model == "GCAM-PNNL" ~ -0.7,
+                             model == "ReEDS-NREL" ~ 0,
+                             model == "USREP-ReEDS" ~ +0.7,
                              TRUE ~ 0.0))
   bind_rows(filler)
   
@@ -589,8 +590,10 @@ p3$plot = p3$plot +
 
 p4$plot = p4$plot + 
   annotate("text", x = 2028.4, y = 1595, size = 3,
-               label = "ReEDS-NREL (L)", color = "#A1A1A1", alpha = 1, hjust = 0) +
+               label = "GCAM-PNNL (L)", color = "#A1A1A1", alpha = 1, hjust = 0) +
   annotate("text", x = 2028.4, y = 1535, size = 3,
+               label = "ReEDS-NREL (M)", color = "#A1A1A1", alpha = 1, hjust = 0) +
+  annotate("text", x = 2028.4, y = 1475, size = 3,
                label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p5$plot = p5$plot + 
@@ -886,7 +889,7 @@ for (col_num in c(5,6,7,8,9,10,11,12,13,14)) {
     for (row in c(1,3,4,6)) {
       all_panels[row,col] = NA
     }
-  } else if (col_num %in% c(7,8,13,14)) {
+  } else if (col_num %in% c(7,13,14)) {
     for (row in c(4,6)) {
       all_panels[row,col] = NA
     }
