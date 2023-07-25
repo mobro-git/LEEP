@@ -230,7 +230,7 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
     #scale_subpalette(subpalettes,"ZZZZZ") +
     theme_emf() +
     ggtitle(title) +
-    theme(axis.title.x = element_blank(),
+    theme(axis.title.x = element_blank(), panel.border = element_rect(size = 0.25, fill = NA),
           plot.title = element_text(hjust = 0.5, size = 8), axis.ticks = element_blank(),
           plot.margin = margin(0.7,1,0.7,left_margin), legend.position = "none")
   ylabel = expression(paste("Power Sector Emissions (Mt C", O[2], "/yr)"))

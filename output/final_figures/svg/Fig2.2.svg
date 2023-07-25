@@ -232,22 +232,22 @@
 <text transform='translate(14.19,213.56) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='150.72px' lengthAdjust='spacingAndGlyphs'>Electricity Generation (TWh)</text>
 <rect x='157.66' y='306.51' width='235.69' height='45.52' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
 <rect x='169.11' y='311.99' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
-<rect x='169.82' y='312.70' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B390B6;' />
+<rect x='169.82' y='312.70' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #003052;' />
 <rect x='169.11' y='329.27' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
-<rect x='169.82' y='329.98' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #2EAD96;' />
-<rect x='251.14' y='311.99' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
-<rect x='251.85' y='312.70' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #E01616;' />
-<rect x='251.14' y='329.27' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
-<rect x='251.85' y='329.98' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #733D3D;' />
-<rect x='313.43' y='311.99' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
-<rect x='314.14' y='312.70' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BC8F73;' />
-<rect x='313.43' y='329.27' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
-<rect x='314.14' y='329.98' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #003052;' />
-<text x='192.37' y='324.06' style='font-size: 9.60px; font-family: "Arial";' textLength='23.99px' lengthAdjust='spacingAndGlyphs'>Other</text>
-<text x='192.37' y='341.34' style='font-size: 9.60px; font-family: "Arial";' textLength='52.79px' lengthAdjust='spacingAndGlyphs'>Renewables</text>
-<text x='274.40' y='324.06' style='font-size: 9.60px; font-family: "Arial";' textLength='33.06px' lengthAdjust='spacingAndGlyphs'>Nuclear</text>
-<text x='274.40' y='341.34' style='font-size: 9.60px; font-family: "Arial";' textLength='11.72px' lengthAdjust='spacingAndGlyphs'>Oil</text>
-<text x='336.69' y='324.06' style='font-size: 9.60px; font-family: "Arial";' textLength='51.18px' lengthAdjust='spacingAndGlyphs'>Natural Gas</text>
-<text x='336.69' y='341.34' style='font-size: 9.60px; font-family: "Arial";' textLength='19.73px' lengthAdjust='spacingAndGlyphs'>Coal</text>
+<rect x='169.82' y='329.98' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BC8F73;' />
+<rect x='249.53' y='311.99' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+<rect x='250.23' y='312.70' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #733D3D;' />
+<rect x='249.53' y='329.27' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+<rect x='250.23' y='329.98' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #E01616;' />
+<rect x='311.82' y='311.99' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+<rect x='312.52' y='312.70' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #2EAD96;' />
+<rect x='311.82' y='329.27' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+<rect x='312.52' y='329.98' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B390B6;' />
+<text x='192.37' y='324.06' style='font-size: 9.60px; font-family: "Arial";' textLength='19.73px' lengthAdjust='spacingAndGlyphs'>Coal</text>
+<text x='192.37' y='341.34' style='font-size: 9.60px; font-family: "Arial";' textLength='51.18px' lengthAdjust='spacingAndGlyphs'>Natural Gas</text>
+<text x='272.78' y='324.06' style='font-size: 9.60px; font-family: "Arial";' textLength='11.72px' lengthAdjust='spacingAndGlyphs'>Oil</text>
+<text x='272.78' y='341.34' style='font-size: 9.60px; font-family: "Arial";' textLength='33.06px' lengthAdjust='spacingAndGlyphs'>Nuclear</text>
+<text x='335.07' y='324.06' style='font-size: 9.60px; font-family: "Arial";' textLength='52.79px' lengthAdjust='spacingAndGlyphs'>Renewables</text>
+<text x='335.07' y='341.34' style='font-size: 9.60px; font-family: "Arial";' textLength='23.99px' lengthAdjust='spacingAndGlyphs'>Other</text>
 </g>
 </svg>

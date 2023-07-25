@@ -28,6 +28,10 @@ targets::tar_load(figmap_leep_cone)
 targets::tar_load(figmap_leep_stackbar)
 targets::tar_load(data_min)
 targets::tar_load(data_raw)
+
+# temporary filter on clean data
+clean_data = clean_data %>%
+  filter(!(model == "IPM-EPA" & year == 2025))
 ```
 
 ## 3.1 co2 emissions from the transportation sector in the us compared to economy-wide co2 emissions
@@ -74,8 +78,8 @@ fig = print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3, "U
   #                   breaks = c("Passenger Cars", "LD Trucks", "MHD Trucks", "Aircraft", "Water", "Pipelines", "Other"),
   #                   values = c(sp[['Passenger Cars']], sp[['LD Trucks']], sp[['MHD Trucks']], sp[['Aircraft']],
   #                              sp[['Water']], sp[['Pipelines']], sp[['Other']])) +
-  labs(y = expression("Emissions (Mt CO2/yr)")) +
-  scale_y_continuous(expand = c(0,0), limits = c(0,2000)) +
+  scale_y_continuous(expand = c(0,0), limits = c(0,2000), labels = scales::comma,
+                     name = expression(paste("Emissions (Mt C",O[2],"/yr)"))) +
   theme(axis.text.x = element_text(angle = 0, hjust = 0.5), plot.title = element_blank(),
         axis.ticks = element_blank(), legend.position = "right")
 

@@ -28,6 +28,11 @@ targets::tar_load(figmap_leep_cone)
 targets::tar_load(figmap_leep_stackbar)
 targets::tar_load(data_min)
 targets::tar_load(data_raw)
+
+# temporary filter on clean data
+clean_data = clean_data %>%
+  filter(!(model == "IPM-EPA" & year == 2025))
+
 ```
 
 ## 5.1 co2 emissions from the industrial sector in the us compared to economy-wide co2 emissions
@@ -115,7 +120,7 @@ Ind_data = spg_clean(
 IndSpg = spg2(
   Ind_data,
   "",
-  expression(paste("Industry C", O[2], "Emissions (Mt C", O[2], "/yr)")),
+  expression(paste("Industry C", O[2], " Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
   0,
   2500,
@@ -150,8 +155,8 @@ fig_no = "5.4"
 exclude_models = c("GCAM-PNNL")
 
 subpalette = create_subpalettes(figmap_leep_stackbar, config)
-subpalettes$`Industrial CCS`[["2030"]] = "black"
-subpalettes$`Industrial CCS`[["2035"]] = "blue"
+# subpalettes$`Industrial CCS`[["2030"]] = "black"
+# subpalettes$`Industrial CCS`[["2035"]] = "blue"
 
 dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 21, "United States") %>%
   filter(!(model %in% exclude_models)) %>%

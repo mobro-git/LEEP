@@ -28,6 +28,10 @@ targets::tar_load(figmap_leep_cone)
 targets::tar_load(figmap_leep_stackbar)
 targets::tar_load(data_min)
 targets::tar_load(data_raw)
+
+# temporary filter on clean data
+clean_data = clean_data %>%
+  filter(!(model == "IPM-EPA" & year == 2025))
 ```
 
 ## F2.1 co2 emissions from the power sector in the us, compared to economy-wide co2 emissions
@@ -96,11 +100,18 @@ clean_data10 = clean_data %>%
   mutate(value = case_when(unit == "Quads" ~ value * 293.07, TRUE ~ value),
          unit = case_when(unit == "Quads" ~ "TWh", TRUE ~ unit))
 
+subpalettes = create_subpalettes(figmap_leep_stackbar, config)
+sp = subpalettes$`Hist Generation Mix`
+
 
 fig = print_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14, "United States", 
                   level_var = c("Other", "Renewables", "Nuclear", "Oil", "Natural Gas", "Coal")) +
   labs(y = expression("Electricity Generation (TWh)")) +
   scale_y_continuous(expand = c(0,0), limits = c(0,4500), labels = scales::comma) +
+  scale_fill_manual(labels = c("Coal", "Natural Gas", "Oil", "Nuclear", "Renewables", "Other"),
+                     breaks = c("Coal", "Natural Gas", "Oil", "Nuclear", "Renewables", "Other"),
+                     values = c(sp[['Coal']], sp[['Natural Gas']], sp[['Oil']], sp[['Nuclear']],
+                                sp[['Renewables']], sp[['Other']])) +
   theme(axis.text.x = element_text(angle = 0, hjust = 0.5), plot.title = element_blank(),
         axis.ticks = element_blank()) +
   bottom1
@@ -411,7 +422,7 @@ fig2 = dta5 %>% ggplot() +
   scale_alpha_manual(values = c(0.6,1), breaks = c("Capacity Retirements", "Capacity Additions"), guide = F) +
   ggtitle("Avg. Annual Capacity Changes (2021-35)") +
   theme(legend.position = "bottom", plot.title = element_text(hjust = 0.5, size = 10),
-        axis.text.x = element_text(angle = 90, hjust = 1, size = 6), axis.ticks = element_blank(),
+        axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size = 6), axis.ticks = element_blank(),
         axis.text.y = element_blank(), axis.title.y = element_blank(), axis.title.x = element_blank())
 
 fig2
@@ -953,9 +964,9 @@ all_panels_gt
 all_panels_gt %>% 
   gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".html"))
 
-all_panels_gt %>% 
-  gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".png"),
-         vheight = 1000, vwidth = 1500)
+# all_panels_gt %>% 
+#   gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".png"),
+#          vheight = 1000, vwidth = 1500)
 
 
 ```
@@ -968,12 +979,12 @@ fig_no= 2.7
 # nox
 clean_data_nox = spg_clean(ts_map_ID = 122, drop = c("ReEDS-NREL"), histsrc = "EPA", 
                            config = config, clean_data = clean_data, figmap_leep_timeseries = figmap_leep_timeseries)
-output = spg2(df = clean_data_nox, title = "", yname = expression(paste("Emissions (Mt N",O[x],"/yr)")),
+output = spg2(df = clean_data_nox, title = expression(paste("N", O[x])), yname = expression(paste("Emissions (Mt N",O[x],"/yr)")),
               gd = "none", ymin = 0, ymax = 5, 
               ybreaks = waiver(), yax_format = waiver(), annotate = 1, 
               historic_coord = c(2016,1.8), preira_coord = c(2030, 0.95), ira_coord = c(2029, 0.15), 
               config = config, figmap_leep_timeseries = figmap_leep_timeseries)
-figure = output$figure
+figure = output$figure + theme(plot.title = element_text(hjust = 0.5))
 nox_data = output$data
 nox_full = dotted(clean_data_nox, figure, "median", ymin = 0, ymax = 5, 
                 config = config, figmap_leep_timeseries = figmap_leep_timeseries)
@@ -981,12 +992,12 @@ nox_full = dotted(clean_data_nox, figure, "median", ymin = 0, ymax = 5,
 #so2
 clean_data_sox = spg_clean(ts_map_ID = 123, drop = c("ReEDS-NREL"), histsrc = "EPA", 
                            config = config, clean_data = clean_data, figmap_leep_timeseries = figmap_leep_timeseries)
-output = spg2(df = clean_data_sox, title = "", yname = expression(paste("Emissions (Mt S", O[2], "/yr)")), 
+output = spg2(df = clean_data_sox, title = expression(paste("S", O[2])), yname = expression(paste("Emissions (Mt S", O[2], "/yr)")), 
                                                                         gd = "none", ymin = 0, ymax = 5, 
               ybreaks = waiver(), yax_format = waiver(), annotate = 1, 
               historic_coord = c(2020,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12), 
               config = config, figmap_leep_timeseries = figmap_leep_timeseries)
-figure = output$figure
+figure = output$figure + theme(plot.title = element_text(hjust = 0.5))
 sox_data = output$data
 sox_full = dotted(clean_data_sox, figure, "median", ymin = 0, ymax = 5, 
                 config = config, figmap_leep_timeseries = figmap_leep_timeseries)
@@ -996,8 +1007,6 @@ left = nox_full + theme(plot.margin = margin(0,0,0,0))
 right = sox_full + theme(plot.margin = margin(0,0,0,0))
 
 combined = (wrap_elements(left) | wrap_elements(right)) +     
-    plot_annotation(title = "NOx                                                                                     SO2", 
-                  theme = theme(plot.title = element_text(hjust = 0.5, size = 10))) +
   theme(plot.margin = margin(0,0,0,0))
 combined
 

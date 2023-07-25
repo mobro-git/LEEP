@@ -29,6 +29,10 @@ targets::tar_load(figmap_leep_stackbar)
 targets::tar_load(data_min)
 targets::tar_load(data_raw)
 
+# temporary filter on clean data
+clean_data = clean_data %>%
+  filter(!(model == "IPM-EPA" & year == 2025))
+
 # create workbook for saving figure data
 # data_wb <- createWorkbook()
 ```

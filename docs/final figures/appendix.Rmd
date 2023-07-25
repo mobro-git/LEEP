@@ -32,6 +32,11 @@ targets::tar_load(data_min)
 
 # palettes
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+
+# temporary filter on clean data
+clean_data = clean_data %>%
+  filter(!(model == "IPM-EPA" & year == 2025))
+
 ```
 
 # Appendix A
@@ -236,7 +241,7 @@ fin = ggplot(data = data_sort[data_sort$variable_rename != "Reference",] , aes(x
     scale_y_continuous(limits = c(0, 1500), labels = scales::comma, expand = c(0,0)) +
     theme_emf() +
     scale_x_continuous(breaks = c(2025, 2030, 2035)) + 
-    theme(axis.text.x = element_text(angle = 45, hjust=1)) +
+    theme(axis.text.x = element_text(angle = 45, hjust=1), axis.ticks = element_blank()) +
     theme(panel.spacing.x = unit(4, "mm"), legend.position = "bottom") + 
   guides(fill = guide_legend(nrow = 2)) + 
   scale_fill_manual(name = "", 
@@ -1542,7 +1547,7 @@ Econ_ts = elc_ts %>%
 
 EconSpg = spg3(df = Econ_ts, 
                title = "Economy-Wide", 
-               yname = "% Electricity of Final Energy",
+               yname = expression("% Electricity of Final Energy"),
                gd = "none", 
                ymin = 0,
                ymax = 70, 
@@ -5148,85 +5153,6 @@ savefig(final, fig_no, wd = 8)
 
 ```
 
-
-## Appendix alpha - capital costs
-```{r} 
-fig_no = "alpha.1"
-dta = read_csv("./data-extra/ira_comparison_raw/costs_raw.csv")
-#View(dta)
-
-subpalettes = create_subpalettes(figmap_leep_timeseries, config)
-subpalettes$`Sox pct diff`[["NREL 2022 ATB"]] = "black"
-subpalettes$`Sox pct diff`[["NREL 2022 ATB - Con."]] = "black"
-subpalettes$`Sox pct diff`[["NREL 2022 ATB - Mod."]] = "black"
-subpalettes$`Sox pct diff`[["NREL 2022 ATB - Adv."]] = "black"
-
-
-tech_renamer = c(
-  "Utility-Scale Solar PV" = "Solar PV",
-  "Wind Onshore" = "Onshore Wind",
-  "NGCC with CCS" = "NGCC with CCS",
-  "NGCC" = "NGCC",
-  "Battery Storage (4-Hour)" = "Battery (4-Hour)",
-  "Coal CCS Retrofit" = "Coal with CCS"
-)
-
-dta = dta %>%
-  pivot_longer(cols = starts_with("20"),
-               names_to = "year",
-               values_to = "value") %>%
-  mutate(version = case_when(
-    model == "NREL 2022 ATB - Adv." ~ "Advanced",
-    model == "NREL 2022 ATB - Mod." ~ "Moderate",
-    model == "NREL 2022 ATB - Con." ~ "Conservative",
-    TRUE ~ "Moderate"
-  )) %>%
-  mutate(model = case_when(
-    model == "NREL 2022 ATB - Adv." ~ "NREL 2022 ATB - Adv.",
-    model == "NREL 2022 ATB - Mod." ~ "NREL 2022 ATB - Mod.",
-    model == "NREL 2022 ATB - Con." ~ "NREL 2022 ATB - Con.",
-    TRUE ~ model
-  ))
-
-dta_top = dta %>%
-  filter(!(variable %in% c("NGCC with CCS", "Coal CCS Retrofit"))) %>%
-  filter(!is.na(value))
-
-dta_bottom = dta %>%
-  filter((variable %in% c("NGCC with CCS", "Coal CCS Retrofit"))) %>%
-  filter(!is.na(value))
-
-p = dta_top %>% ggplot() +
-  geom_line(aes(x = year, y = value, color = model, linetype = version, group = interaction(model, version)),
-            linewidth = 1) +
-  scale_y_continuous(name = expression("Capital Cost (2020$/kW)"), labels = scales::comma) +
-  scale_subpalette(subpalettes, "Sox pct diff") +
-  scale_linetype_manual(values = c("longdash","solid","dotted"), breaks = c("Advanced", "Moderate", "Conservative"), guide = FALSE) +
-  facet_grid(. ~ variable, labeller = labeller(variable = tech_renamer)) +
-  theme_emf() +
-  theme(axis.ticks = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1),
-        axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8))
-        
-p
-
-p2 = dta_bottom %>% ggplot() +
-  geom_line(aes(x = year, y = value, color = model, linetype = version, group = interaction(model, version)),
-            linewidth = 1) +
-  scale_y_continuous(name = expression("Capital Cost (2020$/kW)"), labels = scales::comma) +
-  scale_subpalette(subpalettes, "Sox pct diff") +
-  scale_linetype_manual(values = c("longdash","solid","dotted"), breaks = c("Advanced", "Moderate", "Conservative"), guide = FALSE) +
-  facet_grid(. ~ variable, labeller = labeller(variable = tech_renamer), scales = "free_y") +
-  theme_emf() +
-  theme(axis.ticks = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1),
-        axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8))
-
-p2
-
-savefig(p,fig_no)
-fig_no = "alpha.2"
-savefig(p2,fig_no)
-```
-
 ### Tables
 
 
@@ -5570,4 +5496,81 @@ ggplot() +
   
 
 
+```
+### J.2 capital costs
+```{r} 
+fig_no = "J.2"
+dta = read_csv("./data-extra/ira_comparison_raw/costs_raw.csv")
+#View(dta)
+
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+subpalettes$`Sox pct diff`[["NREL 2022 ATB"]] = "black"
+subpalettes$`Sox pct diff`[["NREL 2022 ATB - Con."]] = "black"
+subpalettes$`Sox pct diff`[["NREL 2022 ATB - Mod."]] = "black"
+subpalettes$`Sox pct diff`[["NREL 2022 ATB - Adv."]] = "black"
+
+
+tech_renamer = c(
+  "Utility-Scale Solar PV" = "Solar PV",
+  "Wind Onshore" = "Onshore Wind",
+  "NGCC with CCS" = "NGCC with CCS",
+  "NGCC" = "NGCC",
+  "Battery Storage (4-Hour)" = "Battery (4-Hour)",
+  "Coal CCS Retrofit" = "Coal with CCS"
+)
+
+dta = dta %>%
+  pivot_longer(cols = starts_with("20"),
+               names_to = "year",
+               values_to = "value") %>%
+  mutate(version = case_when(
+    model == "NREL 2022 ATB - Adv." ~ "Advanced",
+    model == "NREL 2022 ATB - Mod." ~ "Moderate",
+    model == "NREL 2022 ATB - Con." ~ "Conservative",
+    TRUE ~ "Moderate"
+  )) %>%
+  mutate(model = case_when(
+    model == "NREL 2022 ATB - Adv." ~ "NREL 2022 ATB - Adv.",
+    model == "NREL 2022 ATB - Mod." ~ "NREL 2022 ATB - Mod.",
+    model == "NREL 2022 ATB - Con." ~ "NREL 2022 ATB - Con.",
+    TRUE ~ model
+  ))
+
+dta_top = dta %>%
+  filter(!(variable %in% c("NGCC with CCS", "Coal CCS Retrofit"))) %>%
+  filter(!is.na(value))
+
+dta_bottom = dta %>%
+  filter((variable %in% c("NGCC with CCS", "Coal CCS Retrofit"))) %>%
+  filter(!is.na(value))
+
+p = dta_top %>% ggplot() +
+  geom_line(aes(x = year, y = value, color = model, linetype = version, group = interaction(model, version)),
+            linewidth = 1) +
+  scale_y_continuous(name = expression("Capital Cost (2020$/kW)"), labels = scales::comma) +
+  scale_subpalette(subpalettes, "Sox pct diff") +
+  scale_linetype_manual(values = c("longdash","solid","dotted"), breaks = c("Advanced", "Moderate", "Conservative"), guide = T) +
+  facet_grid(. ~ variable, labeller = labeller(variable = tech_renamer)) +
+  theme_emf() +
+  theme(axis.ticks = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8))
+        
+p
+
+p2 = dta_bottom %>% ggplot() +
+  geom_line(aes(x = year, y = value, color = model, linetype = version, group = interaction(model, version)),
+            linewidth = 1) +
+  scale_y_continuous(name = expression("Capital Cost (2020$/kW)"), labels = scales::comma) +
+  scale_subpalette(subpalettes, "Sox pct diff") +
+  scale_linetype_manual(values = c("longdash","solid","dotted"), breaks = c("Advanced", "Moderate", "Conservative"), guide = T) +
+  facet_grid(. ~ variable, labeller = labeller(variable = tech_renamer), scales = "free_y") +
+  theme_emf() +
+  theme(axis.ticks = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8))
+
+p2
+
+savefig(p,fig_no)
+fig_no = "J.3"
+savefig(p2,fig_no)
 ```
