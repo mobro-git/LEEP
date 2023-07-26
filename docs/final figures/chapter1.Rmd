@@ -271,18 +271,18 @@ indicator_small = function(all_data, summary_data, filter_variable, subtitle = "
   return(p)
 }
 
-p1 = indicator_small(indicators_all, indicators_summ, "Economy-Wide", bottom = FALSE, top = TRUE,
+p1 = indicator_small(indicators_all, indicators_summ, "Economy-Wide", bottom = TRUE, top = FALSE,
                      subtitle = expression(paste("Economy-Wide C",O[2], " Emissions Reductions")))
-p2 = indicator_small(indicators_all, indicators_summ, "Electricity", 
+p2 = indicator_small(indicators_all, indicators_summ, "Electricity", bottom = FALSE, top = TRUE,
                      subtitle = expression(paste("Electricity C", O[2], " Emissions Reductions")))
 p3 = indicator_small(indicators_all, indicators_summ, "Transportation", 
                      subtitle = expression(paste("Transportation C", O[2], " Emissions Reductions (Direct + Indirect from Electricity)")))
 p4 = indicator_small(indicators_all, indicators_summ, "Buildings", 
                      subtitle = expression(paste("Buildings C", O[2], " Emissions Reductions (Direct + Indirect from Electricity)")))
-p5 = indicator_small(indicators_all, indicators_summ, "Industry", bottom = TRUE, top = FALSE,
+p5 = indicator_small(indicators_all, indicators_summ, "Industry", bottom = FALSE, top = FALSE,
                      subtitle = expression(paste("Industry C", O[2], " Emissions Reductions (Direct + Indirect from Electricity)")))
 p1
-combined = (p1 / p2 / p3 / p4 / p5) +
+combined = (p2 / p3 / p4 / p5 / p1) +
   plot_layout(guides = "collect") +
 #  annotate("segment", x = 50, xend = 50, y = 0, yend = 100, color = "blue") +
 #  plot_annotation(theme = theme(legend.position = "top")) + 
