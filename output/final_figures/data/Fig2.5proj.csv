@@ -66,6 +66,14 @@
 2.5,"NEMS-EIA","IRA","Capacity Additions|Electricity|Nuclear|Average 2021-2035","GW/yr",2035,"Nuclear",0.148533333333333
 2.5,"NEMS-EIA","IRA","Capacity Additions|Electricity|Solar|Average 2021-2035","GW/yr",2035,"Solar",24.0854333333333
 2.5,"NEMS-EIA","IRA","Capacity Additions|Electricity|Wind|Average 2021-2035","GW/yr",2035,"Wind",13.6390533333333
+2.5,"NEMS-EIA","IRA","Capacity Retirements|Electricity|Coal|w/ CCS|Average 2021-2035","GW/yr",2035,"Coal CCS",0
+2.5,"NEMS-EIA","IRA","Capacity Retirements|Electricity|Coal|w/o CCS|Average 2021-2035","GW/yr",2035,"Coal",-7.13297871428571
+2.5,"NEMS-EIA","IRA","Capacity Retirements|Electricity|Gas|w/o CCS|Average 2021-2035","GW/yr",2035,"Gas",-2.91428735714286
+2.5,"NEMS-EIA","IRA","Capacity Retirements|Electricity|Hydro|Average 2021-2035","GW/yr",2035,"Hydro",-0.00342142857142857
+2.5,"NEMS-EIA","IRA","Capacity Retirements|Electricity|Nuclear|Average 2021-2035","GW/yr",2035,"Nuclear",-0.827399928571429
+2.5,"NEMS-EIA","IRA","Capacity Retirements|Electricity|Solar|Average 2021-2035","GW/yr",2035,"Solar",-0.000892857142857143
+2.5,"NEMS-EIA","IRA","Capacity Retirements|Electricity|Storage Capacity|Average 2021-2035","GW/yr",2035,"Storage",-0.00106428571428571
+2.5,"NEMS-EIA","IRA","Capacity Retirements|Electricity|Wind|Average 2021-2035","GW/yr",2035,"Wind",-0.162742928571429
 2.5,"NEMS-EIA","IRA","Capacity Additions|Electricity|Storage Capacity|Average 2021-2035","GWh/yr",2035,"Storage",3.17949086666667
 2.5,"NEMS-OP","IRA","Capacity Additions|Electricity|Coal|w/ CCS|Average 2021-2035","GW/yr",2035,"Coal CCS",0.0562474666666667
 2.5,"NEMS-OP","IRA","Capacity Additions|Electricity|Gas|w/ CCS|Average 2021-2035","GW/yr",2035,"Gas CCS",0.0914334666666667

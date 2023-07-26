@@ -5559,6 +5559,8 @@ subpalettes$`Sox pct diff`[["NREL 2022 ATB"]] = "black"
 subpalettes$`Sox pct diff`[["NREL 2022 ATB - Con."]] = "black"
 subpalettes$`Sox pct diff`[["NREL 2022 ATB - Mod."]] = "black"
 subpalettes$`Sox pct diff`[["NREL 2022 ATB - Adv."]] = "black"
+subpalettes$`Sox pct diff`[["OP-NEMS-Mod"]] = "blue"
+subpalettes$`Sox pct diff`[["OP-NEMS-Adv"]] = "blue"
 
 
 tech_renamer = c(
@@ -5578,6 +5580,8 @@ dta = dta %>%
     model == "NREL 2022 ATB - Adv." ~ "Advanced",
     model == "NREL 2022 ATB - Mod." ~ "Moderate",
     model == "NREL 2022 ATB - Con." ~ "Conservative",
+    model == "OP-NEMS-Mod" ~ "Moderate",
+    model == "OP-NEMS-Adv" ~ "Advanced",
     TRUE ~ "Moderate"
   )) %>%
   mutate(model = case_when(
@@ -5600,11 +5604,12 @@ p = dta_top %>% ggplot() +
             linewidth = 1) +
   scale_y_continuous(name = expression("Capital Cost (2020$/kW)"), labels = scales::comma) +
   scale_subpalette(subpalettes, "Sox pct diff") +
-  scale_linetype_manual(values = c("longdash","solid","dotted"), breaks = c("Advanced", "Moderate", "Conservative"), guide = T) +
+  scale_linetype_manual(values = c("longdash","solid","dotted"), breaks = c("Advanced", "Moderate", "Conservative")) +
   facet_grid(. ~ variable, labeller = labeller(variable = tech_renamer)) +
   theme_emf() +
   theme(axis.ticks = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1),
-        axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8))
+        axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8),
+        legend.text = element_text(size = 6), legend.key.size = unit(15,"point"))
         
 p
 
@@ -5613,11 +5618,12 @@ p2 = dta_bottom %>% ggplot() +
             linewidth = 1) +
   scale_y_continuous(name = expression("Capital Cost (2020$/kW)"), labels = scales::comma) +
   scale_subpalette(subpalettes, "Sox pct diff") +
-  scale_linetype_manual(values = c("longdash","solid","dotted"), breaks = c("Advanced", "Moderate", "Conservative"), guide = T) +
+  scale_linetype_manual(values = c("longdash","solid","dotted"), breaks = c("Advanced", "Moderate", "Conservative")) +
   facet_grid(. ~ variable, labeller = labeller(variable = tech_renamer), scales = "free_y") +
   theme_emf() +
   theme(axis.ticks = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1),
-        axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8))
+        axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8),
+        legend.text = element_text(size = 6), legend.key.size = unit(15,"point"))
 
 p2
 
