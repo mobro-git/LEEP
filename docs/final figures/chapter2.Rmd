@@ -383,6 +383,7 @@ dta5 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 
     TRUE ~ "Capacity Retirements")) %>%
   mutate(value = case_when((model == "USREP-ReEDS") & (temp == "Capacity Retirements") ~ -1 * value, 
                            (model == "NEMS-OP") & (temp == "Capacity Retirements") ~ -1 * value, 
+                           (model == "NEMS-EIA") & (temp == "Capacity Retirements") ~ -1 * value,
                            TRUE ~ value)) %>%
   mutate(variable_rename = factor(variable_rename, 
                                   levels = c("Solar", "Wind", "Storage", "Nuclear", 
