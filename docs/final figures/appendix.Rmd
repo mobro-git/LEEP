@@ -5450,6 +5450,8 @@ data_table = data_Other %>%
 ```{r}
 fig_no = "J.1"
 
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+
 pipe_proj = clean_data %>%
 filter(variable == "Price|Primary Energy|Gas") %>%
   filter(model %in% c("GCAM-PNNL", "NEMS-EIA", "NEMS-OP", "USREP-ReEDS")) %>%
@@ -5489,25 +5491,59 @@ proj_clean = proj %>%
   filter(!model %in% mods)%>%
   filter(year <= 2035)
 
-figure = ggplot() + 
-  geom_line(data = hist_clean, aes(x = year, y = value), color = "black", size = 0.6) + 
-  geom_line(data = mods_clean, aes(x = year, y = value, color = model), size = 0.6) + 
-  geom_line(data = proj_clean, aes(x = year, y = value, group = model,  fill = "gray"), alpha = 0.2) + 
-  scale_y_continuous(limits = c(0, 12), breaks = c(0, 2, 4, 6, 8, 10, 12), 
-                     labels = scales::dollar_format()) + 
-  scale_x_continuous(breaks = c(2005, 2010, 2015, 2020, 2025, 2030, 2035)) + 
-  scale_color_discrete(name = "") + 
-  labs(
-    y = expression(paste("Natural Gas Prices (2020$/MMBtu)")), 
-    x = "", 
-    title = ""
-  ) + 
-  theme_classic() + 
-  annotate("text", x = 2010, y = 11.5, label = "Historical", color = "black") + 
-  annotate("text", x = 2020, y = 10, label = "AEO reference", color = "gray") + 
-  annotate("text", x = 2020, y = 9.3, label = "projections (2015-2020)", color = "gray") + 
-      theme(axis.text.x = element_text(angle = 45, hjust = 1),
-          axis.ticks = element_blank())
+figure = ggplot() +
+  geom_line(
+    data = hist_clean,
+    aes(x = year, y = value),
+    color = "black",
+    size = 0.6
+  ) +
+  geom_line(data = mods_clean,
+            aes(x = year, y = value, color = model),
+            size = 0.6) +
+  geom_line(data = proj_clean,
+            aes(
+              x = year,
+              y = value,
+              group = model,
+              fill = "gray"
+            ),
+            alpha = 0.2) +
+  scale_y_continuous(
+    limits = c(0, 12),
+    breaks = c(0, 2, 4, 6, 8, 10, 12),
+    labels = scales::dollar_format()
+  ) +
+  scale_x_continuous(breaks = c(2005, 2010, 2015, 2020, 2025, 2030, 2035)) +
+  scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+  labs(y = expression(paste("Natural Gas Prices (2020$/MMBtu)")),
+       x = "",
+       title = "") +
+  theme_classic() +
+  annotate(
+    "text",
+    x = 2010,
+    y = 11.5,
+    label = "Historical",
+    color = "black"
+  ) +
+  annotate(
+    "text",
+    x = 2020,
+    y = 10,
+    label = "AEO reference",
+    color = "gray"
+  ) +
+  annotate(
+    "text",
+    x = 2020,
+    y = 9.3,
+    label = "projections (2015-2020)",
+    color = "gray"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.ticks = element_blank(), 
+        legend.title = element_blank())
   
 savefig(figure, fig_no)
 
