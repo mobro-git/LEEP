@@ -5631,3 +5631,61 @@ savefig(p,fig_no)
 fig_no = "J.3"
 savefig(p2,fig_no)
 ```
+## Appendix K
+GHG emissions
+```{r}
+models_exclude = c("GHGI-LTS")
+
+non_co2 = read.csv("./data-extra/ghg/non_co2.csv")
+
+ghg = clean_data %>% 
+  filter(variable %in% c(
+    "Emissions|CO2",
+    "Emissions|N2O",
+    "Emissions|CH4",
+    "Emissions|F-Gases"
+  ), scenario %in% c("IRA", "No IRA","Historic"), 
+  !(model %in% models_exclude),
+  ((year >= 2005 & year <= 2021) | year %in% c("2025", "2030", "2035")))
+
+historic = ghg %>% filter(scenario == "Historic")
+ghg = ghg %>% filter(year > 2021)
+
+all_combos = ghg %>% expand(model, scenario, year, variable)
+
+dta = ghg %>% 
+  right_join(all_combos) %>%
+  full_join(non_co2, by = c("variable", "year")) %>%
+  mutate(value = case_when(model == "GCAM-PNNL" ~ value, 
+                    !is.na(replace) ~ replace, 
+                    TRUE ~ value)) %>%
+  select(-replace)
+
+more_combos = ghg %>% expand(model, scenario, year)
+land_sink = data.frame("variable" = c("Emissions|LULUCF","Emissions|LULUCF","Emissions|LULUCF"), "year" = c(2025, 2030, 2035), "value" = c(-672,-604,-602)) %>%
+  right_join(more_combos)
+
+dta = bind_rows(dta, land_sink)
+
+dta %>% write.csv("GHG_estimates.csv", row.names = F)
+
+dta = bind_rows(dta, historic) %>%
+  group_by(model, scenario, year) %>%
+  summarize(value = sum(value)) %>%
+  mutate(alpha = 1)
+  
+dta_fill = dta %>% filter(year == 2025) %>%
+  mutate(year = 2021, 
+         value = 6418.04)
+
+dta = bind_rows(dta, dta_fill)
+
+
+output = spg2(df = dta, title = "", yname = expression(paste("GHG Emissions (Mt C", O[2], "e/yr")), gd = "none", ymin = 0, ymax = 8000, 
+              ybreaks = waiver(), yax_format = waiver(), annotate = 1, 
+              historic_coord = c(2015,7500), preira_coord = c(2030, 5500), ira_coord = c(2027, 4100),
+              config = config, figmap_leep_timeseries = figmap_leep_timeseries)
+output$figure
+
+
+```
