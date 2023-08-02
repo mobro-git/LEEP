@@ -242,7 +242,117 @@ dotted = function(df, spg, metric, ymin, ymax, config, figmap_leep_timeseries, d
 
 
 
+#This is an outdated version of the html call that creates scenario-consistent outputs
+# html = function(df, title) {
+#   base = df %>%
+#     filter(year == 2005)
+#
+#   baseline = base$value[1]
+#
+#   base <- as.data.frame(base) %>%
+#     select(Year = year,
+#            `Absolute Level (Mt CO2)` = value) %>%
+#     mutate(Scenario = "Baseline",
+#            `% Reductions from 2005` = NA,
+#            `% Reductions from No IRA` = NA,
+#            `Reductions from No IRA (Mt CO2)` = NA)  %>%
+#     select(Year, Scenario, `Absolute Level (Mt CO2)`, `% Reductions from 2005`, `% Reductions from No IRA`, `Reductions from No IRA (Mt CO2)`)
+#
+#   NoIRA <- df %>%
+#     filter(year == 2030 | year == 2035) %>%
+#     filter(scenario == "No IRA") %>%
+#     group_by(year) %>%
+#     summarize(`No IRA Median` = median(value),
+#               `No IRA Min` = min(value),
+#               `No IRA Max` =  max(value))%>%
+#     pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (Mt CO2)") %>%
+#     mutate(`2005_perc_red` = ((baseline-`Absolute Level (Mt CO2)`)/baseline) * 100) %>%
+#     mutate(
+#       Year = year,
+#       `% Reductions from 2005` = `2005_perc_red`,
+#       `% Reductions from No IRA` = NA,
+#       `Reductions from No IRA (Mt CO2)` = NA
+#     ) %>%
+#     select(!year & !`2005_perc_red`)
+#
+#   IRA <- df %>%
+#     filter(year == 2030 | year == 2035) %>%
+#     filter(scenario == "IRA") %>%
+#     select(!scenario) %>%
+#     group_by(year) %>%
+#     summarize(
+#       `IRA Max` = max(value),
+#       `IRA Min` = min(value),
+#       `IRA Median` = median(value)) %>%
+#     pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (Mt CO2)") %>%
+#     mutate(
+#       `% Reductions from 2005` = ((baseline-`Absolute Level (Mt CO2)`)/baseline) * 100
+#     )%>%
+#     mutate(
+#       `% Reductions from No IRA` = case_when(
+#         year == 2030 & Scenario == "IRA Max" ~
+#           ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100,
+#
+#         year == 2030 & Scenario == "IRA Median" ~
+#           ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100,
+#
+#         year == 2030 & Scenario == "IRA Min" ~
+#           ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+#
+#         year == 2035 & Scenario == "IRA Max" ~
+#           ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100,
+#
+#         year == 2035 & Scenario == "IRA Median" ~
+#           ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100,
+#
+#         year == 2035 & Scenario == "IRA Min" ~
+#           ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+#       ),
+#
+#       `Reductions from No IRA (Mt CO2)` = case_when(
+#         year == 2030 & Scenario == "IRA Max" ~
+#           (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`),
+#
+#         year == 2030 & Scenario == "IRA Median" ~
+#           (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`),
+#
+#         year == 2030 & Scenario == "IRA Min" ~
+#           (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`),
+#
+#         year == 2035 & Scenario == "IRA Max" ~
+#           (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`),
+#
+#         year == 2035 & Scenario == "IRA Median" ~
+#           (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`),
+#
+#         year == 2035 & Scenario == "IRA Min" ~
+#           (NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`)
+#       )
+#     ) %>%
+#     rename(Year = year)
+#
+#   IRA = rbind(NoIRA, IRA)
+#
+#   IRA <- IRA %>%
+#     arrange(desc(IRA)) %>%
+#     arrange(Year)
+#
+#   IRA = rbind(base, IRA)
+#
+#   IRA$`Absolute Level (Mt CO2)` = round(IRA$`Absolute Level (Mt CO2)`, 3)
+#   IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
+#   IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
+#   IRA$`Reductions from No IRA (Mt CO2)` = round(IRA$`Reductions from No IRA (Mt CO2)`,3)
+#
+#   tab = IRA %>%
+#     tableHTML(caption = paste(title), rownames = F)
+#
+#   write.csv(IRA, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
+#
+#   return(tab)
+# }
 
+#Updated version of the html function that calculates % differences from No IRA a bit diffrently
 html = function(df, title) {
   base = df %>%
     filter(year == 2005)
@@ -287,26 +397,34 @@ html = function(df, title) {
     pivot_longer(cols = !year, names_to = "Scenario", values_to = "Absolute Level (Mt CO2)") %>%
     mutate(
       `% Reductions from 2005` = ((baseline-`Absolute Level (Mt CO2)`)/baseline) * 100
-    )%>%
+    )
+
+  pd_30 = df %>%
+    filter(year == 2030) %>%
+    select(year, model, value, scenario) %>%
+    pivot_wider(names_from = scenario, values_from = value) %>%
+    mutate(pd = ((`No IRA` - IRA) / `No IRA`)*100)
+
+  pd_35 = df %>%
+    filter(year == 2035) %>%
+    select(year, model, value, scenario) %>%
+    pivot_wider(names_from = scenario, values_from = value) %>%
+    mutate(pd = ((`No IRA` - IRA) / `No IRA`)*100)
+
+  IRA = IRA %>%
     mutate(
       `% Reductions from No IRA` = case_when(
-        year == 2030 & Scenario == "IRA Max" ~
-          ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Max"]) * 100,
+        year == 2030 & Scenario == "IRA Max" ~ max(pd_30$pd),
 
-        year == 2030 & Scenario == "IRA Median" ~
-          ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Median"]) * 100,
+        year == 2030 & Scenario == "IRA Median" ~ median(pd_30$pd),
 
-        year == 2030 & Scenario == "IRA Min" ~
-          ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2030 & NoIRA$Scenario == "No IRA Min"]) * 100,
+        year == 2030 & Scenario == "IRA Min" ~ min(pd_30$pd),
 
-        year == 2035 & Scenario == "IRA Max" ~
-          ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Max"]) * 100,
+        year == 2035 & Scenario == "IRA Max" ~max(pd_35$pd),
 
-        year == 2035 & Scenario == "IRA Median" ~
-          ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Median"]) * 100,
+        year == 2035 & Scenario == "IRA Median" ~ median(pd_35$pd),
 
-        year == 2035 & Scenario == "IRA Min" ~
-          ((NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]-`Absolute Level (Mt CO2)`)/NoIRA$`Absolute Level (Mt CO2)`[NoIRA$Year == 2035 & NoIRA$Scenario == "No IRA Min"]) * 100
+        year == 2035 & Scenario == "IRA Min" ~ min(pd_35$pd)
       ),
 
       `Reductions from No IRA (Mt CO2)` = case_when(
@@ -339,10 +457,10 @@ html = function(df, title) {
 
   IRA = rbind(base, IRA)
 
-  IRA$`Absolute Level (Mt CO2)` = round(IRA$`Absolute Level (Mt CO2)`, 3)
-  IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 3)
-  IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 3)
-  IRA$`Reductions from No IRA (Mt CO2)` = round(IRA$`Reductions from No IRA (Mt CO2)`,3)
+  IRA$`Absolute Level (Mt CO2)` = round(IRA$`Absolute Level (Mt CO2)`, 2)
+  IRA$`% Reductions from 2005` = round(IRA$`% Reductions from 2005`, 2)
+  IRA$`% Reductions from No IRA` = round(IRA$`% Reductions from No IRA`, 2)
+  IRA$`Reductions from No IRA (Mt CO2)` = round(IRA$`Reductions from No IRA (Mt CO2)`, 2)
 
   tab = IRA %>%
     tableHTML(caption = paste(title), rownames = F)
