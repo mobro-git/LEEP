@@ -570,15 +570,17 @@ write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsD
 savefig(fig$figure, fig_no)
 ```
 
-### CCS
+### Coal CCS
 
 ```{r}
-fig_no = "F.12.CCSGen"
+fig_no = "F.12.CoalCCSGen"
+
+#Only includes Coal CSS Generation
 
 #there is no historic data here so gotta do a lil manual work
-ts_map_ID = 85
-pd_map_ID = 76
-ad_map_ID = 14
+ts_map_ID = 303
+pd_map_ID = 301
+ad_map_ID = 301
 drop = c("EIAinEMF37.csv")
 histsrc = "EIA"
 unit = "Generation (TWh)"
@@ -673,36 +675,195 @@ IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA",], aes(year, value, color = mod
 
 #Percent Difference
 
-pdfigure = pd(pd_map_ID, "", expression(paste("Percent Difference (%)")), "none", drop)
+#pdfigure = pd(pd_map_ID, "", expression(paste("Percent Difference (%)")), "none", drop)
 
 #Absolute Difference
 adfigure = ad(diff_ID = ad_map_ID, "", "Generation", "none", drop)
 
+# fig = (NoIRAfigure |
+#          IRAfigure) / (adfigure$figure | pdfigure$figure) +
+#   plot_layout(guides = "collect") +
+#   plot_annotation(title = "Electricity Generation from Coal with CCS")
+
 fig = (NoIRAfigure |
-         IRAfigure) / (adfigure$figure | pdfigure$figure) +
+         IRAfigure) / (adfigure$figure | plot_spacer()) +
   plot_layout(guides = "collect") +
   plot_annotation(title = "Electricity Generation from Coal, Gas, and Oil with CCS")
 
 fig
 
 write.csv(
-  fig$ts_df,
+  ts_df,
   file = paste("output/final_figures/data/Fig", fig_no, "a_Scen.csv", sep =
                  ""),
   row.names = FALSE
 )
+# write.csv(
+#   fig$pd_df,
+#   file = paste(
+#     "output/final_figures/data/Fig",
+#     fig_no,
+#     "b_PercDiff.csv",
+#     sep = ""
+#   ),
+#   row.names = FALSE
+# )
 write.csv(
-  fig$pd_df,
+  adfigure$ad_df,
   file = paste(
     "output/final_figures/data/Fig",
     fig_no,
-    "b_PercDiff.csv",
+    "c_AbsDiff.csv",
     sep = ""
   ),
   row.names = FALSE
 )
+
+savefig(fig, fig_no)
+```
+
+### Gas CCS
+
+```{r}
+fig_no = "F.12.GasCCSGen"
+
+#Only includes Gas CSS Generation
+
+#there is no historic data here so gotta do a lil manual work
+ts_map_ID = 302
+pd_map_ID = 300
+ad_map_ID = 300
+drop = c("EIAinEMF37.csv")
+histsrc = "EIA"
+unit = "Generation (TWh)"
+ymin = 0
+ymax = 500
+brk = c(0, 250, 500)
+
+#Time Series Dataframe
+ts_df = data_from_graph(
+  "time_series",
+  config,
+  clean_data,
+  figmap_leep_timeseries,
+  ts_map_ID,
+  "United States"
+) %>%
+  filter(!model %in% drop) %>%
+  filter(!datasrc %in% drop) %>%
+  filter(year >= 2021) %>%
+  filter(year <= 2021 &
+           model == histsrc |
+           year > 2021 & scenario != "Historic") %>%
+      mutate(value = case_when(unit == "Quads" ~ value * 293.07, TRUE ~ value),
+             unit = case_when(unit == "Quads" ~ "TWh", TRUE ~ unit)) %>%
+  group_by(model, scenario, year, variable_rename) %>%
+  summarize(value = sum(value)) %>%
+  pivot_wider(names_from = year, values_from = value)
+
+ts_df = ts_df %>%
+  mutate(`2021` = 0) %>%
+  pivot_longer(cols = starts_with("20"),
+               names_to = "year",
+               values_to = "value") %>%
+  filter(!is.na(value)) %>%
+  mutate(year = as.numeric(year))
+
+noIRAmedians = ts_df[ts_df$scenario == "No IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+IRAmedians = ts_df[ts_df$scenario == "IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA",], aes(year, value, color = model)) +
+  geom_line(size = 0.75) +
+  scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+  theme_emf() +
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+  scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
+  labs(title = "No IRA",
+       y = expression(paste("Generation (TWh)")),
+       x = element_blank()) +
+  theme(axis.ticks = element_blank(),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = noIRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA",], aes(year, value, color = model)) +
+  geom_line(size = 0.75) +
+  scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+  theme_emf() +
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+  scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
+  labs(title = "IRA",
+       y = expression(paste("Generation (TWh)")),
+       x = element_blank()) +
+  theme( axis.ticks = element_blank(),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = IRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+#Percent Difference
+
+#pdfigure = pd(pd_map_ID, "", expression(paste("Percent Difference (%)")), "none", drop)
+
+#Absolute Difference
+adfigure = ad(diff_ID = ad_map_ID, "", "Generation", "none", drop)
+
+# fig = (NoIRAfigure |
+#          IRAfigure) / (adfigure$figure | pdfigure$figure) +
+#   plot_layout(guides = "collect") +
+#   plot_annotation(title = "Electricity Generation from Gas with CCS")
+
+fig = (NoIRAfigure |
+         IRAfigure) / (adfigure$figure | plot_spacer()) +
+  plot_layout(guides = "collect") +
+  plot_annotation(title = "Electricity Generation from Gas with CCS")
+
+fig
+
+# TODO: This entire figure is broken and saves off data that doesnt exist. I fixed the figure, but the whole thing should be rewritten to fit the format of the rest of the figures and actually output the correct data
+
 write.csv(
-  fig$ad_df,
+  ts_df,
+  file = paste("output/final_figures/data/Fig", fig_no, "a_Scen.csv", sep =
+                 ""),
+  row.names = FALSE
+)
+# write.csv(
+#   fig$pd_df,
+#   file = paste(
+#     "output/final_figures/data/Fig",
+#     fig_no,
+#     "b_PercDiff.csv",
+#     sep = ""
+#   ),
+#   row.names = FALSE
+# )
+write.csv(
+  adfigure$ad_df,
   file = paste(
     "output/final_figures/data/Fig",
     fig_no,
@@ -776,7 +937,8 @@ savefig(fig$figure, fig_no)
 ```{r}
 fig_no = "F.15.OtherGen"
 
-ts_map_ID = 88 # biomass w/o CCS, geothermal, hydro, oil w/ and w/o ccs 
+#Includes Biomass, Hydro, Geothermal, Oil w/ CCS, and Oil w/o CCS
+ts_map_ID = 88
 pd_map_ID = 77
 ad_map_ID = 11
 drop = c("EIAinEMF37.csv")
@@ -787,7 +949,7 @@ ymin = 250
 ymax = 500
 brk = c(250, 375, 500)
 
-
+# The percent difference figure here gets a little wonky because of the multiple variables.
 fig = four_corners("Electricity Generation from Other", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 abdata = fig$ts_df %>%
@@ -943,6 +1105,35 @@ pdfigure = ggplot() +
     plot_annotation(title = "Electricity Generation from Other")
   
   savefig(figure, fig_no)
+  
+  write.csv(
+  df,
+  file = paste("output/final_figures/data/Fig", fig_no, "a_Scen.csv", sep =
+                 ""),
+  row.names = FALSE
+)
+  
+write.csv(
+  pbdata,
+  file = paste(
+    "output/final_figures/data/Fig",
+    fig_no,
+    "b_PercDiff.csv",
+    sep = ""
+  ),
+  row.names = FALSE
+)
+
+write.csv(
+  abdata,
+  file = paste(
+    "output/final_figures/data/Fig",
+    fig_no,
+    "c_AbsDiff.csv",
+    sep = ""
+  ),
+  row.names = FALSE
+)
 ```
 
 ### Electricity generation by model

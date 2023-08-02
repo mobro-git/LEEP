@@ -69,17 +69,19 @@ timeseries,77,Diff Low Emitting Gen,Secondary Energy|Electricity|Biomass|Percent
 timeseries,77,Diff Low Emitting Gen,Secondary Energy|Electricity|Geothermal|Percent differnce from No IRA,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,77,Diff Low Emitting Gen,Secondary Energy|Electricity|Hydro|Percent differnce from No IRA,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,77,Diff Low Emitting Gen,Secondary Energy|Electricity|Oil|w/o CCS|Percent differnce from No IRA,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,77,Diff Low Emitting Gen,Secondary Energy|Electricity|Oil|w/ CCS|Percent differnce from No IRA,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,78,Diff Low Emitting Gen,Secondary Energy|Electricity|Wind|Percent differnce from No IRA,Wind,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,79,Diff Low Emitting Gen,Secondary Energy|Electricity|Solar|Percent differnce from No IRA,Solar,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,80,Diff Low Emitting Gen,Secondary Energy|Electricity|Nuclear|Percent differnce from No IRA,Nuclear,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,81,Low Emitting Generation,Secondary Energy|Electricity|Gas|w/o CCS,Natural Gas,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,82,Low Emitting Generation,Secondary Energy|Electricity|Coal|w/o CCS,Coal,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,85,Low Emitting Generation,Secondary Energy|Electricity|Oil|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,85,Low Emitting Generation,Secondary Energy|Electricity|Gas|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,85,Low Emitting Generation,Secondary Energy|Electricity|Coal|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,87,Low Emitting Generation,Secondary Energy|Electricity|Oil|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,87,Low Emitting Generation,Secondary Energy|Electricity|Gas|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,87,Low Emitting Generation,Secondary Energy|Electricity|Coal|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,88,Low Emitting Generation,Secondary Energy|Electricity|Biomass,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,88,Low Emitting Generation,Secondary Energy|Electricity|Geothermal,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,88,Low Emitting Generation,Secondary Energy|Electricity|Hydro,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,88,Low Emitting Generation,Secondary Energy|Electricity|Oil|w/ CCS,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,88,Low Emitting Generation,Secondary Energy|Electricity|Oil|w/o CCS,Other,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,89,Low Emitting Generation,Secondary Energy|Electricity|Wind,Wind,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,90,Low Emitting Generation,Secondary Energy|Electricity|Solar,Solar,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
@@ -120,3 +122,7 @@ timeseries,141,Electrification,Final Energy|Buildings|Percent Electricity,Buildi
 timeseries,141,Electrification,Final Energy|Industry and Fuel Production|Percent Electricity,Industry,0,usa,models_leep,historic,main_scenarios,single,year,value,,,variable_rename,region,fixed
 timeseries,141,Electrification,Final Energy|Percent Electricity,Total,0,usa,models_leep,historic,main_scenarios,single,year,value,,,variable_rename,region,fixed
 timeseries,141,Electrification,Final Energy|Transportation|Percent Electricity,Transportation,0,usa,models_leep,historic,main_scenarios,single,year,value,,,variable_rename,region,fixed
+timeseries,300,GasCCSpDiff,Secondary Energy|Electricity|Gas|w/ CCS|Percent differnce from No IRA,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,301,CoalCCSpDiff,Secondary Energy|Electricity|Coal|w/ CCS|Percent differnce from No IRA,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,302,GasCCS,Secondary Energy|Electricity|Gas|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
+timeseries,303,CoalCCS,Secondary Energy|Electricity|Coal|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
