@@ -54,8 +54,7 @@
 <polyline points='47.15,160.13 166.01,160.13 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='47.15,102.82 166.01,102.82 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='47.15,45.50 166.01,45.50 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
-<polyline points='61.56,316.32 61.56,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
-<polyline points='90.37,316.32 90.37,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
+<polyline points='81.37,316.32 81.37,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='117.39,316.32 117.39,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='133.60,316.32 133.60,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='151.61,316.32 151.61,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
@@ -65,7 +64,6 @@
 <polyline points='47.15,131.48 166.01,131.48 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='47.15,74.16 166.01,74.16 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='52.55,316.32 52.55,32.61 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
-<polyline points='70.56,316.32 70.56,32.61 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='110.18,316.32 110.18,32.61 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='124.59,316.32 124.59,32.61 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='142.60,316.32 142.60,32.61 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
@@ -101,7 +99,6 @@
 <text x='42.22' y='135.41' text-anchor='end' style='font-size: 11.00px;fill: #4D4D4D; font-family: "Arial";' textLength='12.24px' lengthAdjust='spacingAndGlyphs'>30</text>
 <text x='42.22' y='78.10' text-anchor='end' style='font-size: 11.00px;fill: #4D4D4D; font-family: "Arial";' textLength='12.24px' lengthAdjust='spacingAndGlyphs'>40</text>
 <text transform='translate(57.11,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2005</text>
-<text transform='translate(75.12,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2010</text>
 <text transform='translate(114.74,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2021</text>
 <text transform='translate(129.15,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2025</text>
 <text transform='translate(147.16,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2030</text>
@@ -222,8 +219,7 @@
 <polyline points='229.79,160.13 348.66,160.13 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='229.79,102.82 348.66,102.82 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='229.79,45.50 348.66,45.50 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
-<polyline points='244.20,316.32 244.20,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
-<polyline points='273.02,316.32 273.02,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
+<polyline points='264.01,316.32 264.01,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='300.03,316.32 300.03,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='316.24,316.32 316.24,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='334.25,316.32 334.25,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
@@ -233,7 +229,6 @@
 <polyline points='229.79,131.48 348.66,131.48 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='229.79,74.16 348.66,74.16 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='235.20,316.32 235.20,32.61 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
-<polyline points='253.21,316.32 253.21,32.61 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='292.83,316.32 292.83,32.61 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='307.24,316.32 307.24,32.61 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='325.25,316.32 325.25,32.61 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
@@ -264,7 +259,6 @@
 </g>
 <g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHwzNjAuMDA=)'>
 <text transform='translate(239.75,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2005</text>
-<text transform='translate(257.76,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2010</text>
 <text transform='translate(297.39,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2021</text>
 <text transform='translate(311.79,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2025</text>
 <text transform='translate(329.80,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2030</text>
@@ -384,8 +378,7 @@
 <polyline points='412.44,160.13 531.31,160.13 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='412.44,102.82 531.31,102.82 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='412.44,45.50 531.31,45.50 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
-<polyline points='426.85,316.32 426.85,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
-<polyline points='455.66,316.32 455.66,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
+<polyline points='446.66,316.32 446.66,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='482.68,316.32 482.68,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='498.89,316.32 498.89,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='516.90,316.32 516.90,32.61 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
@@ -395,7 +388,6 @@
 <polyline points='412.44,131.48 531.31,131.48 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='412.44,74.16 531.31,74.16 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='417.84,316.32 417.84,32.61 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
-<polyline points='435.85,316.32 435.85,32.61 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='475.48,316.32 475.48,32.61 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='489.88,316.32 489.88,32.61 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='507.89,316.32 507.89,32.61 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
@@ -426,7 +418,6 @@
 </g>
 <g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHwzNjAuMDA=)'>
 <text transform='translate(422.40,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2005</text>
-<text transform='translate(440.41,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2010</text>
 <text transform='translate(480.03,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2021</text>
 <text transform='translate(494.44,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2025</text>
 <text transform='translate(512.45,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2030</text>

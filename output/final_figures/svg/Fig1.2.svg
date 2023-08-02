@@ -43,8 +43,7 @@
 <polyline points='62.45,263.67 412.97,263.67 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='62.45,184.22 412.97,184.22 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='62.45,104.76 412.97,104.76 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
-<polyline points='104.94,316.32 104.94,32.26 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
-<polyline points='189.91,316.32 189.91,32.26 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
+<polyline points='163.36,316.32 163.36,32.26 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='269.58,316.32 269.58,32.26 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='317.38,316.32 317.38,32.26 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='370.49,316.32 370.49,32.26 ' style='stroke-width: 0.27; stroke: #DEDEDE; stroke-linecap: butt;' />
@@ -53,7 +52,6 @@
 <polyline points='62.45,144.49 412.97,144.49 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='62.45,65.03 412.97,65.03 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='78.38,316.32 78.38,32.26 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
-<polyline points='131.49,316.32 131.49,32.26 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='248.33,316.32 248.33,32.26 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='290.82,316.32 290.82,32.26 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='343.93,316.32 343.93,32.26 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
@@ -90,7 +88,6 @@
 <text x='57.52' y='148.43' text-anchor='end' style='font-size: 11.00px;fill: #4D4D4D; font-family: "Arial";' textLength='27.54px' lengthAdjust='spacingAndGlyphs'>4,000</text>
 <text x='57.52' y='68.97' text-anchor='end' style='font-size: 11.00px;fill: #4D4D4D; font-family: "Arial";' textLength='27.54px' lengthAdjust='spacingAndGlyphs'>6,000</text>
 <text transform='translate(82.94,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2005</text>
-<text transform='translate(136.05,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2010</text>
 <text transform='translate(252.89,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2021</text>
 <text transform='translate(295.38,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2025</text>
 <text transform='translate(348.49,325.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2030</text>

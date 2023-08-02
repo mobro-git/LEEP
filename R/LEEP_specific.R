@@ -180,7 +180,8 @@ dot_plots_sens = function(plot_type, config, emf_data_long, figmap, figure_num, 
 # p = dot_plots("time_series", config, clean_data, figmap_leep_timeseries, 4, "United States", 0, 2500, "Emissions|CO2|Energy|Demand|Electricity", metric = "median")
 # print(p$full)
 # print(p$stats)
-sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = FALSE, ps = FALSE, ymin = 0, ymax = 0, ira_coord = c(0,0), low_coord = c(0,0), high_coord = c(0,0)) {
+sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = FALSE, ps = FALSE, ymin = 0, ymax = 0,
+                         ira_coord = c(0,0), low_coord = c(0,0), high_coord = c(0,0)) {
   subpalettes = create_subpalettes(figmap, config)
   if (far_left) {
     point_code = geom_point(aes(x = year + stagger, y = value, color = scenario), shape = 1, size = 2)

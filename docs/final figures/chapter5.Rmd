@@ -59,16 +59,12 @@ p4
 
 dta4 = clean_supplemental_data(dta4, fig_no)
 
-
 saveall(p4, dta4, fig_no)
 ```
 
 ## 5.2 industry breakdown
 
 ```{r}
-
-subpalette = create_subpalettes(figmap_leep_stackbar, config)
-
 fig_no = "5.2"
 pie = readxl::read_xlsx("data-extra/industry_piechart.xlsx")
 pie1 = pie %>% filter(Table == 1) %>%
@@ -92,7 +88,7 @@ p = pie1 %>% mutate(value = (100 * value) / total) %>% arrange(desc(value)) %>% 
                 position = position_stack(vjust = 0.5), stat = "identity", size = 3) +
   scale_y_continuous(limits = c(0,100), expand = expansion(add = c(0,5)), 
                      name = expression(paste("Percent of Industrial C", O[2], " Emissions"))) +
-  scale_subpalette(subpalette,"Industrial Emissions") +
+  scale_subpalette(subpalettes,"Industrial Emissions") +
   #geom_bar(aes(x = year, y = value, fill = variable_rename), position = position_stack(), stat = "identity")
   theme_emf() + 
   theme(axis.ticks = element_blank(), legend.position = "none",
@@ -181,28 +177,14 @@ print(stats)
 saveall(p,dta,fig_no)
 ```
 
-## 5.x energy used in the industry sector, by fuel, over time (NO LONGER IN USE)
+## 5.y sensitivities data
 
 ```{r}
-# fig_no = 5.3
-# 
-# clean_data6 = clean_data %>% duplicate_historical_data("EIA-LTS", 2020)
-# 
-# p1 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 119, "United States", 0, 30, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,17), preira_coord = c(2030, 16), ira_coord = c(2027, 23), ylab = "Final Energy (Quads)")
-# p1$full = p1$full + theme(plot.title = element_blank())
-# p1$full
-# 
-# dta = data_from_graph("time_series", config, clean_data6, figmap_leep_timeseries, 119, "United States")
-# dta = clean_supplemental_data(dta, fig_no)
-# 
-# saveall(p1$full, dta, fig_no)
-```
-
-### 5.y sensitivities data
-```{r}
-metric = "absolute"
+#metric = "absolute"
 #metric = "percent"
-#metric = "percent_2005"
+metric = "percent_2005"
+
+var_sens = "Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total"
 
 # electric sector emissions sensitivity dot plots
 panel1_scens = c("Core","IRA", "IRA.Low","IRA.High")
@@ -211,7 +193,7 @@ panel3_scens = c("Low Energy Price","High Energy Price", "Core", "IRA") # Energy
 panel4_scens = c("All Advanced", "Adv Battery/Renew", "Cons Battery/Renew", "Constrained Deployment", "Core", "IRA") # Technology Cost and deployment constraints
 panel5_scens = c("Pess-IRA.Adv", "Opt-IRA.Adv", "Core", "IRA") # Combos
 
-sens_dta = clean_data %>% filter(variable == "Emissions|CO2|Energy|Demand|Industry and Fuel Production",
+sens_dta = clean_data %>% filter(variable == var_sens,
                                  year %in% c(2030, 2035)) #%>% 
 #  mutate(year = factor(year))
 
@@ -293,13 +275,12 @@ sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
                              model == "NEMS-OP" ~ -0.4,
                              TRUE ~ 0.0))
   
-  
 ## put things into table format
 
 historic_emissions = (clean_data %>%
   filter(model == "EPA-GHGI",
          scenario == "Historic",
-         variable == "Emissions|CO2|Energy|Demand|Industry and Fuel Production",
+         variable == var_sens,
          year == 2005))$value
 
 panel1_summ = sens_dta_panel1 %>%
@@ -499,3 +480,22 @@ all_panels = cbind(panel1_summ, panel4_summ, panel5_summ, panel3_summ, panel2_su
 
 all_panels %>% write.csv(paste0("./output/final_figures/data/Industry_sensitivity_data_",metric,".csv"))
 ```
+
+
+```{r}
+## 5.x energy used in the industry sector, by fuel, over time (NO LONGER IN USE)
+
+# fig_no = 5.3
+# 
+# clean_data6 = clean_data %>% duplicate_historical_data("EIA-LTS", 2020)
+# 
+# p1 = dot_plots("time_series", config, clean_data6, figmap_leep_timeseries, 119, "United States", 0, 30, "Industrial Final Energy: Fossil", metric = "median", historic_coord = c(2015,17), preira_coord = c(2030, 16), ira_coord = c(2027, 23), ylab = "Final Energy (Quads)")
+# p1$full = p1$full + theme(plot.title = element_blank())
+# p1$full
+# 
+# dta = data_from_graph("time_series", config, clean_data6, figmap_leep_timeseries, 119, "United States")
+# dta = clean_supplemental_data(dta, fig_no)
+# 
+# saveall(p1$full, dta, fig_no)
+```
+

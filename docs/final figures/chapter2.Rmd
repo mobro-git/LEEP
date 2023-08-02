@@ -549,7 +549,7 @@ sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
 
 p1 = sens_dot_plot(sens_dta_panel1, title = "\nIRA Implementation", 
                    figmap_leep_timeseries, config, 
-                   ymin = 0, ymax = 1600, far_left = TRUE, 
+                   ps = TRUE, ymin = 0, ymax = 1600, far_left = TRUE, 
                    ira_coord = c(2030.1,965), low_coord = c(2028.7, 1190), 
                    high_coord = c(2030, 190))
 # p1
@@ -603,7 +603,7 @@ p5$plot = p5$plot +
     annotate("text", x = 2028.4, y = 1535, size = 3,
                label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0)
 
-combined = (p1$plot | p4$plot | p5$plot | p3$plot | p2$plot ) +
+combined = (p1$plot | p4$plot | p5$plot | p2$plot | p3$plot ) +
   plot_annotation(title = "Electric Sector CO2 Emissions", 
                   theme = theme(plot.title = element_blank()))
   
@@ -854,10 +854,6 @@ all_panels = cbind(panel1_summ, panel4_summ, panel5_summ, panel3_summ, panel2_su
 
 #  pivot_longer(cols = starts_with("value_"), names_to = "year", names_prefix = "value_", values_to = "value") %>%
 
-```
-
-part 2
-```{r}
 fig_no = "2.6.1"
 
 # all_panels is created in the previous code chunk

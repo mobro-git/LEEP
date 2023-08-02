@@ -111,11 +111,14 @@ TotSpg$data = clean_supplemental_data(TotSpg$data, fig_no)
 savedata(TotSpg$data, fig_no)
 ```
 
-### 4.x sensitivities data
+## 4.x sensitivities data
+
 ```{r}
 #metric = "absolute"
 #metric = "percent"
 metric = "percent_2005"
+
+var_sens = "Emissions|CO2|Energy|Demand|Buildings|Total"
 
 # electric sector emissions sensitivity dot plots
 panel1_scens = c("Core","IRA", "IRA.Low","IRA.High")
@@ -124,7 +127,7 @@ panel3_scens = c("Low Energy Price","High Energy Price", "Core", "IRA") # Energy
 panel4_scens = c("All Advanced", "Adv Battery/Renew", "Cons Battery/Renew", "Constrained Deployment", "Core", "IRA") # Technology Cost and deployment constraints
 panel5_scens = c("Pess-IRA.Adv", "Opt-IRA.Adv", "Core", "IRA") # Combos
 
-sens_dta = clean_data %>% filter(variable == "Emissions|CO2|Energy|Demand|Buildings",
+sens_dta = clean_data %>% filter(variable == var_sens,
                                  year %in% c(2030, 2035)) #%>% 
 #  mutate(year = factor(year))
 
@@ -212,7 +215,7 @@ sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
 historic_emissions = (clean_data %>%
   filter(model == "EPA-GHGI",
          scenario == "Historic",
-         variable == "Emissions|CO2|Energy|Demand|Buildings",
+         variable == var_sens,
          year == 2005))$value
 
 panel1_summ = sens_dta_panel1 %>%

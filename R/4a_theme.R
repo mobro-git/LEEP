@@ -313,7 +313,7 @@ color_map <- c(
   "CO2 Emissions" = "dark salmon",
   "Residual Emissions" = "teal blue",
 
-  #emissions accounting
+  # emissions accounting
   "Net CO2" = "very dark teal",
   "Gross Positive CO2" = "dark salmon",
   "CO2 + Fossil CCS" = "light orange",
@@ -342,7 +342,6 @@ color_map <- c(
   "Water" = "m.green",
   "Buses" = "m.neongreen",
   "Lubricants" = "m.burnorange",
-
 
   # emissions
   "Direct" = "teal blue",

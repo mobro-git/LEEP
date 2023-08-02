@@ -681,11 +681,9 @@ adfigure = ad(diff_ID = ad_map_ID, "", "Generation", "none", drop)
 fig = (NoIRAfigure |
          IRAfigure) / (adfigure$figure | pdfigure$figure) +
   plot_layout(guides = "collect") +
-  plot_annotation(title = "Electricity Generation from Coal with CCS")
+  plot_annotation(title = "Electricity Generation from Coal, Gas, and Oil with CCS")
 
 fig
-
-# TODO: This entire figure is broken and saves off data that doesnt exist. I fixed the figure, but the whole thing should be rewritten to fit the format of the rest of the figures and actually output the correct data
 
 write.csv(
   fig$ts_df,
@@ -720,7 +718,7 @@ savefig(fig, fig_no)
 ### Coal
 
 ```{r}
-fig_no = "F.13.CoalGen"
+fig_no = "F.13.CoalGen" # w/o CCS
 
 ts_map_ID = 82
 pd_map_ID = 71
@@ -734,7 +732,7 @@ ymax = 1100
 brk = c(0, 250, 500, 750, 1000)
 
 
-fig = four_corners("Coal Generation", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
+fig = four_corners("Electricity Generation from Coal without CCS", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -748,7 +746,7 @@ savefig(fig$figure, fig_no)
 ### Gas
 
 ```{r}
-fig_no = "F.14.GasGen"
+fig_no = "F.14.GasGen" # w/o CCS
 
 ts_map_ID = 81
 pd_map_ID = 70
@@ -762,7 +760,7 @@ ymax = 2500
 brk = c(0, 500, 1000, 1500, 2000, 2500)
 
 
-fig = four_corners("Electricity Generation from Gas", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
+fig = four_corners("Electricity Generation from Gas without CCS", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -778,7 +776,7 @@ savefig(fig$figure, fig_no)
 ```{r}
 fig_no = "F.15.OtherGen"
 
-ts_map_ID = 88
+ts_map_ID = 88 # biomass w/o CCS, geothermal, hydro, oil w/ and w/o ccs 
 pd_map_ID = 77
 ad_map_ID = 11
 drop = c("EIAinEMF37.csv")
@@ -1950,7 +1948,7 @@ ElecDot = dotted(ElecSpg$data, ElecSpg$figure, "median", 0, 4000, config, figmap
 
 fig = EconDot | ElecDot
 
-savefig(fig, fig_no)
+savefig(fig, fig_no, wd=9,ht=4)
 ```
 
 ## Transportation Direct/Indirect
@@ -2020,7 +2018,7 @@ IndDirTab
 
 fig = DirDot | IndDirDot
 
-savefig(fig, fig_no)
+savefig(fig, fig_no, wd=9,ht=4)
 savedata(DirSpg$data, paste(fig_no, "Direct"))
 savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 ```
@@ -2093,7 +2091,7 @@ IndDirTab
 
 fig = DirDot | IndDirDot
 
-savefig(fig, fig_no)
+savefig(fig, fig_no, wd=9,ht=4)
 savedata(DirSpg$data, paste(fig_no, "Direct"))
 savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 ```
@@ -2166,7 +2164,7 @@ IndDirTab
 
 fig = DirDot | IndDirDot
 
-savefig(fig, fig_no)
+savefig(fig, fig_no, wd=9,ht=4)
 savedata(DirSpg$data, paste(fig_no, "Direct"))
 savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 ```
@@ -4596,7 +4594,7 @@ dots_Total = ggplot(data = data_total, aes(x = axe, y = abs_dif)) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = c(-2000, -1000, 0, 1000, 2000), labels = scales::comma) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
-    labs(y = "Difference in Generation (TWh) from No IRA") +
+    labs(y = "") +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme(
           axis.title.x = element_blank(),
@@ -4889,7 +4887,7 @@ dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = abs_dif)) +
     facet_wrap(~"Wind") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
-    labs(y = "Difference in Generation (TWh) from No IRA") +
+    labs(y = "Difference from No IRA (TWh)") +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme(
           axis.title.x = element_blank(),
@@ -5009,7 +5007,7 @@ dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = abs_dif)) +
     facet_wrap(~"Coal") +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
-    labs(y = "Difference in Generation (TWh) from No IRA") +
+    labs(y = "") +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme(
           axis.title.x = element_blank(),
@@ -5154,7 +5152,6 @@ savefig(final, fig_no, wd = 8)
 ```
 
 ### Tables
-
 
 ```{r}
 fig_no = "I.2"
@@ -5445,7 +5442,8 @@ data_table = data_Other %>%
 ```
 
 # Appendix J
-## J.1 natural gas
+
+## Natural gas price
 
 ```{r}
 fig_no = "J.1"
@@ -5546,9 +5544,10 @@ figure = ggplot() +
         legend.title = element_blank())
   
 savefig(figure, fig_no)
-
 ```
-## J.2 capital costs
+
+## Capital Costs
+
 ```{r} 
 fig_no = "J.2"
 dta = read_csv("./data-extra/ira_comparison_raw/costs_raw.csv")
@@ -5561,7 +5560,6 @@ subpalettes$`Sox pct diff`[["NREL 2022 ATB - Mod."]] = "black"
 subpalettes$`Sox pct diff`[["NREL 2022 ATB - Adv."]] = "black"
 subpalettes$`Sox pct diff`[["OP-NEMS-Mod"]] = "blue"
 subpalettes$`Sox pct diff`[["OP-NEMS-Adv"]] = "blue"
-
 
 tech_renamer = c(
   "Utility-Scale Solar PV" = "Solar PV",
@@ -5630,62 +5628,4 @@ p2
 savefig(p,fig_no)
 fig_no = "J.3"
 savefig(p2,fig_no)
-```
-## Appendix K
-GHG emissions
-```{r}
-models_exclude = c("GHGI-LTS")
-
-non_co2 = read.csv("./data-extra/ghg/non_co2.csv")
-
-ghg = clean_data %>% 
-  filter(variable %in% c(
-    "Emissions|CO2",
-    "Emissions|N2O",
-    "Emissions|CH4",
-    "Emissions|F-Gases"
-  ), scenario %in% c("IRA", "No IRA","Historic"), 
-  !(model %in% models_exclude),
-  ((year >= 2005 & year <= 2021) | year %in% c("2025", "2030", "2035")))
-
-historic = ghg %>% filter(scenario == "Historic")
-ghg = ghg %>% filter(year > 2021)
-
-all_combos = ghg %>% expand(model, scenario, year, variable)
-
-dta = ghg %>% 
-  right_join(all_combos) %>%
-  full_join(non_co2, by = c("variable", "year")) %>%
-  mutate(value = case_when(model == "GCAM-PNNL" ~ value, 
-                    !is.na(replace) ~ replace, 
-                    TRUE ~ value)) %>%
-  select(-replace)
-
-more_combos = ghg %>% expand(model, scenario, year)
-land_sink = data.frame("variable" = c("Emissions|LULUCF","Emissions|LULUCF","Emissions|LULUCF"), "year" = c(2025, 2030, 2035), "value" = c(-672,-604,-602)) %>%
-  right_join(more_combos)
-
-dta = bind_rows(dta, land_sink)
-
-dta %>% write.csv("GHG_estimates.csv", row.names = F)
-
-dta = bind_rows(dta, historic) %>%
-  group_by(model, scenario, year) %>%
-  summarize(value = sum(value)) %>%
-  mutate(alpha = 1)
-  
-dta_fill = dta %>% filter(year == 2025) %>%
-  mutate(year = 2021, 
-         value = 6418.04)
-
-dta = bind_rows(dta, dta_fill)
-
-
-output = spg2(df = dta, title = "", yname = expression(paste("GHG Emissions (Mt C", O[2], "e/yr")), gd = "none", ymin = 0, ymax = 8000, 
-              ybreaks = waiver(), yax_format = waiver(), annotate = 1, 
-              historic_coord = c(2015,7500), preira_coord = c(2030, 5500), ira_coord = c(2027, 4100),
-              config = config, figmap_leep_timeseries = figmap_leep_timeseries)
-output$figure
-
-
 ```

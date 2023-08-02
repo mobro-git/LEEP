@@ -293,8 +293,10 @@ indicators_all_clean = indicators_all %>%
   select(model,scenario,unit,region,title_name.y,year,value,value_2005,pct_diff) %>% 
   rename(`percent diff 2005` = pct_diff)
 saveall(combined, indicators_all_clean, fig_no)
+savedata(indicators_summ, paste(fig_no,"summary",sep="_"))
 fig_no = "ES.2"
 saveall(combined, indicators_all_clean, fig_no)
+savedata(indicators_summ, paste(fig_no,"summary",sep="_"))
 
 EconTab
 ElecTab

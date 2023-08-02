@@ -62,7 +62,12 @@ make_clean_data = function(df) {
     filter(variable %in% c("Emissions|CO2|Energy|Demand|Industry|Indirect",
                            "Emissions|CO2|Energy|Supply|Indirect")) %>%
     select(model,scenario,unit,year,datasrc,variable,region,value) %>%
-    mutate(variable = "Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect")
+    mutate(variable = "Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect") %>%
+    group_by(scenario,model,region,unit,year,variable) %>%
+    summarise(value = sum(value)) %>%
+    ungroup() %>%
+    mutate(datasrc = "calculated") %>%
+    select(model,scenario,unit,year,datasrc,variable,region,value)
 
   ind_var = rbind(ind_emissions, ind_emissions_indirect)
 
