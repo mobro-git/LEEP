@@ -38,7 +38,7 @@ clean_data = clean_data %>%
 ## 5.1 co2 emissions from the industrial sector in the us compared to economy-wide co2 emissions
 
 ```{r}
-fig_no = 5.1
+fig_no = "5.1.indco2_direct_indirect"
 
 subpalettes = create_subpalettes(figmap_leep_stackbar, config)
 
@@ -65,7 +65,7 @@ saveall(p4, dta4, fig_no)
 ## 5.2 industry breakdown
 
 ```{r}
-fig_no = "5.2"
+fig_no = "5.2.indco2_breakout"
 pie = readxl::read_xlsx("data-extra/industry_piechart.xlsx")
 pie1 = pie %>% filter(Table == 1) %>%
   rename(value = `% Energy-related Emissions`) %>%
@@ -92,7 +92,7 @@ saveall(p, pie1, fig_no, wd=5, ht=5)
 ## 5.3 industry total co2 emissions 
 
 ```{r}
-fig_no = 5.3
+fig_no = "5.3.indco2_projection"
 
 Ind_data = spg_clean(
   21, 
@@ -136,7 +136,7 @@ IndTab
 
 ## 5.4 industrial CCS
 ```{r}
-fig_no = "5.4"
+fig_no = "5.4.ccs"
 exclude_models = c("GCAM-PNNL")
 
 subpalette = create_subpalettes(figmap_leep_stackbar, config)

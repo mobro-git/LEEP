@@ -37,7 +37,7 @@ clean_data = clean_data %>%
 ## F2.1 co2 emissions from the power sector in the us, compared to economy-wide co2 emissions
 
 ```{r}
-fig_no = 2.1
+fig_no = "2.1.historic_powerco2"
 
 data <- clean_data %>%
   filter(model == "EPA-GHGI") %>%
@@ -95,7 +95,7 @@ saveall(fig, data, fig_no)
 ## F2.2 us electricity generation and capacity shares by fuel type, 2021
 
 ```{r}
-fig_no = 2.2
+fig_no = "2.2.historic_generation"
 
 clean_data10 = clean_data %>% 
   filter(datasrc == 'EIA-EPA-bistline_historic.csv') %>%
@@ -129,7 +129,7 @@ saveall(fig, df, fig_no)
 ## F2.3 us power sector co2 emissions
 
 ```{r}
-fig_no = 2.3
+fig_no = "2.3.powerco2_projection"
 
 Elec_data = spg_clean(
   98,
@@ -176,7 +176,7 @@ saveall(delta$figure, delta$df, paste(fig_no, "delta"), wd = 3.012, ht = 3)
 ## F2.4 generation by model and difference from no ira
 
 ```{r}
-fig_no = "2.4"
+fig_no = "2.4.generation_by_model"
 
 subpalettes = create_subpalettes(figmap_leep_stackbar, config)
 
@@ -313,7 +313,7 @@ savedata(data_summary, fig_no = "F.x1 Summary Table")
 ## F2.5 capacity additions by technology
 
 ```{r}
-fig_no = 2.5
+fig_no = "2.5.avgcapadd"
 
 # capacity addition plot
 
@@ -499,7 +499,7 @@ savedata(data_summary, fig_no = "F.x2 Summary Table")
 ## F2.6 sensitivity of electric sector emissions
 
 ```{r}
-fig_no = 2.6
+fig_no = "2.6.power_sensitivities"
 
 # electric sector emissions sensitivity dot plots
 panel1_scens = c("Core","IRA", "IRA.Low","IRA.High")
@@ -1030,7 +1030,7 @@ all_panels_gt %>%
 ## F2.7 nox and so2 emissions
 
 ```{r}
-fig_no= 2.7
+fig_no= "2.7.nox_so2"
 
 # nox
 clean_data_nox = spg_clean(ts_map_ID = 122, drop = c("ReEDS-NREL"), histsrc = "EPA", 

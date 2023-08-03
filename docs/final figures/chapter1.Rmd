@@ -41,7 +41,7 @@ clean_data = clean_data %>%
 ## F1.1 e-w co2 emissions from fossil fuel combustion and industrial processes by sector
 
 ```{r}
-fig_no = 1.1
+fig_no = "1.1.ewco2_direct_indirect"
 
 subpalettes = create_subpalettes(figmap_leep_stackbar, config)
 
@@ -65,7 +65,7 @@ saveall(fig, df, fig_no)
 ## F1.2 economy-wide co2 emissions
 
 ```{r}
-fig_no = "1.2"
+fig_no = "1.2.ewco2_projection"
 
 Econ_data = spg_clean(
   99,
@@ -107,7 +107,7 @@ EconTab
 ## F1.3/ES.2 key indicators
 
 ```{r}
-fig_no = 1.3
+fig_no = "1.3.summary_ranges"
 
 Elec_data = spg_clean(
   98,
@@ -292,9 +292,6 @@ combined
 indicators_all_clean = indicators_all %>% 
   select(model,scenario,unit,region,title_name.y,year,value,value_2005,pct_diff) %>% 
   rename(`percent diff 2005` = pct_diff)
-saveall(combined, indicators_all_clean, fig_no)
-fig_no = "ES.2"
-saveall(combined, indicators_all_clean, fig_no)
 
 EconTab
 ElecTab
@@ -318,15 +315,18 @@ summary_NoIRA = indicators_summ %>%
 
 summary = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
 
+saveall(combined, indicators_all_clean, fig_no)
 savedata(summary, paste(fig_no,"summary",sep="_"))
-fig_no = 1.3
+
+fig_no = "ES.2.summary_ranges"
+saveall(combined, indicators_all_clean, fig_no)
 savedata(summary, paste(fig_no,"summary",sep="_"))
 ```
 
 ## F1.4 fossil energy consumption by fuel
 
 ```{r}
-fig_no = 1.4
+fig_no = "1.4.fossilenergy"
 
 Coal_data = spg_clean(
   ts_map_ID = 94,
@@ -457,7 +457,7 @@ savedata(PetrolSpg$data, paste(fig_no, "Petroleum"))
 ## F1.5 economy-wide co2 emissions sensitivities
 
 ```{r}
-fig_no = 1.5
+fig_no = "1.5.ew_sensitivities"
 
 # sensitivity dot plots
 panel1_scens = c("Core","IRA", "IRA.Low","IRA.High") # IRA Implementation
@@ -939,6 +939,4 @@ all_panels_gt %>%
 
 #all_panels_gt %>% 
 #   gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".png"), vwidth = 1500, vheight = 1000)
-
-
 ```

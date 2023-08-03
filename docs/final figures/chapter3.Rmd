@@ -37,7 +37,7 @@ clean_data = clean_data %>%
 ## 3.1 co2 emissions from the transportation sector in the us compared to economy-wide co2 emissions
 
 ```{r}
-fig_no = 3.1
+fig_no = "3.1.trnco2_direct_indirect"
 
 subpalettes = create_subpalettes(figmap_leep_stackbar, config)
 
@@ -64,7 +64,7 @@ saveall(p2, dta2, fig_no)
 ## 3.2 co2 emissions from the transportation sector in the us by end use
 
 ```{r}
-fig_no = 3.2
+fig_no = "3.2.trnco2_breakout"
 
 subpalettes = create_subpalettes(figmap_leep_stackbar, config)
 sp = subpalettes$`Transportation CO2`
@@ -93,7 +93,7 @@ saveall(fig, dta, fig_no)
 ## 3.3 total co2 emissions in the transportation sector
 
 ```{r}
-fig_no = 3.3
+fig_no = "3.3.trnco2_projection"
 
 Tran_data = spg_clean(
   19, 
@@ -136,7 +136,7 @@ html(TranSpg$data, "Transportation CO2")
 ## 3.4 electric vehicle percent share of new sales
 
 ```{r}
-fig_no = "3.4"
+fig_no = "3.4.ev_salesshare"
 
 # TODO: NEMS-OP should only have reporting every 5 years
 
@@ -320,7 +320,7 @@ saveall(figure_full, ev_share_data, fig_no)
 ## 3.5 electricity demand from light-duty vehicles in the transportation sector
 
 ```{r}
-fig_no = 3.5
+fig_no = "3.5.elc_ldv"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 24, "United States")
 

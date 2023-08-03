@@ -63,7 +63,11 @@ master_palette <- c(
   "Lindigo" = "#524fa1",
   "Lpink" = "#af499b",
   "Lbrown" = "#876123",
-  "black" = "black"
+  "black" = "black",
+
+  # old colors
+  "light salmon" = "#F28063",
+  "teal blue" = "#0388B3"
   )
 
 # Color Mapping - labels matched to hex codes
@@ -76,6 +80,10 @@ color_map <- c(
   "No IRA" = "Lblue",
   "IRA.High" = "Lteal",
   "IRA.Low" = "Lsky",
+
+  # "IRA" = "teal blue",
+  # "Reference" = "light salmon",
+  # "No IRA" = "light salmon",
 
   # models
   "NEMS-EIA" = "black", #AEO 2023 outputs from OnLocation
@@ -103,17 +111,17 @@ color_map <- c(
   # technology
   "Biomass w/o CCS" = "Lindigo",
   "Biomass w/ CCS" = "Lpink",
-  "Coal" = "Lpurple",
+  "Coal" = "Lblue",
   "Coal w/ CCS" = "black",
   "Coal w/o CCS" = "Lpurple",
-  "Gas" = "Lmagenta",
+  "Gas" = "Lgold",
   "Gas w/ CCS" = "Lsalmon",
   "Gas w/o CCS" = "Lmagenta",
   "Geothermal" = "Lblue",
   "Hydro" = "Laqua",
   "Hydrogen" = "Lorange",
   "Nuclear" = "Lsky",
-  "Petroleum" = "Lbrown",
+  "Petroleum" = "Lpurple",
   "Oil" = "Lbrown",
   "Solar" = "Lgold",
   "Wind" = "Lgreen",

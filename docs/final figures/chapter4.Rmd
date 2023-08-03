@@ -40,7 +40,7 @@ clean_data = clean_data %>%
 ## 4.1 co2 emissions from the buildings sector in the us compared to economy-wide co2 emissions
 
 ```{r}
-fig_no = 4.1
+fig_no = "4.1.bldco2_direct_indirect"
 
 subpalettes = create_subpalettes(figmap_leep_stackbar, config)
 
@@ -67,7 +67,7 @@ saveall(p3, dta3, fig_no)
 ## 4.2 buildings total co2 emissions
 
 ```{r}
-fig_no = 4.2
+fig_no = "4.2.bldco2_projection"
 
 Tot_data = spg_clean(
   23,

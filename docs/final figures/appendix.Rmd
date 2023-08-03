@@ -194,8 +194,8 @@ table_es1 = es1_full %>% gt() %>%
 
 table_es1
 
-table_es1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
-table_es1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
+# table_es1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
+# table_es1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
 ```
 
 # Appendix D
@@ -203,7 +203,7 @@ table_es1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no
 ## Emissions reudctions by end use type from scout modeling
 
 ```{r}
-fig_no = "D.1"
+fig_no = "D.1.scout_results"
 
 data <- read.csv("./data-extra/scout_buildings_IRA_scenario_emissions_wedges.csv")
 
@@ -407,7 +407,7 @@ savefig(fig$figure, fig_no)
 ### Coal
 
 ```{r}
-fig_no = "F.6.Coal"
+fig_no = "F.6.Coal_energy"
 
 ts_map_ID = 94
 pd_map_ID = 32
@@ -434,7 +434,7 @@ savefig(fig$figure, fig_no)
 ### Gas
 
 ```{r}
-fig_no = "F.7.Gas"
+fig_no = "F.7.Gas_energy"
 
 ts_map_ID = 93
 pd_map_ID = 31
@@ -461,7 +461,7 @@ savefig(fig$figure, fig_no)
 ### Petroleum
 
 ```{r}
-fig_no = "F.8.Petrol"
+fig_no = "F.8.Petrol_energy"
 
 ts_map_ID = 92
 pd_map_ID = 30
@@ -877,7 +877,7 @@ savefig(fig, fig_no)
 ### Coal
 
 ```{r}
-fig_no = "F.14.CoalGen" # w/o CCS
+fig_no = "F.14.CoalnoCCSGen" # w/o CCS
 
 ts_map_ID = 82
 pd_map_ID = 71
@@ -905,7 +905,7 @@ savefig(fig$figure, fig_no)
 ### Gas
 
 ```{r}
-fig_no = "F.15.GasGen" # w/o CCS
+fig_no = "F.15.GasNoCCSGen" # w/o CCS
 
 ts_map_ID = 81
 pd_map_ID = 70
@@ -1382,7 +1382,7 @@ savefig(figure, fig_no)
 ### Electricity generation by model
 
 ```{r}
-fig_no = "F.18.Generation"
+fig_no = "F.18.GenerationbyModel"
 
 exclude_models = c()
 
@@ -1459,7 +1459,7 @@ saveall(p, dta, fig_no)
 ### Electricity capacity by model
 
 ```{r}
-fig_no = "F.19.Capacity"
+fig_no = "F.19.CapacitybyModel"
 
 p = print_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 15, "United States",
                 level_mod = models_alph) +
@@ -1485,7 +1485,7 @@ saveall(p, dta, fig_no)
 ### Generation
 
 ```{r}
-fig_no = "F.20"
+fig_no = "F.20.gascoal_generation"
 
 exclude_models = c(
   "AEO2020",
@@ -1552,7 +1552,7 @@ generation_table %>% gtsave(paste0("./output/final_figures/display_tables/Table"
 ### Capacity
 
 ```{r}
-fig_no = "F.21"
+fig_no = "F.21.gascoal_capacity"
 
 exclude_models = c(
   "AEO2020",
@@ -1615,7 +1615,7 @@ capacity_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",f
 ### Capacity Factor
 
 ```{r}
-fig_no = "F.22"
+fig_no = "F.22.gascoal_capacityfactor"
 
 exclude_models = c(
   "AEO2020",
@@ -1664,7 +1664,7 @@ cf_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,
 ## Electrification Figure
 
 ```{r}
-fig_no = "G.1"
+fig_no = "G.1.electricity_share_final_energy"
 
 elc = readxl::read_xlsx("data-extra/electrification_compiled.xlsx") %>%
   rename(value = value100) %>%
@@ -2058,7 +2058,7 @@ table2 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".
 ## EconWide Direct/Indirect
 
 ```{r}
-fig_no = "H.1"
+fig_no = "H.1.ew_projections_direct_indirect"
 
 Econ_data = spg_clean(
   99,
@@ -2141,7 +2141,7 @@ savefig(fig, fig_no, wd=9,ht=4)
 
 ## Transportation Direct/Indirect
 ```{r}
-fig_no = "H.2"
+fig_no = "H.2.trn_projections_direct_indirect"
 
 Dir_data = spg_clean(
   97, 
@@ -2214,7 +2214,7 @@ savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 ## Building Direct/Indirect
 
 ```{r}
-fig_no = "H.3"
+fig_no = "H.3.bld_projections_direct_indirect"
 
 Dir_data = spg_clean(
   95, 
@@ -2287,7 +2287,7 @@ savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 ## Industry Direct/Indirect
 
 ```{r}
-fig_no = "H.4"
+fig_no = "H.4.ind_projections_direct_indirect"
 
 Dir_data = spg_clean(
   96, 
@@ -2362,7 +2362,7 @@ savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 ## with 2021
 
 ```{r}
-fig_no = "I.1"
+fig_no = "I.1.gen_bytype"
 
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 names(subpalettes$`Emissions|CO2|Energy|Demand|Industry`) = c("2021", "No IRA", "IRA")
@@ -3265,7 +3265,6 @@ tableHTML(caption = paste(title), rownames = F)
 ```
 
 ```{r}
-
 title = "I.Low Emitting Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
@@ -3419,7 +3418,6 @@ tableHTML(caption = paste(title), rownames = F)
 ```
 
 ```{r}
-
 title = "I.High Emitting Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
@@ -3571,7 +3569,6 @@ tableHTML(caption = paste(title), rownames = F)
 ```
 
 ```{r}
-
 title = "I.Wind Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
@@ -3723,7 +3720,6 @@ tableHTML(caption = paste(title), rownames = F)
 ```
 
 ```{r}
-
 title = "I.Solar Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
@@ -3875,7 +3871,6 @@ tableHTML(caption = paste(title), rownames = F)
 ```
 
 ```{r}
-
 title = "I.Nuclear Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
@@ -4027,7 +4022,6 @@ tableHTML(caption = paste(title), rownames = F)
 ```
 
 ```{r}
-
 title = "I.CCS Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
@@ -4179,7 +4173,6 @@ tableHTML(caption = paste(title), rownames = F)
 ```
 
 ```{r}
-
 title = "I.Coal Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
@@ -4331,7 +4324,6 @@ tableHTML(caption = paste(title), rownames = F)
 ```
 
 ```{r}
-
 title = "I.Nautural Gas Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
@@ -4483,7 +4475,6 @@ tableHTML(caption = paste(title), rownames = F)
 ```
 
 ```{r}
-
 title = "I.Other Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
@@ -4633,7 +4624,7 @@ tableHTML(caption = paste(title), rownames = F)
 ## Differences
 
 ```{r}
-fig_no = "I.2"
+fig_no = "I.2.genbytype_differences"
 
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
@@ -5634,7 +5625,7 @@ data_table = data_Other %>%
 ## Natural gas price
 
 ```{r}
-fig_no = "J.1"
+fig_no = "J.1.naturalgasprice"
 
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
@@ -5737,7 +5728,7 @@ savefig(figure, fig_no)
 ## Capital Costs
 
 ```{r} 
-fig_no = "J.2"
+fig_no = "J.2.capitalcosts_bat_ngcc_sol_wnd"
 dta = read_csv("./data-extra/ira_comparison_raw/costs_raw.csv")
 #View(dta)
 
@@ -5814,6 +5805,6 @@ p2 = dta_bottom %>% ggplot() +
 p2
 
 savefig(p,fig_no)
-fig_no = "J.3"
+fig_no = "J.3.capitalcosts_coalgasCCS"
 savefig(p2,fig_no)
 ```

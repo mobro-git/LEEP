@@ -1,0 +1,6 @@
+all_sens = c("Historic","No IRA","IRA","Core",
+             "IRA.Low","IRA.High",
+             "High Energy Price","High Growth","Low Energy Price","Low Growth",
+             "All Advanced","Opt-IRA.Adv","Constrained Deployment","Pess-IRA.Adv",
+             "Adv Battery/Renew","Cons Battery/Renew",
+             "No IRA.2","No IRA.3","No IRA.4","No IRA.5","No IRA.6","No IRA.7"),
