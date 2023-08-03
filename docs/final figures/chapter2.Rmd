@@ -83,9 +83,9 @@ fig = ggplot(data, aes(fill = variable_rename, y = value, alpha = alpha, x = yea
     theme(panel.spacing.x = unit(4, "mm"), legend.position = "bottom") +
     scale_alpha(range = c(0.6, 1), guide = F)+
   scale_color_manual(breaks = c( "Coal", "Gas", "Petroleum", "Other Sectors"), 
-                     values = c( "#003052", "#BC8F73", "#733D3D", "#DEDEDE")) +
+                     values = c( "#2a546c", "#ae7f2c", "#8b507e", "#DEDEDE")) +
   scale_fill_manual(breaks = c( "Coal", "Gas", "Petroleum", "Other Sectors"), 
-                     values = c( "#003052", "#BC8F73", "#733D3D", "#DEDEDE")) +
+                     values = c( "#2a546c", "#ae7f2c", "#8b507e", "#DEDEDE")) +
   theme(axis.ticks = element_blank())
 fig
 
