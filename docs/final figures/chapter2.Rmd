@@ -293,6 +293,19 @@ p = dta_full %>% ggplot() +
 p
 
 saveall(p, dta_full, fig_no)
+
+data_summary = dta_full %>%
+  pivot_wider(names_from = variable_rename) %>%
+  rename(Model = model,
+         Year = year,
+         Metric = metric) %>%
+  mutate(Metric = case_when(
+    Metric == "diff" ~ "Difference from No IRA", 
+    T ~ "IRA"
+  ))
+
+savedata(data_summary, fig_no = "2.4 Summary Table")
+savedata(data_summary, fig_no = "F.x1 Summary Table")
 ```
 
 ## F2.5 capacity additions by technology
@@ -446,6 +459,39 @@ dta5 = clean_supplemental_data(dta5, fig_no)
 
 savedata(dta3, paste0(fig_no,"hist"))
 savedata(dta5, paste0(fig_no, "proj"))
+
+summary_hist = dta3 %>%
+  rename(Model = model, 
+         Scenario = scenario, 
+         Variable = variable_rename, 
+         Year = year) %>%
+  select(Model, Scenario, Variable, Year, value) %>%
+  mutate(Change = case_when(
+    value > 0 ~ "Additions", 
+    T ~ "Retirements"
+  )) %>%
+  pivot_wider(names_from = Variable, values_from = value, values_fill = 0) %>%
+  mutate(`Gas CCS` = 0, `Coal CCS` = 0)
+
+summary_proj = dta5 %>%
+  rename(Model = model, 
+         Scenario = scenario, 
+         Variable = variable_rename, 
+         Year = year)%>%
+  select(Model, Scenario, Variable, Year, value) %>%
+  mutate(Change = case_when(
+    value >= 0 ~ "Additions", 
+    T ~ "Retirements"
+  ))%>%
+  filter(!is.na(Scenario)) %>%
+  filter(value != 0) %>%
+  pivot_wider(names_from = Variable, values_from = value, values_fill = 0) %>%
+  mutate(Other = 0)
+
+summary = rbind(summary_hist, summary_proj) 
+  
+savedata(data_summary, fig_no = "2.5 Summary Table")
+savedata(data_summary, fig_no = "F.x2 Summary Table")
 ```
 
 ## F2.6 sensitivity of electric sector emissions
