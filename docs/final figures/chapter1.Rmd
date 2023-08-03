@@ -303,6 +303,25 @@ ElecTab
 TranTab
 BuilTab
 IndTab
+
+summary_IRA = indicators_summ %>%
+  ungroup() %>%
+  select(sector, scenario, year, min, median, max) %>%
+  filter(scenario == "IRA") %>%
+  select(sector, year,
+         `IRA Min` = min, `IRA Median` = median, `IRA Max` = max)
+
+summary_NoIRA = indicators_summ %>%
+  ungroup() %>%
+  select(sector, scenario, year, min, median, max) %>%
+  filter(scenario == "No IRA")%>%
+  select(sector, year,
+         `No IRA Min` = min, `No IRA Median` = median, `No IRA Max` = max)
+
+summary = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
+
+savedata(summary, paste(fig_no,"summary",sep="_"))
+
 ```
 
 ## F1.4 fossil energy consumption by fuel
