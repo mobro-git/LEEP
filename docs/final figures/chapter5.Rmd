@@ -71,15 +71,6 @@ pie1 = pie %>% filter(Table == 1) %>%
   rename(value = `% Energy-related Emissions`) %>%
   mutate(value = round(value*100,0))
 
-# ggplot(data = pie1, aes(x = "", y = value, fill = Industry)) +
-#   geom_bar(width = 1, stat = "identity", color = "white") +
-#   coord_polar("y", start = 0) +
-#   scale_fill_brewer(palette = "Dark2") +
-#   blank_theme +
-#   geom_text(aes(label = paste(value,"%",sep=""), x = 1.2),
-#             position = position_stack(vjust = 0.5),
-#             size=4)
-
 total = sum(pie1$value)
 p = pie1 %>% mutate(value = (100 * value) / total) %>% arrange(desc(value)) %>% ggplot() +
   geom_bar(aes(x = "2021", y = value, fill = fct_reorder(Industry, value)),
@@ -93,11 +84,9 @@ p = pie1 %>% mutate(value = (100 * value) / total) %>% arrange(desc(value)) %>% 
   theme_emf() + 
   theme(axis.ticks = element_blank(), legend.position = "none",
         axis.title.x = element_blank())
-
 p
 
-savefig(p, fig_no)
-savedata(pie1, fig_no)
+saveall(p, pie1, fig_no, wd=5, ht=5)
 ```
 
 ## 5.3 industry total co2 emissions 

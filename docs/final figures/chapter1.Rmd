@@ -38,7 +38,7 @@ clean_data = clean_data %>%
   filter(!(model == "IPM-EPA" & year == 2025))
 ```
 
-## F1.1 economy-wide co2 emissions from fossil fuel combustion by sector
+## F1.1 e-w co2 emissions from fossil fuel combustion and industrial processes by sector
 
 ```{r}
 fig_no = 1.1
@@ -911,6 +911,13 @@ all_panels_gt = all_panels %>% gt() %>%
       cell_text(align = "center")
     ), locations = cells_body(columns = 3:12)
   ) %>% sub_missing(columns = 3:12, missing_text = "")
+
+if(metric == "percent_2005") {
+  all_panels_gt = all_panels_gt %>%
+    tab_header(title = gt::html(
+      "Economy-wide CO<sub>2</sub> Emissions Changes (percentage points of 2005 emissions) Relative to the IRA Moderate Scenario")
+  )
+}
 
 if (metric == "percent" | metric == "percent_2005") {
   all_panels_gt = all_panels_gt %>% fmt_number(decimals = 1, scale_by = 100, 

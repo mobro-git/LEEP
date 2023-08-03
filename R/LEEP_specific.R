@@ -587,7 +587,7 @@ emis_stack = function(dta, title, figmap, config, econwide = FALSE) {
     #geom_text(aes(x = year, y = value, label = round(value, 0), fill = variable_rename), size = 2.5, position = position_stack(vjust = 0.5, reverse = FALSE)) +
     #geom_text(data = totals, aes(x = year, y = value, label = round(value, 0)), vjust = -0.4, stat = "identity", size = 2.5) +
     scale_x_continuous(breaks = c(2005, 2021), labels = c(2005, 2021)) +
-    scale_y_continuous(expand = c(0,0), limits = c(0,6000), labels = scales::comma) +
+    scale_y_continuous(expand = c(0,0), limits = c(0,6200),labels = scales::comma) +
     labs(y = expression(paste("End-Use Emissions (Mt C", O[2], "/yr)")), title = title) +
     # expression(paste("Economy-Wide C", O[2])),
     scale_subpalette(subpalettes, "Emissions Stack") +

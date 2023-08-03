@@ -51,6 +51,7 @@ data <- clean_data %>%
          variable == "Emissions|CO2|Energy|Demand|Industry|Coal" |
          variable == "Emissions|CO2|Energy|Demand|Industry|Gas" |
          variable == "Emissions|CO2|Energy|Demand|Industry|Oil" |
+         variable == "Emissions|CO2|GHGI Non-Energy and Industrial Process" |
          variable == "Emissions|CO2|Energy|Demand|Transportation|Gas" |
          variable == "Emissions|CO2|Energy|Demand|Transportation|Oil" |
          variable == "Emissions|CO2|Energy|Supply|Electricity|Coal" |
@@ -58,6 +59,7 @@ data <- clean_data %>%
          variable == "Emissions|CO2|Energy|Supply|Electricity|Oil") %>%
   mutate(variable_rename = case_when(
     grepl("Demand", variable) ~ "Other Sectors",
+    grepl("GHGI", variable) ~ "Other Sectors",
     grepl("Coal", variable) ~ "Coal", 
     grepl("Gas", variable) ~ "Gas", 
     grepl("Oil", variable) ~ "Petroleum",
@@ -76,7 +78,7 @@ fig = ggplot(data, aes(fill = variable_rename, y = value, alpha = alpha, x = yea
   labs(title = "",
          x = "",
          y = expression(paste("Power Sector Emissions (Mt C", O[2], "/yr)"))) +
-    scale_y_continuous(expand = c(0,0), limits = c(0, 6000), labels = scales::comma) +
+    scale_y_continuous(expand = c(0,0), limits = c(0, 6200), labels = scales::comma) +
     scale_x_continuous(breaks = c(2005, 2021)) + 
     theme(panel.spacing.x = unit(4, "mm"), legend.position = "bottom") +
     scale_alpha(range = c(0.6, 1), guide = F)+
@@ -992,6 +994,13 @@ all_panels_gt = all_panels %>% gt() %>%
       cell_text(align = "center")
     ), locations = cells_body(columns = 3:14)
   ) %>% sub_missing(columns = 3:14, missing_text = "-")
+
+if(metric == "percent_2005") {
+  all_panels_gt = all_panels_gt %>%
+    tab_header(title = gt::html(
+      "Electric Sector CO<sub>2</sub> Emissions Changes (percentage points of 2005 emissions) Relative to the IRA Moderate Scenario")
+  )
+}
 
 if (metric == "percent" | metric == "percent_2005") {
   #all_panels_gt = all_panels_gt %>% fmt_percent(decimals = 1, use_seps = TRUE, columns = 3:14)
