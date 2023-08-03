@@ -245,28 +245,36 @@
 <polyline points='323.05,59.71 408.17,59.71 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='344.11,340.56 344.11,27.71 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='387.10,340.56 387.10,27.71 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
-<circle cx='344.11' cy='177.46' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='387.10' cy='185.47' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='344.11' cy='178.45' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='387.10' cy='186.92' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='344.11' cy='179.50' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='387.10' cy='188.47' r='2.49' style='stroke-width: 0.71;' />
-<line x1='341.91' y1='181.20' x2='342.46' y2='180.51' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<line x1='384.91' y1='189.29' x2='385.43' y2='188.73' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<line x1='345.50' y1='184.97' x2='345.30' y2='184.18' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<line x1='388.52' y1='193.97' x2='388.30' y2='193.12' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<text x='339.45' y='172.65' style='font-size: 4.27px; font-family: "Arial";' textLength='8.77px' lengthAdjust='spacingAndGlyphs'>High</text>
-<text x='382.63' y='180.67' style='font-size: 4.27px; font-family: "Arial";' textLength='8.77px' lengthAdjust='spacingAndGlyphs'>High</text>
-<text x='331.82' y='182.90' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
-<text x='374.82' y='190.93' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
-<text x='347.30' y='187.40' style='font-size: 4.27px; font-family: "Arial";' textLength='7.82px' lengthAdjust='spacingAndGlyphs'>Low</text>
-<text x='390.32' y='196.39' style='font-size: 4.27px; font-family: "Arial";' textLength='7.82px' lengthAdjust='spacingAndGlyphs'>Low</text>
-<text x='330.35' y='45.88' style='font-size: 8.54px;fill: #A1A1A1; font-family: "Arial";' textLength='51.20px' lengthAdjust='spacingAndGlyphs'>GCAM-PNNL</text>
+<circle cx='340.67' cy='187.39' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='383.66' cy='198.40' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='340.67' cy='178.45' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='383.66' cy='186.92' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='340.67' cy='177.66' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='383.66' cy='185.51' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='347.55' cy='257.44' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='347.55' cy='268.32' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='347.55' cy='235.06' r='2.49' style='stroke-width: 0.71;' />
+<line x1='338.56' y1='182.97' x2='339.17' y2='181.67' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<line x1='381.57' y1='192.14' x2='382.22' y2='190.51' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<line x1='338.66' y1='172.25' x2='339.27' y2='173.88' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<line x1='381.66' y1='180.12' x2='382.26' y2='181.73' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<line x1='345.46' y1='262.39' x2='346.09' y2='260.90' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<text x='338.83' y='195.24' style='font-size: 4.27px; font-family: "Arial";' textLength='8.77px' lengthAdjust='spacingAndGlyphs'>High</text>
+<text x='381.78' y='206.27' style='font-size: 4.27px; font-family: "Arial";' textLength='8.77px' lengthAdjust='spacingAndGlyphs'>High</text>
+<text x='328.48' y='184.96' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
+<text x='371.48' y='194.20' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
+<text x='329.04' y='173.19' style='font-size: 4.27px; font-family: "Arial";' textLength='7.82px' lengthAdjust='spacingAndGlyphs'>Low</text>
+<text x='372.04' y='181.07' style='font-size: 4.27px; font-family: "Arial";' textLength='7.82px' lengthAdjust='spacingAndGlyphs'>Low</text>
+<text x='335.37' y='264.43' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
+<text x='345.66' y='276.21' style='font-size: 4.27px; font-family: "Arial";' textLength='8.77px' lengthAdjust='spacingAndGlyphs'>High</text>
+<text x='345.67' y='242.92' style='font-size: 4.27px; font-family: "Arial";' textLength='7.82px' lengthAdjust='spacingAndGlyphs'>Low</text>
+<text x='330.35' y='45.88' style='font-size: 8.54px;fill: #A1A1A1; font-family: "Arial";' textLength='63.68px' lengthAdjust='spacingAndGlyphs'>GCAM-PNNL (L)</text>
+<text x='330.35' y='56.54' style='font-size: 8.54px;fill: #A1A1A1; font-family: "Arial";' textLength='67.95px' lengthAdjust='spacingAndGlyphs'>ReEDS-NREL (R)</text>
 <rect x='323.05' y='27.71' width='85.12' height='312.85' style='stroke-width: 0.53; stroke: #B3B3B3;' />
 <text x='344.11' y='351.94' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2030</text>
 <text x='387.10' y='351.94' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2035</text>
 <text x='365.61' y='11.91' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='0.00px' lengthAdjust='spacingAndGlyphs'></text>
-<text x='365.61' y='20.55' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='63.14px' lengthAdjust='spacingAndGlyphs'>Economic Growth</text>
+<text x='365.61' y='20.55' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='45.81px' lengthAdjust='spacingAndGlyphs'>Energy Price</text>
 </g>
 <defs>
   <clipPath id='cpNDA5LjE2fDQ5OC41Mnw1LjQ4fDM1NC41Mg=='>
@@ -288,35 +296,27 @@
 <polyline points='412.40,59.71 497.52,59.71 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='433.47,340.56 433.47,27.71 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
 <polyline points='476.46,340.56 476.46,27.71 ' style='stroke-width: 0.53; stroke: #DEDEDE; stroke-linecap: butt;' />
-<circle cx='430.03' cy='187.39' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='473.02' cy='198.40' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='430.03' cy='178.45' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='473.02' cy='186.92' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='430.03' cy='177.66' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='473.02' cy='185.51' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='436.91' cy='257.44' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='436.91' cy='268.32' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='436.91' cy='235.06' r='2.49' style='stroke-width: 0.71;' />
-<line x1='427.92' y1='182.97' x2='428.52' y2='181.67' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<line x1='470.92' y1='192.14' x2='471.58' y2='190.51' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<line x1='428.02' y1='172.25' x2='428.62' y2='173.88' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<line x1='471.02' y1='180.12' x2='471.62' y2='181.73' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<line x1='434.81' y1='262.39' x2='435.44' y2='260.90' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
-<text x='428.19' y='195.24' style='font-size: 4.27px; font-family: "Arial";' textLength='8.77px' lengthAdjust='spacingAndGlyphs'>High</text>
-<text x='471.14' y='206.27' style='font-size: 4.27px; font-family: "Arial";' textLength='8.77px' lengthAdjust='spacingAndGlyphs'>High</text>
-<text x='417.83' y='184.96' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
-<text x='460.84' y='194.20' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
-<text x='418.40' y='173.19' style='font-size: 4.27px; font-family: "Arial";' textLength='7.82px' lengthAdjust='spacingAndGlyphs'>Low</text>
-<text x='461.40' y='181.07' style='font-size: 4.27px; font-family: "Arial";' textLength='7.82px' lengthAdjust='spacingAndGlyphs'>Low</text>
-<text x='424.72' y='264.43' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
-<text x='435.02' y='276.21' style='font-size: 4.27px; font-family: "Arial";' textLength='8.77px' lengthAdjust='spacingAndGlyphs'>High</text>
-<text x='435.02' y='242.92' style='font-size: 4.27px; font-family: "Arial";' textLength='7.82px' lengthAdjust='spacingAndGlyphs'>Low</text>
-<text x='419.71' y='45.88' style='font-size: 8.54px;fill: #A1A1A1; font-family: "Arial";' textLength='63.68px' lengthAdjust='spacingAndGlyphs'>GCAM-PNNL (L)</text>
-<text x='419.71' y='56.54' style='font-size: 8.54px;fill: #A1A1A1; font-family: "Arial";' textLength='67.95px' lengthAdjust='spacingAndGlyphs'>ReEDS-NREL (R)</text>
+<circle cx='433.47' cy='177.46' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='476.46' cy='185.47' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='433.47' cy='178.45' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='476.46' cy='186.92' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='433.47' cy='179.50' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='476.46' cy='188.47' r='2.49' style='stroke-width: 0.71;' />
+<line x1='431.27' y1='181.20' x2='431.82' y2='180.51' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<line x1='474.27' y1='189.29' x2='474.79' y2='188.73' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<line x1='434.86' y1='184.97' x2='434.66' y2='184.18' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<line x1='477.87' y1='193.97' x2='477.65' y2='193.12' style='stroke-width: 0.43; stroke: #000000; stroke-opacity: 0.60;' />
+<text x='428.80' y='172.65' style='font-size: 4.27px; font-family: "Arial";' textLength='8.77px' lengthAdjust='spacingAndGlyphs'>High</text>
+<text x='471.98' y='180.67' style='font-size: 4.27px; font-family: "Arial";' textLength='8.77px' lengthAdjust='spacingAndGlyphs'>High</text>
+<text x='421.18' y='182.90' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
+<text x='464.18' y='190.93' style='font-size: 4.27px; font-family: "Arial";' textLength='8.29px' lengthAdjust='spacingAndGlyphs'>Mod</text>
+<text x='436.66' y='187.40' style='font-size: 4.27px; font-family: "Arial";' textLength='7.82px' lengthAdjust='spacingAndGlyphs'>Low</text>
+<text x='479.67' y='196.39' style='font-size: 4.27px; font-family: "Arial";' textLength='7.82px' lengthAdjust='spacingAndGlyphs'>Low</text>
+<text x='419.71' y='45.88' style='font-size: 8.54px;fill: #A1A1A1; font-family: "Arial";' textLength='51.20px' lengthAdjust='spacingAndGlyphs'>GCAM-PNNL</text>
 <rect x='412.40' y='27.71' width='85.12' height='312.85' style='stroke-width: 0.53; stroke: #B3B3B3;' />
 <text x='433.47' y='351.94' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2030</text>
 <text x='476.46' y='351.94' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2035</text>
 <text x='454.96' y='11.91' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='0.00px' lengthAdjust='spacingAndGlyphs'></text>
-<text x='454.96' y='20.55' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='45.81px' lengthAdjust='spacingAndGlyphs'>Energy Price</text>
+<text x='454.96' y='20.55' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='63.14px' lengthAdjust='spacingAndGlyphs'>Economic Growth</text>
 </g>
 </svg>

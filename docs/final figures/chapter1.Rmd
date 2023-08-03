@@ -321,7 +321,6 @@ summary_NoIRA = indicators_summ %>%
 summary = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
 
 savedata(summary, paste(fig_no,"summary",sep="_"))
-
 ```
 
 ## F1.4 fossil energy consumption by fuel
@@ -835,10 +834,7 @@ all_panels = cbind(econ_panel1_summ, econ_panel4_summ, econ_panel5_summ, econ_pa
 # all_panels = add_header_row(all_panels, values = c("","Difference from IRA Moderate Scenario (negative is reduced emissions)"), colwidths = c(4,10))
 # 
 # all_panels
-```
 
-
-```{r}
 fig_no = "1.2.1"
 
 # all_panels is created in the previous code chunk

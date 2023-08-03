@@ -83,11 +83,11 @@ pie1 = pie %>% filter(Table == 1) %>%
 total = sum(pie1$value)
 p = pie1 %>% mutate(value = (100 * value) / total) %>% arrange(desc(value)) %>% ggplot() +
   geom_bar(aes(x = "2021", y = value, fill = fct_reorder(Industry, value)),
-           position = position_stack(), stat = "identity", width = 0.4) + 
+           position = position_stack(), stat = "identity", width = 0.4) +
   geom_text(aes(x = "2021", y = value, label = paste0(Industry,": ", round(value,1), "%")), 
                 position = position_stack(vjust = 0.5), stat = "identity", size = 3) +
   scale_y_continuous(limits = c(0,100), expand = expansion(add = c(0,5)), 
-                     name = expression(paste("Percent of Industrial C", O[2], " Emissions"))) +
+                     name = expression(paste("Percent of Industrial Energy-Related C", O[2], " Emissions"))) +
   scale_subpalette(subpalettes,"Industrial Emissions") +
   #geom_bar(aes(x = year, y = value, fill = variable_rename), position = position_stack(), stat = "identity")
   theme_emf() + 
@@ -177,9 +177,10 @@ print(stats)
 saveall(p,dta,fig_no)
 ```
 
-## 5.y sensitivities data
+## sensitivities data
 
 ```{r}
+sector = "industry"
 #metric = "absolute"
 #metric = "percent"
 metric = "percent_2005"
@@ -476,9 +477,7 @@ panel5_summ = panel5_summ %>%
 
 all_panels = cbind(panel1_summ, panel4_summ, panel5_summ, panel3_summ, panel2_summ)
 
-#View(all_panels)
-
-all_panels %>% write.csv(paste0("./output/final_figures/data/Industry_sensitivity_data_",metric,".csv"))
+write_csv(all_panels, paste("output/final_figures/data/sensitivities_",sector,"_",metric,".csv"))
 ```
 
 

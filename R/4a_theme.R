@@ -384,7 +384,9 @@ color_map <- c(
   "Paper" = "light orange",
   "Other Light Industry" = "dark salmon",
   "Refining" = "m.yellow",
-  "Chemicals" = "teal blue"
+  "Chemicals" = "teal blue",
+  "Light" = "darkest blue",
+  "Heavy" = "mid gray blue"
   ) %>%
   find_color(master_palette)
 
