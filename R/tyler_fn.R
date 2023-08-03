@@ -70,8 +70,8 @@ spg2 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
           axis.text.x = element_text(angle = 45, hjust = 1),
           axis.ticks = element_blank()) +
     annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historical", color = "black", alpha = annotate) +
-    annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#F28063", alpha = annotate) +
-    annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#0388B3", alpha = annotate)
+    annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#2A546C", alpha = annotate) +
+    annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#AE7F2C", alpha = annotate)
 
   return(list(figure = figure, data = df))
 }
@@ -105,8 +105,8 @@ spg2_2010 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, anno
           axis.text.x = element_text(angle = 45, hjust = 1),
           axis.ticks = element_blank()) +
     annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historical", color = "black", alpha = annotate) +
-    annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#F28063", alpha = annotate) +
-    annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#0388B3", alpha = annotate)
+    annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#2A546C", alpha = annotate) +
+    annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#AE7F2C", alpha = annotate)
 
   return(list(figure = figure, data = df))
 }
@@ -140,8 +140,8 @@ spg3 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
           axis.text.x = element_text(angle = 45, hjust = 1),
           axis.ticks = element_blank()) +
     annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historical", color = "black", alpha = annotate) +
-    annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#F28063", alpha = annotate) +
-    annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#0388B3", alpha = annotate)
+    annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#2A546C", alpha = annotate) +
+    annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#AE7F2C", alpha = annotate)
 
   return(list(figure = figure, data = df))
 }
@@ -215,7 +215,6 @@ dotted = function(df, spg, metric, ymin, ymax, config, figmap_leep_timeseries, d
     summarise(mean = mean(value),
               median = median(value))
 
-
   mean_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","mean"]$mean - df_stat_30[df_stat_30$scenario == "IRA","mean"]$mean
   mean_diff_35 = df_stat_35[df_stat_35$scenario == "No IRA","mean"]$mean - df_stat_35[df_stat_35$scenario == "IRA","mean"]$mean
   median_diff_30 = df_stat_30[df_stat_30$scenario == "No IRA","median"]$median - df_stat_30[df_stat_30$scenario == "IRA","median"]$median
@@ -237,13 +236,16 @@ dotted = function(df, spg, metric, ymin, ymax, config, figmap_leep_timeseries, d
                                    size = 1)
   }
 
+
+
   dots_30 = ggplot() +
-    geom_point(data = df_30, aes(x = year, y = value, color = scenario, alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = ddge)) +
+    geom_point(data = df_30, aes(x = year, y = value, color = scenario, alpha = alpha, shape = scenario),size = 1.5, position = position_dodge(width = ddge)) +
     segment_code_30 +
     scale_x_continuous(breaks = c(2030), labels = c("2030"), limits = c(2029.9, 2030.1)) +
     scale_y_continuous(limits = c(ymin, ymax)) +
     theme_emf() +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    scale_shape_manual(values = c("IRA" = 1, "No IRA" = 2)) +
     theme(panel.grid = element_blank(), plot.title = element_blank(),
           axis.text.y = element_blank(),
           axis.text.x = element_text(angle = 45, hjust=1),
@@ -254,12 +256,13 @@ dotted = function(df, spg, metric, ymin, ymax, config, figmap_leep_timeseries, d
 
   # dot plot for 2035
   dots_35 = ggplot() +
-    geom_point(data = df_35, aes(x = year, y = value, color = scenario, alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = ddge)) +
+    geom_point(data = df_35, aes(x = year, y = value, color = scenario, alpha = alpha, shape = scenario), size = 1.5, position = position_dodge(width = ddge)) +
     segment_code_35 +
     scale_x_continuous(breaks = c(2035), labels = c("2035"), limits = c(2034.9, 2035.1)) +
     scale_y_continuous(limits = c(ymin,ymax)) +
     theme_emf() +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
+    scale_shape_manual(values = c("IRA" = 1, "No IRA" = 2)) +
     theme(panel.grid = element_blank(), plot.title = element_blank(),
           axis.text.x = element_text(angle = 45, hjust=1),
           axis.text.y = element_blank(),
@@ -815,7 +818,7 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
 
   figure = (NoIRAfigure | IRAfigure) / (adfigure$figure | pdfigure$figure)+
     plot_layout(guides = "collect") +
-    plot_annotation(title = title)
+    plot_annotation(caption = title)
 
   return(list(
     figure = figure,

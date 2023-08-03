@@ -219,14 +219,12 @@ indicator_small = function(all_data, summary_data, filter_variable, subtitle = "
   summ_small = summary_data %>% filter(sector == filter_variable)
   p = data_small %>% 
     ggplot() +
-      geom_point(aes(x = pct_diff, y = scenario, color = scenario), shape = 16, alpha = 0.8, size = 1) +
+      geom_point(aes(x = pct_diff, y = scenario, color = scenario, shape = scenario), alpha = 0.8, size = 1) +
       geom_segment(data = summ_small,
                    aes(x = min, xend = max, y = scenario, yend = scenario, color = scenario),
                    alpha = 0.3, linewidth = 3) +
-      geom_point(data = summ_small, aes(x = min, y = scenario, color = scenario),
-                 shape = 16, size = 3) +
-      geom_point(data = summ_small, aes(x = max, y = scenario, color = scenario),
-                 shape = 16, size = 3) +
+      geom_point(data = summ_small, aes(x = min, y = scenario, color = scenario, shape = scenario), size = 3) +
+      geom_point(data = summ_small, aes(x = max, y = scenario, color = scenario, shape = scenario), size = 3) +
       geom_point(data = summ_small, aes(x = median, y = scenario, color = scenario),
                 shape = "|", size = 1.5, stroke = 3.5) +
       geom_vline(xintercept = 50, color = "black", linewidth = 0.1, alpha = 0.4) +
@@ -234,6 +232,8 @@ indicator_small = function(all_data, summary_data, filter_variable, subtitle = "
       ggtitle(subtitle) +
       scale_color_manual(values = c(subpalettes$`Economy-Wide Emissions`[['No IRA']], 
                                     subpalettes$`Economy-Wide Emissions`[['IRA']]), 
+                         breaks = c("No IRA", "IRA")) +
+      scale_shape_manual(values = c("No IRA" = 17, "IRA" = 16), 
                          breaks = c("No IRA", "IRA")) +
       facet_grid(year ~ ., switch = "y") +
       theme_emf() +
@@ -281,22 +281,20 @@ p4 = indicator_small(indicators_all, indicators_summ, "Buildings",
                      subtitle = expression(paste("Buildings C", O[2], " Emissions Reductions (Direct + Indirect from Electricity)")))
 p5 = indicator_small(indicators_all, indicators_summ, "Industry", bottom = FALSE, top = FALSE,
                      subtitle = expression(paste("Industry C", O[2], " Emissions Reductions (Direct + Indirect from Electricity)")))
-p1
+
 combined = (p2 / p3 / p4 / p5 / p1) +
   plot_layout(guides = "collect") +
 #  annotate("segment", x = 50, xend = 50, y = 0, yend = 100, color = "blue") +
 #  plot_annotation(theme = theme(legend.position = "top")) + 
   theme(plot.margin = margin(0, 0, 0, 0))
-
 combined
+
 indicators_all_clean = indicators_all %>% 
   select(model,scenario,unit,region,title_name.y,year,value,value_2005,pct_diff) %>% 
   rename(`percent diff 2005` = pct_diff)
 saveall(combined, indicators_all_clean, fig_no)
-savedata(indicators_summ, paste(fig_no,"summary",sep="_"))
 fig_no = "ES.2"
 saveall(combined, indicators_all_clean, fig_no)
-savedata(indicators_summ, paste(fig_no,"summary",sep="_"))
 
 EconTab
 ElecTab
@@ -320,6 +318,8 @@ summary_NoIRA = indicators_summ %>%
 
 summary = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
 
+savedata(summary, paste(fig_no,"summary",sep="_"))
+fig_no = 1.3
 savedata(summary, paste(fig_no,"summary",sep="_"))
 ```
 

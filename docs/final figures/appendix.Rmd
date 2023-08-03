@@ -196,8 +196,6 @@ table_es1
 
 table_es1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
 table_es1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
-
-
 ```
 
 # Appendix D
@@ -311,7 +309,7 @@ ymin = 300
 ymax = 1650
 brk = c(400, 800, 1200, 1600)
 
-fig = four_corners("Electricity CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
+fig = four_corners("Power sector CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -688,7 +686,7 @@ adfigure = ad(diff_ID = ad_map_ID, "", "Generation", "none", drop)
 fig = (NoIRAfigure |
          IRAfigure) / (adfigure$figure | plot_spacer()) +
   plot_layout(guides = "collect") +
-  plot_annotation(title = "Electricity Generation from Coal, Gas, and Oil with CCS")
+  plot_annotation(caption = "Electricity Generation from Coal with CCS")
 
 fig
 
@@ -725,7 +723,7 @@ savefig(fig, fig_no)
 ### Gas CCS
 
 ```{r}
-fig_no = "F.12.GasCCSGen"
+fig_no = "F.13.GasCCSGen"
 
 #Only includes Gas CSS Generation
 
@@ -840,7 +838,7 @@ adfigure = ad(diff_ID = ad_map_ID, "", "Generation", "none", drop)
 fig = (NoIRAfigure |
          IRAfigure) / (adfigure$figure | plot_spacer()) +
   plot_layout(guides = "collect") +
-  plot_annotation(title = "Electricity Generation from Gas with CCS")
+  plot_annotation(caption = "Electricity Generation from Gas with CCS")
 
 fig
 
@@ -879,7 +877,7 @@ savefig(fig, fig_no)
 ### Coal
 
 ```{r}
-fig_no = "F.13.CoalGen" # w/o CCS
+fig_no = "F.14.CoalGen" # w/o CCS
 
 ts_map_ID = 82
 pd_map_ID = 71
@@ -907,7 +905,7 @@ savefig(fig$figure, fig_no)
 ### Gas
 
 ```{r}
-fig_no = "F.14.GasGen" # w/o CCS
+fig_no = "F.15.GasGen" # w/o CCS
 
 ts_map_ID = 81
 pd_map_ID = 70
@@ -935,7 +933,7 @@ savefig(fig$figure, fig_no)
 ### Other
 
 ```{r}
-fig_no = "F.15.OtherGen"
+fig_no = "F.16.OtherGen"
 
 #Includes Biomass, Hydro, Geothermal, Oil w/ CCS, and Oil w/o CCS
 ts_map_ID = 88
@@ -1102,7 +1100,7 @@ pdfigure = ggplot() +
   
   figure = (NoIRAfigure | IRAfigure) / (adfigure | pdfigure) + 
     plot_layout(guides = "collect") +
-    plot_annotation(title = "Electricity Generation from Other")
+    plot_annotation(caption = "Electricity Generation from Other")
   
   savefig(figure, fig_no)
   
@@ -1136,112 +1134,10 @@ write.csv(
 )
 ```
 
-### Electricity generation by model
-
-```{r}
-fig_no = "F.16.Generation"
-
-exclude_models = c()
-
-clean_data15 = clean_data %>%
-  mutate(value = case_when(
-    unit == "Quads" ~ value * 293.07107,
-    TRUE ~ value
-  )) %>% mutate(unit = case_when(
-    unit == "Quads" ~ "TWh",
-    TRUE ~ unit
-  )) %>%
-  filter(!(model %in% exclude_models))
-
-clean_data_hist_ira = clean_data15 %>%
-  filter(model == "EIA",
-         scenario == "Historic",
-         datasrc == "EIA-EPA-bistline_historic.csv",
-         year == 2021) %>%
-  mutate(scenario = "IRA", year = 2035)
-
-clean_data_hist_noira = clean_data15 %>%
-  filter(model == "EIA",
-         scenario == "Historic",
-         datasrc == "EIA-EPA-bistline_historic.csv",
-         year == 2021) %>%
-  mutate(scenario = "No IRA", year = 2035)
-
-clean_data15 = bind_rows(clean_data15, clean_data_hist_noira, clean_data_hist_ira)
-
-models_alph = sort(unique(clean_data15$model))
-
-dta = data_from_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 18, "United States")
-
-model_renamer = c(
-  "EIA" = "2021",
-  "EIA-LTS" = "EIA-LTS",
-  "EIA-STEO" = "EIA-STEO",
-  "EPA-ATR" = "EPA-ATR",
-  "EPS-EI" = "EPS-EI",
-  "GCAM-CGS" = "GCAM-CGS",
-  "GCAM-PNNL" = "GCAM-PNNL",
-  "Haiku-RFF" = "Haiku-RFF",
-  "IPM-EPA" = "IPM-EPA",
-  "IPM-NRDC" = "IPM-NRDC",
-  "MARKAL-NETL" = "MARKAL-NETL",
-  "NEMS-EIA" = "NEMS-EIA",
-  "NEMS-OP" = "NEMS-OP",
-  "NEMS-RHG" = "NEMS-RHG",
-  "ReEDS-NREL" = "ReEDS-NREL",
-  "REGEN-EPRI" = "REGEN-EPRI",
-  "RIO-REPEAT" = "RIO-REPEAT",
-  "Scout-LEEP" = "Scout-LEEP",
-  "USREP-ReEDS" = "USREP-ReEDS"
-)
-
-p = print_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 18, "United States",
-                level_mod = models_alph) +
-  facet_grid(scenario ~ model, switch = "x",labeller = labeller(
-    model = model_renamer)) + 
-    scale_x_continuous(breaks = c(2030, 2035), labels = c("2030", "2035"), position = "top") + 
-  scale_y_continuous(expand = c(0,0), labels = scales::comma, limits = c(0,6500),
-                     name = expression("Electricity Generation (TWh)")) +
-  theme(axis.ticks = element_blank(), 
-        strip.text.x = element_text(face = "plain", angle = 90, hjust = 1, size = 7),
-        axis.text.x = element_text(hjust = 0, vjust = 0.5),
-        plot.title = element_blank())
-
-
-p
-
-saveall(p, dta, fig_no)
-```
-
-### Electricity capacity by model
-
-```{r}
-fig_no = "F.17.Capacity"
-
-p = print_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 15, "United States",
-                level_mod = models_alph) +
-  facet_grid(scenario ~ model, switch = "x",labeller = labeller(
-    model = model_renamer)) + 
-  scale_x_continuous(breaks = c(2030, 2035), labels = c("2030", "2035"), position = "top") + 
-  scale_y_continuous(expand = c(0,0), labels = scales::comma, 
-                     name = expression("Electricity Capacity (GW)")) +
-  theme(axis.ticks = element_blank(), 
-        strip.text.x = element_text(face = "plain", angle = 90, hjust = 1, size = 7),
-        axis.text.x = element_text(hjust = 0, vjust = 0.5))
-
-dta = data_from_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 15, "United States")
-
-p
-
-saveall(p, dta, fig_no)
-
-
-```
-
 ### EV Share
 
 ```{r}
-fig_no = "F.18.EvSalesShare"
+fig_no = "F.17.EvSalesShare"
 
 subpalettes_ev = create_subpalettes(figmap_leep_timeseries, config)
 # TODO: NEMS-OP should only have reporting every 5 years
@@ -1477,10 +1373,111 @@ EV_pdif_figure = ggplot() +
 
   figure = (NoIRAfigure | IRAfigure) / (EV_abdif_figure | EV_pdif_figure)+
     plot_layout(guides = "collect") +
-    plot_annotation(title = "EV Sales Share")
+    plot_annotation(caption = "EV Sales Share")
 
 savefig(figure, fig_no)
 
+```
+
+### Electricity generation by model
+
+```{r}
+fig_no = "F.18.Generation"
+
+exclude_models = c()
+
+clean_data15 = clean_data %>%
+  mutate(value = case_when(
+    unit == "Quads" ~ value * 293.07107,
+    TRUE ~ value
+  )) %>% mutate(unit = case_when(
+    unit == "Quads" ~ "TWh",
+    TRUE ~ unit
+  )) %>%
+  filter(!(model %in% exclude_models))
+
+clean_data_hist_ira = clean_data15 %>%
+  filter(model == "EIA",
+         scenario == "Historic",
+         datasrc == "EIA-EPA-bistline_historic.csv",
+         year == 2021) %>%
+  mutate(scenario = "IRA", year = 2035)
+
+clean_data_hist_noira = clean_data15 %>%
+  filter(model == "EIA",
+         scenario == "Historic",
+         datasrc == "EIA-EPA-bistline_historic.csv",
+         year == 2021) %>%
+  mutate(scenario = "No IRA", year = 2035)
+
+clean_data15 = bind_rows(clean_data15, clean_data_hist_noira, clean_data_hist_ira)
+
+models_alph = sort(unique(clean_data15$model))
+
+dta = data_from_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 18, "United States")
+
+model_renamer = c(
+  "EIA" = "2021",
+  "EIA-LTS" = "EIA-LTS",
+  "EIA-STEO" = "EIA-STEO",
+  "EPA-ATR" = "EPA-ATR",
+  "EPS-EI" = "EPS-EI",
+  "GCAM-CGS" = "GCAM-CGS",
+  "GCAM-PNNL" = "GCAM-PNNL",
+  "Haiku-RFF" = "Haiku-RFF",
+  "IPM-EPA" = "IPM-EPA",
+  "IPM-NRDC" = "IPM-NRDC",
+  "MARKAL-NETL" = "MARKAL-NETL",
+  "NEMS-EIA" = "NEMS-EIA",
+  "NEMS-OP" = "NEMS-OP",
+  "NEMS-RHG" = "NEMS-RHG",
+  "ReEDS-NREL" = "ReEDS-NREL",
+  "REGEN-EPRI" = "REGEN-EPRI",
+  "RIO-REPEAT" = "RIO-REPEAT",
+  "Scout-LEEP" = "Scout-LEEP",
+  "USREP-ReEDS" = "USREP-ReEDS"
+)
+
+p = print_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 18, "United States",
+                level_mod = models_alph) +
+  facet_grid(scenario ~ model, switch = "x",labeller = labeller(
+    model = model_renamer)) + 
+    scale_x_continuous(breaks = c(2030, 2035), labels = c("2030", "2035"), position = "top") + 
+  scale_y_continuous(expand = c(0,0), labels = scales::comma, limits = c(0,6500),
+                     name = expression("Electricity Generation (TWh)")) +
+  theme(axis.ticks = element_blank(), 
+        strip.text.x = element_text(face = "plain", angle = 90, hjust = 1, size = 7),
+        axis.text.x = element_text(hjust = 0, vjust = 0.5),
+        plot.title = element_blank())
+
+
+p
+
+saveall(p, dta, fig_no)
+```
+
+### Electricity capacity by model
+
+```{r}
+fig_no = "F.19.Capacity"
+
+p = print_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 15, "United States",
+                level_mod = models_alph) +
+  facet_grid(scenario ~ model, switch = "x",labeller = labeller(
+    model = model_renamer)) + 
+  scale_x_continuous(breaks = c(2030, 2035), labels = c("2030", "2035"), position = "top") + 
+  scale_y_continuous(expand = c(0,0), labels = scales::comma, 
+                     name = expression("Electricity Capacity (GW)")) +
+  theme(axis.ticks = element_blank(), 
+        strip.text.x = element_text(face = "plain", angle = 90, hjust = 1, size = 7),
+        axis.text.x = element_text(hjust = 0, vjust = 0.5)) +
+  labs(title = "")
+
+dta = data_from_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 15, "United States")
+
+p
+
+saveall(p, dta, fig_no)
 ```
 
 ## Gas and Coal generation capacity factors
@@ -1488,7 +1485,7 @@ savefig(figure, fig_no)
 ### Generation
 
 ```{r}
-fig_no = "F.19"
+fig_no = "F.20"
 
 exclude_models = c(
   "AEO2020",
@@ -1555,7 +1552,7 @@ generation_table %>% gtsave(paste0("./output/final_figures/display_tables/Table"
 ### Capacity
 
 ```{r}
-fig_no = "F.20"
+fig_no = "F.21"
 
 exclude_models = c(
   "AEO2020",
@@ -1618,7 +1615,7 @@ capacity_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",f
 ### Capacity Factor
 
 ```{r}
-fig_no = "F.21"
+fig_no = "F.22"
 
 exclude_models = c(
   "AEO2020",
