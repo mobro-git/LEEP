@@ -1,0 +1,90 @@
+"figure_num","model","scenario","variable","unit","year","variable_rename","value"
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2005,"Gas",22.56495639993
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2006,"Gas",22.238336302504
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2007,"Gas",23.662331580286
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2008,"Gas",23.842522330858
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2009,"Gas",23.415517039012
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2010,"Gas",24.574310104834
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2011,"Gas",24.954088247676
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2012,"Gas",26.088110769014
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2013,"Gas",26.804649824778
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2014,"Gas",27.382338388916
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2015,"Gas",28.190585786006
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2016,"Gas",28.399839003802
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2017,"Gas",28.054586248346
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2018,"Gas",31.16227111312
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2019,"Gas",32.263109222946
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2020,"Gas",31.549957102048
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","EPS-EI","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","EPS-EI","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","GCAM-CGS","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","GCAM-CGS","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","GCAM-PNNL","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","GCAM-PNNL","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","MARKAL-NETL","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","MARKAL-NETL","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","NEMS-EIA","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","NEMS-EIA","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","NEMS-OP","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","NEMS-OP","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","NEMS-RHG","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","NEMS-RHG","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","REGEN-EPRI","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","REGEN-EPRI","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","USREP-ReEDS","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","USREP-ReEDS","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","EPS-EI","IRA","Primary Energy|Gas","Quads",2025,"Gas",31.7759260246787
+"1.4.fossilenergy","EPS-EI","IRA","Primary Energy|Gas","Quads",2030,"Gas",27.1074103530719
+"1.4.fossilenergy","EPS-EI","IRA","Primary Energy|Gas","Quads",2035,"Gas",25.4349405632501
+"1.4.fossilenergy","EPS-EI","No IRA","Primary Energy|Gas","Quads",2025,"Gas",33.3014984679387
+"1.4.fossilenergy","EPS-EI","No IRA","Primary Energy|Gas","Quads",2030,"Gas",34.2134819945859
+"1.4.fossilenergy","EPS-EI","No IRA","Primary Energy|Gas","Quads",2035,"Gas",34.7352725693717
+"1.4.fossilenergy","GCAM-CGS","IRA","Primary Energy|Gas","Quads",2025,"Gas",26.1784844784294
+"1.4.fossilenergy","GCAM-CGS","IRA","Primary Energy|Gas","Quads",2030,"Gas",25.9702417944638
+"1.4.fossilenergy","GCAM-CGS","IRA","Primary Energy|Gas","Quads",2035,"Gas",25.7433264620041
+"1.4.fossilenergy","GCAM-CGS","No IRA","Primary Energy|Gas","Quads",2025,"Gas",26.509852900434
+"1.4.fossilenergy","GCAM-CGS","No IRA","Primary Energy|Gas","Quads",2030,"Gas",26.0153594629061
+"1.4.fossilenergy","GCAM-CGS","No IRA","Primary Energy|Gas","Quads",2035,"Gas",27.1800777608441
+"1.4.fossilenergy","GCAM-PNNL","IRA","Primary Energy|Gas","Quads",2025,"Gas",27.4635316597955
+"1.4.fossilenergy","GCAM-PNNL","IRA","Primary Energy|Gas","Quads",2030,"Gas",28.6016778107141
+"1.4.fossilenergy","GCAM-PNNL","IRA","Primary Energy|Gas","Quads",2035,"Gas",27.2799741643486
+"1.4.fossilenergy","GCAM-PNNL","No IRA","Primary Energy|Gas","Quads",2025,"Gas",29.017588894
+"1.4.fossilenergy","GCAM-PNNL","No IRA","Primary Energy|Gas","Quads",2030,"Gas",30.540068468
+"1.4.fossilenergy","GCAM-PNNL","No IRA","Primary Energy|Gas","Quads",2035,"Gas",29.768805696
+"1.4.fossilenergy","MARKAL-NETL","IRA","Primary Energy|Gas","Quads",2025,"Gas",27.2238782492874
+"1.4.fossilenergy","MARKAL-NETL","IRA","Primary Energy|Gas","Quads",2030,"Gas",25.6227171714011
+"1.4.fossilenergy","MARKAL-NETL","IRA","Primary Energy|Gas","Quads",2035,"Gas",22.9419355949299
+"1.4.fossilenergy","MARKAL-NETL","No IRA","Primary Energy|Gas","Quads",2025,"Gas",27.2532177193224
+"1.4.fossilenergy","MARKAL-NETL","No IRA","Primary Energy|Gas","Quads",2030,"Gas",27.6820599730534
+"1.4.fossilenergy","MARKAL-NETL","No IRA","Primary Energy|Gas","Quads",2035,"Gas",28.4719757046372
+"1.4.fossilenergy","NEMS-EIA","IRA","Primary Energy|Gas","Quads",2025,"Gas",30.4562522559423
+"1.4.fossilenergy","NEMS-EIA","IRA","Primary Energy|Gas","Quads",2030,"Gas",29.1747142202481
+"1.4.fossilenergy","NEMS-EIA","IRA","Primary Energy|Gas","Quads",2035,"Gas",28.7312922839434
+"1.4.fossilenergy","NEMS-EIA","No IRA","Primary Energy|Gas","Quads",2025,"Gas",30.9438619865961
+"1.4.fossilenergy","NEMS-EIA","No IRA","Primary Energy|Gas","Quads",2030,"Gas",32.140876415665
+"1.4.fossilenergy","NEMS-EIA","No IRA","Primary Energy|Gas","Quads",2035,"Gas",31.903932518407
+"1.4.fossilenergy","NEMS-OP","IRA","Primary Energy|Gas","Quads",2025,"Gas",30.0057803524483
+"1.4.fossilenergy","NEMS-OP","IRA","Primary Energy|Gas","Quads",2030,"Gas",26.7784263726236
+"1.4.fossilenergy","NEMS-OP","IRA","Primary Energy|Gas","Quads",2035,"Gas",24.9408529247303
+"1.4.fossilenergy","NEMS-OP","No IRA","Primary Energy|Gas","Quads",2025,"Gas",30.9138381263278
+"1.4.fossilenergy","NEMS-OP","No IRA","Primary Energy|Gas","Quads",2030,"Gas",30.0528331334637
+"1.4.fossilenergy","NEMS-OP","No IRA","Primary Energy|Gas","Quads",2035,"Gas",29.7989623149839
+"1.4.fossilenergy","NEMS-RHG","IRA","Primary Energy|Gas","Quads",2025,"Gas",30.7722201548317
+"1.4.fossilenergy","NEMS-RHG","IRA","Primary Energy|Gas","Quads",2030,"Gas",26.4149648608624
+"1.4.fossilenergy","NEMS-RHG","IRA","Primary Energy|Gas","Quads",2035,"Gas",27.0232358735335
+"1.4.fossilenergy","NEMS-RHG","No IRA","Primary Energy|Gas","Quads",2025,"Gas",29.3957230187927
+"1.4.fossilenergy","NEMS-RHG","No IRA","Primary Energy|Gas","Quads",2030,"Gas",29.696635583345
+"1.4.fossilenergy","NEMS-RHG","No IRA","Primary Energy|Gas","Quads",2035,"Gas",29.1378236772835
+"1.4.fossilenergy","REGEN-EPRI","IRA","Primary Energy|Gas","Quads",2025,"Gas",29.0994743699952
+"1.4.fossilenergy","REGEN-EPRI","IRA","Primary Energy|Gas","Quads",2030,"Gas",29.6794638935208
+"1.4.fossilenergy","REGEN-EPRI","IRA","Primary Energy|Gas","Quads",2035,"Gas",25.839533255006
+"1.4.fossilenergy","REGEN-EPRI","No IRA","Primary Energy|Gas","Quads",2025,"Gas",28.709481414521
+"1.4.fossilenergy","REGEN-EPRI","No IRA","Primary Energy|Gas","Quads",2030,"Gas",29.3094705767889
+"1.4.fossilenergy","REGEN-EPRI","No IRA","Primary Energy|Gas","Quads",2035,"Gas",30.5394483594382
+"1.4.fossilenergy","USREP-ReEDS","IRA","Primary Energy|Gas","Quads",2025,"Gas",28.485925374648
+"1.4.fossilenergy","USREP-ReEDS","IRA","Primary Energy|Gas","Quads",2030,"Gas",25.007408869226
+"1.4.fossilenergy","USREP-ReEDS","IRA","Primary Energy|Gas","Quads",2035,"Gas",23.254349354768
+"1.4.fossilenergy","USREP-ReEDS","No IRA","Primary Energy|Gas","Quads",2025,"Gas",28.53357468325
+"1.4.fossilenergy","USREP-ReEDS","No IRA","Primary Energy|Gas","Quads",2030,"Gas",27.927511612518
+"1.4.fossilenergy","USREP-ReEDS","No IRA","Primary Energy|Gas","Quads",2035,"Gas",28.09551763585

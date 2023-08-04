@@ -135,6 +135,7 @@ IndTab
 ```
 
 ## 5.4 industrial CCS
+
 ```{r}
 fig_no = "5.4.ccs"
 exclude_models = c("GCAM-PNNL")

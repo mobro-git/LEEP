@@ -75,15 +75,15 @@ master_palette <- c(
 color_map <- c(
   # scenarios
   "Historic" = "black",
-  "IRA" = "Lgold",
-  "Reference" = "Lblue",
-  "No IRA" = "Lblue",
-  "IRA.High" = "Lteal",
-  "IRA.Low" = "Lsky",
+  # "IRA" = "Lgold",
+  # "Reference" = "Lblue",
+  # "No IRA" = "Lblue",
+  # "IRA.High" = "Lteal",
+  # "IRA.Low" = "Lsky",
 
-  # "IRA" = "teal blue",
-  # "Reference" = "light salmon",
-  # "No IRA" = "light salmon",
+  "IRA" = "teal blue",
+  "Reference" = "light salmon",
+  "No IRA" = "light salmon",
 
   # models
   "NEMS-EIA" = "black", #AEO 2023 outputs from OnLocation

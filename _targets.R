@@ -49,6 +49,10 @@ tar_plan(
     models_leep = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
                     "NEMS-OP", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "NEMS-EIA",
                     "EIA-LTS", "EIA-STEO", "EPA-ATR", "EPA", "EPA-GHGI", "EIA"),
+    models_leep1 = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
+                    "NEMS-OP", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "NEMS-EIA",
+                    "EIA-LTS", "EIA-STEO", "EPA-ATR", "EPA", "EPA-GHGI", "EIA",
+                    "ReEDS-NRELr"),
     #"Scout-LEEP" removing scout from everything except scout-specific figure in chapter 4
     models_per_elc = c("USREP-ReEDS", "EPS-EI", "GCAM-CGS", "GCAM-PNNL", "GCAM-USA", "Haiku-RFF", "IPM-NRDC", "IPM-EPA", "MARKAL-NETL", "NEMS-RHG",
                        "NEMS-OP", "REGEN-EPRI", "RIO-REPEAT", "ReEDS-NREL", "Scout-LEEP"),
@@ -67,6 +71,13 @@ tar_plan(
     hist_mod_scenarios2 = c("Historic", "No IRA", "IRA"),
 
     leep_sens = c("IRA.Low","IRA.High", "Historic"),
+
+    all_sens = c("Historic","No IRA","IRA","Core",
+                 "IRA.Low","IRA.High",
+                 "High Energy Price","High Growth","Low Energy Price","Low Growth",
+                 "All Advanced","Opt-IRA.Adv","Constrained Deployment","Pess-IRA.Adv",
+                 "Adv Battery/Renew","Cons Battery/Renew",
+                 "No IRA.2","No IRA.3","No IRA.4","No IRA.5","No IRA.6","No IRA.7"),
 
     scenarios_lts = c("Historic", "LTS.High", "LTS.Low", "LTS.Mid1", "LTS.Mid2", "LTS.Mid3", "LTS.Mid4",
                       "LTS.Mid5", "LTS.Mid6", "LTS.Mid7", "LTS.Mid8", "LTS.Mid9", "LTS.Mid10"),
@@ -221,9 +232,9 @@ tar_plan(
 
   # Plot maps
 
-  ts = create_graph("leep", "time_series", config, clean_data, figmap_leep_timeseries),
-  cone = create_graph("leep", "cone_uncertainty", config, clean_data, figmap_leep_cone),
-  stackbar = create_graph("leep", "stacked_bar", config, clean_data, figmap_leep_stackbar),
+  # ts = create_graph("leep", "time_series", config, clean_data, figmap_leep_timeseries),
+  # cone = create_graph("leep", "cone_uncertainty", config, clean_data, figmap_leep_cone),
+  # stackbar = create_graph("leep", "stacked_bar", config, clean_data, figmap_leep_stackbar),
   diffbar = create_graph("leep", "diff_bar", config, clean_data, figmap_leep_diffbar)
 
 )
