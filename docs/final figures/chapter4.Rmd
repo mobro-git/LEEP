@@ -55,7 +55,7 @@ dta3 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 
 
 p3 = emis_stack(dta3, "Buildings CO2 Emissions", figmap_leep_stackbar, config) + 
   scale_fill_manual(values = c("Other Sectors" = "white", "Buildings: Indirect" = subpalettes$`Emissions Stack`[["Buildings: Indirect"]], "Buildings: Direct" = subpalettes$`Emissions Stack`[["Buildings: Direct"]])) +
-  scale_color_manual(values = c("Other Sectors" = "#CECECE", "Buildings: Indirect" = subpalettes$`Emissions Stack`[["Buildings: Indirect"]], "Buildings: Direct" = subpalettes$`Emissions Stack`[["Buildings: Direct"]])) +
+  scale_color_manual(values = c("Other Sectors" = "#CECECE", "Buildings: Indirect" = "#CECECE", "Buildings: Direct" = "#CECECE")) +
   scale_alpha_manual(values = c("Other Sectors" = 0.5, "Buildings: Indirect" = 1, "Buildings: Direct" = 1))
 p3
 

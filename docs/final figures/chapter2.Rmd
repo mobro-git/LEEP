@@ -73,7 +73,7 @@ data <- clean_data %>%
 data$variable_rename <- factor(data$variable_rename, level = c("Other Sectors", "Coal", "Gas", "Petroleum"))
 
 fig = ggplot(data, aes(fill = variable_rename, y = value, alpha = alpha, x = year, color = variable_rename)) + 
-  geom_bar(position = "stack", stat = "identity") + 
+  geom_bar(position = "stack", stat = "identity", color = "white", linewidth = 0.25) + 
   theme_emf() +
   labs(title = "",
          x = "",
@@ -98,7 +98,8 @@ saveall(fig, data, fig_no)
 fig_no = "2.2.historic_generation"
 
 clean_data10 = clean_data %>% 
-  filter(datasrc == 'EIA-EPA-bistline_historic.csv') %>%
+  #filter(datasrc == 'EIA-EPA-bistline_historic.csv') %>%
+  filter(datasrc == 'make_summation_variables', model == 'EIA') %>%
   mutate(value = case_when(unit == "Quads" ~ value * 293.07, TRUE ~ value),
          unit = case_when(unit == "Quads" ~ "TWh", TRUE ~ unit))
 
@@ -106,7 +107,7 @@ subpalettes = create_subpalettes(figmap_leep_stackbar, config)
 sp = subpalettes$`Hist Generation Mix`
 
 
-fig = print_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14, "United States", 
+fig = print_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 140, "United States", 
                   level_var = c("Other", "Renewables", "Nuclear", "Oil", "Natural Gas", "Coal")) +
   labs(y = expression("Electricity Generation (TWh)")) +
   scale_y_continuous(expand = c(0,0), limits = c(0,4500), labels = scales::comma) +
@@ -119,7 +120,7 @@ fig = print_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14,
   bottom1
 fig
 
-df = data_from_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 14, "United States")
+df = data_from_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 140, "United States")
 
 df = clean_supplemental_data(df, fig_no)
 
@@ -275,7 +276,7 @@ facet_renamer = c(
 
 p = dta_full %>% ggplot() +
   geom_bar(aes(x = year, y = value, fill = variable_rename), 
-           position="stack", stat="identity") + 
+           position="stack", stat="identity", color = "white", linewidth = 0.25) + 
   geom_hline(yintercept = 0, color = "black", linewidth = 0.5) +
   scale_x_continuous(breaks = c(2030, 2035), labels = c("2030", "2035"), position = "top") + 
   scale_y_continuous(expand = expansion(mult = c(0.02,0.02)), labels = scales::comma, #limits = c(-3000, 7500),
@@ -328,23 +329,23 @@ dta3 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 
       grepl("Additions",variable) ~ "Capacity Additions",
       TRUE ~ "Capacity Retirements")) %>%
   mutate(variable_rename = factor(variable_rename, levels = c("Solar", "Wind", "Storage", "Nuclear", 
-                                             "Hydro", "Gas CCS", "Gas", "Coal CCS", "Coal", "Other")))
+                                             "Hydro", "Gas w/ CCS", "Gas w/o CCS", "Coal w/ CCS", "Coal w/o CCS", "Other")))
 fig = dta3 %>% ggplot() +
   #print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States") +
-  geom_bar(aes(x = year, y = value, fill = variable_rename, color = variable_rename, alpha = temp,
+  geom_bar(aes(x = year, y = value, fill = variable_rename, alpha = temp,
                group = interaction(variable_rename, temp), width = 0.75),
-           position="stack", stat="identity", linewidth = 0.25) +
+           position="stack", stat="identity", color = "white", linewidth = 0.1) +
   theme_emf() +
   geom_hline(yintercept = 0, linewidth = 0.5, color = "black") +
   labs(y = expression("Avg. Annual Capacity Change (GW/yr)")) +
-  scale_fill_manual(drop = F, breaks = c("Solar", "Wind", "Storage", "Nuclear", "Hydro", "Gas CCS", "Gas", 
-                               "Coal CCS", "Coal", "Other"),
+  scale_fill_manual(drop = F, breaks = c("Solar", "Wind", "Storage", "Nuclear", "Hydro", "Gas w/ CCS", "Gas w/o CCS", 
+                               "Coal w/ CCS", "Coal w/o CCS", "Other"),
                     values = c(sp[["Solar"]], sp[["Wind"]], sp[["Storage"]], sp[["Nuclear"]], sp[["Hydro"]],
-                               sp[["Gas CCS"]], sp[["Gas"]], sp[["Coal CCS"]], sp[["Coal"]], sp[["Other"]])) +
-  scale_color_manual(drop = F, breaks = c("Solar", "Wind", "Storage", "Nuclear", "Hydro", "Gas CCS", "Gas", 
-                               "Coal CCS", "Coal", "Other"),
-                    values = c(sp[["Solar"]], sp[["Wind"]], sp[["Storage"]], sp[["Nuclear"]], sp[["Hydro"]],
-                               sp[["Gas CCS"]], sp[["Gas"]], sp[["Coal CCS"]], sp[["Coal"]], sp[["Other"]])) +
+                               sp[["Gas w/ CCS"]], sp[["Gas w/o CCS"]], sp[["Coal w/ CCS"]], sp[["Coal w/o CCS"]], sp[["Other"]])) +
+  # scale_color_manual(drop = F, breaks = c("Solar", "Wind", "Storage", "Nuclear", "Hydro", "Gas CCS", "Gas", 
+  #                              "Coal CCS", "Coal", "Other"),
+  #                   values = c(sp[["Solar"]], sp[["Wind"]], sp[["Storage"]], sp[["Nuclear"]], sp[["Hydro"]],
+  #                              sp[["Gas CCS"]], sp[["Gas"]], sp[["Coal CCS"]], sp[["Coal"]], sp[["Other"]])) +
   scale_y_continuous(limits = c(ymin, ymax)) +
   scale_x_continuous(expand = c(0,0)) +
   scale_alpha_manual(values = c(0.6,1), breaks = c("Capacity Retirements", "Capacity Additions"), guide = F) +
@@ -355,7 +356,7 @@ fig = dta3 %>% ggplot() +
 
 #dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States")
 
-#fig
+fig
 
 # dta4 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 6, "United States")
 # dta_ttl = dta4 %>% 
@@ -402,7 +403,7 @@ dta5 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 
                            TRUE ~ value)) %>%
   mutate(variable_rename = factor(variable_rename, 
                                   levels = c("Solar", "Wind", "Storage", "Nuclear", 
-                                             "Hydro", "Gas CCS", "Gas", "Coal CCS", "Coal", "Other")))
+                                             "Hydro", "Gas w/ CCS", "Gas w/o CCS", "Coal w/ CCS", "Coal w/o CCS", "Other")))
 
 filler_row = data.frame("model" = c(""), value = 0)
 dta5 = bind_rows(dta5, filler_row) %>%
@@ -415,7 +416,7 @@ stats = dta5 %>% group_by(model, temp) %>%
 fig2 = dta5 %>% ggplot() +
   geom_bar(aes(x = model, y = value, fill = variable_rename, color = variable_rename, alpha = temp,
                group = interaction(variable_rename, temp), width = 0.75),
-           position="stack", stat="identity", linewidth = 0.25) +
+           position="stack", stat="identity", linewidth = 0.1, color = "white") +
   theme_emf() +
   geom_hline(yintercept = 0, linewidth = 0.5, color = "black") +
   geom_segment(aes(x = "", xend = "", y = 2, yend = 35), linewidth = 0.3, 
@@ -426,14 +427,14 @@ fig2 = dta5 %>% ggplot() +
                label = "Additions", color = "black", alpha = 1, hjust = 1, vjust = -0.5, angle = -90) + 
   annotate("text", x = "", y = -2, size = 2,
                label = "Retirements", color = "black", alpha = 1, hjust = 0, vjust = -0.5, angle = -90) + 
-  scale_fill_manual(drop = F, breaks = c("Solar", "Wind", "Storage", "Nuclear", "Hydro", "Gas CCS", "Gas", 
-                               "Coal CCS", "Coal", "Other"),
+  scale_fill_manual(drop = F, breaks = c("Solar", "Wind", "Storage", "Nuclear", "Hydro", "Gas w/ CCS", "Gas w/o CCS", 
+                               "Coal w/ CCS", "Coal w/o CCS", "Other"),
                     values = c(sp[["Solar"]], sp[["Wind"]], sp[["Storage"]], sp[["Nuclear"]], sp[["Hydro"]],
-                               sp[["Gas CCS"]], sp[["Gas"]], sp[["Coal CCS"]], sp[["Coal"]], sp[["Other"]])) +
-  scale_color_manual(drop = F, breaks = c("Solar", "Wind", "Storage", "Nuclear", "Hydro", "Gas CCS", "Gas", 
-                               "Coal CCS", "Coal", "Other"),
-                    values = c(sp[["Solar"]], sp[["Wind"]], sp[["Storage"]], sp[["Nuclear"]], sp[["Hydro"]],
-                               sp[["Gas CCS"]], sp[["Gas"]], sp[["Coal CCS"]], sp[["Coal"]], sp[["Other"]])) +
+                               sp[["Gas w/ CCS"]], sp[["Gas w/o CCS"]], sp[["Coal w/ CCS"]], sp[["Coal w/o CCS"]], sp[["Other"]])) +
+  # scale_color_manual(drop = F, breaks = c("Solar", "Wind", "Storage", "Nuclear", "Hydro", "Gas CCS", "Gas", 
+  #                              "Coal CCS", "Coal", "Other"),
+  #                   values = c(sp[["Solar"]], sp[["Wind"]], sp[["Storage"]], sp[["Nuclear"]], sp[["Hydro"]],
+  #                              sp[["Gas CCS"]], sp[["Gas"]], sp[["Coal CCS"]], sp[["Coal"]], sp[["Other"]])) +
   scale_y_continuous(limits = c(ymin, ymax)) +
   scale_alpha_manual(values = c(0.6,1), breaks = c("Capacity Retirements", "Capacity Additions"), guide = F) +
   ggtitle("Avg. Annual Capacity Changes (2021-35)") +
@@ -473,7 +474,7 @@ summary_hist = dta3 %>%
     T ~ "Retirements"
   )) %>%
   pivot_wider(names_from = Variable, values_from = value, values_fill = 0) %>%
-  mutate(`Gas CCS` = 0, `Coal CCS` = 0)
+  mutate(`Gas w/ CCS` = 0, `Coal w/ CCS` = 0)
 
 summary_proj = dta5 %>%
   rename(Model = model, 

@@ -96,3 +96,27 @@
 21,Secondary Energy|Electricity|Renewable,Secondary Energy|Electricity|Wind,Quads,1
 21,Secondary Energy|Electricity|Renewable,Secondary Energy|Electricity|Geothermal,Quads,1
 21,Secondary Energy|Electricity|Renewable,Secondary Energy|Electricity|Hydro,Quads,1
+201,Secondary Energy|Electricity|Other|Sum,Secondary Energy|Electricity|Biomass,Quads,1
+201,Secondary Energy|Electricity|Other|Sum,Secondary Energy|Electricity|Biomass|w/o CCS,Quads,1
+201,Secondary Energy|Electricity|Other|Sum,Secondary Energy|Electricity|Other,Quads,1
+202,Secondary Energy|Electricity|Coal|Sum,Secondary Energy|Electricity|Coal,Quads,1
+202,Secondary Energy|Electricity|Coal|Sum,Secondary Energy|Electricity|Coal|w/o CCS,Quads,1
+202,Secondary Energy|Electricity|Coal|Sum,Secondary Energy|Electricity|Coal|w/ CCS,Quads,1
+203,Secondary Energy|Electricity|Gas|Sum,Secondary Energy|Electricity|Gas,Quads,1
+203,Secondary Energy|Electricity|Gas|Sum,Secondary Energy|Electricity|Gas|w/ CCS,Quads,1
+203,Secondary Energy|Electricity|Gas|Sum,Secondary Energy|Electricity|Gas|w/o CCS,Quads,1
+204,Secondary Energy|Electricity|Nuclear|Sum,Secondary Energy|Electricity|Nuclear,Quads,1
+205,Secondary Energy|Electricity|Oil|Sum,Secondary Energy|Electricity|Oil,Quads,1
+205,Secondary Energy|Electricity|Oil|Sum,Secondary Energy|Electricity|Oil|w/o CCS,Quads,1
+205,Secondary Energy|Electricity|Oil|Sum,Secondary Energy|Electricity|Oil|w/ CCS,Quads,1
+206,Secondary Energy|Electricity|Renewables|Sum,Secondary Energy|Electricity|Geothermal,Quads,1
+206,Secondary Energy|Electricity|Renewables|Sum,Secondary Energy|Electricity|Hydro,Quads,1
+206,Secondary Energy|Electricity|Renewables|Sum,Secondary Energy|Electricity|Solar,Quads,1
+206,Secondary Energy|Electricity|Renewables|Sum,Secondary Energy|Electricity|Wind,Quads,1
+207,Emissions|CO2|Energy|Demand|Transportation|GHGI|Aircraft Total,Emissions|CO2|Energy|Demand|Transportation|GHGI|Commerical Aircraft,Mt CO2/yr,1
+207,Emissions|CO2|Energy|Demand|Transportation|GHGI|Aircraft Total,Emissions|CO2|Energy|Demand|Transportation|GHGI|Other Aircraft,Mt CO2/yr,1
+208,Emissions|CO2|Energy|Demand|Transportation|GHGI|Pipelines Total,Emissions|CO2|Energy|Demand|Transportation|GHGI|Pipelines,Mt CO2/yr,1
+208,Emissions|CO2|Energy|Demand|Transportation|GHGI|Pipelines Total,Emissions|CO2|Energy|Demand|Transportation|GHGI|Lubricants,Mt CO2/yr,1
+209,Emissions|CO2|Energy|Demand|Transportation|GHGI|Other Total,Emissions|CO2|Energy|Demand|Transportation|GHGI|Buses,Mt CO2/yr,1
+209,Emissions|CO2|Energy|Demand|Transportation|GHGI|Other Total,Emissions|CO2|Energy|Demand|Transportation|GHGI|Mortorcycles,Mt CO2/yr,1
+209,Emissions|CO2|Energy|Demand|Transportation|GHGI|Other Total,Emissions|CO2|Energy|Demand|Transportation|GHGI|Rail,Mt CO2/yr,1

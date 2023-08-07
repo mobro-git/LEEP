@@ -52,7 +52,7 @@ dta2 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 
 
 p2 = emis_stack(dta2, "Transportation CO2 Emissions", figmap_leep_stackbar, config) + 
   scale_fill_manual(values = c("Other Sectors" = "white", "Transportation: Indirect" = subpalettes$`Emissions Stack`[["Transportation: Indirect"]], "Transportation: Direct" = subpalettes$`Emissions Stack`[["Transportation: Direct"]])) + 
-  scale_color_manual(values = c("Other Sectors" = "#CECECE", "Transportation: Indirect" = subpalettes$`Emissions Stack`[["Transportation: Indirect"]], "Transportation: Direct" = subpalettes$`Emissions Stack`[["Transportation: Direct"]])) +
+  scale_color_manual(values = c("Other Sectors" = "#CECECE", "Transportation: Indirect" = "#CECECE", "Transportation: Direct" = "#CECECE")) +
   scale_alpha_manual(values = c("Other Sectors" = 0.5, "Transportation: Indirect" = 1, "Transportation: Direct" = 1))
 p2
 

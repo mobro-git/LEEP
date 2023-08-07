@@ -576,7 +576,7 @@ emis_stack = function(dta, title, figmap, config, econwide = FALSE) {
     summarize(value = sum(value))
 
   if (econwide) {
-    bar_code = geom_bar(aes(x = year, y = value, fill = variable_rename), position = position_stack(), stat = "identity")
+    bar_code = geom_bar(aes(x = year, y = value, fill = variable_rename), position = position_stack(), stat = "identity", color = "white", linewidth = 0.25)
   } else {
     bar_code = geom_bar(aes(x = year, y = value, fill = variable_rename,
                             color = variable_rename, alpha = variable_rename), position = position_stack(reverse = TRUE), stat = "identity")

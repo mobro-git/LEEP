@@ -147,7 +147,15 @@ color_map <- c(
   "Refining" = "Lmagenta",
   "Chemicals" = "Lnavy",
   "Light" = "Laqua",
-  "Heavy" = "Lsky"
+  "Heavy" = "Lsky",
+
+  # transportation methods
+  "Passenger Cars" = "Lsalmon",
+  "LD Trucks" = "Lmagenta",
+  "MHD Trucks" = "Lblue",
+  "Aircraft" = "Lgold",
+  "Water" = "Lnavy",
+  "Pipelines" = "Lgreen"
   ) %>%
   find_color(master_palette)
 
