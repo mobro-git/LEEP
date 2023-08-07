@@ -169,6 +169,7 @@ all_modeled = rbind(gen_cap, emissions, elc, ev_share, fossil) %>%
 #####
 
 indirect = all_modeled %>%
+  filter(scenario %in% c("IRA","Reference")) %>% # removing sensitivity scenarios b/c end-use energy not ported over and indirect emissions allocation would be wrong
   filter(
     variable %in% c(
       "Emissions|CO2|Energy|Supply|Electricity",
