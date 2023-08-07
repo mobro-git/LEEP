@@ -97,18 +97,15 @@ TotSpg = spg2(
 TotDot = dotted(TotSpg$data, TotSpg$figure, "median", 0, 2500, config, figmap_leep_timeseries)
 TotDot
 
+saveall(TotDot, TotSpg$data, paste(fig_no, "a"))
+
 delta = delta(29, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
-saveall(delta$figure, delta$df, paste(fig_no, "delta"), wd = 3.012, ht = 3)
+saveall(delta$figure, delta$df, paste(fig_no, "b"), wd = 3.012, ht = 3)
 
 TotTab = html(TotSpg$data, "Total Building CO2")
-
-savefig(TotDot, fig_no) # only using total, not using direct/indirect anymore
-
 TotTab
 
 TotSpg$data = clean_supplemental_data(TotSpg$data, fig_no)
-
-savedata(TotSpg$data, fig_no)
 ```
 
 ## sensitivities data

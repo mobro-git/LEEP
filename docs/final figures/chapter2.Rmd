@@ -159,18 +159,18 @@ ElecSpg = spg2(
 ElecDot = dotted(ElecSpg$data, ElecSpg$figure, "median", 0, 2500, config, figmap_leep_timeseries)
 ElecDot
 ElecSpg$data = clean_supplemental_data(ElecSpg$data, fig_no)
-saveall(ElecDot,ElecSpg$data, fig_no)
+saveall(ElecDot,ElecSpg$data, paste(fig_no, "a"))
 
 delta = delta(26, "", config, clean_data, figmap_leep_timeseries)
 delta
-saveall(delta$figure, delta$df, paste(fig_no, "delta"), wd = 3.012, ht = 3)
+saveall(delta$figure, delta$df, paste(fig_no, "b"), wd = 3.012, ht = 3)
 
 ElecTab = html(ElecSpg$data, "Electricity CO2")
 ElecTab
 
 fig_no = "ES.1"
-saveall(ElecDot, ElecSpg$data, fig_no)
-saveall(delta$figure, delta$df, paste(fig_no, "delta"), wd = 3.012, ht = 3)
+saveall(ElecDot, ElecSpg$data, paste(fig_no, "a"))
+saveall(delta$figure, delta$df, paste(fig_no, "b"), wd = 3.012, ht = 3)
 ```
 
 ## F2.4 generation by model and difference from no ira

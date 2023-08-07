@@ -93,12 +93,12 @@ EconSpg = spg2(Econ_data,
 
 EconDot = dotted(EconSpg$data, EconSpg$figure, "median", 0, 7000, config, figmap_leep_timeseries)
 EconDot
-EconSpg$data = clean_supplemental_data(EconSpg$data, fig_no)
+EconSpg$data = clean_supplemental_data(EconSpg$data, paste(fig_no, "a"))
 saveall(EconDot, EconSpg$data, fig_no)
 
 delta = delta(25, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
 delta
-saveall(delta$figure, delta$df, paste(fig_no, "delta"), wd = 3.012, ht = 3)
+saveall(delta$figure, delta$df, paste(fig_no, "b"), wd = 3.012, ht = 3)
 
 EconTab = html(EconSpg$data, "Economy-Wide CO2")
 EconTab

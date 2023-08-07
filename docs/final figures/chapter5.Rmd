@@ -122,16 +122,14 @@ IndDot = dotted(IndSpg$data, IndSpg$figure, "median", 0, 2500, config, figmap_le
 IndDot
 
 IndTab = html(IndSpg$data, "Industry CO2")
-IndDot
+IndTab
 
-IndSpg$data = clean_supplemental_data(IndSpg$data, fig_no)
+IndSpg$data = clean_supplemental_data(IndSpg$data, paste(fig_no, "b"))
+
+saveall(IndDot, IndSpg$data, fig_no)
 
 delta = delta(28, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
-saveall(delta$figure, delta$df, paste(fig_no, "delta"), wd = 3.012, ht = 3)
-
-savefig(IndDot, fig_no)
-savedata(IndSpg$data, fig_no)
-IndTab
+saveall(delta$figure, delta$df, paste(fig_no, "b"), wd = 3.012, ht = 3)
 ```
 
 ## 5.4 industrial CCS

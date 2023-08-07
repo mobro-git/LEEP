@@ -122,13 +122,12 @@ TranSpg = spg2(
 
 fig = dotted(TranSpg$data, TranSpg$figure, "median", 0, 2500, config, figmap_leep_timeseries)
 fig
+saveall(fig, TranSpg$data, paste(fig_no, "a"))
 
 delta = delta(27, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
-saveall(delta$figure, delta$df, paste(fig_no, "delta"), wd = 3.012, ht = 3)
+saveall(delta$figure, delta$df, paste(fig_no, "b"), wd = 3.012, ht = 3)
 
 TranSpg$data = clean_supplemental_data(TranSpg$data, fig_no)
-
-saveall(fig, TranSpg$data, fig_no)
 
 html(TranSpg$data, "Transportation CO2")
 ```
