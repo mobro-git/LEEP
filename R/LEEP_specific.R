@@ -184,10 +184,10 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
                          ira_coord = c(0,0), low_coord = c(0,0), high_coord = c(0,0)) {
   subpalettes = create_subpalettes(figmap, config)
   if (far_left) {
-    point_code = geom_point(aes(x = year + stagger, y = value, color = scenario), shape = 1, size = 2)
+    point_code = geom_point(aes(x = year + stagger, y = value, color = scenario, shape = as.factor(stagger)), size = 2)
   } else {
     #point_code = geom_point(aes(x = year + stagger, y = value, color = model), shape = 1, size = 2)
-    point_code = geom_point(aes(x = year + stagger, y = value), shape = 1, size = 2)
+    point_code = geom_point(aes(x = year + stagger, y = value, shape = as.factor(stagger)), size = 2)
   }
 
   if (far_left) {
@@ -231,7 +231,7 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
     #scale_subpalette(subpalettes,"ZZZZZ") +
     theme_emf() +
     ggtitle(title) +
-    theme(axis.title.x = element_blank(), panel.border = element_rect(size = 0.25, fill = NA),
+    theme(axis.title.x = element_blank(),
           plot.title = element_text(hjust = 0.5, size = 8), axis.ticks = element_blank(),
           plot.margin = margin(0.7,1,0.7,left_margin), legend.position = "none")
   ylabel = expression(paste("Power Sector Emissions (Mt C", O[2], "/yr)"))
@@ -252,7 +252,7 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
     p = p +
       labs(y = ylabel) +
       #scale_subpalette(subpalettes, "Sensitivity Dots") +
-      scale_color_manual(values = c("IRA" = "black", "IRA.Low" = "#42d4f4", "IRA.High" = "#883192"), guide = "none")
+      scale_color_manual(values = c("IRA" = "black", "IRA.Low" = "#0083ca", "IRA.High" = "#25266b"), guide = "none")
     opt_label = "Optimistic Emis"
     pes_label = "Pessimistic Emis"
   }
@@ -265,12 +265,12 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
   if(sum(low_coord) != 0) {
     p = p +
       annotate("text", x = low_coord[1], y = low_coord[2], size = 2,
-               label = pes_label, color = "#42d4f4", alpha = 1, hjust = -0.2)
+               label = pes_label, color = "#0083ca", alpha = 1, hjust = -0.2)
   }
   if(sum(high_coord) != 0) {
     p = p +
       annotate("text", x = high_coord[1], y = high_coord[2], size = 2,
-               label = opt_label, color = "#883192", alpha = 1, hjust = -0.2)
+               label = opt_label, color = "#25266b", alpha = 1, hjust = -0.2)
   }
 
   return(list(

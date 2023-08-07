@@ -599,8 +599,8 @@ sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
 p1 = sens_dot_plot(sens_dta_panel1, title = "\nIRA Implementation", 
                    figmap_leep_timeseries, config, 
                    ps = TRUE, ymin = 0, ymax = 1600, far_left = TRUE, 
-                   ira_coord = c(2030.1,965), low_coord = c(2028.7, 1190), 
-                   high_coord = c(2030, 190))
+                   ira_coord = c(2030.0,965), low_coord = c(2028.7, 1190), 
+                   high_coord = c(2030.2, 1040))
 # p1
 p2 = sens_dot_plot(sens_dta_panel2, title = "\nEconomic Growth", figmap_leep_timeseries, config, ymin = 0, ymax = 1600,)
 #p2
@@ -615,6 +615,7 @@ p5 = sens_dot_plot(sens_dta_panel5, title = "Combined Technology\n + Implementat
 # annotations
 # "EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI","USREP-ReEDS", "ReEDS-NREL"
 p1$plot = p1$plot + 
+  scale_shape_manual(breaks = c(-0.7, 0, 0.7), values = c(0,1,5)) +
   annotate("text", x = 2028.4, y = 1595, size = 3,
                label = "EPS-EI", color = "#A1A1A1", alpha = 1, hjust = 0) + 
   annotate("text", x = 2028.4, y = 1535, size = 3,
@@ -629,16 +630,19 @@ p1$plot = p1$plot +
              label = "USREP-ReEDS", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p2$plot = p2$plot + 
+  scale_shape_manual(breaks = c(0), values = c(1)) +
   annotate("text", x = 2028.4, y = 1595, size = 3,
                label = "GCAM-PNNL", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p3$plot = p3$plot + 
+  scale_shape_manual(breaks = c(-0.4, 0.4), values = c(1,5)) +
   annotate("text", x = 2028.4, y = 1595, size = 3,
                label = "GCAM-PNNL (L)", color = "#A1A1A1", alpha = 1, hjust = 0) + 
   annotate("text", x = 2028.4, y = 1535, size = 3,
                label = "ReEDS-NREL (R)", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p4$plot = p4$plot + 
+  scale_shape_manual(breaks = c(-0.7, 0, 0.7), values = c(0,1,5)) +
   annotate("text", x = 2028.4, y = 1595, size = 3,
                label = "GCAM-PNNL (L)", color = "#A1A1A1", alpha = 1, hjust = 0) +
   annotate("text", x = 2028.4, y = 1535, size = 3,
@@ -647,6 +651,7 @@ p4$plot = p4$plot +
                label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p5$plot = p5$plot + 
+  scale_shape_manual(breaks = c(-0.4, 0.4), values = c(1,5)) +
   annotate("text", x = 2028.4, y = 1595, size = 3,
                label = "NEMS-OP (L)", color = "#A1A1A1", alpha = 1, hjust = 0) +
     annotate("text", x = 2028.4, y = 1535, size = 3,
