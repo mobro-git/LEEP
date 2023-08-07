@@ -180,28 +180,35 @@ summary_NoIRA = indicators_summ %>%
   select(sector, year,
          `No IRA Min` = min, `No IRA Median` = median, `No IRA Max` = max)
 
-summary = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
+summary_core = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
 
-write.xlsx(summary, "output/pre-brief/summary_range_table_all_sensitivities.xlsx")
+write.xlsx(summary_core, "output/pre-brief/summary_range_table_all_sensitivities.xlsx")
 ```
-
 
 ## All sensitivities
 
 ```{r}
-clean_data = clean_data  %>%
+clean_data1 = clean_data  %>%
   mutate(region = "United States") %>%
   mutate(model = case_when(
     datasrc == "ReEDS_compiled.csv" ~ "ReEDS-NRELr",
     TRUE~model)) %>%
-  mutate(region = "United States")
+  mutate(region = "United States") %>%
+  # remove bistline models with incorrect indirect emissions for end-use sectors
+  # MARKAL-NETL sensitivities included here, but we exclude from LEEP Report sensitivity analysis: should decide what to do
+  filter(!(model %in% c("EPS-EI","GCAM-CGS","MARKAL-NETL","REGEN-EPRI","RIO-REPEAT") & 
+             scenario %in% c("IRA.Low","IRA.High") &
+             variable %in% c("Emissions|CO2|Energy|Demand|Buildings|Total",
+                             "Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total",
+                             "Emissions|CO2|Energy|Demand|Transportation|Total")))
+  
 
 Econ_data = spg_clean(
   1000,
   c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
   "EPA-GHGI",
   config,
-  clean_data,
+  clean_data1,
   figmap_leep_timeseries
 )
 
@@ -210,7 +217,7 @@ Elec_data = spg_clean(
   c("Scout-LEEP"),
   "EPA-GHGI",
   config,
-  clean_data,
+  clean_data1,
   figmap_leep_timeseries
 )
 
@@ -219,7 +226,7 @@ Tran_data = spg_clean(
   c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),  
   "EPA-GHGI",
   config,
-  clean_data,
+  clean_data1,
   figmap_leep_timeseries
 )
 
@@ -228,7 +235,7 @@ Ind_data = spg_clean(
   c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),
   "EPA-GHGI", 
   config,
-  clean_data, 
+  clean_data1, 
   figmap_leep_timeseries)
 
 Buil_data = spg_clean(
@@ -236,7 +243,7 @@ Buil_data = spg_clean(
   c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL"), 
   "EPA-GHGI", 
   config, 
-  clean_data, 
+  clean_data1, 
   figmap_leep_timeseries)
 
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
@@ -340,11 +347,31 @@ summary_NoIRA = indicators_summ %>%
   select(sector, year,
          `No IRA Min` = min, `No IRA Median` = median, `No IRA Max` = max)
 
-summary = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
+summary_all = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
 
-write.xlsx(summary, "output/pre-brief/summary_range_table_all_sensitivities.xlsx")
+write.xlsx(summary_all, "output/pre-brief/summary_range_table_all_sensitivities.xlsx")
 ```
 
+## Joint table
+
+```{r}
+core = summary_core[,1:5] %>%
+  rename(coreMin = `IRA Min`,
+         coreMed = `IRA Median`,
+         coreMax = `IRA Max`)
+all = summary_all[,3:5] %>%
+  rename(allMin = `IRA Min`,
+         allMed = `IRA Median`,
+         allMax = `IRA Max`)
+joint = cbind(core, all) %>%
+  mutate(
+    diffMin = allMin-coreMin,
+    diffMed = allMed-coreMed,
+    diffMax = allMax-coreMax
+  )
+
+write.xlsx(joint, "output/pre-brief/summary_range_changes.xlsx")
+```
 
 # EW Projections
 

@@ -307,8 +307,9 @@ data_summary = dta_full %>%
     T ~ "IRA"
   ))
 
-savedata(data_summary, fig_no = "2.4 Summary Table")
-savedata(data_summary, fig_no = "F.x1 Summary Table")
+savedata(data_summary, paste(fig_no, "summary_table"))
+fig_no = "F.18.generation_by_model"
+savedata(data_summary, paste(fig_no, "summary_table"))
 ```
 
 ## F2.5 capacity additions by technology
