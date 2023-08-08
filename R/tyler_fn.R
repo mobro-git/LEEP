@@ -55,6 +55,11 @@ spg2 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
   df = rbind(hist, strt, df)
 
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+  subpalettes$`Emissions|CO2|Energy|Demand|Industry`[1] = "black"
+  annoclr = subpalettes$`Emissions|CO2|Energy|Demand|Industry`
+  histclr = annoclr[1]
+  noIRAclr = annoclr[2]
+  IRAclr = annoclr[3]
 
   figure = ggplot(df, aes(year,value, color = scenario, group = interaction(model, scenario))) +
     geom_line(aes(alpha = alpha), size = 0.5) +
@@ -67,11 +72,12 @@ spg2 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
          x = element_blank(),
          y = yname) +
     theme(legend.position = gd,
-          axis.text.x = element_text(angle = 45, hjust = 1),
-          axis.ticks = element_blank()) +
-    annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historical", color = "black", alpha = annotate) +
-    annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#2A546C", alpha = annotate) +
-    annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#AE7F2C", alpha = annotate)
+          axis.text.x = element_text(angle = 45, hjust=1),
+          axis.ticks = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm")) +
+    annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historical", color = histclr, alpha = annotate) +
+    annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = noIRAclr, alpha = annotate) +
+    annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = IRAclr, alpha = annotate)
 
   return(list(figure = figure, data = df))
 }
@@ -90,6 +96,11 @@ spg2_2010 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, anno
   df = rbind(hist, strt, df)
 
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+  subpalettes$`Emissions|CO2|Energy|Demand|Industry`[1] = "black"
+    annoclr = subpalettes$`Emissions|CO2|Energy|Demand|Industry`
+    histclr = annoclr[1]
+    noIRAclr = annoclr[2]
+    IRAclr = annoclr[3]
 
   figure = ggplot(df, aes(year,value, color = scenario, group = interaction(model, scenario))) +
     geom_line(aes(alpha = alpha), size = 0.5) +
@@ -102,11 +113,12 @@ spg2_2010 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, anno
          x = element_blank(),
          y = yname) +
     theme(legend.position = gd,
-          axis.text.x = element_text(angle = 45, hjust = 1),
-          axis.ticks = element_blank()) +
-    annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historical", color = "black", alpha = annotate) +
-    annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#2A546C", alpha = annotate) +
-    annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#AE7F2C", alpha = annotate)
+          axis.text.x = element_text(angle = 45, hjust=1),
+          axis.ticks = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm")) +
+    annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historical", color = histclr, alpha = annotate) +
+    annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = noIRAclr, alpha = annotate) +
+    annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = IRAclr, alpha = annotate)
 
   return(list(figure = figure, data = df))
 }
@@ -125,6 +137,11 @@ spg3 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
   df = rbind(hist, strt, df)
 
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+  subpalettes$`Emissions|CO2|Energy|Demand|Industry`[1] = "black"
+    annoclr = subpalettes$`Emissions|CO2|Energy|Demand|Industry`
+    histclr = annoclr[1]
+    noIRAclr = annoclr[2]
+    IRAclr = annoclr[3]
 
   figure = ggplot(df, aes(year,value, color = scenario, group = interaction(model, scenario))) +
     geom_line(aes(alpha = alpha), size = 0.5) +
@@ -137,11 +154,12 @@ spg3 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
          x = element_blank(),
          y = yname) +
     theme(legend.position = gd,
-          axis.text.x = element_text(angle = 45, hjust = 1),
-          axis.ticks = element_blank()) +
-    annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historical", color = "black", alpha = annotate) +
-    annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = "#2A546C", alpha = annotate) +
-    annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = "#AE7F2C", alpha = annotate)
+          axis.text.x = element_text(angle = 45, hjust=1),
+          axis.ticks = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm")) +
+    annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historical", color = histclr, alpha = annotate) +
+    annotate("text", x = preira_coord[1], y = preira_coord[2], label = "No IRA", color = noIRAclr, alpha = annotate) +
+    annotate("text", x = ira_coord[1], y = ira_coord[2], label = "IRA", color = IRAclr, alpha = annotate)
 
   return(list(figure = figure, data = df))
 }
@@ -895,8 +913,8 @@ delta = function(pd_map_ID, drop, config, clean_data, figmap_leep_timeseries) {
          y = expression("% Difference from No IRA")) +
     theme_emf() +
     theme(
-      axis.ticks = element_blank(),
-      axis.text.x = element_text(angle = 45, hjust = 1),
+      axis.ticks = element_line(color = "black"),
+      axis.ticks.length = unit(-0.15, "cm"),
       panel.spacing.x = unit(4, "mm"),
       legend.position = "none"
     ) +

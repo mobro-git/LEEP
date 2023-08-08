@@ -75,6 +75,7 @@ master_palette <- c(
 color_map <- c(
   # scenarios
   "Historic" = "black",
+  "Historical" = "black",
   "IRA" = "Lgold",
   "Reference" = "Lblue",
   "No IRA" = "Lblue",

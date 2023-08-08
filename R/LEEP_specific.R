@@ -158,7 +158,8 @@ dot_plots_sens = function(plot_type, config, emf_data_long, figmap, figure_num, 
     theme(panel.grid = element_blank(), plot.title = element_blank(),
           axis.text.y = element_blank(),
           axis.title.y = element_blank(), axis.title.x = element_blank(),
-          axis.ticks = element_blank(), panel.border = element_blank(),
+          axis.ticks = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"), panel.border = element_blank(),
           legend.position = "none", plot.margin = margin(0,0,0,0))
 
   # combine all the plots
@@ -232,7 +233,7 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
     theme_emf() +
     ggtitle(title) +
     theme(axis.title.x = element_blank(),
-          plot.title = element_text(hjust = 0.5, size = 8), axis.ticks = element_blank(),
+          plot.title = element_text(hjust = 0.5, size = 8),
           plot.margin = margin(0.7,1,0.7,left_margin), legend.position = "none")
   ylabel = expression(paste("Power Sector Emissions (Mt C", O[2], "/yr)"))
   if (!ps) {
@@ -592,7 +593,7 @@ emis_stack = function(dta, title, figmap, config, econwide = FALSE) {
     # expression(paste("Economy-Wide C", O[2])),
     scale_subpalette(subpalettes, "Emissions Stack") +
     theme_emf() +
-    theme(axis.ticks = element_blank(), axis.title.x = element_blank(), plot.title = element_blank()) +
+    theme(axis.ticks.x = element_blank(), axis.ticks.y = element_line(color = "black"), axis.ticks.length = unit(-0.15, "cm"), axis.title.x = element_blank(), plot.title = element_blank()) +
     bottom1
 
   return(p)

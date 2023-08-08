@@ -81,7 +81,10 @@ fig = print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 3, "U
   scale_y_continuous(expand = c(0,0), limits = c(0,2000), labels = scales::comma,
                      name = expression(paste("Emissions (Mt C",O[2],"/yr)"))) +
   theme(axis.text.x = element_text(angle = 0, hjust = 0.5), plot.title = element_blank(),
-        axis.ticks = element_blank(), legend.position = "right")
+        axis.ticks.x = element_blank(), legend.position = "right", 
+        axis.ticks.y = element_line(color = "black"), 
+        axis.ticks.length = unit(-0.15, "cm")
+        )
 
 fig
 
@@ -388,23 +391,31 @@ data <- data %>%
   filter(scenario == "No IRA" | scenario == "IRA")
 
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+  subpalettes$`Emissions|CO2|Energy|Demand|Industry`[1] = "black"
+    annoclr = subpalettes$`Emissions|CO2|Energy|Demand|Industry`
+    histclr = annoclr[1]
+    noIRAclr = annoclr[2]
+    IRAclr = annoclr[3]
 
-A = ggplot(data = data, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
+A = ggplot(data = data, aes(x = axe, y = value,  color = scenario, shape = scenario)) +
+  geom_point(aes(alpha = alpha), size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 2.94, xend = 3.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_25, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
     scale_x_continuous(breaks = c(1,2,3), labels = c("2025", "2030", "2035")) +
+    scale_shape_manual(values = c("IRA" = 1, "No IRA" = 2)) +
     theme_emf() +
     labs(y = expression("LDV Electricity Demand (TWh)")) +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme(axis.text.x = element_text(angle = 45, hjust = 1),
           axis.title.x = element_blank(),
-          axis.ticks = element_blank(),
+          axis.ticks.y = element_line(color = "black"),
+          axis.ticks.x = element_blank(), 
+          axis.ticks.length = unit(-0.15, "cm"),
           legend.position = "none") + 
   scale_alpha(range = c(1, 1), guide = F) + 
-  annotate("text", x = 1.77, y = 325, label = "No IRA", color = "#F28063", alpha = 1) +
-  annotate("text", x = 2.17, y = 375, label = "IRA", color = "#0388B3", alpha = 1) +
+  annotate("text", x = 1.77, y = 325, label = "No IRA", color = noIRAclr, alpha = 1) +
+  annotate("text", x = 2.17, y = 375, label = "IRA", color = IRAclr, alpha = 1) +
   ylim(0, 700)
 
 print(A)

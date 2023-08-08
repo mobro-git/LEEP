@@ -86,7 +86,9 @@ fig = ggplot(data, aes(fill = variable_rename, y = value, alpha = alpha, x = yea
                      values = c( "#2a546c", "#ae7f2c", "#8b507e", "#DEDEDE")) +
   scale_fill_manual(breaks = c( "Coal", "Gas", "Petroleum", "Other Sectors"), 
                      values = c( "#2a546c", "#ae7f2c", "#8b507e", "#DEDEDE")) +
-  theme(axis.ticks = element_blank())
+  theme(axis.ticks.y = element_line(color = "black"),
+        axis.ticks.x = element_blank(),
+        axis.ticks.length = unit(-0.15, "cm"))
 fig
 
 saveall(fig, data, fig_no)
@@ -115,8 +117,9 @@ fig = print_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 140
                      breaks = c("Coal", "Natural Gas", "Oil", "Nuclear", "Renewables", "Other"),
                      values = c(sp[['Coal']], sp[['Natural Gas']], sp[['Oil']], sp[['Nuclear']],
                                 sp[['Renewables']], sp[['Other']])) +
-  theme(axis.text.x = element_text(angle = 0, hjust = 0.5), plot.title = element_blank(),
-        axis.ticks = element_blank()) +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5), plot.title = element_blank(), axis.ticks.x = element_blank(), 
+        axis.ticks.y = element_line(color = "black"), 
+        axis.ticks.length = unit(-0.15, "cm")) +
   bottom1
 fig
 
@@ -290,7 +293,10 @@ p = dta_full %>% ggplot() +
   scale_subpalette(subpalettes, "Electricity Generation") +
   facet_grid(metric ~ model, switch = "x", labeller = labeller(metric = facet_renamer, model = model_renamer), scales = "free_y") +
   theme_emf() + 
-  theme(axis.ticks = element_blank(), axis.text.x = element_text(angle = 90, hjust = 1),
+  theme(axis.ticks.x = element_blank(),
+        axis.ticks.y = element_line(color = "black"),
+        axis.ticks.length = unit(-0.15, "cm"),
+        axis.text.x = element_text(angle = 90, hjust = 1),
         strip.text.x = element_text(face = "plain", angle = 90, hjust = 1, size = 7),
         axis.title.x = element_blank())
 p
@@ -351,8 +357,10 @@ fig = dta3 %>% ggplot() +
   scale_x_continuous(expand = c(0,0)) +
   scale_alpha_manual(values = c(0.6,1), breaks = c("Capacity Retirements", "Capacity Additions"), guide = F) +
   ggtitle("Historical Annual Capacity Changes") +
-  theme(legend.position = "bottom", plot.title = element_text(hjust = 0.5, size = 10),
-        axis.text.x = element_text(angle = 0, hjust = 0.5, size = 6), axis.ticks = element_blank(),
+  theme(legend.position = "bottom", 
+        plot.title = element_text(hjust = 0.5, size = 10),
+        axis.text.x = element_text(angle = 0, hjust = 0.5, size = 6), axis.ticks = element_line(color = "black"),
+        axis.ticks.length = unit(-0.15, "cm"), 
         axis.title.x = element_blank())
 
 #dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States")
@@ -602,15 +610,34 @@ p1 = sens_dot_plot(sens_dta_panel1, title = "\nIRA Implementation",
                    ps = TRUE, ymin = 0, ymax = 1600, far_left = TRUE, 
                    ira_coord = c(2030.0,965), low_coord = c(2028.7, 1190), 
                    high_coord = c(2030.2, 1040))
+p1$plot = p1$plot +
+  theme(axis.ticks = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"))
 # p1
 p2 = sens_dot_plot(sens_dta_panel2, title = "\nEconomic Growth", figmap_leep_timeseries, config, ymin = 0, ymax = 1600,)
+p2$plot = p2$plot +
+  theme(axis.ticks.x = element_line(color = "black"),
+        axis.ticks.y = element_blank(),
+        axis.ticks.length = unit(-0.15, "cm"))
 #p2
 p3 = sens_dot_plot(sens_dta_panel3, title = "\nEnergy Price", figmap_leep_timeseries, config, ymin = 0, ymax = 1600,)
+p3$plot = p3$plot +
+  theme(axis.ticks.x = element_line(color = "black"),
+        axis.ticks.y = element_blank(),
+        axis.ticks.length = unit(-0.15, "cm"))
 # p3
 p4 = sens_dot_plot(sens_dta_panel4, title = "\nTechnology", figmap_leep_timeseries, config, ymin = 0, ymax = 1600,)
+p4$plot = p4$plot +
+  theme(axis.ticks.x = element_line(color = "black"),
+        axis.ticks.y = element_blank(),
+        axis.ticks.length = unit(-0.15, "cm"))
 # p4
 p5 = sens_dot_plot(sens_dta_panel5, title = "Combined Technology\n + Implementation", 
                    figmap_leep_timeseries, config, ymin = 0, ymax = 1600,)
+p5$plot = p5$plot +
+  theme(axis.ticks.x = element_line(color = "black"),
+        axis.ticks.y = element_blank(),
+        axis.ticks.length = unit(-0.15, "cm"))
 # p5
 
 # annotations

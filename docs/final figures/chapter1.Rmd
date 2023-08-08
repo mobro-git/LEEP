@@ -512,16 +512,42 @@ p7 = sens_dot_plot(sens_dta_econ, title = "\nIRA Implementation", figmap_leep_ti
                    ymin = 0, ymax = 5000, far_left = TRUE, single = FALSE, ps = FALSE,
                    ira_coord = c(2031.2,2600), low_coord = c(2031.3, 3760),
                    high_coord = c(2030.4, 4070))
+p7$plot = p7$plot +
+  theme(axis.ticks = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"))
+
+#p7$plot
+
+p7$plot = p7$plot +
+  theme(axis.ticks = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"))
 #p7$plot
 
 p7b = sens_dot_plot(sens_dta_econ_panel2, title = "\nEconomic Growth", figmap_leep_timeseries, config, 
                     ymin = 0, ymax = 5000)
+p7b$plot = p7b$plot +
+  theme(axis.ticks.x = element_line(color = "black"),
+        axis.ticks.y = element_blank(),
+        axis.ticks.length = unit(-0.15, "cm"))
+
 p7c = sens_dot_plot(sens_dta_econ_panel3, title = "\nEnergy Price", figmap_leep_timeseries, config,
                     ymin = 0, ymax = 5000)
+p7c$plot = p7c$plot +
+  theme(axis.ticks.x = element_line(color = "black"),
+        axis.ticks.y = element_blank(),
+        axis.ticks.length = unit(-0.15, "cm"))
 p7d = sens_dot_plot(sens_dta_econ_panel4, title = "\nTechnology", figmap_leep_timeseries, config, 
                     ymin = 0, ymax = 5000)
+p7d$plot = p7d$plot +
+  theme(axis.ticks.x = element_line(color = "black"),
+        axis.ticks.y = element_blank(),
+        axis.ticks.length = unit(-0.15, "cm"))
 p7e = sens_dot_plot(sens_dta_econ_panel5, title = "Combined Technology\n + Implementation", figmap_leep_timeseries, config,
                     ymin = 0, ymax = 5000)
+p7e$plot = p7e$plot +
+  theme(axis.ticks.x = element_line(color = "black"),
+        axis.ticks.y = element_blank(),
+        axis.ticks.length = unit(-0.15, "cm"))
 #p7b$plot
 
 
