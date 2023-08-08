@@ -529,7 +529,7 @@ filler = data.frame(year = c(2035), value = c(-200), scenario = c(""), model = c
 
 sens_dta_panel1 = sens_dta %>% filter(scenario %in% panel1_scens) %>%
   filter(model %in% c("EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI",
-                      "USREP-ReEDS", "ReEDS-NREL")) %>%
+                      "USREP-ReEDS", "ReEDS-NREL", "Haiku-RFF")) %>%
   filter(!(model == "ReEDS-NREL" & datasrc == "bistline_ira_tall.csv")) %>%
   mutate(scenario = case_when(scenario == "Core" ~ "IRA", TRUE ~ scenario)) %>%
   mutate(stagger = case_when(
@@ -646,13 +646,15 @@ p1$plot = p1$plot +
   scale_shape_manual(breaks = c(-0.8, 0, 0.8), values = c(0,1,5)) +
   annotate("text", x = 2028.4, y = 1595, size = 2,
                label = "EPS-EI", color = "#A1A1A1", alpha = 1, hjust = 0) + 
-  annotate("text", x = 2028.4, y = 1535, size = 2,
+  annotate("text", x = 2028.4, y = 1545, size = 2,
              label = "GCAM-CGS", color = "#A1A1A1", alpha = 1, hjust = 0) +
-  annotate("text", x = 2028.4, y = 1475, size = 2,
+  annotate("text", x = 2028.4, y = 1495, size = 2, 
+             label = "Haiku-RFF", color = "#A1A1A1", alpha = 1, hjust = 0) +
+  annotate("text", x = 2028.4, y = 1445, size = 2,
              label = "ReEDS-NREL", color = "#A1A1A1", alpha = 1, hjust = 0) + 
-  annotate("text", x = 2028.4, y = 1415, size = 2,
+  annotate("text", x = 2028.4, y = 1395, size = 2,
              label = "REGEN-EPRI", color = "#A1A1A1", alpha = 1, hjust = 0) + 
-  annotate("text", x = 2028.4, y = 1355, size = 2,
+  annotate("text", x = 2028.4, y = 1345, size = 2,
              label = "RIO-REPEAT", color = "#A1A1A1", alpha = 1, hjust = 0) + 
   annotate("text", x = 2028.4, y = 1295, size = 2,
              label = "USREP-ReEDS", color = "#A1A1A1", alpha = 1, hjust = 0)
@@ -666,23 +668,23 @@ p3$plot = p3$plot +
   scale_shape_manual(breaks = c(-0.6, 0.6), values = c(4,3)) +
   annotate("text", x = 2028.4, y = 1595, size = 2,
                label = "GCAM-PNNL (L)", color = "#A1A1A1", alpha = 1, hjust = 0) + 
-  annotate("text", x = 2028.4, y = 1535, size = 2,
+  annotate("text", x = 2028.4, y = 1545, size = 2,
                label = "ReEDS-NREL (R)", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p4$plot = p4$plot + 
   scale_shape_manual(breaks = c(-0.8, 0, 0.8), values = c(8,4,3)) +
   annotate("text", x = 2028.4, y = 1595, size = 2,
                label = "GCAM-PNNL (L)", color = "#A1A1A1", alpha = 1, hjust = 0) +
-  annotate("text", x = 2028.4, y = 1535, size = 2,
+  annotate("text", x = 2028.4, y = 1545, size = 2,
                label = "ReEDS-NREL (M)", color = "#A1A1A1", alpha = 1, hjust = 0) +
-  annotate("text", x = 2028.4, y = 1475, size = 2,
+  annotate("text", x = 2028.4, y = 1495, size = 2,
                label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p5$plot = p5$plot + 
   scale_shape_manual(breaks = c(-0.6, 0.6), values = c(4,3)) +
   annotate("text", x = 2028.4, y = 1595, size = 2,
                label = "NEMS-OP (L)", color = "#A1A1A1", alpha = 1, hjust = 0) +
-    annotate("text", x = 2028.4, y = 1535, size = 2,
+    annotate("text", x = 2028.4, y = 1545, size = 2,
                label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 combined = (p1$plot | p4$plot | p5$plot | p3$plot | p2$plot ) +
@@ -925,7 +927,7 @@ panel5_summ = panel5_summ %>%
   select(-c(variable,unit,year,metric))
 
 all_panels = cbind(panel1_summ, panel4_summ, panel5_summ, panel3_summ, panel2_summ)
-# all_panels %>% write.csv("./output/final_figures/data/Fig2.6_Summary.csv", row.names = FALSE)
+all_panels %>% write.csv("./output/final_figures/data/Fig2.6_Summary.csv", row.names = FALSE)
 # 
 # all_panels = add_header_row(flextable(all_panels), values = c("", "IRA Implementation", "Technology", "Combined Technology + Implementation", "Economic Growth", "Energy Price"),
 #   colwidths = c(4,2,4,2,2,2), top = TRUE)

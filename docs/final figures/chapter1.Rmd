@@ -799,7 +799,7 @@ econ_panel5_summ = econ_panel5_summ %>%
   select(-c(variable,unit,year,metric))
 
 all_panels = cbind(econ_panel1_summ, econ_panel4_summ, econ_panel5_summ, econ_panel3_summ, econ_panel2_summ)
-# all_panels %>% write.csv("./output/final_figures/data/Fig1.4_Summary.csv", row.names = FALSE)
+all_panels %>% write.csv("./output/final_figures/data/Fig1.5_Summary.csv", row.names = FALSE)
 # 
 # 
 # all_panels = add_header_row(flextable(all_panels), values = c("", "IRA Implementation", "Technology", "Combined Technology + Implementation", "Economic Growth", "Energy Price"),
