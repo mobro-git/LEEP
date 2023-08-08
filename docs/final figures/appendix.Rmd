@@ -5822,7 +5822,15 @@ clean_data1 = clean_data  %>%
     TRUE~model)) %>%
   mutate(region = "United States") %>%
   # remove bistline models with incorrect indirect emissions for end-use sectors
-  filter(!(model %in% c("EPS-EI","GCAM-CGS","MARKAL-NETL","REGEN-EPRI","RIO-REPEAT") & scenario %in% c("IRA.Low","IRA.High")))
+  # MARKAL-NETL sensitivities included here, but we exclude from LEEP Report sensitivity analysis: should decide what to do
+  filter(!(model %in% c("GCAM-CGS","MARKAL-NETL","REGEN-EPRI") & 
+             scenario %in% c("IRA.Low","IRA.High") &
+             variable %in% c("Emissions|CO2|Energy|Demand|Buildings|Total",
+                             "Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total",
+                             "Emissions|CO2|Energy|Demand|Transportation|Total"))) %>%
+  filter(!(model %in% c("MARKAL-NETL") & 
+             scenario %in% c("IRA.Low","IRA.High") &
+             variable %in% c("Emissions|CO2|Energy|Supply|Electricity")))
 
 Econ_data = spg_clean(
   1000,
@@ -5992,6 +6000,8 @@ saveall(combined, indicators_all_clean, fig_no)
 savedata(summary, paste(fig_no,"summary",sep="_"))
 ```
 
+### Core ranges to calculate difference
+
 ```{r}
 clean_data1 = clean_data  %>%
   mutate(region = "United States") %>%
@@ -6001,6 +6011,7 @@ clean_data1 = clean_data  %>%
   mutate(region = "United States") %>%
   # remove bistline models with incorrect indirect emissions for end-use sectors
   # MARKAL-NETL sensitivities included here, but we exclude from LEEP Report sensitivity analysis: should decide what to do
+  filter(model != "MARKAL-NETL") %>%
   filter(!(model %in% c("EPS-EI","GCAM-CGS","MARKAL-NETL","REGEN-EPRI","RIO-REPEAT") & 
              scenario %in% c("IRA.Low","IRA.High") &
              variable %in% c("Emissions|CO2|Energy|Demand|Buildings|Total",
@@ -6153,7 +6164,7 @@ summary_NoIRA = indicators_summ %>%
 
 summary_all = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
 
-write.xlsx(summary_all, "output/pre-brief/summary_range_table_all_sensitivities.xlsx")
+write.xlsx2(summary_all, "output/pre-brief/summary_range_table_all_sensitivities.xlsx")
 ```
 
 ## Joint table
@@ -6174,5 +6185,5 @@ joint = cbind(core, all) %>%
     diffMax = allMax-coreMax
   )
 
-write.xlsx(joint, "output/pre-brief/summary_range_changes.xlsx")
+write.xlsx2(joint, "output/pre-brief/summary_range_changes.xlsx")
 ```

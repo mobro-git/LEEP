@@ -2383,6 +2383,11 @@ IPM-EPA,IRA,United States,Carbon Sequestration|CCS|Fossil|Energy|Supply|Electric
 IPM-EPA,IRA,United States,Carbon Sequestration|CCS|Fossil|Energy|Supply|Electricity,Mt CO2/yr,2040,73.77976644
 IPM-EPA,IRA,United States,Carbon Sequestration|CCS|Fossil|Energy|Supply|Electricity,Mt CO2/yr,2045,5.526585223
 IPM-EPA,IRA,United States,Carbon Sequestration|CCS|Fossil|Energy|Supply|Electricity,Mt CO2/yr,2050,2.991203809
+IPM-EPA,No IRA,United States,Carbon Sequestration|CCS|Fossil|Energy|Supply|Electricity,Mt CO2/yr,2030,10.00000049
+IPM-EPA,No IRA,United States,Carbon Sequestration|CCS|Fossil|Energy|Supply|Electricity,Mt CO2/yr,2035,10.00000049
+IPM-EPA,No IRA,United States,Carbon Sequestration|CCS|Fossil|Energy|Supply|Electricity,Mt CO2/yr,2040,9.008589098
+IPM-EPA,No IRA,United States,Carbon Sequestration|CCS|Fossil|Energy|Supply|Electricity,Mt CO2/yr,2045,5.481787053
+IPM-EPA,No IRA,United States,Carbon Sequestration|CCS|Fossil|Energy|Supply|Electricity,Mt CO2/yr,2050,4.463678538
 IPM-EPA,IRA,United States,Carbon Sequestration|CCS|Fossil|Energy|Supply|Electricity,Mt CO2/yr,2030,20.50791357
 IPM-EPA,IRA,United States,Carbon Sequestration|CCS|Fossil|Energy|Supply|Electricity,Mt CO2/yr,2035,31.75376951
 IPM-EPA,IRA,United States,Carbon Sequestration|CCS|Fossil|Energy|Supply|Electricity,Mt CO2/yr,2040,31.75376951
@@ -3095,210 +3100,24 @@ RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation,Mt C
 RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation,Mt CO2/yr,2040,1097
 RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation,Mt CO2/yr,2045,887.5
 RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation,Mt CO2/yr,2050,678
-EPS-EI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.009483943
-EPS-EI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.031970151
-EPS-EI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.064558501
-EPS-EI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2040,0.09451337
-EPS-EI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2045,0.116498615
-EPS-EI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2050,0.135999671
-EPS-EI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.011502633
-EPS-EI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.042992752
-EPS-EI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.082930353
-EPS-EI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2040,0.111094408
-EPS-EI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2045,0.12116598
-EPS-EI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2050,0.136749474
-EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.179396415
-EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.177923341
-EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.177499523
-EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2040,0.17671817
-EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2045,0.176225184
-EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2050,0.17518716
-EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.180507704
-EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.179669787
-EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.17876559
-EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2040,0.177307875
-EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2045,0.17590413
-EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2050,0.17443428
-EPS-EI,No IRA,United States,Final Energy|Percent Electricity,%,2025,0.206795231
-EPS-EI,No IRA,United States,Final Energy|Percent Electricity,%,2030,0.223587115
-EPS-EI,No IRA,United States,Final Energy|Percent Electricity,%,2035,0.244583989
-EPS-EI,No IRA,United States,Final Energy|Percent Electricity,%,2040,0.263033998
-EPS-EI,No IRA,United States,Final Energy|Percent Electricity,%,2045,0.276848087
-EPS-EI,No IRA,United States,Final Energy|Percent Electricity,%,2050,0.289402218
-EPS-EI,IRA,United States,Final Energy|Percent Electricity,%,2025,0.210166945
-EPS-EI,IRA,United States,Final Energy|Percent Electricity,%,2030,0.23311382
-EPS-EI,IRA,United States,Final Energy|Percent Electricity,%,2035,0.256831088
-EPS-EI,IRA,United States,Final Energy|Percent Electricity,%,2040,0.273104158
-EPS-EI,IRA,United States,Final Energy|Percent Electricity,%,2045,0.281355671
-EPS-EI,IRA,United States,Final Energy|Percent Electricity,%,2050,0.292840863
-EPS-EI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.471835536
-EPS-EI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.478457467
-EPS-EI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.488584667
-EPS-EI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2040,0.500906703
-EPS-EI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2045,0.513581087
-EPS-EI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2050,0.528454621
-EPS-EI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.480468944
-EPS-EI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.497629476
-EPS-EI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.509993675
-EPS-EI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2040,0.519397317
-EPS-EI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2045,0.530137153
-EPS-EI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2050,0.545846478
-EPS-EI,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2025,0.064394642
-EPS-EI,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2030,0.062772223
-EPS-EI,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2035,0.062013298
-EPS-EI,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2040,0.060963962
-EPS-EI,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2045,0.060237144
-EPS-EI,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2050,0.059659031
-EPS-EI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.088540018
-EPS-EI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.226585733
-EPS-EI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.399458174
-EPS-EI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.557370238
-EPS-EI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.691805736
-EPS-EI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,0.809405089
-EPS-EI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.14183742
-EPS-EI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.441646682
-EPS-EI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.689316664
-EPS-EI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.791018935
-EPS-EI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.794023412
-EPS-EI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,0.871999913
-EPS-EI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.16537824
-EPS-EI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.5603436
-EPS-EI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.0606716
-EPS-EI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.46961
-EPS-EI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.7533512
-EPS-EI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,2.0372616
-EPS-EI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.16612488
-EPS-EI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.6150528
-EPS-EI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.1715192
-EPS-EI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.5813612
-EPS-EI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.7697888
-EPS-EI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,2.0347956
-EPS-EI,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2025,0.413471904
-EPS-EI,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2030,0.972922126
-EPS-EI,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2035,0.960478088
-EPS-EI,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2040,0.940587977
-EPS-EI,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2045,0.933705544
-EPS-EI,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2050,0.931794523
-EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.806064036
-EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.835590552
-EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.933266328
-EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,3.992655888
-EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.063615092
-EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.164732144
-EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.81697506
-EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.850700724
-EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.915188928
-EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,3.97183932
-EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.04197848
-EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.12739928
 EPS-EI,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,10.62110124
 EPS-EI,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,10.87719372
 EPS-EI,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,11.241504
 EPS-EI,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2040,11.80111248
 EPS-EI,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2045,12.44478744
 EPS-EI,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2050,13.238163
-EPS-EI,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,10.73668212
-EPS-EI,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,11.07346824
-EPS-EI,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,11.39560812
-EPS-EI,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2040,11.9057796
-EPS-EI,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2045,12.54111955
-EPS-EI,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2050,13.44711222
-EPS-EI,No IRA,United States,Final Energy|Electricity,EJ/yr,2025,14.7563892
-EPS-EI,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,15.577596
-EPS-EI,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,16.678836
-EPS-EI,No IRA,United States,Final Energy|Electricity,EJ/yr,2040,17.860896
-EPS-EI,No IRA,United States,Final Energy|Electricity,EJ/yr,2045,18.99216
-EPS-EI,No IRA,United States,Final Energy|Electricity,EJ/yr,2050,20.271888
-EPS-EI,IRA,United States,Final Energy|Electricity,EJ/yr,2025,15.26418036
-EPS-EI,IRA,United States,Final Energy|Electricity,EJ/yr,2030,16.9386804
-EPS-EI,IRA,United States,Final Energy|Electricity,EJ/yr,2035,18.1501884
-EPS-EI,IRA,United States,Final Energy|Electricity,EJ/yr,2040,19.2114036
-EPS-EI,IRA,United States,Final Energy|Electricity,EJ/yr,2045,20.1022524
-EPS-EI,IRA,United States,Final Energy|Electricity,EJ/yr,2050,21.4504344
-GCAM-CGS,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.0079
-GCAM-CGS,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.02
-GCAM-CGS,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.034
-GCAM-CGS,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.014
-GCAM-CGS,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.044
-GCAM-CGS,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.049
-GCAM-CGS,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.143
-GCAM-CGS,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.147
-GCAM-CGS,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.166
-GCAM-CGS,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.156
-GCAM-CGS,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.18
-GCAM-CGS,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.177
-GCAM-CGS,No IRA,United States,Final Energy|Percent Electricity,%,2025,0.214523594
-GCAM-CGS,No IRA,United States,Final Energy|Percent Electricity,%,2030,0.228432061
-GCAM-CGS,No IRA,United States,Final Energy|Percent Electricity,%,2035,0.252683209
-GCAM-CGS,IRA,United States,Final Energy|Percent Electricity,%,2025,0.226453545
-GCAM-CGS,IRA,United States,Final Energy|Percent Electricity,%,2030,0.258247389
-GCAM-CGS,IRA,United States,Final Energy|Percent Electricity,%,2035,0.264517147
-GCAM-CGS,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.554
-GCAM-CGS,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.568
-GCAM-CGS,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.59
-GCAM-CGS,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.571
-GCAM-CGS,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.604
-GCAM-CGS,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.616
-GCAM-CGS,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.06080068
-GCAM-CGS,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.093604078
-GCAM-CGS,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.151523574
-GCAM-CGS,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.123208312
-GCAM-CGS,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.286941574
-GCAM-CGS,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.216138172
-GCAM-CGS,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.138574183
-GCAM-CGS,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.388393742
-GCAM-CGS,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.579571136
-GCAM-CGS,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.22311293
-GCAM-CGS,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.689681768
-GCAM-CGS,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.863040847
-GCAM-CGS,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.138950793
-GCAM-CGS,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.497168079
-GCAM-CGS,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.992553044
-GCAM-CGS,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.359715276
-GCAM-CGS,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,4.172049718
-GCAM-CGS,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,4.292558884
-GCAM-CGS,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,11.03611787
-GCAM-CGS,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,11.43391203
-GCAM-CGS,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,11.86600799
+EPS-EI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.480468944
+EPS-EI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.497629476
+EPS-EI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.509993675
+EPS-EI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2040,0.519397317
+EPS-EI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2045,0.530137153
+EPS-EI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2050,0.545846478
 GCAM-CGS,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,11.07401901
 GCAM-CGS,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,11.54951248
 GCAM-CGS,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,11.86032721
-GCAM-CGS,No IRA,United States,Final Energy|Electricity,EJ/yr,2025,14.37444353
-GCAM-CGS,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,15.41307793
-GCAM-CGS,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,16.58965574
-GCAM-CGS,IRA,United States,Final Energy|Electricity,EJ/yr,2025,14.78005552
-GCAM-CGS,IRA,United States,Final Energy|Electricity,EJ/yr,2030,16.69818554
-GCAM-CGS,IRA,United States,Final Energy|Electricity,EJ/yr,2035,17.23206511
-Haiku-RFF,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.0261984
-Haiku-RFF,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.028327724
-Haiku-RFF,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.030217738
-Haiku-RFF,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.032002083
-Haiku-RFF,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.034001748
-Haiku-RFF,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.0261984
-Haiku-RFF,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.028327724
-Haiku-RFF,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.030217738
-Haiku-RFF,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.032002083
-Haiku-RFF,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.034001748
-Haiku-RFF,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.039652479
-Haiku-RFF,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.072410058
-Haiku-RFF,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.124460118
-Haiku-RFF,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,0.199726319
-Haiku-RFF,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,0.289468682
-Haiku-RFF,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.039652479
-Haiku-RFF,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.072410058
-Haiku-RFF,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.124460118
-Haiku-RFF,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,0.199726319
-Haiku-RFF,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,0.289468682
-Haiku-RFF,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.519799442
-Haiku-RFF,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.685770198
-Haiku-RFF,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.803721136
-Haiku-RFF,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,3.909398174
-Haiku-RFF,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.067918965
-Haiku-RFF,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.519799442
-Haiku-RFF,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.685770198
-Haiku-RFF,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.803721136
-Haiku-RFF,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,3.909398174
-Haiku-RFF,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.067918965
+GCAM-CGS,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.571
+GCAM-CGS,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.604
+GCAM-CGS,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.616
 Haiku-RFF,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,10.33350484
 Haiku-RFF,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,10.52429355
 Haiku-RFF,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,10.8302693
@@ -3319,72 +3138,6 @@ IPM-EPA,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,11.95685
 IPM-EPA,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2040,12.49845503
 IPM-EPA,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2045,13.13344112
 IPM-EPA,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2050,13.92030036
-IPM-EPA,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,4.052073852
-IPM-EPA,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,4.207101411
-IPM-EPA,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,4.349458611
-IPM-EPA,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.554083453
-IPM-EPA,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.740202647
-IPM-EPA,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,4.052073852
-IPM-EPA,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,4.207101411
-IPM-EPA,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,4.349458611
-IPM-EPA,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.554083453
-IPM-EPA,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.740202647
-IPM-EPA,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.628300787
-IPM-EPA,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.102772697
-IPM-EPA,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.518193808
-IPM-EPA,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.854757136
-IPM-EPA,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,2.14004645
-IPM-EPA,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.628300787
-IPM-EPA,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.102772697
-IPM-EPA,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.518193808
-IPM-EPA,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.854757136
-IPM-EPA,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,2.14004645
-IPM-EPA,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,16.22969723
-IPM-EPA,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,17.26672435
-IPM-EPA,No IRA,United States,Final Energy|Electricity,EJ/yr,2040,18.36610745
-IPM-EPA,No IRA,United States,Final Energy|Electricity,EJ/yr,2045,19.54228171
-IPM-EPA,No IRA,United States,Final Energy|Electricity,EJ/yr,2050,20.80054946
-IPM-EPA,IRA,United States,Final Energy|Electricity,EJ/yr,2030,16.22969723
-IPM-EPA,IRA,United States,Final Energy|Electricity,EJ/yr,2035,17.26672435
-IPM-EPA,IRA,United States,Final Energy|Electricity,EJ/yr,2040,18.36610745
-IPM-EPA,IRA,United States,Final Energy|Electricity,EJ/yr,2045,19.54228171
-IPM-EPA,IRA,United States,Final Energy|Electricity,EJ/yr,2050,20.80054946
-IPM-NRDC,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.102339623
-IPM-NRDC,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.179196487
-IPM-NRDC,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.259445214
-IPM-NRDC,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,0.34375806
-IPM-NRDC,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,0.431769809
-IPM-NRDC,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,0.524459236
-IPM-NRDC,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.102339623
-IPM-NRDC,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.179196487
-IPM-NRDC,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.259445214
-IPM-NRDC,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,0.34375806
-IPM-NRDC,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,0.431769809
-IPM-NRDC,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,0.524459236
-IPM-NRDC,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2025,0.806935748
-IPM-NRDC,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2030,0.912375551
-IPM-NRDC,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2035,1.01713788
-IPM-NRDC,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2040,1.154330201
-IPM-NRDC,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2045,1.318543614
-IPM-NRDC,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2050,1.518126415
-IPM-NRDC,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2025,0.806935748
-IPM-NRDC,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2030,0.912375551
-IPM-NRDC,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2035,1.01713788
-IPM-NRDC,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2040,1.154330201
-IPM-NRDC,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2045,1.318543614
-IPM-NRDC,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2050,1.518126415
-IPM-NRDC,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.74443286
-IPM-NRDC,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.849300878
-IPM-NRDC,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.951582275
-IPM-NRDC,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,4.084711524
-IPM-NRDC,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.243634914
-IPM-NRDC,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.382985499
-IPM-NRDC,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.74443286
-IPM-NRDC,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.849300878
-IPM-NRDC,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.951582275
-IPM-NRDC,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,4.084711524
-IPM-NRDC,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.243634914
-IPM-NRDC,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.382985499
 IPM-NRDC,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,10.3292934
 IPM-NRDC,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,10.48293896
 IPM-NRDC,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,10.71887827
@@ -3397,66 +3150,6 @@ IPM-NRDC,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,10.7188
 IPM-NRDC,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2040,11.1107127
 IPM-NRDC,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2045,11.55451597
 IPM-NRDC,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2050,12.07013159
-IPM-NRDC,No IRA,United States,Final Energy|Electricity,EJ/yr,2025,14.98300164
-IPM-NRDC,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,15.42381188
-IPM-NRDC,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,15.94704364
-IPM-NRDC,No IRA,United States,Final Energy|Electricity,EJ/yr,2040,16.69351248
-IPM-NRDC,No IRA,United States,Final Energy|Electricity,EJ/yr,2045,17.5484643
-IPM-NRDC,No IRA,United States,Final Energy|Electricity,EJ/yr,2050,18.49570274
-IPM-NRDC,IRA,United States,Final Energy|Electricity,EJ/yr,2025,14.98300164
-IPM-NRDC,IRA,United States,Final Energy|Electricity,EJ/yr,2030,15.42381188
-IPM-NRDC,IRA,United States,Final Energy|Electricity,EJ/yr,2035,15.94704364
-IPM-NRDC,IRA,United States,Final Energy|Electricity,EJ/yr,2040,16.69351248
-IPM-NRDC,IRA,United States,Final Energy|Electricity,EJ/yr,2045,17.5484643
-IPM-NRDC,IRA,United States,Final Energy|Electricity,EJ/yr,2050,18.49570274
-MARKAL-NETL,IRA,United States,Final Energy|Percent Electricity,%,2025,0.239396627
-MARKAL-NETL,IRA,United States,Final Energy|Percent Electricity,%,2030,0.247722372
-MARKAL-NETL,IRA,United States,Final Energy|Percent Electricity,%,2035,0.255427566
-MARKAL-NETL,IRA,United States,Final Energy|Percent Electricity,%,2040,0.262593273
-MARKAL-NETL,IRA,United States,Final Energy|Percent Electricity,%,2045,0.269760889
-MARKAL-NETL,IRA,United States,Final Energy|Percent Electricity,%,2050,0.296106997
-MARKAL-NETL,No IRA,United States,Final Energy|Percent Electricity,%,2025,0.244058577
-MARKAL-NETL,No IRA,United States,Final Energy|Percent Electricity,%,2030,0.254281357
-MARKAL-NETL,No IRA,United States,Final Energy|Percent Electricity,%,2035,0.262529831
-MARKAL-NETL,No IRA,United States,Final Energy|Percent Electricity,%,2040,0.266833907
-MARKAL-NETL,No IRA,United States,Final Energy|Percent Electricity,%,2045,0.272546515
-MARKAL-NETL,No IRA,United States,Final Energy|Percent Electricity,%,2050,0.287198559
-MARKAL-NETL,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.122430979
-MARKAL-NETL,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.183491468
-MARKAL-NETL,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.221351771
-MARKAL-NETL,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.271072169
-MARKAL-NETL,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.294682357
-MARKAL-NETL,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,0.297152377
-MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.12244098
-MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.183491468
-MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.221361771
-MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.271072169
-MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.294682357
-MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,0.297152377
-MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,1.123348987
-MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,1.123228986
-MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.129069032
-MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.225309802
-MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.355310842
-MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,1.886035088
-MARKAL-NETL,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,1.165119321
-MARKAL-NETL,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,1.285380283
-MARKAL-NETL,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.397811182
-MARKAL-NETL,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.509332075
-MARKAL-NETL,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.639303114
-MARKAL-NETL,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,2.17880743
-MARKAL-NETL,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,2.998033984
-MARKAL-NETL,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.197085576
-MARKAL-NETL,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.259886079
-MARKAL-NETL,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,3.517338138
-MARKAL-NETL,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,3.97883183
-MARKAL-NETL,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.333654669
-MARKAL-NETL,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.024814198
-MARKAL-NETL,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.116404931
-MARKAL-NETL,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.29378635
-MARKAL-NETL,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,3.577728622
-MARKAL-NETL,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.097722782
-MARKAL-NETL,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.853308826
 MARKAL-NETL,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,11.58957272
 MARKAL-NETL,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,11.52054216
 MARKAL-NETL,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,11.77796422
@@ -3469,148 +3162,12 @@ MARKAL-NETL,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,1
 MARKAL-NETL,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2040,13.37683701
 MARKAL-NETL,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2045,13.35773686
 MARKAL-NETL,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2050,13.54006832
-MARKAL-NETL,IRA,United States,Final Energy|Electricity,EJ/yr,2025,15.90193721
-MARKAL-NETL,IRA,United States,Final Energy|Electricity,EJ/yr,2030,16.10581885
-MARKAL-NETL,IRA,United States,Final Energy|Electricity,EJ/yr,2035,16.69091353
-MARKAL-NETL,IRA,United States,Final Energy|Electricity,EJ/yr,2040,17.0626465
-MARKAL-NETL,IRA,United States,Final Energy|Electricity,EJ/yr,2045,17.50003
-MARKAL-NETL,IRA,United States,Final Energy|Electricity,EJ/yr,2050,18.92905143
-MARKAL-NETL,No IRA,United States,Final Energy|Electricity,EJ/yr,2025,16.38962112
-MARKAL-NETL,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,17.22617781
-MARKAL-NETL,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,17.86775294
-MARKAL-NETL,No IRA,United States,Final Energy|Electricity,EJ/yr,2040,18.39055712
-MARKAL-NETL,No IRA,United States,Final Energy|Electricity,EJ/yr,2045,18.98656189
-MARKAL-NETL,No IRA,United States,Final Energy|Electricity,EJ/yr,2050,20.05691045
-NEMS-RHG,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.004295712
-NEMS-RHG,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.011769237
-NEMS-RHG,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.02417133
-NEMS-RHG,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.004431455
-NEMS-RHG,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.017463193
-NEMS-RHG,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.041249706
-NEMS-RHG,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.125987619
-NEMS-RHG,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.125682779
-NEMS-RHG,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.124811021
-NEMS-RHG,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.126192722
-NEMS-RHG,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.125068488
-NEMS-RHG,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.124191518
-NEMS-RHG,No IRA,United States,Final Energy|Percent Electricity,%,2025,0.227827967
-NEMS-RHG,No IRA,United States,Final Energy|Percent Electricity,%,2030,0.236378328
-NEMS-RHG,No IRA,United States,Final Energy|Percent Electricity,%,2035,0.250365296
-NEMS-RHG,IRA,United States,Final Energy|Percent Electricity,%,2025,0.263185068
-NEMS-RHG,IRA,United States,Final Energy|Percent Electricity,%,2030,0.231429051
-NEMS-RHG,IRA,United States,Final Energy|Percent Electricity,%,2035,0.250957693
-NEMS-RHG,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.471169044
-NEMS-RHG,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.469050764
-NEMS-RHG,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.47708303
-NEMS-RHG,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.471774872
-NEMS-RHG,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.472241705
-NEMS-RHG,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.479132488
-NEMS-RHG,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.025882757
-NEMS-RHG,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.028807355
-NEMS-RHG,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.030995463
-NEMS-RHG,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.040709782
-NEMS-RHG,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.155395875
-NEMS-RHG,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.356879291
-NEMS-RHG,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.085280358
-NEMS-RHG,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.310722661
-NEMS-RHG,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.676918035
-NEMS-RHG,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.096229319
-NEMS-RHG,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.287899207
-NEMS-RHG,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.584837666
-NEMS-RHG,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.565565111
-NEMS-RHG,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.576277879
-NEMS-RHG,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.577927586
-NEMS-RHG,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.569710475
-NEMS-RHG,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.572449146
-NEMS-RHG,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.582621385
 NEMS-RHG,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,10.13866523
 NEMS-RHG,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,10.0793562
 NEMS-RHG,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,10.22180801
 NEMS-RHG,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,10.22616694
 NEMS-RHG,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,10.2192627
 NEMS-RHG,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,10.37773476
-NEMS-RHG,IRA,United States,Final Energy|Electricity,EJ/yr,2025,13.83022048
-NEMS-RHG,IRA,United States,Final Energy|Electricity,EJ/yr,2030,14.12175262
-NEMS-RHG,IRA,United States,Final Energy|Electricity,EJ/yr,2035,14.83353292
-NEMS-RHG,No IRA,United States,Final Energy|Electricity,EJ/yr,2025,13.91798949
-NEMS-RHG,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,14.1084184
-NEMS-RHG,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,14.57618928
-ReEDS-NREL,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2025,15.01046297
-ReEDS-NREL,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2030,15.92621076
-ReEDS-NREL,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2035,17.07795026
-ReEDS-NREL,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2040,18.42714592
-ReEDS-NREL,IRA,United States,Final Energy|Electricity,EJ/yr,2025,15.01046297
-ReEDS-NREL,IRA,United States,Final Energy|Electricity,EJ/yr,2030,15.92621076
-ReEDS-NREL,IRA,United States,Final Energy|Electricity,EJ/yr,2035,17.07795026
-ReEDS-NREL,IRA,United States,Final Energy|Electricity,EJ/yr,2040,18.42714592
-ReEDS-NREL,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2025,15.18221679
-ReEDS-NREL,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2030,15.6379113
-ReEDS-NREL,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2035,16.18995296
-ReEDS-NREL,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2040,16.97500435
-ReEDS-NREL,No IRA,United States,Final Energy|Electricity,EJ/yr,2025,15.18221679
-ReEDS-NREL,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,15.6379113
-ReEDS-NREL,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,16.18995296
-ReEDS-NREL,No IRA,United States,Final Energy|Electricity,EJ/yr,2040,16.97500435
-REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.016535053
-REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.036176492
-REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.06180582
-REGEN-EPRI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.019134249
-REGEN-EPRI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.045794303
-REGEN-EPRI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.076091549
-REGEN-EPRI,No IRA,United States,Final Energy|Percent Electricity,%,2025,0.227553959
-REGEN-EPRI,No IRA,United States,Final Energy|Percent Electricity,%,2030,0.243503358
-REGEN-EPRI,No IRA,United States,Final Energy|Percent Electricity,%,2035,0.264793051
-REGEN-EPRI,IRA,United States,Final Energy|Percent Electricity,%,2025,0.232444465
-REGEN-EPRI,IRA,United States,Final Energy|Percent Electricity,%,2030,0.256127124
-REGEN-EPRI,IRA,United States,Final Energy|Percent Electricity,%,2035,0.285816627
-REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.276826074
-REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.286387942
-REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.312295381
-REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.283323506
-REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.29932106
-REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.332904812
-REGEN-EPRI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.488226302
-REGEN-EPRI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.490275838
-REGEN-EPRI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.495444402
-REGEN-EPRI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.496913213
-REGEN-EPRI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.507680122
-REGEN-EPRI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.514226706
-REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.178665324
-REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.466174708
-REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.787359992
-REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.156705433
-REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.511040054
-REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,1.868556092
-REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.224060651
-REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.33881615
-REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.486889708
-REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.662974582
-REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.849204654
-REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,0.994238707
-REGEN-EPRI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.226951632
-REGEN-EPRI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.623538194
-REGEN-EPRI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.056245475
-REGEN-EPRI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.525719468
-REGEN-EPRI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.936762416
-REGEN-EPRI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,2.305085545
-REGEN-EPRI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.267499902
-REGEN-EPRI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.410190089
-REGEN-EPRI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.517668196
-REGEN-EPRI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.686537388
-REGEN-EPRI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.891919993
-REGEN-EPRI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,1.044667444
-REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,4.926232477
-REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,5.037424916
-REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,5.312852094
-REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,5.604035804
-REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,5.870419734
-REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,6.021700236
-REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,5.001008369
-REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,5.166593568
-REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,5.620224428
-REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,6.155861315
-REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,7.000723401
-REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,7.407430181
 REGEN-EPRI,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,8.654014584
 REGEN-EPRI,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,8.416427312
 REGEN-EPRI,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,8.237988304
@@ -3623,102 +3180,6 @@ REGEN-EPRI,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,8.395
 REGEN-EPRI,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2040,8.21371295
 REGEN-EPRI,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2045,8.095659371
 REGEN-EPRI,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2050,7.924386792
-REGEN-EPRI,No IRA,United States,Final Energy|Electricity,EJ/yr,2025,13.98297304
-REGEN-EPRI,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,14.25884309
-REGEN-EPRI,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,14.8250901
-REGEN-EPRI,No IRA,United States,Final Energy|Electricity,EJ/yr,2040,15.49477817
-REGEN-EPRI,No IRA,United States,Final Energy|Electricity,EJ/yr,2045,16.1305303
-REGEN-EPRI,No IRA,United States,Final Energy|Electricity,EJ/yr,2050,16.59194394
-REGEN-EPRI,IRA,United States,Final Energy|Electricity,EJ/yr,2025,14.22930435
-REGEN-EPRI,IRA,United States,Final Energy|Electricity,EJ/yr,2030,14.76699449
-REGEN-EPRI,IRA,United States,Final Energy|Electricity,EJ/yr,2035,15.58923185
-REGEN-EPRI,IRA,United States,Final Energy|Electricity,EJ/yr,2040,16.58183112
-REGEN-EPRI,IRA,United States,Final Energy|Electricity,EJ/yr,2045,17.92506518
-REGEN-EPRI,IRA,United States,Final Energy|Electricity,EJ/yr,2050,18.68156996
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.0109
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.0414
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.0961
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2040,0.1671
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2045,0.2395
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2050,0.2974
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.0119
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.0576
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.1507
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2040,0.2602
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2045,0.3546
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2050,0.406
-RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.1731
-RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.1716
-RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.1703
-RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2040,0.1702
-RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2045,0.1703
-RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2050,0.17
-RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.1732
-RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.1717
-RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.1705
-RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2040,0.1705
-RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2045,0.1705
-RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2050,0.1702
-RIO-REPEAT,No IRA,United States,Final Energy|Percent Electricity,%,2025,0.2077
-RIO-REPEAT,No IRA,United States,Final Energy|Percent Electricity,%,2030,0.2274
-RIO-REPEAT,No IRA,United States,Final Energy|Percent Electricity,%,2035,0.2558
-RIO-REPEAT,No IRA,United States,Final Energy|Percent Electricity,%,2040,0.2876
-RIO-REPEAT,No IRA,United States,Final Energy|Percent Electricity,%,2045,0.316
-RIO-REPEAT,No IRA,United States,Final Energy|Percent Electricity,%,2050,0.3382
-RIO-REPEAT,IRA,United States,Final Energy|Percent Electricity,%,2025,0.2087
-RIO-REPEAT,IRA,United States,Final Energy|Percent Electricity,%,2030,0.239
-RIO-REPEAT,IRA,United States,Final Energy|Percent Electricity,%,2035,0.2859
-RIO-REPEAT,IRA,United States,Final Energy|Percent Electricity,%,2040,0.3324
-RIO-REPEAT,IRA,United States,Final Energy|Percent Electricity,%,2045,0.366
-RIO-REPEAT,IRA,United States,Final Energy|Percent Electricity,%,2050,0.3845
-RIO-REPEAT,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.4804
-RIO-REPEAT,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.4913
-RIO-REPEAT,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.5041
-RIO-REPEAT,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2040,0.5179
-RIO-REPEAT,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2045,0.5315
-RIO-REPEAT,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2050,0.5464
-RIO-REPEAT,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.4827
-RIO-REPEAT,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.5143
-RIO-REPEAT,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.5511
-RIO-REPEAT,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2040,0.5836
-RIO-REPEAT,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2045,0.6056
-RIO-REPEAT,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2050,0.6218
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.0522
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.1368
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.3744
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.7344
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,1.0242
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,1.314
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.081
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.3744
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.8928
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,1.2996
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,1.5876
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,1.8756
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.2844
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.8928
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.7964
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,2.7252
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,3.4848
-RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,4.2444
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.3132
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,1.0332
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,2.3076
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,3.5748
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,4.2678
-RIO-REPEAT,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,4.9608
-RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.6324
-RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.7404
-RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.8376
-RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,4.014
-RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.158
-RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.302
-RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.6522
-RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.78
-RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.8592
-RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,4.0392
-RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.176
-RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.3128
 RIO-REPEAT,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,10.4814
 RIO-REPEAT,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,10.7496
 RIO-REPEAT,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,11.1348
@@ -3731,6 +3192,126 @@ RIO-REPEAT,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,11.46
 RIO-REPEAT,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2040,12.0852
 RIO-REPEAT,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2045,12.6774
 RIO-REPEAT,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2050,13.2696
+EPS-EI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.471835536
+EPS-EI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.478457467
+EPS-EI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.488584667
+EPS-EI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2040,0.500906703
+EPS-EI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2045,0.513581087
+EPS-EI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2050,0.528454621
+EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.180507704
+EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.179669787
+EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.17876559
+EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2040,0.177307875
+EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2045,0.17590413
+EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2050,0.17443428
+GCAM-CGS,IRA,United States,Final Energy|Electricity,EJ/yr,2025,14.78005552
+GCAM-CGS,IRA,United States,Final Energy|Electricity,EJ/yr,2030,16.69818554
+GCAM-CGS,IRA,United States,Final Energy|Electricity,EJ/yr,2035,17.23206511
+GCAM-CGS,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.359715276
+GCAM-CGS,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,4.172049718
+GCAM-CGS,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,4.292558884
+NEMS-RHG,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.471169044
+NEMS-RHG,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.469050764
+NEMS-RHG,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.47708303
+NEMS-RHG,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.471774872
+NEMS-RHG,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.472241705
+NEMS-RHG,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.479132488
+REGEN-EPRI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.488226302
+REGEN-EPRI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.490275838
+REGEN-EPRI,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.495444402
+REGEN-EPRI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.496913213
+REGEN-EPRI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.507680122
+REGEN-EPRI,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.514226706
+RIO-REPEAT,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.4804
+RIO-REPEAT,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.4913
+RIO-REPEAT,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.5041
+RIO-REPEAT,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2040,0.5179
+RIO-REPEAT,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2045,0.5315
+RIO-REPEAT,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2050,0.5464
+RIO-REPEAT,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.4827
+RIO-REPEAT,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.5143
+RIO-REPEAT,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.5511
+RIO-REPEAT,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2040,0.5836
+RIO-REPEAT,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2045,0.6056
+RIO-REPEAT,IRA,United States,Final Energy|Buildings|Percent Electricity,%,2050,0.6218
+EPS-EI,No IRA,United States,Final Energy|Electricity,EJ/yr,2025,14.7563892
+EPS-EI,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,15.577596
+EPS-EI,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,16.678836
+EPS-EI,No IRA,United States,Final Energy|Electricity,EJ/yr,2040,17.860896
+EPS-EI,No IRA,United States,Final Energy|Electricity,EJ/yr,2045,18.99216
+EPS-EI,No IRA,United States,Final Energy|Electricity,EJ/yr,2050,20.271888
+EPS-EI,IRA,United States,Final Energy|Percent Electricity,%,2025,0.210166945
+EPS-EI,IRA,United States,Final Energy|Percent Electricity,%,2030,0.23311382
+EPS-EI,IRA,United States,Final Energy|Percent Electricity,%,2035,0.256831088
+EPS-EI,IRA,United States,Final Energy|Percent Electricity,%,2040,0.273104158
+EPS-EI,IRA,United States,Final Energy|Percent Electricity,%,2045,0.281355671
+EPS-EI,IRA,United States,Final Energy|Percent Electricity,%,2050,0.292840863
+GCAM-CGS,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.156
+GCAM-CGS,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.18
+GCAM-CGS,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.177
+GCAM-CGS,IRA,United States,Final Energy|Percent Electricity,%,2025,0.226453545
+GCAM-CGS,IRA,United States,Final Energy|Percent Electricity,%,2030,0.258247389
+GCAM-CGS,IRA,United States,Final Energy|Percent Electricity,%,2035,0.264517147
+IPM-EPA,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,16.22969723
+IPM-EPA,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,17.26672435
+IPM-EPA,No IRA,United States,Final Energy|Electricity,EJ/yr,2040,18.36610745
+IPM-EPA,No IRA,United States,Final Energy|Electricity,EJ/yr,2045,19.54228171
+IPM-EPA,No IRA,United States,Final Energy|Electricity,EJ/yr,2050,20.80054946
+IPM-EPA,IRA,United States,Final Energy|Electricity,EJ/yr,2030,16.22969723
+IPM-EPA,IRA,United States,Final Energy|Electricity,EJ/yr,2035,17.26672435
+IPM-EPA,IRA,United States,Final Energy|Electricity,EJ/yr,2040,18.36610745
+IPM-EPA,IRA,United States,Final Energy|Electricity,EJ/yr,2045,19.54228171
+IPM-EPA,IRA,United States,Final Energy|Electricity,EJ/yr,2050,20.80054946
+IPM-NRDC,No IRA,United States,Final Energy|Electricity,EJ/yr,2025,14.98300164
+IPM-NRDC,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,15.42381188
+IPM-NRDC,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,15.94704364
+IPM-NRDC,No IRA,United States,Final Energy|Electricity,EJ/yr,2040,16.69351248
+IPM-NRDC,No IRA,United States,Final Energy|Electricity,EJ/yr,2045,17.5484643
+IPM-NRDC,No IRA,United States,Final Energy|Electricity,EJ/yr,2050,18.49570274
+IPM-NRDC,IRA,United States,Final Energy|Electricity,EJ/yr,2025,14.98300164
+IPM-NRDC,IRA,United States,Final Energy|Electricity,EJ/yr,2030,15.42381188
+IPM-NRDC,IRA,United States,Final Energy|Electricity,EJ/yr,2035,15.94704364
+IPM-NRDC,IRA,United States,Final Energy|Electricity,EJ/yr,2040,16.69351248
+IPM-NRDC,IRA,United States,Final Energy|Electricity,EJ/yr,2045,17.5484643
+IPM-NRDC,IRA,United States,Final Energy|Electricity,EJ/yr,2050,18.49570274
+MARKAL-NETL,IRA,United States,Final Energy|Electricity,EJ/yr,2025,15.90193721
+MARKAL-NETL,IRA,United States,Final Energy|Electricity,EJ/yr,2030,16.10581885
+MARKAL-NETL,IRA,United States,Final Energy|Electricity,EJ/yr,2035,16.69091353
+MARKAL-NETL,IRA,United States,Final Energy|Electricity,EJ/yr,2040,17.0626465
+MARKAL-NETL,IRA,United States,Final Energy|Electricity,EJ/yr,2045,17.50003
+MARKAL-NETL,IRA,United States,Final Energy|Electricity,EJ/yr,2050,18.92905143
+MARKAL-NETL,No IRA,United States,Final Energy|Electricity,EJ/yr,2025,16.38962112
+MARKAL-NETL,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,17.22617781
+MARKAL-NETL,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,17.86775294
+MARKAL-NETL,No IRA,United States,Final Energy|Electricity,EJ/yr,2040,18.39055712
+MARKAL-NETL,No IRA,United States,Final Energy|Electricity,EJ/yr,2045,18.98656189
+MARKAL-NETL,No IRA,United States,Final Energy|Electricity,EJ/yr,2050,20.05691045
+NEMS-RHG,IRA,United States,Final Energy|Electricity,EJ/yr,2025,13.83022048
+NEMS-RHG,IRA,United States,Final Energy|Electricity,EJ/yr,2030,14.12175262
+NEMS-RHG,IRA,United States,Final Energy|Electricity,EJ/yr,2035,14.83353292
+NEMS-RHG,No IRA,United States,Final Energy|Electricity,EJ/yr,2025,13.91798949
+NEMS-RHG,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,14.1084184
+NEMS-RHG,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,14.57618928
+ReEDS-NREL,IRA,United States,Final Energy|Electricity,EJ/yr,2025,15.01046297
+ReEDS-NREL,IRA,United States,Final Energy|Electricity,EJ/yr,2030,15.92621076
+ReEDS-NREL,IRA,United States,Final Energy|Electricity,EJ/yr,2035,17.07795026
+ReEDS-NREL,IRA,United States,Final Energy|Electricity,EJ/yr,2040,18.42714592
+ReEDS-NREL,No IRA,United States,Final Energy|Electricity,EJ/yr,2025,15.18221679
+ReEDS-NREL,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,15.6379113
+ReEDS-NREL,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,16.18995296
+ReEDS-NREL,No IRA,United States,Final Energy|Electricity,EJ/yr,2040,16.97500435
+REGEN-EPRI,No IRA,United States,Final Energy|Electricity,EJ/yr,2025,13.98297304
+REGEN-EPRI,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,14.25884309
+REGEN-EPRI,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,14.8250901
+REGEN-EPRI,No IRA,United States,Final Energy|Electricity,EJ/yr,2040,15.49477817
+REGEN-EPRI,No IRA,United States,Final Energy|Electricity,EJ/yr,2045,16.1305303
+REGEN-EPRI,No IRA,United States,Final Energy|Electricity,EJ/yr,2050,16.59194394
+REGEN-EPRI,IRA,United States,Final Energy|Electricity,EJ/yr,2025,14.22930435
+REGEN-EPRI,IRA,United States,Final Energy|Electricity,EJ/yr,2030,14.76699449
+REGEN-EPRI,IRA,United States,Final Energy|Electricity,EJ/yr,2035,15.58923185
+REGEN-EPRI,IRA,United States,Final Energy|Electricity,EJ/yr,2040,16.58183112
+REGEN-EPRI,IRA,United States,Final Energy|Electricity,EJ/yr,2045,17.92506518
+REGEN-EPRI,IRA,United States,Final Energy|Electricity,EJ/yr,2050,18.68156996
 RIO-REPEAT,No IRA,United States,Final Energy|Electricity,EJ/yr,2025,14.4504
 RIO-REPEAT,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,15.5196
 RIO-REPEAT,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,17.1432
@@ -3743,6 +3324,430 @@ RIO-REPEAT,IRA,United States,Final Energy|Electricity,EJ/yr,2035,18.522
 RIO-REPEAT,IRA,United States,Final Energy|Electricity,EJ/yr,2040,20.9988
 RIO-REPEAT,IRA,United States,Final Energy|Electricity,EJ/yr,2045,22.7088
 RIO-REPEAT,IRA,United States,Final Energy|Electricity,EJ/yr,2050,24.4188
+EPS-EI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.011502633
+EPS-EI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.042992752
+EPS-EI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.082930353
+EPS-EI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2040,0.111094408
+EPS-EI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2045,0.12116598
+EPS-EI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2050,0.136749474
+EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.81697506
+EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.850700724
+EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.915188928
+EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,3.97183932
+EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.04197848
+EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.12739928
+GCAM-CGS,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.123208312
+GCAM-CGS,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.286941574
+GCAM-CGS,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.216138172
+GCAM-CGS,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.22311293
+GCAM-CGS,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.689681768
+GCAM-CGS,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.863040847
+Haiku-RFF,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.519799442
+Haiku-RFF,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.685770198
+Haiku-RFF,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.803721136
+Haiku-RFF,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,3.909398174
+Haiku-RFF,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.067918965
+Haiku-RFF,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.519799442
+Haiku-RFF,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.685770198
+Haiku-RFF,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.803721136
+Haiku-RFF,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,3.909398174
+Haiku-RFF,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.067918965
+IPM-EPA,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,4.052073852
+IPM-EPA,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,4.207101411
+IPM-EPA,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,4.349458611
+IPM-EPA,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.554083453
+IPM-EPA,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.740202647
+IPM-EPA,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,4.052073852
+IPM-EPA,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,4.207101411
+IPM-EPA,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,4.349458611
+IPM-EPA,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.554083453
+IPM-EPA,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.740202647
+IPM-NRDC,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.74443286
+IPM-NRDC,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.849300878
+IPM-NRDC,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.951582275
+IPM-NRDC,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,4.084711524
+IPM-NRDC,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.243634914
+IPM-NRDC,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.382985499
+IPM-NRDC,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.74443286
+IPM-NRDC,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.849300878
+IPM-NRDC,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.951582275
+IPM-NRDC,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,4.084711524
+IPM-NRDC,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.243634914
+IPM-NRDC,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.382985499
+MARKAL-NETL,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,2.998033984
+MARKAL-NETL,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.197085576
+MARKAL-NETL,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.259886079
+MARKAL-NETL,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,3.517338138
+MARKAL-NETL,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,3.97883183
+MARKAL-NETL,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.333654669
+MARKAL-NETL,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.024814198
+MARKAL-NETL,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.116404931
+MARKAL-NETL,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.29378635
+MARKAL-NETL,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,3.577728622
+MARKAL-NETL,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.097722782
+MARKAL-NETL,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.853308826
+NEMS-RHG,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.565565111
+NEMS-RHG,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.576277879
+NEMS-RHG,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.577927586
+NEMS-RHG,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.569710475
+NEMS-RHG,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.572449146
+NEMS-RHG,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.582621385
+REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,4.926232477
+REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,5.037424916
+REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,5.312852094
+REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,5.604035804
+REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,5.870419734
+REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,6.021700236
+REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,5.001008369
+REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,5.166593568
+REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,5.620224428
+REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,6.155861315
+REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,7.000723401
+REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,7.407430181
+RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.6324
+RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.7404
+RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.8376
+RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,4.014
+RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.158
+RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.302
+RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.6522
+RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.78
+RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.8592
+RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,4.0392
+RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.176
+RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.3128
+EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.179396415
+EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.177923341
+EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.177499523
+EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2040,0.17671817
+EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2045,0.176225184
+EPS-EI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2050,0.17518716
+EPS-EI,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,10.73668212
+EPS-EI,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,11.07346824
+EPS-EI,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,11.39560812
+EPS-EI,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2040,11.9057796
+EPS-EI,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2045,12.54111955
+EPS-EI,IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2050,13.44711222
+GCAM-CGS,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.014
+GCAM-CGS,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.044
+GCAM-CGS,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.049
+GCAM-CGS,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,11.03611787
+GCAM-CGS,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,11.43391203
+GCAM-CGS,No IRA,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,11.86600799
+NEMS-RHG,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.125987619
+NEMS-RHG,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.125682779
+NEMS-RHG,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.124811021
+NEMS-RHG,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.126192722
+NEMS-RHG,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.125068488
+NEMS-RHG,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.124191518
+REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.276826074
+REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.286387942
+REGEN-EPRI,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.312295381
+REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.283323506
+REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.29932106
+REGEN-EPRI,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.332904812
+RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.1731
+RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.1716
+RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.1703
+RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2040,0.1702
+RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2045,0.1703
+RIO-REPEAT,IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2050,0.17
+RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.1732
+RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.1717
+RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.1705
+RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2040,0.1705
+RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2045,0.1705
+RIO-REPEAT,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2050,0.1702
+EPS-EI,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2025,0.064394642
+EPS-EI,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2030,0.062772223
+EPS-EI,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2035,0.062013298
+EPS-EI,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2040,0.060963962
+EPS-EI,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2045,0.060237144
+EPS-EI,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2050,0.059659031
+EPS-EI,IRA,United States,Final Energy|Electricity,EJ/yr,2025,15.26418036
+EPS-EI,IRA,United States,Final Energy|Electricity,EJ/yr,2030,16.9386804
+EPS-EI,IRA,United States,Final Energy|Electricity,EJ/yr,2035,18.1501884
+EPS-EI,IRA,United States,Final Energy|Electricity,EJ/yr,2040,19.2114036
+EPS-EI,IRA,United States,Final Energy|Electricity,EJ/yr,2045,20.1022524
+EPS-EI,IRA,United States,Final Energy|Electricity,EJ/yr,2050,21.4504344
+IPM-NRDC,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2025,0.806935748
+IPM-NRDC,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2030,0.912375551
+IPM-NRDC,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2035,1.01713788
+IPM-NRDC,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2040,1.154330201
+IPM-NRDC,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2045,1.318543614
+IPM-NRDC,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2050,1.518126415
+IPM-NRDC,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2025,0.806935748
+IPM-NRDC,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2030,0.912375551
+IPM-NRDC,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2035,1.01713788
+IPM-NRDC,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2040,1.154330201
+IPM-NRDC,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2045,1.318543614
+IPM-NRDC,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2050,1.518126415
+ReEDS-NREL,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2025,15.01046297
+ReEDS-NREL,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2030,15.92621076
+ReEDS-NREL,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2035,17.07795026
+ReEDS-NREL,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2040,18.42714592
+ReEDS-NREL,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2025,15.18221679
+ReEDS-NREL,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2030,15.6379113
+ReEDS-NREL,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2035,16.18995296
+ReEDS-NREL,No IRA,United States,Final Energy|Other|Electricity,EJ/yr,2040,16.97500435
+EPS-EI,No IRA,United States,Final Energy|Percent Electricity,%,2025,0.206795231
+EPS-EI,No IRA,United States,Final Energy|Percent Electricity,%,2030,0.223587115
+EPS-EI,No IRA,United States,Final Energy|Percent Electricity,%,2035,0.244583989
+EPS-EI,No IRA,United States,Final Energy|Percent Electricity,%,2040,0.263033998
+EPS-EI,No IRA,United States,Final Energy|Percent Electricity,%,2045,0.276848087
+EPS-EI,No IRA,United States,Final Energy|Percent Electricity,%,2050,0.289402218
+EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.806064036
+EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.835590552
+EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.933266328
+EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,3.992655888
+EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.063615092
+EPS-EI,IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.164732144
+GCAM-CGS,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.554
+GCAM-CGS,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.568
+GCAM-CGS,No IRA,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.59
+GCAM-CGS,No IRA,United States,Final Energy|Electricity,EJ/yr,2025,14.37444353
+GCAM-CGS,No IRA,United States,Final Energy|Electricity,EJ/yr,2030,15.41307793
+GCAM-CGS,No IRA,United States,Final Energy|Electricity,EJ/yr,2035,16.58965574
+MARKAL-NETL,IRA,United States,Final Energy|Percent Electricity,%,2025,0.239396627
+MARKAL-NETL,IRA,United States,Final Energy|Percent Electricity,%,2030,0.247722372
+MARKAL-NETL,IRA,United States,Final Energy|Percent Electricity,%,2035,0.255427566
+MARKAL-NETL,IRA,United States,Final Energy|Percent Electricity,%,2040,0.262593273
+MARKAL-NETL,IRA,United States,Final Energy|Percent Electricity,%,2045,0.269760889
+MARKAL-NETL,IRA,United States,Final Energy|Percent Electricity,%,2050,0.296106997
+MARKAL-NETL,No IRA,United States,Final Energy|Percent Electricity,%,2025,0.244058577
+MARKAL-NETL,No IRA,United States,Final Energy|Percent Electricity,%,2030,0.254281357
+MARKAL-NETL,No IRA,United States,Final Energy|Percent Electricity,%,2035,0.262529831
+MARKAL-NETL,No IRA,United States,Final Energy|Percent Electricity,%,2040,0.266833907
+MARKAL-NETL,No IRA,United States,Final Energy|Percent Electricity,%,2045,0.272546515
+MARKAL-NETL,No IRA,United States,Final Energy|Percent Electricity,%,2050,0.287198559
+NEMS-RHG,No IRA,United States,Final Energy|Percent Electricity,%,2025,0.227827967
+NEMS-RHG,No IRA,United States,Final Energy|Percent Electricity,%,2030,0.236378328
+NEMS-RHG,No IRA,United States,Final Energy|Percent Electricity,%,2035,0.250365296
+NEMS-RHG,IRA,United States,Final Energy|Percent Electricity,%,2025,0.263185068
+NEMS-RHG,IRA,United States,Final Energy|Percent Electricity,%,2030,0.231429051
+NEMS-RHG,IRA,United States,Final Energy|Percent Electricity,%,2035,0.250957693
+REGEN-EPRI,No IRA,United States,Final Energy|Percent Electricity,%,2025,0.227553959
+REGEN-EPRI,No IRA,United States,Final Energy|Percent Electricity,%,2030,0.243503358
+REGEN-EPRI,No IRA,United States,Final Energy|Percent Electricity,%,2035,0.264793051
+REGEN-EPRI,IRA,United States,Final Energy|Percent Electricity,%,2025,0.232444465
+REGEN-EPRI,IRA,United States,Final Energy|Percent Electricity,%,2030,0.256127124
+REGEN-EPRI,IRA,United States,Final Energy|Percent Electricity,%,2035,0.285816627
+RIO-REPEAT,No IRA,United States,Final Energy|Percent Electricity,%,2025,0.2077
+RIO-REPEAT,No IRA,United States,Final Energy|Percent Electricity,%,2030,0.2274
+RIO-REPEAT,No IRA,United States,Final Energy|Percent Electricity,%,2035,0.2558
+RIO-REPEAT,No IRA,United States,Final Energy|Percent Electricity,%,2040,0.2876
+RIO-REPEAT,No IRA,United States,Final Energy|Percent Electricity,%,2045,0.316
+RIO-REPEAT,No IRA,United States,Final Energy|Percent Electricity,%,2050,0.3382
+RIO-REPEAT,IRA,United States,Final Energy|Percent Electricity,%,2025,0.2087
+RIO-REPEAT,IRA,United States,Final Energy|Percent Electricity,%,2030,0.239
+RIO-REPEAT,IRA,United States,Final Energy|Percent Electricity,%,2035,0.2859
+RIO-REPEAT,IRA,United States,Final Energy|Percent Electricity,%,2040,0.3324
+RIO-REPEAT,IRA,United States,Final Energy|Percent Electricity,%,2045,0.366
+RIO-REPEAT,IRA,United States,Final Energy|Percent Electricity,%,2050,0.3845
+EPS-EI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.088540018
+EPS-EI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.226585733
+EPS-EI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.399458174
+EPS-EI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.557370238
+EPS-EI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.691805736
+EPS-EI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,0.809405089
+EPS-EI,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2025,0.413471904
+EPS-EI,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2030,0.972922126
+EPS-EI,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2035,0.960478088
+EPS-EI,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2040,0.940587977
+EPS-EI,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2045,0.933705544
+EPS-EI,IRA,United States,Final Energy|Other|Electricity,EJ/yr,2050,0.931794523
+GCAM-CGS,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.138950793
+GCAM-CGS,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.497168079
+GCAM-CGS,No IRA,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.992553044
+GCAM-CGS,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.143
+GCAM-CGS,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.147
+GCAM-CGS,No IRA,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.166
+Haiku-RFF,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.0261984
+Haiku-RFF,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.028327724
+Haiku-RFF,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.030217738
+Haiku-RFF,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.032002083
+Haiku-RFF,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.034001748
+Haiku-RFF,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.0261984
+Haiku-RFF,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.028327724
+Haiku-RFF,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.030217738
+Haiku-RFF,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.032002083
+Haiku-RFF,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.034001748
+MARKAL-NETL,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.122430979
+MARKAL-NETL,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.183491468
+MARKAL-NETL,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.221351771
+MARKAL-NETL,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.271072169
+MARKAL-NETL,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.294682357
+MARKAL-NETL,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,0.297152377
+MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.12244098
+MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.183491468
+MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.221361771
+MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.271072169
+MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.294682357
+MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,0.297152377
+NEMS-RHG,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.025882757
+NEMS-RHG,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.028807355
+NEMS-RHG,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.030995463
+NEMS-RHG,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.040709782
+NEMS-RHG,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.155395875
+NEMS-RHG,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.356879291
+REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.224060651
+REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.33881615
+REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.486889708
+REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.662974582
+REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.849204654
+REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,0.994238707
+REGEN-EPRI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.267499902
+REGEN-EPRI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.410190089
+REGEN-EPRI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.517668196
+REGEN-EPRI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.686537388
+REGEN-EPRI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.891919993
+REGEN-EPRI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,1.044667444
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.0522
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.1368
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.3744
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.7344
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,1.0242
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,1.314
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.081
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.3744
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.8928
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,1.2996
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,1.5876
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,1.8756
+EPS-EI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.16537824
+EPS-EI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.5603436
+EPS-EI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.0606716
+EPS-EI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.46961
+EPS-EI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.7533512
+EPS-EI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,2.0372616
+EPS-EI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.14183742
+EPS-EI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.441646682
+EPS-EI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.689316664
+EPS-EI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.791018935
+EPS-EI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.794023412
+EPS-EI,IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,0.871999913
+GCAM-CGS,No IRA,United States,Final Energy|Percent Electricity,%,2025,0.214523594
+GCAM-CGS,No IRA,United States,Final Energy|Percent Electricity,%,2030,0.228432061
+GCAM-CGS,No IRA,United States,Final Energy|Percent Electricity,%,2035,0.252683209
+GCAM-CGS,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.06080068
+GCAM-CGS,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.093604078
+GCAM-CGS,No IRA,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.151523574
+Haiku-RFF,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.039652479
+Haiku-RFF,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.072410058
+Haiku-RFF,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.124460118
+Haiku-RFF,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,0.199726319
+Haiku-RFF,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,0.289468682
+Haiku-RFF,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.039652479
+Haiku-RFF,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.072410058
+Haiku-RFF,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.124460118
+Haiku-RFF,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,0.199726319
+Haiku-RFF,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,0.289468682
+IPM-EPA,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.628300787
+IPM-EPA,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.102772697
+IPM-EPA,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.518193808
+IPM-EPA,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.854757136
+IPM-EPA,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,2.14004645
+IPM-EPA,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.628300787
+IPM-EPA,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.102772697
+IPM-EPA,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.518193808
+IPM-EPA,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.854757136
+IPM-EPA,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,2.14004645
+IPM-NRDC,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.102339623
+IPM-NRDC,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.179196487
+IPM-NRDC,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.259445214
+IPM-NRDC,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,0.34375806
+IPM-NRDC,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,0.431769809
+IPM-NRDC,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,0.524459236
+IPM-NRDC,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.102339623
+IPM-NRDC,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.179196487
+IPM-NRDC,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.259445214
+IPM-NRDC,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,0.34375806
+IPM-NRDC,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,0.431769809
+IPM-NRDC,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,0.524459236
+MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,1.123348987
+MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,1.123228986
+MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.129069032
+MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.225309802
+MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.355310842
+MARKAL-NETL,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,1.886035088
+MARKAL-NETL,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,1.165119321
+MARKAL-NETL,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,1.285380283
+MARKAL-NETL,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.397811182
+MARKAL-NETL,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.509332075
+MARKAL-NETL,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.639303114
+MARKAL-NETL,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,2.17880743
+NEMS-RHG,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.085280358
+NEMS-RHG,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.310722661
+NEMS-RHG,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.676918035
+NEMS-RHG,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.096229319
+NEMS-RHG,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.287899207
+NEMS-RHG,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.584837666
+REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.178665324
+REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.466174708
+REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.787359992
+REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.156705433
+REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.511040054
+REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,1.868556092
+REGEN-EPRI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.226951632
+REGEN-EPRI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.623538194
+REGEN-EPRI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.056245475
+REGEN-EPRI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.525719468
+REGEN-EPRI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.936762416
+REGEN-EPRI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,2.305085545
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.2844
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.8928
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.7964
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,2.7252
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,3.4848
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,4.2444
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.3132
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,1.0332
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,2.3076
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,3.5748
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,4.2678
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,4.9608
+EPS-EI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.009483943
+EPS-EI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.031970151
+EPS-EI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.064558501
+EPS-EI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2040,0.09451337
+EPS-EI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2045,0.116498615
+EPS-EI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2050,0.135999671
+EPS-EI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.16612488
+EPS-EI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.6150528
+EPS-EI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.1715192
+EPS-EI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.5813612
+EPS-EI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.7697888
+EPS-EI,IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,2.0347956
+GCAM-CGS,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.138574183
+GCAM-CGS,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.388393742
+GCAM-CGS,No IRA,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,0.579571136
+GCAM-CGS,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.0079
+GCAM-CGS,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.02
+GCAM-CGS,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.034
+NEMS-RHG,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.004295712
+NEMS-RHG,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.011769237
+NEMS-RHG,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.02417133
+NEMS-RHG,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.004431455
+NEMS-RHG,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.017463193
+NEMS-RHG,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.041249706
+REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.016535053
+REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.036176492
+REGEN-EPRI,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.06180582
+REGEN-EPRI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.019134249
+REGEN-EPRI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.045794303
+REGEN-EPRI,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.076091549
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.0109
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.0414
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.0961
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2040,0.1671
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2045,0.2395
+RIO-REPEAT,No IRA,United States,Final Energy|Transportation|Percent Electricity,%,2050,0.2974
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.0119
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.0576
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.1507
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2040,0.2602
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2045,0.3546
+RIO-REPEAT,IRA,United States,Final Energy|Transportation|Percent Electricity,%,2050,0.406
 EPS-EI,IRA,United States,Final Energy|Transportation|Electricity,EJ/yr,2025,0.3079623
 EPS-EI,IRA,United States,Final Energy|Transportation|Electricity,EJ/yr,2030,1.056699482
 EPS-EI,IRA,United States,Final Energy|Transportation|Electricity,EJ/yr,2035,1.860835864
@@ -3835,6 +3840,314 @@ IPM-EPA,No IRA,United States,Final Energy|Transportation|Electricity,EJ/yr,2035,
 IPM-EPA,No IRA,United States,Final Energy|Transportation|Electricity,EJ/yr,2040,1.518193808
 IPM-EPA,No IRA,United States,Final Energy|Transportation|Electricity,EJ/yr,2045,1.854757136
 IPM-EPA,No IRA,United States,Final Energy|Transportation|Electricity,EJ/yr,2050,2.14004645
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.011625252
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.045686664
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.087907047
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Percent Electricity,%,2040,0.116087914
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Percent Electricity,%,2045,0.122488318
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Percent Electricity,%,2050,0.138471421
+EPS-EI,IRA.High,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.481091432
+EPS-EI,IRA.High,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.498485504
+EPS-EI,IRA.High,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.51164792
+EPS-EI,IRA.High,United States,Final Energy|Buildings|Percent Electricity,%,2040,0.520435893
+EPS-EI,IRA.High,United States,Final Energy|Buildings|Percent Electricity,%,2045,0.53132416
+EPS-EI,IRA.High,United States,Final Energy|Buildings|Percent Electricity,%,2050,0.548114935
+EPS-EI,IRA.High,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.180740663
+EPS-EI,IRA.High,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.17990654
+EPS-EI,IRA.High,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.178837392
+EPS-EI,IRA.High,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2040,0.177486159
+EPS-EI,IRA.High,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2045,0.176334588
+EPS-EI,IRA.High,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2050,0.175027359
+EPS-EI,IRA.High,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.799969164
+EPS-EI,IRA.High,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.819220632
+EPS-EI,IRA.High,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.908685744
+EPS-EI,IRA.High,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,3.966173352
+EPS-EI,IRA.High,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.041132156
+EPS-EI,IRA.High,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.14389106
+EPS-EI,IRA.High,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,10.75909536
+EPS-EI,IRA.High,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,11.09392164
+EPS-EI,IRA.High,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,11.43999072
+EPS-EI,IRA.High,United States,Final Energy|Buildings|Electricity,EJ/yr,2040,11.90383056
+EPS-EI,IRA.High,United States,Final Energy|Buildings|Electricity,EJ/yr,2045,12.52635412
+EPS-EI,IRA.High,United States,Final Energy|Buildings|Electricity,EJ/yr,2050,13.47182266
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.16774668
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.6665184
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.250874
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.649592
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.7746092
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,2.0428416
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.143525964
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.454126067
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.707575115
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.807837491
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.80728371
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,0.887617678
+EPS-EI,IRA.High,United States,Final Energy|Other|Electricity,EJ/yr,2025,0.420367632
+EPS-EI,IRA.High,United States,Final Energy|Other|Electricity,EJ/yr,2030,0.996186061
+EPS-EI,IRA.High,United States,Final Energy|Other|Electricity,EJ/yr,2035,0.981295621
+EPS-EI,IRA.High,United States,Final Energy|Other|Electricity,EJ/yr,2040,0.959372197
+EPS-EI,IRA.High,United States,Final Energy|Other|Electricity,EJ/yr,2045,0.950997618
+EPS-EI,IRA.High,United States,Final Energy|Other|Electricity,EJ/yr,2050,0.947403806
+EPS-EI,IRA.High,United States,Final Energy|Electricity,EJ/yr,2025,15.2907048
+EPS-EI,IRA.High,United States,Final Energy|Electricity,EJ/yr,2030,17.0299728
+EPS-EI,IRA.High,United States,Final Energy|Electricity,EJ/yr,2035,18.2884212
+EPS-EI,IRA.High,United States,Final Energy|Electricity,EJ/yr,2040,19.2868056
+EPS-EI,IRA.High,United States,Final Energy|Electricity,EJ/yr,2045,20.1003768
+EPS-EI,IRA.High,United States,Final Energy|Electricity,EJ/yr,2050,21.4935768
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.01137645
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.040674293
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.077632662
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2040,0.105661481
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2045,0.119844603
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2050,0.135218312
+EPS-EI,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.480244319
+EPS-EI,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.49754925
+EPS-EI,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.509357046
+EPS-EI,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2040,0.519876471
+EPS-EI,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2045,0.529107389
+EPS-EI,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2050,0.544243166
+EPS-EI,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.180386003
+EPS-EI,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.179433119
+EPS-EI,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.178523301
+EPS-EI,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2040,0.177039091
+EPS-EI,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2045,0.175477458
+EPS-EI,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2050,0.173830334
+EPS-EI,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.810039732
+EPS-EI,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.841108488
+EPS-EI,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.93747282
+EPS-EI,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,4.00348494
+EPS-EI,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.075304796
+EPS-EI,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.176463824
+EPS-EI,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,10.72934568
+EPS-EI,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,11.0834244
+EPS-EI,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,11.40185052
+EPS-EI,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2040,11.9844432
+EPS-EI,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2045,12.57653358
+EPS-EI,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2050,13.4650867
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.1639422
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.570024
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.0823868
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.5034428
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.7666928
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,2.030958
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.140629073
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.431880135
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.672998969
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.775493867
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.780754403
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,0.856986962
+EPS-EI,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2025,0.341390875
+EPS-EI,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2030,0.784294977
+EPS-EI,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2035,0.775622491
+EPS-EI,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2040,0.761611993
+EPS-EI,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2045,0.757717621
+EPS-EI,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2050,0.757570918
+EPS-EI,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2025,15.18534756
+EPS-EI,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2030,16.710732
+EPS-EI,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2035,17.8703316
+EPS-EI,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2040,19.0284768
+EPS-EI,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2045,19.9570032
+EPS-EI,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2050,21.2870664
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.080881762
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.090586481
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.096958807
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2040,0.104199452
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2045,0.110381561
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2050,0.131197228
+MARKAL-NETL,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.729852428
+MARKAL-NETL,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.711132762
+MARKAL-NETL,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.706878042
+MARKAL-NETL,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2040,0.687740417
+MARKAL-NETL,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2045,0.656689822
+MARKAL-NETL,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2050,0.614556358
+MARKAL-NETL,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.080881762
+MARKAL-NETL,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.090586481
+MARKAL-NETL,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.096958807
+MARKAL-NETL,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2040,0.104199452
+MARKAL-NETL,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2045,0.110381561
+MARKAL-NETL,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2050,0.131197228
+MARKAL-NETL,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.012954103
+MARKAL-NETL,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.209435675
+MARKAL-NETL,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.270666165
+MARKAL-NETL,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,3.549848399
+MARKAL-NETL,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.075782606
+MARKAL-NETL,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.793188345
+MARKAL-NETL,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,11.61864295
+MARKAL-NETL,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,11.51062208
+MARKAL-NETL,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,11.78591429
+MARKAL-NETL,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2040,11.73398387
+MARKAL-NETL,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2045,11.49075193
+MARKAL-NETL,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2050,11.58594269
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,1.165119321
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,1.282790262
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.395221162
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,1.506742054
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,1.636713094
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,2.17621741
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.122430979
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.183491468
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.221351771
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.271072169
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,0.294682357
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,0.297152377
+MARKAL-NETL,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2025,0
+MARKAL-NETL,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2030,0
+MARKAL-NETL,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2035,0
+MARKAL-NETL,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2040,0
+MARKAL-NETL,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2045,0
+MARKAL-NETL,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2050,0
+MARKAL-NETL,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2025,15.91914735
+MARKAL-NETL,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2030,16.18633949
+MARKAL-NETL,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2035,16.67315338
+MARKAL-NETL,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2040,17.06164649
+MARKAL-NETL,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2045,17.49792998
+MARKAL-NETL,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2050,18.85250082
+ReEDS-NREL,IRA.High,United States,Final Energy|Electricity,EJ/yr,2025,15.11688171
+ReEDS-NREL,IRA.High,United States,Final Energy|Electricity,EJ/yr,2030,16.25654698
+ReEDS-NREL,IRA.High,United States,Final Energy|Electricity,EJ/yr,2035,17.69155852
+ReEDS-NREL,IRA.High,United States,Final Energy|Electricity,EJ/yr,2040,19.20721399
+ReEDS-NREL,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2025,15.18221679
+ReEDS-NREL,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2030,15.6379113
+ReEDS-NREL,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2035,16.18995296
+ReEDS-NREL,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2040,16.97500435
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.0128
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.0679
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.1806
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Percent Electricity,%,2040,0.3133
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Percent Electricity,%,2045,0.4281
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Percent Electricity,%,2050,0.4865
+RIO-REPEAT,IRA.High,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.4827
+RIO-REPEAT,IRA.High,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.5174
+RIO-REPEAT,IRA.High,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.5607
+RIO-REPEAT,IRA.High,United States,Final Energy|Buildings|Percent Electricity,%,2040,0.5999
+RIO-REPEAT,IRA.High,United States,Final Energy|Buildings|Percent Electricity,%,2045,0.6267
+RIO-REPEAT,IRA.High,United States,Final Energy|Buildings|Percent Electricity,%,2050,0.6443
+RIO-REPEAT,IRA.High,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.1729
+RIO-REPEAT,IRA.High,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.1712
+RIO-REPEAT,IRA.High,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.17
+RIO-REPEAT,IRA.High,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2040,0.1699
+RIO-REPEAT,IRA.High,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2045,0.1699
+RIO-REPEAT,IRA.High,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2050,0.1697
+RIO-REPEAT,IRA.High,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.6432
+RIO-REPEAT,IRA.High,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.7656
+RIO-REPEAT,IRA.High,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.8448
+RIO-REPEAT,IRA.High,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,4.0284
+RIO-REPEAT,IRA.High,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.1634
+RIO-REPEAT,IRA.High,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.2984
+RIO-REPEAT,IRA.High,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,10.494
+RIO-REPEAT,IRA.High,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,10.9152
+RIO-REPEAT,IRA.High,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,11.5164
+RIO-REPEAT,IRA.High,United States,Final Energy|Buildings|Electricity,EJ/yr,2040,12.1572
+RIO-REPEAT,IRA.High,United States,Final Energy|Buildings|Electricity,EJ/yr,2045,12.762
+RIO-REPEAT,IRA.High,United States,Final Energy|Buildings|Electricity,EJ/yr,2050,13.3668
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.351
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,1.2564
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,2.7792
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,3.996
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,4.5306
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,5.0652
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.081
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.3708
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.9036
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,1.5516
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,2.097
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,2.6424
+RIO-REPEAT,IRA.High,United States,Final Energy|Other|Electricity,EJ/yr,2025,0
+RIO-REPEAT,IRA.High,United States,Final Energy|Other|Electricity,EJ/yr,2030,0
+RIO-REPEAT,IRA.High,United States,Final Energy|Other|Electricity,EJ/yr,2035,0
+RIO-REPEAT,IRA.High,United States,Final Energy|Other|Electricity,EJ/yr,2040,0
+RIO-REPEAT,IRA.High,United States,Final Energy|Other|Electricity,EJ/yr,2045,0
+RIO-REPEAT,IRA.High,United States,Final Energy|Other|Electricity,EJ/yr,2050,0
+RIO-REPEAT,IRA.High,United States,Final Energy|Electricity,EJ/yr,2025,14.5692
+RIO-REPEAT,IRA.High,United States,Final Energy|Electricity,EJ/yr,2030,16.308
+RIO-REPEAT,IRA.High,United States,Final Energy|Electricity,EJ/yr,2035,19.044
+RIO-REPEAT,IRA.High,United States,Final Energy|Electricity,EJ/yr,2040,21.7332
+RIO-REPEAT,IRA.High,United States,Final Energy|Electricity,EJ/yr,2045,23.553
+RIO-REPEAT,IRA.High,United States,Final Energy|Electricity,EJ/yr,2050,25.3728
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2025,0.0109
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2030,0.0421
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2035,0.0983
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2040,0.1711
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2045,0.2451
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Percent Electricity,%,2050,0.3048
+RIO-REPEAT,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2025,0.4827
+RIO-REPEAT,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2030,0.5067
+RIO-REPEAT,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2035,0.5319
+RIO-REPEAT,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2040,0.5545
+RIO-REPEAT,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2045,0.5712
+RIO-REPEAT,IRA.Low,United States,Final Energy|Buildings|Percent Electricity,%,2050,0.586
+RIO-REPEAT,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2025,0.1731
+RIO-REPEAT,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2030,0.1716
+RIO-REPEAT,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2035,0.1703
+RIO-REPEAT,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2040,0.1703
+RIO-REPEAT,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2045,0.1703
+RIO-REPEAT,IRA.Low,United States,Final Energy|Industry and Fuel Production|Percent Electricity,%,2050,0.17
+RIO-REPEAT,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2025,3.6306
+RIO-REPEAT,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2030,3.7512
+RIO-REPEAT,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2035,3.9132
+RIO-REPEAT,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2040,4.0896
+RIO-REPEAT,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2045,4.2336
+RIO-REPEAT,IRA.Low,United States,Final Energy|Industry and Fuel Production|Electricity,EJ/yr,2050,4.3776
+RIO-REPEAT,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2025,10.5048
+RIO-REPEAT,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2030,10.8612
+RIO-REPEAT,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2035,11.3112
+RIO-REPEAT,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2040,11.916
+RIO-REPEAT,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2045,12.4866
+RIO-REPEAT,IRA.Low,United States,Final Energy|Buildings|Electricity,EJ/yr,2050,13.0572
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2025,0.2844
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2030,0.8928
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2035,1.7964
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2040,2.7252
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2045,3.4848
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Passenger|Road|Electricity,EJ/yr,2050,4.2444
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2025,0.054
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2030,0.1476
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2035,0.3996
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2040,0.7668
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2045,1.0548
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Electricity|Other Transport,EJ/yr,2050,1.3428
+RIO-REPEAT,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2025,0
+RIO-REPEAT,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2030,0
+RIO-REPEAT,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2035,0
+RIO-REPEAT,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2040,0
+RIO-REPEAT,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2045,0
+RIO-REPEAT,IRA.Low,United States,Final Energy|Other|Electricity,EJ/yr,2050,0
+RIO-REPEAT,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2025,14.4738
+RIO-REPEAT,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2030,15.6528
+RIO-REPEAT,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2035,17.4204
+RIO-REPEAT,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2040,19.4976
+RIO-REPEAT,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2045,21.2598
+RIO-REPEAT,IRA.Low,United States,Final Energy|Electricity,EJ/yr,2050,23.022
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Electricity,EJ/yr,2025,0.311272644
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Electricity,EJ/yr,2030,1.120644467
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Electricity,EJ/yr,2035,1.958449115
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Electricity,EJ/yr,2040,2.457429491
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Electricity,EJ/yr,2045,2.58189291
+EPS-EI,IRA.High,United States,Final Energy|Transportation|Electricity,EJ/yr,2050,2.930459278
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Electricity,EJ/yr,2025,0.432
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Electricity,EJ/yr,2030,1.6272
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Electricity,EJ/yr,2035,3.6828
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Electricity,EJ/yr,2040,5.5476
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Electricity,EJ/yr,2045,6.6276
+RIO-REPEAT,IRA.High,United States,Final Energy|Transportation|Electricity,EJ/yr,2050,7.7076
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2025,0.304571273
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2030,1.001904135
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2035,1.755385769
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2040,2.278936667
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2045,2.547447203
+EPS-EI,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2050,2.887944962
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2025,1.2875503
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2030,1.46628173
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2035,1.616572932
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2040,1.777814222
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2045,1.931395451
+MARKAL-NETL,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2050,2.473369787
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2025,0.3384
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2030,1.0404
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2035,2.196
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2040,3.492
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2045,4.5396
+RIO-REPEAT,IRA.Low,United States,Final Energy|Transportation|Electricity,EJ/yr,2050,5.5872
 EPS-EI,IRA,United States,Energy Service|Transportation|Passenger|BEV|Sales Share,%,2025,0.152719
 EPS-EI,IRA,United States,Energy Service|Transportation|Passenger|BEV|Sales Share,%,2030,0.3412818
 EPS-EI,IRA,United States,Energy Service|Transportation|Passenger|BEV|Sales Share,%,2035,0.361236
@@ -4081,21 +4394,6 @@ GCAM-CGS,IRA,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,M
 GCAM-CGS,IRA,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2035,306.6799076
 GCAM-CGS,IRA,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2035,110.9953831
 GCAM-CGS,IRA,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2035,27.90500767
-IPM-EPA,No IRA,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2030,927.6512421
-IPM-EPA,No IRA,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2030,325.4659579
-IPM-EPA,No IRA,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2030,50.46564425
-IPM-EPA,No IRA,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2035,863.720983
-IPM-EPA,No IRA,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2035,303.9062707
-IPM-EPA,No IRA,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2035,79.66043724
-IPM-EPA,No IRA,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2040,733.7441862
-IPM-EPA,No IRA,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2040,255.3427573
-IPM-EPA,No IRA,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2040,89.12828645
-IPM-EPA,No IRA,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2045,655.1078803
-IPM-EPA,No IRA,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2045,227.1617873
-IPM-EPA,No IRA,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2045,92.51695768
-IPM-EPA,No IRA,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2050,564.9364915
-IPM-EPA,No IRA,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2050,192.374689
-IPM-EPA,No IRA,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2050,86.85087977
 IPM-EPA,IRA,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2030,691.4916677
 IPM-EPA,IRA,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2030,242.6094935
 IPM-EPA,IRA,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2030,37.61820274
@@ -4273,6 +4571,96 @@ RIO-REPEAT,IRA,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect
 RIO-REPEAT,IRA,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2050,429.2997199
 RIO-REPEAT,IRA,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2050,139.5282323
 RIO-REPEAT,IRA,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2050,221.1720478
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2025,758.7591967
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2025,267.9836412
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2025,21.95175092
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2030,221.0201957
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2030,76.08895385
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2030,22.32619515
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2035,193.2249249
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2035,66.01889179
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2035,33.07880159
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2040,171.8194261
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2040,57.24759151
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2040,35.47044145
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2045,204.8500362
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2045,66.08675282
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2045,42.22304839
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2050,275.8230426
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2050,84.84231641
+EPS-EI,IRA.High,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2050,59.99842893
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2025,853.8130959
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2025,303.1929361
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2025,24.23698049
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2030,444.0928974
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2030,153.9063142
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2030,40.14449816
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2035,246.073783
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2035,84.97820865
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2035,37.88458865
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2040,140.0711258
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2040,46.79171434
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2040,26.63563248
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2045,173.3585107
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2045,56.17515872
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2045,35.11473573
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2050,238.6128381
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2050,74.01050649
+EPS-EI,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2050,51.17685161
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2025,1015.247899
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2025,263.2747504
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2025,112.5073507
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2030,976.0285098
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2030,272.1400022
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2030,124.331488
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2035,576.5099075
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2035,159.9851655
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2035,79.07492699
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2040,463.2275578
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2040,140.138901
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2040,70.1835412
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2045,375.3848901
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2045,133.1494419
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2045,63.09566805
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2050,281.713083
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2050,116.5467414
+MARKAL-NETL,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2050,60.14017563
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2025,957.6210773
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2025,332.4571287
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2025,39.42179392
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2030,452.4573951
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2030,156.0918322
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2030,67.45077263
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2035,195.9311909
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2035,65.41247637
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2035,62.6563327
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2040,288.6420407
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2040,95.64419414
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2040,131.7137651
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2045,352.4680932
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2045,114.9871227
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2045,183.0447841
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2050,413.5506527
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2050,132.9866629
+RIO-REPEAT,IRA.High,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2050,238.4626844
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2025,991.415993
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2025,342.6466857
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2025,31.93732123
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2030,481.5542778
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2030,166.3173873
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2030,46.12833487
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2035,218.8166977
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2035,75.70138458
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2035,42.48191775
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2040,310.465288
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2040,106.5524372
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2040,90.98227474
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2045,389.9896706
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2045,132.2265685
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2045,141.7837609
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Buildings|Indirect,Mt CO2/yr,2050,465.0727131
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect,Mt CO2/yr,2050,155.9218139
+RIO-REPEAT,IRA.Low,United States,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,2050,199.005473
 EPS-EI,IRA,United States,Emissions|CO2|Energy,Mt CO2/yr,2025,4159.183744
 EPS-EI,IRA,United States,Emissions|CO2|Energy,Mt CO2/yr,2030,3311.28495
 EPS-EI,IRA,United States,Emissions|CO2|Energy,Mt CO2/yr,2035,2820.686223

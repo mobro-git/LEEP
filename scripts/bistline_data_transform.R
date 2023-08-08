@@ -121,7 +121,32 @@ trn_elc = elcdmd %>%
   ungroup() %>%
   relocate_standard_col_order()
 
-elc = rbind(elcdmd, trn_elc)
+elc_nosens = rbind(elcdmd, trn_elc)
+
+elcdmd_sens <- read_xlsx(bistline_wrkbk, sheet = "elc demand sensitivities") %>%
+  pivot_longer(cols = 7:12, names_to = "year", values_to = "value") %>%
+  mutate(
+    value = case_when(
+      unit == "TWh" ~ value*0.0036, # conversion from TWh to EJ/yr
+      TRUE~value),
+    unit = case_when(
+      unit == "TWh" ~ "EJ/yr",
+      TRUE~unit)) %>%
+  relocate_standard_col_order() %>%
+  select(-`variable-bistline`)
+
+trn_elc_sens = elcdmd_sens %>%
+  filter(variable %in% c("Final Energy|Transportation|Electricity|Other Transport",
+                         "Final Energy|Transportation|Passenger|Road|Electricity")) %>%
+  mutate(variable = "Final Energy|Transportation|Electricity") %>%
+  group_by(scenario,model,year,unit,region,variable) %>%
+  summarise(value = sum(value)) %>%
+  ungroup() %>%
+  relocate_standard_col_order()
+
+elc_sens = rbind(elcdmd_sens,trn_elc_sens)
+
+elc = rbind(elc_nosens, elc_sens)
 
 #####
 ##
@@ -203,6 +228,7 @@ calc_indirect = indirect %>%
 
 indirect_long = calc_indirect %>%
   pivot_longer(cols = 6:8, names_to = "variable", values_to = "value") %>%
+  filter(!is.na(value)) %>%
   relocate_standard_col_order()
 
 #####
