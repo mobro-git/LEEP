@@ -95,6 +95,8 @@ saveall(p, pie1, fig_no, wd=5, ht=5)
 ```{r}
 fig_no = "5.3.indco2_projection"
 
+# TODO: double-check ind process emissions
+
 Ind_data = spg_clean(
   21, 
   c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
@@ -136,6 +138,7 @@ saveall(delta$figure, delta$df, paste(fig_no, "b"), wd = 3.012, ht = 3)
 ## 5.4 industrial CCS
 
 ```{r}
+# TODO: double-check Carbon Sequestration|CCS|Other doesnt need to be included here
 fig_no = "5.4.ccs"
 exclude_models = c("GCAM-PNNL")
 
