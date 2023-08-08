@@ -415,8 +415,8 @@ sens_dta_econ = clean_data %>% filter(variable == "Emissions|CO2|Energy",
   filter(scenario %in% panel1_scens) %>%
   filter(model %in% model_list) %>%
   mutate(stagger = case_when(
-    scenario == "IRA.Low" ~ -0.7,
-    scenario == "IRA.High" ~ 0.7,
+    scenario == "IRA.Low" ~ -0.8,
+    scenario == "IRA.High" ~ 0.8,
     TRUE ~ 0
   )) %>% mutate(scenario = case_when(
     scenario == "Core" ~ "Mod",
@@ -457,8 +457,8 @@ sens_dta_econ_panel4 = clean_data %>%
     scenario == "Constrained Deployment" ~ "Constr",
     TRUE ~ scenario
   )) %>%
-  mutate(stagger = case_when(model == "USREP-ReEDS" ~ 0.4,
-                             model == "GCAM-PNNL" ~ -0.4,
+  mutate(stagger = case_when(model == "USREP-ReEDS" ~ 0.6,
+                             model == "GCAM-PNNL" ~ -0.6,
                              TRUE ~ 0.0))
 
 sens_dta_econ_panel5 = clean_data %>%
@@ -474,8 +474,8 @@ sens_dta_econ_panel5 = clean_data %>%
   # mutate(scenario = case_when(model == "USREP-ReEDS" ~ paste0("UR.",scenario),
   #                          model == "NEMS-OP" ~ paste0("ON.",scenario),
   #                          TRUE ~ scenario)) %>%
-  mutate(stagger = case_when(model == "USREP-ReEDS" ~ 0.4,
-                             model == "NEMS-OP" ~ -0.4,
+  mutate(stagger = case_when(model == "USREP-ReEDS" ~ 0.6,
+                             model == "NEMS-OP" ~ -0.6,
                              TRUE ~ 0.0))
 
 sens_dta_trans = clean_data %>%
@@ -483,8 +483,8 @@ sens_dta_trans = clean_data %>%
   filter(scenario %in% panel1_scens) %>%
   filter(model %in% model_list) %>%
   mutate(stagger = case_when(
-    scenario == "IRA.Low" ~ -0.7,
-    scenario == "IRA.High" ~ 0.7,
+    scenario == "IRA.Low" ~ -0.8,
+    scenario == "IRA.High" ~ 0.8,
     TRUE ~ 0
   ))
 
@@ -493,8 +493,8 @@ sens_dta_build = clean_data %>%
   filter(scenario %in% panel1_scens) %>%
   filter(model %in% model_list) %>%
   mutate(stagger = case_when(
-    scenario == "IRA.Low" ~ -0.7,
-    scenario == "IRA.High" ~ 0.7,
+    scenario == "IRA.Low" ~ -0.8,
+    scenario == "IRA.High" ~ 0.8,
     TRUE ~ 0
   ))
 
@@ -503,8 +503,8 @@ sens_dta_ind = clean_data %>%
   filter(scenario %in% panel1_scens) %>%
   filter(model %in% model_list) %>%
   mutate(stagger = case_when(
-    scenario == "IRA.Low" ~ -0.7,
-    scenario == "IRA.High" ~ 0.7,
+    scenario == "IRA.Low" ~ -0.8,
+    scenario == "IRA.High" ~ 0.8,
     TRUE ~ 0
   ))
 
@@ -552,40 +552,40 @@ p7e$plot = p7e$plot +
 
 
 p7$plot = p7$plot +
-  scale_shape_manual(breaks = c(-0.7, 0, 0.7), values = c(0,1,5)) +
-  annotate("text", x = 2028.4, y = 4995, size = 3,
+  scale_shape_manual(breaks = c(-0.8, 0, 0.8), values = c(0,1,5)) +
+  annotate("text", x = 2028.4, y = 4995, size = 2,
                label = "EPS-EI", color = "#A1A1A1", alpha = 1, hjust = 0) +
-  annotate("text", x = 2028.4, y = 4845, size = 3,
+  annotate("text", x = 2028.4, y = 4845, size = 2,
              label = "GCAM-CGS", color = "#A1A1A1", alpha = 1, hjust = 0) +
-  annotate("text", x = 2028.4, y = 4695, size = 3,
+  annotate("text", x = 2028.4, y = 4695, size = 2,
              label = "REGEN-EPRI", color = "#A1A1A1", alpha = 1, hjust = 0) +
-  annotate("text", x = 2028.4, y = 4545, size = 3,
+  annotate("text", x = 2028.4, y = 4545, size = 2,
              label = "RIO-REPEAT", color = "#A1A1A1", alpha = 1, hjust = 0) +
-  annotate("text", x = 2028.4, y = 4395, size = 3,
+  annotate("text", x = 2028.4, y = 4395, size = 2,
              label = "USREP-ReEDS", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p7b$plot = p7b$plot +
-  scale_shape_manual(breaks = c(0), values = c(1)) +
-  annotate("text", x = 2028.4, y = 4995, size = 3,
+  scale_shape_manual(breaks = c(0), values = c(4)) +
+  annotate("text", x = 2028.4, y = 4995, size = 2,
                label = "GCAM-PNNL", color = "#A1A1A1", alpha = 1, hjust = 0) #3cb44b
 
 p7c$plot = p7c$plot +
-  scale_shape_manual(breaks = c(0), values = c(1)) +
-  annotate("text", x = 2028.4, y = 4995, size = 3,
+  scale_shape_manual(breaks = c(0), values = c(4)) +
+  annotate("text", x = 2028.4, y = 4995, size = 2,
                label = "GCAM-PNNL", color = "#A1A1A1", alpha = 1, hjust = 0) #3cb44b
 
 p7d$plot = p7d$plot +
-  scale_shape_manual(breaks = c(-0.4, 0.4), values = c(1,5)) +
-  annotate("text", x = 2028.4, y = 4995, size = 3,
+  scale_shape_manual(breaks = c(-0.6, 0.6), values = c(4,3)) +
+  annotate("text", x = 2028.4, y = 4995, size = 2,
            label = "GCAM-PNNL (L)", color = "#A1A1A1", alpha = 1, hjust = 0) + 
-  annotate("text", x = 2028.4, y = 4845, size = 3,
+  annotate("text", x = 2028.4, y = 4845, size = 2,
                label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0) #FFF362
 
 p7e$plot = p7e$plot +
-  scale_shape_manual(breaks = c(-0.4, 0.4), values = c(1,5)) +
-  annotate("text", x = 2028.4, y = 4995, size = 3,
+  scale_shape_manual(breaks = c(-0.6, 0.6), values = c(4,3)) +
+  annotate("text", x = 2028.4, y = 4995, size = 2,
                label = "NEMS-OP (L)", color = "#A1A1A1", alpha = 1, hjust = 0) + #469990
-  annotate("text", x = 2028.4, y = 4845, size = 3,
+  annotate("text", x = 2028.4, y = 4845, size = 2,
              label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0) #FFF362
 
 fig = (p7$plot | p7d$plot | p7e$plot | p7c$plot | p7b$plot) +

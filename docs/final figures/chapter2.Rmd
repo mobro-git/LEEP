@@ -77,7 +77,7 @@ fig = ggplot(data, aes(fill = variable_rename, y = value, alpha = alpha, x = yea
   theme_emf() +
   labs(title = "",
          x = "",
-         y = expression(paste("Power Sector Emissions (Mt C", O[2], "/yr)"))) +
+         y = expression(paste("Electricity Sector Emissions (Mt C", O[2], "/yr)"))) +
     scale_y_continuous(expand = c(0,0), limits = c(0, 6200), labels = scales::comma) +
     scale_x_continuous(breaks = c(2005, 2021)) + 
     theme(panel.spacing.x = unit(4, "mm"), legend.position = "bottom") +
@@ -147,7 +147,7 @@ Elec_data = spg_clean(
 ElecSpg = spg2(
   Elec_data, 
   "",
-  expression(paste("Power Sector Emissions (Mt C", O[2], "/yr)")),
+  expression(paste("Electricity Sector Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
   0,
   2500,
@@ -533,8 +533,8 @@ sens_dta_panel1 = sens_dta %>% filter(scenario %in% panel1_scens) %>%
   filter(!(model == "ReEDS-NREL" & datasrc == "bistline_ira_tall.csv")) %>%
   mutate(scenario = case_when(scenario == "Core" ~ "IRA", TRUE ~ scenario)) %>%
   mutate(stagger = case_when(
-    scenario == "IRA.Low" ~ -0.7,
-    scenario == "IRA.High" ~ 0.7,
+    scenario == "IRA.Low" ~ -0.8,
+    scenario == "IRA.High" ~ 0.8,
     TRUE ~ 0
   ))
 
@@ -562,8 +562,8 @@ sens_dta_panel3 = sens_dta %>% filter(scenario %in% panel3_scens) %>%
   # mutate(scenario = case_when(model == "ReEDS-NREL" ~ paste0("R.",scenario),
   #                          model == "GCAM-PNNL" ~ paste0("GP.",scenario),
   #                          TRUE ~ scenario)) %>%
-  mutate(stagger = case_when(model == "ReEDS-NREL" ~ 0.4,
-                             model == "GCAM-PNNL" ~ -0.4,
+  mutate(stagger = case_when(model == "ReEDS-NREL" ~ 0.6,
+                             model == "GCAM-PNNL" ~ -0.6,
                              TRUE ~ 0.0))
   bind_rows(filler)
 
@@ -582,9 +582,9 @@ sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>%
   # mutate(scenario = case_when(model == "ReEDS-NREL" ~ paste0("R.",scenario),
   #                             model == "USREP-ReEDS" ~ paste0("UR.",scenario),
   #                             TRUE ~ scenario)) %>%
-  mutate(stagger = case_when(model == "GCAM-PNNL" ~ -0.7,
+  mutate(stagger = case_when(model == "GCAM-PNNL" ~ -0.8,
                              model == "ReEDS-NREL" ~ 0,
-                             model == "USREP-ReEDS" ~ +0.7,
+                             model == "USREP-ReEDS" ~ +0.8,
                              TRUE ~ 0.0))
   bind_rows(filler)
   
@@ -600,8 +600,8 @@ sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
   # mutate(scenario = case_when(model == "USREP-ReEDS" ~ paste0("UR.",scenario),
   #                          model == "NEMS-OP" ~ paste0("ON.",scenario),
   #                          TRUE ~ scenario)) %>%
-  mutate(stagger = case_when(model == "USREP-ReEDS" ~ 0.4,
-                             model == "NEMS-OP" ~ -0.4,
+  mutate(stagger = case_when(model == "USREP-ReEDS" ~ 0.6,
+                             model == "NEMS-OP" ~ -0.6,
                              TRUE ~ 0.0))
   bind_rows(filler)
 
@@ -643,46 +643,46 @@ p5$plot = p5$plot +
 # annotations
 # "EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI","USREP-ReEDS", "ReEDS-NREL"
 p1$plot = p1$plot + 
-  scale_shape_manual(breaks = c(-0.7, 0, 0.7), values = c(0,1,5)) +
-  annotate("text", x = 2028.4, y = 1595, size = 3,
+  scale_shape_manual(breaks = c(-0.8, 0, 0.8), values = c(0,1,5)) +
+  annotate("text", x = 2028.4, y = 1595, size = 2,
                label = "EPS-EI", color = "#A1A1A1", alpha = 1, hjust = 0) + 
-  annotate("text", x = 2028.4, y = 1535, size = 3,
+  annotate("text", x = 2028.4, y = 1535, size = 2,
              label = "GCAM-CGS", color = "#A1A1A1", alpha = 1, hjust = 0) +
-  annotate("text", x = 2028.4, y = 1475, size = 3,
+  annotate("text", x = 2028.4, y = 1475, size = 2,
              label = "ReEDS-NREL", color = "#A1A1A1", alpha = 1, hjust = 0) + 
-  annotate("text", x = 2028.4, y = 1415, size = 3,
+  annotate("text", x = 2028.4, y = 1415, size = 2,
              label = "REGEN-EPRI", color = "#A1A1A1", alpha = 1, hjust = 0) + 
-  annotate("text", x = 2028.4, y = 1355, size = 3,
+  annotate("text", x = 2028.4, y = 1355, size = 2,
              label = "RIO-REPEAT", color = "#A1A1A1", alpha = 1, hjust = 0) + 
-  annotate("text", x = 2028.4, y = 1295, size = 3,
+  annotate("text", x = 2028.4, y = 1295, size = 2,
              label = "USREP-ReEDS", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p2$plot = p2$plot + 
-  scale_shape_manual(breaks = c(0), values = c(1)) +
-  annotate("text", x = 2028.4, y = 1595, size = 3,
+  scale_shape_manual(breaks = c(0), values = c(3)) +
+  annotate("text", x = 2028.4, y = 1595, size = 2,
                label = "GCAM-PNNL", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p3$plot = p3$plot + 
-  scale_shape_manual(breaks = c(-0.4, 0.4), values = c(1,5)) +
-  annotate("text", x = 2028.4, y = 1595, size = 3,
+  scale_shape_manual(breaks = c(-0.6, 0.6), values = c(4,3)) +
+  annotate("text", x = 2028.4, y = 1595, size = 2,
                label = "GCAM-PNNL (L)", color = "#A1A1A1", alpha = 1, hjust = 0) + 
-  annotate("text", x = 2028.4, y = 1535, size = 3,
+  annotate("text", x = 2028.4, y = 1535, size = 2,
                label = "ReEDS-NREL (R)", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p4$plot = p4$plot + 
-  scale_shape_manual(breaks = c(-0.7, 0, 0.7), values = c(0,1,5)) +
-  annotate("text", x = 2028.4, y = 1595, size = 3,
+  scale_shape_manual(breaks = c(-0.8, 0, 0.8), values = c(8,4,3)) +
+  annotate("text", x = 2028.4, y = 1595, size = 2,
                label = "GCAM-PNNL (L)", color = "#A1A1A1", alpha = 1, hjust = 0) +
-  annotate("text", x = 2028.4, y = 1535, size = 3,
+  annotate("text", x = 2028.4, y = 1535, size = 2,
                label = "ReEDS-NREL (M)", color = "#A1A1A1", alpha = 1, hjust = 0) +
-  annotate("text", x = 2028.4, y = 1475, size = 3,
+  annotate("text", x = 2028.4, y = 1475, size = 2,
                label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p5$plot = p5$plot + 
-  scale_shape_manual(breaks = c(-0.4, 0.4), values = c(1,5)) +
-  annotate("text", x = 2028.4, y = 1595, size = 3,
+  scale_shape_manual(breaks = c(-0.6, 0.6), values = c(4,3)) +
+  annotate("text", x = 2028.4, y = 1595, size = 2,
                label = "NEMS-OP (L)", color = "#A1A1A1", alpha = 1, hjust = 0) +
-    annotate("text", x = 2028.4, y = 1535, size = 3,
+    annotate("text", x = 2028.4, y = 1535, size = 2,
                label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 combined = (p1$plot | p4$plot | p5$plot | p3$plot | p2$plot ) +

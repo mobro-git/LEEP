@@ -235,7 +235,7 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
     theme(axis.title.x = element_blank(),
           plot.title = element_text(hjust = 0.5, size = 8),
           plot.margin = margin(0.7,1,0.7,left_margin), legend.position = "none")
-  ylabel = expression(paste("Power Sector Emissions (Mt C", O[2], "/yr)"))
+  ylabel = expression(paste("Electricity Sector Emissions (Mt C", O[2], "/yr)"))
   if (!ps) {
     ylabel = expression(paste("Economy-Wide Emissions (Mt C", O[2], "/yr)"))
   }
@@ -253,7 +253,7 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
     p = p +
       labs(y = ylabel) +
       #scale_subpalette(subpalettes, "Sensitivity Dots") +
-      scale_color_manual(values = c("IRA" = "black", "IRA.Low" = "#0083ca", "IRA.High" = "#25266b"), guide = "none")
+      scale_color_manual(values = c("IRA" = "black", "IRA.Low" = "#0083ca", "IRA.High" = "#6a959b"), guide = "none")
     opt_label = "Optimistic Emis"
     pes_label = "Pessimistic Emis"
   }
@@ -271,7 +271,7 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
   if(sum(high_coord) != 0) {
     p = p +
       annotate("text", x = high_coord[1], y = high_coord[2], size = 2,
-               label = opt_label, color = "#25266b", alpha = 1, hjust = -0.2)
+               label = opt_label, color = "#6a959b", alpha = 1, hjust = -0.2)
   }
 
   return(list(
