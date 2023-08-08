@@ -393,13 +393,13 @@ EconSpg = spg2(Econ_data,
   config, 
   figmap_leep_timeseries) 
 
-clean = EconSpg$data %>%
+cleanEcon = EconSpg$data %>%
   mutate(scenario2 = case_when(
     !scenario %in% c("Historic","No IRA") ~ "IRA",
     TRUE~scenario
   ))
 
-EconSpg = spg_msb(clean,
+EconSpg = spg_msb(cleanEcon,
   "",
   expression(paste("Economy-wide C", O[2], " Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
@@ -414,12 +414,12 @@ EconSpg = spg_msb(clean,
   config, 
   figmap_leep_timeseries) 
 
-EconDot = dotted_msb(clean, EconSpg$figure, "median", 0, 7000, config, figmap_leep_timeseries)
+EconDot = dotted_msb(cleanEcon, EconSpg$figure, "median", 0, 7000, config, figmap_leep_timeseries)
 EconDot
 
 # saveall(EconDot, EconSpg$data, fig_no)
 
-delta = delta_msb(1000, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
+delta = delta_msb(1005, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
 delta
 # saveall(delta$figure, delta$df, paste(fig_no, "delta"), wd = 3.012, ht = 3)
 ```

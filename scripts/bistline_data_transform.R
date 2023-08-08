@@ -10,7 +10,7 @@ library(readxl)
 library(xlsx)
 devtools::load_all()
 
-bistline_wrkbk = "data-extra/ira_comparison_raw/ira_comparison_updated.xlsx"
+bistline_wrkbk = "data-extra/ira_comparison_raw/ira_comparison_updated_08082023.xlsx"
 historic_wrkbk = "data-extra/ira_comparison_raw/bistline-historic.xlsx"
 
 #####
@@ -169,7 +169,6 @@ all_modeled = rbind(gen_cap, emissions, elc, ev_share, fossil) %>%
 #####
 
 indirect = all_modeled %>%
-  filter(scenario %in% c("IRA","Reference")) %>% # removing sensitivity scenarios b/c end-use energy not ported over and indirect emissions allocation would be wrong
   filter(
     variable %in% c(
       "Emissions|CO2|Energy|Supply|Electricity",
