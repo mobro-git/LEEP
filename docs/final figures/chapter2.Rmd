@@ -533,8 +533,8 @@ sens_dta_panel1 = sens_dta %>% filter(scenario %in% panel1_scens) %>%
   filter(!(model == "ReEDS-NREL" & datasrc == "bistline_ira_tall.csv")) %>%
   mutate(scenario = case_when(scenario == "Core" ~ "IRA", TRUE ~ scenario)) %>%
   mutate(stagger = case_when(
-    scenario == "IRA.Low" ~ -0.8,
-    scenario == "IRA.High" ~ 0.8,
+    scenario == "IRA.Low" ~ -0.9,
+    scenario == "IRA.High" ~ 0.9,
     TRUE ~ 0
   ))
 
@@ -582,9 +582,9 @@ sens_dta_panel4 = sens_dta %>% filter(scenario %in% panel4_scens) %>%
   # mutate(scenario = case_when(model == "ReEDS-NREL" ~ paste0("R.",scenario),
   #                             model == "USREP-ReEDS" ~ paste0("UR.",scenario),
   #                             TRUE ~ scenario)) %>%
-  mutate(stagger = case_when(model == "GCAM-PNNL" ~ -0.8,
+  mutate(stagger = case_when(model == "GCAM-PNNL" ~ -0.9,
                              model == "ReEDS-NREL" ~ 0,
-                             model == "USREP-ReEDS" ~ +0.8,
+                             model == "USREP-ReEDS" ~ +0.9,
                              TRUE ~ 0.0))
   bind_rows(filler)
   
@@ -608,7 +608,7 @@ sens_dta_panel5 = sens_dta %>% filter(scenario %in% panel5_scens) %>%
 p1 = sens_dot_plot(sens_dta_panel1, title = "\nIRA Implementation", 
                    figmap_leep_timeseries, config, 
                    ps = TRUE, ymin = 0, ymax = 1600, far_left = TRUE, 
-                   ira_coord = c(2030.0,965), low_coord = c(2028.7, 1190), 
+                   ira_coord = c(2029.9,975), low_coord = c(2028.7, 1190), 
                    high_coord = c(2030.2, 1040))
 p1$plot = p1$plot +
   theme(axis.ticks = element_line(color = "black"),
@@ -643,7 +643,7 @@ p5$plot = p5$plot +
 # annotations
 # "EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI","USREP-ReEDS", "ReEDS-NREL"
 p1$plot = p1$plot + 
-  scale_shape_manual(breaks = c(-0.8, 0, 0.8), values = c(0,1,5)) +
+  scale_shape_manual(breaks = c(-0.9, 0, 0.9), values = -c(128937,43,9913)) +
   annotate("text", x = 2028.4, y = 1595, size = 2,
                label = "EPS-EI", color = "#A1A1A1", alpha = 1, hjust = 0) + 
   annotate("text", x = 2028.4, y = 1545, size = 2,
@@ -660,19 +660,19 @@ p1$plot = p1$plot +
              label = "USREP-ReEDS", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p2$plot = p2$plot + 
-  scale_shape_manual(breaks = c(0), values = c(3)) +
+  scale_shape_manual(breaks = c(0), values = c(1)) +
   annotate("text", x = 2028.4, y = 1595, size = 2,
                label = "GCAM-PNNL", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p3$plot = p3$plot + 
-  scale_shape_manual(breaks = c(-0.6, 0.6), values = c(4,3)) +
+  scale_shape_manual(breaks = c(-0.6, 0.6), values = c(1,2)) +
   annotate("text", x = 2028.4, y = 1595, size = 2,
                label = "GCAM-PNNL (L)", color = "#A1A1A1", alpha = 1, hjust = 0) + 
   annotate("text", x = 2028.4, y = 1545, size = 2,
                label = "ReEDS-NREL (R)", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p4$plot = p4$plot + 
-  scale_shape_manual(breaks = c(-0.8, 0, 0.8), values = c(8,4,3)) +
+  scale_shape_manual(breaks = c(-0.9, 0, 0.9), values = c(1,2,0)) +
   annotate("text", x = 2028.4, y = 1595, size = 2,
                label = "GCAM-PNNL (L)", color = "#A1A1A1", alpha = 1, hjust = 0) +
   annotate("text", x = 2028.4, y = 1545, size = 2,
@@ -681,7 +681,7 @@ p4$plot = p4$plot +
                label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0)
 
 p5$plot = p5$plot + 
-  scale_shape_manual(breaks = c(-0.6, 0.6), values = c(4,3)) +
+  scale_shape_manual(breaks = c(-0.6, 0.6), values = c(5,0)) +
   annotate("text", x = 2028.4, y = 1595, size = 2,
                label = "NEMS-OP (L)", color = "#A1A1A1", alpha = 1, hjust = 0) +
     annotate("text", x = 2028.4, y = 1545, size = 2,
