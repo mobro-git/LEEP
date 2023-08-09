@@ -76,7 +76,7 @@ color_map <- c(
   # scenarios
   "Historic" = "black",
   "Historical" = "black",
-  "IRA" = "Lgold",
+  "IRA" = "Lorange",
   "Reference" = "Lblue",
   "No IRA" = "Lblue",
   "IRA.High" = "Lteal",

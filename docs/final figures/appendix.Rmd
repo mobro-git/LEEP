@@ -238,7 +238,7 @@ fin = ggplot(data = data_sort[data_sort$variable_rename != "Reference",] , aes(x
     scale_y_continuous(limits = c(0, 1500), labels = scales::comma, expand = c(0,0)) +
     theme_emf() +
     scale_x_continuous(breaks = c(2025, 2030, 2035)) + 
-    theme(axis.text.x = element_text(angle = 45, hjust=1), axis.ticks = element_blank()) +
+    theme(axis.text.x = element_text(angle = 45, hjust=1), axis.ticks = element_line(color="black"), axis.ticks.length = unit(-0.15, "cm")) +
     theme(panel.spacing.x = unit(4, "mm"), legend.position = "bottom") + 
   guides(fill = guide_legend(nrow = 2)) + 
   scale_fill_manual(name = "", 
@@ -258,7 +258,7 @@ fin
 
 data_sort = data_sort %>% mutate(figure_num = fig_no)
 
-saveall(fin, data_sort, fig_no, wd = 9)
+saveall(fin, data_sort, fig_no, ht = 9, wd = 7.5)
 ```
 
 # Appendix F: Results by model
@@ -2487,11 +2487,12 @@ data_total <- data %>%
 
 
 dots_Total = ggplot(data = data_total, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
+  geom_point(aes(alpha = alpha, shape = scenario), size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
     facet_wrap(~"Total Generation") +
+    scale_shape_manual(values = c("IRA" = 1, "No IRA" = 2)) +
     scale_y_continuous(limits = c(ymin, 6500), breaks = c(0, 3250 , 6500), labels = scales::comma) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
@@ -2500,7 +2501,9 @@ dots_Total = ggplot(data = data_total, aes(x = axe, y = value,  color = scenario
     theme(axis.text.x = element_text(angle = 45, hjust = 1),
           axis.title.x = element_blank(),
           axis.title.y = element_text(size = 7),
-          axis.ticks = element_blank(),
+          axis.ticks.x = element_blank(), 
+          axis.ticks.y = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"),
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
@@ -2551,7 +2554,7 @@ data_Low <- data %>%
   )) 
 
 dots_Low = ggplot(data = data_Low, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
+  geom_point(aes(alpha = alpha, shape = scenario), size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
     geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
@@ -2559,6 +2562,7 @@ dots_Low = ggplot(data = data_Low, aes(x = axe, y = value,  color = scenario)) +
     scale_y_continuous(limits = c(ymin, 6500), breaks = c(0, 3250 , 6500)) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
+    scale_shape_manual(values = c("IRA" = 1, "No IRA" = 2)) +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme(axis.text.x = element_text(angle = 45, hjust = 1),
           axis.title.y = element_blank(), 
@@ -2615,10 +2619,11 @@ data_High <- data %>%
   )) 
 
 dots_High = ggplot(data = data_High, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
+  geom_point(aes(alpha = alpha, shape = scenario), size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
+    scale_shape_manual(values = c("IRA" = 1, "No IRA" = 2)) +
     facet_wrap(~"High Emitting Generation") +
     scale_y_continuous(limits = c(ymin, 6500), breaks = c(0, 3250 , 6500)) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
@@ -2682,11 +2687,12 @@ data_Nuclear <- data %>%
   )) 
 
 dots_Nuclear = ggplot(data = data_Nuclear, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
+  geom_point(aes(alpha = alpha, shape = scenario), size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
     facet_wrap(~"Nuclear") +
+    scale_shape_manual(values = c("IRA" = 1, "No IRA" = 2)) +
     scale_y_continuous(limits = c(ymin, 2600), breaks = c(0, 1300 , 2600)) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
@@ -2749,7 +2755,7 @@ data_Solar <- data %>%
   )) 
 
 dots_Solar = ggplot(data = data_Solar, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
+  geom_point(aes(alpha = alpha, shape = scenario), size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
@@ -2757,6 +2763,7 @@ dots_Solar = ggplot(data = data_Solar, aes(x = axe, y = value,  color = scenario
     scale_y_continuous(limits = c(ymin, 2600), breaks = c(0, 1300 , 2600)) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
+    scale_shape_manual(values = c("IRA" = 1, "No IRA" = 2)) +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme(axis.text.x = element_text(angle = 45, hjust = 1),
           axis.title.y = element_blank(), 
@@ -2817,11 +2824,12 @@ data_Wind <- data %>%
   )) 
 
 dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
+  geom_point(aes(alpha = alpha, shape = scenario), size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
     facet_wrap(~"Wind") +
+    scale_shape_manual(values = c("IRA" = 1, "No IRA" = 2)) +
     scale_y_continuous(limits = c(ymin, 2600), breaks = c(0, 1300 , 2600), labels = scales::comma) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
@@ -2830,7 +2838,9 @@ dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = value,  color = scenario))
     theme(axis.text.x = element_text(angle = 45, hjust = 1),
           axis.title.x = element_blank(),
           axis.title.y = element_text(size = 7),
-          axis.ticks = element_blank(),
+          axis.ticks.x = element_blank(), 
+          axis.ticks.y = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"),
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
@@ -2885,11 +2895,12 @@ data_CCS <- data %>%
   )) 
 
 dots_CCS = ggplot(data = data_CCS, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
+  geom_point(aes(alpha = alpha, shape = scenario), size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
     facet_wrap(~"CCS") +
+    scale_shape_manual(values = c("IRA" = 1, "No IRA" = 2)) +
     scale_y_continuous(limits = c(ymin, 2600), breaks = c(0, 1300 , 2600)) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
@@ -2952,11 +2963,12 @@ data_Coal <- data %>%
   )) 
 
 dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
+  geom_point(aes(alpha = alpha, shape = scenario), size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
     facet_wrap(~"Coal") +
+    scale_shape_manual(values = c("IRA" = 1, "No IRA" = 2)) +
     scale_y_continuous(limits = c(ymin, 2600), breaks = c(0, 1300 , 2600), labels = scales::comma) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
@@ -2965,7 +2977,8 @@ dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = value,  color = scenario))
     theme(axis.text.x = element_text(angle = 45, hjust = 1),
           axis.title.x = element_blank(),
           axis.title.y = element_text(size = 7),
-          axis.ticks = element_blank(),
+          axis.ticks = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"),
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
@@ -3019,11 +3032,12 @@ data_Gas <- data %>%
   )) 
 
 dots_Gas = ggplot(data = data_Gas, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
+  geom_point(aes(alpha = alpha, shape = scenario), size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
     facet_wrap(~"Natural Gas") +
+    scale_shape_manual(values = c("IRA" = 1, "No IRA" = 2)) +
     scale_y_continuous(limits = c(ymin, 2600), breaks = c(0, 1300 , 2600)) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
@@ -3032,7 +3046,9 @@ dots_Gas = ggplot(data = data_Gas, aes(x = axe, y = value,  color = scenario)) +
           axis.title.y = element_blank(), 
           axis.text.y = element_blank(),
           axis.title.x = element_blank(),
-          axis.ticks = element_blank(),
+          axis.ticks.y = element_blank(), 
+          axis.ticks.x = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"),
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
@@ -3086,11 +3102,12 @@ data_Other <- data %>%
   )) 
 
 dots_Other = ggplot(data = data_Other, aes(x = axe, y = value,  color = scenario)) +
-  geom_point(aes(alpha = alpha), shape = 1, size = 1.5, position = position_dodge(width = 0.5)) +
+  geom_point(aes(alpha = alpha, shape = scenario), size = 1.5, position = position_dodge(width = 0.5)) +
   geom_segment(data = df_stat_35, aes(x = 0.94, xend = 1.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_segment(data = df_stat_30, aes(x = 1.94, xend = 2.06, y = median, yend = median, color = scenario), size = 0.5) +
   geom_hline(data = df_stat_21, aes(yintercept = median, color = scenario, alpha = 0.5) ) +
     facet_wrap(~"Other") +
+    scale_shape_manual(values = c("IRA" = 1, "No IRA" = 2)) +
     scale_y_continuous(limits = c(ymin, 2600), breaks = c(0, 1300 , 2600)) +
     scale_x_continuous(breaks = c(1,2), labels = c("2030", "2035")) +
     theme_emf() +
@@ -3099,7 +3116,9 @@ dots_Other = ggplot(data = data_Other, aes(x = axe, y = value,  color = scenario
           axis.title.y = element_blank(), 
           axis.text.y = element_blank(),
           axis.title.x = element_blank(),
-          axis.ticks = element_blank(),
+          axis.ticks.y = element_blank(), 
+          axis.ticks.x = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"),
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
@@ -4777,7 +4796,9 @@ dots_Total = ggplot(data = data_total, aes(x = axe, y = abs_dif)) +
     theme(
           axis.title.x = element_blank(),
           axis.title.y = element_text(size = 7),
-          axis.ticks = element_blank(),
+          axis.ticks.x = element_blank(), 
+          axis.ticks.y = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"),
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
@@ -5070,7 +5091,9 @@ dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = abs_dif)) +
     theme(
           axis.title.x = element_blank(),
           axis.title.y = element_text(size = 7),
-          axis.ticks = element_blank(),
+          axis.ticks.x = element_blank(), 
+          axis.ticks.y = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"),
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
@@ -5190,7 +5213,8 @@ dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = abs_dif)) +
     theme(
           axis.title.x = element_blank(),
           axis.title.y = element_text(size = 7),
-          axis.ticks = element_blank(),
+          axis.ticks = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"),
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
@@ -5250,7 +5274,9 @@ dots_Gas = ggplot(data = data_Gas, aes(x = axe, y = abs_dif)) +
           axis.title.y = element_blank(), 
           axis.text.y = element_blank(),
           axis.title.x = element_blank(),
-          axis.ticks = element_blank(),
+          axis.ticks.y = element_blank(),
+          axis.ticks.x = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"),
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
@@ -5310,7 +5336,9 @@ dots_Other = ggplot(data = data_Other, aes(x = axe, y = abs_dif)) +
           axis.title.y = element_blank(), 
           axis.text.y = element_blank(),
           axis.title.x = element_blank(),
-          axis.ticks = element_blank(),
+          axis.ticks.y = element_blank(),
+          axis.ticks.x = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"),
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
@@ -5718,7 +5746,8 @@ figure = ggplot() +
     color = "gray"
   ) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        axis.ticks = element_blank(), 
+          axis.ticks = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"),
         legend.title = element_blank())
 figure
 savefig(figure, fig_no)
@@ -5783,7 +5812,9 @@ p = dta_top %>% ggplot() +
   scale_linetype_manual(values = c("longdash","solid","dotted"), breaks = c("Advanced", "Moderate", "Conservative")) +
   facet_grid(. ~ variable, labeller = labeller(variable = tech_renamer)) +
   theme_emf() +
-  theme(axis.ticks = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1),
+  theme(
+          axis.ticks = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"), axis.text.x = element_text(angle = 45, hjust = 1),
         axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8),
         legend.text = element_text(size = 6), legend.key.size = unit(15,"point"))
         
@@ -5797,7 +5828,8 @@ p2 = dta_bottom %>% ggplot() +
   scale_linetype_manual(values = c("longdash","solid","dotted"), breaks = c("Advanced", "Moderate", "Conservative")) +
   facet_grid(. ~ variable, labeller = labeller(variable = tech_renamer), scales = "free_y") +
   theme_emf() +
-  theme(axis.ticks = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1),
+  theme(axis.ticks = element_line(color = "black"),
+        axis.ticks.length = unit(-0.15, "cm"),, axis.text.x = element_text(angle = 45, hjust = 1),
         axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8),
         legend.text = element_text(size = 6), legend.key.size = unit(15,"point"))
 
