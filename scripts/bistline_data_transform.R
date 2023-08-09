@@ -347,5 +347,5 @@ hist_fossil = read_xlsx(historic_wrkbk, sheet = "primary energy") %>%
 
 historic = rbind(hist_ev_share, hist_generation, hist_capacity_change, hist_fossil)
 
-write.csv(historic, "data-raw/model-runs/EIA-IEA-bistline_historic.csv", row.names = FALSE)
+#write.csv(historic, "data-raw/model-runs/EIA-IEA-bistline_historic.csv", row.names = FALSE)
 

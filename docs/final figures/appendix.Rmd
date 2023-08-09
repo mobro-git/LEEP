@@ -5823,14 +5823,12 @@ clean_data1 = clean_data  %>%
   mutate(region = "United States") %>%
   # remove bistline models with incorrect indirect emissions for end-use sectors
   # MARKAL-NETL sensitivities included here, but we exclude from LEEP Report sensitivity analysis: should decide what to do
-  filter(!(model %in% c("GCAM-CGS","MARKAL-NETL","REGEN-EPRI") & 
+  filter(!(model %in% c("GCAM-CGS","REGEN-EPRI") & 
              scenario %in% c("IRA.Low","IRA.High") &
              variable %in% c("Emissions|CO2|Energy|Demand|Buildings|Total",
                              "Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total",
                              "Emissions|CO2|Energy|Demand|Transportation|Total"))) %>%
-  filter(!(model %in% c("MARKAL-NETL") & 
-             scenario %in% c("IRA.Low","IRA.High") &
-             variable %in% c("Emissions|CO2|Energy|Supply|Electricity")))
+  filter(!(model %in% c("MARKAL-NETL") & scenario %in% c("IRA.Low","IRA.High")))
 
 Econ_data = spg_clean(
   1000,
@@ -5970,7 +5968,7 @@ summary_NoIRA = indicators_summ %>%
   select(sector, year,
          `No IRA Min` = min, `No IRA Median` = median, `No IRA Max` = max)
 
-summary = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
+summary_all = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
 
 EconTab = html(Econ_data, "Economy-Wide CO2")
 ElecTab = html(Elec_data, "Electricity CO2")
@@ -5997,71 +5995,45 @@ BuilTab
 IndTab
 
 saveall(combined, indicators_all_clean, fig_no)
-savedata(summary, paste(fig_no,"summary",sep="_"))
+savedata(summary_all, paste(fig_no,"summary",sep="_"))
 ```
 
 ### Core ranges to calculate difference
 
 ```{r}
-clean_data1 = clean_data  %>%
-  mutate(region = "United States") %>%
-  mutate(model = case_when(
-    datasrc == "ReEDS_compiled.csv" ~ "ReEDS-NRELr",
-    TRUE~model)) %>%
-  mutate(region = "United States") %>%
-  # remove bistline models with incorrect indirect emissions for end-use sectors
-  # MARKAL-NETL sensitivities included here, but we exclude from LEEP Report sensitivity analysis: should decide what to do
-  filter(model != "MARKAL-NETL") %>%
-  filter(!(model %in% c("EPS-EI","GCAM-CGS","MARKAL-NETL","REGEN-EPRI","RIO-REPEAT") & 
-             scenario %in% c("IRA.Low","IRA.High") &
-             variable %in% c("Emissions|CO2|Energy|Demand|Buildings|Total",
-                             "Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total",
-                             "Emissions|CO2|Energy|Demand|Transportation|Total")))
-
-Econ_data = spg_clean(
-  1000,
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
-  "EPA-GHGI",
-  config,
-  clean_data1,
-  figmap_leep_timeseries
-)
-
 Elec_data = spg_clean(
-  1001,
+  98,
   c("Scout-LEEP"),
   "EPA-GHGI",
   config,
-  clean_data1,
+  clean_data,
   figmap_leep_timeseries
 )
 
 Tran_data = spg_clean(
-  1002,
+  19,
   c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),  
   "EPA-GHGI",
   config,
-  clean_data1,
+  clean_data,
   figmap_leep_timeseries
 )
 
 Ind_data = spg_clean(
-  1003, 
+  21, 
   c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),
   "EPA-GHGI", 
   config,
-  clean_data1, 
+  clean_data, 
   figmap_leep_timeseries)
 
 Buil_data = spg_clean(
-  1004, 
+  23, 
   c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL"), 
   "EPA-GHGI", 
   config, 
-  clean_data1, 
+  clean_data, 
   figmap_leep_timeseries)
-
-subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
 indicators_econ = Econ_data %>% filter(year %in% c(2030, 2035))
 indicators_econ_baseline = Econ_data %>% filter(year == 2005)
@@ -6079,11 +6051,7 @@ indicators_buil = Buil_data %>% filter(year %in% c(2030, 2035))
 indicators_buil_baseline = Buil_data %>% filter(year == 2005)
 
 indicators_all = bind_rows(indicators_econ, indicators_elec, 
-                           indicators_tran, indicators_ind, indicators_buil) %>%
-  mutate(scenario = case_when(
-    str_detect(scenario, "No IRA") ~ "No IRA",
-    TRUE~"IRA"))
-
+                           indicators_tran, indicators_ind, indicators_buil)
 indicators_all_baseline = bind_rows(indicators_econ_baseline, 
                                     indicators_elec_baseline, indicators_tran_baseline,
                                     indicators_ind_baseline, indicators_buil_baseline)
@@ -6120,34 +6088,6 @@ indicators_summ = indicators_all %>%
             max = max(pct_diff),
             median = median(pct_diff))
 
-p1 = ranges(indicators_all, indicators_summ, "Economy-Wide", bottom = TRUE, top = FALSE,
-                     subtitle = expression(paste("Economy-Wide C",O[2], " Emissions Reductions")))
-p2 = ranges(indicators_all, indicators_summ, "Electricity", bottom = FALSE, top = TRUE,
-                     subtitle = expression(paste("Electricity C", O[2], " Emissions Reductions")))
-p3 = ranges(indicators_all, indicators_summ, "Transportation", 
-                     subtitle = expression(paste("Transportation C", O[2], " Emissions Reductions (Direct + Indirect from Electricity)")))
-p4 = ranges(indicators_all, indicators_summ, "Buildings", 
-                     subtitle = expression(paste("Buildings C", O[2], " Emissions Reductions (Direct + Indirect from Electricity)")))
-p5 = ranges(indicators_all, indicators_summ, "Industry", bottom = FALSE, top = FALSE,
-                     subtitle = expression(paste("Industry C", O[2], " Emissions Reductions (Direct + Indirect from Electricity)")))
-
-combined = (p2 / p3 / p4 / p5 / p1) +
-  plot_layout(guides = "collect") +
-#  annotate("segment", x = 50, xend = 50, y = 0, yend = 100, color = "blue") +
-#  plot_annotation(theme = theme(legend.position = "top")) + 
-  theme(plot.margin = margin(0, 0, 0, 0))
-combined
-
-ggsave(filename = "output/pre-brief/summary_range_sensitivities.png",
-         plot = combined,
-         width = 7,
-         height = 5,
-         units = "in")
-
-indicators_all_clean = indicators_all %>% 
-  select(model,scenario,unit,region,title_name.y,year,value,value_2005,pct_diff) %>% 
-  rename(`percent diff 2005` = pct_diff)
-
 summary_IRA = indicators_summ %>%
   ungroup() %>%
   select(sector, scenario, year, min, median, max) %>%
@@ -6162,9 +6102,7 @@ summary_NoIRA = indicators_summ %>%
   select(sector, year,
          `No IRA Min` = min, `No IRA Median` = median, `No IRA Max` = max)
 
-summary_all = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
-
-write.xlsx2(summary_all, "output/pre-brief/summary_range_table_all_sensitivities.xlsx")
+summary_core = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
 ```
 
 ## Joint table
@@ -6185,5 +6123,5 @@ joint = cbind(core, all) %>%
     diffMax = allMax-coreMax
   )
 
-write.xlsx2(joint, "output/pre-brief/summary_range_changes.xlsx")
+savedata(joint, paste(fig_no,"changes",sep="_"))
 ```

@@ -232,9 +232,9 @@ tar_plan(
 
   # Plot maps
 
-  # ts = create_graph("leep", "time_series", config, clean_data, figmap_leep_timeseries),
-  # cone = create_graph("leep", "cone_uncertainty", config, clean_data, figmap_leep_cone),
-  # stackbar = create_graph("leep", "stacked_bar", config, clean_data, figmap_leep_stackbar),
+  ts = create_graph("leep", "time_series", config, clean_data, figmap_leep_timeseries),
+  cone = create_graph("leep", "cone_uncertainty", config, clean_data, figmap_leep_cone),
+  stackbar = create_graph("leep", "stacked_bar", config, clean_data, figmap_leep_stackbar),
   diffbar = create_graph("leep", "diff_bar", config, clean_data, figmap_leep_diffbar)
 
 )

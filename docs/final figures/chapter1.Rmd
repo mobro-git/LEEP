@@ -94,7 +94,7 @@ EconSpg = spg2(Econ_data,
 EconDot = dotted(EconSpg$data, EconSpg$figure, "median", 0, 7000, config, figmap_leep_timeseries)
 EconDot
 EconSpg$data = clean_supplemental_data(EconSpg$data, paste(fig_no, "a"))
-saveall(EconDot, EconSpg$data, fig_no)
+saveall(EconDot, EconSpg$data, paste(fig_no, "a"))
 
 delta = delta(25, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
 delta
