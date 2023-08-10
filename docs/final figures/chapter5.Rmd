@@ -32,7 +32,6 @@ targets::tar_load(data_raw)
 # temporary filter on clean data
 clean_data = clean_data %>%
   filter(!(model == "IPM-EPA" & year == 2025))
-
 ```
 
 ## 5.1 co2 emissions from the industrial sector in the us compared to economy-wide co2 emissions
@@ -46,15 +45,25 @@ dta4 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 
   mutate(variable_rename = case_when(
     variable_rename == "Industry: Direct" ~ variable_rename,
     variable_rename == "Industry: Indirect" ~ variable_rename,
+    variable_rename == "Industry: Process" ~ variable_rename,
     TRUE ~ "Other Sectors"
   )) %>%
   mutate(variable_rename = factor(variable_rename, 
-                                  levels = c("Industry: Direct","Industry: Indirect", "Other Sectors")))
+                                  levels = c("Industry: Direct","Industry: Indirect","Industry: Process","Other Sectors")))
 
 p4 = emis_stack(dta4, "Industrial CO2 Emissions", figmap_leep_stackbar, config) + 
-  scale_fill_manual(values = c("Other Sectors" = "white", "Industry: Indirect" = subpalettes$`Emissions Stack`[["Industry: Indirect"]], "Industry: Direct" = subpalettes$`Emissions Stack`[["Industry: Direct"]])) +
-  scale_color_manual(values = c("Other Sectors" = "#CECECE", "Industry: Indirect" = "#CECECE", "Industry: Direct" = "#CECECE")) +
-  scale_alpha_manual(values = c("Other Sectors" = 0.5, "Industry: Indirect" = 1, "Industry: Direct" = 1))
+  scale_fill_manual(values = c("Other Sectors" = "white", 
+                               "Industry: Process" = subpalettes$`Emissions Stack`[["Industry: Process"]], 
+                               "Industry: Indirect" = subpalettes$`Emissions Stack`[["Industry: Indirect"]], 
+                               "Industry: Direct" = subpalettes$`Emissions Stack`[["Industry: Direct"]])) +
+  scale_color_manual(values = c("Other Sectors" = "#CECECE", 
+                                "Industry: Process" = "#CECECE", 
+                                "Industry: Indirect" = "#CECECE", 
+                                "Industry: Direct" = "#CECECE")) +
+  scale_alpha_manual(values = c("Other Sectors" = 0.5, 
+                                "Industry: Process" = 1,
+                                "Industry: Indirect" = 1, 
+                                "Industry: Direct" = 1))
 p4
 
 dta4 = clean_supplemental_data(dta4, fig_no)
@@ -66,12 +75,14 @@ saveall(p4, dta4, fig_no)
 
 ```{r}
 fig_no = "5.2.indco2_breakout"
+
 pie = readxl::read_xlsx("data-extra/industry_piechart.xlsx")
 pie1 = pie %>% filter(Table == 1) %>%
   rename(value = `% Energy-related Emissions`) %>%
   mutate(value = round(value*100,0))
 
 total = sum(pie1$value)
+
 p = pie1 %>% mutate(value = (100 * value) / total) %>% arrange(desc(value)) %>% ggplot() +
   geom_bar(aes(x = "2021", y = value, fill = fct_reorder(Industry, value)),
            position = position_stack(), stat = "identity", width = 0.4,
@@ -94,8 +105,6 @@ saveall(p, pie1, fig_no, wd=5, ht=5)
 
 ```{r}
 fig_no = "5.3.indco2_projection"
-
-# TODO: double-check ind process emissions
 
 Ind_data = spg_clean(
   21, 
@@ -129,7 +138,7 @@ IndTab
 
 IndSpg$data = clean_supplemental_data(IndSpg$data, paste(fig_no, "b"))
 
-saveall(IndDot, IndSpg$data, fig_no)
+saveall(IndDot, IndSpg$data, paste(fig_no, "a"))
 
 delta = delta(28, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
 saveall(delta$figure, delta$df, paste(fig_no, "b"), wd = 3.012, ht = 3)

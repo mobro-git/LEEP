@@ -42,6 +42,7 @@ make_clean_data = function(df) {
   # sum industry and fuel production emissions for internal models
   ind_emissions = df %>% filter(model %in% c("USREP-ReEDS","GCAM-PNNL", "NEMS-OP")) %>%
     filter(variable %in% c("Emissions|CO2|Energy|Demand|Industry",
+                           #"Emissions|CO2|Industrial Processes",
                            "Emissions|CO2|Energy|Supply|Biogas",
                            "Emissions|CO2|Energy|Supply|Biomass Liqids",
                            "Emissions|CO2|Energy|Supply|Gas",
@@ -49,8 +50,8 @@ make_clean_data = function(df) {
                            "Emissions|CO2|Energy|Supply|Hydrogen",
                            "Emissions|CO2|Energy|Supply|Petroleum Refining",
                            "Emissions|CO2|Energy|Supply|Synthetic Gas",
-                           "Emissions|CO2|Energy|Supply|Synthetic Liquids",
-                           "Emissions|CO2|Industrial Processes")) %>%
+                           "Emissions|CO2|Energy|Supply|Synthetic Liquids"
+                           )) %>%
     mutate(variable = "Emissions|CO2|Energy|Demand|Industry and Fuel Production") %>%
     group_by(scenario,model,region,unit,year,variable) %>%
     summarise(value = sum(value)) %>%
@@ -145,7 +146,7 @@ make_clean_data = function(df) {
   gcam_nonenergyco2 = df3 %>%
     filter(model == "GCAM-PNNL" &
              variable == "Emissions|CO2|Industrial Processes" &
-             scenario %in% c("No IRA", "IRA") &
+             scenario %in% c("No IRA", "IRA", "IRA.High") &
              year %in% c(2025, 2030, 2035, 2040, 2045, 2050)) %>%
     mutate(datasrc = "GCAM-PNNL values")
   gcam_yrs = unique(gcam_nonenergyco2$year)

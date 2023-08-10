@@ -286,7 +286,6 @@ ghg_net = ghg %>%
 
 summed_emissions = rbind(nrg_co2, all_co2, ghg, ghg_net)
 
-
 #############################
 ##
 ## all modeled and calculated data

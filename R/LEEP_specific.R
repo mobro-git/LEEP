@@ -1167,3 +1167,21 @@ indicator_small = function(all_data, summary_data, filter_variable, subtitle = "
   return(p)
 }
 
+filter_sensitivities = function(clean_data) {
+  filtered = clean_data  %>%
+    mutate(region = "United States") %>%
+    mutate(model = case_when(
+      datasrc == "ReEDS_compiled.csv" ~ "ReEDS-NRELr",
+      TRUE~model)) %>%
+    mutate(region = "United States") %>%
+    # remove bistline models with incorrect indirect emissions for end-use sectors
+    # MARKAL-NETL sensitivities included here, but we exclude from LEEP Report sensitivity analysis: should decide what to do
+    filter(!(model %in% c("GCAM-CGS","REGEN-EPRI") &
+               scenario %in% c("IRA.Low","IRA.High") &
+               variable %in% c("Emissions|CO2|Energy|Demand|Buildings|Total",
+                               "Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total",
+                               "Emissions|CO2|Energy|Demand|Transportation|Total"))) %>%
+    filter(!(model %in% c("MARKAL-NETL") & scenario %in% c("IRA.Low","IRA.High")))
+
+  filtered
+}

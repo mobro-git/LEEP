@@ -229,11 +229,11 @@ data_sort$scenario <- factor(data_sort$scenario, levels = c("Low", "Central", "H
 data_sort$variable_rename <- factor(data_sort$variable_rename, levels = c("HVAC", "WaterHeating", "Other","Power", "Total", "Reference"))
 
 fin = ggplot(data = data_sort[data_sort$variable_rename != "Reference",] , aes(x=year, y=value, fill = variable_rename)) +
-  geom_area() +
+  geom_area(color = "white") +
   facet_grid(~scenario) +
   labs(title = "",
          x = "",
-         y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+         y = expression(paste("Building C", O[2], "Emissions (Mt C", O[2], "/yr)")),
          color = "") +
     scale_y_continuous(limits = c(0, 1500), labels = scales::comma, expand = c(0,0)) +
     theme_emf() +
@@ -244,21 +244,22 @@ fin = ggplot(data = data_sort[data_sort$variable_rename != "Reference",] , aes(x
   scale_fill_manual(name = "", 
     labels = c("HVAC/Env", "Water Heating", "Other" , "Power Supply Decarbonizaiton", "Total Building Emissions", "Reference"),
     breaks = c("HVAC", "WaterHeating", "Other","Power", "Total", "Reference"), 
-    values = c("#75FF8E", '#f58231', "#FFF362",  '#42d4f4', "#DEDEDE", "#767684"),
+    values = c("#488C49", '#f15a22', "#af499b",  '#0083ca', "#DEDEDE", "#767684"),
     limits = c("HVAC", "WaterHeating", "Other", "Power", "Total") 
   ) + 
-  geom_line(data = data_sort[data_sort$variable_rename == "Reference",],  aes(x=year, y=value, color = variable_rename),linetype="dashed") +
+  geom_line(data = data_sort[data_sort$variable_rename == "Reference",],  aes(x=year, y=value, color = variable_rename),
+            linetype="dashed", size = 1) +
   scale_color_manual(name = "", 
     labels = c("HVAC/Env", "Water Heating", "Other" , "Power Supply Decarbonizaiton", "Total Building Emissions", "Reference"),
     breaks = c("HVAC", "WaterHeating", "Other","ower", "Total", "Reference"), 
-    values = c("#75FF8E", '#f58231', "#FFF362",  '#42d4f4', "#DEDEDE", "#767684"),
+    values = c("white", "white", "white", "white", "white", "black"),
     limits = c("Reference") 
   )
 fin
 
 data_sort = data_sort %>% mutate(figure_num = fig_no)
 
-saveall(fin, data_sort, fig_no, ht = 9, wd = 7.5)
+saveall(fin, data_sort, fig_no, ht = 9.5, wd = 7.5)
 ```
 
 # Appendix F: Results by model
@@ -1595,7 +1596,7 @@ clean_data_hist_noira = clean_data15 %>%
          year == 2021) %>%
   mutate(scenario = "No IRA", year = 2035)
 
-clean_data15 = bind_rows(clean_data15, clean_data_hist_noira, clean_data_hist_ira)
+#clean_data15 = bind_rows(clean_data15, clean_data_hist_noira, clean_data_hist_ira)
 
 models_alph = sort(unique(clean_data15$model))
 
@@ -1670,7 +1671,7 @@ saveall(p, dta, fig_no)
 ### Generation
 
 ```{r}
-fig_no = "F.20.gascoal_generation"
+fig_no = "F.1.gascoal_generation"
 
 exclude_models = c(
   "AEO2020",
@@ -1737,7 +1738,7 @@ generation_table %>% gtsave(paste0("./output/final_figures/display_tables/Table"
 ### Capacity
 
 ```{r}
-fig_no = "F.21.gascoal_capacity"
+fig_no = "F.2.gascoal_capacity"
 
 exclude_models = c(
   "AEO2020",
@@ -1800,7 +1801,7 @@ capacity_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",f
 ### Capacity Factor
 
 ```{r}
-fig_no = "F.22.gascoal_capacityfactor"
+fig_no = "F.3.gascoal_capacityfactor"
 
 exclude_models = c(
   "AEO2020",
@@ -2004,10 +2005,10 @@ savedata(IndSpg$data, paste0(fig_no, "Industry"))
 
 IndDot = dotted(Ind_ts, IndSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
 
-Full = (EconDot | TranDot | BuilDot | IndDot)
+Full = (EconDot | TranDot) / (BuilDot | IndDot)
 Full
 
-savefig(Full, fig_no, wd = 9, ht = 4)
+savefig(Full, fig_no, wd = 5, ht = 8)
 ```
 
 ## Tables
@@ -2065,12 +2066,13 @@ all = rbind(total, transportation, buildings, industry) %>%
 
 write_sheet(all, per_share_wb, "All")
 
-saveWorkbook(per_share_wb, file = "output/final_figures/data/FigG.1.share.xlsx", overwrite = TRUE)
+saveWorkbook(per_share_wb, file = "output/final_figures/data/TableG.1.share.xlsx", overwrite = TRUE)
 ```
 
 ```{R}
 # display table for appendix G1
-fig_no = "G1 Electricity Share.1"
+fig_no = "G1.Electricity Share"
+
 tab_dta = all %>% 
   data.frame() %>%
   pivot_wider(names_from = Statistic, values_from = c(IRA, No.IRA)) %>%
@@ -2115,7 +2117,7 @@ table1 = tab_dta %>% gt() %>%
       style = list(
         cell_text(weight = "bold", align = "left")
       ), locations = cells_body(columns = 1:2)
-    ) %>% fmt_percent(decimals = 1, use_seps = TRUE, columns = 3:8)
+    ) %>% fmt_percent(decimals = 0, use_seps = TRUE, columns = 3:8)
     
 table1
 
@@ -2178,12 +2180,12 @@ all_per = rbind(total_per, transportation_per, buildings_per, industry_per) %>%
 
 write_sheet(all_per, diff_wb, "All")
 
-saveWorkbook(per_share_wb, file = "output/final_figures/data/FigG.1.difference.xlsx", overwrite = TRUE)
+saveWorkbook(per_share_wb, file = "output/final_figures/data/TableG.2.difference.xlsx", overwrite = TRUE)
 ```
 
 ```{R}
 # display table for appendix G2
-fig_no = "G1 Electricity Share.2"
+fig_no = "G2 Electricity Difference"
 tab_dta = all_per %>% 
   data.frame() %>%
   pivot_wider(names_from = Statistic, values_from = c(Percent.Difference, Percentage.Point.Difference)) %>%
@@ -2230,7 +2232,7 @@ table2 = tab_dta %>% gt() %>%
       style = list(
         cell_text(weight = "bold", align = "left")
       ), locations = cells_body(columns = 1:2)
-    ) %>% fmt_percent(decimals = 1, use_seps = TRUE, columns = 3:8)
+    ) %>% fmt_percent(decimals = 0, use_seps = TRUE, columns = 3:8)
     
 table2
 
@@ -5861,7 +5863,8 @@ hist = readxl::read_xlsx("data-extra/ira_comparison_raw/input_assumptions.xlsx",
 
 hist_clean = hist %>%
   filter(year >= 2005) %>%
-  filter(year <= 2035)
+  filter(year <= 2035) %>%
+  select(model,year,value,unit)
 
 proj = readxl::read_xlsx("data-extra/ira_comparison_raw/input_assumptions.xlsx", sheet = "natural gas price", range = "A1:J29") %>%
   pivot_longer(cols = c("2015", "2020", "2025", "2030", "2035", "2040", "2045", "2050"), names_to = "year") %>%
@@ -5873,13 +5876,15 @@ proj = rbind(pipe_proj, proj)
 mods_clean = proj %>%
   filter(!grepl("aeo", model)) %>%
   filter(!grepl("eea", model))%>%
-  filter(year <= 2035)
+  filter(year <= 2035) %>%
+  select(model,year,value,unit)
 
 mods = unique(mods_clean$model)
 
 proj_clean = proj %>%
   filter(!model %in% mods)%>%
-  filter(year <= 2035)
+  filter(year <= 2035) %>%
+  select(model,year,value,unit)
 
 figure = ggplot() +
   geom_line(
@@ -5936,7 +5941,11 @@ figure = ggplot() +
           axis.ticks.length = unit(-0.15, "cm"),
         legend.title = element_blank())
 figure
-savefig(figure, fig_no)
+  
+df = rbind(hist_clean,proj_clean,mods_clean) %>%
+  filter(!is.na(value))
+  
+saveall(figure, df, fig_no)
 ```
 
 ## Capital Costs
@@ -5944,7 +5953,6 @@ savefig(figure, fig_no)
 ```{r} 
 fig_no = "J.2.capitalcosts_bat_ngcc_sol_wnd"
 dta = read_csv("./data-extra/ira_comparison_raw/costs_raw.csv")
-#View(dta)
 
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 subpalettes$`Sox pct diff`[["NREL 2022 ATB"]] = "black"
@@ -6015,15 +6023,14 @@ p2 = dta_bottom %>% ggplot() +
   facet_grid(. ~ variable, labeller = labeller(variable = tech_renamer), scales = "free_y") +
   theme_emf() +
   theme(axis.ticks = element_line(color = "black"),
-        axis.ticks.length = unit(-0.15, "cm"),, axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.ticks.length = unit(-0.15, "cm"), axis.text.x = element_text(angle = 45, hjust = 1),
         axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8),
         legend.text = element_text(size = 6), legend.key.size = unit(15,"point"))
-
 p2
 
-savefig(p,fig_no)
+saveall(p,dta_top,fig_no)
 fig_no = "J.3.capitalcosts_coalgasCCS"
-savefig(p2,fig_no)
+saveall(p2,dta_bottom,fig_no)
 ```
 
 # Appendix K
@@ -6033,20 +6040,7 @@ savefig(p2,fig_no)
 ```{r}
 fig_no = "K.1.summary_ranges_sensitivities"
 
-clean_data1 = clean_data  %>%
-  mutate(region = "United States") %>%
-  mutate(model = case_when(
-    datasrc == "ReEDS_compiled.csv" ~ "ReEDS-NRELr",
-    TRUE~model)) %>%
-  mutate(region = "United States") %>%
-  # remove bistline models with incorrect indirect emissions for end-use sectors
-  # MARKAL-NETL sensitivities included here, but we exclude from LEEP Report sensitivity analysis: should decide what to do
-  filter(!(model %in% c("GCAM-CGS","REGEN-EPRI") & 
-             scenario %in% c("IRA.Low","IRA.High") &
-             variable %in% c("Emissions|CO2|Energy|Demand|Buildings|Total",
-                             "Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total",
-                             "Emissions|CO2|Energy|Demand|Transportation|Total"))) %>%
-  filter(!(model %in% c("MARKAL-NETL") & scenario %in% c("IRA.Low","IRA.High")))
+clean_data1 = clean_data1 = filter_sensitivities(clean_data)
 
 Econ_data = spg_clean(
   1000,
