@@ -5894,8 +5894,22 @@ figure = ggplot() +
     size = 0.6
   ) +
   geom_line(data = mods_clean,
-            aes(x = year, y = value, color = model),
-            size = 0.6) +
+            aes(x = year, y = value, color = model, linetype = model),
+            size = 0.6) + 
+      scale_linetype_manual(values = c("USREP-ReEDS" = "solid", 
+                                       "EPS-EI" = "solid", 
+                                       "GCAM-CGS" = "solid", 
+                                       "GCAM-PNNL" = "solid",
+                                       "Haiku-RFF" = "solid",
+                                       "IPM-NRDC" = "solid", 
+                                       "IPM-EPA" = "solid", 
+                                       "MARKAL-NETL" = "solid", 
+                                       "NEMS-RHG" = "solid",
+                                       "NEMS-OP" = "twodash", 
+                                       "REGEN-EPRI" = "dashed", 
+                                       "RIO-REPEAT" = "dotted", 
+                                       "ReEDS-NREL" = "longdash", 
+                                       "NEMS-EIA" = "dotdash")) +
   geom_line(data = proj_clean,
             aes(
               x = year,
