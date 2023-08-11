@@ -1,0 +1,240 @@
+"model","scenario","unit","year","datasrc","variable","region","value"
+"AEO2020","No IRA","Mt CO2/yr",2030,"EIAinEMF37.csv","Emissions|CO2|Energy|Demand|Buildings","United States",562.943237
+"AEO2020","No IRA","Mt CO2/yr",2030,"EIAinEMF37.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1679.96477
+"AEO2020","No IRA","Mt CO2/yr",2030,"EIAinEMF37.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1284.568726
+"AEO2020","No IRA","Mt CO2/yr",2035,"EIAinEMF37.csv","Emissions|CO2|Energy|Demand|Buildings","United States",559.616211
+"AEO2020","No IRA","Mt CO2/yr",2035,"EIAinEMF37.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1638.695875
+"AEO2020","No IRA","Mt CO2/yr",2035,"EIAinEMF37.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1311.239136
+"AEO2021","No IRA","Mt CO2/yr",2030,"EIAinEMF37.csv","Emissions|CO2|Energy|Demand|Buildings","United States",570.87503
+"AEO2021","No IRA","Mt CO2/yr",2030,"EIAinEMF37.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1680.22964
+"AEO2021","No IRA","Mt CO2/yr",2030,"EIAinEMF37.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1224.307617
+"AEO2021","No IRA","Mt CO2/yr",2035,"EIAinEMF37.csv","Emissions|CO2|Energy|Demand|Buildings","United States",566.683715
+"AEO2021","No IRA","Mt CO2/yr",2035,"EIAinEMF37.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1660.963979
+"AEO2021","No IRA","Mt CO2/yr",2035,"EIAinEMF37.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1181.022095
+"AEO2022","No IRA","Mt CO2/yr",2030,"EIAinEMF37.csv","Emissions|CO2|Energy|Demand|Buildings","United States",573.164978
+"AEO2022","No IRA","Mt CO2/yr",2030,"EIAinEMF37.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1778.545256
+"AEO2022","No IRA","Mt CO2/yr",2030,"EIAinEMF37.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1214.244507
+"AEO2022","No IRA","Mt CO2/yr",2035,"EIAinEMF37.csv","Emissions|CO2|Energy|Demand|Buildings","United States",568.060395
+"AEO2022","No IRA","Mt CO2/yr",2035,"EIAinEMF37.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1757.891112
+"AEO2022","No IRA","Mt CO2/yr",2035,"EIAinEMF37.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1137.097534
+"EPS-EI","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",3683.07333616727
+"EPS-EI","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",525.176
+"EPS-EI","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",803.0638230478
+"EPS-EI","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1380.345127
+"EPS-EI","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",602.7
+"EPS-EI","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",3181.23945999667
+"EPS-EI","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",511.954
+"EPS-EI","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",777.01532772733
+"EPS-EI","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1195.014895
+"EPS-EI","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",336.702
+"EPS-EI","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",4469.11212426198
+"EPS-EI","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",557.617
+"EPS-EI","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",867.8453321512
+"EPS-EI","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1401.480757
+"EPS-EI","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1201.47
+"EPS-EI","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",4270.52739601984
+"EPS-EI","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",550.902
+"EPS-EI","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",859.5106171641
+"EPS-EI","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1234.004451
+"EPS-EI","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1198.69
+"GCAM-CGS","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",3535.15117247745
+"GCAM-CGS","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",454.815277598077
+"GCAM-CGS","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",1015.73661606983
+"GCAM-CGS","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1357.17964232201
+"GCAM-CGS","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",679.659054813217
+"GCAM-CGS","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",3265.13939647775
+"GCAM-CGS","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",446.248934102666
+"GCAM-CGS","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",1063.6926035448
+"GCAM-CGS","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1282.9675605035
+"GCAM-CGS","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",445.580298326782
+"GCAM-CGS","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",4515.63157057819
+"GCAM-CGS","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",533.537214700852
+"GCAM-CGS","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",1208.99411915652
+"GCAM-CGS","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1464.78688682719
+"GCAM-CGS","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1274.91028267317
+"GCAM-CGS","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",4358.33318134285
+"GCAM-CGS","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",504.038720770186
+"GCAM-CGS","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",1222.12174799319
+"GCAM-CGS","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1306.29323674977
+"GCAM-CGS","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1293.1152861035
+"GCAM-PNNL","IRA","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2","United States",3631.81913612816
+"GCAM-PNNL","IRA","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2|Energy|Demand|Buildings","United States",456.458572855805
+"GCAM-PNNL","IRA","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2|Energy|Demand|Transportation","United States",1444.91373323989
+"GCAM-PNNL","IRA","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",831.998710072543
+"GCAM-PNNL","IRA","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2","United States",3310.10805031081
+"GCAM-PNNL","IRA","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2|Energy|Demand|Buildings","United States",452.958393670429
+"GCAM-PNNL","IRA","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2|Energy|Demand|Transportation","United States",1195.85113112293
+"GCAM-PNNL","IRA","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",784.368180921919
+"GCAM-PNNL","No IRA","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2","United States",4093.635
+"GCAM-PNNL","No IRA","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2|Energy|Demand|Buildings","United States",451.1881
+"GCAM-PNNL","No IRA","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2|Energy|Demand|Transportation","United States",1507.175
+"GCAM-PNNL","No IRA","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",1234.722
+"GCAM-PNNL","No IRA","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2","United States",3788
+"GCAM-PNNL","No IRA","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2|Energy|Demand|Buildings","United States",445.1777
+"GCAM-PNNL","No IRA","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2|Energy|Demand|Transportation","United States",1280.413
+"GCAM-PNNL","No IRA","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",1182.894
+"GCAM-PNNL","IRA","Mt CO2/yr",2030,"calculated","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",789.92060584739
+"GCAM-PNNL","IRA","Mt CO2/yr",2035,"calculated","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",773.204942909632
+"GCAM-PNNL","No IRA","Mt CO2/yr",2030,"calculated","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",790.95660080117
+"GCAM-PNNL","No IRA","Mt CO2/yr",2035,"calculated","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",774.2846881067
+"Haiku-RFF","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",852.658725492053
+"Haiku-RFF","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",767.701065402758
+"Haiku-RFF","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1282.5776456571
+"Haiku-RFF","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1174.26339683437
+"IPM-EPA","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",971.719363965523
+"IPM-EPA","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",608.299102727081
+"IPM-EPA","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1303.58284422178
+"IPM-EPA","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1247.28769086048
+"IPM-NRDC","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",827.389198560903
+"IPM-NRDC","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",772.508012550513
+"IPM-NRDC","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1075.92232861268
+"IPM-NRDC","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1079.88005163251
+"MARKAL-NETL","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",3978.59
+"MARKAL-NETL","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",259.2
+"MARKAL-NETL","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",1076.13
+"MARKAL-NETL","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1380.98
+"MARKAL-NETL","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1232.67
+"MARKAL-NETL","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",3385.68
+"MARKAL-NETL","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",249.28
+"MARKAL-NETL","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",1074.38
+"MARKAL-NETL","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1283.52
+"MARKAL-NETL","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",749.4
+"MARKAL-NETL","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",4171.2
+"MARKAL-NETL","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",278.08
+"MARKAL-NETL","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",1080.08
+"MARKAL-NETL","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1403.91
+"MARKAL-NETL","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1379.59
+"MARKAL-NETL","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",4163.41
+"MARKAL-NETL","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",274.45
+"MARKAL-NETL","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",1107.08
+"MARKAL-NETL","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1322.3
+"MARKAL-NETL","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1430.05
+"NEMS-EIA","IRA","Mt CO2/yr",2030,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2","United States",4007.489174
+"NEMS-EIA","IRA","Mt CO2/yr",2030,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2|Energy|Demand|Buildings","United States",574.227325
+"NEMS-EIA","IRA","Mt CO2/yr",2030,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",787.106926017752
+"NEMS-EIA","IRA","Mt CO2/yr",2030,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2|Energy|Demand|Transportation","United States",1644.875853
+"NEMS-EIA","IRA","Mt CO2/yr",2030,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",768.311584
+"NEMS-EIA","IRA","Mt CO2/yr",2035,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2","United States",3904.675421
+"NEMS-EIA","IRA","Mt CO2/yr",2035,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2|Energy|Demand|Buildings","United States",568.56224
+"NEMS-EIA","IRA","Mt CO2/yr",2035,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",812.867345738861
+"NEMS-EIA","IRA","Mt CO2/yr",2035,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2|Energy|Demand|Transportation","United States",1574.929811
+"NEMS-EIA","IRA","Mt CO2/yr",2035,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",714.001099
+"NEMS-EIA","No IRA","Mt CO2/yr",2030,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2","United States",4436.179517
+"NEMS-EIA","No IRA","Mt CO2/yr",2030,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2|Energy|Demand|Buildings","United States",574.856507
+"NEMS-EIA","No IRA","Mt CO2/yr",2030,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",794.125901927798
+"NEMS-EIA","No IRA","Mt CO2/yr",2030,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2|Energy|Demand|Transportation","United States",1656.898475
+"NEMS-EIA","No IRA","Mt CO2/yr",2030,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",1177.160889
+"NEMS-EIA","No IRA","Mt CO2/yr",2035,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2","United States",4318.532851
+"NEMS-EIA","No IRA","Mt CO2/yr",2035,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2|Energy|Demand|Buildings","United States",570.576843
+"NEMS-EIA","No IRA","Mt CO2/yr",2035,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",819.041004492983
+"NEMS-EIA","No IRA","Mt CO2/yr",2035,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2|Energy|Demand|Transportation","United States",1593.198601
+"NEMS-EIA","No IRA","Mt CO2/yr",2035,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",1100.493042
+"NEMS-OP","IRA","Mt CO2/yr",2030,"OP-NEMS IRA 5cenario outputs w retire 07-19-23 - June cases.xlsx","Emissions|CO2|Energy|Demand|Buildings","United States",556.31047
+"NEMS-OP","IRA","Mt CO2/yr",2030,"OP-NEMS IRA 5cenario outputs w retire 07-19-23 - June cases.xlsx","Emissions|CO2|Energy|Demand|Transportation","United States",1606.871304
+"NEMS-OP","IRA","Mt CO2/yr",2030,"OP-NEMS IRA 5cenario outputs w retire 07-19-23 - June cases.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",660.642334
+"NEMS-OP","IRA","Mt CO2/yr",2035,"OP-NEMS IRA 5cenario outputs w retire 07-19-23 - June cases.xlsx","Emissions|CO2|Energy|Demand|Buildings","United States",545.058136
+"NEMS-OP","IRA","Mt CO2/yr",2035,"OP-NEMS IRA 5cenario outputs w retire 07-19-23 - June cases.xlsx","Emissions|CO2|Energy|Demand|Transportation","United States",1430.762993
+"NEMS-OP","IRA","Mt CO2/yr",2035,"OP-NEMS IRA 5cenario outputs w retire 07-19-23 - June cases.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",417.400726
+"NEMS-OP","No IRA","Mt CO2/yr",2030,"OP-NEMS IRA 5cenario outputs w retire 07-19-23 - June cases.xlsx","Emissions|CO2|Energy|Demand|Buildings","United States",569.869141
+"NEMS-OP","No IRA","Mt CO2/yr",2030,"OP-NEMS IRA 5cenario outputs w retire 07-19-23 - June cases.xlsx","Emissions|CO2|Energy|Demand|Transportation","United States",1666.071442
+"NEMS-OP","No IRA","Mt CO2/yr",2030,"OP-NEMS IRA 5cenario outputs w retire 07-19-23 - June cases.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",1040.891113
+"NEMS-OP","No IRA","Mt CO2/yr",2035,"OP-NEMS IRA 5cenario outputs w retire 07-19-23 - June cases.xlsx","Emissions|CO2|Energy|Demand|Buildings","United States",563.141021
+"NEMS-OP","No IRA","Mt CO2/yr",2035,"OP-NEMS IRA 5cenario outputs w retire 07-19-23 - June cases.xlsx","Emissions|CO2|Energy|Demand|Transportation","United States",1538.625976
+"NEMS-OP","No IRA","Mt CO2/yr",2035,"OP-NEMS IRA 5cenario outputs w retire 07-19-23 - June cases.xlsx","Emissions|CO2|Energy|Supply|Electricity","United States",958.780945
+"NEMS-OP","IRA","Mt CO2/yr",2030,"calculated","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",942.791809
+"NEMS-OP","IRA","Mt CO2/yr",2035,"calculated","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",943.156929
+"NEMS-OP","No IRA","Mt CO2/yr",2030,"calculated","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",984.914094
+"NEMS-OP","No IRA","Mt CO2/yr",2035,"calculated","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",988.499573
+"NEMS-RHG","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",3731.42341620699
+"NEMS-RHG","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",571.073624999999
+"NEMS-RHG","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",815.411926078259
+"NEMS-RHG","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1492.66084764101
+"NEMS-RHG","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",482.81984665288
+"NEMS-RHG","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",3572.57563575272
+"NEMS-RHG","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",561.914415999999
+"NEMS-RHG","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",702.814265742925
+"NEMS-RHG","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1346.04203961727
+"NEMS-RHG","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",588.535589412373
+"NEMS-RHG","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",4267.33793080568
+"NEMS-RHG","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",571.501766999999
+"NEMS-RHG","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",822.693681875426
+"NEMS-RHG","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1511.19953267439
+"NEMS-RHG","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",979.598572044581
+"NEMS-RHG","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",4069.21513053717
+"NEMS-RHG","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",565.663975999999
+"NEMS-RHG","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",827.112770846044
+"NEMS-RHG","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1385.12927513821
+"NEMS-RHG","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",906.244227830616
+"REGEN-EPRI","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",491.903054886779
+"REGEN-EPRI","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",929.877799699341
+"REGEN-EPRI","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1499.1674052122
+"REGEN-EPRI","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",999.666254194768
+"REGEN-EPRI","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",468.540959764836
+"REGEN-EPRI","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",863.950637741897
+"REGEN-EPRI","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1325.66303477685
+"REGEN-EPRI","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",500.03751964597
+"REGEN-EPRI","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",516.524291760345
+"REGEN-EPRI","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",945.371637378423
+"REGEN-EPRI","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1532.15158500712
+"REGEN-EPRI","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1125.0574146029
+"REGEN-EPRI","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",494.918715702622
+"REGEN-EPRI","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",912.419258683739
+"REGEN-EPRI","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1378.55316880469
+"REGEN-EPRI","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1097.15035473422
+"RIO-REPEAT","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",3693
+"RIO-REPEAT","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",590
+"RIO-REPEAT","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",737
+"RIO-REPEAT","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1519
+"RIO-REPEAT","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",741
+"RIO-REPEAT","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",2763
+"RIO-REPEAT","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",531
+"RIO-REPEAT","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",611
+"RIO-REPEAT","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1141
+"RIO-REPEAT","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",370
+"RIO-REPEAT","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",4156
+"RIO-REPEAT","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",638
+"RIO-REPEAT","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",833
+"RIO-REPEAT","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1598
+"RIO-REPEAT","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",981
+"RIO-REPEAT","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",3710
+"RIO-REPEAT","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Buildings","United States",630
+"RIO-REPEAT","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",847
+"RIO-REPEAT","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1348
+"RIO-REPEAT","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",775
+"ReEDS-NREL","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",413.513524771282
+"ReEDS-NREL","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",323.38378502023
+"ReEDS-NREL","No IRA","Mt CO2/yr",2030,"ReEDS_compiled.csv","Emissions|CO2|Energy|Supply|Electricity","usa",1238.2
+"ReEDS-NREL","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1238.16547546738
+"ReEDS-NREL","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1165.17798641427
+"Scout-LEEP","IRA","Mt CO2/yr",2030,"2023-03-30_data_IAMC_format-IRA_USAonly.xlsx","Emissions|CO2|Energy|Demand|Buildings","United States",523.697083011969
+"Scout-LEEP","IRA","Mt CO2/yr",2035,"2023-03-30_data_IAMC_format-IRA_USAonly.xlsx","Emissions|CO2|Energy|Demand|Buildings","United States",482.249831560619
+"Scout-LEEP","No IRA","Mt CO2/yr",2030,"2023-03-30_data_IAMC_format-IRA_USAonly.xlsx","Emissions|CO2|Energy|Demand|Buildings","United States",567.583261376151
+"Scout-LEEP","No IRA","Mt CO2/yr",2035,"2023-03-30_data_IAMC_format-IRA_USAonly.xlsx","Emissions|CO2|Energy|Demand|Buildings","United States",557.830655132603
+"USREP-ReEDS","IRA","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2","United States",3493.680895
+"USREP-ReEDS","IRA","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Demand|Buildings","United States",388.893059
+"USREP-ReEDS","IRA","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1579.671963
+"USREP-ReEDS","IRA","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",616.834498
+"USREP-ReEDS","IRA","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2","United States",3231.66939
+"USREP-ReEDS","IRA","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Demand|Buildings","United States",329.9671054
+"USREP-ReEDS","IRA","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1463.246708
+"USREP-ReEDS","IRA","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",488.0122266
+"USREP-ReEDS","No IRA","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2","United States",4231.719803
+"USREP-ReEDS","No IRA","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Demand|Buildings","United States",436.6063889
+"USREP-ReEDS","No IRA","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1585.987648
+"USREP-ReEDS","No IRA","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1154.603142
+"USREP-ReEDS","No IRA","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2","United States",4012.490192
+"USREP-ReEDS","No IRA","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Demand|Buildings","United States",382.1598693
+"USREP-ReEDS","No IRA","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Demand|Transportation","United States",1501.130071
+"USREP-ReEDS","No IRA","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2|Energy|Supply|Electricity","United States",1060.287391
+"USREP-ReEDS","IRA","Mt CO2/yr",2030,"calculated","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",902.40854633
+"USREP-ReEDS","IRA","Mt CO2/yr",2035,"calculated","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",938.20098279
+"USREP-ReEDS","No IRA","Mt CO2/yr",2030,"calculated","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",951.62160827
+"USREP-ReEDS","No IRA","Mt CO2/yr",2035,"calculated","Emissions|CO2|Energy|Demand|Industry and Fuel Production","United States",946.46016115
+"NEMS-OP","IRA","Mt CO2/yr",2030,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",3836.38348433595
+"NEMS-OP","IRA","Mt CO2/yr",2035,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",3402.58860082152
+"NEMS-OP","No IRA","Mt CO2/yr",2030,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",4330.458905
+"NEMS-OP","No IRA","Mt CO2/yr",2035,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",4114.083147
+"REGEN-EPRI","IRA","Mt CO2/yr",2030,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",3990.38178732904
+"REGEN-EPRI","IRA","Mt CO2/yr",2035,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",3224.40184675108
+"REGEN-EPRI","No IRA","Mt CO2/yr",2030,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",4187.81822874878
+"REGEN-EPRI","No IRA","Mt CO2/yr",2035,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",3948.07703792527
