@@ -36,4 +36,5 @@ library(flextable)
 library(naniar)
 library(gt)
 library(webshot2)
+library(scales)
 

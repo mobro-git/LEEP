@@ -76,9 +76,9 @@ color_map <- c(
   # scenarios
   "Historic" = "black",
   "Historical" = "black",
-  "IRA" = "Lgold",
-  "Reference" = "Lblue",
-  "No IRA" = "Lblue",
+  "IRA" = "Lblue",
+  "Reference" = "Lorange",
+  "No IRA" = "Lorange",
   "IRA.High" = "Lteal",
   "IRA.Low" = "Lsky",
 
@@ -128,6 +128,8 @@ color_map <- c(
   "Wind" = "Lgreen",
   "Storage" = "Lnavy",
   "Other" = "Lteal",
+  "Renewables" = "Lgreen",
+  "Natural Gas" = "Lmagenta",
 
   # sectors
   "Total" = "black",
@@ -135,6 +137,7 @@ color_map <- c(
   "Transportation: Indirect" = "Lblue",
   "Industry: Direct" = "Lgreen",
   "Industry: Indirect" = "Lnavy",
+  "Industry: Process" = "Lblue",
   "Buildings: Direct" = "Lgold",
   "Buildings: Indirect" = "Lpurple",
 
@@ -146,7 +149,7 @@ color_map <- c(
   "Paper" = "Lpurple",
   "Other Light Industry" = "Lgreen",
   "Refining" = "Lmagenta",
-  "Chemicals" = "Lnavy",
+  "Chemicals" = "Lindigo",
   "Light" = "Laqua",
   "Heavy" = "Lsky",
 

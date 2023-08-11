@@ -3,18 +3,20 @@ ranges = function(all_data, summary_data, filter_variable, subtitle = "", top = 
   summ_small = summary_data %>% filter(sector == filter_variable)
   p = data_small %>%
     ggplot() +
-    geom_point(aes(x = pct_diff, y = scenario, color = scenario, shape = scenario), alpha = 0.8, size = 1) +
+    geom_point(aes(x = pct_diff, y = scenario, color = scenario, shape = scenario), alpha = 0.6, size = 1) +
     geom_segment(data = summ_small,
                  aes(x = min, xend = max, y = scenario, yend = scenario, color = scenario),
                  alpha = 0.3, linewidth = 3) +
-    geom_point(data = summ_small, aes(x = min, y = scenario, color = scenario, shape = scenario), size = 3) +
-    geom_point(data = summ_small, aes(x = max, y = scenario, color = scenario, shape = scenario), size = 3) +
+    geom_point(data = summ_small, aes(x = min, y = scenario, color = scenario, shape = scenario), size = 2) +
+    geom_point(data = summ_small, aes(x = max, y = scenario, color = scenario, shape = scenario), size = 2) +
     geom_point(data = summ_small, aes(x = median, y = scenario, color = scenario),
                shape = "|", size = 1.5, stroke = 3.5) +
     geom_point(data = (data_small %>% filter(model %in% c("ReEDS-NRELr","ReEDS-NREL"))),
                aes(x=pct_diff, y = scenario), shape = "|", size = 3, stroke = 4, color = "green") +
     geom_point(data = (data_small %>% filter(model == "NEMS-OP")),
                aes(x=pct_diff, y = scenario),shape = "|", size = 3, stroke = 4, color = "purple") +
+    geom_point(data = (data_small %>% filter(model == "IPM-EPA")),
+               aes(x=pct_diff, y = scenario),shape = "|", size = 3, stroke = 4, color = "#00FFFF") +
     geom_vline(xintercept = 50, color = "black", linewidth = 0.1, alpha = 0.4) +
     # scale_y_discrete(name = filter_variable) +
     ggtitle(subtitle) +

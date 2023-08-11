@@ -51,7 +51,7 @@ subpalettes$`Emissions Stack`[["Non-CO2 GHGs"]] = "#469990"
 
 df = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 9, "United States") %>%
   mutate(variable_rename = factor(variable_rename, 
-                                  levels = c("Industry: Direct", "Industry: Indirect", "Buildings: Direct", 
+                                  levels = c("Industry: Direct", "Industry: Indirect", "Industry: Process","Buildings: Direct", 
                                              "Buildings: Indirect", "Transportation: Direct", "Transportation: Indirect")))
 
 df = clean_supplemental_data(df, fig_no)
@@ -809,8 +809,6 @@ all_panels %>% write.csv("./output/final_figures/data/Fig1.5_Summary.csv", row.n
 # 
 # all_panels
 
-fig_no = "1.2.1"
-
 # all_panels is created in the previous code chunk
 all_panels = all_panels %>% 
   mutate(metric = case_when(
@@ -908,6 +906,7 @@ if (metric == "percent" | metric == "percent_2005") {
 
 all_panels_gt
 
+fig_no = "1.5"
 all_panels_gt %>% 
   gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".html"))
 
