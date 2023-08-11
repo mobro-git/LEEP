@@ -185,7 +185,7 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
                          ira_coord = c(0,0), low_coord = c(0,0), high_coord = c(0,0)) {
   subpalettes = create_subpalettes(figmap, config)
   if (far_left) {
-    point_code = geom_point(aes(x = year + stagger, y = value, color = scenario, shape = as.factor(stagger)), size = 2)
+    point_code = geom_point(aes(x = year + stagger, y = value, color = scenario, shape = as.factor(stagger)), size = 4)
   } else {
     #point_code = geom_point(aes(x = year + stagger, y = value, color = model), shape = 1, size = 2)
     point_code = geom_point(aes(x = year + stagger, y = value, shape = as.factor(stagger)), size = 2)
@@ -200,7 +200,7 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
       width = 0.2
       left_margin = 11.5
     } else {
-      width = 0.5
+      width = 0.6
       left_margin = 0.5
     }
     segment_code = geom_segment(data = stats,
