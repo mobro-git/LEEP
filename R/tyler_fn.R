@@ -72,7 +72,6 @@ spg2 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
          x = element_blank(),
          y = yname) +
     theme(legend.position = gd,
-          axis.text.x = element_text(angle = 45, hjust=1),
           axis.ticks = element_line(color = "black"),
           axis.ticks.length = unit(-0.15, "cm")) +
     annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historical", color = histclr, alpha = annotate) +
@@ -113,7 +112,6 @@ spg2_2010 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, anno
          x = element_blank(),
          y = yname) +
     theme(legend.position = gd,
-          axis.text.x = element_text(angle = 45, hjust=1),
           axis.ticks = element_line(color = "black"),
           axis.ticks.length = unit(-0.15, "cm")) +
     annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historical", color = histclr, alpha = annotate) +
@@ -154,7 +152,6 @@ spg3 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
          x = element_blank(),
          y = yname) +
     theme(legend.position = gd,
-          axis.text.x = element_text(angle = 45, hjust=1),
           axis.ticks = element_line(color = "black"),
           axis.ticks.length = unit(-0.15, "cm")) +
     annotate("text", x = historic_coord[1], y = historic_coord[2], label = "Historical", color = histclr, alpha = annotate) +
@@ -266,10 +263,9 @@ dotted = function(df, spg, metric, ymin, ymax, config, figmap_leep_timeseries, d
     scale_shape_manual(values = c("IRA" = 1, "No IRA" = 2)) +
     theme(panel.grid = element_blank(), plot.title = element_blank(),
           axis.text.y = element_blank(),
-          axis.text.x = element_text(angle = 45, hjust=1),
           axis.title.y = element_blank(), axis.title.x = element_blank(),
           axis.ticks = element_blank(), panel.border = element_blank(),
-          legend.position = "none", plot.margin = margin(0,0,0,0))+
+          legend.position = "none", plot.margin = margin(0,1,0,1))+
     scale_alpha(range = c(1, 1), guide = F)
 
   # dot plot for 2035
@@ -282,11 +278,10 @@ dotted = function(df, spg, metric, ymin, ymax, config, figmap_leep_timeseries, d
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     scale_shape_manual(values = c("IRA" = 1, "No IRA" = 2)) +
     theme(panel.grid = element_blank(), plot.title = element_blank(),
-          axis.text.x = element_text(angle = 45, hjust=1),
           axis.text.y = element_blank(),
           axis.title.y = element_blank(), axis.title.x = element_blank(),
           axis.ticks = element_blank(), panel.border = element_blank(),
-          legend.position = "none", plot.margin = margin(0,0,0,0))+
+          legend.position = "none", plot.margin = margin(0,1,0,1))+
     scale_alpha(range = c(1, 1), guide = F)
 
   figure = spg + dots_30 + dots_35 +

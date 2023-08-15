@@ -407,8 +407,7 @@ A = ggplot(data = data, aes(x = axe, y = value,  color = scenario, shape = scena
     theme_emf() +
     labs(y = expression("LDV Electricity Demand (TWh)")) +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1),
-          axis.title.x = element_blank(),
+    theme(axis.title.x = element_blank(),
           axis.ticks.y = element_line(color = "black"),
           axis.ticks.x = element_blank(), 
           axis.ticks.length = unit(-0.15, "cm"),

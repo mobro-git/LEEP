@@ -1071,7 +1071,7 @@ fig_no= "2.7.nox_so2"
 # nox
 clean_data_nox = spg_clean(ts_map_ID = 122, drop = c("ReEDS-NREL"), histsrc = "EPA", 
                            config = config, clean_data = clean_data, figmap_leep_timeseries = figmap_leep_timeseries)
-output = spg2(df = clean_data_nox, title = expression(paste("N", O[x])), yname = expression(paste("Emissions (Mt N",O[x],"/yr)")),
+output = spg2_2010(df = clean_data_nox, title = expression(paste("N", O[x])), yname = expression(paste("Emissions (Mt N",O[x],"/yr)")),
               gd = "none", ymin = 0, ymax = 5, 
               ybreaks = waiver(), yax_format = waiver(), annotate = 1, 
               historic_coord = c(2016,1.8), preira_coord = c(2030, 0.95), ira_coord = c(2029, 0.15), 
@@ -1084,7 +1084,7 @@ nox_full = dotted(clean_data_nox, figure, "median", ymin = 0, ymax = 5,
 #so2
 clean_data_sox = spg_clean(ts_map_ID = 123, drop = c("ReEDS-NREL"), histsrc = "EPA", 
                            config = config, clean_data = clean_data, figmap_leep_timeseries = figmap_leep_timeseries)
-output = spg2(df = clean_data_sox, title = expression(paste("S", O[2])), yname = expression(paste("Emissions (Mt S", O[2], "/yr)")), 
+output = spg2_2010(df = clean_data_sox, title = expression(paste("S", O[2])), yname = expression(paste("Emissions (Mt S", O[2], "/yr)")), 
                                                                         gd = "none", ymin = 0, ymax = 5, 
               ybreaks = waiver(), yax_format = waiver(), annotate = 1, 
               historic_coord = c(2020,2), preira_coord = c(2030, 1.2), ira_coord = c(2029, 0.12), 
@@ -1095,8 +1095,8 @@ sox_full = dotted(clean_data_sox, figure, "median", ymin = 0, ymax = 5,
                 config = config, figmap_leep_timeseries = figmap_leep_timeseries)
 
 # combined
-left = nox_full + theme(plot.margin = margin(0,0,0,0))
-right = sox_full + theme(plot.margin = margin(0,0,0,0))
+left = nox_full + theme(plot.margin = margin(0,1,0,1))
+right = sox_full + theme(plot.margin = margin(0,1,0,1))
 
 combined = (wrap_elements(left) | wrap_elements(right)) +     
   theme(plot.margin = margin(0,0,0,0))
@@ -1105,5 +1105,5 @@ combined
 full_data = rbind(nox_data,sox_data) %>%
   select(model,scenario,unit,region,variable_rename,year,value)
 
-saveall(combined, full_data, fig_no)
+saveall(combined, full_data, fig_no, wd = 8)
 ```

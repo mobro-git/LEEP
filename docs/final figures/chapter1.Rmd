@@ -382,7 +382,7 @@ PetrolTab = html(PetrolSpg$data, "Petroleum")
 fig = (CoalDot | GasDot | PetrolDot)
 fig
 
-savefig(fig, fig_no, wd = 8)
+savefig(fig, fig_no, wd = 12)
 
 CoalTab
 GasTab
