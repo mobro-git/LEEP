@@ -65,7 +65,7 @@ spg2 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
     geom_line(aes(alpha = alpha, linetype = scenario), size = 0.5) +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme_emf() +
-    scale_linetype_manual(values = c("Historic" = "solid", "IRA" = "solid", "No IRA" = "dashed"))+
+    scale_linetype_manual(values = c("Historic" = "solid", "IRA" = "solid", "No IRA" = "longdash"))+
     scale_x_continuous(breaks = c(2005, 2021, 2025, 2030, 2035)) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = ybreaks, labels = yax_format) +
     scale_alpha(range = c(1, 1), guide = F) +
@@ -106,7 +106,7 @@ spg2_2010 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, anno
     geom_line(aes(alpha = alpha, linetype = scenario), size = 0.5) +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme_emf() +
-    scale_linetype_manual(values = c("Historic" = "solid", "IRA" = "solid", "No IRA" = "dashed"))+
+    scale_linetype_manual(values = c("Historic" = "solid", "IRA" = "solid", "No IRA" = "longdash"))+
     scale_x_continuous(breaks = c(2010, 2021, 2025, 2030, 2035)) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = ybreaks, labels = yax_format) +
     scale_alpha(range = c(1, 1), guide = F) +
@@ -147,7 +147,7 @@ spg3 = function(df, title, yname, gd, ymin, ymax, ybreaks, yax_format, annotate,
     geom_line(aes(alpha = alpha, linetype = scenario), size = 0.5) +
     scale_subpalette(subpalettes, "Emissions|CO2|Energy|Demand|Industry") +
     theme_emf() +
-    scale_linetype_manual(values = c("Historic" = "solid", "IRA" = "solid", "No IRA" = "dashed"))+
+    scale_linetype_manual(values = c("Historic" = "solid", "IRA" = "solid", "No IRA" = "longdash"))+
     scale_x_continuous(breaks = c(2020, 2025, 2030, 2035)) +
     scale_y_continuous(limits = c(ymin, ymax), breaks = ybreaks, labels = yax_format) +
     scale_alpha(range = c(1, 1), guide = F) +
