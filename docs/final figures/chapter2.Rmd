@@ -61,8 +61,8 @@ data <- clean_data %>%
     grepl("Demand", variable) ~ "Other Sectors",
     grepl("GHGI", variable) ~ "Other Sectors",
     grepl("Coal", variable) ~ "Coal", 
-    grepl("Gas", variable) ~ "Gas", 
-    grepl("Oil", variable) ~ "Petroleum",
+    grepl("Gas", variable) ~ "Natural Gas", 
+    grepl("Oil", variable) ~ "Oil",
   )) %>%
   group_by(year, variable_rename) %>%
   summarise(value = sum(value)) %>%
@@ -70,7 +70,7 @@ data <- clean_data %>%
     variable_rename == "Other Sectors" ~ 0.5, 
     T ~ 1))
 
-data$variable_rename <- factor(data$variable_rename, level = c("Other Sectors", "Coal", "Gas", "Petroleum"))
+data$variable_rename <- factor(data$variable_rename, level = c("Other Sectors", "Oil", "Natural Gas", "Coal"))
 
 fig = ggplot(data, aes(fill = variable_rename, y = value, alpha = alpha, x = year, color = variable_rename)) + 
   geom_bar(position = "stack", stat = "identity", color = "white", linewidth = 0.25) + 
@@ -82,10 +82,10 @@ fig = ggplot(data, aes(fill = variable_rename, y = value, alpha = alpha, x = yea
     scale_x_continuous(breaks = c(2005, 2021)) + 
     theme(panel.spacing.x = unit(4, "mm"), legend.position = "bottom") +
     scale_alpha(range = c(0.6, 1), guide = F)+
-  scale_color_manual(breaks = c( "Coal", "Gas", "Petroleum", "Other Sectors"), 
-                     values = c( "#2a546c", "#ae7f2c", "#8b507e", "#DEDEDE")) +
-  scale_fill_manual(breaks = c( "Coal", "Gas", "Petroleum", "Other Sectors"), 
-                     values = c( "#2a546c", "#ae7f2c", "#8b507e", "#DEDEDE")) +
+  scale_color_manual(breaks = c( "Coal", "Natural Gas", "Oil", "Other Sectors"), 
+                     values = c( "#603913", "#808285", "#af499b", "#DEDEDE")) +
+  scale_fill_manual(breaks = c( "Coal", "Natural Gas", "Oil", "Other Sectors"), 
+                     values = c( "#603913", "#808285", "#af499b", "#DEDEDE")) +
   theme(axis.ticks.y = element_line(color = "black"),
         axis.ticks.x = element_blank(),
         axis.ticks.length = unit(-0.15, "cm"))

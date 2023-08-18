@@ -197,79 +197,227 @@ table_es1
 # table_es1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
 ```
 
-# Appendix D: Buildings sector modeling
+# Appendix D: Input assumptions
 
-## Emissions reudctions by end use type from scout modeling
+## Natural gas price
 
 ```{r}
-fig_no = "D.1.scout_results"
+fig_no = "D.1.naturalgasprice"
 
-data <- read.csv("./data-extra/scout_buildings_IRA_scenario_emissions_wedges.csv")
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
-data_sort <- data %>%
-  filter(year <= 2035) %>%
-  filter(year >= 2025) %>%
-  mutate(scenario = case_when(
-    scenario == "IRA-Low" ~ "Low", 
-    scenario == "IRA-Central" ~ "Central", 
-    scenario == "IRA-High" ~ "High"
-  )) %>%
-  rename(Reference = `Reference.Building.Emissions`,
-         Total = `Total.Building.Emissions`, 
-         Power = `Power.Supply.Decarbonization`, 
-         WaterHeating = `Water.Heating`, 
-         HVAC = HVAC.Env) %>%
-  pivot_longer(
-    cols = c(Reference, Total, Power, Other, WaterHeating, HVAC), names_to = "variable_rename"
-  )
+pipe_proj = clean_data %>%
+filter(variable == "Price|Primary Energy|Gas") %>%
+  filter(model %in% c("GCAM-PNNL", "NEMS-EIA", "NEMS-OP", "USREP-ReEDS")) %>%
+  filter(year %in% c(2025, 2030, 2035)) %>%
+  mutate(value = value * 1.04) %>% #USD2018 to USD2020 via BLS Inflation Calculator 
+  mutate(value = value / 0.947817) %>% #GJ to MMBtu
+  mutate(unit = "2020$/MMBtu") %>%
+  filter(scenario == "No IRA") %>%
+  select(unit, model, year, value)
   
-ref <- data_sort[data_sort$variable_rename == "Reference",]
 
-data_sort$scenario <- factor(data_sort$scenario, levels = c("Low", "Central", "High"))
-data_sort$variable_rename <- factor(data_sort$variable_rename, levels = c("HVAC", "WaterHeating", "Other","Power", "Total", "Reference"))
+hist = readxl::read_xlsx("data-extra/ira_comparison_raw/input_assumptions.xlsx", sheet = "natural gas price", range = "K1:AJ2") %>%
+  mutate(unit = "2020$/MMBtu") %>%
+  pivot_longer(cols = !unit, names_to = "year") %>%
+  mutate(model = "Historic") %>%
+  mutate(year = as.numeric(year))
 
-fin = ggplot(data = data_sort[data_sort$variable_rename != "Reference",] , aes(x=year, y=value, fill = variable_rename)) +
-  geom_area(color = "white") +
-  facet_grid(~scenario) +
-  labs(title = "",
-         x = "",
-         y = expression(paste("Building C", O[2], "Emissions (Mt C", O[2], "/yr)")),
-         color = "") +
-    scale_y_continuous(limits = c(0, 1500), labels = scales::comma, expand = c(0,0)) +
-    theme_emf() +
-    scale_x_continuous(breaks = c(2025, 2030, 2035)) + 
-    theme(axis.text.x = element_text(angle = 45, hjust=1), axis.ticks = element_line(color="black"), axis.ticks.length = unit(-0.15, "cm")) +
-    theme(panel.spacing.x = unit(4, "mm"), legend.position = "bottom") + 
-  guides(fill = guide_legend(nrow = 2)) + 
-  scale_fill_manual(name = "", 
-    labels = c("HVAC/Env", "Water Heating", "Other" , "Power Supply Decarbonizaiton", "Total Building Emissions", "Reference"),
-    breaks = c("HVAC", "WaterHeating", "Other","Power", "Total", "Reference"), 
-    values = c("#488C49", '#f15a22', "#af499b",  '#0083ca', "#DEDEDE", "#767684"),
-    limits = c("HVAC", "WaterHeating", "Other", "Power", "Total") 
-  ) + 
-  geom_line(data = data_sort[data_sort$variable_rename == "Reference",],  aes(x=year, y=value, color = variable_rename),
-            linetype="dashed", size = 1) +
-  scale_color_manual(name = "", 
-    labels = c("HVAC/Env", "Water Heating", "Other" , "Power Supply Decarbonizaiton", "Total Building Emissions", "Reference"),
-    breaks = c("HVAC", "WaterHeating", "Other","ower", "Total", "Reference"), 
-    values = c("white", "white", "white", "white", "white", "black"),
-    limits = c("Reference") 
-  )
-fin
+hist_clean = hist %>%
+  filter(year >= 2005) %>%
+  filter(year <= 2035) %>%
+  select(model,year,value,unit)
 
-data_sort = data_sort %>% mutate(figure_num = fig_no)
+proj = readxl::read_xlsx("data-extra/ira_comparison_raw/input_assumptions.xlsx", sheet = "natural gas price", range = "A1:J29") %>%
+  pivot_longer(cols = c("2015", "2020", "2025", "2030", "2035", "2040", "2045", "2050"), names_to = "year") %>%
+  filter(model != "Historic") %>%
+  mutate(year = as.numeric(year))
 
-saveall(fin, data_sort, fig_no, ht = 9.5, wd = 7.5)
+proj = rbind(pipe_proj, proj)
+
+mods_clean = proj %>%
+  filter(!grepl("aeo", model)) %>%
+  filter(!grepl("eea", model))%>%
+  filter(year <= 2035) %>%
+  select(model,year,value,unit)
+
+mods = unique(mods_clean$model)
+
+proj_clean = proj %>%
+  filter(!model %in% mods)%>%
+  filter(year <= 2035) %>%
+  select(model,year,value,unit)
+
+figure = ggplot() +
+  geom_line(
+    data = hist_clean,
+    aes(x = year, y = value),
+    color = "black",
+    size = 0.6
+  ) +
+  geom_line(data = mods_clean,
+            aes(x = year, y = value, color = model, linetype = model),
+            size = 0.6) + 
+      scale_linetype_manual(values = c("USREP-ReEDS" = "solid", 
+                                       "EPS-EI" = "solid", 
+                                       "GCAM-CGS" = "solid", 
+                                       "GCAM-PNNL" = "solid",
+                                       "Haiku-RFF" = "solid",
+                                       "IPM-NRDC" = "solid", 
+                                       "IPM-EPA" = "solid", 
+                                       "MARKAL-NETL" = "solid", 
+                                       "NEMS-RHG" = "solid",
+                                       "NEMS-OP" = "twodash", 
+                                       "REGEN-EPRI" = "dashed", 
+                                       "RIO-REPEAT" = "dotted", 
+                                       "ReEDS-NREL" = "longdash", 
+                                       "NEMS-EIA" = "dotdash")) +
+  geom_line(data = proj_clean,
+            aes(
+              x = year,
+              y = value,
+              group = model,
+              fill = "gray"
+            ),
+            alpha = 0.2) +
+  scale_y_continuous(
+    limits = c(0, 12),
+    breaks = c(0, 2, 4, 6, 8, 10, 12),
+    labels = scales::dollar_format()
+  ) +
+  scale_x_continuous(breaks = c(2005, 2010, 2015, 2020, 2025, 2030, 2035)) +
+  scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+  labs(y = expression(paste("Natural Gas Prices (2020$/MMBtu)")),
+       x = "",
+       title = "") +
+  theme_classic() +
+  annotate(
+    "text",
+    x = 2010,
+    y = 11.5,
+    label = "Historical",
+    color = "black"
+  ) +
+  annotate(
+    "text",
+    x = 2020,
+    y = 10,
+    label = "AEO reference",
+    color = "gray"
+  ) +
+  annotate(
+    "text",
+    x = 2020,
+    y = 9.3,
+    label = "projections (2015-2020)",
+    color = "gray"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.ticks = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"),
+        legend.title = element_blank())
+figure
+  
+df = rbind(hist_clean,proj_clean,mods_clean) %>%
+  filter(!is.na(value))
+  
+saveall(figure, df, fig_no)
 ```
 
-# Appendix F: Results by model
+## Capital Costs
+
+```{r} 
+fig_no = "D.2.capitalcosts_bat_ngcc_sol_wnd"
+dta = read_csv("./data-extra/ira_comparison_raw/costs_raw.csv")
+
+subpalettes = create_subpalettes(figmap_leep_timeseries, config)
+subpalettes$`Sox pct diff`[["NREL 2022 ATB"]] = "black"
+subpalettes$`Sox pct diff`[["NREL 2022 ATB - Con."]] = "black"
+subpalettes$`Sox pct diff`[["NREL 2022 ATB - Mod."]] = "black"
+subpalettes$`Sox pct diff`[["NREL 2022 ATB - Adv."]] = "black"
+subpalettes$`Sox pct diff`[["OP-NEMS-Mod"]] = "blue"
+subpalettes$`Sox pct diff`[["OP-NEMS-Adv"]] = "blue"
+
+tech_renamer = c(
+  "Utility-Scale Solar PV" = "Solar PV",
+  "Wind Onshore" = "Onshore Wind",
+  "NGCC with CCS" = "NGCC with CCS",
+  "NGCC" = "NGCC",
+  "Battery Storage (4-Hour)" = "Battery (4-Hour)",
+  "Coal CCS Retrofit" = "Coal with CCS"
+)
+
+dta = dta %>%
+  pivot_longer(cols = starts_with("20"),
+               names_to = "year",
+               values_to = "value") %>%
+  mutate(version = case_when(
+    model == "NREL 2022 ATB - Adv." ~ "Advanced",
+    model == "NREL 2022 ATB - Mod." ~ "Moderate",
+    model == "NREL 2022 ATB - Con." ~ "Conservative",
+    model == "OP-NEMS-Mod" ~ "Moderate",
+    model == "OP-NEMS-Adv" ~ "Advanced",
+    TRUE ~ "Moderate"
+  )) %>%
+  mutate(model = case_when(
+    model == "NREL 2022 ATB - Adv." ~ "NREL 2022 ATB - Adv.",
+    model == "NREL 2022 ATB - Mod." ~ "NREL 2022 ATB - Mod.",
+    model == "NREL 2022 ATB - Con." ~ "NREL 2022 ATB - Con.",
+    TRUE ~ model
+  ))
+
+dta_top = dta %>%
+  filter(!(variable %in% c("NGCC with CCS", "Coal CCS Retrofit"))) %>%
+  filter(!is.na(value))
+
+dta_bottom = dta %>%
+  filter((variable %in% c("NGCC with CCS", "Coal CCS Retrofit"))) %>%
+  filter(!is.na(value))
+
+p = dta_top %>% ggplot() +
+  geom_line(aes(x = year, y = value, color = model, linetype = version, group = interaction(model, version)),
+            linewidth = 1) +
+  scale_y_continuous(name = expression("Capital Cost (2020$/kW)"), labels = scales::comma) +
+  scale_subpalette(subpalettes, "Sox pct diff") +
+  scale_linetype_manual(values = c("longdash","solid","dotted"), breaks = c("Advanced", "Moderate", "Conservative")) +
+  facet_grid(. ~ variable, labeller = labeller(variable = tech_renamer)) +
+  theme_emf() +
+  theme(
+          axis.ticks = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"), axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8),
+        legend.text = element_text(size = 6), legend.key.size = unit(15,"point"))
+        
+p
+
+p2 = dta_bottom %>% ggplot() +
+  geom_line(aes(x = year, y = value, color = model, linetype = version, group = interaction(model, version)),
+            linewidth = 1) +
+  scale_y_continuous(name = expression("Capital Cost (2020$/kW)"), labels = scales::comma) +
+  scale_subpalette(subpalettes, "Sox pct diff") +
+  scale_linetype_manual(values = c("longdash","solid","dotted"), breaks = c("Advanced", "Moderate", "Conservative")) +
+  facet_grid(. ~ variable, labeller = labeller(variable = tech_renamer), scales = "free_y") +
+  theme_emf() +
+  theme(axis.ticks = element_line(color = "black"),
+        axis.ticks.length = unit(-0.15, "cm"), axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8),
+        legend.text = element_text(size = 6), legend.key.size = unit(15,"point"))
+p2
+
+saveall(p,dta_top,fig_no)
+fig_no = "D.3.capitalcosts_coalgasCCS"
+saveall(p2,dta_bottom,fig_no)
+```
+
+
+# Appendix E: Results by model
 
 ## Emissions
 
 ### Economy-Wide
 
 ```{r}
-fig_no = "F.1.EconWideEmis"
+fig_no = "E.1.EconWideEmis"
 
 ts_map_ID = 99
 pd_map_ID = 25
@@ -296,7 +444,7 @@ savefig(fig$figure, fig_no)
 ### Electricity
 
 ```{r}
-fig_no = "F.2.ElecEmis"
+fig_no = "E.2.ElecEmis"
 
 ts_map_ID = 98
 pd_map_ID = 26
@@ -323,7 +471,7 @@ savefig(fig$figure, fig_no)
 ### Transportation
 
 ```{r}
-fig_no = "F.3.TranEmis"
+fig_no = "E.3.TranEmis"
 
 ts_map_ID = 19
 pd_map_ID = 27
@@ -350,7 +498,7 @@ savefig(fig$figure, fig_no)
 ### Building
 
 ```{r}
-fig_no = "F.4.BuilEmis"
+fig_no = "E.4.BuilEmis"
 
 ts_map_ID = 23
 pd_map_ID = 29
@@ -377,7 +525,7 @@ savefig(fig$figure, fig_no)
 ### Industry
 
 ```{r}
-fig_no = "F.5.IndEmis"
+fig_no = "E.5.IndEmis"
 
 ts_map_ID = 21
 pd_map_ID = 28
@@ -407,7 +555,7 @@ savefig(fig$figure, fig_no)
 ### Coal
 
 ```{r}
-fig_no = "F.6.Coal_energy"
+fig_no = "E.6.Coal_energy"
 
 ts_map_ID = 94
 pd_map_ID = 32
@@ -434,7 +582,7 @@ savefig(fig$figure, fig_no)
 ### Gas
 
 ```{r}
-fig_no = "F.7.Gas_energy"
+fig_no = "E.7.Gas_energy"
 
 ts_map_ID = 93
 pd_map_ID = 31
@@ -461,7 +609,7 @@ savefig(fig$figure, fig_no)
 ### Petroleum
 
 ```{r}
-fig_no = "F.8.Petrol_energy"
+fig_no = "E.8.Petrol_energy"
 
 ts_map_ID = 92
 pd_map_ID = 30
@@ -490,7 +638,7 @@ savefig(fig$figure, fig_no)
 ### Nuclear
 
 ```{r}
-fig_no = "F.9.NuclearGen"
+fig_no = "E.9.NuclearGen"
 
 ts_map_ID = 91
 pd_map_ID = 80
@@ -517,7 +665,7 @@ savefig(fig$figure, fig_no)
 ### Solar
 
 ```{r}
-fig_no = "F.10.SolarGen"
+fig_no = "E.10.SolarGen"
 
 ts_map_ID = 90
 pd_map_ID = 79
@@ -544,7 +692,7 @@ savefig(fig$figure, fig_no)
 ### Wind
 
 ```{r}
-fig_no = "F.11.WindGen"
+fig_no = "E.11.WindGen"
 
 ts_map_ID = 89
 pd_map_ID = 78
@@ -571,7 +719,7 @@ savefig(fig$figure, fig_no)
 ### Coal CCS
 
 ```{r}
-fig_no = "F.12.CoalCCSGen"
+fig_no = "E.12.CoalCCSGen"
 
 #Only includes Coal CSS Generation
 
@@ -753,7 +901,7 @@ savefig(fig, fig_no)
 ### Gas CCS
 
 ```{r}
-fig_no = "F.13.GasCCSGen"
+fig_no = "E.13.GasCCSGen"
 
 #Only includes Gas CSS Generation
 
@@ -937,7 +1085,7 @@ savefig(fig, fig_no)
 ### Coal
 
 ```{r}
-fig_no = "F.14.CoalnoCCSGen" # w/o CCS
+fig_no = "E.14.CoalnoCCSGen" # w/o CCS
 
 ts_map_ID = 82
 pd_map_ID = 71
@@ -965,7 +1113,7 @@ savefig(fig$figure, fig_no)
 ### Gas
 
 ```{r}
-fig_no = "F.15.GasNoCCSGen" # w/o CCS
+fig_no = "E.15.GasNoCCSGen" # w/o CCS
 
 ts_map_ID = 81
 pd_map_ID = 70
@@ -993,7 +1141,7 @@ savefig(fig$figure, fig_no)
 ### Other
 
 ```{r}
-fig_no = "F.16.OtherGen"
+fig_no = "E.16.OtherGen"
 
 #Includes Biomass, Hydro, Geothermal, Oil w/ CCS, and Oil w/o CCS
 ts_map_ID = 88
@@ -1259,7 +1407,7 @@ write.csv(
 ### EV Share
 
 ```{r}
-fig_no = "F.17.EvSalesShare"
+fig_no = "E.17.EvSalesShare"
 
 subpalettes_ev = create_subpalettes(figmap_leep_timeseries, config)
 # TODO: NEMS-OP should only have reporting every 5 years
@@ -1568,7 +1716,7 @@ savefig(figure, fig_no)
 ### Electricity generation by model
 
 ```{r}
-fig_no = "F.18.GenerationbyModel"
+fig_no = "E.18.GenerationbyModel"
 
 exclude_models = c()
 
@@ -1645,7 +1793,7 @@ saveall(p, dta, fig_no)
 ### Electricity capacity by model
 
 ```{r}
-fig_no = "F.19.CapacitybyModel"
+fig_no = "E.19.CapacitybyModel"
 
 p = print_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 15, "United States",
                 level_mod = models_alph) +
@@ -1671,7 +1819,7 @@ saveall(p, dta, fig_no)
 ### Generation
 
 ```{r}
-fig_no = "F.1.gascoal_generation"
+fig_no = "E.1.gascoal_generation"
 
 exclude_models = c(
   "AEO2020",
@@ -1738,7 +1886,7 @@ generation_table %>% gtsave(paste0("./output/final_figures/display_tables/Table"
 ### Capacity
 
 ```{r}
-fig_no = "F.2.gascoal_capacity"
+fig_no = "E.2.gascoal_capacity"
 
 exclude_models = c(
   "AEO2020",
@@ -1801,7 +1949,7 @@ capacity_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",f
 ### Capacity Factor
 
 ```{r}
-fig_no = "F.3.gascoal_capacityfactor"
+fig_no = "E.3.gascoal_capacityfactor"
 
 exclude_models = c(
   "AEO2020",
@@ -1845,12 +1993,12 @@ cf_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,
 cf_table %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".html"))
 ```
 
-# Appendix G: Electrification summary
+# Appendix F: Supplemental Results
 
-## Electrification Figure
+## F.1 Electrification
 
 ```{r}
-fig_no = "G.1.electricity_share_final_energy"
+fig_no = "F.1.1.electricity_share_final_energy"
 
 elc = readxl::read_xlsx("data-extra/electrification_compiled.xlsx") %>%
   rename(value = value100) %>%
@@ -2008,12 +2156,12 @@ IndDot = dotted(Ind_ts, IndSpg$figure, "median", 0, 70, config, figmap_leep_time
 Full = (EconDot | TranDot) / (BuilDot | IndDot)
 Full
 
-savefig(Full, fig_no, wd = 5, ht = 8)
+savefig(Full, fig_no, wd = 8, ht = 8)
 ```
 
-## Tables
+### Tables
 
-### % Share Tables
+#### % Share Tables
 
 ```{r}
 per_share_wb <- createWorkbook()
@@ -2066,12 +2214,12 @@ all = rbind(total, transportation, buildings, industry) %>%
 
 write_sheet(all, per_share_wb, "All")
 
-saveWorkbook(per_share_wb, file = "output/final_figures/data/TableG.1.share.xlsx", overwrite = TRUE)
+saveWorkbook(per_share_wb, file = "output/final_figures/data/TableF.1.1.share.xlsx", overwrite = TRUE)
 ```
 
 ```{R}
-# display table for appendix G1
-fig_no = "G1.Electricity Share"
+# display table for appendix F1
+fig_no = "F.1.1.Electricity Share"
 
 tab_dta = all %>% 
   data.frame() %>%
@@ -2125,7 +2273,7 @@ table1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".
 table1 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
 ```
 
-### % Difference in Share IRA vs No IRA Tables
+#### % Difference in Share IRA vs No IRA Tables
 
 ```{r}
 diff_wb <- createWorkbook()
@@ -2180,12 +2328,12 @@ all_per = rbind(total_per, transportation_per, buildings_per, industry_per) %>%
 
 write_sheet(all_per, diff_wb, "All")
 
-saveWorkbook(per_share_wb, file = "output/final_figures/data/TableG.2.difference.xlsx", overwrite = TRUE)
+saveWorkbook(per_share_wb, file = "output/final_figures/data/TableF.1.2.difference.xlsx", overwrite = TRUE)
 ```
 
 ```{R}
 # display table for appendix G2
-fig_no = "G2 Electricity Difference"
+fig_no = "F.1.2 Electricity Difference"
 tab_dta = all_per %>% 
   data.frame() %>%
   pivot_wider(names_from = Statistic, values_from = c(Percent.Difference, Percentage.Point.Difference)) %>%
@@ -2240,12 +2388,12 @@ table2 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".
 table2 %>% gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,".png"))
 ```
 
-# Appendix H: Direct and indirect emissions breakouts
+## F.2 Direct and indirect emissions breakouts
 
-## EconWide Direct/Indirect
+### EconWide Direct/Indirect
 
 ```{r}
-fig_no = "H.1.ew_projections_direct_indirect"
+fig_no = "F.2.1.ew_projections_direct_indirect"
 
 Econ_data = spg_clean(
   99,
@@ -2326,9 +2474,10 @@ fig = EconDot | ElecDot
 savefig(fig, fig_no, wd=9,ht=4)
 ```
 
-## Transportation Direct/Indirect
+### Transportation Direct/Indirect
+
 ```{r}
-fig_no = "H.2.trn_projections_direct_indirect"
+fig_no = "F.2.2.trn_projections_direct_indirect"
 
 Dir_data = spg_clean(
   97, 
@@ -2341,7 +2490,7 @@ Dir_data = spg_clean(
 DirSpg = spg2(
   Dir_data,
   expression(paste("Direct Combustion")),
-  expression(paste("Emissions(Mt C", O[2], "/yr)")),
+  expression(paste("Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
   0,
   2000,
@@ -2398,10 +2547,10 @@ savedata(DirSpg$data, paste(fig_no, "Direct"))
 savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 ```
 
-## Building Direct/Indirect
+### Building Direct/Indirect
 
 ```{r}
-fig_no = "H.3.bld_projections_direct_indirect"
+fig_no = "F.2.3.bld_projections_direct_indirect"
 
 Dir_data = spg_clean(
   95, 
@@ -2414,7 +2563,7 @@ Dir_data = spg_clean(
 DirSpg = spg2(
   Dir_data,
   expression(paste("Direct Combustion")),
-  expression(paste("Emissions(Mt C", O[2], "/yr)")),
+  expression(paste("Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
   0,
   2000,
@@ -2471,10 +2620,10 @@ savedata(DirSpg$data, paste(fig_no, "Direct"))
 savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 ```
 
-## Industry Direct/Indirect
+### Industry Direct/Indirect
 
 ```{r}
-fig_no = "H.4.ind_projections_direct_indirect"
+fig_no = "F.2.4.ind_projections_direct_indirect"
 
 Dir_data = spg_clean(
   96, 
@@ -2487,7 +2636,7 @@ Dir_data = spg_clean(
 DirSpg = spg2(
   Dir_data,
   expression(paste("Direct Combustion")),
-  expression(paste("Emissions(Mt C", O[2], "/yr)")),
+  expression(paste("Emissions (Mt C", O[2], "/yr)")),
   gd = "none",
   0,
   1500,
@@ -2544,12 +2693,12 @@ savedata(DirSpg$data, paste(fig_no, "Direct"))
 savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 ```
 
-# Appendix I: Trends in electricity generation
+## F.3 Trends in electricity generation
 
-## with 2021
+### with 2021
 
 ```{r}
-fig_no = "I.1.gen_bytype"
+fig_no = "F.3.1.gen_bytype"
 
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 names(subpalettes$`Emissions|CO2|Energy|Demand|Industry`) = c("2021", "No IRA", "IRA")
@@ -3321,14 +3470,14 @@ final = final +
 ) & theme(legend.position = "bottom")
 final
 
-savefig(final, fig_no, wd = 8)
+savefig(final, fig_no, wd = 8, ht = 8)
 
 ```
 
-### Tables
+#### Tables
 
 ```{r}
-title = "I.Total Electricity Generation"
+title = "F.3.1.Total Electricity Generation"
 
 fig = print_graph("time_series", config, clean_data, figmap_leep_timeseries, 16, "United States")
 
@@ -4827,10 +4976,10 @@ IRA %>%
 tableHTML(caption = paste(title), rownames = F)
 ```
 
-## Differences
+### Differences
 
 ```{r}
-fig_no = "I.2.genbytype_differences"
+fig_no = "F.3.2.genbytype_differences"
 
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
@@ -5541,15 +5690,15 @@ final = final +
 ) & theme(legend.position = "bottom")
 final
 
-savefig(final, fig_no, wd = 8)
+savefig(final, fig_no, wd = 8, ht = 8)
 
 ```
 
-### Tables
+#### Tables
 
 ```{r}
-fig_no = "I.2"
-title = "I.Low Emitting Electricity Generation"
+fig_no = "F.3.2"
+title = "F.3.2.Low Emitting Electricity Generation"
 
 data_table = data_Low %>%
   group_by(year) %>%
@@ -5835,224 +5984,12 @@ data_table = data_Other %>%
   write.csv(data_table, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
 ```
 
-# Appendix J: Input assumptions
+### F.4 Sensitivity Range Summary
 
-## Natural gas price
-
-```{r}
-fig_no = "J.1.naturalgasprice"
-
-subpalettes = create_subpalettes(figmap_leep_timeseries, config)
-
-pipe_proj = clean_data %>%
-filter(variable == "Price|Primary Energy|Gas") %>%
-  filter(model %in% c("GCAM-PNNL", "NEMS-EIA", "NEMS-OP", "USREP-ReEDS")) %>%
-  filter(year %in% c(2025, 2030, 2035)) %>%
-  mutate(value = value * 1.04) %>% #USD2018 to USD2020 via BLS Inflation Calculator 
-  mutate(value = value / 0.947817) %>% #GJ to MMBtu
-  mutate(unit = "2020$/MMBtu") %>%
-  filter(scenario == "No IRA") %>%
-  select(unit, model, year, value)
-  
-
-hist = readxl::read_xlsx("data-extra/ira_comparison_raw/input_assumptions.xlsx", sheet = "natural gas price", range = "K1:AJ2") %>%
-  mutate(unit = "2020$/MMBtu") %>%
-  pivot_longer(cols = !unit, names_to = "year") %>%
-  mutate(model = "Historic") %>%
-  mutate(year = as.numeric(year))
-
-hist_clean = hist %>%
-  filter(year >= 2005) %>%
-  filter(year <= 2035) %>%
-  select(model,year,value,unit)
-
-proj = readxl::read_xlsx("data-extra/ira_comparison_raw/input_assumptions.xlsx", sheet = "natural gas price", range = "A1:J29") %>%
-  pivot_longer(cols = c("2015", "2020", "2025", "2030", "2035", "2040", "2045", "2050"), names_to = "year") %>%
-  filter(model != "Historic") %>%
-  mutate(year = as.numeric(year))
-
-proj = rbind(pipe_proj, proj)
-
-mods_clean = proj %>%
-  filter(!grepl("aeo", model)) %>%
-  filter(!grepl("eea", model))%>%
-  filter(year <= 2035) %>%
-  select(model,year,value,unit)
-
-mods = unique(mods_clean$model)
-
-proj_clean = proj %>%
-  filter(!model %in% mods)%>%
-  filter(year <= 2035) %>%
-  select(model,year,value,unit)
-
-figure = ggplot() +
-  geom_line(
-    data = hist_clean,
-    aes(x = year, y = value),
-    color = "black",
-    size = 0.6
-  ) +
-  geom_line(data = mods_clean,
-            aes(x = year, y = value, color = model, linetype = model),
-            size = 0.6) + 
-      scale_linetype_manual(values = c("USREP-ReEDS" = "solid", 
-                                       "EPS-EI" = "solid", 
-                                       "GCAM-CGS" = "solid", 
-                                       "GCAM-PNNL" = "solid",
-                                       "Haiku-RFF" = "solid",
-                                       "IPM-NRDC" = "solid", 
-                                       "IPM-EPA" = "solid", 
-                                       "MARKAL-NETL" = "solid", 
-                                       "NEMS-RHG" = "solid",
-                                       "NEMS-OP" = "twodash", 
-                                       "REGEN-EPRI" = "dashed", 
-                                       "RIO-REPEAT" = "dotted", 
-                                       "ReEDS-NREL" = "longdash", 
-                                       "NEMS-EIA" = "dotdash")) +
-  geom_line(data = proj_clean,
-            aes(
-              x = year,
-              y = value,
-              group = model,
-              fill = "gray"
-            ),
-            alpha = 0.2) +
-  scale_y_continuous(
-    limits = c(0, 12),
-    breaks = c(0, 2, 4, 6, 8, 10, 12),
-    labels = scales::dollar_format()
-  ) +
-  scale_x_continuous(breaks = c(2005, 2010, 2015, 2020, 2025, 2030, 2035)) +
-  scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
-  labs(y = expression(paste("Natural Gas Prices (2020$/MMBtu)")),
-       x = "",
-       title = "") +
-  theme_classic() +
-  annotate(
-    "text",
-    x = 2010,
-    y = 11.5,
-    label = "Historical",
-    color = "black"
-  ) +
-  annotate(
-    "text",
-    x = 2020,
-    y = 10,
-    label = "AEO reference",
-    color = "gray"
-  ) +
-  annotate(
-    "text",
-    x = 2020,
-    y = 9.3,
-    label = "projections (2015-2020)",
-    color = "gray"
-  ) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1),
-          axis.ticks = element_line(color = "black"),
-          axis.ticks.length = unit(-0.15, "cm"),
-        legend.title = element_blank())
-figure
-  
-df = rbind(hist_clean,proj_clean,mods_clean) %>%
-  filter(!is.na(value))
-  
-saveall(figure, df, fig_no)
-```
-
-## Capital Costs
-
-```{r} 
-fig_no = "J.2.capitalcosts_bat_ngcc_sol_wnd"
-dta = read_csv("./data-extra/ira_comparison_raw/costs_raw.csv")
-
-subpalettes = create_subpalettes(figmap_leep_timeseries, config)
-subpalettes$`Sox pct diff`[["NREL 2022 ATB"]] = "black"
-subpalettes$`Sox pct diff`[["NREL 2022 ATB - Con."]] = "black"
-subpalettes$`Sox pct diff`[["NREL 2022 ATB - Mod."]] = "black"
-subpalettes$`Sox pct diff`[["NREL 2022 ATB - Adv."]] = "black"
-subpalettes$`Sox pct diff`[["OP-NEMS-Mod"]] = "blue"
-subpalettes$`Sox pct diff`[["OP-NEMS-Adv"]] = "blue"
-
-tech_renamer = c(
-  "Utility-Scale Solar PV" = "Solar PV",
-  "Wind Onshore" = "Onshore Wind",
-  "NGCC with CCS" = "NGCC with CCS",
-  "NGCC" = "NGCC",
-  "Battery Storage (4-Hour)" = "Battery (4-Hour)",
-  "Coal CCS Retrofit" = "Coal with CCS"
-)
-
-dta = dta %>%
-  pivot_longer(cols = starts_with("20"),
-               names_to = "year",
-               values_to = "value") %>%
-  mutate(version = case_when(
-    model == "NREL 2022 ATB - Adv." ~ "Advanced",
-    model == "NREL 2022 ATB - Mod." ~ "Moderate",
-    model == "NREL 2022 ATB - Con." ~ "Conservative",
-    model == "OP-NEMS-Mod" ~ "Moderate",
-    model == "OP-NEMS-Adv" ~ "Advanced",
-    TRUE ~ "Moderate"
-  )) %>%
-  mutate(model = case_when(
-    model == "NREL 2022 ATB - Adv." ~ "NREL 2022 ATB - Adv.",
-    model == "NREL 2022 ATB - Mod." ~ "NREL 2022 ATB - Mod.",
-    model == "NREL 2022 ATB - Con." ~ "NREL 2022 ATB - Con.",
-    TRUE ~ model
-  ))
-
-dta_top = dta %>%
-  filter(!(variable %in% c("NGCC with CCS", "Coal CCS Retrofit"))) %>%
-  filter(!is.na(value))
-
-dta_bottom = dta %>%
-  filter((variable %in% c("NGCC with CCS", "Coal CCS Retrofit"))) %>%
-  filter(!is.na(value))
-
-p = dta_top %>% ggplot() +
-  geom_line(aes(x = year, y = value, color = model, linetype = version, group = interaction(model, version)),
-            linewidth = 1) +
-  scale_y_continuous(name = expression("Capital Cost (2020$/kW)"), labels = scales::comma) +
-  scale_subpalette(subpalettes, "Sox pct diff") +
-  scale_linetype_manual(values = c("longdash","solid","dotted"), breaks = c("Advanced", "Moderate", "Conservative")) +
-  facet_grid(. ~ variable, labeller = labeller(variable = tech_renamer)) +
-  theme_emf() +
-  theme(
-          axis.ticks = element_line(color = "black"),
-          axis.ticks.length = unit(-0.15, "cm"), axis.text.x = element_text(angle = 45, hjust = 1),
-        axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8),
-        legend.text = element_text(size = 6), legend.key.size = unit(15,"point"))
-        
-p
-
-p2 = dta_bottom %>% ggplot() +
-  geom_line(aes(x = year, y = value, color = model, linetype = version, group = interaction(model, version)),
-            linewidth = 1) +
-  scale_y_continuous(name = expression("Capital Cost (2020$/kW)"), labels = scales::comma) +
-  scale_subpalette(subpalettes, "Sox pct diff") +
-  scale_linetype_manual(values = c("longdash","solid","dotted"), breaks = c("Advanced", "Moderate", "Conservative")) +
-  facet_grid(. ~ variable, labeller = labeller(variable = tech_renamer), scales = "free_y") +
-  theme_emf() +
-  theme(axis.ticks = element_line(color = "black"),
-        axis.ticks.length = unit(-0.15, "cm"), axis.text.x = element_text(angle = 45, hjust = 1),
-        axis.title.x = element_blank(), strip.text.x = element_text(face = "plain", size = 8),
-        legend.text = element_text(size = 6), legend.key.size = unit(15,"point"))
-p2
-
-saveall(p,dta_top,fig_no)
-fig_no = "J.3.capitalcosts_coalgasCCS"
-saveall(p2,dta_bottom,fig_no)
-```
-
-# Appendix K
-
-## All sensitivities
+#### All sensitivities
 
 ```{r}
-fig_no = "K.1.summary_ranges_sensitivities"
+fig_no = "F.4.1.summary_ranges_sensitivities"
 
 clean_data1 = clean_data1 = filter_sensitivities(clean_data)
 
@@ -6224,7 +6161,7 @@ saveall(combined, indicators_all_clean, fig_no)
 savedata(summary_all, paste(fig_no,"summary",sep="_"))
 ```
 
-### Core ranges to calculate difference
+#### Core ranges to calculate difference
 
 ```{r}
 Elec_data = spg_clean(
@@ -6331,7 +6268,7 @@ summary_NoIRA = indicators_summ %>%
 summary_core = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
 ```
 
-## Joint table
+#### Joint table
 
 ```{r}
 core = summary_core[,1:5] %>%
@@ -6352,8 +6289,73 @@ joint = cbind(core, all) %>%
 savedata(joint, paste(fig_no,"changes",sep="_"))
 ```
 
-## Appendinx L
-Relationships between number of provisions modeled and emissions reductions
+# Appendix G: Buildings sector modeling
+
+## Emissions reudctions by end use type from scout modeling
+
+```{r}
+fig_no = "G.1.1.scout_results"
+
+data <- read.csv("./data-extra/scout_buildings_IRA_scenario_emissions_wedges.csv")
+
+data_sort <- data %>%
+  filter(year <= 2035) %>%
+  filter(year >= 2025) %>%
+  mutate(scenario = case_when(
+    scenario == "IRA-Low" ~ "Low", 
+    scenario == "IRA-Central" ~ "Central", 
+    scenario == "IRA-High" ~ "High"
+  )) %>%
+  rename(Reference = `Reference.Building.Emissions`,
+         Total = `Total.Building.Emissions`, 
+         Power = `Power.Supply.Decarbonization`, 
+         WaterHeating = `Water.Heating`, 
+         HVAC = HVAC.Env) %>%
+  pivot_longer(
+    cols = c(Reference, Total, Power, Other, WaterHeating, HVAC), names_to = "variable_rename"
+  )
+  
+ref <- data_sort[data_sort$variable_rename == "Reference",]
+
+data_sort$scenario <- factor(data_sort$scenario, levels = c("Low", "Central", "High"))
+data_sort$variable_rename <- factor(data_sort$variable_rename, levels = c("HVAC", "WaterHeating", "Other","Power", "Total", "Reference"))
+
+fin = ggplot(data = data_sort[data_sort$variable_rename != "Reference",] , aes(x=year, y=value, fill = variable_rename)) +
+  geom_area(color = "white") +
+  facet_grid(~scenario) +
+  labs(title = "",
+         x = "",
+         y = expression(paste("Building C", O[2], "Emissions (Mt C", O[2], "/yr)")),
+         color = "") +
+    scale_y_continuous(limits = c(0, 1500), labels = scales::comma, expand = c(0,0)) +
+    theme_emf() +
+    scale_x_continuous(breaks = c(2025, 2030, 2035)) + 
+    theme(axis.text.x = element_text(angle = 45, hjust=1), axis.ticks = element_line(color="black"), axis.ticks.length = unit(-0.15, "cm")) +
+    theme(panel.spacing.x = unit(4, "mm"), legend.position = "bottom") + 
+  guides(fill = guide_legend(nrow = 2)) + 
+  scale_fill_manual(name = "", 
+    labels = c("HVAC/Env", "Water Heating", "Other" , "Power Supply Decarbonizaiton", "Total Building Emissions", "Reference"),
+    breaks = c("HVAC", "WaterHeating", "Other","Power", "Total", "Reference"), 
+    values = c("#488C49", '#f15a22', "#af499b",  '#0083ca', "#DEDEDE", "#767684"),
+    limits = c("HVAC", "WaterHeating", "Other", "Power", "Total") 
+  ) + 
+  geom_line(data = data_sort[data_sort$variable_rename == "Reference",],  aes(x=year, y=value, color = variable_rename),
+            linetype="dashed", size = 1) +
+  scale_color_manual(name = "", 
+    labels = c("HVAC/Env", "Water Heating", "Other" , "Power Supply Decarbonizaiton", "Total Building Emissions", "Reference"),
+    breaks = c("HVAC", "WaterHeating", "Other","ower", "Total", "Reference"), 
+    values = c("white", "white", "white", "white", "white", "black"),
+    limits = c("Reference") 
+  )
+fin
+
+data_sort = data_sort %>% mutate(figure_num = fig_no)
+
+saveall(fin, data_sort, fig_no, ht = 9, wd = 7.5)
+```
+
+# NOT USED: Appendinx L Relationships between number of provisions modeled and emissions reductions
+
 ```{r}
 dta = read.csv("./data-extra/emis_reg_data.csv")
 #View(dta)
@@ -6376,9 +6378,5 @@ p = dta %>% ggplot() +
   scale_x_continuous(limits = c(3,10), name = "Number of Electric Sector Provisions Modeled") +
   scale_y_continuous(limits = c(-1,0), name = expression("Change in Electric Sector Emissions (%, relative to No IRA)")) +
   theme_emf()
-
 p
-
-
-
 ```

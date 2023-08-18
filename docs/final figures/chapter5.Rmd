@@ -76,6 +76,8 @@ saveall(p4, dta4, fig_no)
 ```{r}
 fig_no = "5.2.indco2_breakout"
 
+subpalettes = create_subpalettes(figmap_leep_stackbar, config)
+
 pie = readxl::read_xlsx("data-extra/industry_piechart.xlsx")
 pie1 = pie %>% filter(Table == 1) %>%
   rename(value = `% Energy-related Emissions`) %>%
