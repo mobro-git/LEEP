@@ -705,9 +705,9 @@ saveall(combined, dta, fig_no)
 ### T2.1 Display Table
 
 ```{r}
-#metric = "absolute"
+metric = "absolute"
 #metric = "percent"
-metric = "percent_2005"
+# metric = "percent_2005"
 
 historic_emissions = (clean_data %>%
   filter(model == "EPA-GHGI",
