@@ -1410,11 +1410,9 @@ write.csv(
 fig_no = "E.17.EvSalesShare"
 
 subpalettes_ev = create_subpalettes(figmap_leep_timeseries, config)
-# TODO: NEMS-OP should only have reporting every 5 years
 
-# clean_data_evshare = spg_clean(ts_map_ID = 118, drop = c(""), histsrc = "EPA-ATR",
-#                            config = config, clean_data = clean_data4, figmap_leep_timeseries = figmap_leep_timeseries)
 scen_map = read.csv("./data-raw/scenario-mapping.csv") %>% select(datasrc, model, scenario, model_new, scenario_new)
+
 raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
   left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
   select(-c(model, scenario)) %>%
@@ -1424,22 +1422,50 @@ raw = data_raw %>% select(model, scenario, region, variable, unit, datasrc, year
   filter(!(model == "EPA-ATR" & year >= 2022))
 
 atr_2022 = raw %>% filter(model == "EPA-ATR", year == 2021) %>% mutate(year = 2022)
+
 nems = data_min %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
-  filter(model == "NEMS-OP",
-         scenario %in% c("IRA", "No IRA"),
+  filter(model == "OP-NEMS", 
+         scenario %in% c("OP IRA Moderate", "OP No New Policies"),
          datasrc != "LTS_data_small.xlsx",
          grepl("Sales Share", variable),
          unit == "%") %>%
   left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
   select(-c(model, scenario)) %>%
   rename(model = model_new) %>%
-  rename(scenario = scenario_new)
+  rename(scenario = scenario_new) %>%
+  mutate(model = case_when(
+    model == "OP-NEMS" ~ "NEMS-OP",
+    TRUE ~ model
+  )) 
 
-clean_data_evshare = rbind(raw, atr_2022, nems) %>%
-  filter(unit != "thousands") %>%
+pnnl = data_min %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
+  filter(model == "GCAM6.0", 
+         scenario %in% c("IRA", "NoIRA"),
+         grepl("Sales Share", variable),
+         unit == "%") %>%
+  left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
+  select(-c(model, scenario)) %>%
+  rename(model = model_new) %>%
+  rename(scenario = scenario_new) %>%
+  mutate(value = value / 100)
+
+eia = data_min %>% select(model, scenario, region, variable, unit, datasrc, year, value) %>%
+  filter(model == "AEO 2023", 
+         scenario %in% c("AEO23 Ref", "AEO23 No IRA"),
+         grepl("Sales Share", variable),
+         unit == "%") %>%
+  filter(grepl("BEV", variable) | grepl("PHEV", variable)) %>%
+  left_join(scen_map, by = c("datasrc", "model", "scenario")) %>%
+  select(-c(model, scenario)) %>%
+  rename(model = model_new) %>%
+  rename(scenario = scenario_new)
+  
+clean_data_evshare = rbind(raw, atr_2022, nems, pnnl, eia) %>% 
+  filter(unit != "thousands") %>% 
   mutate(value = 100 * value) %>%
-  filter(model != "EIA-LTS") %>%
-  duplicate_historical_data("EPA-ATR", 2022, criteria = TRUE) %>% mutate(
+  filter(model != "EIA-LTS") %>% 
+  duplicate_historical_data("EPA-ATR", 2022, criteria = TRUE) %>% 
+  mutate(
     variable = case_when(
       variable %in% c(
         "Energy Service|Transportation|Passenger|BEV|Sales Share",
@@ -1449,7 +1475,7 @@ clean_data_evshare = rbind(raw, atr_2022, nems) %>%
         # "Energy Service|Transportation|Freight|FCEV|Sales Share",
         "Energy Service|Transportation|Passenger|PHEV|Sales Share",
         "Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share"
-        ) ~
+        ) ~ 
         "Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share")) %>%
   group_by(model, scenario, unit, datasrc, year, region, variable) %>%
   summarize(value = sum(value)) %>%
@@ -1465,7 +1491,8 @@ clean_data_evshare = rbind(raw, atr_2022, nems) %>%
       scenario == "Historic" ~ 1,
       T ~ 1
   )) %>%
-  mutate(value = case_when(year == 2022 & model == "NEMS-OP" ~ 100 * atr_2022$value[1],
+  #duplicate_historical_data("EPA-ATR", 2022, criteria = TRUE) %>%
+  mutate(value = case_when(year == 2022 ~ 100 * atr_2022$value[1], 
                            TRUE ~ value))
 
 clean_data_evshare = clean_data_evshare %>%
@@ -1478,15 +1505,16 @@ hist = clean_data_evshare %>%
   ungroup %>%
   mutate(year = 2021) %>%
   mutate(value = value[scenario == "Historic"][1]) %>%
-  mutate(scenario = "Historic")
+  mutate(scenario = "Historic") %>%
+  filter(model != "EPA-ATR")
 
 EV_IRA = clean_data_evshare %>%
-  filter(scenario != "No IRA")
+  filter(scenario == "IRA")
 
 EV_IRA = rbind(EV_IRA, hist)
 
 EV_noIRA = clean_data_evshare %>%
-  filter(scenario != "IRA")
+  filter(scenario == "No IRA")
 
 EV_noIRA = rbind(EV_noIRA, hist)
 
@@ -1536,8 +1564,8 @@ EV_noIRA = rbind(EV_noIRA, hist)
       shape = 16,
       size = 2
     )
-
-  IRAfigure = ggplot(EV_IRA, aes(year, value, color = model)) +
+  
+    IRAfigure = ggplot(EV_IRA, aes(year, value, color = model)) +
     geom_line(aes(linetype = model), size = 0.75) +
     scale_subpalette(subpalettes_ev, "Emissions|CO2|Percent difference from No IRA") +
       scale_linetype_manual(values = c("USREP-ReEDS" = "solid", 
@@ -1612,7 +1640,8 @@ EV_abdif_figure = ggplot() +
                 x = year,
                 y = value,
                 group = model,
-                color = model
+                color = model, 
+                linetype = model
               ),
               size = 0.75) +
     geom_point(aes(x = 2021, y = 0), color = "black") +
@@ -1666,7 +1695,8 @@ EV_pdif_figure = ggplot() +
                 x = year,
                 y = value,
                 group = model,
-                color = model
+                color = model, 
+                linetype = model
               ),
               size = 0.75) +
     geom_point(aes(x = 2021, y = 0), color = "black") +
@@ -1708,10 +1738,11 @@ EV_pdif_figure = ggplot() +
   figure = (NoIRAfigure | IRAfigure) / (EV_abdif_figure | EV_pdif_figure)+
     plot_layout(guides = "collect") +
     plot_annotation(caption = "EV Sales Share")
-
-savefig(figure, fig_no)
-
+  
+  savefig(figure, fig_no)
 ```
+
+
 
 ### Electricity generation by model
 
