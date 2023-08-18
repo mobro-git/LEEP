@@ -130,7 +130,7 @@ df = clean_supplemental_data(df, fig_no)
 saveall(fig, df, fig_no)
 ```
 
-## F2.3 us power sector co2 emissions
+## F2.3 power sector co2 emissions
 
 ```{r}
 fig_no = "2.3.powerco2_projection"

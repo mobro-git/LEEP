@@ -411,6 +411,10 @@
 <rect x='42.17' y='314.78' width='196.52' height='229.25' style='stroke-width: 1.07; stroke: #B3B3B3;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw1NzYuMDA=)'>
+<text x='39.98' y='536.83' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='5.00px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='39.98' y='477.28' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='10.01px' lengthAdjust='spacingAndGlyphs'>20</text>
+<text x='39.98' y='417.74' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='10.01px' lengthAdjust='spacingAndGlyphs'>40</text>
+<text x='39.98' y='358.19' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='10.01px' lengthAdjust='spacingAndGlyphs'>60</text>
 <polyline points='46.42,533.61 42.17,533.61 ' style='stroke-width: 0.53; stroke-linecap: butt;' />
 <polyline points='46.42,474.06 42.17,474.06 ' style='stroke-width: 0.53; stroke-linecap: butt;' />
 <polyline points='46.42,414.52 42.17,414.52 ' style='stroke-width: 0.53; stroke-linecap: butt;' />
@@ -423,6 +427,7 @@
 <text x='110.66' y='552.66' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2025</text>
 <text x='170.21' y='552.66' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2030</text>
 <text x='229.76' y='552.66' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2035</text>
+<text transform='translate(19.67,504.10) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='149.40px' lengthAdjust='spacingAndGlyphs'>% Electricity of Final Energy</text>
 <text x='42.17' y='306.27' style='font-size: 14.40px; font-family: "Arial";' textLength='58.41px' lengthAdjust='spacingAndGlyphs'>Buildings</text>
 </g>
 <defs>
