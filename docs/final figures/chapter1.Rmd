@@ -605,9 +605,9 @@ saveall(fig, dta, fig_no)
 ### T1.2.1 Display table
 
 ```{r}
-metric = "absolute"
+#metric = "absolute"
 #metric = "percent"
-#metric = "percent_2005"
+metric = "percent_2005"
 
 historic_emissions = (clean_data %>%
   filter(model == "EPA-GHGI",
@@ -743,12 +743,12 @@ if (metric == "absolute") {
 
 econ_panel4_summ = econ_panel4_summ %>%
   group_by(variable, unit, year) %>%
-  summarize(opt_median = median(diff_opt),
-            opt_min = min(diff_opt),
-            opt_max = max(diff_opt),
-            pess_median = median(diff_pess),
-            pess_min = min(diff_pess),
-            pess_max = max(diff_pess)) %>%
+  summarize(opt_median = median(diff_opt, na.rm = TRUE),
+            opt_min = min(diff_opt, na.rm = TRUE),
+            opt_max = max(diff_opt, na.rm = TRUE),
+            pess_median = median(diff_pess, na.rm = TRUE),
+            pess_min = min(diff_pess, na.rm = TRUE),
+            pess_max = max(diff_pess, na.rm = TRUE)) %>%
   pivot_longer(cols = starts_with(c("opt_", "pess_")), names_to = c("scen","metric"), names_sep = "_") %>%
   #mutate(value = round(value,1)) %>%
   pivot_wider(names_from = scen, values_from = value) %>%
