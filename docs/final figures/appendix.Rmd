@@ -1742,8 +1742,6 @@ EV_pdif_figure = ggplot() +
   savefig(figure, fig_no)
 ```
 
-
-
 ### Electricity generation by model
 
 ```{r}

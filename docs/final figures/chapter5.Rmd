@@ -166,7 +166,7 @@ dta = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 2
 p = dta %>% ggplot() +
   geom_bar(aes(x = model, y = value, fill = year), stat = "identity", position = "dodge", color = "white", linewidth = 0.1) + 
   scale_y_continuous(expand = expansion(mult = c(0,0.05)), name = expression(paste("Carbon Sequestration (Mt C",O[2],"/yr)"))) +
-  scale_fill_manual(breaks = c("2030", "2035"), values = c("#003052", "#0388B3")) +
+  scale_fill_manual(breaks = c("2030", "2035"), values = c("#6a959b", "#2A546C")) +
   facet_grid(. ~ scenario) +
   theme_emf() +
   theme(axis.ticks.x = element_blank(), axis.ticks.y = element_line(color = "black"), axis.ticks.length = unit(-0.15, "cm"), axis.title.x = element_blank(),
@@ -174,9 +174,13 @@ p = dta %>% ggplot() +
 
 p
 
-stats = clean_supplemental_data(dta, fig_no)
+stats = clean_supplemental_data(dta, fig_no) %>%
+  pivot_wider(names_from = "scenario", values_from = "value") %>%
+  mutate(diff = `IRA`-`No IRA`) %>%
+  arrange(year,diff)
 print(stats)
 
+dta = clean_supplemental_data(dta, fig_no)
 saveall(p,dta,fig_no)
 ```
 
