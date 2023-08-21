@@ -301,7 +301,7 @@ p = dta_full %>% ggplot() +
         axis.title.x = element_blank())
 p
 
-saveall(p, dta_full, fig_no)
+saveall(p, dta_full, fig_no, wd = 7, ht = 9)
 
 data_summary = dta_full %>%
   pivot_wider(names_from = variable_rename) %>%
@@ -503,7 +503,6 @@ summary_proj = dta5 %>%
 summary = rbind(summary_hist, summary_proj) 
   
 savedata(data_summary, fig_no = "2.5 Summary Table")
-savedata(data_summary, fig_no = "F.x2 Summary Table")
 ```
 
 ## F2.6 sensitivity of electric sector emissions
