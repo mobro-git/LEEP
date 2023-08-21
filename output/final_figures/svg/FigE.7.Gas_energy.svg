@@ -151,10 +151,7 @@
 <text transform='translate(97.41,138.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2025</text>
 <text transform='translate(142.55,138.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2030</text>
 <text transform='translate(187.70,138.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2035</text>
-<text transform='translate(19.68,141.50) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='87.36px' lengthAdjust='spacingAndGlyphs'>Emissions (Mt C</text>
-<text transform='translate(19.68,54.14) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='9.34px' lengthAdjust='spacingAndGlyphs'>O</text>
-<text transform='translate(21.86,44.80) rotate(-90)' style='font-size: 8.40px; font-family: "Arial";' textLength='4.67px' lengthAdjust='spacingAndGlyphs'>2</text>
-<text transform='translate(19.68,40.13) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='17.33px' lengthAdjust='spacingAndGlyphs'>/yr)</text>
+<text transform='translate(19.68,146.85) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='129.40px' lengthAdjust='spacingAndGlyphs'>Primary Energy (Quads)</text>
 <text x='119.94' y='23.75' text-anchor='middle' style='font-size: 14.40px; font-family: "Arial";' textLength='46.39px' lengthAdjust='spacingAndGlyphs'>No IRA</text>
 </g>
 <defs>
@@ -276,10 +273,7 @@
 <text transform='translate(283.12,138.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2025</text>
 <text transform='translate(328.27,138.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2030</text>
 <text transform='translate(373.41,138.80) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2035</text>
-<text transform='translate(213.62,141.50) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='87.36px' lengthAdjust='spacingAndGlyphs'>Emissions (Mt C</text>
-<text transform='translate(213.62,54.14) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='9.34px' lengthAdjust='spacingAndGlyphs'>O</text>
-<text transform='translate(215.80,44.80) rotate(-90)' style='font-size: 8.40px; font-family: "Arial";' textLength='4.67px' lengthAdjust='spacingAndGlyphs'>2</text>
-<text transform='translate(213.62,40.13) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='17.33px' lengthAdjust='spacingAndGlyphs'>/yr)</text>
+<text transform='translate(213.62,146.85) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='129.40px' lengthAdjust='spacingAndGlyphs'>Primary Energy (Quads)</text>
 <text x='305.65' y='23.75' text-anchor='middle' style='font-size: 14.40px; font-family: "Arial";' textLength='23.99px' lengthAdjust='spacingAndGlyphs'>IRA</text>
 </g>
 <defs>
@@ -574,6 +568,6 @@
 <g clip-path='url(#cpMzg2LjE0fDQ4OC41Nnw3Ni45NHwyNDkuNDA=)'>
 </g>
 <g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
-<text x='488.56' y='352.67' text-anchor='end' style='font-size: 8.80px; font-family: "Arial";' textLength='78.73px' lengthAdjust='spacingAndGlyphs'>Emissions from Gas</text>
+<text x='488.56' y='352.67' text-anchor='end' style='font-size: 8.80px; font-family: "Arial";' textLength='79.23px' lengthAdjust='spacingAndGlyphs'>Primary Energy Gas</text>
 </g>
 </svg>

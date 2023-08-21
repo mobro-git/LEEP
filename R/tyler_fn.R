@@ -736,221 +736,6 @@ ad = function(diff_ID, title, metric, gd, drop) {
               ad_df = df))
 }
 
-four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk) {
-  if (metric == "Generation") {
-    clean_data = clean_data %>%
-      mutate(value = case_when(unit == "Quads" ~ value * 293.07, TRUE ~ value),
-             unit = case_when(unit == "Quads" ~ "TWh", TRUE ~ unit))
-  }
-
-  #Time Series Dataframe
-  ts_df = data_from_graph(
-    "time_series",
-    config,
-    clean_data,
-    figmap_leep_timeseries,
-    ts_map_ID,
-    "United States"
-  ) %>%
-    filter(!model %in% drop) %>%
-    filter(!datasrc %in% drop)%>%
-    filter(year >= 2021) %>%
-    filter(year <= 2021 &
-             model == histsrc |
-             year > 2021 & scenario != "Historic") %>%
-    group_by(model, scenario, year, variable_rename) %>%
-    summarize(value = sum(value)) %>%
-    pivot_wider(names_from = year, values_from = value)
-
-  ts_df = ts_df %>%
-    mutate(`2021` = case_when(T ~ ts_df$`2021`[ts_df$model == histsrc])) %>%
-    pivot_longer(cols = starts_with("20"),
-                 names_to = "year",
-                 values_to = "value") %>%
-    filter(!is.na(value)) %>%
-    mutate(year = as.numeric(year)) %>%
-    mutate(figure_num = fig_no)
-
-  noIRAmedians = ts_df[ts_df$scenario == "No IRA",] %>%
-    filter(year == 2030 | year == 2035) %>%
-    group_by(year) %>%
-    summarize(median = median(value))
-
-  IRAmedians = ts_df[ts_df$scenario == "IRA",] %>%
-    filter(year == 2030 | year == 2035) %>%
-    group_by(year) %>%
-    summarize(median = median(value))
-
-  if (metric == "Generation") {
-  NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA", ], aes(year, value, color = model)) +
-    geom_line(aes(linetype = model),size = 0.75) +
-    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
-    theme_emf() +
-    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
-    scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
-    scale_linetype_manual(values = c("USREP-ReEDS" = "solid",
-                                     "EPS-EI" = "solid",
-                                     "GCAM-CGS" = "solid",
-                                     "GCAM-PNNL" = "solid",
-                                     "Haiku-RFF" = "solid",
-                                     "IPM-NRDC" = "solid",
-                                     "IPM-EPA" = "solid",
-                                     "MARKAL-NETL" = "solid",
-                                     "NEMS-RHG" = "solid",
-                                     "NEMS-OP" = "twodash",
-                                     "REGEN-EPRI" = "dashed",
-                                     "RIO-REPEAT" = "dotted",
-                                     "ReEDS-NREL" = "longdash",
-                                     "NEMS-EIA" = "dotdash"))+
-    labs(title = "No IRA",
-         y = expression(paste("Generation (TWh)")),
-         x = element_blank()) +
-    theme(  axis.ticks = element_line(color = "black"),
-            axis.ticks.length = unit(-0.15, "cm"),
-           legend.position = "right",
-         plot.title = element_text(hjust = 0.5),
-          axis.text.x = element_text(angle = 45, hjust = 1)) +
-    geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
-    geom_point(
-      data = noIRAmedians,
-      aes(x = year, y = median),
-      color = "black",
-      shape = 16,
-      size = 2
-    )
-
-  IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA", ], aes(year, value, color = model)) +
-    geom_line(aes(linetype = model),size = 0.75) +
-    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
-    theme_emf() +
-    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
-    scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
-    labs(title = "IRA",
-         y = expression(paste("Generation (TWh)")),
-         x = element_blank()) +
-    scale_linetype_manual(values = c("USREP-ReEDS" = "solid",
-                                     "EPS-EI" = "solid",
-                                     "GCAM-CGS" = "solid",
-                                     "GCAM-PNNL" = "solid",
-                                     "Haiku-RFF" = "solid",
-                                     "IPM-NRDC" = "solid",
-                                     "IPM-EPA" = "solid",
-                                     "MARKAL-NETL" = "solid",
-                                     "NEMS-RHG" = "solid",
-                                     "NEMS-OP" = "twodash",
-                                     "REGEN-EPRI" = "dashed",
-                                     "RIO-REPEAT" = "dotted",
-                                     "ReEDS-NREL" = "longdash",
-                                     "NEMS-EIA" = "dotdash"))+
-    theme(  axis.ticks = element_line(color = "black"),
-            axis.ticks.length = unit(-0.15, "cm"),
-           legend.position = "right",
-          plot.title = element_text(hjust = 0.5),
-          axis.text.x = element_text(angle = 45, hjust = 1)) +
-    geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
-    geom_point(
-      data = IRAmedians,
-      aes(x = year, y = median),
-      color = "black",
-      shape = 16,
-      size = 2
-    )
-  } else {
-    NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA", ], aes(year, value, color = model)) +
-      geom_line(aes(linetype = model),size = 0.75) +
-      scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
-      theme_emf() +
-      scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
-      scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
-      scale_linetype_manual(values = c("USREP-ReEDS" = "solid",
-                                       "EPS-EI" = "solid",
-                                       "GCAM-CGS" = "solid",
-                                       "GCAM-PNNL" = "solid",
-                                       "Haiku-RFF" = "solid",
-                                       "IPM-NRDC" = "solid",
-                                       "IPM-EPA" = "solid",
-                                       "MARKAL-NETL" = "solid",
-                                       "NEMS-RHG" = "solid",
-                                       "NEMS-OP" = "twodash",
-                                       "REGEN-EPRI" = "dashed",
-                                       "RIO-REPEAT" = "dotted",
-                                       "ReEDS-NREL" = "longdash",
-                                       "NEMS-EIA" = "dotdash")) +
-      labs(title = "No IRA",
-           y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
-           x = element_blank()) +
-      theme(  axis.ticks = element_line(color = "black"),
-              axis.ticks.length = unit(-0.15, "cm"),
-             legend.position = "right",
-            plot.title = element_text(hjust = 0.5),
-            axis.text.x = element_text(angle = 45, hjust = 1)) +
-      geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
-      geom_point(
-        data = noIRAmedians,
-        aes(x = year, y = median),
-        color = "black",
-        shape = 16,
-        size = 2
-      )
-
-    IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA", ], aes(year, value, color = model)) +
-      geom_line(aes(linetype = model),size = 0.75) +
-      scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
-      scale_linetype_manual(values = c("USREP-ReEDS" = "solid",
-                                       "EPS-EI" = "solid",
-                                       "GCAM-CGS" = "solid",
-                                       "GCAM-PNNL" = "solid",
-                                       "Haiku-RFF" = "solid",
-                                       "IPM-NRDC" = "solid",
-                                       "IPM-EPA" = "solid",
-                                       "MARKAL-NETL" = "solid",
-                                       "NEMS-RHG" = "solid",
-                                       "NEMS-OP" = "twodash",
-                                       "REGEN-EPRI" = "dashed",
-                                       "RIO-REPEAT" = "dotted",
-                                       "ReEDS-NREL" = "longdash",
-                                       "NEMS-EIA" = "dotdash")) +
-      theme_emf() +
-      scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
-      scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
-      labs(title = "IRA",
-           y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
-           x = element_blank()) +
-      theme(  axis.ticks = element_line(color = "black"),
-              axis.ticks.length = unit(-0.15, "cm"),
-             legend.position = "right",
-            plot.title = element_text(hjust = 0.5),
-            axis.text.x = element_text(angle = 45, hjust = 1)) +
-      geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
-      geom_point(
-        data = IRAmedians,
-        aes(x = year, y = median),
-        color = "black",
-        shape = 16,
-        size = 2
-      )
-  }
-
-  #Percent Difference
-  pdfigure = pd(pd_map_ID, "", expression(paste("Percent Difference (%)")), "none", drop)
-  pdfigure$pd_df = pdfigure$pd_df %>% mutate(figure_num = fig_no)
-
-  #Absolute Difference
-  adfigure = ad(diff_ID = ad_map_ID, "", metric, "none", drop)
-  adfigure$ad_df = adfigure$ad_df %>% mutate(figure_num = fig_no)
-
-  figure = (NoIRAfigure | IRAfigure) / (adfigure$figure | pdfigure$figure)+
-    plot_layout(guides = "collect") +
-    plot_annotation(caption = title)
-
-  return(list(
-    figure = figure,
-    ts_df = ts_df,
-    ad_df = adfigure$ad_df,
-    pd_df = pdfigure$pd_df
-  ))
-}
-
 delta = function(pd_map_ID, drop, config, clean_data, figmap_leep_timeseries) {
 
   subpalettes = create_subpalettes(figmap_leep_timeseries, config)
@@ -1029,4 +814,158 @@ delta = function(pd_map_ID, drop, config, clean_data, figmap_leep_timeseries) {
   return(list(figure = figure, medians = medians, df = df))
 }
 
+
+
+
+four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk) {
+  if (metric == "Generation") {
+    clean_data = clean_data %>%
+      mutate(value = case_when(unit == "Quads" ~ value * 293.07, TRUE ~ value),
+             unit = case_when(unit == "Quads" ~ "TWh", TRUE ~ unit))
+  }
+
+  #Time Series Dataframe
+  ts_df = data_from_graph(
+    "time_series",
+    config,
+    clean_data,
+    figmap_leep_timeseries,
+    ts_map_ID,
+    "United States"
+  ) %>%
+    filter(!model %in% drop) %>%
+    filter(!datasrc %in% drop)%>%
+    filter(year >= 2021) %>%
+    filter(year <= 2021 &
+             model == histsrc |
+             year > 2021 & scenario != "Historic") %>%
+    group_by(model, scenario, year, variable_rename) %>%
+    summarize(value = sum(value)) %>%
+    pivot_wider(names_from = year, values_from = value)
+
+  ts_df = ts_df %>%
+    mutate(`2021` = case_when(T ~ ts_df$`2021`[ts_df$model == histsrc])) %>%
+    pivot_longer(cols = starts_with("20"),
+                 names_to = "year",
+                 values_to = "value") %>%
+    filter(!is.na(value)) %>%
+    mutate(year = as.numeric(year)) %>%
+    mutate(figure_num = fig_no)
+
+  noIRAmedians = ts_df[ts_df$scenario == "No IRA",] %>%
+    filter(year == 2030 | year == 2035) %>%
+    group_by(year) %>%
+    summarize(median = median(value))
+
+  IRAmedians = ts_df[ts_df$scenario == "IRA",] %>%
+    filter(year == 2030 | year == 2035) %>%
+    group_by(year) %>%
+    summarize(median = median(value))
+
+  NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA", ], aes(year, value, color = model)) +
+    geom_line(aes(linetype = model),size = 0.75) +
+    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+    theme_emf() +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
+    scale_linetype_manual(values = c("USREP-ReEDS" = "solid",
+                                     "EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-RHG" = "solid",
+                                     "NEMS-OP" = "twodash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "ReEDS-NREL" = "longdash",
+                                     "NEMS-EIA" = "dotdash")) +
+    labs(title = "No IRA",
+         x = element_blank()) +
+    theme(  axis.ticks = element_line(color = "black"),
+            axis.ticks.length = unit(-0.15, "cm"),
+           legend.position = "right",
+         plot.title = element_text(hjust = 0.5),
+          axis.text.x = element_text(angle = 45, hjust = 1)) +
+    geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+    geom_point(
+      data = noIRAmedians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    )
+
+  IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA", ], aes(year, value, color = model)) +
+    geom_line(aes(linetype = model),size = 0.75) +
+    scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
+    theme_emf() +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
+    labs(title = "IRA",
+         y = expression(paste("Generation (TWh)")),
+         x = element_blank()) +
+    scale_linetype_manual(values = c("USREP-ReEDS" = "solid",
+                                     "EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-RHG" = "solid",
+                                     "NEMS-OP" = "twodash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "ReEDS-NREL" = "longdash",
+                                     "NEMS-EIA" = "dotdash"))+
+    theme(  axis.ticks = element_line(color = "black"),
+            axis.ticks.length = unit(-0.15, "cm"),
+           legend.position = "right",
+          plot.title = element_text(hjust = 0.5),
+          axis.text.x = element_text(angle = 45, hjust = 1)) +
+    geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+    geom_point(
+      data = IRAmedians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    )
+
+  if(metric == "Generation") {
+    NoIRAfigure = NoIRAfigure + labs(y = expression(paste("Generation (TWh)")))
+    IRAfigure = IRAfigure + labs(y = expression(paste("Generation (TWh)")))
+  }
+  if(metric == "Primary Energy") {
+    NoIRAfigure = NoIRAfigure + labs(y = expression(paste("Primary Energy (Quads)")))
+    IRAfigure = IRAfigure + labs(y = expression(paste("Primary Energy (Quads)")))
+  }
+  if(metric == "Emissions") {
+    NoIRAfigure = NoIRAfigure + labs(expression(paste("Emissions (Mt C", O[2], "/yr)")))
+    IRAfigure = IRAfigure + labs(expression(paste("Emissions (Mt C", O[2], "/yr)")))
+  }
+
+  #Percent Difference
+  pdfigure = pd(pd_map_ID, "", expression(paste("Percent Difference (%)")), "none", drop)
+  pdfigure$pd_df = pdfigure$pd_df %>% mutate(figure_num = fig_no)
+
+  #Absolute Difference
+  adfigure = ad(diff_ID = ad_map_ID, "", metric, "none", drop)
+  adfigure$ad_df = adfigure$ad_df %>% mutate(figure_num = fig_no)
+
+  figure = (NoIRAfigure | IRAfigure) / (adfigure$figure | pdfigure$figure)+
+    plot_layout(guides = "collect") +
+    plot_annotation(caption = title)
+
+  return(list(
+    figure = figure,
+    ts_df = ts_df,
+    ad_df = adfigure$ad_df,
+    pd_df = pdfigure$pd_df
+  ))
+
+}
 

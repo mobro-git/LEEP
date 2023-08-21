@@ -17,9 +17,9 @@ NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA", ], aes(year, value, color
                                    "REGEN-EPRI" = "dashed",
                                    "RIO-REPEAT" = "dotted",
                                    "ReEDS-NREL" = "longdash",
-                                   "NEMS-EIA" = "dotdash"))+
+                                   "NEMS-EIA" = "dotdash")) +
   labs(title = "No IRA",
-       y = expression(paste("Generation (TWh)")),
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
        x = element_blank()) +
   theme(  axis.ticks = element_line(color = "black"),
           axis.ticks.length = unit(-0.15, "cm"),
@@ -38,12 +38,6 @@ NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA", ], aes(year, value, color
 IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA", ], aes(year, value, color = model)) +
   geom_line(aes(linetype = model),size = 0.75) +
   scale_subpalette(subpalettes, "Emissions|CO2|Percent difference from No IRA") +
-  theme_emf() +
-  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
-  scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
-  labs(title = "IRA",
-       y = expression(paste("Generation (TWh)")),
-       x = element_blank()) +
   scale_linetype_manual(values = c("USREP-ReEDS" = "solid",
                                    "EPS-EI" = "solid",
                                    "GCAM-CGS" = "solid",
@@ -57,7 +51,13 @@ IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA", ], aes(year, value, color = mo
                                    "REGEN-EPRI" = "dashed",
                                    "RIO-REPEAT" = "dotted",
                                    "ReEDS-NREL" = "longdash",
-                                   "NEMS-EIA" = "dotdash"))+
+                                   "NEMS-EIA" = "dotdash")) +
+  theme_emf() +
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+  scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
+  labs(title = "IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) +
   theme(  axis.ticks = element_line(color = "black"),
           axis.ticks.length = unit(-0.15, "cm"),
           legend.position = "right",
