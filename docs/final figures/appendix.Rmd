@@ -562,13 +562,13 @@ pd_map_ID = 32
 ad_map_ID = 20
 drop = c("EIAinEMF37.csv")
 histsrc = "EIA"
-metric = "Emissions"
-unit = "Mt CO2/yr"
+metric = "Primary Energy"
+unit = "Quads"
 ymin = 0
 ymax = 20
 brk = c(0, 5, 10, 15, 20)
 
-fig = four_corners("Emissions from Coal",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
+fig = four_corners("Primary Energy Coal",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -589,13 +589,13 @@ pd_map_ID = 31
 ad_map_ID = 21
 drop = c("EIAinEMF37.csv", "RIO-REPEAT")
 histsrc = "EIA"
-metric = "Emissions"
-unit = "Mt CO2/yr"
+metric = "Primary Energy"
+unit = "Quads"
 ymin = 20
 ymax = 35
 brk = c(20, 25, 30, 35)
 
-fig = four_corners("Emissions from Gas",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
+fig = four_corners("Primary Energy Gas",ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
@@ -616,13 +616,13 @@ pd_map_ID = 30
 ad_map_ID = 22
 drop = "EIAinEMF37.csv"
 histsrc = "EIA"
-metric = "Emissions"
-unit = "Mt CO2/yr"
+metric = "Primary Energy"
+unit = "Quads"
 ymin = 20
 ymax = 40
 brk = c(20, 30, 40)
 
-fig = four_corners("Emissions from Petroleum", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
+fig = four_corners("Primary Energy Petroleum", ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, metric, unit, fig_no, ymin, ymax, brk)
 
 fig$figure
 
