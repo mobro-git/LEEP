@@ -50,14 +50,6 @@
 12,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biomass|w/ CCS,Quads,1
 12,Final Energy|Industry|Alternative Fuels,Final Energy|Industry|Biomass|w/o CCS,Quads,1
 12,Final Energy|Industry|Alternative Fuels,Transformation Energy|Biomass,Quads,1
-124,Emissions|CO2|Energy|Demand|Buildings|Direct,Emissions|CO2|Energy|Demand|Buildings|Residential,Mt CO2/yr,1
-124,Emissions|CO2|Energy|Demand|Buildings|Direct,Emissions|CO2|Energy|Demand|Buildings|Commercial,Mt CO2/yr,1
-124,Emissions|CO2|Energy|Demand|Buildings|Direct,Emissions|CO2|Energy|Demand|Buildings|Residential|Indirect,Mt CO2/yr,-1
-124,Emissions|CO2|Energy|Demand|Buildings|Direct,Emissions|CO2|Energy|Demand|Buildings|Commercial|Indirect,Mt CO2/yr,-1
-125,Emissions|CO2|Energy|Demand|Transportation|Direct,Emissions|CO2|Energy|Demand|Transportation,Mt CO2/yr,1
-125,Emissions|CO2|Energy|Demand|Transportation|Direct,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,-1
-126,Emissions|CO2|Energy|Demand|Industry|Direct,Emissions|CO2|Energy|Demand|Industry|Indirect,Mt CO2/yr,-1
-126,Emissions|CO2|Energy|Demand|Industry|Direct,Emissions|CO2|Energy|Demand|Industry,Mt CO2/yr,1
 13,Energy Service|Transportation|EV|Sales Share,Energy Service|Transportation|Passenger|BEV|Sales Share,%,1
 13,Energy Service|Transportation|EV|Sales Share,Energy Service|Transportation|Passenger|FCEV|Sales Share,%,1
 13,Energy Service|Transportation|EV|Sales Share,Energy Service|Transportation|Passenger|HEV|Sales Share,%,1
@@ -96,6 +88,16 @@
 21,Secondary Energy|Electricity|Renewable,Secondary Energy|Electricity|Wind,Quads,1
 21,Secondary Energy|Electricity|Renewable,Secondary Energy|Electricity|Geothermal,Quads,1
 21,Secondary Energy|Electricity|Renewable,Secondary Energy|Electricity|Hydro,Quads,1
+22,Emissions|CO2|All Industry,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total,Mt CO2/yr,1
+22,Emissions|CO2|All Industry,Emissions|CO2|Industrial Processes,Mt CO2/yr,1
+124,Emissions|CO2|Energy|Demand|Buildings|Direct,Emissions|CO2|Energy|Demand|Buildings|Residential,Mt CO2/yr,1
+124,Emissions|CO2|Energy|Demand|Buildings|Direct,Emissions|CO2|Energy|Demand|Buildings|Commercial,Mt CO2/yr,1
+124,Emissions|CO2|Energy|Demand|Buildings|Direct,Emissions|CO2|Energy|Demand|Buildings|Residential|Indirect,Mt CO2/yr,-1
+124,Emissions|CO2|Energy|Demand|Buildings|Direct,Emissions|CO2|Energy|Demand|Buildings|Commercial|Indirect,Mt CO2/yr,-1
+125,Emissions|CO2|Energy|Demand|Transportation|Direct,Emissions|CO2|Energy|Demand|Transportation,Mt CO2/yr,1
+125,Emissions|CO2|Energy|Demand|Transportation|Direct,Emissions|CO2|Energy|Demand|Transportation|Indirect,Mt CO2/yr,-1
+126,Emissions|CO2|Energy|Demand|Industry|Direct,Emissions|CO2|Energy|Demand|Industry|Indirect,Mt CO2/yr,-1
+126,Emissions|CO2|Energy|Demand|Industry|Direct,Emissions|CO2|Energy|Demand|Industry,Mt CO2/yr,1
 201,Secondary Energy|Electricity|Other|Sum,Secondary Energy|Electricity|Biomass,Quads,1
 201,Secondary Energy|Electricity|Other|Sum,Secondary Energy|Electricity|Biomass|w/o CCS,Quads,1
 201,Secondary Energy|Electricity|Other|Sum,Secondary Energy|Electricity|Other,Quads,1

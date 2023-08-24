@@ -254,8 +254,8 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
       labs(y = ylabel) +
       #scale_subpalette(subpalettes, "Sensitivity Dots") +
       scale_color_manual(values = c("IRA" = "black", "IRA.Low" = "#0083ca", "IRA.High" = "#6a959b"), guide = "none")
-    opt_label = "Optimistic Emis"
-    pes_label = "Pessimistic Emis"
+    opt_label = "Optimistic"
+    pes_label = "Pessimistic"
   }
 
   if(sum(ira_coord) != 0) {

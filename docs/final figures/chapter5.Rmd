@@ -146,6 +146,23 @@ delta = delta(28, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RF
 saveall(delta$figure, delta$df, paste(fig_no, "b"), wd = 3.012, ht = 3)
 ```
 
+### Industry combustion, indirect, AND process emissions
+
+```{r}
+# need to duplicate GHGI variable and name "Emissions|CO2|Industrial Processes" for this to work
+# ind_withprocess_data = spg_clean(
+#   789789,
+#   c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+#   "EPA-GHGI",
+#   config,
+#   clean_data,
+#   figmap_leep_timeseries
+# )
+# ind_withprocess_tab = html(ind_withprocess_data, "Industry Emissions with Processes")
+# ind_withprocess_tab
+```
+
+
 ## 5.4 industrial CCS
 
 ```{r}

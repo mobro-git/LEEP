@@ -267,6 +267,21 @@ saveall(combined, indicators_all_clean, fig_no)
 savedata(summary, paste(fig_no,"summary",sep="_"))
 ```
 
+### Energy-only CO2 range comparison
+
+```{r}
+econ_noprocess_data = spg_clean(
+  123456,
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+  "EPA-GHGI",
+  config,
+  clean_data,
+  figmap_leep_timeseries
+)
+econ_noprocess_tab = html(econ_noprocess_data, "Economy-Wide CO2 - No Processes")
+econ_noprocess_tab
+```
+
 ## F1.4 fossil energy consumption by fuel
 
 ```{r}
@@ -605,7 +620,7 @@ saveall(fig, dta, fig_no)
 ### T1.2.1 Display table
 
 ```{r}
-#metric = "absolute"
+# metric = "absolute"
 #metric = "percent"
 metric = "percent_2005"
 

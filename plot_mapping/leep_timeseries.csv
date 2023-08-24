@@ -94,6 +94,8 @@ timeseries,96,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Industry and Fu
 timeseries,97,Economy-Wide Emissions,Emissions|CO2|Energy|Demand|Transportation,Transportation,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
 timeseries,98,Economy-Wide Emissions,Emissions|CO2|Energy|Supply|Electricity,Electricity,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
 timeseries,99,Economy-Wide Emissions,Emissions|CO2,Total Emissions,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,123456,Economy-Wide Emissions No Processes,Emissions|CO2|Energy,Energy CO2,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,789789,"Industry combustion, indirect, and process emissions",Emissions|CO2|All Industry,Industry All,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,scenario,region,fixed
 timeseries,116,Emissions Sensitivity,Emissions|CO2|Energy,Emissions,0,usa,models_leep,historic,leep_sens,single,year,value,,,scenario,region,fixed
 timeseries,118,EV Share,Energy Service|Transportation|Passenger|BEV and PHEV|Sales Share,EV Share,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed
 timeseries,119,Industry - Fossil,Final Energy|Industry|Fossil,Fossil,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,,,scenario,region,fixed

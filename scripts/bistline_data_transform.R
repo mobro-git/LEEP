@@ -246,7 +246,7 @@ co2_models = c("EPS-EI", "GCAM-CGS", "MARKAL-NETL", "NEMS-RHG", "RIO-REPEAT")
 
 nrg_co2 = all_modeled %>%
   filter(variable %in% nrg_co2_var) %>%
-  filter(model %in% co2_models | model == "REGEN-EPRI") %>%
+  filter(model %in% co2_models | model == "REGEN-EPRI") %>% # adding REGEN-EPRI in on its own b/c not used for Emissions|CO2
   mutate(variable = "Emissions|CO2|Energy") %>%
   group_by(scenario,model,variable,unit,year,region) %>%
   summarise(value = sum(value)) %>%
