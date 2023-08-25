@@ -1,0 +1,310 @@
+"figure_num","model","scenario","variable","unit","label","year","value"
+"E.9.NuclearGen","USREP-ReEDS","No IRA","Generation","TWh","Nuclear",2025,780.371260449448
+"E.9.NuclearGen","USREP-ReEDS","No IRA","Generation","TWh","Nuclear",2030,762.479751183496
+"E.9.NuclearGen","USREP-ReEDS","No IRA","Generation","TWh","Nuclear",2035,762.479751183496
+"E.9.NuclearGen","USREP-ReEDS","No IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","USREP-ReEDS","IRA","Generation","TWh","Nuclear",2025,779.056218449861
+"E.9.NuclearGen","USREP-ReEDS","IRA","Generation","TWh","Nuclear",2030,746.510389067253
+"E.9.NuclearGen","USREP-ReEDS","IRA","Generation","TWh","Nuclear",2035,721.65691431282
+"E.9.NuclearGen","USREP-ReEDS","IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","EPS-EI","No IRA","Generation","TWh","Nuclear",2025,782.040718086279
+"E.9.NuclearGen","EPS-EI","No IRA","Generation","TWh","Nuclear",2030,693.005651471312
+"E.9.NuclearGen","EPS-EI","No IRA","Generation","TWh","Nuclear",2035,636.346881809216
+"E.9.NuclearGen","EPS-EI","No IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","EPS-EI","IRA","Generation","TWh","Nuclear",2025,794.181454451749
+"E.9.NuclearGen","EPS-EI","IRA","Generation","TWh","Nuclear",2030,802.275578688881
+"E.9.NuclearGen","EPS-EI","IRA","Generation","TWh","Nuclear",2035,41.4335502757789
+"E.9.NuclearGen","EPS-EI","IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","GCAM-CGS","No IRA","Generation","TWh","Nuclear",2025,785.185620255133
+"E.9.NuclearGen","GCAM-CGS","No IRA","Generation","TWh","Nuclear",2030,788.654600456673
+"E.9.NuclearGen","GCAM-CGS","No IRA","Generation","TWh","Nuclear",2035,788.45432542562
+"E.9.NuclearGen","GCAM-CGS","No IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","GCAM-CGS","IRA","Generation","TWh","Nuclear",2025,744.791535361496
+"E.9.NuclearGen","GCAM-CGS","IRA","Generation","TWh","Nuclear",2030,738.30773539638
+"E.9.NuclearGen","GCAM-CGS","IRA","Generation","TWh","Nuclear",2035,760.078936809538
+"E.9.NuclearGen","GCAM-CGS","IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","GCAM-PNNL","No IRA","Generation","TWh","Nuclear",2025,782.27190195504
+"E.9.NuclearGen","GCAM-PNNL","No IRA","Generation","TWh","Nuclear",2030,782.27190195504
+"E.9.NuclearGen","GCAM-PNNL","No IRA","Generation","TWh","Nuclear",2035,782.27190195504
+"E.9.NuclearGen","GCAM-PNNL","No IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","GCAM-PNNL","IRA","Generation","TWh","Nuclear",2025,782.27190195504
+"E.9.NuclearGen","GCAM-PNNL","IRA","Generation","TWh","Nuclear",2030,782.27190195504
+"E.9.NuclearGen","GCAM-PNNL","IRA","Generation","TWh","Nuclear",2035,782.27190195504
+"E.9.NuclearGen","GCAM-PNNL","IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","Haiku-RFF","No IRA","Generation","TWh","Nuclear",2025,753.032840993345
+"E.9.NuclearGen","Haiku-RFF","No IRA","Generation","TWh","Nuclear",2030,704.974279935546
+"E.9.NuclearGen","Haiku-RFF","No IRA","Generation","TWh","Nuclear",2035,559.282944519366
+"E.9.NuclearGen","Haiku-RFF","No IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","Haiku-RFF","IRA","Generation","TWh","Nuclear",2025,753.032840993345
+"E.9.NuclearGen","Haiku-RFF","IRA","Generation","TWh","Nuclear",2030,704.974279935546
+"E.9.NuclearGen","Haiku-RFF","IRA","Generation","TWh","Nuclear",2035,559.282944519366
+"E.9.NuclearGen","Haiku-RFF","IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","IPM-NRDC","No IRA","Generation","TWh","Nuclear",2025,722.026068887179
+"E.9.NuclearGen","IPM-NRDC","No IRA","Generation","TWh","Nuclear",2030,509.530714256627
+"E.9.NuclearGen","IPM-NRDC","No IRA","Generation","TWh","Nuclear",2035,67.8444701699504
+"E.9.NuclearGen","IPM-NRDC","No IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","IPM-NRDC","IRA","Generation","TWh","Nuclear",2025,730.18589726774
+"E.9.NuclearGen","IPM-NRDC","IRA","Generation","TWh","Nuclear",2030,677.93474279871
+"E.9.NuclearGen","IPM-NRDC","IRA","Generation","TWh","Nuclear",2035,75.8052935119185
+"E.9.NuclearGen","IPM-NRDC","IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","IPM-EPA","No IRA","Generation","TWh","Nuclear",2030,628.468400538905
+"E.9.NuclearGen","IPM-EPA","No IRA","Generation","TWh","Nuclear",2035,486.510577619975
+"E.9.NuclearGen","IPM-EPA","No IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","IPM-EPA","IRA","Generation","TWh","Nuclear",2030,733.713661041395
+"E.9.NuclearGen","IPM-EPA","IRA","Generation","TWh","Nuclear",2035,660.332808106905
+"E.9.NuclearGen","IPM-EPA","IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","MARKAL-NETL","No IRA","Generation","TWh","Nuclear",2025,800.263818154002
+"E.9.NuclearGen","MARKAL-NETL","No IRA","Generation","TWh","Nuclear",2030,797.499987070239
+"E.9.NuclearGen","MARKAL-NETL","No IRA","Generation","TWh","Nuclear",2035,797.499987070239
+"E.9.NuclearGen","MARKAL-NETL","No IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","MARKAL-NETL","IRA","Generation","TWh","Nuclear",2025,800.263818154002
+"E.9.NuclearGen","MARKAL-NETL","IRA","Generation","TWh","Nuclear",2030,797.499987070239
+"E.9.NuclearGen","MARKAL-NETL","IRA","Generation","TWh","Nuclear",2035,797.499987070239
+"E.9.NuclearGen","MARKAL-NETL","IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","NEMS-RHG","No IRA","Generation","TWh","Nuclear",2025,781.758964204528
+"E.9.NuclearGen","NEMS-RHG","No IRA","Generation","TWh","Nuclear",2030,679.107445269074
+"E.9.NuclearGen","NEMS-RHG","No IRA","Generation","TWh","Nuclear",2035,624.696944786102
+"E.9.NuclearGen","NEMS-RHG","No IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","NEMS-RHG","IRA","Generation","TWh","Nuclear",2025,781.751945356942
+"E.9.NuclearGen","NEMS-RHG","IRA","Generation","TWh","Nuclear",2030,754.847561582179
+"E.9.NuclearGen","NEMS-RHG","IRA","Generation","TWh","Nuclear",2035,186.503396102715
+"E.9.NuclearGen","NEMS-RHG","IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","NEMS-OP","No IRA","Generation","TWh","Nuclear",2025,781.759025203204
+"E.9.NuclearGen","NEMS-OP","No IRA","Generation","TWh","Nuclear",2030,664.811491703869
+"E.9.NuclearGen","NEMS-OP","No IRA","Generation","TWh","Nuclear",2035,597.676108540089
+"E.9.NuclearGen","NEMS-OP","No IRA","Generation","TWh","Nuclear",2022,783.598585257394
+"E.9.NuclearGen","NEMS-OP","No IRA","Generation","TWh","Nuclear",2023,785.462862774847
+"E.9.NuclearGen","NEMS-OP","No IRA","Generation","TWh","Nuclear",2024,788.955950922886
+"E.9.NuclearGen","NEMS-OP","No IRA","Generation","TWh","Nuclear",2026,773.318351491349
+"E.9.NuclearGen","NEMS-OP","No IRA","Generation","TWh","Nuclear",2027,759.386708015197
+"E.9.NuclearGen","NEMS-OP","No IRA","Generation","TWh","Nuclear",2028,707.463275525863
+"E.9.NuclearGen","NEMS-OP","No IRA","Generation","TWh","Nuclear",2029,688.154245818962
+"E.9.NuclearGen","NEMS-OP","No IRA","Generation","TWh","Nuclear",2031,656.139500015054
+"E.9.NuclearGen","NEMS-OP","No IRA","Generation","TWh","Nuclear",2032,642.627402428517
+"E.9.NuclearGen","NEMS-OP","No IRA","Generation","TWh","Nuclear",2033,618.205691742828
+"E.9.NuclearGen","NEMS-OP","No IRA","Generation","TWh","Nuclear",2034,601.315311515264
+"E.9.NuclearGen","NEMS-OP","No IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","NEMS-OP","IRA","Generation","TWh","Nuclear",2025,781.759025203204
+"E.9.NuclearGen","NEMS-OP","IRA","Generation","TWh","Nuclear",2030,776.561140074612
+"E.9.NuclearGen","NEMS-OP","IRA","Generation","TWh","Nuclear",2035,694.575615379747
+"E.9.NuclearGen","NEMS-OP","IRA","Generation","TWh","Nuclear",2022,783.598585257394
+"E.9.NuclearGen","NEMS-OP","IRA","Generation","TWh","Nuclear",2023,785.462862774847
+"E.9.NuclearGen","NEMS-OP","IRA","Generation","TWh","Nuclear",2024,788.955950922886
+"E.9.NuclearGen","NEMS-OP","IRA","Generation","TWh","Nuclear",2026,773.318351491349
+"E.9.NuclearGen","NEMS-OP","IRA","Generation","TWh","Nuclear",2027,773.665450954129
+"E.9.NuclearGen","NEMS-OP","IRA","Generation","TWh","Nuclear",2028,776.967015261084
+"E.9.NuclearGen","NEMS-OP","IRA","Generation","TWh","Nuclear",2029,774.763327113889
+"E.9.NuclearGen","NEMS-OP","IRA","Generation","TWh","Nuclear",2031,777.580160946704
+"E.9.NuclearGen","NEMS-OP","IRA","Generation","TWh","Nuclear",2032,777.64180460812
+"E.9.NuclearGen","NEMS-OP","IRA","Generation","TWh","Nuclear",2033,774.027259097512
+"E.9.NuclearGen","NEMS-OP","IRA","Generation","TWh","Nuclear",2034,746.314787870264
+"E.9.NuclearGen","NEMS-OP","IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","REGEN-EPRI","No IRA","Generation","TWh","Nuclear",2025,777.507335213795
+"E.9.NuclearGen","REGEN-EPRI","No IRA","Generation","TWh","Nuclear",2030,779.186196125657
+"E.9.NuclearGen","REGEN-EPRI","No IRA","Generation","TWh","Nuclear",2035,782.685719357309
+"E.9.NuclearGen","REGEN-EPRI","No IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","REGEN-EPRI","IRA","Generation","TWh","Nuclear",2025,782.770525506435
+"E.9.NuclearGen","REGEN-EPRI","IRA","Generation","TWh","Nuclear",2030,781.927961300903
+"E.9.NuclearGen","REGEN-EPRI","IRA","Generation","TWh","Nuclear",2035,761.355542693841
+"E.9.NuclearGen","REGEN-EPRI","IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","RIO-REPEAT","No IRA","Generation","TWh","Nuclear",2025,800.4826176228
+"E.9.NuclearGen","RIO-REPEAT","No IRA","Generation","TWh","Nuclear",2030,794.982737052
+"E.9.NuclearGen","RIO-REPEAT","No IRA","Generation","TWh","Nuclear",2035,788.9828673384
+"E.9.NuclearGen","RIO-REPEAT","No IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","RIO-REPEAT","IRA","Generation","TWh","Nuclear",2025,799.98262848
+"E.9.NuclearGen","RIO-REPEAT","IRA","Generation","TWh","Nuclear",2030,793.9827587664
+"E.9.NuclearGen","RIO-REPEAT","IRA","Generation","TWh","Nuclear",2035,786.9829107672
+"E.9.NuclearGen","RIO-REPEAT","IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","ReEDS-NREL","No IRA","Generation","TWh","Nuclear",2025,780.371260512652
+"E.9.NuclearGen","ReEDS-NREL","No IRA","Generation","TWh","Nuclear",2030,762.479751168479
+"E.9.NuclearGen","ReEDS-NREL","No IRA","Generation","TWh","Nuclear",2035,762.479751168479
+"E.9.NuclearGen","ReEDS-NREL","No IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","ReEDS-NREL","IRA","Generation","TWh","Nuclear",2025,780.263901781328
+"E.9.NuclearGen","ReEDS-NREL","IRA","Generation","TWh","Nuclear",2030,738.381216157754
+"E.9.NuclearGen","ReEDS-NREL","IRA","Generation","TWh","Nuclear",2035,722.8140335534
+"E.9.NuclearGen","ReEDS-NREL","IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","NEMS-EIA","No IRA","Generation","TWh","Nuclear",2025,782.238506791323
+"E.9.NuclearGen","NEMS-EIA","No IRA","Generation","TWh","Nuclear",2030,765.520607818351
+"E.9.NuclearGen","NEMS-EIA","No IRA","Generation","TWh","Nuclear",2035,747.182383030546
+"E.9.NuclearGen","NEMS-EIA","No IRA","Generation","TWh","Nuclear",2022,771.967672821163
+"E.9.NuclearGen","NEMS-EIA","No IRA","Generation","TWh","Nuclear",2023,783.698924078549
+"E.9.NuclearGen","NEMS-EIA","No IRA","Generation","TWh","Nuclear",2024,789.385080604391
+"E.9.NuclearGen","NEMS-EIA","No IRA","Generation","TWh","Nuclear",2026,774.665063247676
+"E.9.NuclearGen","NEMS-EIA","No IRA","Generation","TWh","Nuclear",2027,774.665063247676
+"E.9.NuclearGen","NEMS-EIA","No IRA","Generation","TWh","Nuclear",2028,765.520607818351
+"E.9.NuclearGen","NEMS-EIA","No IRA","Generation","TWh","Nuclear",2029,765.520607818351
+"E.9.NuclearGen","NEMS-EIA","No IRA","Generation","TWh","Nuclear",2031,765.520607818351
+"E.9.NuclearGen","NEMS-EIA","No IRA","Generation","TWh","Nuclear",2032,756.947551981157
+"E.9.NuclearGen","NEMS-EIA","No IRA","Generation","TWh","Nuclear",2033,756.947551981157
+"E.9.NuclearGen","NEMS-EIA","No IRA","Generation","TWh","Nuclear",2034,747.182383030546
+"E.9.NuclearGen","NEMS-EIA","No IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","NEMS-EIA","IRA","Generation","TWh","Nuclear",2025,782.239483770108
+"E.9.NuclearGen","NEMS-EIA","IRA","Generation","TWh","Nuclear",2030,758.000142124297
+"E.9.NuclearGen","NEMS-EIA","IRA","Generation","TWh","Nuclear",2035,700.335256309884
+"E.9.NuclearGen","NEMS-EIA","IRA","Generation","TWh","Nuclear",2022,771.967611822487
+"E.9.NuclearGen","NEMS-EIA","IRA","Generation","TWh","Nuclear",2023,783.698924078549
+"E.9.NuclearGen","NEMS-EIA","IRA","Generation","TWh","Nuclear",2024,789.386545572579
+"E.9.NuclearGen","NEMS-EIA","IRA","Generation","TWh","Nuclear",2026,774.667748189373
+"E.9.NuclearGen","NEMS-EIA","IRA","Generation","TWh","Nuclear",2027,774.654076486252
+"E.9.NuclearGen","NEMS-EIA","IRA","Generation","TWh","Nuclear",2028,765.536416475068
+"E.9.NuclearGen","NEMS-EIA","IRA","Generation","TWh","Nuclear",2029,765.524147741482
+"E.9.NuclearGen","NEMS-EIA","IRA","Generation","TWh","Nuclear",2031,758.005207014314
+"E.9.NuclearGen","NEMS-EIA","IRA","Generation","TWh","Nuclear",2032,758.013202840686
+"E.9.NuclearGen","NEMS-EIA","IRA","Generation","TWh","Nuclear",2033,715.837299685004
+"E.9.NuclearGen","NEMS-EIA","IRA","Generation","TWh","Nuclear",2034,708.663322466998
+"E.9.NuclearGen","NEMS-EIA","IRA","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","EIA","Historic","Generation","TWh","Nuclear",2021,778.134602907068
+"E.9.NuclearGen","USREP-ReEDS","IRA","Percent Difference from No IRA","%","Nuclear",2025,-0.168514919274476
+"E.9.NuclearGen","USREP-ReEDS","IRA","Percent Difference from No IRA","%","Nuclear",2030,-2.0943981910936
+"E.9.NuclearGen","USREP-ReEDS","IRA","Percent Difference from No IRA","%","Nuclear",2035,-5.35395685030474
+"E.9.NuclearGen","EPS-EI","IRA","Percent Difference from No IRA","%","Nuclear",2025,1.55244299749238
+"E.9.NuclearGen","EPS-EI","IRA","Percent Difference from No IRA","%","Nuclear",2030,15.7675376796104
+"E.9.NuclearGen","EPS-EI","IRA","Percent Difference from No IRA","%","Nuclear",2035,-93.4888420985143
+"E.9.NuclearGen","GCAM-CGS","IRA","Percent Difference from No IRA","%","Nuclear",2025,-5.14452682927521
+"E.9.NuclearGen","GCAM-CGS","IRA","Percent Difference from No IRA","%","Nuclear",2030,-6.38389290205624
+"E.9.NuclearGen","GCAM-CGS","IRA","Percent Difference from No IRA","%","Nuclear",2035,-3.59886269896029
+"E.9.NuclearGen","GCAM-PNNL","IRA","Percent Difference from No IRA","%","Nuclear",2025,0
+"E.9.NuclearGen","GCAM-PNNL","IRA","Percent Difference from No IRA","%","Nuclear",2030,0
+"E.9.NuclearGen","GCAM-PNNL","IRA","Percent Difference from No IRA","%","Nuclear",2035,0
+"E.9.NuclearGen","Haiku-RFF","IRA","Percent Difference from No IRA","%","Nuclear",2025,0
+"E.9.NuclearGen","Haiku-RFF","IRA","Percent Difference from No IRA","%","Nuclear",2030,0
+"E.9.NuclearGen","Haiku-RFF","IRA","Percent Difference from No IRA","%","Nuclear",2035,0
+"E.9.NuclearGen","IPM-NRDC","IRA","Percent Difference from No IRA","%","Nuclear",2025,1.13012933080621
+"E.9.NuclearGen","IPM-NRDC","IRA","Percent Difference from No IRA","%","Nuclear",2030,33.0508100552436
+"E.9.NuclearGen","IPM-NRDC","IRA","Percent Difference from No IRA","%","Nuclear",2035,11.733931036717
+"E.9.NuclearGen","IPM-EPA","IRA","Percent Difference from No IRA","%","Nuclear",2030,16.7463090287822
+"E.9.NuclearGen","IPM-EPA","IRA","Percent Difference from No IRA","%","Nuclear",2035,35.7283558637664
+"E.9.NuclearGen","MARKAL-NETL","IRA","Percent Difference from No IRA","%","Nuclear",2025,0
+"E.9.NuclearGen","MARKAL-NETL","IRA","Percent Difference from No IRA","%","Nuclear",2030,0
+"E.9.NuclearGen","MARKAL-NETL","IRA","Percent Difference from No IRA","%","Nuclear",2035,0
+"E.9.NuclearGen","NEMS-RHG","IRA","Percent Difference from No IRA","%","Nuclear",2025,-0.000897827579604549
+"E.9.NuclearGen","NEMS-RHG","IRA","Percent Difference from No IRA","%","Nuclear",2030,11.152891466695
+"E.9.NuclearGen","NEMS-RHG","IRA","Percent Difference from No IRA","%","Nuclear",2035,-70.1449802725426
+"E.9.NuclearGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Nuclear",2022,0
+"E.9.NuclearGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Nuclear",2023,0
+"E.9.NuclearGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Nuclear",2024,0
+"E.9.NuclearGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Nuclear",2025,0
+"E.9.NuclearGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Nuclear",2026,0
+"E.9.NuclearGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Nuclear",2027,1.88029929787046
+"E.9.NuclearGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Nuclear",2028,9.82436009608534
+"E.9.NuclearGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Nuclear",2029,12.5857076115043
+"E.9.NuclearGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Nuclear",2030,16.809223331013
+"E.9.NuclearGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Nuclear",2031,18.5083600254006
+"E.9.NuclearGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Nuclear",2032,21.0097486769748
+"E.9.NuclearGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Nuclear",2033,25.2054566038362
+"E.9.NuclearGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Nuclear",2034,24.1137176416834
+"E.9.NuclearGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Nuclear",2035,16.2127121119747
+"E.9.NuclearGen","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Nuclear",2025,0.676931271805081
+"E.9.NuclearGen","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Nuclear",2030,0.351875480967112
+"E.9.NuclearGen","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Nuclear",2035,-2.72525435636962
+"E.9.NuclearGen","RIO-REPEAT","IRA","Percent Difference from No IRA","%","Nuclear",2025,-0.0624609618988359
+"E.9.NuclearGen","RIO-REPEAT","IRA","Percent Difference from No IRA","%","Nuclear",2030,-0.125786163522013
+"E.9.NuclearGen","RIO-REPEAT","IRA","Percent Difference from No IRA","%","Nuclear",2035,-0.253485424588062
+"E.9.NuclearGen","ReEDS-NREL","IRA","Percent Difference from No IRA","%","Nuclear",2025,-0.0137573917386447
+"E.9.NuclearGen","ReEDS-NREL","IRA","Percent Difference from No IRA","%","Nuclear",2030,-3.16054753897329
+"E.9.NuclearGen","ReEDS-NREL","IRA","Percent Difference from No IRA","%","Nuclear",2035,-5.20219947536877
+"E.9.NuclearGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Nuclear",2022,-7.90171369446924e-06
+"E.9.NuclearGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Nuclear",2023,0
+"E.9.NuclearGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Nuclear",2024,0.000185583465461825
+"E.9.NuclearGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Nuclear",2025,0.000124895255937396
+"E.9.NuclearGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Nuclear",2026,0.000346593879640977
+"E.9.NuclearGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Nuclear",2027,-0.00141825957373776
+"E.9.NuclearGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Nuclear",2028,0.002065085714964
+"E.9.NuclearGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Nuclear",2029,0.000462420357427717
+"E.9.NuclearGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Nuclear",2030,-0.982398856052513
+"E.9.NuclearGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Nuclear",2031,-0.981737229185131
+"E.9.NuclearGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Nuclear",2032,0.140782654853622
+"E.9.NuclearGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Nuclear",2033,-5.4310569059316
+"E.9.NuclearGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Nuclear",2034,-5.15524207186424
+"E.9.NuclearGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Nuclear",2035,-6.26983823288921
+"E.9.NuclearGen","USREP-ReEDS","Historic","Percent Difference from No IRA","%","Nuclear",2021,0
+"E.9.NuclearGen","EPS-EI","Historic","Percent Difference from No IRA","%","Nuclear",2021,0
+"E.9.NuclearGen","GCAM-CGS","Historic","Percent Difference from No IRA","%","Nuclear",2021,0
+"E.9.NuclearGen","GCAM-PNNL","Historic","Percent Difference from No IRA","%","Nuclear",2021,0
+"E.9.NuclearGen","Haiku-RFF","Historic","Percent Difference from No IRA","%","Nuclear",2021,0
+"E.9.NuclearGen","IPM-NRDC","Historic","Percent Difference from No IRA","%","Nuclear",2021,0
+"E.9.NuclearGen","IPM-EPA","Historic","Percent Difference from No IRA","%","Nuclear",2021,0
+"E.9.NuclearGen","MARKAL-NETL","Historic","Percent Difference from No IRA","%","Nuclear",2021,0
+"E.9.NuclearGen","NEMS-RHG","Historic","Percent Difference from No IRA","%","Nuclear",2021,0
+"E.9.NuclearGen","NEMS-OP","Historic","Percent Difference from No IRA","%","Nuclear",2021,0
+"E.9.NuclearGen","REGEN-EPRI","Historic","Percent Difference from No IRA","%","Nuclear",2021,0
+"E.9.NuclearGen","RIO-REPEAT","Historic","Percent Difference from No IRA","%","Nuclear",2021,0
+"E.9.NuclearGen","ReEDS-NREL","Historic","Percent Difference from No IRA","%","Nuclear",2021,0
+"E.9.NuclearGen","NEMS-EIA","Historic","Percent Difference from No IRA","%","Nuclear",2021,0
+"E.9.NuclearGen","USREP-ReEDS","IRA","Absolute Difference from No IRA","TWh","Nuclear",2025,-1.31504199958761
+"E.9.NuclearGen","USREP-ReEDS","IRA","Absolute Difference from No IRA","TWh","Nuclear",2030,-15.9693621162421
+"E.9.NuclearGen","USREP-ReEDS","IRA","Absolute Difference from No IRA","TWh","Nuclear",2035,-40.8228368706752
+"E.9.NuclearGen","EPS-EI","IRA","Absolute Difference from No IRA","TWh","Nuclear",2025,12.1407363654695
+"E.9.NuclearGen","EPS-EI","IRA","Absolute Difference from No IRA","TWh","Nuclear",2030,109.269927217569
+"E.9.NuclearGen","EPS-EI","IRA","Absolute Difference from No IRA","TWh","Nuclear",2035,-594.913331533437
+"E.9.NuclearGen","GCAM-CGS","IRA","Absolute Difference from No IRA","TWh","Nuclear",2025,-40.3940848936362
+"E.9.NuclearGen","GCAM-CGS","IRA","Absolute Difference from No IRA","TWh","Nuclear",2030,-50.3468650602936
+"E.9.NuclearGen","GCAM-CGS","IRA","Absolute Difference from No IRA","TWh","Nuclear",2035,-28.3753886160816
+"E.9.NuclearGen","GCAM-PNNL","IRA","Absolute Difference from No IRA","TWh","Nuclear",2025,0
+"E.9.NuclearGen","GCAM-PNNL","IRA","Absolute Difference from No IRA","TWh","Nuclear",2030,0
+"E.9.NuclearGen","GCAM-PNNL","IRA","Absolute Difference from No IRA","TWh","Nuclear",2035,0
+"E.9.NuclearGen","Haiku-RFF","IRA","Absolute Difference from No IRA","TWh","Nuclear",2025,0
+"E.9.NuclearGen","Haiku-RFF","IRA","Absolute Difference from No IRA","TWh","Nuclear",2030,0
+"E.9.NuclearGen","Haiku-RFF","IRA","Absolute Difference from No IRA","TWh","Nuclear",2035,0
+"E.9.NuclearGen","IPM-NRDC","IRA","Absolute Difference from No IRA","TWh","Nuclear",2025,8.15982838056107
+"E.9.NuclearGen","IPM-NRDC","IRA","Absolute Difference from No IRA","TWh","Nuclear",2030,168.404028542084
+"E.9.NuclearGen","IPM-NRDC","IRA","Absolute Difference from No IRA","TWh","Nuclear",2035,7.96082334196805
+"E.9.NuclearGen","IPM-EPA","IRA","Absolute Difference from No IRA","TWh","Nuclear",2030,105.245260502489
+"E.9.NuclearGen","IPM-EPA","IRA","Absolute Difference from No IRA","TWh","Nuclear",2035,173.82223048693
+"E.9.NuclearGen","MARKAL-NETL","IRA","Absolute Difference from No IRA","TWh","Nuclear",2025,0
+"E.9.NuclearGen","MARKAL-NETL","IRA","Absolute Difference from No IRA","TWh","Nuclear",2030,0
+"E.9.NuclearGen","MARKAL-NETL","IRA","Absolute Difference from No IRA","TWh","Nuclear",2035,0
+"E.9.NuclearGen","NEMS-RHG","IRA","Absolute Difference from No IRA","TWh","Nuclear",2025,-0.00701884758655069
+"E.9.NuclearGen","NEMS-RHG","IRA","Absolute Difference from No IRA","TWh","Nuclear",2030,75.7401163131049
+"E.9.NuclearGen","NEMS-RHG","IRA","Absolute Difference from No IRA","TWh","Nuclear",2035,-438.193548683387
+"E.9.NuclearGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Nuclear",2022,0
+"E.9.NuclearGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Nuclear",2023,0
+"E.9.NuclearGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Nuclear",2024,0
+"E.9.NuclearGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Nuclear",2025,0
+"E.9.NuclearGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Nuclear",2026,0
+"E.9.NuclearGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Nuclear",2027,14.2787429389314
+"E.9.NuclearGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Nuclear",2028,69.5037397352211
+"E.9.NuclearGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Nuclear",2029,86.6090812949268
+"E.9.NuclearGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Nuclear",2030,111.749648370743
+"E.9.NuclearGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Nuclear",2031,121.44066093165
+"E.9.NuclearGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Nuclear",2032,135.014402179603
+"E.9.NuclearGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Nuclear",2033,155.821567354684
+"E.9.NuclearGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Nuclear",2034,144.999476355
+"E.9.NuclearGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Nuclear",2035,96.8995068396582
+"E.9.NuclearGen","REGEN-EPRI","IRA","Absolute Difference from No IRA","TWh","Nuclear",2025,5.2631902926405
+"E.9.NuclearGen","REGEN-EPRI","IRA","Absolute Difference from No IRA","TWh","Nuclear",2030,2.74176517524643
+"E.9.NuclearGen","REGEN-EPRI","IRA","Absolute Difference from No IRA","TWh","Nuclear",2035,-21.3301766634679
+"E.9.NuclearGen","RIO-REPEAT","IRA","Absolute Difference from No IRA","TWh","Nuclear",2025,-0.499989142800132
+"E.9.NuclearGen","RIO-REPEAT","IRA","Absolute Difference from No IRA","TWh","Nuclear",2030,-0.999978285599923
+"E.9.NuclearGen","RIO-REPEAT","IRA","Absolute Difference from No IRA","TWh","Nuclear",2035,-1.99995657119985
+"E.9.NuclearGen","ReEDS-NREL","IRA","Absolute Difference from No IRA","TWh","Nuclear",2025,-0.107358731324553
+"E.9.NuclearGen","ReEDS-NREL","IRA","Absolute Difference from No IRA","TWh","Nuclear",2030,-24.098535010725
+"E.9.NuclearGen","ReEDS-NREL","IRA","Absolute Difference from No IRA","TWh","Nuclear",2035,-39.6657176150798
+"E.9.NuclearGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Nuclear",2022,-6.09986752806435e-05
+"E.9.NuclearGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Nuclear",2023,0
+"E.9.NuclearGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Nuclear",2024,0.00146496818854303
+"E.9.NuclearGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Nuclear",2025,0.000976978785047322
+"E.9.NuclearGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Nuclear",2026,0.00268494169688438
+"E.9.NuclearGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Nuclear",2027,-0.0109867614239647
+"E.9.NuclearGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Nuclear",2028,0.0158086567171267
+"E.9.NuclearGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Nuclear",2029,0.00353992313091567
+"E.9.NuclearGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Nuclear",2030,-7.52046569405366
+"E.9.NuclearGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Nuclear",2031,-7.51540080403709
+"E.9.NuclearGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Nuclear",2032,1.06565085952855
+"E.9.NuclearGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Nuclear",2033,-41.1102522961529
+"E.9.NuclearGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Nuclear",2034,-38.5190605635486
+"E.9.NuclearGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Nuclear",2035,-46.8471267206619
+"E.9.NuclearGen","USREP-ReEDS","Historic","Absolute Difference from No IRA","TWh","Nuclear",2021,0
+"E.9.NuclearGen","EPS-EI","Historic","Absolute Difference from No IRA","TWh","Nuclear",2021,0
+"E.9.NuclearGen","GCAM-CGS","Historic","Absolute Difference from No IRA","TWh","Nuclear",2021,0
+"E.9.NuclearGen","GCAM-PNNL","Historic","Absolute Difference from No IRA","TWh","Nuclear",2021,0
+"E.9.NuclearGen","Haiku-RFF","Historic","Absolute Difference from No IRA","TWh","Nuclear",2021,0
+"E.9.NuclearGen","IPM-NRDC","Historic","Absolute Difference from No IRA","TWh","Nuclear",2021,0
+"E.9.NuclearGen","IPM-EPA","Historic","Absolute Difference from No IRA","TWh","Nuclear",2021,0
+"E.9.NuclearGen","MARKAL-NETL","Historic","Absolute Difference from No IRA","TWh","Nuclear",2021,0
+"E.9.NuclearGen","NEMS-RHG","Historic","Absolute Difference from No IRA","TWh","Nuclear",2021,0
+"E.9.NuclearGen","NEMS-OP","Historic","Absolute Difference from No IRA","TWh","Nuclear",2021,0
+"E.9.NuclearGen","REGEN-EPRI","Historic","Absolute Difference from No IRA","TWh","Nuclear",2021,0
+"E.9.NuclearGen","RIO-REPEAT","Historic","Absolute Difference from No IRA","TWh","Nuclear",2021,0
+"E.9.NuclearGen","ReEDS-NREL","Historic","Absolute Difference from No IRA","TWh","Nuclear",2021,0
+"E.9.NuclearGen","NEMS-EIA","Historic","Absolute Difference from No IRA","TWh","Nuclear",2021,0

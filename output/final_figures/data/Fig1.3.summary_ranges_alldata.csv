@@ -1,0 +1,692 @@
+"figure_num","model","scenario","variable","unit","year","label","value"
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2005,"Electricity",2400.1
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2006,"Electricity",2344.4
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2007,"Electricity",2411.1
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2008,"Electricity",2359.3
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2009,"Electricity",2145.3
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2010,"Electricity",2258.6
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2011,"Electricity",2158.1
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2012,"Electricity",2023.3
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2013,"Electricity",2038.3
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2014,"Electricity",2037.2
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2015,"Electricity",1900.6
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2016,"Electricity",1808.9
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2017,"Electricity",1732
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2018,"Electricity",1753.4
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2019,"Electricity",1606.7
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2020,"Electricity",1439.6
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1189.66
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",602.7
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",336.702
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1350.69
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1201.47
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1198.69
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1001.23988404397
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",679.659054813217
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",445.580298326782
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1325.31758286476
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1274.91028267317
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1293.1152861035
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1160.58110564697
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",831.998710072543
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",784.368180921919
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1283.991
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1234.722
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1182.894
+"1.3.summary_ranges","Haiku-RFF","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","Haiku-RFF","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1205.45242155223
+"1.3.summary_ranges","Haiku-RFF","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",852.658725492053
+"1.3.summary_ranges","Haiku-RFF","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",767.701065402758
+"1.3.summary_ranges","Haiku-RFF","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","Haiku-RFF","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1394.14921935611
+"1.3.summary_ranges","Haiku-RFF","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1282.5776456571
+"1.3.summary_ranges","Haiku-RFF","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1174.26339683437
+"1.3.summary_ranges","IPM-EPA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","IPM-EPA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",971.719363965523
+"1.3.summary_ranges","IPM-EPA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",608.299102727081
+"1.3.summary_ranges","IPM-EPA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","IPM-EPA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1303.58284422178
+"1.3.summary_ranges","IPM-EPA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1247.28769086048
+"1.3.summary_ranges","IPM-NRDC","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","IPM-NRDC","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1176.7889391169
+"1.3.summary_ranges","IPM-NRDC","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",827.389198560903
+"1.3.summary_ranges","IPM-NRDC","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",772.508012550513
+"1.3.summary_ranges","IPM-NRDC","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","IPM-NRDC","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1109.41619281777
+"1.3.summary_ranges","IPM-NRDC","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1075.92232861268
+"1.3.summary_ranges","IPM-NRDC","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1079.88005163251
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1410.01
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1232.67
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",749.4
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1377.84
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1379.59
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1430.05
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1295.490356
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",768.311584
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",714.001099
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2022,"Electricity",1507.019531
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2023,"Electricity",1396.994263
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2024,"Electricity",1395.245239
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2026,"Electricity",1161.389648
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2027,"Electricity",1024.768433
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2028,"Electricity",913.385315
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2029,"Electricity",828.363403
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2031,"Electricity",748.608398
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2032,"Electricity",743.979004
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2033,"Electricity",739.65332
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2034,"Electricity",722.299683
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1317.436523
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1177.160889
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1100.493042
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2022,"Electricity",1507.266113
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2023,"Electricity",1396.958008
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2024,"Electricity",1387.346802
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2026,"Electricity",1269.72522
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2027,"Electricity",1235.09375
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2028,"Electricity",1214.805298
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2029,"Electricity",1202.780518
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2031,"Electricity",1144.698242
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2032,"Electricity",1121.275391
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2033,"Electricity",1117.068115
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2034,"Electricity",1111.81311
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1170.501465
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",660.642334
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",417.400726
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2022,"Electricity",1498.034058
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2023,"Electricity",1448.508301
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2024,"Electricity",1287.602905
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2026,"Electricity",1077.134277
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2027,"Electricity",981.575256
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2028,"Electricity",865.056091
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2029,"Electricity",737.692566
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2031,"Electricity",625.182068
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2032,"Electricity",607.155884
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2033,"Electricity",519.068909
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2034,"Electricity",465.518219
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1233.332031
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1040.891113
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",958.780945
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2022,"Electricity",1497.152466
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2023,"Electricity",1446.765747
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2024,"Electricity",1305.732544
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2026,"Electricity",1182.312988
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2027,"Electricity",1147.578247
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2028,"Electricity",1122.651978
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2029,"Electricity",1075.179321
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2031,"Electricity",1036.622681
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2032,"Electricity",1029.636719
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2033,"Electricity",1023.60083
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2034,"Electricity",991.468872
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1194.8452781805
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",482.81984665288
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",588.535589412373
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1090.61392148052
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",979.598572044581
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",906.244227830616
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1325.90851008344
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",999.666254194768
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",500.03751964597
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1338.36588810703
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1125.0574146029
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1097.15035473422
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1460.5
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",741
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",370
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1437.5
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",981
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",775
+"1.3.summary_ranges","ReEDS-NREL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","ReEDS-NREL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1152.97854629897
+"1.3.summary_ranges","ReEDS-NREL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",413.513524771282
+"1.3.summary_ranges","ReEDS-NREL","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",323.38378502023
+"1.3.summary_ranges","ReEDS-NREL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","ReEDS-NREL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1361.65313741276
+"1.3.summary_ranges","ReEDS-NREL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1238.16547546738
+"1.3.summary_ranges","ReEDS-NREL","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1165.17798641427
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1063.271865
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",616.834498
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",488.0122266
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2021,"Electricity",1540.9
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2025,"Electricity",1324.274957
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2030,"Electricity",1154.603142
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2|Energy|Supply|Electricity","Mt CO2/yr",2035,"Electricity",1060.287391
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2005,"Total Transportation Emissions",1863.3
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2006,"Total Transportation Emissions",1863.6
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2007,"Total Transportation Emissions",1865.8
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2008,"Total Transportation Emissions",1764.4
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2009,"Total Transportation Emissions",1693
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2010,"Total Transportation Emissions",1701.1
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2011,"Total Transportation Emissions",1674.7
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2012,"Total Transportation Emissions",1663.4
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2013,"Total Transportation Emissions",1673.3
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2014,"Total Transportation Emissions",1711.6
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2015,"Total Transportation Emissions",1722.5
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2016,"Total Transportation Emissions",1761.9
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2017,"Total Transportation Emissions",1784.4
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2018,"Total Transportation Emissions",1817.7
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2019,"Total Transportation Emissions",1821.2
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2020,"Total Transportation Emissions",1576.6
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1594.04495600469
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1417.94385151708
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1229.5350411901
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1597.22323579713
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1462.17510201961
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1338.94240705854
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1562.07727857705
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1396.9307216309
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1310.87256817385
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1615.05184442844
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1504.65588515461
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1363.27993729408
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1714.23884362917
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1504.76477565588
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1283.05267565183
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1724.82862
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1561.15556
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1376.82109
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1602.97588900257
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1493.40111677302
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1356.21828072744
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1598.2008680868
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1508.56110082758
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1430.38206139489
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1731.996338
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1657.054932
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1592.773071
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2022,"Total Transportation Emissions",1778.743774
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2023,"Total Transportation Emissions",1766.850586
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2024,"Total Transportation Emissions",1753.365356
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2026,"Total Transportation Emissions",1717.358398
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2027,"Total Transportation Emissions",1702.410156
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2028,"Total Transportation Emissions",1694.913574
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2029,"Total Transportation Emissions",1677.163818
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2031,"Total Transportation Emissions",1639.307983
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2032,"Total Transportation Emissions",1624.935791
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2033,"Total Transportation Emissions",1613.014038
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2034,"Total Transportation Emissions",1602.519531
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1741.17627
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1672.112427
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1615.413452
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2022,"Total Transportation Emissions",1778.925049
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2023,"Total Transportation Emissions",1774.28125
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2024,"Total Transportation Emissions",1763.679321
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2026,"Total Transportation Emissions",1730.514038
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2027,"Total Transportation Emissions",1719.85144
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2028,"Total Transportation Emissions",1706.725342
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2029,"Total Transportation Emissions",1691.203857
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2031,"Total Transportation Emissions",1654.459106
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2032,"Total Transportation Emissions",1639.921631
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2033,"Total Transportation Emissions",1629.517456
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2034,"Total Transportation Emissions",1621.873047
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1797.472412
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1641.628418
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1471.571655
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2022,"Total Transportation Emissions",1806.598389
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2023,"Total Transportation Emissions",1818.733154
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2024,"Total Transportation Emissions",1806.549561
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2026,"Total Transportation Emissions",1775.800659
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2027,"Total Transportation Emissions",1746.298096
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2028,"Total Transportation Emissions",1715.176758
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2029,"Total Transportation Emissions",1678.105469
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2031,"Total Transportation Emissions",1605.287964
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2032,"Total Transportation Emissions",1569.453857
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2033,"Total Transportation Emissions",1535.122681
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2034,"Total Transportation Emissions",1501.734619
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1800.763306
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1701.325806
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1601.090576
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2022,"Total Transportation Emissions",1806.733765
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2023,"Total Transportation Emissions",1819.720093
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2024,"Total Transportation Emissions",1811.35083
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2026,"Total Transportation Emissions",1783.9375
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2027,"Total Transportation Emissions",1762.32251
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2028,"Total Transportation Emissions",1742.844727
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2029,"Total Transportation Emissions",1721.062378
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2031,"Total Transportation Emissions",1682.512939
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2032,"Total Transportation Emissions",1664.421265
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2033,"Total Transportation Emissions",1646.101074
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2034,"Total Transportation Emissions",1623.404663
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1647.68999269901
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1508.59734546816
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1387.05900584666
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1646.18623208117
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1533.1896159726
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1423.41741805767
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1732.86935379878
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1569.14666069388
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1376.14761897839
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1731.3428583466
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1595.66732239906
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1472.85569929252
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1829.6000371425
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1583.87483206449
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1204.93197278912
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1838.98436721475
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1663.08141962422
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1446.13628727425
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1708.973790879
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1599.23476078
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1495.21077201
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2021,"Total Transportation Emissions",1757.4
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2025,"Total Transportation Emissions",1699.753863585
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2030,"Total Transportation Emissions",1621.42361573
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2|Energy|Demand|Transportation|Total","Mt CO2/yr",2035,"Total Transportation Emissions",1564.93717276
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2005,"Total Building Emissions",2245
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2006,"Total Building Emissions",2161.9
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2007,"Total Building Emissions",2255.4
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2008,"Total Building Emissions",2233.4
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2009,"Total Building Emissions",2103.6
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2010,"Total Building Emissions",2172.4
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2011,"Total Building Emissions",2079.7
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2012,"Total Building Emissions",1908.9
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2013,"Total Building Emissions",1992.5
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2014,"Total Building Emissions",2018.6
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2015,"Total Building Emissions",1908.7
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2016,"Total Building Emissions",1811.4
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2017,"Total Building Emissions",1748.7
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2018,"Total Building Emissions",1831.3
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2019,"Total Building Emissions",1728.5
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2020,"Total Building Emissions",1567.3
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1386.23174989503
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",919.184219686818
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",723.352579489139
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1535.07752905601
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1396.55401818743
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1358.81679871617
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1250.41035392994
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",924.91011011443
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",752.928841692926
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1559.68701164041
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1479.30626115004
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1428.95943971203
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1279.29474111474
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1039.45558035695
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",974.247574611141
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1391.5012
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1346.2546
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1261.0282
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1323.26664606733
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1140.93267345267
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",778.095057055452
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1348.87089897245
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1296.97444522943
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1335.51215473138
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1502.789795
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1127.282226
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1077.198486
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2022,"Total Building Emissions",1681.863647
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2023,"Total Building Emissions",1597.620667
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2024,"Total Building Emissions",1575.418457
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2026,"Total Building Emissions",1405.377929
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2027,"Total Building Emissions",1306.146607
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2028,"Total Building Emissions",1228.785217
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2029,"Total Building Emissions",1169.081665
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2031,"Total Building Emissions",1111.676117
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2032,"Total Building Emissions",1106.754303
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2033,"Total Building Emissions",1100.851685
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2034,"Total Building Emissions",1085.891388
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1528.168823
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1420.761658
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1353.036682
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2022,"Total Building Emissions",1682.544067
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2023,"Total Building Emissions",1603.311218
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2024,"Total Building Emissions",1577.72168
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2026,"Total Building Emissions",1492.344483
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2027,"Total Building Emissions",1465.398133
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2028,"Total Building Emissions",1451.571838
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2029,"Total Building Emissions",1441.355224
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2031,"Total Building Emissions",1395.739258
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2032,"Total Building Emissions",1375.646667
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2033,"Total Building Emissions",1369.787903
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2034,"Total Building Emissions",1363.819031
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1401.790466
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",996.583252
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",809.16452
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2022,"Total Building Emissions",1674.275818
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2023,"Total Building Emissions",1626.524292
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2024,"Total Building Emissions",1502.95758
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2026,"Total Building Emissions",1323.047607
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2027,"Total Building Emissions",1246.634888
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2028,"Total Building Emissions",1156.183899
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2029,"Total Building Emissions",1058.938781
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2031,"Total Building Emissions",965.264862
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2032,"Total Building Emissions",945.490509
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2033,"Total Building Emissions",882.75885
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2034,"Total Building Emissions",844.710144
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1458.917358
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1297.052856
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1214.528747
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2022,"Total Building Emissions",1673.424256
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2023,"Total Building Emissions",1627.039551
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2024,"Total Building Emissions",1520.964721
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2026,"Total Building Emissions",1417.56836
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2027,"Total Building Emissions",1390.483032
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2028,"Total Building Emissions",1368.510743
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2029,"Total Building Emissions",1328.103393
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2031,"Total Building Emissions",1289.804749
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2032,"Total Building Emissions",1279.435669
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2033,"Total Building Emissions",1268.216857
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2034,"Total Building Emissions",1242.344604
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1448.52802264821
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",915.68476129121
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",967.475102907779
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1377.42188722655
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1281.06217678312
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1210.8780335536
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1337.16963880903
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1071.83240715325
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",737.820543108383
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1364.48899137617
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1180.60088583863
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1104.58191029568
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1696.01194750526
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1091.90886699507
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",759.975704567541
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1691.67096412556
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1317.48643006263
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1133.37568248635
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1240.8256929
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",826.8316008
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",666.1815082
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2021,"Total Building Emissions",1637
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2025,"Total Building Emissions",1475.6308269
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2030,"Total Building Emissions",1276.5641196
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Total","Mt CO2/yr",2035,"Total Building Emissions",1136.7822893
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2005,"Total Industry Emissions",1587.1
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2006,"Total Industry Emissions",1586.5
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2007,"Total Industry Emissions",1581.3
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2008,"Total Industry Emissions",1515.7
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2009,"Total Industry Emissions",1344.2
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2010,"Total Industry Emissions",1436.9
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2011,"Total Industry Emissions",1421.5
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2012,"Total Industry Emissions",1399.3
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2013,"Total Industry Emissions",1429
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2014,"Total Industry Emissions",1406.7
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2015,"Total Industry Emissions",1347.5
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2016,"Total Industry Emissions",1310.5
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2017,"Total Industry Emissions",1293.4
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2018,"Total Industry Emissions",1314.8
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2019,"Total Industry Emissions",1281.4
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2020,"Total Industry Emissions",1177.7
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1146.68185680519
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",939.539060262288
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",849.980886540497
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1221.91783894204
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1164.84246822176
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1140.89103340564
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1299.87711190736
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1185.5497590578
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1174.68798661098
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1469.58809085622
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1498.26635705309
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1533.32961461054
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1056.76453343065
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",979.071266002796
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",949.082398361937
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1095.6058540004
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1076.63150080117
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1044.9197681067
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1316.81746493009
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1314.64620977431
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1222.2666622171
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1315.09823294074
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1336.12445394298
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1367.98578387372
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1103.91137152837
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",990.184425017752
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1000.38892173886
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2022,"Total Industry Emissions",1175.92534722448
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2023,"Total Industry Emissions",1126.88110019243
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2024,"Total Industry Emissions",1120.26152158684
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2026,"Total Industry Emissions",1083.5504709196
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2027,"Total Industry Emissions",1055.11601895947
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2028,"Total Industry Emissions",1029.12028050343
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2029,"Total Industry Emissions",1006.23202399594
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2031,"Total Industry Emissions",988.455536785181
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2032,"Total Industry Emissions",993.589066226811
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2033,"Total Industry Emissions",997.5788527521
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2034,"Total Industry Emissions",998.059556106564
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1116.41708666064
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1110.1675279278
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1114.85936349298
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2022,"Total Industry Emissions",1175.51803612474
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2023,"Total Industry Emissions",1150.04947024153
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2024,"Total Industry Emissions",1127.12692270625
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2026,"Total Industry Emissions",1119.22305219423
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2027,"Total Industry Emissions",1117.49851613563
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2028,"Total Industry Emissions",1116.84987428833
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2029,"Total Industry Emissions",1115.69808190261
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2031,"Total Industry Emissions",1103.65983383967
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2032,"Total Industry Emissions",1105.16728539463
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2033,"Total Industry Emissions",1108.80245705682
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2034,"Total Industry Emissions",1111.98351661195
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1284.959351
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1128.404297
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1055.642578
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2022,"Total Industry Emissions",1381.882812
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2023,"Total Industry Emissions",1368.515381
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2024,"Total Industry Emissions",1323.714966
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2026,"Total Industry Emissions",1259.037476
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2027,"Total Industry Emissions",1227.058838
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2028,"Total Industry Emissions",1191.92041
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2029,"Total Industry Emissions",1152.176025
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2031,"Total Industry Emissions",1114.075317
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2032,"Total Industry Emissions",1109.757324
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2033,"Total Industry Emissions",1082.313477
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2034,"Total Industry Emissions",1065.162964
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1312.890137
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1263.367188
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1233.428223
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2022,"Total Industry Emissions",1381.830078
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2023,"Total Industry Emissions",1367.626709
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2024,"Total Industry Emissions",1328.830566
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2026,"Total Industry Emissions",1300.769043
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2027,"Total Industry Emissions",1287.614624
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2028,"Total Industry Emissions",1283.276489
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2029,"Total Industry Emissions",1270.223267
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2031,"Total Industry Emissions",1258.88208
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2032,"Total Industry Emissions",1261.87561
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2033,"Total Industry Emissions",1259.097534
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2034,"Total Industry Emissions",1244.157593
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1121.96780917347
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",937.684138612776
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",844.772202018129
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1093.61770739756
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1070.74176083867
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1049.8547982036
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1389.51737451374
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1279.63544614596
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1044.22398984278
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1405.32172710039
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1342.83672051109
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1305.60388833707
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1143.88801535224
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",911.216300940439
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",688.092322643343
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1176.84466865969
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1069.43215031315
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1020.4880302394
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1152.13401681
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1037.57958193
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1037.94050988
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2021,"Total Industry Emissions",1220.7
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2025,"Total Industry Emissions",1252.98988769
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2030,"Total Industry Emissions",1222.36571587
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total","Mt CO2/yr",2035,"Total Industry Emissions",1183.25485155
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2005,"Total Emissions",6132.18327
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2006,"Total Emissions",6052.686215
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2007,"Total Emissions",6130.12276
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2008,"Total Emissions",5915.118465
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2009,"Total Emissions",5480.725731
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2010,"Total Emissions",5679.715249
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2011,"Total Emissions",5546.116067
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2012,"Total Emissions",5344.08598
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2013,"Total Emissions",5480.156537
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2014,"Total Emissions",5528.681067
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2015,"Total Emissions",5376.473125
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2016,"Total Emissions",5252.932175
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2017,"Total Emissions",5212.162345
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2018,"Total Emissions",5377.797353
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2019,"Total Emissions",5262.145074
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2020,"Total Emissions",4714.628032
+"1.3.summary_ranges","EPA-GHGI","Historic","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2","Mt CO2/yr",2021,"Total Emissions",5032.212819
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4549.81011733888
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3683.07333616727
+"1.3.summary_ranges","EPS-EI","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3181.23945999667
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4811.12269086155
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4469.11212426198
+"1.3.summary_ranges","EPS-EI","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",4270.52739601984
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4143.32131119463
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3535.15117247745
+"1.3.summary_ranges","GCAM-CGS","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3265.13939647775
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4678.3428009427
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4515.63157057819
+"1.3.summary_ranges","GCAM-CGS","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",4358.33318134285
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4150.86876799247
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3631.81913612816
+"1.3.summary_ranges","GCAM-PNNL","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3310.10805031081
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4313.135
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4093.635
+"1.3.summary_ranges","GCAM-PNNL","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3788
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4265.25
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3978.59
+"1.3.summary_ranges","MARKAL-NETL","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3385.68
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4284.46
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4171.2
+"1.3.summary_ranges","MARKAL-NETL","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",4163.41
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4564.102887
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4007.489174
+"1.3.summary_ranges","NEMS-EIA","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3904.675421
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4611.531392
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4436.179517
+"1.3.summary_ranges","NEMS-EIA","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",4318.532851
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4617.66277995179
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3731.42341620699
+"1.3.summary_ranges","NEMS-RHG","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3572.57563575272
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4516.98988352657
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4267.33793080568
+"1.3.summary_ranges","NEMS-RHG","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",4069.21513053717
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4771.5
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3693
+"1.3.summary_ranges","RIO-REPEAT","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",2763
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4809.5
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4156
+"1.3.summary_ranges","RIO-REPEAT","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3710
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4127.409674
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3493.680895
+"1.3.summary_ranges","USREP-ReEDS","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3231.66939
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4540.270473
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4231.719803
+"1.3.summary_ranges","USREP-ReEDS","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",4012.490192
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4547.97323704377
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3836.38348433595
+"1.3.summary_ranges","NEMS-OP","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3402.58860082152
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4635.118241
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4330.458905
+"1.3.summary_ranges","NEMS-OP","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",4114.083147
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4523.30792416533
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",3990.38178732904
+"1.3.summary_ranges","REGEN-EPRI","IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3224.40184675108
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2","Mt CO2/yr",2025,"Total Emissions",4563.70101682317
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2","Mt CO2/yr",2030,"Total Emissions",4187.81822874878
+"1.3.summary_ranges","REGEN-EPRI","No IRA","Emissions|CO2","Mt CO2/yr",2035,"Total Emissions",3948.07703792527

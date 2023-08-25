@@ -1,0 +1,268 @@
+"figure_num","model","scenario","variable","unit","year","label","value"
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2005,"Coal",22.796131227058
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2006,"Coal",22.446754536934
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2007,"Coal",22.74905508155
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2008,"Coal",22.387032616354
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2009,"Coal",19.690849319624
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2010,"Coal",20.833591676786
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2011,"Coal",19.657428924868
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2012,"Coal",17.377920099022
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2013,"Coal",18.038307170296
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2014,"Coal",17.997306906166
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2015,"Coal",15.54858914714
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2016,"Coal",14.225648039974
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2017,"Coal",13.837215051954
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2018,"Coal",13.251292636442
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2019,"Coal",11.315390607094
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2020,"Coal",9.1809431626752
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","EPS-EI","IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","EPS-EI","No IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","GCAM-CGS","IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","GCAM-CGS","No IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","GCAM-PNNL","IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","GCAM-PNNL","No IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","MARKAL-NETL","IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","MARKAL-NETL","No IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","NEMS-EIA","IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","NEMS-EIA","No IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","NEMS-OP","IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","NEMS-OP","No IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","NEMS-RHG","IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","NEMS-RHG","No IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","REGEN-EPRI","IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","REGEN-EPRI","No IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","USREP-ReEDS","IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","USREP-ReEDS","No IRA","Primary Energy|Coal","Quads",2021,"Coal",10.54709148248
+"1.4.fossilenergy","EPS-EI","IRA","Primary Energy|Coal","Quads",2025,"Coal",7.00446797680272
+"1.4.fossilenergy","EPS-EI","IRA","Primary Energy|Coal","Quads",2030,"Coal",3.00401454784525
+"1.4.fossilenergy","EPS-EI","IRA","Primary Energy|Coal","Quads",2035,"Coal",1.18404998225292
+"1.4.fossilenergy","EPS-EI","No IRA","Primary Energy|Coal","Quads",2025,"Coal",7.97318797860695
+"1.4.fossilenergy","EPS-EI","No IRA","Primary Energy|Coal","Quads",2030,"Coal",5.97008716104376
+"1.4.fossilenergy","EPS-EI","No IRA","Primary Energy|Coal","Quads",2035,"Coal",5.69141319479097
+"1.4.fossilenergy","GCAM-CGS","IRA","Primary Energy|Coal","Quads",2025,"Coal",5.81899441633054
+"1.4.fossilenergy","GCAM-CGS","IRA","Primary Energy|Coal","Quads",2030,"Coal",3.30321995408734
+"1.4.fossilenergy","GCAM-CGS","IRA","Primary Energy|Coal","Quads",2035,"Coal",1.39547242361608
+"1.4.fossilenergy","GCAM-CGS","No IRA","Primary Energy|Coal","Quads",2025,"Coal",8.25740534709774
+"1.4.fossilenergy","GCAM-CGS","No IRA","Primary Energy|Coal","Quads",2030,"Coal",8.01775090825442
+"1.4.fossilenergy","GCAM-CGS","No IRA","Primary Energy|Coal","Quads",2035,"Coal",7.67842054476007
+"1.4.fossilenergy","GCAM-PNNL","IRA","Primary Energy|Coal","Quads",2025,"Coal",6.30988477666059
+"1.4.fossilenergy","GCAM-PNNL","IRA","Primary Energy|Coal","Quads",2030,"Coal",4.78438293863347
+"1.4.fossilenergy","GCAM-PNNL","IRA","Primary Energy|Coal","Quads",2035,"Coal",5.08124135808986
+"1.4.fossilenergy","GCAM-PNNL","No IRA","Primary Energy|Coal","Quads",2025,"Coal",6.7526456466
+"1.4.fossilenergy","GCAM-PNNL","No IRA","Primary Energy|Coal","Quads",2030,"Coal",5.743487918
+"1.4.fossilenergy","GCAM-PNNL","No IRA","Primary Energy|Coal","Quads",2035,"Coal",5.1068923612
+"1.4.fossilenergy","MARKAL-NETL","IRA","Primary Energy|Coal","Quads",2025,"Coal",16.3632344274105
+"1.4.fossilenergy","MARKAL-NETL","IRA","Primary Energy|Coal","Quads",2030,"Coal",16.8780251286364
+"1.4.fossilenergy","MARKAL-NETL","IRA","Primary Energy|Coal","Quads",2035,"Coal",18.8568193852543
+"1.4.fossilenergy","MARKAL-NETL","No IRA","Primary Energy|Coal","Quads",2025,"Coal",14.7007844565986
+"1.4.fossilenergy","MARKAL-NETL","No IRA","Primary Energy|Coal","Quads",2030,"Coal",13.6999125355613
+"1.4.fossilenergy","MARKAL-NETL","No IRA","Primary Energy|Coal","Quads",2035,"Coal",12.9635458367098
+"1.4.fossilenergy","NEMS-EIA","IRA","Primary Energy|Coal","Quads",2025,"Coal",8.64630675990106
+"1.4.fossilenergy","NEMS-EIA","IRA","Primary Energy|Coal","Quads",2030,"Coal",4.33517682399316
+"1.4.fossilenergy","NEMS-EIA","IRA","Primary Energy|Coal","Quads",2035,"Coal",4.23307529917587
+"1.4.fossilenergy","NEMS-EIA","No IRA","Primary Energy|Coal","Quads",2025,"Coal",8.68282658993698
+"1.4.fossilenergy","NEMS-EIA","No IRA","Primary Energy|Coal","Quads",2030,"Coal",6.94282668793421
+"1.4.fossilenergy","NEMS-EIA","No IRA","Primary Energy|Coal","Quads",2035,"Coal",6.50886670759336
+"1.4.fossilenergy","NEMS-OP","IRA","Primary Energy|Coal","Quads",2025,"Coal",7.5593888184407
+"1.4.fossilenergy","NEMS-OP","IRA","Primary Energy|Coal","Quads",2030,"Coal",3.92558773022968
+"1.4.fossilenergy","NEMS-OP","IRA","Primary Energy|Coal","Quads",2035,"Coal",2.28334237327514
+"1.4.fossilenergy","NEMS-OP","No IRA","Primary Energy|Coal","Quads",2025,"Coal",7.79938370149932
+"1.4.fossilenergy","NEMS-OP","No IRA","Primary Energy|Coal","Quads",2030,"Coal",6.32688255455155
+"1.4.fossilenergy","NEMS-OP","No IRA","Primary Energy|Coal","Quads",2035,"Coal",5.5986739436502
+"1.4.fossilenergy","NEMS-RHG","IRA","Primary Energy|Coal","Quads",2025,"Coal",7.25047803307067
+"1.4.fossilenergy","NEMS-RHG","IRA","Primary Energy|Coal","Quads",2030,"Coal",2.35114553075739
+"1.4.fossilenergy","NEMS-RHG","IRA","Primary Energy|Coal","Quads",2035,"Coal",2.97530325646342
+"1.4.fossilenergy","NEMS-RHG","No IRA","Primary Energy|Coal","Quads",2025,"Coal",6.95853930642207
+"1.4.fossilenergy","NEMS-RHG","No IRA","Primary Energy|Coal","Quads",2030,"Coal",5.81481096583075
+"1.4.fossilenergy","NEMS-RHG","No IRA","Primary Energy|Coal","Quads",2035,"Coal",5.39191360471588
+"1.4.fossilenergy","REGEN-EPRI","IRA","Primary Energy|Coal","Quads",2025,"Coal",10.3998121459777
+"1.4.fossilenergy","REGEN-EPRI","IRA","Primary Energy|Coal","Quads",2030,"Coal",8.59984465917383
+"1.4.fossilenergy","REGEN-EPRI","IRA","Primary Energy|Coal","Quads",2035,"Coal",5.19990607298883
+"1.4.fossilenergy","REGEN-EPRI","No IRA","Primary Energy|Coal","Quads",2025,"Coal",10.2698144941529
+"1.4.fossilenergy","REGEN-EPRI","No IRA","Primary Energy|Coal","Quads",2030,"Coal",8.04985459376155
+"1.4.fossilenergy","REGEN-EPRI","No IRA","Primary Energy|Coal","Quads",2035,"Coal",7.21986958595756
+"1.4.fossilenergy","USREP-ReEDS","IRA","Primary Energy|Coal","Quads",2025,"Coal",7.287770313558
+"1.4.fossilenergy","USREP-ReEDS","IRA","Primary Energy|Coal","Quads",2030,"Coal",3.8499629469658
+"1.4.fossilenergy","USREP-ReEDS","IRA","Primary Energy|Coal","Quads",2035,"Coal",2.9818203733514
+"1.4.fossilenergy","USREP-ReEDS","No IRA","Primary Energy|Coal","Quads",2025,"Coal",9.0809571484422
+"1.4.fossilenergy","USREP-ReEDS","No IRA","Primary Energy|Coal","Quads",2030,"Coal",7.4960119453618
+"1.4.fossilenergy","USREP-ReEDS","No IRA","Primary Energy|Coal","Quads",2035,"Coal",6.1661559936396
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2005,"Gas",22.56495639993
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2006,"Gas",22.238336302504
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2007,"Gas",23.662331580286
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2008,"Gas",23.842522330858
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2009,"Gas",23.415517039012
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2010,"Gas",24.574310104834
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2011,"Gas",24.954088247676
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2012,"Gas",26.088110769014
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2013,"Gas",26.804649824778
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2014,"Gas",27.382338388916
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2015,"Gas",28.190585786006
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2016,"Gas",28.399839003802
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2017,"Gas",28.054586248346
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2018,"Gas",31.16227111312
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2019,"Gas",32.263109222946
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2020,"Gas",31.549957102048
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","EPS-EI","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","EPS-EI","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","GCAM-CGS","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","GCAM-CGS","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","GCAM-PNNL","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","GCAM-PNNL","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","MARKAL-NETL","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","MARKAL-NETL","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","NEMS-EIA","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","NEMS-EIA","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","NEMS-OP","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","NEMS-OP","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","NEMS-RHG","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","NEMS-RHG","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","REGEN-EPRI","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","REGEN-EPRI","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","USREP-ReEDS","IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","USREP-ReEDS","No IRA","Primary Energy|Gas","Quads",2021,"Gas",31.3420508597
+"1.4.fossilenergy","EPS-EI","IRA","Primary Energy|Gas","Quads",2025,"Gas",31.7759260246787
+"1.4.fossilenergy","EPS-EI","IRA","Primary Energy|Gas","Quads",2030,"Gas",27.1074103530719
+"1.4.fossilenergy","EPS-EI","IRA","Primary Energy|Gas","Quads",2035,"Gas",25.4349405632501
+"1.4.fossilenergy","EPS-EI","No IRA","Primary Energy|Gas","Quads",2025,"Gas",33.3014984679387
+"1.4.fossilenergy","EPS-EI","No IRA","Primary Energy|Gas","Quads",2030,"Gas",34.2134819945859
+"1.4.fossilenergy","EPS-EI","No IRA","Primary Energy|Gas","Quads",2035,"Gas",34.7352725693717
+"1.4.fossilenergy","GCAM-CGS","IRA","Primary Energy|Gas","Quads",2025,"Gas",26.1784844784294
+"1.4.fossilenergy","GCAM-CGS","IRA","Primary Energy|Gas","Quads",2030,"Gas",25.9702417944638
+"1.4.fossilenergy","GCAM-CGS","IRA","Primary Energy|Gas","Quads",2035,"Gas",25.7433264620041
+"1.4.fossilenergy","GCAM-CGS","No IRA","Primary Energy|Gas","Quads",2025,"Gas",26.509852900434
+"1.4.fossilenergy","GCAM-CGS","No IRA","Primary Energy|Gas","Quads",2030,"Gas",26.0153594629061
+"1.4.fossilenergy","GCAM-CGS","No IRA","Primary Energy|Gas","Quads",2035,"Gas",27.1800777608441
+"1.4.fossilenergy","GCAM-PNNL","IRA","Primary Energy|Gas","Quads",2025,"Gas",27.4635316597955
+"1.4.fossilenergy","GCAM-PNNL","IRA","Primary Energy|Gas","Quads",2030,"Gas",28.6016778107141
+"1.4.fossilenergy","GCAM-PNNL","IRA","Primary Energy|Gas","Quads",2035,"Gas",27.2799741643486
+"1.4.fossilenergy","GCAM-PNNL","No IRA","Primary Energy|Gas","Quads",2025,"Gas",29.017588894
+"1.4.fossilenergy","GCAM-PNNL","No IRA","Primary Energy|Gas","Quads",2030,"Gas",30.540068468
+"1.4.fossilenergy","GCAM-PNNL","No IRA","Primary Energy|Gas","Quads",2035,"Gas",29.768805696
+"1.4.fossilenergy","MARKAL-NETL","IRA","Primary Energy|Gas","Quads",2025,"Gas",27.2238782492874
+"1.4.fossilenergy","MARKAL-NETL","IRA","Primary Energy|Gas","Quads",2030,"Gas",25.6227171714011
+"1.4.fossilenergy","MARKAL-NETL","IRA","Primary Energy|Gas","Quads",2035,"Gas",22.9419355949299
+"1.4.fossilenergy","MARKAL-NETL","No IRA","Primary Energy|Gas","Quads",2025,"Gas",27.2532177193224
+"1.4.fossilenergy","MARKAL-NETL","No IRA","Primary Energy|Gas","Quads",2030,"Gas",27.6820599730534
+"1.4.fossilenergy","MARKAL-NETL","No IRA","Primary Energy|Gas","Quads",2035,"Gas",28.4719757046372
+"1.4.fossilenergy","NEMS-EIA","IRA","Primary Energy|Gas","Quads",2025,"Gas",30.4562522559423
+"1.4.fossilenergy","NEMS-EIA","IRA","Primary Energy|Gas","Quads",2030,"Gas",29.1747142202481
+"1.4.fossilenergy","NEMS-EIA","IRA","Primary Energy|Gas","Quads",2035,"Gas",28.7312922839434
+"1.4.fossilenergy","NEMS-EIA","No IRA","Primary Energy|Gas","Quads",2025,"Gas",30.9438619865961
+"1.4.fossilenergy","NEMS-EIA","No IRA","Primary Energy|Gas","Quads",2030,"Gas",32.140876415665
+"1.4.fossilenergy","NEMS-EIA","No IRA","Primary Energy|Gas","Quads",2035,"Gas",31.903932518407
+"1.4.fossilenergy","NEMS-OP","IRA","Primary Energy|Gas","Quads",2025,"Gas",30.0057803524483
+"1.4.fossilenergy","NEMS-OP","IRA","Primary Energy|Gas","Quads",2030,"Gas",26.7784263726236
+"1.4.fossilenergy","NEMS-OP","IRA","Primary Energy|Gas","Quads",2035,"Gas",24.9408529247303
+"1.4.fossilenergy","NEMS-OP","No IRA","Primary Energy|Gas","Quads",2025,"Gas",30.9138381263278
+"1.4.fossilenergy","NEMS-OP","No IRA","Primary Energy|Gas","Quads",2030,"Gas",30.0528331334637
+"1.4.fossilenergy","NEMS-OP","No IRA","Primary Energy|Gas","Quads",2035,"Gas",29.7989623149839
+"1.4.fossilenergy","NEMS-RHG","IRA","Primary Energy|Gas","Quads",2025,"Gas",30.7722201548317
+"1.4.fossilenergy","NEMS-RHG","IRA","Primary Energy|Gas","Quads",2030,"Gas",26.4149648608624
+"1.4.fossilenergy","NEMS-RHG","IRA","Primary Energy|Gas","Quads",2035,"Gas",27.0232358735335
+"1.4.fossilenergy","NEMS-RHG","No IRA","Primary Energy|Gas","Quads",2025,"Gas",29.3957230187927
+"1.4.fossilenergy","NEMS-RHG","No IRA","Primary Energy|Gas","Quads",2030,"Gas",29.696635583345
+"1.4.fossilenergy","NEMS-RHG","No IRA","Primary Energy|Gas","Quads",2035,"Gas",29.1378236772835
+"1.4.fossilenergy","REGEN-EPRI","IRA","Primary Energy|Gas","Quads",2025,"Gas",29.0994743699952
+"1.4.fossilenergy","REGEN-EPRI","IRA","Primary Energy|Gas","Quads",2030,"Gas",29.6794638935208
+"1.4.fossilenergy","REGEN-EPRI","IRA","Primary Energy|Gas","Quads",2035,"Gas",25.839533255006
+"1.4.fossilenergy","REGEN-EPRI","No IRA","Primary Energy|Gas","Quads",2025,"Gas",28.709481414521
+"1.4.fossilenergy","REGEN-EPRI","No IRA","Primary Energy|Gas","Quads",2030,"Gas",29.3094705767889
+"1.4.fossilenergy","REGEN-EPRI","No IRA","Primary Energy|Gas","Quads",2035,"Gas",30.5394483594382
+"1.4.fossilenergy","USREP-ReEDS","IRA","Primary Energy|Gas","Quads",2025,"Gas",28.485925374648
+"1.4.fossilenergy","USREP-ReEDS","IRA","Primary Energy|Gas","Quads",2030,"Gas",25.007408869226
+"1.4.fossilenergy","USREP-ReEDS","IRA","Primary Energy|Gas","Quads",2035,"Gas",23.254349354768
+"1.4.fossilenergy","USREP-ReEDS","No IRA","Primary Energy|Gas","Quads",2025,"Gas",28.53357468325
+"1.4.fossilenergy","USREP-ReEDS","No IRA","Primary Energy|Gas","Quads",2030,"Gas",27.927511612518
+"1.4.fossilenergy","USREP-ReEDS","No IRA","Primary Energy|Gas","Quads",2035,"Gas",28.09551763585
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2005,"Oil",40.215841572032
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2006,"Oil",39.729794349238
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2007,"Oil",39.366903907758
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2008,"Oil",36.768718837494
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2009,"Oil",34.778521791328
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2010,"Oil",35.31987301143
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2011,"Oil",34.638548317828
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2012,"Oil",33.832471875594
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2013,"Oil",34.397303674902
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2014,"Oil",34.657200983916
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2015,"Oil",35.367488151842
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2016,"Oil",35.711257941506
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2017,"Oil",36.042504952104
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2018,"Oil",36.89115362268
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2019,"Oil",36.865715087712
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2020,"Oil",32.33055000777
+"1.4.fossilenergy","EIA","Historic","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","EPS-EI","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","EPS-EI","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","GCAM-CGS","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","GCAM-CGS","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","GCAM-PNNL","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","GCAM-PNNL","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","MARKAL-NETL","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","MARKAL-NETL","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","NEMS-EIA","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","NEMS-OP","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","NEMS-OP","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","NEMS-RHG","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","NEMS-RHG","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","REGEN-EPRI","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","REGEN-EPRI","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","USREP-ReEDS","IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","USREP-ReEDS","No IRA","Primary Energy|Oil","Quads",2021,"Oil",35.242100410454
+"1.4.fossilenergy","EPS-EI","IRA","Primary Energy|Oil","Quads",2025,"Oil",32.2974096050097
+"1.4.fossilenergy","EPS-EI","IRA","Primary Energy|Oil","Quads",2030,"Oil",30.0299205631474
+"1.4.fossilenergy","EPS-EI","IRA","Primary Energy|Oil","Quads",2035,"Oil",27.771050365601
+"1.4.fossilenergy","EPS-EI","No IRA","Primary Energy|Oil","Quads",2025,"Oil",32.3437477679936
+"1.4.fossilenergy","EPS-EI","No IRA","Primary Energy|Oil","Quads",2030,"Oil",30.2628053564997
+"1.4.fossilenergy","EPS-EI","No IRA","Primary Energy|Oil","Quads",2035,"Oil",28.2335140120216
+"1.4.fossilenergy","GCAM-CGS","IRA","Primary Energy|Oil","Quads",2025,"Oil",30.7016539602896
+"1.4.fossilenergy","GCAM-CGS","IRA","Primary Energy|Oil","Quads",2030,"Oil",28.2269403677296
+"1.4.fossilenergy","GCAM-CGS","IRA","Primary Energy|Oil","Quads",2035,"Oil",27.7359160618507
+"1.4.fossilenergy","GCAM-CGS","No IRA","Primary Energy|Oil","Quads",2025,"Oil",32.6640260964821
+"1.4.fossilenergy","GCAM-CGS","No IRA","Primary Energy|Oil","Quads",2030,"Oil",31.7768952014851
+"1.4.fossilenergy","GCAM-CGS","No IRA","Primary Energy|Oil","Quads",2035,"Oil",28.8814593507008
+"1.4.fossilenergy","GCAM-PNNL","IRA","Primary Energy|Oil","Quads",2025,"Oil",30.2657009335256
+"1.4.fossilenergy","GCAM-PNNL","IRA","Primary Energy|Oil","Quads",2030,"Oil",26.7328592468796
+"1.4.fossilenergy","GCAM-PNNL","IRA","Primary Energy|Oil","Quads",2035,"Oil",23.4338287973899
+"1.4.fossilenergy","GCAM-PNNL","No IRA","Primary Energy|Oil","Quads",2025,"Oil",30.617939716
+"1.4.fossilenergy","GCAM-PNNL","No IRA","Primary Energy|Oil","Quads",2030,"Oil",27.628455302
+"1.4.fossilenergy","GCAM-PNNL","No IRA","Primary Energy|Oil","Quads",2035,"Oil",24.657803674
+"1.4.fossilenergy","MARKAL-NETL","IRA","Primary Energy|Oil","Quads",2025,"Oil",36.3531243457704
+"1.4.fossilenergy","MARKAL-NETL","IRA","Primary Energy|Oil","Quads",2030,"Oil",35.8960316023339
+"1.4.fossilenergy","MARKAL-NETL","IRA","Primary Energy|Oil","Quads",2035,"Oil",35.4481996916172
+"1.4.fossilenergy","MARKAL-NETL","No IRA","Primary Energy|Oil","Quads",2025,"Oil",36.3851727668729
+"1.4.fossilenergy","MARKAL-NETL","No IRA","Primary Energy|Oil","Quads",2030,"Oil",35.9274410349787
+"1.4.fossilenergy","MARKAL-NETL","No IRA","Primary Energy|Oil","Quads",2035,"Oil",35.4787991388928
+"1.4.fossilenergy","NEMS-EIA","IRA","Primary Energy|Oil","Quads",2025,"Oil",34.6576867023754
+"1.4.fossilenergy","NEMS-EIA","IRA","Primary Energy|Oil","Quads",2030,"Oil",33.867923377951
+"1.4.fossilenergy","NEMS-EIA","IRA","Primary Energy|Oil","Quads",2035,"Oil",33.1915445258329
+"1.4.fossilenergy","NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2025,"Oil",34.9365584045005
+"1.4.fossilenergy","NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2030,"Oil",34.1920178696082
+"1.4.fossilenergy","NEMS-EIA","No IRA","Primary Energy|Oil","Quads",2035,"Oil",33.6007776212532
+"1.4.fossilenergy","NEMS-OP","IRA","Primary Energy|Oil","Quads",2025,"Oil",35.2257980583729
+"1.4.fossilenergy","NEMS-OP","IRA","Primary Energy|Oil","Quads",2030,"Oil",32.7631155197507
+"1.4.fossilenergy","NEMS-OP","IRA","Primary Energy|Oil","Quads",2035,"Oil",30.48896210371
+"1.4.fossilenergy","NEMS-OP","No IRA","Primary Energy|Oil","Quads",2025,"Oil",35.2892207632022
+"1.4.fossilenergy","NEMS-OP","No IRA","Primary Energy|Oil","Quads",2030,"Oil",33.7259680386142
+"1.4.fossilenergy","NEMS-OP","No IRA","Primary Energy|Oil","Quads",2035,"Oil",32.0734867292981
+"1.4.fossilenergy","NEMS-RHG","IRA","Primary Energy|Oil","Quads",2025,"Oil",36.8496073776916
+"1.4.fossilenergy","NEMS-RHG","IRA","Primary Energy|Oil","Quads",2030,"Oil",34.7813997361668
+"1.4.fossilenergy","NEMS-RHG","IRA","Primary Energy|Oil","Quads",2035,"Oil",32.9274832238558
+"1.4.fossilenergy","NEMS-RHG","No IRA","Primary Energy|Oil","Quads",2025,"Oil",36.828466759559
+"1.4.fossilenergy","NEMS-RHG","No IRA","Primary Energy|Oil","Quads",2030,"Oil",35.154885989805
+"1.4.fossilenergy","NEMS-RHG","No IRA","Primary Energy|Oil","Quads",2035,"Oil",33.6862505180804
+"1.4.fossilenergy","REGEN-EPRI","IRA","Primary Energy|Oil","Quads",2025,"Oil",30.8394429405722
+"1.4.fossilenergy","REGEN-EPRI","IRA","Primary Energy|Oil","Quads",2030,"Oil",27.4395043543872
+"1.4.fossilenergy","REGEN-EPRI","IRA","Primary Energy|Oil","Quads",2035,"Oil",24.0195661294599
+"1.4.fossilenergy","REGEN-EPRI","No IRA","Primary Energy|Oil","Quads",2025,"Oil",30.9094416761701
+"1.4.fossilenergy","REGEN-EPRI","No IRA","Primary Energy|Oil","Quads",2030,"Oil",27.8694965873459
+"1.4.fossilenergy","REGEN-EPRI","No IRA","Primary Energy|Oil","Quads",2035,"Oil",24.8195516791505
+"1.4.fossilenergy","USREP-ReEDS","IRA","Primary Energy|Oil","Quads",2025,"Oil",34.924638345226
+"1.4.fossilenergy","USREP-ReEDS","IRA","Primary Energy|Oil","Quads",2030,"Oil",32.78779374969
+"1.4.fossilenergy","USREP-ReEDS","IRA","Primary Energy|Oil","Quads",2035,"Oil",30.860427028984
+"1.4.fossilenergy","USREP-ReEDS","No IRA","Primary Energy|Oil","Quads",2025,"Oil",34.790376115488
+"1.4.fossilenergy","USREP-ReEDS","No IRA","Primary Energy|Oil","Quads",2030,"Oil",33.082136176908
+"1.4.fossilenergy","USREP-ReEDS","No IRA","Primary Energy|Oil","Quads",2035,"Oil",31.724095116518

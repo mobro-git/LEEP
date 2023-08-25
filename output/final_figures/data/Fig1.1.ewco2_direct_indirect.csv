@@ -1,4 +1,4 @@
-"figure_num","model","scenario","variable","unit","year","variable_rename","value"
+"figure_num","model","scenario","variable","unit","year","label","value"
 "1.1.ewco2_direct_indirect","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr",2005,"Buildings: Direct",586
 "1.1.ewco2_direct_indirect","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr",2005,"Buildings: Indirect",1659
 "1.1.ewco2_direct_indirect","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr",2005,"Industry: Direct",850.8

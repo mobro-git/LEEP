@@ -319,7 +319,10 @@ figure = ggplot() +
 figure
   
 df = rbind(hist_clean,proj_clean,mods_clean) %>%
-  filter(!is.na(value))
+  filter(!is.na(value)) %>%
+  mutate(figure_num = fig_no,
+         scenario = "Historic",
+         label = "Natural Gas Price")
   
 saveall(figure, df, fig_no)
 ```
@@ -404,9 +407,13 @@ p2 = dta_bottom %>% ggplot() +
         legend.text = element_text(size = 6), legend.key.size = unit(15,"point"))
 p2
 
-saveall(p,dta_top,fig_no)
+saveall(p,data.frame(),fig_no)
+dta_top = dta_top %>% mutate(figure_num = fig_no, label = variable, variable = "Capital Cost")
 fig_no = "D.3.capitalcosts_coalgasCCS"
-saveall(p2,dta_bottom,fig_no)
+saveall(p2,data.frame(),fig_no)
+dta_bottom = dta_bottom %>% mutate(figure_num = fig_no, label = variable, variable = "Capital Cost")
+data_combo = bind_rows(dta_top, dta_bottom)
+savedata(data_combo, "FigD.2+3.capitalcosts")
 ```
 
 
@@ -434,9 +441,11 @@ fig = four_corners("Economy-wide CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID,
 
 fig$figure
 
-write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
-write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
-write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+data_combo = combine_4c_data(fig$ts_df, fig$pd_df, fig$ad_df, metric, unit)
+write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+#write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+#write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+#write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
 
 savefig(fig$figure, fig_no)
 ```
@@ -461,9 +470,11 @@ fig = four_corners("Power sector CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID,
 
 fig$figure
 
-write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
-write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
-write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+data_combo = combine_4c_data(fig$ts_df, fig$pd_df, fig$ad_df, metric, unit)
+write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+# write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+# write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+# write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
 
 savefig(fig$figure, fig_no)
 ```
@@ -488,9 +499,11 @@ fig = four_corners("Transportation CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_I
 
 fig$figure
 
-write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
-write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
-write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+data_combo = combine_4c_data(fig$ts_df, fig$pd_df, fig$ad_df, metric, unit)
+write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+# write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+# write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+# write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
 
 savefig(fig$figure, fig_no)
 ```
@@ -515,9 +528,11 @@ fig = four_corners("Buildings CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, dr
 
 fig$figure
 
-write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
-write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
-write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+data_combo = combine_4c_data(fig$ts_df, fig$pd_df, fig$ad_df, metric, unit)
+write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+# write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+# write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+# write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
 
 savefig(fig$figure, fig_no)
 ```
@@ -542,9 +557,11 @@ fig = four_corners("Industry CO2 Emissions",ts_map_ID, pd_map_ID, ad_map_ID, dro
 
 fig$figure
 
-write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
-write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
-write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+data_combo = combine_4c_data(fig$ts_df, fig$pd_df, fig$ad_df, metric, unit)
+write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+# write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+# write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+# write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
 
 savefig(fig$figure, fig_no)
 
@@ -572,9 +589,11 @@ fig = four_corners("Primary Energy Coal",ts_map_ID, pd_map_ID, ad_map_ID, drop, 
 
 fig$figure
 
-write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
-write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
-write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+data_combo = combine_4c_data(fig$ts_df, fig$pd_df, fig$ad_df, metric, unit)
+write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+# write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+# write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+# write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
 
 savefig(fig$figure, fig_no)
 ```
@@ -599,9 +618,11 @@ fig = four_corners("Primary Energy Gas",ts_map_ID, pd_map_ID, ad_map_ID, drop, h
 
 fig$figure
 
-write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
-write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
-write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+data_combo = combine_4c_data(fig$ts_df, fig$pd_df, fig$ad_df, metric, unit)
+write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+# write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+# write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+# write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
 
 savefig(fig$figure, fig_no)
 ```
@@ -626,9 +647,11 @@ fig = four_corners("Primary Energy Petroleum", ts_map_ID, pd_map_ID, ad_map_ID, 
 
 fig$figure
 
-write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
-write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
-write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+data_combo = combine_4c_data(fig$ts_df, fig$pd_df, fig$ad_df, metric, unit)
+write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+# write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+# write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+# write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
 
 savefig(fig$figure, fig_no)
 ```
@@ -655,9 +678,11 @@ fig = four_corners("Electricity Generation from Nuclear", ts_map_ID, pd_map_ID, 
 
 fig$figure
 
-write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
-write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
-write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+data_combo = combine_4c_data(fig$ts_df, fig$pd_df, fig$ad_df, metric, unit)
+write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+# write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+# write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+# write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
 
 savefig(fig$figure, fig_no)
 ```
@@ -682,9 +707,11 @@ fig = four_corners("Electricity Generation from Solar", ts_map_ID, pd_map_ID, ad
 
 fig$figure
 
-write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
-write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
-write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+data_combo = combine_4c_data(fig$ts_df, fig$pd_df, fig$ad_df, metric, unit)
+write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+# write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+# write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+# write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
 
 savefig(fig$figure, fig_no)
 ```
@@ -709,9 +736,11 @@ fig = four_corners("Electricity Generation from Wind", ts_map_ID, pd_map_ID, ad_
 
 fig$figure
 
-write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
-write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
-write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+data_combo = combine_4c_data(fig$ts_df, fig$pd_df, fig$ad_df, metric, unit)
+write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+# write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+# write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+# write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
 
 savefig(fig$figure, fig_no)
 ```
@@ -868,12 +897,17 @@ fig = (NoIRAfigure |
 
 fig
 
-write.csv(
-  ts_df,
-  file = paste("output/final_figures/data/Fig", fig_no, "a_Scen.csv", sep =
-                 ""),
-  row.names = FALSE
-)
+ts_df$figure_num = fig_no
+adfigure$ad_df$figure_num = fig_no
+data_combo = combine_4c_data(ts_df, data.frame(), adfigure$ad_df, metric, unit)
+write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+
+# write.csv(
+#   ts_df,
+#   file = paste("output/final_figures/data/Fig", fig_no, "a_Scen.csv", sep =
+#                  ""),
+#   row.names = FALSE
+# )
 # write.csv(
 #   fig$pd_df,
 #   file = paste(
@@ -884,16 +918,16 @@ write.csv(
 #   ),
 #   row.names = FALSE
 # )
-write.csv(
-  adfigure$ad_df,
-  file = paste(
-    "output/final_figures/data/Fig",
-    fig_no,
-    "c_AbsDiff.csv",
-    sep = ""
-  ),
-  row.names = FALSE
-)
+# write.csv(
+#   adfigure$ad_df,
+#   file = paste(
+#     "output/final_figures/data/Fig",
+#     fig_no,
+#     "c_AbsDiff.csv",
+#     sep = ""
+#   ),
+#   row.names = FALSE
+# )
 
 savefig(fig, fig_no)
 ```
@@ -1052,12 +1086,18 @@ fig
 
 # TODO: This entire figure is broken and saves off data that doesnt exist. I fixed the figure, but the whole thing should be rewritten to fit the format of the rest of the figures and actually output the correct data
 
-write.csv(
-  ts_df,
-  file = paste("output/final_figures/data/Fig", fig_no, "a_Scen.csv", sep =
-                 ""),
-  row.names = FALSE
-)
+ts_df$figure_num = fig_no
+adfigure$ad_df$figure_num = fig_no
+data_combo = combine_4c_data(ts_df, data.frame(), adfigure$ad_df, metric, unit)
+write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+
+
+# write.csv(
+#   ts_df,
+#   file = paste("output/final_figures/data/Fig", fig_no, "a_Scen.csv", sep =
+#                  ""),
+#   row.names = FALSE
+# )
 # write.csv(
 #   fig$pd_df,
 #   file = paste(
@@ -1068,16 +1108,16 @@ write.csv(
 #   ),
 #   row.names = FALSE
 # )
-write.csv(
-  adfigure$ad_df,
-  file = paste(
-    "output/final_figures/data/Fig",
-    fig_no,
-    "c_AbsDiff.csv",
-    sep = ""
-  ),
-  row.names = FALSE
-)
+# write.csv(
+#   adfigure$ad_df,
+#   file = paste(
+#     "output/final_figures/data/Fig",
+#     fig_no,
+#     "c_AbsDiff.csv",
+#     sep = ""
+#   ),
+#   row.names = FALSE
+# )
 
 savefig(fig, fig_no)
 ```
@@ -1103,9 +1143,11 @@ fig = four_corners("Electricity Generation from Coal without CCS", ts_map_ID, pd
 
 fig$figure
 
-write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
-write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
-write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+data_combo = combine_4c_data(fig$ts_df, fig$pd_df, fig$ad_df, metric, unit)
+write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+# write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+# write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+# write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
 
 savefig(fig$figure, fig_no)
 ```
@@ -1131,9 +1173,12 @@ fig = four_corners("Electricity Generation from Gas without CCS", ts_map_ID, pd_
 
 fig$figure
 
-write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
-write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
-write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
+data_combo = combine_4c_data(fig$ts_df, fig$pd_df, fig$ad_df, metric, unit)
+write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+
+# write.csv(fig$ts_df, file = paste("output/final_figures/data/Fig",fig_no,"a_Scen.csv",sep=""), row.names = FALSE)
+# write.csv(fig$pd_df, file = paste("output/final_figures/data/Fig",fig_no,"b_PercDiff.csv",sep=""), row.names = FALSE)
+# write.csv(fig$ad_df, file = paste("output/final_figures/data/Fig",fig_no,"c_AbsDiff.csv",sep=""), row.names = FALSE)
 
 savefig(fig$figure, fig_no)
 ```
@@ -1373,35 +1418,51 @@ pdfigure = ggplot() +
     plot_annotation(caption = "Electricity Generation from Other")
   
   savefig(figure, fig_no)
-  
-  write.csv(
-  df,
-  file = paste("output/final_figures/data/Fig", fig_no, "a_Scen.csv", sep =
-                 ""),
-  row.names = FALSE
-)
-  
-write.csv(
-  pbdata,
-  file = paste(
-    "output/final_figures/data/Fig",
-    fig_no,
-    "b_PercDiff.csv",
-    sep = ""
-  ),
-  row.names = FALSE
-)
 
-write.csv(
-  abdata,
-  file = paste(
-    "output/final_figures/data/Fig",
-    fig_no,
-    "c_AbsDiff.csv",
-    sep = ""
-  ),
-  row.names = FALSE
-)
+df$variable_rename = "Other Generation"
+
+abdata = abdata %>%
+  mutate(variable_rename = "Other Generation",
+         figure_num = fig_no) #%>%
+  #rename("value" = "abdif")
+
+pbdata = pbdata %>%
+  mutate(variable_rename = "Other Generation",
+         figure_num = fig_no) #%>%
+  #rename("value" = "pbdif")
+
+data_combo = combine_4c_data(df, pbdata, abdata, metric, unit)
+write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+  
+
+# write.csv(
+#   df,
+#   file = paste("output/final_figures/data/Fig", fig_no, "a_Scen.csv", sep =
+#                  ""),
+#   row.names = FALSE
+# )
+#   
+# write.csv(
+#   pbdata,
+#   file = paste(
+#     "output/final_figures/data/Fig",
+#     fig_no,
+#     "b_PercDiff.csv",
+#     sep = ""
+#   ),
+#   row.names = FALSE
+# )
+# 
+# write.csv(
+#   abdata,
+#   file = paste(
+#     "output/final_figures/data/Fig",
+#     fig_no,
+#     "c_AbsDiff.csv",
+#     sep = ""
+#   ),
+#   row.names = FALSE
+# )
 ```
 
 ### EV Share
@@ -1518,6 +1579,10 @@ EV_noIRA = clean_data_evshare %>%
 
 EV_noIRA = rbind(EV_noIRA, hist)
 
+data_extract1 = bind_rows(EV_IRA, EV_noIRA) %>% ungroup() %>%
+  select(model, scenario, unit, variable_rename, year, value) %>%
+  mutate(figure_num = fig_no)
+
   noIRAmedians = EV_noIRA %>%
     filter(year == 2030 | year == 2035) %>%
     group_by(year) %>%
@@ -1628,6 +1693,11 @@ dif_fin = rbind(dif_clean, dif_hist)
 df = dif_fin %>%
   filter(name != "pdif")
 
+data_extract2 = df %>% 
+  mutate(scenario = "IRA",
+         figure_num = fig_no) %>%
+  rename("variable_rename" = "name")
+
 medians = df %>%
     filter(year %in% c(2030, 2035)) %>%
     group_by(year) %>%
@@ -1682,6 +1752,11 @@ EV_abdif_figure = ggplot() +
 
 df = dif_fin %>%
   filter(name != "absdif")
+
+data_extract3 = df %>%
+  mutate(scenario = "IRA",
+         figure_num = fig_no) %>%
+  rename("variable_rename" = "name","diff" = "value")
 
 medians = df %>%
     filter(year %in% c(2030, 2035)) %>%
@@ -1740,6 +1815,10 @@ EV_pdif_figure = ggplot() +
     plot_annotation(caption = "EV Sales Share")
   
   savefig(figure, fig_no)
+  
+  data_combo = combine_4c_data(data_extract1, data_extract2, data_extract3, metric, unit)
+  write.csv(data_combo, file = paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+  
 ```
 
 ### Electricity generation by model
@@ -1816,6 +1895,11 @@ p = print_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 18, "
 
 p
 
+dta = dta %>% ungroup() %>%
+  mutate(figure_num = fig_no) %>%
+  rename("label" = "variable_rename") %>%
+  select(figure_num, model, scenario, unit, variable, label, year, value)
+
 saveall(p, dta, fig_no)
 ```
 
@@ -1837,6 +1921,11 @@ p = print_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 15, "
   labs(title = "")
 
 dta = data_from_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 15, "United States")
+
+dta = dta %>% ungroup() %>%
+  mutate(figure_num = fig_no) %>%
+  rename("label" = "variable_rename") %>%
+  select(figure_num, model, scenario, unit, variable, label, year, value)
 
 p
 
@@ -2109,7 +2198,12 @@ EconSpg = spg3(df = Econ_ts,
                config = config, 
                figmap_leep_timeseries = figmap_leep_timeseries)
 
-savedata(EconSpg$data, paste0(fig_no, "EconWide"))
+#savedata(EconSpg$data, paste0(fig_no, "EconWide"))
+EconSpg$data = EconSpg$data %>%
+  ungroup() %>%
+  mutate(figure_num = fig_no, variable = "Electricity Share") %>%
+  rename("label" = "variable_rename") %>%
+  select(-alpha)
 
 EconDot = dotted(Econ_ts, EconSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
 
@@ -2132,7 +2226,12 @@ TranSpg = spg3(df = Tran_ts,
                config = config, 
                figmap_leep_timeseries = figmap_leep_timeseries)
 
-savedata(TranSpg$data, paste0(fig_no, "Transportation"))
+#savedata(TranSpg$data, paste0(fig_no, "Transportation"))
+TranSpg$data = TranSpg$data %>%
+  ungroup() %>%
+  mutate(figure_num = fig_no, variable = "Electricity Share") %>%
+  rename("label" = "variable_rename") %>%
+  select(-alpha)
 
 TranDot = dotted(Tran_ts, TranSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
 
@@ -2155,7 +2254,12 @@ BuilSpg = spg3(df = Buil_ts,
                config = config, 
                figmap_leep_timeseries = figmap_leep_timeseries)
 
-savedata(BuilSpg$data, paste0(fig_no, "Buildings"))
+#savedata(BuilSpg$data, paste0(fig_no, "Buildings"))
+BuilSpg$data = BuilSpg$data %>%
+  ungroup() %>%
+  mutate(figure_num = fig_no, variable = "Electricity Share") %>%
+  rename("label" = "variable_rename") %>%
+  select(-alpha)
 
 BuilDot = dotted(Buil_ts, BuilSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
 
@@ -2178,7 +2282,15 @@ IndSpg = spg3(df = Ind_ts,
                config = config, 
                figmap_leep_timeseries = figmap_leep_timeseries)
 
-savedata(IndSpg$data, paste0(fig_no, "Industry"))
+#savedata(IndSpg$data, paste0(fig_no, "Industry"))
+IndSpg$data = IndSpg$data %>%
+  ungroup() %>%
+  mutate(figure_num = fig_no, variable = "Electricity Share") %>%
+  rename("label" = "variable_rename") %>%
+  select(-alpha)
+
+data_combo = bind_rows(EconSpg$data, TranSpg$data, BuilSpg$data, IndSpg$data)
+savedata(data_combo, fig_no)
 
 IndDot = dotted(Ind_ts, IndSpg$figure, "median", 0, 70, config, figmap_leep_timeseries, ddge = -0.2)
 
@@ -2243,7 +2355,10 @@ all = rbind(total, transportation, buildings, industry) %>%
 
 write_sheet(all, per_share_wb, "All")
 
-saveWorkbook(per_share_wb, file = "output/final_figures/data/TableF.1.1.share.xlsx", overwrite = TRUE)
+data_combo = all
+savedata(data_combo, paste0(fig_no,"_summary"))
+
+#saveWorkbook(per_share_wb, file = "output/final_figures/data/TableF.1.1.share.xlsx", overwrite = TRUE)
 ```
 
 ```{R}
@@ -2357,7 +2472,11 @@ all_per = rbind(total_per, transportation_per, buildings_per, industry_per) %>%
 
 write_sheet(all_per, diff_wb, "All")
 
-saveWorkbook(per_share_wb, file = "output/final_figures/data/TableF.1.2.difference.xlsx", overwrite = TRUE)
+data_combo = all_per
+fig_no = "F.1.2"
+savedata(data_combo, paste0(fig_no,"_summary"))
+
+#saveWorkbook(per_share_wb, file = "output/final_figures/data/TableF.1.2.difference.xlsx", overwrite = TRUE)
 ```
 
 ```{R}
@@ -2470,7 +2589,7 @@ EconSpg = spg2(
 
 EconDot = dotted(EconSpg$data, EconSpg$figure, "median", 0, 4000, config, figmap_leep_timeseries)
 
-savedata(EconSpg$data, paste(fig_no, "EconWide"))
+#savedata(EconSpg$data, paste(fig_no, "EconWide"))
 
 EconTab = html(EconSpg$data, "Non-Electricity")
 EconTab
@@ -2490,7 +2609,7 @@ ElecSpg = spg2(Elec_data,
   config, 
   figmap_leep_timeseries)
 
-savedata(ElecSpg$data, paste(fig_no, "Electricity"))
+#savedata(ElecSpg$data, paste(fig_no, "Electricity"))
 
 ElecTab = html(ElecSpg$data, "Electricity")
 
@@ -2501,6 +2620,23 @@ ElecDot = dotted(ElecSpg$data, ElecSpg$figure, "median", 0, 4000, config, figmap
 fig = EconDot | ElecDot
 
 savefig(fig, fig_no, wd=9,ht=4)
+
+EconSpg$data = EconSpg$data %>%
+  ungroup() %>%
+  select(-alpha) %>%
+  rename("label" = "variable_rename") %>%
+  mutate(variable = "Emissions|CO2|Economy-Wide",
+         figure_num = fig_no,
+         unit = "Mt CO2/yr")
+
+ElecSpg$data = ElecSpg$data %>%
+  ungroup() %>%
+  mutate(figure_num = fig_no) %>%
+  rename("label" = "variable_rename") %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
+
+data_combo = bind_rows(EconSpg$data, ElecSpg$data)
+savedata(data_combo, fig_no)
 ```
 
 ### Transportation Direct/Indirect
@@ -2572,8 +2708,24 @@ IndDirTab
 fig = DirDot | IndDirDot
 
 savefig(fig, fig_no, wd=9,ht=4)
-savedata(DirSpg$data, paste(fig_no, "Direct"))
-savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
+
+DirSpg$data = DirSpg$data %>%
+  ungroup() %>%
+  mutate(figure_num = fig_no) %>%
+  rename("label" = "variable_rename") %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
+
+IndDirSpg$data = IndDirSpg$data %>%
+  ungroup() %>%
+  mutate(figure_num = fig_no) %>%
+  rename("label" = "variable_rename") %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
+
+data_combo = bind_rows(DirSpg$data, IndDirSpg$data)
+savedata(data_combo, fig_no)
+
+#savedata(DirSpg$data, paste(fig_no, "Direct"))
+#savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 ```
 
 ### Building Direct/Indirect
@@ -2645,8 +2797,24 @@ IndDirTab
 fig = DirDot | IndDirDot
 
 savefig(fig, fig_no, wd=9,ht=4)
-savedata(DirSpg$data, paste(fig_no, "Direct"))
-savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
+
+DirSpg$data = DirSpg$data %>%
+  ungroup() %>%
+  mutate(figure_num = fig_no) %>%
+  rename("label" = "variable_rename") %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
+
+IndDirSpg$data = IndDirSpg$data %>%
+  ungroup() %>%
+  mutate(figure_num = fig_no) %>%
+  rename("label" = "variable_rename") %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
+
+data_combo = bind_rows(DirSpg$data, IndDirSpg$data)
+savedata(data_combo, fig_no)
+
+#savedata(DirSpg$data, paste(fig_no, "Direct"))
+#savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 ```
 
 ### Industry Direct/Indirect
@@ -2718,8 +2886,24 @@ IndDirTab
 fig = DirDot | IndDirDot
 
 savefig(fig, fig_no, wd=9,ht=4)
-savedata(DirSpg$data, paste(fig_no, "Direct"))
-savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
+
+DirSpg$data = DirSpg$data %>%
+  ungroup() %>%
+  mutate(figure_num = fig_no) %>%
+  rename("label" = "variable_rename") %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
+
+IndDirSpg$data = IndDirSpg$data %>%
+  ungroup() %>%
+  mutate(figure_num = fig_no) %>%
+  rename("label" = "variable_rename") %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
+
+data_combo = bind_rows(DirSpg$data, IndDirSpg$data)
+savedata(data_combo, fig_no)
+
+#savedata(DirSpg$data, paste(fig_no, "Direct"))
+#savedata(IndDirSpg$data, paste(fig_no, "Indirect"))
 ```
 
 ## F.3 Trends in electricity generation
@@ -2874,7 +3058,8 @@ dots_Total = ggplot(data = data_total, aes(x = axe, y = value,  color = scenario
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
 
-savedata(data_total, paste(fig_no, "Total"))
+#savedata(data_total, paste(fig_no, "Total"))
+
 
 ##### Low Total #####
 
@@ -2938,7 +3123,7 @@ dots_Low = ggplot(data = data_Low, aes(x = axe, y = value,  color = scenario)) +
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Low, paste(fig_no, "Low"))
+#savedata(data_Low, paste(fig_no, "Low"))
 
 ##### High Total #####
 df_21 = high %>%
@@ -3003,7 +3188,8 @@ dots_High = ggplot(data = data_High, aes(x = axe, y = value,  color = scenario))
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_High, paste(fig_no, "High"))
+#savedata(data_High, paste(fig_no, "High"))
+
 
 ##### Nuclear #####
 df_21 = individual[individual$variable_rename == "Nuclear", ] %>%
@@ -3071,7 +3257,8 @@ dots_Nuclear = ggplot(data = data_Nuclear, aes(x = axe, y = value,  color = scen
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Nuclear, paste(fig_no, "Nuclear"))
+#savedata(data_Nuclear, paste(fig_no, "Nuclear"))
+
 
 ##### Solar #####
 df_21 = individual[individual$variable_rename == "Solar", ] %>%
@@ -3139,7 +3326,8 @@ dots_Solar = ggplot(data = data_Solar, aes(x = axe, y = value,  color = scenario
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Solar, paste(fig_no, "Solar"))
+#savedata(data_Solar, paste(fig_no, "Solar"))
+
 
 ##### Wind #####
 
@@ -3210,7 +3398,7 @@ dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = value,  color = scenario))
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Wind, paste(fig_no, "Wind"))
+# savedata(data_Wind, paste(fig_no, "Wind"))
 
 ##### CCS #####
 
@@ -3279,7 +3467,7 @@ dots_CCS = ggplot(data = data_CCS, aes(x = axe, y = value,  color = scenario)) +
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_CCS, paste(fig_no, "CCS"))
+# savedata(data_CCS, paste(fig_no, "CCS"))
 
 ##### Coal #####
 df_21 = individual[individual$variable_rename == "Coal", ] %>%
@@ -3348,7 +3536,7 @@ dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = value,  color = scenario))
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Coal, paste(fig_no, "Coal"))
+# savedata(data_Coal, paste(fig_no, "Coal"))
 
 ##### Gas #####
 df_21 = individual[individual$variable_rename == "Natural Gas", ] %>%
@@ -3418,7 +3606,7 @@ dots_Gas = ggplot(data = data_Gas, aes(x = axe, y = value,  color = scenario)) +
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Gas, paste(fig_no, "Gas"))
+# savedata(data_Gas, paste(fig_no, "Gas"))
 
 ##### Other #####
 df_21 = individual[individual$variable_rename == "Other", ] %>%
@@ -3488,7 +3676,7 @@ dots_Other = ggplot(data = data_Other, aes(x = axe, y = value,  color = scenario
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Other, paste(fig_no, "Other"))
+# savedata(data_Other, paste(fig_no, "Other"))
 
 ##### Final #####
 final = (dots_Total | dots_Low | dots_High) / (dots_Wind | dots_Solar | dots_Nuclear | dots_CCS) / (dots_Coal | dots_Gas | dots_Other) 
@@ -3500,6 +3688,19 @@ final = final +
 final
 
 savefig(final, fig_no, wd = 8, ht = 8)
+
+data_combo = bind_rows(data_total,data_Low,data_High,data_Nuclear,data_Solar,data_Wind,data_CCS,data_Coal,data_Gas,data_Other) %>%
+  ungroup() %>%
+  select(-c(alpha, axe)) %>%
+  rename("label" = "variable_rename") %>%
+  mutate(variable = "Secondary Energy|Electricity",
+         unit = "TWh",
+         figure_num = fig_no) %>%
+  select(figure_num, model, scenario, variable, unit, label,year, value)
+
+savedata(data_combo, fig_no)
+  
+  
 
 ```
 
@@ -5169,7 +5370,8 @@ dots_Total = ggplot(data = data_total, aes(x = axe, y = abs_dif)) +
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
 
-savedata(data_total, paste(fig_no, "Total"))
+# savedata(data_total, paste(fig_no, "Total"))
+
 
 ##### Low Total #####
 
@@ -5224,7 +5426,7 @@ dots_Low = ggplot(data = data_Low, aes(x = axe, y = abs_dif)) +
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Low, paste(fig_no, "Low"))
+# savedata(data_Low, paste(fig_no, "Low"))
 
 ##### High Total #####
  
@@ -5281,7 +5483,7 @@ dots_High = ggplot(data = data_High, aes(x = axe, y = abs_dif)) +
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_High, paste(fig_no, "High"))
+# savedata(data_High, paste(fig_no, "High"))
 
 ##### Nuclear #####
  
@@ -5341,7 +5543,7 @@ dots_Nuclear = ggplot(data = data_Nuclear, aes(x = axe, y = abs_dif)) +
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Nuclear, paste(fig_no, "Nuclear"))
+# savedata(data_Nuclear, paste(fig_no, "Nuclear"))
 
 ##### Solar #####
  
@@ -5401,7 +5603,7 @@ dots_Solar = ggplot(data = data_Solar, aes(x = axe, y = abs_dif)) +
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Solar, paste(fig_no, "Solar"))
+# savedata(data_Solar, paste(fig_no, "Solar"))
 
 ##### Wind #####
  
@@ -5463,7 +5665,7 @@ dots_Wind = ggplot(data = data_Wind, aes(x = axe, y = abs_dif)) +
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Wind, paste(fig_no, "Wind"))
+# savedata(data_Wind, paste(fig_no, "Wind"))
 
 ##### CCS #####
  
@@ -5523,7 +5725,7 @@ dots_CCS = ggplot(data = data_CCS, aes(x = axe, y = abs_dif)) +
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_CCS, paste(fig_no, "CCS"))
+# savedata(data_CCS, paste(fig_no, "CCS"))
 
 ##### Coal #####
  
@@ -5584,7 +5786,7 @@ dots_Coal = ggplot(data = data_Coal, aes(x = axe, y = abs_dif)) +
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Coal, paste(fig_no, "Coal"))
+# savedata(data_Coal, paste(fig_no, "Coal"))
 
 ##### Gas #####
  
@@ -5646,7 +5848,7 @@ dots_Gas = ggplot(data = data_Gas, aes(x = axe, y = abs_dif)) +
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Gas, paste(fig_no, "Gas"))
+# savedata(data_Gas, paste(fig_no, "Gas"))
 
 ##### Other #####
  
@@ -5708,7 +5910,7 @@ dots_Other = ggplot(data = data_Other, aes(x = axe, y = abs_dif)) +
           legend.position = "none", 
           plot.margin = margin(0,0,0,0)) + 
   scale_alpha(range = c(0.6, 1), guide = F)
-savedata(data_Other, paste(fig_no, "Other"))
+# savedata(data_Other, paste(fig_no, "Other"))
 
 ##### Final #####
 final = (dots_Total | dots_Low | dots_High) / (dots_Wind | dots_Solar | dots_Nuclear | dots_CCS) / (dots_Coal | dots_Gas | dots_Other) 
@@ -5720,6 +5922,19 @@ final = final +
 final
 
 savefig(final, fig_no, wd = 8, ht = 8)
+
+data_combo = bind_rows(data_total,data_Low,data_High,data_Nuclear,data_Solar,data_Wind,data_CCS,data_Coal,data_Gas,data_Other) %>%
+  ungroup() %>%
+  select(-c(alpha, axe)) %>%
+  rename("label" = "variable_rename",
+         "Abs_Diff" = "abs_dif") %>%
+  mutate(variable = "Secondary Energy|Electricity",
+         unit = "TWh",
+         figure_num = fig_no) %>%
+  select(figure_num, model, scenario, variable, unit, label,year, `No IRA`, IRA, Abs_Diff)
+
+savedata(data_combo, fig_no)
+
 
 ```
 
@@ -6143,7 +6358,7 @@ combined = (p2 / p3 / p4 / p5 / p1) +
 combined
 
 indicators_all_clean = indicators_all %>% 
-  select(model,scenario,unit,region,title_name.y,year,value,value_2005,pct_diff) %>% 
+  select(model,scenario,unit,region,category,year,value,value_2005,pct_diff) %>% 
   rename(`percent diff 2005` = pct_diff)
 
 summary_IRA = indicators_summ %>%
@@ -6174,11 +6389,11 @@ Tran_data = clean_supplemental_data(Tran_data, fig_no)
 Buil_data = clean_supplemental_data(Buil_data, fig_no)
 Ind_data = clean_supplemental_data(Ind_data, fig_no)
 
-savedata(Econ_data, paste(fig_no, "EconWide"))
-savedata(Elec_data, paste(fig_no, "Electricity"))
-savedata(Tran_data, paste(fig_no, "Transportation"))
-savedata(Buil_data, paste(fig_no, "Buildings"))
-savedata(Ind_data, paste(fig_no, "Industry"))
+#savedata(Econ_data, paste(fig_no, "EconWide"))
+#savedata(Elec_data, paste(fig_no, "Electricity"))
+#savedata(Tran_data, paste(fig_no, "Transportation"))
+#savedata(Buil_data, paste(fig_no, "Buildings"))
+#savedata(Ind_data, paste(fig_no, "Industry"))
 
 EconTab
 ElecTab
@@ -6187,7 +6402,7 @@ BuilTab
 IndTab
 
 saveall(combined, indicators_all_clean, fig_no)
-savedata(summary_all, paste(fig_no,"summary",sep="_"))
+#savedata(summary_all, paste(fig_no,"summary",sep="_"))
 ```
 
 #### Core ranges to calculate difference
@@ -6378,7 +6593,9 @@ fin = ggplot(data = data_sort[data_sort$variable_rename != "Reference",] , aes(x
   )
 fin
 
-data_sort = data_sort %>% mutate(figure_num = fig_no)
+data_sort = data_sort %>% mutate(figure_num = fig_no, model = "Scout-LEEP", 
+                                 variable = "Emissions|CO2|Energy|Demand|Buildings", unit = "Mt CO2/yr") %>%
+  rename("label" = "variable_rename")
 
 saveall(fin, data_sort, fig_no, ht = 9, wd = 7.5)
 ```

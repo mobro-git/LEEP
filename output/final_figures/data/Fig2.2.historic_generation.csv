@@ -1,4 +1,4 @@
-"figure_num","model","scenario","variable","unit","year","variable_rename","value"
+"figure_num","model","scenario","variable","unit","year","label","value"
 "2.2.historic_generation","EIA","Historic","Secondary Energy|Electricity|Coal|Sum","TWh",2005,"Coal",2012.82933778064
 "2.2.historic_generation","EIA","Historic","Secondary Energy|Electricity|Coal|Sum","TWh",2006,"Coal",1990.46791224501
 "2.2.historic_generation","EIA","Historic","Secondary Energy|Electricity|Coal|Sum","TWh",2007,"Coal",2016.41179776576

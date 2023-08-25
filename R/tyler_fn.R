@@ -969,3 +969,27 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
 
 }
 
+combine_4c_data = function(df1, df2, df3, main_metric, main_unit) {
+  df1 = df1 %>%
+    rename("label" = "variable_rename") %>%
+    mutate(
+      variable = main_metric,
+      unit = main_unit)
+  if (nrow(df2) > 0) {
+    df2 = df2 %>%
+      rename("label"= "variable_rename") %>%
+      mutate(variable = "Percent Difference from No IRA",
+             unit = "%")
+  }
+  if (nrow(df3) > 0) {
+    df3 = df3 %>%
+      rename("label" = "variable_rename",
+             "value" = "diff") %>%
+      mutate(variable = "Absolute Difference from No IRA",
+             unit = main_unit)
+  }
+
+  full = bind_rows(df1,df2,df3) %>%
+    select(figure_num,model,scenario,variable,unit,label,year,value)
+  return(full)
+}

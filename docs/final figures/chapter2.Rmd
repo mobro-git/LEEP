@@ -91,6 +91,15 @@ fig = ggplot(data, aes(fill = variable_rename, y = value, alpha = alpha, x = yea
         axis.ticks.length = unit(-0.15, "cm"))
 fig
 
+data = data %>%
+  mutate(figure_num = fig_no,
+         model = "EPA-GHGI",
+         scenario = "Historic",
+         variable = "Emissions|CO2",
+         unit = "Mt CO2/yr") %>%
+  rename("label" = "variable_rename") %>%
+  select(-alpha)
+
 saveall(fig, data, fig_no)
 ```
 
@@ -162,19 +171,32 @@ ElecSpg = spg2(
 
 ElecDot = dotted(ElecSpg$data, ElecSpg$figure, "median", 0, 2500, config, figmap_leep_timeseries)
 ElecDot
-ElecSpg$data = clean_supplemental_data(ElecSpg$data, fig_no)
-saveall(ElecDot,ElecSpg$data, paste(fig_no, "a"))
+ElecSpg$data = clean_supplemental_data(ElecSpg$data, paste0(fig_no,"_main"))
+ElecSpg$data = ElecSpg$data %>%
+  mutate(figure_num = paste0(fig_no,"_main"))
+saveall(ElecDot, data.frame(), paste(fig_no, "_main"))
 
 delta = delta(26, "", config, clean_data, figmap_leep_timeseries)
 delta
-saveall(delta$figure, delta$df, paste(fig_no, "b"), wd = 3.012, ht = 3)
+delta$df = delta$df %>% 
+  mutate(variable = "Emissions|CO2|Energy|Supply|Electricity|% Difference from No IRA",
+         unit = "%",
+         figure_num = paste0(fig_no,"_delta")) %>%
+  rename("label" = "variable_rename")
+saveall(delta$figure, data.frame(), paste(fig_no,"_delta"), wd = 3.012, ht = 3)
+
+data_combo = bind_rows(ElecSpg$data, delta$df)
+savedata(data_combo,fig_no)
 
 ElecTab = html(ElecSpg$data, "Electricity CO2")
 ElecTab
 
-fig_no = "ES.1"
-saveall(ElecDot, ElecSpg$data, paste(fig_no, "a"))
-saveall(delta$figure, delta$df, paste(fig_no, "b"), wd = 3.012, ht = 3)
+fig_no = "ES.1.powerco2_projection"
+saveall(ElecDot, data.frame(), paste(fig_no, "a"))
+saveall(delta$figure, data.frame(), paste(fig_no, "b"), wd = 3.012, ht = 3)
+
+data_combo = bind_rows(ElecSpg$data, delta$df)
+savedata(data_combo,fig_no)
 ```
 
 ## F2.4 generation by model and difference from no ira
@@ -466,12 +488,6 @@ savefig(combined, fig_no)
 
 print(stats)
 
-dta3 = clean_supplemental_data(dta3, fig_no)
-dta5 = clean_supplemental_data(dta5, fig_no)
-
-savedata(dta3, paste0(fig_no,"hist"))
-savedata(dta5, paste0(fig_no, "proj"))
-
 summary_hist = dta3 %>%
   rename(Model = model, 
          Scenario = scenario, 
@@ -501,8 +517,14 @@ summary_proj = dta5 %>%
   mutate(Other = 0)
 
 summary = rbind(summary_hist, summary_proj) 
-  
-savedata(data_summary, fig_no = "2.5 Summary Table")
+
+dta3 = clean_supplemental_data(dta3, paste0(fig_no,"_hist"))
+dta5 = clean_supplemental_data(dta5, paste0(fig_no,"_proj"))
+data_combo = bind_rows(dta3, dta5)
+
+# savedata(dta3, paste0(fig_no,"hist"))
+# savedata(dta5, paste0(fig_no, "proj"))
+savedata(data_combo, fig_no)
 ```
 
 ## F2.6 sensitivity of electric sector emissions
@@ -642,7 +664,7 @@ p5$plot = p5$plot +
 # annotations
 # "EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI","USREP-ReEDS", "ReEDS-NREL"
 p1$plot = p1$plot + 
-  scale_shape_manual(breaks = c(-0.9, 0, 0.9), values = -c(128937,43,9913)) +
+  scale_shape_manual(breaks = c(-0.9, 0, 0.9), values = c(3,4,8)) +
   annotate("text", x = 2028.4, y = 1595, size = 2,
                label = "EPS-EI", color = "#A1A1A1", alpha = 1, hjust = 0) + 
   annotate("text", x = 2028.4, y = 1545, size = 2,
@@ -704,9 +726,9 @@ saveall(combined, dta, fig_no)
 ### T2.1 Display Table
 
 ```{r}
-metric = "absolute"
+#metric = "absolute"
 #metric = "percent"
-# metric = "percent_2005"
+metric = "percent_2005"
 
 historic_emissions = (clean_data %>%
   filter(model == "EPA-GHGI",
@@ -1102,6 +1124,7 @@ combined = (wrap_elements(left) | wrap_elements(right)) +
 combined
 
 full_data = rbind(nox_data,sox_data) %>%
+  ungroup() %>%
   select(model,scenario,unit,region,variable_rename,year,value)
 
 saveall(combined, full_data, fig_no, wd = 8)

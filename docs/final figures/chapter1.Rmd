@@ -55,10 +55,10 @@ df = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 9,
                                              "Buildings: Indirect","Buildings: Direct", 
                                               "Transportation: Indirect","Transportation: Direct")))
 
-df = clean_supplemental_data(df, fig_no)
-  
 fig = emis_stack(df, "Economy-Wide CO2 Emissions", figmap_leep_stackbar, config, econwide = TRUE)
 fig
+
+df = clean_supplemental_data(df, fig_no)
 
 saveall(fig, df, fig_no)
 ```
@@ -94,12 +94,22 @@ EconSpg = spg2(Econ_data,
 
 EconDot = dotted(EconSpg$data, EconSpg$figure, "median", 0, 7000, config, figmap_leep_timeseries)
 EconDot
-EconSpg$data = clean_supplemental_data(EconSpg$data, paste(fig_no, "a"))
-saveall(EconDot, EconSpg$data, paste(fig_no, "a"))
+hold = EconSpg$data
+EconSpg$data = clean_supplemental_data(EconSpg$data, paste0(fig_no, "_main"))
+saveall(EconDot, data.frame(), paste0(fig_no,"_main"))
 
 delta = delta(25, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
 delta
-saveall(delta$figure, delta$df, paste(fig_no, "b"), wd = 3.012, ht = 3)
+
+delta$df$variable_rename = "% Difference from No IRA"
+delta$df$unit = "%"
+delta$df$variable = "Emissions|CO2|% Difference from No IRA"
+delta$df = clean_supplemental_data(delta$df, paste0(fig_no,"_delta"))
+saveall(delta$figure, data.frame(), paste0(fig_no,"_delta"), wd = 3.012, ht = 3)
+
+df_clean = bind_rows(EconSpg$data, delta$df)
+savedata(df_clean,fig_no)
+EconSpg$data = hold
 
 EconTab = html(EconSpg$data, "Economy-Wide CO2")
 EconTab
@@ -154,11 +164,12 @@ Tran_data = clean_supplemental_data(Tran_data, fig_no)
 Buil_data = clean_supplemental_data(Buil_data, fig_no)
 Ind_data = clean_supplemental_data(Ind_data, fig_no)
 
-savedata(EconSpg$data, paste(fig_no, "EconWide"))
-savedata(Elec_data, paste(fig_no, "Electricity"))
-savedata(Tran_data, paste(fig_no, "Transportation"))
-savedata(Buil_data, paste(fig_no, "Buildings"))
-savedata(Ind_data, paste(fig_no, "Industry"))
+# savedata(EconSpg$data, paste(fig_no, "EconWide"))
+# savedata(Elec_data, paste(fig_no, "Electricity"))
+# savedata(Tran_data, paste(fig_no, "Transportation"))
+# savedata(Buil_data, paste(fig_no, "Buildings"))
+# savedata(Ind_data, paste(fig_no, "Industry"))
+
 
 subpalettes = create_subpalettes(figmap_leep_timeseries, config)
 
@@ -259,27 +270,15 @@ summary_NoIRA = indicators_summ %>%
 
 summary = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
 
-saveall(combined, indicators_all_clean, fig_no)
-savedata(summary, paste(fig_no,"summary",sep="_"))
+data_combo = bind_rows(Elec_data, Tran_data, Buil_data, Ind_data, EconSpg$data)
+savedata(data_combo, paste0(fig_no,"_alldata"))
+saveall(combined, summary, fig_no)
+#savedata(summary, fig_no)
 
 fig_no = "ES.2.summary_ranges"
-saveall(combined, indicators_all_clean, fig_no)
-savedata(summary, paste(fig_no,"summary",sep="_"))
-```
-
-### Energy-only CO2 range comparison
-
-```{r}
-econ_noprocess_data = spg_clean(
-  123456,
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
-  "EPA-GHGI",
-  config,
-  clean_data,
-  figmap_leep_timeseries
-)
-econ_noprocess_tab = html(econ_noprocess_data, "Economy-Wide CO2 - No Processes")
-econ_noprocess_tab
+savedata(data_combo, paste0(fig_no,"_alldata"))
+saveall(combined, summary, fig_no)
+#savedata(summary, fig_no)
 ```
 
 ## F1.4 fossil energy consumption by fuel
@@ -408,9 +407,13 @@ CoalSpg$data = clean_supplemental_data(CoalSpg$data, fig_no)
 GasSpg$data = clean_supplemental_data(GasSpg$data, fig_no)
 PetrolSpg$data = clean_supplemental_data(PetrolSpg$data, fig_no)
 
-savedata(CoalSpg$data, paste(fig_no, "Coal"))
-savedata(GasSpg$data, paste(fig_no, "Gas"))
-savedata(PetrolSpg$data, paste(fig_no, "Petroleum"))
+data_combo = bind_rows(CoalSpg$data, GasSpg$data, PetrolSpg$data)
+
+# savedata(CoalSpg$data, paste(fig_no, "Coal"))
+# savedata(GasSpg$data, paste(fig_no, "Gas"))
+# savedata(PetrolSpg$data, paste(fig_no, "Petroleum"))
+
+savedata(data_combo, fig_no)
 ```
 
 ## F1.5 economy-wide co2 emissions sensitivities
@@ -568,7 +571,7 @@ p7e$plot = p7e$plot +
 
 
 p7$plot = p7$plot +
-  scale_shape_manual(breaks = c(-0.9, 0, 0.9), values = -c(128937,43,9913)) +
+  scale_shape_manual(breaks = c(-0.9, 0, 0.9), values = c(3,4,8)) +
   annotate("text", x = 2028.4, y = 4995, size = 2,
                label = "EPS-EI", color = "#A1A1A1", alpha = 1, hjust = 0) +
   annotate("text", x = 2028.4, y = 4845, size = 2,
@@ -612,7 +615,7 @@ fig
 dta = bind_rows(sens_dta_econ, sens_dta_econ_panel2,
                 sens_dta_econ_panel3, sens_dta_econ_panel4, sens_dta_econ_panel5)
 dta = dta %>% mutate(figure_num = fig_no) %>%
-  select(-stagger, -datasrc)
+  select(-stagger, -datasrc, region)
 
 saveall(fig, dta, fig_no)
 ```
@@ -620,7 +623,7 @@ saveall(fig, dta, fig_no)
 ### T1.2.1 Display table
 
 ```{r}
-# metric = "absolute"
+#metric = "absolute"
 #metric = "percent"
 metric = "percent_2005"
 
@@ -815,7 +818,7 @@ econ_panel5_summ = econ_panel5_summ %>%
   select(-c(variable,unit,year,metric))
 
 all_panels = cbind(econ_panel1_summ, econ_panel4_summ, econ_panel5_summ, econ_panel3_summ, econ_panel2_summ)
-all_panels %>% write.csv("./output/final_figures/data/Fig1.5_Summary.csv", row.names = FALSE)
+all_panels %>% write.csv("./output/final_figures/data/Fig1.5_Display.csv", row.names = FALSE)
 # 
 # 
 # all_panels = add_header_row(flextable(all_panels), values = c("", "IRA Implementation", "Technology", "Combined Technology + Implementation", "Economic Growth", "Energy Price"),

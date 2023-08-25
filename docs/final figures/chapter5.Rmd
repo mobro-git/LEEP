@@ -138,12 +138,20 @@ IndDot
 IndTab = html(IndSpg$data, "Industry CO2")
 IndTab
 
-IndSpg$data = clean_supplemental_data(IndSpg$data, paste(fig_no, "b"))
+IndSpg$data = clean_supplemental_data(IndSpg$data, paste0(fig_no, "_main"))
 
-saveall(IndDot, IndSpg$data, paste(fig_no, "a"))
+saveall(IndDot, data.frame(), paste0(fig_no, "_main"))
 
 delta = delta(28, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
-saveall(delta$figure, delta$df, paste(fig_no, "b"), wd = 3.012, ht = 3)
+delta$df = delta$df %>%
+  mutate(variable = "Emissions|CO2|Energy|Demand|Industry|Total|% Difference from No IRA",
+         unit = "%",
+         figure_num = paste0(fig_no,"_delta")) %>%
+  rename("label" = "variable_rename")
+saveall(delta$figure, data.frame(), paste0(fig_no, "_delta"), wd = 3.012, ht = 3)
+
+data_combo = bind_rows(IndSpg$data, delta$df)
+savedata(data_combo,fig_no)
 ```
 
 ### Industry combustion, indirect, AND process emissions
@@ -501,7 +509,7 @@ panel5_summ = panel5_summ %>%
 
 all_panels = cbind(panel1_summ, panel4_summ, panel5_summ, panel3_summ, panel2_summ)
 
-write_csv(all_panels, paste("output/final_figures/data/sensitivities_",sector,"_",metric,".csv"))
+#write_csv(all_panels, paste("output/final_figures/data/sensitivities_",sector,"_",metric,".csv"))
 ```
 
 

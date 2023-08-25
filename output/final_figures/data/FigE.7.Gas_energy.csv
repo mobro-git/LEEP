@@ -1,0 +1,234 @@
+"figure_num","model","scenario","variable","unit","label","year","value"
+"E.7.Gas_energy","USREP-ReEDS","No IRA","Primary Energy","Quads","Gas",2025,28.53357468325
+"E.7.Gas_energy","USREP-ReEDS","No IRA","Primary Energy","Quads","Gas",2030,27.927511612518
+"E.7.Gas_energy","USREP-ReEDS","No IRA","Primary Energy","Quads","Gas",2035,28.09551763585
+"E.7.Gas_energy","USREP-ReEDS","No IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","USREP-ReEDS","IRA","Primary Energy","Quads","Gas",2025,28.485925374648
+"E.7.Gas_energy","USREP-ReEDS","IRA","Primary Energy","Quads","Gas",2030,25.007408869226
+"E.7.Gas_energy","USREP-ReEDS","IRA","Primary Energy","Quads","Gas",2035,23.254349354768
+"E.7.Gas_energy","USREP-ReEDS","IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","EPS-EI","No IRA","Primary Energy","Quads","Gas",2025,33.3014984679387
+"E.7.Gas_energy","EPS-EI","No IRA","Primary Energy","Quads","Gas",2030,34.2134819945859
+"E.7.Gas_energy","EPS-EI","No IRA","Primary Energy","Quads","Gas",2035,34.7352725693717
+"E.7.Gas_energy","EPS-EI","No IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","EPS-EI","IRA","Primary Energy","Quads","Gas",2025,31.7759260246787
+"E.7.Gas_energy","EPS-EI","IRA","Primary Energy","Quads","Gas",2030,27.1074103530719
+"E.7.Gas_energy","EPS-EI","IRA","Primary Energy","Quads","Gas",2035,25.4349405632501
+"E.7.Gas_energy","EPS-EI","IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","GCAM-CGS","No IRA","Primary Energy","Quads","Gas",2025,26.509852900434
+"E.7.Gas_energy","GCAM-CGS","No IRA","Primary Energy","Quads","Gas",2030,26.0153594629061
+"E.7.Gas_energy","GCAM-CGS","No IRA","Primary Energy","Quads","Gas",2035,27.1800777608441
+"E.7.Gas_energy","GCAM-CGS","No IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","GCAM-CGS","IRA","Primary Energy","Quads","Gas",2025,26.1784844784294
+"E.7.Gas_energy","GCAM-CGS","IRA","Primary Energy","Quads","Gas",2030,25.9702417944638
+"E.7.Gas_energy","GCAM-CGS","IRA","Primary Energy","Quads","Gas",2035,25.7433264620041
+"E.7.Gas_energy","GCAM-CGS","IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","GCAM-PNNL","No IRA","Primary Energy","Quads","Gas",2025,29.017588894
+"E.7.Gas_energy","GCAM-PNNL","No IRA","Primary Energy","Quads","Gas",2030,30.540068468
+"E.7.Gas_energy","GCAM-PNNL","No IRA","Primary Energy","Quads","Gas",2035,29.768805696
+"E.7.Gas_energy","GCAM-PNNL","No IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","GCAM-PNNL","IRA","Primary Energy","Quads","Gas",2025,27.4635316597955
+"E.7.Gas_energy","GCAM-PNNL","IRA","Primary Energy","Quads","Gas",2030,28.6016778107141
+"E.7.Gas_energy","GCAM-PNNL","IRA","Primary Energy","Quads","Gas",2035,27.2799741643486
+"E.7.Gas_energy","GCAM-PNNL","IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","MARKAL-NETL","No IRA","Primary Energy","Quads","Gas",2025,27.2532177193224
+"E.7.Gas_energy","MARKAL-NETL","No IRA","Primary Energy","Quads","Gas",2030,27.6820599730534
+"E.7.Gas_energy","MARKAL-NETL","No IRA","Primary Energy","Quads","Gas",2035,28.4719757046372
+"E.7.Gas_energy","MARKAL-NETL","No IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","MARKAL-NETL","IRA","Primary Energy","Quads","Gas",2025,27.2238782492874
+"E.7.Gas_energy","MARKAL-NETL","IRA","Primary Energy","Quads","Gas",2030,25.6227171714011
+"E.7.Gas_energy","MARKAL-NETL","IRA","Primary Energy","Quads","Gas",2035,22.9419355949299
+"E.7.Gas_energy","MARKAL-NETL","IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","NEMS-RHG","No IRA","Primary Energy","Quads","Gas",2025,29.3957230187927
+"E.7.Gas_energy","NEMS-RHG","No IRA","Primary Energy","Quads","Gas",2030,29.696635583345
+"E.7.Gas_energy","NEMS-RHG","No IRA","Primary Energy","Quads","Gas",2035,29.1378236772835
+"E.7.Gas_energy","NEMS-RHG","No IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","NEMS-RHG","IRA","Primary Energy","Quads","Gas",2025,30.7722201548317
+"E.7.Gas_energy","NEMS-RHG","IRA","Primary Energy","Quads","Gas",2030,26.4149648608624
+"E.7.Gas_energy","NEMS-RHG","IRA","Primary Energy","Quads","Gas",2035,27.0232358735335
+"E.7.Gas_energy","NEMS-RHG","IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","NEMS-OP","No IRA","Primary Energy","Quads","Gas",2025,30.9138381263278
+"E.7.Gas_energy","NEMS-OP","No IRA","Primary Energy","Quads","Gas",2030,30.0528331334637
+"E.7.Gas_energy","NEMS-OP","No IRA","Primary Energy","Quads","Gas",2035,29.7989623149839
+"E.7.Gas_energy","NEMS-OP","No IRA","Primary Energy","Quads","Gas",2022,31.2587595210561
+"E.7.Gas_energy","NEMS-OP","No IRA","Primary Energy","Quads","Gas",2023,31.181643879954
+"E.7.Gas_energy","NEMS-OP","No IRA","Primary Energy","Quads","Gas",2024,31.1517160192389
+"E.7.Gas_energy","NEMS-OP","No IRA","Primary Energy","Quads","Gas",2026,30.7771647624086
+"E.7.Gas_energy","NEMS-OP","No IRA","Primary Energy","Quads","Gas",2027,30.440488329308
+"E.7.Gas_energy","NEMS-OP","No IRA","Primary Energy","Quads","Gas",2028,30.5595997749607
+"E.7.Gas_energy","NEMS-OP","No IRA","Primary Energy","Quads","Gas",2029,30.3230838757108
+"E.7.Gas_energy","NEMS-OP","No IRA","Primary Energy","Quads","Gas",2031,29.8307881668657
+"E.7.Gas_energy","NEMS-OP","No IRA","Primary Energy","Quads","Gas",2032,29.8976138558575
+"E.7.Gas_energy","NEMS-OP","No IRA","Primary Energy","Quads","Gas",2033,29.8630160168766
+"E.7.Gas_energy","NEMS-OP","No IRA","Primary Energy","Quads","Gas",2034,29.9135477817007
+"E.7.Gas_energy","NEMS-OP","No IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","NEMS-OP","IRA","Primary Energy","Quads","Gas",2025,30.0057803524483
+"E.7.Gas_energy","NEMS-OP","IRA","Primary Energy","Quads","Gas",2030,26.7784263726236
+"E.7.Gas_energy","NEMS-OP","IRA","Primary Energy","Quads","Gas",2035,24.9408529247303
+"E.7.Gas_energy","NEMS-OP","IRA","Primary Energy","Quads","Gas",2022,31.2769884362184
+"E.7.Gas_energy","NEMS-OP","IRA","Primary Energy","Quads","Gas",2023,31.0397895401472
+"E.7.Gas_energy","NEMS-OP","IRA","Primary Energy","Quads","Gas",2024,30.5407898625025
+"E.7.Gas_energy","NEMS-OP","IRA","Primary Energy","Quads","Gas",2026,29.5941502681836
+"E.7.Gas_energy","NEMS-OP","IRA","Primary Energy","Quads","Gas",2027,28.9577162301614
+"E.7.Gas_energy","NEMS-OP","IRA","Primary Energy","Quads","Gas",2028,28.3147562225112
+"E.7.Gas_energy","NEMS-OP","IRA","Primary Energy","Quads","Gas",2029,27.4604801983304
+"E.7.Gas_energy","NEMS-OP","IRA","Primary Energy","Quads","Gas",2031,26.4520958913728
+"E.7.Gas_energy","NEMS-OP","IRA","Primary Energy","Quads","Gas",2032,26.3462503839801
+"E.7.Gas_energy","NEMS-OP","IRA","Primary Energy","Quads","Gas",2033,25.6500066243136
+"E.7.Gas_energy","NEMS-OP","IRA","Primary Energy","Quads","Gas",2034,25.2290165836104
+"E.7.Gas_energy","NEMS-OP","IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","REGEN-EPRI","No IRA","Primary Energy","Quads","Gas",2025,28.709481414521
+"E.7.Gas_energy","REGEN-EPRI","No IRA","Primary Energy","Quads","Gas",2030,29.3094705767889
+"E.7.Gas_energy","REGEN-EPRI","No IRA","Primary Energy","Quads","Gas",2035,30.5394483594382
+"E.7.Gas_energy","REGEN-EPRI","No IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","REGEN-EPRI","IRA","Primary Energy","Quads","Gas",2025,29.0994743699952
+"E.7.Gas_energy","REGEN-EPRI","IRA","Primary Energy","Quads","Gas",2030,29.6794638935208
+"E.7.Gas_energy","REGEN-EPRI","IRA","Primary Energy","Quads","Gas",2035,25.839533255006
+"E.7.Gas_energy","REGEN-EPRI","IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Gas",2025,30.9438619865961
+"E.7.Gas_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Gas",2030,32.140876415665
+"E.7.Gas_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Gas",2035,31.903932518407
+"E.7.Gas_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Gas",2022,33.1832755643168
+"E.7.Gas_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Gas",2023,32.0724367341848
+"E.7.Gas_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Gas",2024,30.7508088850694
+"E.7.Gas_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Gas",2026,31.4595665864957
+"E.7.Gas_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Gas",2027,31.6923705030212
+"E.7.Gas_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Gas",2028,32.0313529253897
+"E.7.Gas_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Gas",2029,32.1708402762125
+"E.7.Gas_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Gas",2031,31.7681511503365
+"E.7.Gas_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Gas",2032,31.5269772727649
+"E.7.Gas_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Gas",2033,31.5995159351684
+"E.7.Gas_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Gas",2034,31.8142379358476
+"E.7.Gas_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","NEMS-EIA","IRA","Primary Energy","Quads","Gas",2025,30.4562522559423
+"E.7.Gas_energy","NEMS-EIA","IRA","Primary Energy","Quads","Gas",2030,29.1747142202481
+"E.7.Gas_energy","NEMS-EIA","IRA","Primary Energy","Quads","Gas",2035,28.7312922839434
+"E.7.Gas_energy","NEMS-EIA","IRA","Primary Energy","Quads","Gas",2022,33.1836985623481
+"E.7.Gas_energy","NEMS-EIA","IRA","Primary Energy","Quads","Gas",2023,31.9753171861812
+"E.7.Gas_energy","NEMS-EIA","IRA","Primary Energy","Quads","Gas",2024,30.7554168636238
+"E.7.Gas_energy","NEMS-EIA","IRA","Primary Energy","Quads","Gas",2026,30.3478027606686
+"E.7.Gas_energy","NEMS-EIA","IRA","Primary Energy","Quads","Gas",2027,29.8544410567847
+"E.7.Gas_energy","NEMS-EIA","IRA","Primary Energy","Quads","Gas",2028,29.6480840171748
+"E.7.Gas_energy","NEMS-EIA","IRA","Primary Energy","Quads","Gas",2029,29.4191590825964
+"E.7.Gas_energy","NEMS-EIA","IRA","Primary Energy","Quads","Gas",2031,28.9941490606023
+"E.7.Gas_energy","NEMS-EIA","IRA","Primary Energy","Quads","Gas",2032,29.0012170277078
+"E.7.Gas_energy","NEMS-EIA","IRA","Primary Energy","Quads","Gas",2033,28.8018049557759
+"E.7.Gas_energy","NEMS-EIA","IRA","Primary Energy","Quads","Gas",2034,28.7518821881175
+"E.7.Gas_energy","NEMS-EIA","IRA","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","EIA","Historic","Primary Energy","Quads","Gas",2021,31.3420508597
+"E.7.Gas_energy","USREP-ReEDS","IRA","Percent Difference from No IRA","%","Gas",2025,-0.166993827906081
+"E.7.Gas_energy","USREP-ReEDS","IRA","Percent Difference from No IRA","%","Gas",2030,-10.4560076236191
+"E.7.Gas_energy","USREP-ReEDS","IRA","Percent Difference from No IRA","%","Gas",2035,-17.2311054874627
+"E.7.Gas_energy","EPS-EI","IRA","Percent Difference from No IRA","%","Gas",2025,-4.58109248365728
+"E.7.Gas_energy","EPS-EI","IRA","Percent Difference from No IRA","%","Gas",2030,-20.7697995855509
+"E.7.Gas_energy","EPS-EI","IRA","Percent Difference from No IRA","%","Gas",2035,-26.7748928342147
+"E.7.Gas_energy","GCAM-CGS","IRA","Percent Difference from No IRA","%","Gas",2025,-1.24998212268145
+"E.7.Gas_energy","GCAM-CGS","IRA","Percent Difference from No IRA","%","Gas",2030,-0.1734270422309
+"E.7.Gas_energy","GCAM-CGS","IRA","Percent Difference from No IRA","%","Gas",2035,-5.28604557897845
+"E.7.Gas_energy","GCAM-PNNL","IRA","Percent Difference from No IRA","%","Gas",2025,-5.35556982312132
+"E.7.Gas_energy","GCAM-PNNL","IRA","Percent Difference from No IRA","%","Gas",2030,-6.34704096789095
+"E.7.Gas_energy","GCAM-PNNL","IRA","Percent Difference from No IRA","%","Gas",2035,-8.36053537742643
+"E.7.Gas_energy","MARKAL-NETL","IRA","Percent Difference from No IRA","%","Gas",2025,-0.107655067878931
+"E.7.Gas_energy","MARKAL-NETL","IRA","Percent Difference from No IRA","%","Gas",2030,-7.43926862255522
+"E.7.Gas_energy","MARKAL-NETL","IRA","Percent Difference from No IRA","%","Gas",2035,-19.4227480631302
+"E.7.Gas_energy","NEMS-RHG","IRA","Percent Difference from No IRA","%","Gas",2025,4.68264425800651
+"E.7.Gas_energy","NEMS-RHG","IRA","Percent Difference from No IRA","%","Gas",2030,-11.0506481896659
+"E.7.Gas_energy","NEMS-RHG","IRA","Percent Difference from No IRA","%","Gas",2035,-7.2571919823874
+"E.7.Gas_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Gas",2022,0.058316182220719
+"E.7.Gas_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Gas",2023,-0.45492899717845
+"E.7.Gas_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Gas",2024,-1.96113163191116
+"E.7.Gas_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Gas",2025,-2.93738283214371
+"E.7.Gas_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Gas",2026,-3.84380596249678
+"E.7.Gas_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Gas",2027,-4.87105227454227
+"E.7.Gas_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Gas",2028,-7.34578845593657
+"E.7.Gas_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Gas",2029,-9.44034481820453
+"E.7.Gas_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Gas",2030,-10.8955010873633
+"E.7.Gas_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Gas",2031,-11.3261917740605
+"E.7.Gas_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Gas",2032,-11.8784177526652
+"E.7.Gas_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Gas",2033,-14.1077826505605
+"E.7.Gas_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Gas",2034,-15.6602327222318
+"E.7.Gas_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Gas",2035,-16.3029481996789
+"E.7.Gas_energy","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Gas",2025,1.35841170323929
+"E.7.Gas_energy","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Gas",2030,1.26236779256226
+"E.7.Gas_energy","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Gas",2035,-15.3896529142109
+"E.7.Gas_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Gas",2022,0.00127473259996513
+"E.7.Gas_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Gas",2023,-0.302813125202939
+"E.7.Gas_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Gas",2024,0.0149849019308368
+"E.7.Gas_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Gas",2025,-1.57578821565637
+"E.7.Gas_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Gas",2026,-3.53394514438198
+"E.7.Gas_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Gas",2027,-5.79928044846421
+"E.7.Gas_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Gas",2028,-7.44042536625351
+"E.7.Gas_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Gas",2029,-8.55333951488595
+"E.7.Gas_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Gas",2030,-9.228628855843
+"E.7.Gas_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Gas",2031,-8.73202244791261
+"E.7.Gas_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Gas",2032,-8.01142533648169
+"E.7.Gas_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Gas",2033,-8.85365138229481
+"E.7.Gas_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Gas",2034,-9.62573975182169
+"E.7.Gas_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Gas",2035,-9.94435476765496
+"E.7.Gas_energy","USREP-ReEDS","Historic","Percent Difference from No IRA","%","Gas",2021,0
+"E.7.Gas_energy","EPS-EI","Historic","Percent Difference from No IRA","%","Gas",2021,0
+"E.7.Gas_energy","GCAM-CGS","Historic","Percent Difference from No IRA","%","Gas",2021,0
+"E.7.Gas_energy","GCAM-PNNL","Historic","Percent Difference from No IRA","%","Gas",2021,0
+"E.7.Gas_energy","MARKAL-NETL","Historic","Percent Difference from No IRA","%","Gas",2021,0
+"E.7.Gas_energy","NEMS-RHG","Historic","Percent Difference from No IRA","%","Gas",2021,0
+"E.7.Gas_energy","NEMS-OP","Historic","Percent Difference from No IRA","%","Gas",2021,0
+"E.7.Gas_energy","REGEN-EPRI","Historic","Percent Difference from No IRA","%","Gas",2021,0
+"E.7.Gas_energy","NEMS-EIA","Historic","Percent Difference from No IRA","%","Gas",2021,0
+"E.7.Gas_energy","USREP-ReEDS","IRA","Absolute Difference from No IRA","Quads","CO2",2025,-0.0476493086020007
+"E.7.Gas_energy","USREP-ReEDS","IRA","Absolute Difference from No IRA","Quads","CO2",2030,-2.920102743292
+"E.7.Gas_energy","USREP-ReEDS","IRA","Absolute Difference from No IRA","Quads","CO2",2035,-4.841168281082
+"E.7.Gas_energy","EPS-EI","IRA","Absolute Difference from No IRA","Quads","CO2",2025,-1.52557244325998
+"E.7.Gas_energy","EPS-EI","IRA","Absolute Difference from No IRA","Quads","CO2",2030,-7.10607164151403
+"E.7.Gas_energy","EPS-EI","IRA","Absolute Difference from No IRA","Quads","CO2",2035,-9.30033200612164
+"E.7.Gas_energy","GCAM-CGS","IRA","Absolute Difference from No IRA","Quads","CO2",2025,-0.331368422004573
+"E.7.Gas_energy","GCAM-CGS","IRA","Absolute Difference from No IRA","Quads","CO2",2030,-0.0451176684422556
+"E.7.Gas_energy","GCAM-CGS","IRA","Absolute Difference from No IRA","Quads","CO2",2035,-1.43675129884001
+"E.7.Gas_energy","GCAM-PNNL","IRA","Absolute Difference from No IRA","Quads","CO2",2025,-1.55405723420447
+"E.7.Gas_energy","GCAM-PNNL","IRA","Absolute Difference from No IRA","Quads","CO2",2030,-1.9383906572859
+"E.7.Gas_energy","GCAM-PNNL","IRA","Absolute Difference from No IRA","Quads","CO2",2035,-2.48883153165141
+"E.7.Gas_energy","MARKAL-NETL","IRA","Absolute Difference from No IRA","Quads","CO2",2025,-0.0293394700349303
+"E.7.Gas_energy","MARKAL-NETL","IRA","Absolute Difference from No IRA","Quads","CO2",2030,-2.05934280165228
+"E.7.Gas_energy","MARKAL-NETL","IRA","Absolute Difference from No IRA","Quads","CO2",2035,-5.53004010970733
+"E.7.Gas_energy","NEMS-RHG","IRA","Absolute Difference from No IRA","Quads","CO2",2025,1.376497136039
+"E.7.Gas_energy","NEMS-RHG","IRA","Absolute Difference from No IRA","Quads","CO2",2030,-3.28167072248259
+"E.7.Gas_energy","NEMS-RHG","IRA","Absolute Difference from No IRA","Quads","CO2",2035,-2.11458780374999
+"E.7.Gas_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2022,0.0182289151622328
+"E.7.Gas_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2023,-0.14185433980683
+"E.7.Gas_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2024,-0.610926156736429
+"E.7.Gas_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2025,-0.908057773879449
+"E.7.Gas_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2026,-1.18301449422492
+"E.7.Gas_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2027,-1.48277209914653
+"E.7.Gas_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2028,-2.24484355244948
+"E.7.Gas_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2029,-2.86260367738048
+"E.7.Gas_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2030,-3.27440676084001
+"E.7.Gas_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2031,-3.37869227549297
+"E.7.Gas_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2032,-3.55136347187748
+"E.7.Gas_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2033,-4.21300939256303
+"E.7.Gas_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2034,-4.68453119809034
+"E.7.Gas_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2035,-4.85810939025367
+"E.7.Gas_energy","REGEN-EPRI","IRA","Absolute Difference from No IRA","Quads","CO2",2025,0.389992955474163
+"E.7.Gas_energy","REGEN-EPRI","IRA","Absolute Difference from No IRA","Quads","CO2",2030,0.369993316731897
+"E.7.Gas_energy","REGEN-EPRI","IRA","Absolute Difference from No IRA","Quads","CO2",2035,-4.69991510443221
+"E.7.Gas_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2022,0.000422998031353927
+"E.7.Gas_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2023,-0.0971195480035192
+"E.7.Gas_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2024,0.00460797855436823
+"E.7.Gas_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2025,-0.487609730653752
+"E.7.Gas_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2026,-1.11176382582708
+"E.7.Gas_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2027,-1.83792944623655
+"E.7.Gas_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2028,-2.38326890821488
+"E.7.Gas_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2029,-2.75168119361613
+"E.7.Gas_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2030,-2.9661621954169
+"E.7.Gas_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2031,-2.77400208973419
+"E.7.Gas_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2032,-2.52576024505711
+"E.7.Gas_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2033,-2.79771097939251
+"E.7.Gas_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2034,-3.06235574773002
+"E.7.Gas_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2035,-3.17264023446363
+"E.7.Gas_energy","USREP-ReEDS","Historic","Absolute Difference from No IRA","Quads","CO2",2021,0
+"E.7.Gas_energy","EPS-EI","Historic","Absolute Difference from No IRA","Quads","CO2",2021,0
+"E.7.Gas_energy","GCAM-CGS","Historic","Absolute Difference from No IRA","Quads","CO2",2021,0
+"E.7.Gas_energy","GCAM-PNNL","Historic","Absolute Difference from No IRA","Quads","CO2",2021,0
+"E.7.Gas_energy","MARKAL-NETL","Historic","Absolute Difference from No IRA","Quads","CO2",2021,0
+"E.7.Gas_energy","NEMS-RHG","Historic","Absolute Difference from No IRA","Quads","CO2",2021,0
+"E.7.Gas_energy","NEMS-OP","Historic","Absolute Difference from No IRA","Quads","CO2",2021,0
+"E.7.Gas_energy","REGEN-EPRI","Historic","Absolute Difference from No IRA","Quads","CO2",2021,0
+"E.7.Gas_energy","NEMS-EIA","Historic","Absolute Difference from No IRA","Quads","CO2",2021,0

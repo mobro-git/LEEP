@@ -1,4 +1,4 @@
-"figure_num","model","scenario","variable","unit","year","variable_rename","value"
+"figure_num","model","scenario","variable","unit","year","label","value"
 "3.5.elc_ldv","EPS-EI","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",43.73698924
 "3.5.elc_ldv","EPS-EI","No IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",43.54041552
 "3.5.elc_ldv","GCAM-CGS","IRA","Final Energy|Transportation|Passenger|Road|Electricity","TWh",2025,"Light-Duty Vehicles",58.7406762857185

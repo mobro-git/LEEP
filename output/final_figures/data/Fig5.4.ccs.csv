@@ -1,4 +1,4 @@
-"figure_num","model","scenario","variable","unit","year","variable_rename","value"
+"figure_num","model","scenario","variable","unit","year","label","value"
 "5.4.ccs","EPS-EI","IRA","Carbon Sequestration|CCS|Energy|Demand|Industry","Mt CO2/yr","2030","Industrial CCS",92.06339
 "5.4.ccs","EPS-EI","IRA","Carbon Sequestration|CCS|Energy|Demand|Industry","Mt CO2/yr","2035","Industrial CCS",231.95186
 "5.4.ccs","EPS-EI","No IRA","Carbon Sequestration|CCS|Energy|Demand|Industry","Mt CO2/yr","2030","Industrial CCS",74.15254

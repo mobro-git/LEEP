@@ -126,12 +126,26 @@ TranSpg = spg2(
 fig = dotted(TranSpg$data, TranSpg$figure, "median", 0, 2500, config, figmap_leep_timeseries)
 fig
 TranSpg$data = clean_supplemental_data(TranSpg$data, fig_no)
-saveall(fig, TranSpg$data, paste(fig_no, "a"))
+TranSpg$data = TranSpg$data %>%
+  mutate(figure_num = paste0(fig_no,"_main"))
+
+saveall(fig, data.frame(), paste0(fig_no, "_main"))
 
 delta = delta(27, c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"), config, clean_data, figmap_leep_timeseries)
-saveall(delta$figure, delta$df, paste(fig_no, "b"), wd = 3.012, ht = 3)
+saveall(delta$figure, data.frame(), paste0(fig_no, "_delta"), wd = 3.012, ht = 3)
 
-TranSpg$data = clean_supplemental_data(TranSpg$data, fig_no)
+delta$df = delta$df %>%
+  mutate(variable = "Emissions|CO2|Energy|Demand|Transportation|Total|% Difference from No IRA",
+         unit = "%",
+         figure_num = paste0(fig_no,"_delta")) %>%
+  rename("label" = "variable_rename")
+  
+
+#TranSpg$data = clean_supplemental_data(TranSpg$data, fig_no)
+
+data_combo = bind_rows(TranSpg$data, delta$df)
+savedata(data_combo,fig_no)
+
 
 html(TranSpg$data, "Transportation CO2")
 ```
@@ -840,5 +854,5 @@ panel5_summ = panel5_summ %>%
 
 all_panels = cbind(panel1_summ, panel4_summ, panel5_summ, panel3_summ, panel2_summ)
 
-write_csv(all_panels, paste("output/final_figures/data/sensitivities_",sector,"_",metric,".csv"))
+#write_csv(all_panels, paste("output/final_figures/data/sensitivities_",sector,"_",metric,".csv"))
 ```

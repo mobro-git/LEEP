@@ -1,0 +1,553 @@
+"figure_num","model","scenario","variable","unit","label","year","value"
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Total",2030,4028.68737129835
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Total",2030,4227.86700392
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Total",2030,4354.25720433969
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Total",2030,5124.84161330556
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Total",2030,3949.66280289781
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Total",2030,4020.45690317496
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Total",2030,4237.57332010824
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Total",2030,4560.7487963739
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Total",2030,3985.1840214172
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Total",2030,4244.4113296634
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Total",2030,3843.95158031795
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Total",2030,4332.3938
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Total",2030,4032.85150002549
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Total",2030,4252.3706308636
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Total",2030,4063.15413831613
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Total",2030,4693.3339183514
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Total",2030,4738.21572880996
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Total",2030,5298.07651546612
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Total",2030,3955.67607523339
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Total",2030,4019.65560771535
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Total",2030,4248.08454852697
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Total",2030,4671.87843527754
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Total",2030,4014.5311764838
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Total",2030,4384.0972842422
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Total",2030,3980.41267559898
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Total",2030,4803.4504
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Total",2030,4155.72111539136
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Total",2030,4290.3096526416
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Total",2035,4166.38233812336
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Total",2035,4533.4074891
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Total",2035,4699.26690901295
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Total",2035,5688.07381687222
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Total",2035,3952.6717045909
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Total",2035,4125.22387311741
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Total",2035,4519.5465944704
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Total",2035,4731.32660505826
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Total",2035,4150.510055895
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Total",2035,4472.569742536
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Total",2035,4020.19034809586
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Total",2035,4834.7278
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Total",2035,4189.46564265844
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Total",2035,4432.1335843232
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Total",2035,4201.45467325991
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Total",2035,5031.9746210216
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Total",2035,4888.55983089374
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Total",2035,5895.96384391556
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Total",2035,3963.42936647064
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Total",2035,4147.47471727514
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Total",2035,4550.8655725006
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Total",2035,4926.04173971913
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Total",2035,4256.1538788216
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Total",2035,4716.4970357386
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Total",2035,4294.71556509782
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Total",2035,5908.5852
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Total",2035,4497.10743856869
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Total",2035,4486.5117668
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2174.29772161702
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2130.04534372
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2149.60472289506
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2888.56912030556
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2164.92781581099
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,1837.33779782309
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2014.73847536807
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2133.15461263344
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2331.2052537172
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2345.2192747648
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2081.07200060136
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2791.271
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2137.62207060211
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2176.4560710732
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2993.78080012524
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,3559.6321031516
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,3352.79362902031
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,3734.73338695501
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2747.05914275625
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2267.8699893788
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2355.22657935679
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2268.18199454414
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,3105.803827721
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,3112.38596139695
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2286.42341031496
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,3583.6318
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,3393.83268321759
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Total_Low",2030,2858.19946565839
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,2308.87802255319
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,2414.2100955
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,2298.75128139121
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,3486.96896897222
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,2286.84102454342
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,1858.86661416088
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,2293.40912091051
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,2169.55279452974
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,2604.4176400424
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,2663.9826475934
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,2162.26429024418
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,3573.206
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,2356.90161219021
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,2458.455740566
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,3323.01947813019
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,4339.710256798
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,3759.60543626911
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,4479.12318818778
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,2857.27770717866
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,2443.98446645772
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,3237.34662444383
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,3380.71052456626
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,3164.295702939
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,3843.55788434699
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,3325.21670114422
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,5263.1334
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,3947.80472238667
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Total_Low",2035,3170.11325737711
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1854.38964968133
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Total_High",2030,2097.8216602
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Total_High",2030,2204.65248144463
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Total_High",2030,2236.272493
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1784.73498708682
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Total_High",2030,2183.11910535187
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Total_High",2030,2222.83484474017
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Total_High",2030,2427.59418374046
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1653.9787677
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1899.1920548986
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1762.87957971659
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1541.1228
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1895.22942942338
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Total_High",2030,2075.9145597904
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1069.37333819089
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1133.7018151998
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1385.42209978966
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1563.34312851111
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1208.61693247714
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1751.78561833655
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1892.85796917018
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Total_High",2030,2403.69644073339
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Total_High",2030,908.7273487628
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1271.71132284525
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1693.98926528402
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1219.8186
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Total_High",2030,761.888432173774
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Total_High",2030,1432.11018698321
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Total_High",2035,1857.50431557017
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Total_High",2035,2119.1973936
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Total_High",2035,2400.51562762174
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Total_High",2035,2201.1048479
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Total_High",2035,1665.83068004747
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Total_High",2035,2266.35725895652
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Total_High",2035,2226.13747355988
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Total_High",2035,2561.77381052852
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Total_High",2035,1546.0924158526
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Total_High",2035,1808.5870949426
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Total_High",2035,1857.92605785169
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Total_High",2035,1261.5218
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Total_High",2035,1832.56403046823
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Total_High",2035,1973.6778437572
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Total_High",2035,878.435195129722
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Total_High",2035,692.2643642236
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Total_High",2035,1128.95439462463
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Total_High",2035,1416.84065572778
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Total_High",2035,1106.15165929197
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Total_High",2035,1703.49025081742
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Total_High",2035,1313.51894805677
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Total_High",2035,1545.33121515287
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Total_High",2035,1091.8581758826
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Total_High",2035,872.939151391611
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Total_High",2035,969.498863953602
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Total_High",2035,645.4518
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Total_High",2035,549.302716182023
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Total_High",2035,1316.39850942289
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,722.694001038333
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,707.557910953444
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,656.84501946
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,760.4133054
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,747.503061893322
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,699.783266982461
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,741.453408888889
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,741.453408888889
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,668.189131848995
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,668.189131848995
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,482.943697805062
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,642.560502040383
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,595.675284762178
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,695.42890875653
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,755.886901375704
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,755.886901375704
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,643.6720135776
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,715.4600546534
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,630.1220145584
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,736.0406312434
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,738.528713395792
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,741.127414858133
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,753.501
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,752.5532
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,722.694001024101
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,699.852913560426
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,725.5761875418
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Nuclear",2030,718.4481353756
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,722.694001038333
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,684.001276063
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,603.14267146
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,39.27157171
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,747.313237096958
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,720.418459762683
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,741.453408888889
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,741.453408888889
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,530.099885616411
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,530.099885616411
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,64.3043851582201
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,71.8498173662706
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,461.124738515234
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,625.87702606782
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,755.886901375704
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,755.886901375704
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,592.100621378
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,176.7717573188
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,566.4897166586
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,658.3330635644
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,741.845633539683
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,721.628453094105
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,747.8142
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,745.9186
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,722.694001024101
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,685.098017494303
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,708.1948406624
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Nuclear",2035,663.7921697792
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Solar",2030,508.683675786611
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Solar",2030,688.939506782333
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Solar",2030,509.9505208
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Solar",2030,1016.6083104716
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Solar",2030,567.826037251255
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Solar",2030,873.771041352591
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Solar",2030,642.552848388889
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Solar",2030,779.418328485728
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Solar",2030,425.842157243694
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Solar",2030,703.401386906111
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Solar",2030,315.670369564647
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Solar",2030,350.363998765499
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Solar",2030,428.166236004579
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Solar",2030,463.436705920326
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Solar",2030,489.568052209684
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Solar",2030,451.305862155512
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Solar",2030,667.4408140246
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Solar",2030,951.7331444236
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Solar",2030,735.487478103
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Solar",2030,1105.4157155986
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Solar",2030,499.504360974005
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Solar",2030,519.897646420764
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Solar",2030,708.0066
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Solar",2030,898.5144
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Solar",2030,478.066659957936
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Solar",2030,944.249886657611
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Solar",2030,539.7537619656
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Solar",2030,873.0528031624
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Solar",2035,561.551914766111
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Solar",2035,781.538062939667
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Solar",2035,699.2100682
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Solar",2035,1591.032109268
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Solar",2035,686.948309600815
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Solar",2035,1147.27403062177
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Solar",2035,848.036414944444
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Solar",2035,981.868990329617
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Solar",2035,594.999046560885
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Solar",2035,804.724684406566
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Solar",2035,544.129717922209
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Solar",2035,647.499865284691
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Solar",2035,626.528512749642
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Solar",2035,733.544223749159
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Solar",2035,510.082673065812
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Solar",2035,471.82048301164
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Solar",2035,958.8821581346
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Solar",2035,1335.6451852072
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Solar",2035,1026.8892354504
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Solar",2035,1665.441370859
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Solar",2035,548.261602355536
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Solar",2035,849.430034702412
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Solar",2035,1217.923
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Solar",2035,2009.336
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Solar",2035,558.488153376301
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Solar",2035,1208.87946895488
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Solar",2035,762.456217215
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Solar",2035,1090.3695062302
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Wind",2030,629.898540484111
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Wind",2030,1289.74678324567
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Wind",2030,695.48492986
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Wind",2030,1514.84561368
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Wind",2030,546.372969649435
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Wind",2030,1072.80905606095
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Wind",2030,1159.39003133333
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Wind",2030,1556.03110768039
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Wind",2030,793.896432313923
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Wind",2030,1093.49633902803
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Wind",2030,725.824869839914
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Wind",2030,843.851087295379
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Wind",2030,675.165732302983
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Wind",2030,800.035279574943
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Wind",2030,616.16264015194
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Wind",2030,570.726124913868
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Wind",2030,738.90066229
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Wind",2030,1168.382546058
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Wind",2030,640.1868354504
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Wind",2030,920.017034342
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Wind",2030,597.984314124031
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Wind",2030,594.689511835769
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Wind",2030,1037.841
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Wind",2030,1646.3286
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Wind",2030,650.317571788619
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Wind",2030,1207.40155816103
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Wind",2030,565.7115302076
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Wind",2030,927.3682109496
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Wind",2035,711.784695348611
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Wind",2035,1550.03935092417
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Wind",2035,844.14366344
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Wind",2035,2443.39892342
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Wind",2035,585.683659351015
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Wind",2035,1185.39293144159
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Wind",2035,1517.45307466667
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Wind",2035,1946.92783861372
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Wind",2035,885.244926562083
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Wind",2035,1240.40377228391
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Wind",2035,939.918360732944
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Wind",2035,1296.81860237165
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Wind",2035,871.465308368805
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Wind",2035,1421.98359543682
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Wind",2035,632.046201192112
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Wind",2035,570.726124913868
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Wind",2035,775.5356657594
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Wind",2035,1405.8850916586
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Wind",2035,734.0894380344
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Wind",2035,1174.8114052164
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Wind",2035,610.383857291331
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Wind",2035,1296.60028930987
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Wind",2035,1321.2332
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Wind",2035,2247.2338
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Wind",2035,787.917065698425
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Wind",2035,1492.5723068105
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Wind",2035,636.87520519
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Wind",2035,1075.7900229636
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","CCS",2030,2.84076722222222e-08
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","CCS",2030,3.70695111111111e-08
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","CCS",2030,3.26449228341685
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","CCS",2030,425.708170452632
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","CCS",2030,0
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","CCS",2030,297.503888888889
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","CCS",2030,0
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","CCS",2030,4.97219056873931
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","CCS",2030,16.0819088097581
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","CCS",2030,128.22058547275
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","CCS",2030,26.7180724406372
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","CCS",2030,109.377026515674
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","CCS",2030,0
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","CCS",2030,218.726087202952
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","CCS",2030,0
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","CCS",2030,12.9785477447506
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","CCS",2030,3.05531633260665e-06
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","CCS",2030,167.76223646003
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","CCS",2030,3.7912
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","CCS",2030,4.739
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","CCS",2030,0
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","CCS",2030,255.327185080497
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","CCS",2030,0
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","CCS",2030,2.67359774618987
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","CCS",2035,7.76932722222222e-08
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","CCS",2035,9.24105e-08
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","CCS",2035,0
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","CCS",2035,432.743331836404
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","CCS",2035,0
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","CCS",2035,415.189055555556
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","CCS",2035,0
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","CCS",2035,5.55219906773352
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","CCS",2035,16.0819088097581
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","CCS",2035,128.220585471362
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","CCS",2035,26.7180724406372
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","CCS",2035,144.444135652434
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","CCS",2035,0
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","CCS",2035,1310.73999636894
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","CCS",2035,0
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","CCS",2035,9.98282968238928
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","CCS",2035,4.06624747201567e-06
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","CCS",2035,167.607588885392
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","CCS",2035,2.8434
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","CCS",2035,1.8956
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","CCS",2035,0
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","CCS",2035,274.98260500641
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","CCS",2035,0
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","CCS",2035,3.5026316055077
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Coal",2030,568.682194946833
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Coal",2030,253.728906032778
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Coal",2030,411.6968338
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Coal",2030,178.7696201998
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Coal",2030,698.867863328418
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Coal",2030,207.989475519748
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Coal",2030,452.911495555556
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Coal",2030,207.462888888889
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Coal",2030,827.530103506065
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Coal",2030,532.937344891311
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Coal",2030,342.875199423364
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Coal",2030,187.952865306675
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Coal",2030,525.1570437185
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Coal",2030,230.114115512557
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Coal",2030,634.694777755416
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Coal",2030,487.912033662648
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Coal",2030,459.8809594036
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Coal",2030,130.4059613724
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Coal",2030,511.137479174
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Coal",2030,280.404558964249
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Coal",2030,633.371785632691
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Coal",2030,440.402948302524
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Coal",2030,619.8612
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Coal",2030,450.205
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Coal",2030,660.072566291737
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Coal",2030,68.2963547088384
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Coal",2030,579.2477036682
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Coal",2030,332.20151448001
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Coal",2035,453.331322249167
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Coal",2035,180.306621228222
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Coal",2035,386.5403262
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Coal",2035,17.1113556236
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Coal",2035,648.339356062651
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Coal",2035,0.00409816812356443
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Coal",2035,390.290876111111
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Coal",2035,201.543877888889
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Coal",2035,752.124267041416
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Coal",2035,473.853197086755
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Coal",2035,316.186536931387
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Coal",2035,135.830610093562
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Coal",2035,441.58339156765
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Coal",2035,42.0638014296759
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Coal",2035,648.640612800964
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Coal",2035,192.67999581054
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Coal",2035,423.052155477
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Coal",2035,194.1505015394
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Coal",2035,448.5620275598
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Coal",2035,132.414634735211
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Coal",2035,563.456709420814
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Coal",2035,143.110734437061
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Coal",2035,467.2654
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Coal",2035,223.6808
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Coal",2035,604.572954045351
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Coal",2035,59.1833876199753
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Coal",2035,544.58711356
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Coal",2035,325.237303926892
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1285.7074547345
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,815.644432158111
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1686.1248264
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,954.932195
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1505.78461811621
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1177.43262426991
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1765.94359277778
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1339.77585388889
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,957.204883580752
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,675.679587585824
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1840.2439059285
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1563.83275302988
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1697.67780102167
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1662.74385365762
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1792.89940598504
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1915.78440707074
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1194.0978082964
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,778.3213873904
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1380.368422902
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,984.5374142072
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1129.5077940839
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1253.5863169815
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,921.2616
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,769.6136
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1235.15686313164
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,693.592077464935
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1488.5748562874
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2030,1092.8322593244
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1404.172993321
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,698.1285739015
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1732.6570674
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,675.1530086
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1752.17627155909
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1128.95029645651
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1786.40554166667
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1193.919965
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,913.706413006057
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,632.298462205219
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1950.17072202514
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1567.65964072386
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1784.55408199223
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1271.4551466271
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1913.13319772756
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1352.65121934233
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1123.0402603756
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,897.7076743432
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1352.8833801658
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,734.5264724056
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1294.46934843087
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,826.388129516541
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,794.2564
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,421.771
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1227.99107642288
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,490.119328562047
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,1421.4791322704
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Natural Gas",2035,984.4383814286
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Other",2030,313.021504279556
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Other",2030,307.536599106722
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Other",2030,267.7648736
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Other",2030,267.7648736
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Other",2030,284.638161817633
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Other",2030,280.722094171675
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Other",2030,362.590236361111
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Other",2030,376.431038744444
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Other",2030,277.000094404376
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Other",2030,277.000094404376
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Other",2030,296.816951803708
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Other",2030,302.873815804789
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Other",2030,289.013149857693
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Other",2030,286.948658589316
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Other",2030,271.537018896108
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Other",2030,271.537018896108
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Other",2030,281.191763825
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Other",2030,270.228082586
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Other",2030,347.1090994756
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Other",2030,344.703382142
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Other",2030,245.054609052218
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Other",2030,262.94660074026
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Other",2030,288.1312
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Other",2030,281.4966
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Other",2030,286.543837831459
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Other",2030,287.001139758021
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Other",2030,353.506591193
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Other",2030,343.7331316034
+"F.3.1.gen_bytype","USREP-ReEDS","No IRA","Secondary Energy|Electricity","TWh","Other",2035,312.847411322444
+"F.3.1.gen_bytype","USREP-ReEDS","IRA","Secondary Energy|Electricity","TWh","Other",2035,307.440788110944
+"F.3.1.gen_bytype","EPS-EI","No IRA","Secondary Energy|Electricity","TWh","Other",2035,267.7136924
+"F.3.1.gen_bytype","EPS-EI","IRA","Secondary Energy|Electricity","TWh","Other",2035,266.0076524
+"F.3.1.gen_bytype","GCAM-CGS","No IRA","Secondary Energy|Electricity","TWh","Other",2035,278.806075342426
+"F.3.1.gen_bytype","GCAM-CGS","IRA","Secondary Energy|Electricity","TWh","Other",2035,273.776682606666
+"F.3.1.gen_bytype","GCAM-PNNL","No IRA","Secondary Energy|Electricity","TWh","Other",2035,404.434500594444
+"F.3.1.gen_bytype","GCAM-PNNL","IRA","Secondary Energy|Electricity","TWh","Other",2035,415.060707638889
+"F.3.1.gen_bytype","Haiku-RFF","No IRA","Secondary Energy|Electricity","TWh","Other",2035,276.497165804044
+"F.3.1.gen_bytype","Haiku-RFF","IRA","Secondary Energy|Electricity","TWh","Other",2035,276.497165804044
+"F.3.1.gen_bytype","IPM-NRDC","No IRA","Secondary Energy|Electricity","TWh","Other",2035,294.432241537753
+"F.3.1.gen_bytype","IPM-NRDC","IRA","Secondary Energy|Electricity","TWh","Other",2035,299.595595963745
+"F.3.1.gen_bytype","IPM-EPA","No IRA","Secondary Energy|Electricity","TWh","Other",2035,307.572488836196
+"F.3.1.gen_bytype","IPM-EPA","IRA","Secondary Energy|Electricity","TWh","Other",2035,311.497643537596
+"F.3.1.gen_bytype","MARKAL-NETL","No IRA","Secondary Energy|Electricity","TWh","Other",2035,271.537018896108
+"F.3.1.gen_bytype","MARKAL-NETL","IRA","Secondary Energy|Electricity","TWh","Other",2035,271.537018896108
+"F.3.1.gen_bytype","NEMS-RHG","No IRA","Secondary Energy|Electricity","TWh","Other",2035,277.8991947704
+"F.3.1.gen_bytype","NEMS-RHG","IRA","Secondary Energy|Electricity","TWh","Other",2035,245.9936687544
+"F.3.1.gen_bytype","NEMS-OP","No IRA","Secondary Energy|Electricity","TWh","Other",2035,343.655944667
+"F.3.1.gen_bytype","NEMS-OP","IRA","Secondary Energy|Electricity","TWh","Other",2035,340.9872592756
+"F.3.1.gen_bytype","REGEN-EPRI","No IRA","Secondary Energy|Electricity","TWh","Other",2035,261.773192991379
+"F.3.1.gen_bytype","REGEN-EPRI","IRA","Secondary Energy|Electricity","TWh","Other",2035,289.950335152433
+"F.3.1.gen_bytype","RIO-REPEAT","No IRA","Secondary Energy|Electricity","TWh","Other",2035,283.3922
+"F.3.1.gen_bytype","RIO-REPEAT","IRA","Secondary Energy|Electricity","TWh","Other",2035,258.7494
+"F.3.1.gen_bytype","ReEDS-NREL","No IRA","Secondary Energy|Electricity","TWh","Other",2035,287.802392091387
+"F.3.1.gen_bytype","ReEDS-NREL","IRA","Secondary Energy|Electricity","TWh","Other",2035,286.27232412058
+"F.3.1.gen_bytype","NEMS-EIA","No IRA","Secondary Energy|Electricity","TWh","Other",2035,358.5410754254
+"F.3.1.gen_bytype","NEMS-EIA","IRA","Secondary Energy|Electricity","TWh","Other",2035,343.381750866

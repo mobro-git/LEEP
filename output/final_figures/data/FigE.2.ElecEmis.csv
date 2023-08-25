@@ -1,0 +1,310 @@
+"figure_num","model","scenario","variable","unit","label","year","value"
+"E.2.ElecEmis","USREP-ReEDS","No IRA","Emissions","Mt CO2/yr","Electricity",2025,1324.274957
+"E.2.ElecEmis","USREP-ReEDS","No IRA","Emissions","Mt CO2/yr","Electricity",2030,1154.603142
+"E.2.ElecEmis","USREP-ReEDS","No IRA","Emissions","Mt CO2/yr","Electricity",2035,1060.287391
+"E.2.ElecEmis","USREP-ReEDS","No IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","USREP-ReEDS","IRA","Emissions","Mt CO2/yr","Electricity",2025,1063.271865
+"E.2.ElecEmis","USREP-ReEDS","IRA","Emissions","Mt CO2/yr","Electricity",2030,616.834498
+"E.2.ElecEmis","USREP-ReEDS","IRA","Emissions","Mt CO2/yr","Electricity",2035,488.0122266
+"E.2.ElecEmis","USREP-ReEDS","IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","EPS-EI","No IRA","Emissions","Mt CO2/yr","Electricity",2025,1350.69
+"E.2.ElecEmis","EPS-EI","No IRA","Emissions","Mt CO2/yr","Electricity",2030,1201.47
+"E.2.ElecEmis","EPS-EI","No IRA","Emissions","Mt CO2/yr","Electricity",2035,1198.69
+"E.2.ElecEmis","EPS-EI","No IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","EPS-EI","IRA","Emissions","Mt CO2/yr","Electricity",2025,1189.66
+"E.2.ElecEmis","EPS-EI","IRA","Emissions","Mt CO2/yr","Electricity",2030,602.7
+"E.2.ElecEmis","EPS-EI","IRA","Emissions","Mt CO2/yr","Electricity",2035,336.702
+"E.2.ElecEmis","EPS-EI","IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","GCAM-CGS","No IRA","Emissions","Mt CO2/yr","Electricity",2025,1325.31758286476
+"E.2.ElecEmis","GCAM-CGS","No IRA","Emissions","Mt CO2/yr","Electricity",2030,1274.91028267317
+"E.2.ElecEmis","GCAM-CGS","No IRA","Emissions","Mt CO2/yr","Electricity",2035,1293.1152861035
+"E.2.ElecEmis","GCAM-CGS","No IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","GCAM-CGS","IRA","Emissions","Mt CO2/yr","Electricity",2025,1001.23988404397
+"E.2.ElecEmis","GCAM-CGS","IRA","Emissions","Mt CO2/yr","Electricity",2030,679.659054813217
+"E.2.ElecEmis","GCAM-CGS","IRA","Emissions","Mt CO2/yr","Electricity",2035,445.580298326782
+"E.2.ElecEmis","GCAM-CGS","IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","GCAM-PNNL","No IRA","Emissions","Mt CO2/yr","Electricity",2025,1283.991
+"E.2.ElecEmis","GCAM-PNNL","No IRA","Emissions","Mt CO2/yr","Electricity",2030,1234.722
+"E.2.ElecEmis","GCAM-PNNL","No IRA","Emissions","Mt CO2/yr","Electricity",2035,1182.894
+"E.2.ElecEmis","GCAM-PNNL","No IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","GCAM-PNNL","IRA","Emissions","Mt CO2/yr","Electricity",2025,1160.58110564697
+"E.2.ElecEmis","GCAM-PNNL","IRA","Emissions","Mt CO2/yr","Electricity",2030,831.998710072543
+"E.2.ElecEmis","GCAM-PNNL","IRA","Emissions","Mt CO2/yr","Electricity",2035,784.368180921919
+"E.2.ElecEmis","GCAM-PNNL","IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","Haiku-RFF","No IRA","Emissions","Mt CO2/yr","Electricity",2025,1394.14921935611
+"E.2.ElecEmis","Haiku-RFF","No IRA","Emissions","Mt CO2/yr","Electricity",2030,1282.5776456571
+"E.2.ElecEmis","Haiku-RFF","No IRA","Emissions","Mt CO2/yr","Electricity",2035,1174.26339683437
+"E.2.ElecEmis","Haiku-RFF","No IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","Haiku-RFF","IRA","Emissions","Mt CO2/yr","Electricity",2025,1205.45242155223
+"E.2.ElecEmis","Haiku-RFF","IRA","Emissions","Mt CO2/yr","Electricity",2030,852.658725492053
+"E.2.ElecEmis","Haiku-RFF","IRA","Emissions","Mt CO2/yr","Electricity",2035,767.701065402758
+"E.2.ElecEmis","Haiku-RFF","IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","IPM-NRDC","No IRA","Emissions","Mt CO2/yr","Electricity",2025,1109.41619281777
+"E.2.ElecEmis","IPM-NRDC","No IRA","Emissions","Mt CO2/yr","Electricity",2030,1075.92232861268
+"E.2.ElecEmis","IPM-NRDC","No IRA","Emissions","Mt CO2/yr","Electricity",2035,1079.88005163251
+"E.2.ElecEmis","IPM-NRDC","No IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","IPM-NRDC","IRA","Emissions","Mt CO2/yr","Electricity",2025,1176.7889391169
+"E.2.ElecEmis","IPM-NRDC","IRA","Emissions","Mt CO2/yr","Electricity",2030,827.389198560903
+"E.2.ElecEmis","IPM-NRDC","IRA","Emissions","Mt CO2/yr","Electricity",2035,772.508012550513
+"E.2.ElecEmis","IPM-NRDC","IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","IPM-EPA","No IRA","Emissions","Mt CO2/yr","Electricity",2030,1303.58284422178
+"E.2.ElecEmis","IPM-EPA","No IRA","Emissions","Mt CO2/yr","Electricity",2035,1247.28769086048
+"E.2.ElecEmis","IPM-EPA","No IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","IPM-EPA","IRA","Emissions","Mt CO2/yr","Electricity",2030,971.719363965523
+"E.2.ElecEmis","IPM-EPA","IRA","Emissions","Mt CO2/yr","Electricity",2035,608.299102727081
+"E.2.ElecEmis","IPM-EPA","IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","MARKAL-NETL","No IRA","Emissions","Mt CO2/yr","Electricity",2025,1377.84
+"E.2.ElecEmis","MARKAL-NETL","No IRA","Emissions","Mt CO2/yr","Electricity",2030,1379.59
+"E.2.ElecEmis","MARKAL-NETL","No IRA","Emissions","Mt CO2/yr","Electricity",2035,1430.05
+"E.2.ElecEmis","MARKAL-NETL","No IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","MARKAL-NETL","IRA","Emissions","Mt CO2/yr","Electricity",2025,1410.01
+"E.2.ElecEmis","MARKAL-NETL","IRA","Emissions","Mt CO2/yr","Electricity",2030,1232.67
+"E.2.ElecEmis","MARKAL-NETL","IRA","Emissions","Mt CO2/yr","Electricity",2035,749.4
+"E.2.ElecEmis","MARKAL-NETL","IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","NEMS-RHG","No IRA","Emissions","Mt CO2/yr","Electricity",2025,1090.61392148052
+"E.2.ElecEmis","NEMS-RHG","No IRA","Emissions","Mt CO2/yr","Electricity",2030,979.598572044581
+"E.2.ElecEmis","NEMS-RHG","No IRA","Emissions","Mt CO2/yr","Electricity",2035,906.244227830616
+"E.2.ElecEmis","NEMS-RHG","No IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","NEMS-RHG","IRA","Emissions","Mt CO2/yr","Electricity",2025,1194.8452781805
+"E.2.ElecEmis","NEMS-RHG","IRA","Emissions","Mt CO2/yr","Electricity",2030,482.81984665288
+"E.2.ElecEmis","NEMS-RHG","IRA","Emissions","Mt CO2/yr","Electricity",2035,588.535589412373
+"E.2.ElecEmis","NEMS-RHG","IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","NEMS-OP","No IRA","Emissions","Mt CO2/yr","Electricity",2025,1233.332031
+"E.2.ElecEmis","NEMS-OP","No IRA","Emissions","Mt CO2/yr","Electricity",2030,1040.891113
+"E.2.ElecEmis","NEMS-OP","No IRA","Emissions","Mt CO2/yr","Electricity",2035,958.780945
+"E.2.ElecEmis","NEMS-OP","No IRA","Emissions","Mt CO2/yr","Electricity",2022,1497.152466
+"E.2.ElecEmis","NEMS-OP","No IRA","Emissions","Mt CO2/yr","Electricity",2023,1446.765747
+"E.2.ElecEmis","NEMS-OP","No IRA","Emissions","Mt CO2/yr","Electricity",2024,1305.732544
+"E.2.ElecEmis","NEMS-OP","No IRA","Emissions","Mt CO2/yr","Electricity",2026,1182.312988
+"E.2.ElecEmis","NEMS-OP","No IRA","Emissions","Mt CO2/yr","Electricity",2027,1147.578247
+"E.2.ElecEmis","NEMS-OP","No IRA","Emissions","Mt CO2/yr","Electricity",2028,1122.651978
+"E.2.ElecEmis","NEMS-OP","No IRA","Emissions","Mt CO2/yr","Electricity",2029,1075.179321
+"E.2.ElecEmis","NEMS-OP","No IRA","Emissions","Mt CO2/yr","Electricity",2031,1036.622681
+"E.2.ElecEmis","NEMS-OP","No IRA","Emissions","Mt CO2/yr","Electricity",2032,1029.636719
+"E.2.ElecEmis","NEMS-OP","No IRA","Emissions","Mt CO2/yr","Electricity",2033,1023.60083
+"E.2.ElecEmis","NEMS-OP","No IRA","Emissions","Mt CO2/yr","Electricity",2034,991.468872
+"E.2.ElecEmis","NEMS-OP","No IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","NEMS-OP","IRA","Emissions","Mt CO2/yr","Electricity",2025,1170.501465
+"E.2.ElecEmis","NEMS-OP","IRA","Emissions","Mt CO2/yr","Electricity",2030,660.642334
+"E.2.ElecEmis","NEMS-OP","IRA","Emissions","Mt CO2/yr","Electricity",2035,417.400726
+"E.2.ElecEmis","NEMS-OP","IRA","Emissions","Mt CO2/yr","Electricity",2022,1498.034058
+"E.2.ElecEmis","NEMS-OP","IRA","Emissions","Mt CO2/yr","Electricity",2023,1448.508301
+"E.2.ElecEmis","NEMS-OP","IRA","Emissions","Mt CO2/yr","Electricity",2024,1287.602905
+"E.2.ElecEmis","NEMS-OP","IRA","Emissions","Mt CO2/yr","Electricity",2026,1077.134277
+"E.2.ElecEmis","NEMS-OP","IRA","Emissions","Mt CO2/yr","Electricity",2027,981.575256
+"E.2.ElecEmis","NEMS-OP","IRA","Emissions","Mt CO2/yr","Electricity",2028,865.056091
+"E.2.ElecEmis","NEMS-OP","IRA","Emissions","Mt CO2/yr","Electricity",2029,737.692566
+"E.2.ElecEmis","NEMS-OP","IRA","Emissions","Mt CO2/yr","Electricity",2031,625.182068
+"E.2.ElecEmis","NEMS-OP","IRA","Emissions","Mt CO2/yr","Electricity",2032,607.155884
+"E.2.ElecEmis","NEMS-OP","IRA","Emissions","Mt CO2/yr","Electricity",2033,519.068909
+"E.2.ElecEmis","NEMS-OP","IRA","Emissions","Mt CO2/yr","Electricity",2034,465.518219
+"E.2.ElecEmis","NEMS-OP","IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","REGEN-EPRI","No IRA","Emissions","Mt CO2/yr","Electricity",2025,1338.36588810703
+"E.2.ElecEmis","REGEN-EPRI","No IRA","Emissions","Mt CO2/yr","Electricity",2030,1125.0574146029
+"E.2.ElecEmis","REGEN-EPRI","No IRA","Emissions","Mt CO2/yr","Electricity",2035,1097.15035473422
+"E.2.ElecEmis","REGEN-EPRI","No IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","REGEN-EPRI","IRA","Emissions","Mt CO2/yr","Electricity",2025,1325.90851008344
+"E.2.ElecEmis","REGEN-EPRI","IRA","Emissions","Mt CO2/yr","Electricity",2030,999.666254194768
+"E.2.ElecEmis","REGEN-EPRI","IRA","Emissions","Mt CO2/yr","Electricity",2035,500.03751964597
+"E.2.ElecEmis","REGEN-EPRI","IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","RIO-REPEAT","No IRA","Emissions","Mt CO2/yr","Electricity",2025,1437.5
+"E.2.ElecEmis","RIO-REPEAT","No IRA","Emissions","Mt CO2/yr","Electricity",2030,981
+"E.2.ElecEmis","RIO-REPEAT","No IRA","Emissions","Mt CO2/yr","Electricity",2035,775
+"E.2.ElecEmis","RIO-REPEAT","No IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","RIO-REPEAT","IRA","Emissions","Mt CO2/yr","Electricity",2025,1460.5
+"E.2.ElecEmis","RIO-REPEAT","IRA","Emissions","Mt CO2/yr","Electricity",2030,741
+"E.2.ElecEmis","RIO-REPEAT","IRA","Emissions","Mt CO2/yr","Electricity",2035,370
+"E.2.ElecEmis","RIO-REPEAT","IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","ReEDS-NREL","No IRA","Emissions","Mt CO2/yr","Electricity",2025,1361.65313741276
+"E.2.ElecEmis","ReEDS-NREL","No IRA","Emissions","Mt CO2/yr","Electricity",2030,1238.16547546738
+"E.2.ElecEmis","ReEDS-NREL","No IRA","Emissions","Mt CO2/yr","Electricity",2035,1165.17798641427
+"E.2.ElecEmis","ReEDS-NREL","No IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","ReEDS-NREL","IRA","Emissions","Mt CO2/yr","Electricity",2025,1152.97854629897
+"E.2.ElecEmis","ReEDS-NREL","IRA","Emissions","Mt CO2/yr","Electricity",2030,413.513524771282
+"E.2.ElecEmis","ReEDS-NREL","IRA","Emissions","Mt CO2/yr","Electricity",2035,323.38378502023
+"E.2.ElecEmis","ReEDS-NREL","IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Electricity",2025,1317.436523
+"E.2.ElecEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Electricity",2030,1177.160889
+"E.2.ElecEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Electricity",2035,1100.493042
+"E.2.ElecEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Electricity",2022,1507.266113
+"E.2.ElecEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Electricity",2023,1396.958008
+"E.2.ElecEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Electricity",2024,1387.346802
+"E.2.ElecEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Electricity",2026,1269.72522
+"E.2.ElecEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Electricity",2027,1235.09375
+"E.2.ElecEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Electricity",2028,1214.805298
+"E.2.ElecEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Electricity",2029,1202.780518
+"E.2.ElecEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Electricity",2031,1144.698242
+"E.2.ElecEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Electricity",2032,1121.275391
+"E.2.ElecEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Electricity",2033,1117.068115
+"E.2.ElecEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Electricity",2034,1111.81311
+"E.2.ElecEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Electricity",2025,1295.490356
+"E.2.ElecEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Electricity",2030,768.311584
+"E.2.ElecEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Electricity",2035,714.001099
+"E.2.ElecEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Electricity",2022,1507.019531
+"E.2.ElecEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Electricity",2023,1396.994263
+"E.2.ElecEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Electricity",2024,1395.245239
+"E.2.ElecEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Electricity",2026,1161.389648
+"E.2.ElecEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Electricity",2027,1024.768433
+"E.2.ElecEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Electricity",2028,913.385315
+"E.2.ElecEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Electricity",2029,828.363403
+"E.2.ElecEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Electricity",2031,748.608398
+"E.2.ElecEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Electricity",2032,743.979004
+"E.2.ElecEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Electricity",2033,739.65332
+"E.2.ElecEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Electricity",2034,722.299683
+"E.2.ElecEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","EPA-GHGI","Historic","Emissions","Mt CO2/yr","Electricity",2021,1540.9
+"E.2.ElecEmis","USREP-ReEDS","IRA","Percent Difference from No IRA","%","CO2",2025,-19.7091314473902
+"E.2.ElecEmis","USREP-ReEDS","IRA","Percent Difference from No IRA","%","CO2",2030,-46.5760592915483
+"E.2.ElecEmis","USREP-ReEDS","IRA","Percent Difference from No IRA","%","CO2",2035,-53.9735895435165
+"E.2.ElecEmis","EPS-EI","IRA","Percent Difference from No IRA","%","CO2",2025,-11.9220546535474
+"E.2.ElecEmis","EPS-EI","IRA","Percent Difference from No IRA","%","CO2",2030,-49.8364503483233
+"E.2.ElecEmis","EPS-EI","IRA","Percent Difference from No IRA","%","CO2",2035,-71.9108359959623
+"E.2.ElecEmis","GCAM-CGS","IRA","Percent Difference from No IRA","%","CO2",2025,-24.4528332688588
+"E.2.ElecEmis","GCAM-CGS","IRA","Percent Difference from No IRA","%","CO2",2030,-46.6896562016787
+"E.2.ElecEmis","GCAM-CGS","IRA","Percent Difference from No IRA","%","CO2",2035,-65.5421057105099
+"E.2.ElecEmis","GCAM-PNNL","IRA","Percent Difference from No IRA","%","CO2",2025,-9.6114298583892
+"E.2.ElecEmis","GCAM-PNNL","IRA","Percent Difference from No IRA","%","CO2",2030,-32.6165152906854
+"E.2.ElecEmis","GCAM-PNNL","IRA","Percent Difference from No IRA","%","CO2",2035,-33.690746514741
+"E.2.ElecEmis","Haiku-RFF","IRA","Percent Difference from No IRA","%","CO2",2025,-13.5349068223149
+"E.2.ElecEmis","Haiku-RFF","IRA","Percent Difference from No IRA","%","CO2",2030,-33.5199137160065
+"E.2.ElecEmis","Haiku-RFF","IRA","Percent Difference from No IRA","%","CO2",2035,-34.6227543605328
+"E.2.ElecEmis","IPM-NRDC","IRA","Percent Difference from No IRA","%","CO2",2025,6.07281079321658
+"E.2.ElecEmis","IPM-NRDC","IRA","Percent Difference from No IRA","%","CO2",2030,-23.0995419875933
+"E.2.ElecEmis","IPM-NRDC","IRA","Percent Difference from No IRA","%","CO2",2035,-28.4635352433196
+"E.2.ElecEmis","IPM-EPA","IRA","Percent Difference from No IRA","%","CO2",2030,-25.4577974639099
+"E.2.ElecEmis","IPM-EPA","IRA","Percent Difference from No IRA","%","CO2",2035,-51.2302488684526
+"E.2.ElecEmis","MARKAL-NETL","IRA","Percent Difference from No IRA","%","CO2",2025,2.3348139116298
+"E.2.ElecEmis","MARKAL-NETL","IRA","Percent Difference from No IRA","%","CO2",2030,-10.6495408056017
+"E.2.ElecEmis","MARKAL-NETL","IRA","Percent Difference from No IRA","%","CO2",2035,-47.5962378937799
+"E.2.ElecEmis","NEMS-RHG","IRA","Percent Difference from No IRA","%","CO2",2025,9.55712692154935
+"E.2.ElecEmis","NEMS-RHG","IRA","Percent Difference from No IRA","%","CO2",2030,-50.7124795368825
+"E.2.ElecEmis","NEMS-RHG","IRA","Percent Difference from No IRA","%","CO2",2035,-35.0577282217598
+"E.2.ElecEmis","NEMS-OP","IRA","Percent Difference from No IRA","%","CO2",2022,0.0588845839031515
+"E.2.ElecEmis","NEMS-OP","IRA","Percent Difference from No IRA","%","CO2",2023,0.120444792366259
+"E.2.ElecEmis","NEMS-OP","IRA","Percent Difference from No IRA","%","CO2",2024,-1.38846497188937
+"E.2.ElecEmis","NEMS-OP","IRA","Percent Difference from No IRA","%","CO2",2025,-5.09437559560146
+"E.2.ElecEmis","NEMS-OP","IRA","Percent Difference from No IRA","%","CO2",2026,-8.89601248294837
+"E.2.ElecEmis","NEMS-OP","IRA","Percent Difference from No IRA","%","CO2",2027,-14.4655052005356
+"E.2.ElecEmis","NEMS-OP","IRA","Percent Difference from No IRA","%","CO2",2028,-22.9453020212823
+"E.2.ElecEmis","NEMS-OP","IRA","Percent Difference from No IRA","%","CO2",2029,-31.3888807576871
+"E.2.ElecEmis","NEMS-OP","IRA","Percent Difference from No IRA","%","CO2",2030,-36.5310813255065
+"E.2.ElecEmis","NEMS-OP","IRA","Percent Difference from No IRA","%","CO2",2031,-39.6904891761673
+"E.2.ElecEmis","NEMS-OP","IRA","Percent Difference from No IRA","%","CO2",2032,-41.0320287926717
+"E.2.ElecEmis","NEMS-OP","IRA","Percent Difference from No IRA","%","CO2",2033,-49.289909329206
+"E.2.ElecEmis","NEMS-OP","IRA","Percent Difference from No IRA","%","CO2",2034,-53.0476213478137
+"E.2.ElecEmis","NEMS-OP","IRA","Percent Difference from No IRA","%","CO2",2035,-56.4654754376663
+"E.2.ElecEmis","REGEN-EPRI","IRA","Percent Difference from No IRA","%","CO2",2025,-0.930790162412887
+"E.2.ElecEmis","REGEN-EPRI","IRA","Percent Difference from No IRA","%","CO2",2030,-11.1453121219054
+"E.2.ElecEmis","REGEN-EPRI","IRA","Percent Difference from No IRA","%","CO2",2035,-54.4239750287369
+"E.2.ElecEmis","RIO-REPEAT","IRA","Percent Difference from No IRA","%","CO2",2025,1.6
+"E.2.ElecEmis","RIO-REPEAT","IRA","Percent Difference from No IRA","%","CO2",2030,-24.4648318042813
+"E.2.ElecEmis","RIO-REPEAT","IRA","Percent Difference from No IRA","%","CO2",2035,-52.258064516129
+"E.2.ElecEmis","ReEDS-NREL","IRA","Percent Difference from No IRA","%","CO2",2025,-15.3250916389975
+"E.2.ElecEmis","ReEDS-NREL","IRA","Percent Difference from No IRA","%","CO2",2030,-66.6027253251275
+"E.2.ElecEmis","ReEDS-NREL","IRA","Percent Difference from No IRA","%","CO2",2035,-72.245975396822
+"E.2.ElecEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2022,-0.0163595530924043
+"E.2.ElecEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2023,0.00259528201937975
+"E.2.ElecEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2024,0.569319580988226
+"E.2.ElecEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2025,-1.6658234849923
+"E.2.ElecEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2026,-8.53220604691147
+"E.2.ElecEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2027,-17.0290973458493
+"E.2.ElecEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2028,-24.8122051736393
+"E.2.ElecEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2029,-31.1292966087101
+"E.2.ElecEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2030,-34.7318118381692
+"E.2.ElecEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2031,-34.6021186603692
+"E.2.ElecEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2032,-33.6488600417344
+"E.2.ElecEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2033,-33.7861935124699
+"E.2.ElecEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2034,-35.0340739371206
+"E.2.ElecEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2035,-35.1198897448368
+"E.2.ElecEmis","USREP-ReEDS","Historic","Percent Difference from No IRA","%","CO2",2021,0
+"E.2.ElecEmis","EPS-EI","Historic","Percent Difference from No IRA","%","CO2",2021,0
+"E.2.ElecEmis","GCAM-CGS","Historic","Percent Difference from No IRA","%","CO2",2021,0
+"E.2.ElecEmis","GCAM-PNNL","Historic","Percent Difference from No IRA","%","CO2",2021,0
+"E.2.ElecEmis","Haiku-RFF","Historic","Percent Difference from No IRA","%","CO2",2021,0
+"E.2.ElecEmis","IPM-NRDC","Historic","Percent Difference from No IRA","%","CO2",2021,0
+"E.2.ElecEmis","IPM-EPA","Historic","Percent Difference from No IRA","%","CO2",2021,0
+"E.2.ElecEmis","MARKAL-NETL","Historic","Percent Difference from No IRA","%","CO2",2021,0
+"E.2.ElecEmis","NEMS-RHG","Historic","Percent Difference from No IRA","%","CO2",2021,0
+"E.2.ElecEmis","NEMS-OP","Historic","Percent Difference from No IRA","%","CO2",2021,0
+"E.2.ElecEmis","REGEN-EPRI","Historic","Percent Difference from No IRA","%","CO2",2021,0
+"E.2.ElecEmis","RIO-REPEAT","Historic","Percent Difference from No IRA","%","CO2",2021,0
+"E.2.ElecEmis","ReEDS-NREL","Historic","Percent Difference from No IRA","%","CO2",2021,0
+"E.2.ElecEmis","NEMS-EIA","Historic","Percent Difference from No IRA","%","CO2",2021,0
+"E.2.ElecEmis","USREP-ReEDS","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2025,-261.003092
+"E.2.ElecEmis","USREP-ReEDS","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2030,-537.768644
+"E.2.ElecEmis","USREP-ReEDS","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2035,-572.2751644
+"E.2.ElecEmis","EPS-EI","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2025,-161.03
+"E.2.ElecEmis","EPS-EI","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2030,-598.77
+"E.2.ElecEmis","EPS-EI","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2035,-861.988
+"E.2.ElecEmis","GCAM-CGS","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2025,-324.07769882079
+"E.2.ElecEmis","GCAM-CGS","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2030,-595.251227859953
+"E.2.ElecEmis","GCAM-CGS","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2035,-847.534987776718
+"E.2.ElecEmis","GCAM-PNNL","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2025,-123.40989435303
+"E.2.ElecEmis","GCAM-PNNL","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2030,-402.723289927457
+"E.2.ElecEmis","GCAM-PNNL","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2035,-398.525819078081
+"E.2.ElecEmis","Haiku-RFF","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2025,-188.69679780388
+"E.2.ElecEmis","Haiku-RFF","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2030,-429.918920165047
+"E.2.ElecEmis","Haiku-RFF","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2035,-406.562331431612
+"E.2.ElecEmis","IPM-NRDC","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2025,67.3727462991301
+"E.2.ElecEmis","IPM-NRDC","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2030,-248.533130051777
+"E.2.ElecEmis","IPM-NRDC","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2035,-307.372039081997
+"E.2.ElecEmis","IPM-EPA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2030,-331.863480256257
+"E.2.ElecEmis","IPM-EPA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2035,-638.988588133399
+"E.2.ElecEmis","MARKAL-NETL","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2025,32.1700000000001
+"E.2.ElecEmis","MARKAL-NETL","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2030,-146.92
+"E.2.ElecEmis","MARKAL-NETL","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2035,-680.65
+"E.2.ElecEmis","NEMS-RHG","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2025,104.23135669998
+"E.2.ElecEmis","NEMS-RHG","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2030,-496.778725391701
+"E.2.ElecEmis","NEMS-RHG","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2035,-317.708638418243
+"E.2.ElecEmis","NEMS-OP","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2022,0.881591999999955
+"E.2.ElecEmis","NEMS-OP","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2023,1.74255400000015
+"E.2.ElecEmis","NEMS-OP","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2024,-18.129639
+"E.2.ElecEmis","NEMS-OP","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2025,-62.8305659999999
+"E.2.ElecEmis","NEMS-OP","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2026,-105.178711
+"E.2.ElecEmis","NEMS-OP","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2027,-166.002991
+"E.2.ElecEmis","NEMS-OP","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2028,-257.595887
+"E.2.ElecEmis","NEMS-OP","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2029,-337.486755
+"E.2.ElecEmis","NEMS-OP","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2030,-380.248779
+"E.2.ElecEmis","NEMS-OP","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2031,-411.440613
+"E.2.ElecEmis","NEMS-OP","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2032,-422.480835
+"E.2.ElecEmis","NEMS-OP","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2033,-504.531921
+"E.2.ElecEmis","NEMS-OP","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2034,-525.950653
+"E.2.ElecEmis","NEMS-OP","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2035,-541.380219
+"E.2.ElecEmis","REGEN-EPRI","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2025,-12.4573780235901
+"E.2.ElecEmis","REGEN-EPRI","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2030,-125.391160408132
+"E.2.ElecEmis","REGEN-EPRI","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2035,-597.11283508825
+"E.2.ElecEmis","RIO-REPEAT","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2025,23
+"E.2.ElecEmis","RIO-REPEAT","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2030,-240
+"E.2.ElecEmis","RIO-REPEAT","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2035,-405
+"E.2.ElecEmis","ReEDS-NREL","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2025,-208.67459111379
+"E.2.ElecEmis","ReEDS-NREL","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2030,-824.651950696098
+"E.2.ElecEmis","ReEDS-NREL","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2035,-841.79420139404
+"E.2.ElecEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2022,-0.246581999999989
+"E.2.ElecEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2023,0.0362549999999828
+"E.2.ElecEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2024,7.89843700000006
+"E.2.ElecEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2025,-21.9461670000001
+"E.2.ElecEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2026,-108.335572
+"E.2.ElecEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2027,-210.325317
+"E.2.ElecEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2028,-301.419983
+"E.2.ElecEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2029,-374.417115
+"E.2.ElecEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2030,-408.849305
+"E.2.ElecEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2031,-396.089844
+"E.2.ElecEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2032,-377.296387
+"E.2.ElecEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2033,-377.414795
+"E.2.ElecEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2034,-389.513427
+"E.2.ElecEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2035,-386.491943
+"E.2.ElecEmis","USREP-ReEDS","Historic","Absolute Difference from No IRA","Mt CO2/yr","CO2",2021,0
+"E.2.ElecEmis","EPS-EI","Historic","Absolute Difference from No IRA","Mt CO2/yr","CO2",2021,0
+"E.2.ElecEmis","GCAM-CGS","Historic","Absolute Difference from No IRA","Mt CO2/yr","CO2",2021,0
+"E.2.ElecEmis","GCAM-PNNL","Historic","Absolute Difference from No IRA","Mt CO2/yr","CO2",2021,0
+"E.2.ElecEmis","Haiku-RFF","Historic","Absolute Difference from No IRA","Mt CO2/yr","CO2",2021,0
+"E.2.ElecEmis","IPM-NRDC","Historic","Absolute Difference from No IRA","Mt CO2/yr","CO2",2021,0
+"E.2.ElecEmis","IPM-EPA","Historic","Absolute Difference from No IRA","Mt CO2/yr","CO2",2021,0
+"E.2.ElecEmis","MARKAL-NETL","Historic","Absolute Difference from No IRA","Mt CO2/yr","CO2",2021,0
+"E.2.ElecEmis","NEMS-RHG","Historic","Absolute Difference from No IRA","Mt CO2/yr","CO2",2021,0
+"E.2.ElecEmis","NEMS-OP","Historic","Absolute Difference from No IRA","Mt CO2/yr","CO2",2021,0
+"E.2.ElecEmis","REGEN-EPRI","Historic","Absolute Difference from No IRA","Mt CO2/yr","CO2",2021,0
+"E.2.ElecEmis","RIO-REPEAT","Historic","Absolute Difference from No IRA","Mt CO2/yr","CO2",2021,0
+"E.2.ElecEmis","ReEDS-NREL","Historic","Absolute Difference from No IRA","Mt CO2/yr","CO2",2021,0
+"E.2.ElecEmis","NEMS-EIA","Historic","Absolute Difference from No IRA","Mt CO2/yr","CO2",2021,0

@@ -1,0 +1,310 @@
+"figure_num","model","scenario","variable","unit","label","year","value"
+"E.14.CoalnoCCSGen","USREP-ReEDS","No IRA","Generation","TWh","Coal",2025,738.410472455902
+"E.14.CoalnoCCSGen","USREP-ReEDS","No IRA","Generation","TWh","Coal",2030,599.989287143046
+"E.14.CoalnoCCSGen","USREP-ReEDS","No IRA","Generation","TWh","Coal",2035,478.288118201628
+"E.14.CoalnoCCSGen","USREP-ReEDS","No IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","USREP-ReEDS","IRA","Generation","TWh","Coal",2025,576.568246839039
+"E.14.CoalnoCCSGen","USREP-ReEDS","IRA","Generation","TWh","Coal",2030,267.697189767694
+"E.14.CoalnoCCSGen","USREP-ReEDS","IRA","Generation","TWh","Coal",2035,190.232861340078
+"E.14.CoalnoCCSGen","USREP-ReEDS","IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","EPS-EI","No IRA","Generation","TWh","Coal",2025,608.765780729282
+"E.14.CoalnoCCSGen","EPS-EI","No IRA","Generation","TWh","Coal",2030,434.361567894358
+"E.14.CoalnoCCSGen","EPS-EI","No IRA","Generation","TWh","Coal",2035,407.820144237962
+"E.14.CoalnoCCSGen","EPS-EI","No IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","EPS-EI","IRA","Generation","TWh","Coal",2025,566.59865638297
+"E.14.CoalnoCCSGen","EPS-EI","IRA","Generation","TWh","Coal",2030,188.611245331039
+"E.14.CoalnoCCSGen","EPS-EI","IRA","Generation","TWh","Coal",2035,18.0533699733904
+"E.14.CoalnoCCSGen","EPS-EI","IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","GCAM-CGS","No IRA","Generation","TWh","Coal",2025,767.467448012533
+"E.14.CoalnoCCSGen","GCAM-CGS","No IRA","Generation","TWh","Coal",2030,737.341936940374
+"E.14.CoalnoCCSGen","GCAM-CGS","No IRA","Generation","TWh","Coal",2035,684.031734292612
+"E.14.CoalnoCCSGen","GCAM-CGS","No IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","GCAM-CGS","IRA","Generation","TWh","Coal",2025,497.215359827044
+"E.14.CoalnoCCSGen","GCAM-CGS","IRA","Generation","TWh","Coal",2030,219.439712126062
+"E.14.CoalnoCCSGen","GCAM-CGS","IRA","Generation","TWh","Coal",2035,0.0043237804751029
+"E.14.CoalnoCCSGen","GCAM-CGS","IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","GCAM-PNNL","No IRA","Generation","TWh","Coal",2025,578.49299365452
+"E.14.CoalnoCCSGen","GCAM-PNNL","No IRA","Generation","TWh","Coal",2030,477.84517920888
+"E.14.CoalnoCCSGen","GCAM-PNNL","No IRA","Generation","TWh","Coal",2035,411.77716942278
+"E.14.CoalnoCCSGen","GCAM-PNNL","No IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","GCAM-PNNL","IRA","Generation","TWh","Coal",2025,532.766208828
+"E.14.CoalnoCCSGen","GCAM-PNNL","IRA","Generation","TWh","Coal",2030,218.884135848
+"E.14.CoalnoCCSGen","GCAM-PNNL","IRA","Generation","TWh","Coal",2035,212.639271454428
+"E.14.CoalnoCCSGen","GCAM-PNNL","IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","Haiku-RFF","No IRA","Generation","TWh","Coal",2025,1029.45767368263
+"E.14.CoalnoCCSGen","Haiku-RFF","No IRA","Generation","TWh","Coal",2030,873.087290764281
+"E.14.CoalnoCCSGen","Haiku-RFF","No IRA","Generation","TWh","Coal",2035,793.53021219058
+"E.14.CoalnoCCSGen","Haiku-RFF","No IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","Haiku-RFF","IRA","Generation","TWh","Coal",2025,899.725987098999
+"E.14.CoalnoCCSGen","Haiku-RFF","IRA","Generation","TWh","Coal",2030,562.276611602267
+"E.14.CoalnoCCSGen","Haiku-RFF","IRA","Generation","TWh","Coal",2035,499.939763292775
+"E.14.CoalnoCCSGen","Haiku-RFF","IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","IPM-NRDC","No IRA","Generation","TWh","Coal",2025,486.010460702361
+"E.14.CoalnoCCSGen","IPM-NRDC","No IRA","Generation","TWh","Coal",2030,361.751164902019
+"E.14.CoalnoCCSGen","IPM-NRDC","No IRA","Generation","TWh","Coal",2035,333.593238162533
+"E.14.CoalnoCCSGen","IPM-NRDC","No IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","IPM-NRDC","IRA","Generation","TWh","Coal",2025,512.754808742443
+"E.14.CoalnoCCSGen","IPM-NRDC","IRA","Generation","TWh","Coal",2030,198.300046447538
+"E.14.CoalnoCCSGen","IPM-NRDC","IRA","Generation","TWh","Coal",2035,143.308356840433
+"E.14.CoalnoCCSGen","IPM-NRDC","IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","IPM-EPA","No IRA","Generation","TWh","Coal",2030,554.067989289291
+"E.14.CoalnoCCSGen","IPM-EPA","No IRA","Generation","TWh","Coal",2035,465.893440440232
+"E.14.CoalnoCCSGen","IPM-EPA","No IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","IPM-EPA","IRA","Generation","TWh","Coal",2030,242.782357799755
+"E.14.CoalnoCCSGen","IPM-EPA","IRA","Generation","TWh","Coal",2035,44.3794978259825
+"E.14.CoalnoCCSGen","IPM-EPA","IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","MARKAL-NETL","No IRA","Generation","TWh","Coal",2025,723.11265398162
+"E.14.CoalnoCCSGen","MARKAL-NETL","No IRA","Generation","TWh","Coal",2030,669.635994660407
+"E.14.CoalnoCCSGen","MARKAL-NETL","No IRA","Generation","TWh","Coal",2035,684.349575816883
+"E.14.CoalnoCCSGen","MARKAL-NETL","No IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","MARKAL-NETL","IRA","Generation","TWh","Coal",2025,702.051983351377
+"E.14.CoalnoCCSGen","MARKAL-NETL","IRA","Generation","TWh","Coal",2030,514.772566939844
+"E.14.CoalnoCCSGen","MARKAL-NETL","IRA","Generation","TWh","Coal",2035,203.287414939902
+"E.14.CoalnoCCSGen","MARKAL-NETL","IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","NEMS-RHG","No IRA","Generation","TWh","Coal",2025,592.693367739666
+"E.14.CoalnoCCSGen","NEMS-RHG","No IRA","Generation","TWh","Coal",2030,485.198325980687
+"E.14.CoalnoCCSGen","NEMS-RHG","No IRA","Generation","TWh","Coal",2035,446.34202274032
+"E.14.CoalnoCCSGen","NEMS-RHG","No IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","NEMS-RHG","IRA","Generation","TWh","Coal",2025,619.524877096887
+"E.14.CoalnoCCSGen","NEMS-RHG","IRA","Generation","TWh","Coal",2030,137.585070357873
+"E.14.CoalnoCCSGen","NEMS-RHG","IRA","Generation","TWh","Coal",2035,204.838874950147
+"E.14.CoalnoCCSGen","NEMS-RHG","IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","NEMS-OP","No IRA","Generation","TWh","Coal",2025,675.338606108932
+"E.14.CoalnoCCSGen","NEMS-OP","No IRA","Generation","TWh","Coal",2030,539.276619677487
+"E.14.CoalnoCCSGen","NEMS-OP","No IRA","Generation","TWh","Coal",2035,473.256264301022
+"E.14.CoalnoCCSGen","NEMS-OP","No IRA","Generation","TWh","Coal",2022,918.793525516635
+"E.14.CoalnoCCSGen","NEMS-OP","No IRA","Generation","TWh","Coal",2023,867.442894588988
+"E.14.CoalnoCCSGen","NEMS-OP","No IRA","Generation","TWh","Coal",2024,738.423052238289
+"E.14.CoalnoCCSGen","NEMS-OP","No IRA","Generation","TWh","Coal",2026,635.473871766517
+"E.14.CoalnoCCSGen","NEMS-OP","No IRA","Generation","TWh","Coal",2027,620.50416483178
+"E.14.CoalnoCCSGen","NEMS-OP","No IRA","Generation","TWh","Coal",2028,592.322830785828
+"E.14.CoalnoCCSGen","NEMS-OP","No IRA","Generation","TWh","Coal",2029,557.126940060073
+"E.14.CoalnoCCSGen","NEMS-OP","No IRA","Generation","TWh","Coal",2031,548.240353031169
+"E.14.CoalnoCCSGen","NEMS-OP","No IRA","Generation","TWh","Coal",2032,541.253444750985
+"E.14.CoalnoCCSGen","NEMS-OP","No IRA","Generation","TWh","Coal",2033,535.846640159052
+"E.14.CoalnoCCSGen","NEMS-OP","No IRA","Generation","TWh","Coal",2034,500.96293765417
+"E.14.CoalnoCCSGen","NEMS-OP","No IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Generation","TWh","Coal",2025,652.590687077071
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Generation","TWh","Coal",2030,295.841390744349
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Generation","TWh","Coal",2035,139.704325206654
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Generation","TWh","Coal",2022,918.793158524604
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Generation","TWh","Coal",2023,874.300167684184
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Generation","TWh","Coal",2024,748.757178834058
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Generation","TWh","Coal",2026,579.028991459841
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Generation","TWh","Coal",2027,514.572993113564
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Generation","TWh","Coal",2028,428.364421071296
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Generation","TWh","Coal",2029,339.918903829919
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Generation","TWh","Coal",2031,274.867849173048
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Generation","TWh","Coal",2032,263.722129560272
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Generation","TWh","Coal",2033,207.936902824956
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Generation","TWh","Coal",2034,173.691715242308
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","REGEN-EPRI","No IRA","Generation","TWh","Coal",2025,939.539847242996
+"E.14.CoalnoCCSGen","REGEN-EPRI","No IRA","Generation","TWh","Coal",2030,668.240169175342
+"E.14.CoalnoCCSGen","REGEN-EPRI","No IRA","Generation","TWh","Coal",2035,594.476128187849
+"E.14.CoalnoCCSGen","REGEN-EPRI","No IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","REGEN-EPRI","IRA","Generation","TWh","Coal",2025,896.419576795324
+"E.14.CoalnoCCSGen","REGEN-EPRI","IRA","Generation","TWh","Coal",2030,464.648011412475
+"E.14.CoalnoCCSGen","REGEN-EPRI","IRA","Generation","TWh","Coal",2035,150.98926658929
+"E.14.CoalnoCCSGen","REGEN-EPRI","IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","RIO-REPEAT","No IRA","Generation","TWh","Coal",2025,1088.4763638756
+"E.14.CoalnoCCSGen","RIO-REPEAT","No IRA","Generation","TWh","Coal",2030,653.9857987824
+"E.14.CoalnoCCSGen","RIO-REPEAT","No IRA","Generation","TWh","Coal",2035,492.9892948008
+"E.14.CoalnoCCSGen","RIO-REPEAT","No IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","RIO-REPEAT","IRA","Generation","TWh","Coal",2025,1094.976222732
+"E.14.CoalnoCCSGen","RIO-REPEAT","IRA","Generation","TWh","Coal",2030,474.98968566
+"E.14.CoalnoCCSGen","RIO-REPEAT","IRA","Generation","TWh","Coal",2035,235.9948754016
+"E.14.CoalnoCCSGen","RIO-REPEAT","IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","ReEDS-NREL","No IRA","Generation","TWh","Coal",2025,762.896051455283
+"E.14.CoalnoCCSGen","ReEDS-NREL","No IRA","Generation","TWh","Coal",2030,696.41088121123
+"E.14.CoalnoCCSGen","ReEDS-NREL","No IRA","Generation","TWh","Coal",2035,637.855904311456
+"E.14.CoalnoCCSGen","ReEDS-NREL","No IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","ReEDS-NREL","IRA","Generation","TWh","Coal",2025,611.988276240231
+"E.14.CoalnoCCSGen","ReEDS-NREL","IRA","Generation","TWh","Coal",2030,72.0562056282694
+"E.14.CoalnoCCSGen","ReEDS-NREL","IRA","Generation","TWh","Coal",2035,62.4415514752302
+"E.14.CoalnoCCSGen","ReEDS-NREL","IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","NEMS-EIA","No IRA","Generation","TWh","Coal",2025,774.303254104315
+"E.14.CoalnoCCSGen","NEMS-EIA","No IRA","Generation","TWh","Coal",2030,611.136448250542
+"E.14.CoalnoCCSGen","NEMS-EIA","No IRA","Generation","TWh","Coal",2035,574.567723335705
+"E.14.CoalnoCCSGen","NEMS-EIA","No IRA","Generation","TWh","Coal",2022,848.554266753115
+"E.14.CoalnoCCSGen","NEMS-EIA","No IRA","Generation","TWh","Coal",2023,799.790249657481
+"E.14.CoalnoCCSGen","NEMS-EIA","No IRA","Generation","TWh","Coal",2024,836.451868555137
+"E.14.CoalnoCCSGen","NEMS-EIA","No IRA","Generation","TWh","Coal",2026,720.896088834048
+"E.14.CoalnoCCSGen","NEMS-EIA","No IRA","Generation","TWh","Coal",2027,679.453568753047
+"E.14.CoalnoCCSGen","NEMS-EIA","No IRA","Generation","TWh","Coal",2028,650.421911171762
+"E.14.CoalnoCCSGen","NEMS-EIA","No IRA","Generation","TWh","Coal",2029,629.760433833088
+"E.14.CoalnoCCSGen","NEMS-EIA","No IRA","Generation","TWh","Coal",2031,602.504311696278
+"E.14.CoalnoCCSGen","NEMS-EIA","No IRA","Generation","TWh","Coal",2032,597.659018911188
+"E.14.CoalnoCCSGen","NEMS-EIA","No IRA","Generation","TWh","Coal",2033,594.189734246259
+"E.14.CoalnoCCSGen","NEMS-EIA","No IRA","Generation","TWh","Coal",2034,584.548158611835
+"E.14.CoalnoCCSGen","NEMS-EIA","No IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Generation","TWh","Coal",2025,769.44868452067
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Generation","TWh","Coal",2030,350.489872255164
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Generation","TWh","Coal",2035,343.142267982675
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Generation","TWh","Coal",2022,848.554083757089
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Generation","TWh","Coal",2023,799.792385611099
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Generation","TWh","Coal",2024,838.424908710824
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Generation","TWh","Coal",2026,661.845674106217
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Generation","TWh","Coal",2027,561.320104984627
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Generation","TWh","Coal",2028,466.280532791779
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Generation","TWh","Coal",2029,393.769493269874
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Generation","TWh","Coal",2031,343.740156686673
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Generation","TWh","Coal",2032,344.586117227151
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Generation","TWh","Coal",2033,357.330858536174
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Generation","TWh","Coal",2034,348.053044030022
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","EIA","Historic","Generation","TWh","Coal",2021,898.659010735037
+"E.14.CoalnoCCSGen","USREP-ReEDS","IRA","Percent Difference from No IRA","%","Coal",2025,-21.9176503657359
+"E.14.CoalnoCCSGen","USREP-ReEDS","IRA","Percent Difference from No IRA","%","Coal",2030,-55.3830050795771
+"E.14.CoalnoCCSGen","USREP-ReEDS","IRA","Percent Difference from No IRA","%","Coal",2035,-60.2263041667526
+"E.14.CoalnoCCSGen","EPS-EI","IRA","Percent Difference from No IRA","%","Coal",2025,-6.92665811402824
+"E.14.CoalnoCCSGen","EPS-EI","IRA","Percent Difference from No IRA","%","Coal",2030,-56.5773633598928
+"E.14.CoalnoCCSGen","EPS-EI","IRA","Percent Difference from No IRA","%","Coal",2035,-95.5732029845842
+"E.14.CoalnoCCSGen","GCAM-CGS","IRA","Percent Difference from No IRA","%","Coal",2025,-35.2134919709424
+"E.14.CoalnoCCSGen","GCAM-CGS","IRA","Percent Difference from No IRA","%","Coal",2030,-70.2390843200057
+"E.14.CoalnoCCSGen","GCAM-CGS","IRA","Percent Difference from No IRA","%","Coal",2035,-99.9993678976781
+"E.14.CoalnoCCSGen","GCAM-PNNL","IRA","Percent Difference from No IRA","%","Coal",2025,-7.90446648932595
+"E.14.CoalnoCCSGen","GCAM-PNNL","IRA","Percent Difference from No IRA","%","Coal",2030,-54.1935033831702
+"E.14.CoalnoCCSGen","GCAM-PNNL","IRA","Percent Difference from No IRA","%","Coal",2035,-48.360597127689
+"E.14.CoalnoCCSGen","Haiku-RFF","IRA","Percent Difference from No IRA","%","Coal",2025,-12.6019446840926
+"E.14.CoalnoCCSGen","Haiku-RFF","IRA","Percent Difference from No IRA","%","Coal",2030,-35.5990383149361
+"E.14.CoalnoCCSGen","Haiku-RFF","IRA","Percent Difference from No IRA","%","Coal",2035,-36.9980177676327
+"E.14.CoalnoCCSGen","IPM-NRDC","IRA","Percent Difference from No IRA","%","Coal",2025,5.50283382819219
+"E.14.CoalnoCCSGen","IPM-NRDC","IRA","Percent Difference from No IRA","%","Coal",2030,-45.1833012061626
+"E.14.CoalnoCCSGen","IPM-NRDC","IRA","Percent Difference from No IRA","%","Coal",2035,-57.0409887113449
+"E.14.CoalnoCCSGen","IPM-EPA","IRA","Percent Difference from No IRA","%","Coal",2030,-56.1818472654999
+"E.14.CoalnoCCSGen","IPM-EPA","IRA","Percent Difference from No IRA","%","Coal",2035,-90.4743243897044
+"E.14.CoalnoCCSGen","MARKAL-NETL","IRA","Percent Difference from No IRA","%","Coal",2025,-2.91250201670212
+"E.14.CoalnoCCSGen","MARKAL-NETL","IRA","Percent Difference from No IRA","%","Coal",2030,-23.1265088727942
+"E.14.CoalnoCCSGen","MARKAL-NETL","IRA","Percent Difference from No IRA","%","Coal",2035,-70.2947993067366
+"E.14.CoalnoCCSGen","NEMS-RHG","IRA","Percent Difference from No IRA","%","Coal",2025,4.52704734313933
+"E.14.CoalnoCCSGen","NEMS-RHG","IRA","Percent Difference from No IRA","%","Coal",2030,-71.6435397670045
+"E.14.CoalnoCCSGen","NEMS-RHG","IRA","Percent Difference from No IRA","%","Coal",2035,-54.107194816088
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2022,-3.99428185637873e-05
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2023,0.790515795099678
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2024,1.39948591318273
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2025,-3.3683723729236
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2026,-8.88232904836324
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2027,-17.0717906054561
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2028,-27.6805824784788
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2029,-38.9871716141987
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2030,-45.1410686186847
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2031,-49.8636231985972
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2032,-51.2756672280206
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2033,-61.1946987736574
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2034,-65.3284300719642
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2035,-70.4801952462287
+"E.14.CoalnoCCSGen","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Coal",2025,-4.58950948958746
+"E.14.CoalnoCCSGen","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Coal",2030,-30.4669140159765
+"E.14.CoalnoCCSGen","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Coal",2035,-74.6012902066307
+"E.14.CoalnoCCSGen","RIO-REPEAT","IRA","Percent Difference from No IRA","%","Coal",2025,0.597152044097382
+"E.14.CoalnoCCSGen","RIO-REPEAT","IRA","Percent Difference from No IRA","%","Coal",2030,-27.3700305810397
+"E.14.CoalnoCCSGen","RIO-REPEAT","IRA","Percent Difference from No IRA","%","Coal",2035,-52.1298174442191
+"E.14.CoalnoCCSGen","ReEDS-NREL","IRA","Percent Difference from No IRA","%","Coal",2025,-19.7809091982038
+"E.14.CoalnoCCSGen","ReEDS-NREL","IRA","Percent Difference from No IRA","%","Coal",2030,-89.6532050873551
+"E.14.CoalnoCCSGen","ReEDS-NREL","IRA","Percent Difference from No IRA","%","Coal",2035,-90.210712003578
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2022,-2.15656244195728e-05
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2023,0.000267064223269387
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2024,0.235882090752537
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2025,-0.626959729009646
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2026,-8.19125192138809
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2027,-17.3865395961083
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2028,-28.3110662813073
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2029,-37.473129127347
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2030,-42.6494896093194
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2031,-42.9481001191652
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2032,-42.3440278948829
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2033,-39.8624988044509
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2034,-40.4577640178413
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2035,-40.2781858349905
+"E.14.CoalnoCCSGen","USREP-ReEDS","Historic","Percent Difference from No IRA","%","Coal",2021,0
+"E.14.CoalnoCCSGen","EPS-EI","Historic","Percent Difference from No IRA","%","Coal",2021,0
+"E.14.CoalnoCCSGen","GCAM-CGS","Historic","Percent Difference from No IRA","%","Coal",2021,0
+"E.14.CoalnoCCSGen","GCAM-PNNL","Historic","Percent Difference from No IRA","%","Coal",2021,0
+"E.14.CoalnoCCSGen","Haiku-RFF","Historic","Percent Difference from No IRA","%","Coal",2021,0
+"E.14.CoalnoCCSGen","IPM-NRDC","Historic","Percent Difference from No IRA","%","Coal",2021,0
+"E.14.CoalnoCCSGen","IPM-EPA","Historic","Percent Difference from No IRA","%","Coal",2021,0
+"E.14.CoalnoCCSGen","MARKAL-NETL","Historic","Percent Difference from No IRA","%","Coal",2021,0
+"E.14.CoalnoCCSGen","NEMS-RHG","Historic","Percent Difference from No IRA","%","Coal",2021,0
+"E.14.CoalnoCCSGen","NEMS-OP","Historic","Percent Difference from No IRA","%","Coal",2021,0
+"E.14.CoalnoCCSGen","REGEN-EPRI","Historic","Percent Difference from No IRA","%","Coal",2021,0
+"E.14.CoalnoCCSGen","RIO-REPEAT","Historic","Percent Difference from No IRA","%","Coal",2021,0
+"E.14.CoalnoCCSGen","ReEDS-NREL","Historic","Percent Difference from No IRA","%","Coal",2021,0
+"E.14.CoalnoCCSGen","NEMS-EIA","Historic","Percent Difference from No IRA","%","Coal",2021,0
+"E.14.CoalnoCCSGen","USREP-ReEDS","IRA","Absolute Difference from No IRA","TWh","Coal",2025,-161.842225616863
+"E.14.CoalnoCCSGen","USREP-ReEDS","IRA","Absolute Difference from No IRA","TWh","Coal",2030,-332.292097375352
+"E.14.CoalnoCCSGen","USREP-ReEDS","IRA","Absolute Difference from No IRA","TWh","Coal",2035,-288.055256861549
+"E.14.CoalnoCCSGen","EPS-EI","IRA","Absolute Difference from No IRA","TWh","Coal",2025,-42.1671243463122
+"E.14.CoalnoCCSGen","EPS-EI","IRA","Absolute Difference from No IRA","TWh","Coal",2030,-245.750322563318
+"E.14.CoalnoCCSGen","EPS-EI","IRA","Absolute Difference from No IRA","TWh","Coal",2035,-389.766774264572
+"E.14.CoalnoCCSGen","GCAM-CGS","IRA","Absolute Difference from No IRA","TWh","Coal",2025,-270.25208818549
+"E.14.CoalnoCCSGen","GCAM-CGS","IRA","Absolute Difference from No IRA","TWh","Coal",2030,-517.902224814313
+"E.14.CoalnoCCSGen","GCAM-CGS","IRA","Absolute Difference from No IRA","TWh","Coal",2035,-684.027410512137
+"E.14.CoalnoCCSGen","GCAM-PNNL","IRA","Absolute Difference from No IRA","TWh","Coal",2025,-45.72678482652
+"E.14.CoalnoCCSGen","GCAM-PNNL","IRA","Absolute Difference from No IRA","TWh","Coal",2030,-258.96104336088
+"E.14.CoalnoCCSGen","GCAM-PNNL","IRA","Absolute Difference from No IRA","TWh","Coal",2035,-199.137897968352
+"E.14.CoalnoCCSGen","Haiku-RFF","IRA","Absolute Difference from No IRA","TWh","Coal",2025,-129.731686583632
+"E.14.CoalnoCCSGen","Haiku-RFF","IRA","Absolute Difference from No IRA","TWh","Coal",2030,-310.810679162014
+"E.14.CoalnoCCSGen","Haiku-RFF","IRA","Absolute Difference from No IRA","TWh","Coal",2035,-293.590448897804
+"E.14.CoalnoCCSGen","IPM-NRDC","IRA","Absolute Difference from No IRA","TWh","Coal",2025,26.7443480400823
+"E.14.CoalnoCCSGen","IPM-NRDC","IRA","Absolute Difference from No IRA","TWh","Coal",2030,-163.451118454481
+"E.14.CoalnoCCSGen","IPM-NRDC","IRA","Absolute Difference from No IRA","TWh","Coal",2035,-190.2848813221
+"E.14.CoalnoCCSGen","IPM-EPA","IRA","Absolute Difference from No IRA","TWh","Coal",2030,-311.285631489536
+"E.14.CoalnoCCSGen","IPM-EPA","IRA","Absolute Difference from No IRA","TWh","Coal",2035,-421.51394261425
+"E.14.CoalnoCCSGen","MARKAL-NETL","IRA","Absolute Difference from No IRA","TWh","Coal",2025,-21.060670630243
+"E.14.CoalnoCCSGen","MARKAL-NETL","IRA","Absolute Difference from No IRA","TWh","Coal",2030,-154.863427720563
+"E.14.CoalnoCCSGen","MARKAL-NETL","IRA","Absolute Difference from No IRA","TWh","Coal",2035,-481.062160876981
+"E.14.CoalnoCCSGen","NEMS-RHG","IRA","Absolute Difference from No IRA","TWh","Coal",2025,26.8315093572215
+"E.14.CoalnoCCSGen","NEMS-RHG","IRA","Absolute Difference from No IRA","TWh","Coal",2030,-347.613255622814
+"E.14.CoalnoCCSGen","NEMS-RHG","IRA","Absolute Difference from No IRA","TWh","Coal",2035,-241.503147790173
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Coal",2022,-0.000366992030876645
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Coal",2023,6.85727309519575
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Coal",2024,10.3341265957688
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Coal",2025,-22.7479190318606
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Coal",2026,-56.4448803066758
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Coal",2027,-105.931171718216
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Coal",2028,-163.958409714532
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Coal",2029,-217.208036230155
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Coal",2030,-243.435228933138
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Coal",2031,-273.372503858121
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Coal",2032,-277.531315190713
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Coal",2033,-327.909737334095
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Coal",2034,-327.271222411862
+"E.14.CoalnoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Coal",2035,-333.551939094369
+"E.14.CoalnoCCSGen","REGEN-EPRI","IRA","Absolute Difference from No IRA","TWh","Coal",2025,-43.1202704476729
+"E.14.CoalnoCCSGen","REGEN-EPRI","IRA","Absolute Difference from No IRA","TWh","Coal",2030,-203.592157762867
+"E.14.CoalnoCCSGen","REGEN-EPRI","IRA","Absolute Difference from No IRA","TWh","Coal",2035,-443.486861598559
+"E.14.CoalnoCCSGen","RIO-REPEAT","IRA","Absolute Difference from No IRA","TWh","Coal",2025,6.4998588563999
+"E.14.CoalnoCCSGen","RIO-REPEAT","IRA","Absolute Difference from No IRA","TWh","Coal",2030,-178.9961131224
+"E.14.CoalnoCCSGen","RIO-REPEAT","IRA","Absolute Difference from No IRA","TWh","Coal",2035,-256.9944193992
+"E.14.CoalnoCCSGen","ReEDS-NREL","IRA","Absolute Difference from No IRA","TWh","Coal",2025,-150.907775215052
+"E.14.CoalnoCCSGen","ReEDS-NREL","IRA","Absolute Difference from No IRA","TWh","Coal",2030,-624.354675582961
+"E.14.CoalnoCCSGen","ReEDS-NREL","IRA","Absolute Difference from No IRA","TWh","Coal",2035,-575.414352836225
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Coal",2022,-0.000182996026182991
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Coal",2023,0.00213595361799435
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Coal",2024,1.97304015568648
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Coal",2025,-4.85456958364523
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Coal",2026,-59.0504147278305
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Coal",2027,-118.13346376842
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Coal",2028,-184.141378379983
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Coal",2029,-235.990940563214
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Coal",2030,-260.646575995378
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Coal",2031,-258.764155009604
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Coal",2032,-253.072901684037
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Coal",2033,-236.858875710085
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Coal",2034,-236.495114581813
+"E.14.CoalnoCCSGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Coal",2035,-231.42545535303
+"E.14.CoalnoCCSGen","USREP-ReEDS","Historic","Absolute Difference from No IRA","TWh","Coal",2021,0
+"E.14.CoalnoCCSGen","EPS-EI","Historic","Absolute Difference from No IRA","TWh","Coal",2021,0
+"E.14.CoalnoCCSGen","GCAM-CGS","Historic","Absolute Difference from No IRA","TWh","Coal",2021,0
+"E.14.CoalnoCCSGen","GCAM-PNNL","Historic","Absolute Difference from No IRA","TWh","Coal",2021,0
+"E.14.CoalnoCCSGen","Haiku-RFF","Historic","Absolute Difference from No IRA","TWh","Coal",2021,0
+"E.14.CoalnoCCSGen","IPM-NRDC","Historic","Absolute Difference from No IRA","TWh","Coal",2021,0
+"E.14.CoalnoCCSGen","IPM-EPA","Historic","Absolute Difference from No IRA","TWh","Coal",2021,0
+"E.14.CoalnoCCSGen","MARKAL-NETL","Historic","Absolute Difference from No IRA","TWh","Coal",2021,0
+"E.14.CoalnoCCSGen","NEMS-RHG","Historic","Absolute Difference from No IRA","TWh","Coal",2021,0
+"E.14.CoalnoCCSGen","NEMS-OP","Historic","Absolute Difference from No IRA","TWh","Coal",2021,0
+"E.14.CoalnoCCSGen","REGEN-EPRI","Historic","Absolute Difference from No IRA","TWh","Coal",2021,0
+"E.14.CoalnoCCSGen","RIO-REPEAT","Historic","Absolute Difference from No IRA","TWh","Coal",2021,0
+"E.14.CoalnoCCSGen","ReEDS-NREL","Historic","Absolute Difference from No IRA","TWh","Coal",2021,0
+"E.14.CoalnoCCSGen","NEMS-EIA","Historic","Absolute Difference from No IRA","TWh","Coal",2021,0

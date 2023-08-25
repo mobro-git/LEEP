@@ -26,8 +26,9 @@ saveall = function(figure, df, fig_no, format = c("svg","png"), wd = 7, ht = 5, 
            height = ht,
            units = unit)
   }
-
-  savedata(df, fig_no)
+  if(nrow(df) > 0) {
+    savedata(df, fig_no)
+  }
 
 }
 
@@ -185,7 +186,7 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
                          ira_coord = c(0,0), low_coord = c(0,0), high_coord = c(0,0)) {
   subpalettes = create_subpalettes(figmap, config)
   if (far_left) {
-    point_code = geom_point(aes(x = year + stagger, y = value, color = scenario, shape = as.factor(stagger)), size = 4)
+    point_code = geom_point(aes(x = year + stagger, y = value, color = scenario, shape = as.factor(stagger)), size = 2)
   } else {
     #point_code = geom_point(aes(x = year + stagger, y = value, color = model), shape = 1, size = 2)
     point_code = geom_point(aes(x = year + stagger, y = value, shape = as.factor(stagger)), size = 2)
@@ -627,7 +628,8 @@ compile_all_data = function() {
 clean_supplemental_data = function(df, fig_no) {
   df_clean = df %>% data.frame() %>%
     mutate(figure_num = fig_no) %>%
-    select(figure_num, model, scenario, variable, unit, year , variable_rename, value)
+    rename("label" = "variable_rename") %>%
+    select(figure_num, model, scenario, variable, unit, year , label, value)
   return(df_clean)
 }
 

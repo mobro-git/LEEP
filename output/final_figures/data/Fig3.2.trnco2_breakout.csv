@@ -1,4 +1,4 @@
-"figure_num","model","scenario","variable","unit","year","variable_rename","value"
+"figure_num","model","scenario","variable","unit","year","label","value"
 "3.2.trnco2_breakout","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|GHGI|Light-Duty Trucks","Mt CO2/yr",1990,"LD Trucks",292.2
 "3.2.trnco2_breakout","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|GHGI|Medium- and Heavy-Duty Trucks","Mt CO2/yr",1990,"MHD Trucks",232.8
 "3.2.trnco2_breakout","EPA-GHGI","Historic","Emissions|CO2|Energy|Demand|Transportation|GHGI|Passenger Cars","Mt CO2/yr",1990,"Passenger Cars",622.2
