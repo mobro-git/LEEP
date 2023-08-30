@@ -932,3 +932,212 @@ all_panels_gt %>%
 #all_panels_gt %>% 
 #   gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".png"), vwidth = 1500, vheight = 1000)
 ```
+## Alternates: economy-wide co2 emissions sensitivities
+
+```{r}
+fig_no = "1.5.ew_sensitivities_COLOR"
+#fig_no = "1.5.ew_sensitivities_BW"
+
+# sensitivity dot plots
+panel1_scens = c("Core","IRA", "IRA.Low","IRA.High") # IRA Implementation
+panel2_scens = c("Low Growth", "High Growth", "Core", "IRA") # Economic Growth
+panel3_scens = c("Low Energy Price","High Energy Price", "Core", "IRA") # Energy Prices
+panel4_scens = c("All Advanced", "Adv Battery/Renew", "Cons Battery/Renew", "Constrained Deployment", "Core", "IRA") # Technology Cost and deployment constraints
+panel5_scens = c("Pess-IRA.Adv", "Opt-IRA.Adv", "Core", "IRA") # Combined Technology and Implementation
+model_list = c("EPS-EI", "GCAM-CGS","RIO-REPEAT","REGEN-EPRI", "USREP-ReEDS") # models with all three (low,mid,high) cases
+
+sens_dta_econ = clean_data %>% filter(variable == "Emissions|CO2|Energy",
+                                 year %in% c(2030, 2035)) %>%
+  filter(scenario %in% panel1_scens) %>%
+  filter(model %in% model_list) %>%
+  mutate(stagger = case_when(
+    scenario == "IRA.Low" ~ -0.9,
+    scenario == "IRA.High" ~ 0.9,
+    TRUE ~ 0
+  )) %>% mutate(scenario = case_when(
+    scenario == "Core" ~ "Mod",
+    TRUE ~ scenario
+  ))
+
+sens_dta_econ_panel2 = clean_data %>% filter(variable == "Emissions|CO2|Energy",
+                                             year %in% c(2030, 2035)) %>%
+  filter(scenario %in% panel2_scens,
+         model == "GCAM-PNNL") %>%
+  mutate(scenario = case_when(
+    scenario == "IRA" ~ "Mod", TRUE ~ scenario
+  )) %>%
+  mutate(scenario = case_when(
+    scenario == "High Growth" ~ "High",
+    scenario == "Low Growth" ~ "Low",
+    TRUE ~ scenario
+  ))
+
+sens_dta_econ_panel3 = clean_data %>%
+  filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>%
+  filter(scenario %in% panel3_scens) %>%
+  filter(model %in% c("GCAM-PNNL")) %>%
+  mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when(
+    scenario == "High Energy Price" ~ "High",
+    scenario == "Low Energy Price" ~ "Low",
+    TRUE ~ scenario
+  ))
+
+sens_dta_econ_panel4 = clean_data %>%
+  filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>%
+  filter(scenario %in% panel4_scens) %>%
+  filter(model %in% c("USREP-ReEDS", "GCAM-PNNL")) %>%
+  mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
+    mutate(scenario = case_when(
+    scenario == "All Advanced" ~ "All Adv",
+    scenario == "Constrained Deployment" ~ "Constr",
+    TRUE ~ scenario
+  )) %>%
+  mutate(stagger = case_when(model == "USREP-ReEDS" ~ 0.6,
+                             model == "GCAM-PNNL" ~ -0.6,
+                             TRUE ~ 0.0))
+
+sens_dta_econ_panel5 = clean_data %>%
+  filter(variable == "Emissions|CO2|Energy", year %in% c(2030, 2035)) %>%
+  filter(scenario %in% panel5_scens) %>%
+  filter(model %in% c("NEMS-OP", "USREP-ReEDS")) %>%
+  mutate(scenario = case_when(scenario == "IRA" ~ "Mod", TRUE ~ scenario)) %>%
+  mutate(scenario = case_when(
+    scenario == "Pess-IRA.Adv" ~ "Pess-Adv",
+    scenario == "Opt-IRA.Adv" ~ "Opt-Adv",
+    TRUE ~ scenario
+  )) %>%
+  # mutate(scenario = case_when(model == "USREP-ReEDS" ~ paste0("UR.",scenario),
+  #                          model == "NEMS-OP" ~ paste0("ON.",scenario),
+  #                          TRUE ~ scenario)) %>%
+  mutate(stagger = case_when(model == "USREP-ReEDS" ~ 0.6,
+                             model == "NEMS-OP" ~ -0.6,
+                             TRUE ~ 0.0))
+
+sens_dta_trans = clean_data %>%
+  filter(variable == "Emissions|CO2|Energy|Demand|Transportation", year %in% c(2030, 2035)) %>%
+  filter(scenario %in% panel1_scens) %>%
+  filter(model %in% model_list) %>%
+  mutate(stagger = case_when(
+    scenario == "IRA.Low" ~ -0.9,
+    scenario == "IRA.High" ~ 0.9,
+    TRUE ~ 0
+  ))
+
+sens_dta_build = clean_data %>%
+  filter(variable == "Emissions|CO2|Energy|Demand|Buildings", year %in% c(2030, 2035)) %>%
+  filter(scenario %in% panel1_scens) %>%
+  filter(model %in% model_list) %>%
+  mutate(stagger = case_when(
+    scenario == "IRA.Low" ~ -0.9,
+    scenario == "IRA.High" ~ 0.9,
+    TRUE ~ 0
+  ))
+
+sens_dta_ind = clean_data %>%
+  filter(variable == "Emissions|CO2|Energy|Demand|Industry and Fuel Production", year %in% c(2030, 2035)) %>%
+  filter(scenario %in% panel1_scens) %>%
+  filter(model %in% model_list) %>%
+  mutate(stagger = case_when(
+    scenario == "IRA.Low" ~ -0.9,
+    scenario == "IRA.High" ~ 0.9,
+    TRUE ~ 0
+  ))
+
+p7 = sens_dot_plot(sens_dta_econ, title = "\nIRA Implementation", figmap_leep_timeseries, config, 
+                   ymin = 0, ymax = 4100, far_left = TRUE, single = FALSE, ps = FALSE,
+                   ira_coord = c(2031.2,2600), low_coord = c(2031.3, 3760),
+                   high_coord = c(2030.4, 4070))
+p7$plot = p7$plot +
+  theme(axis.ticks = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"))
+
+#p7$plot
+
+p7$plot = p7$plot +
+  theme(axis.ticks = element_line(color = "black"),
+          axis.ticks.length = unit(-0.15, "cm"))
+#p7$plot
+
+p7b = sens_dot_plot(sens_dta_econ_panel2, title = "\nEconomic Growth", figmap_leep_timeseries, config, 
+                    ymin = 0, ymax = 4100)
+p7b$plot = p7b$plot +
+  theme(axis.ticks.x = element_line(color = "black"),
+        axis.ticks.y = element_blank(),
+        axis.ticks.length = unit(-0.15, "cm"))
+
+p7c = sens_dot_plot(sens_dta_econ_panel3, title = "\nEnergy Price", figmap_leep_timeseries, config,
+                    ymin = 0, ymax = 4100)
+p7c$plot = p7c$plot +
+  theme(axis.ticks.x = element_line(color = "black"),
+        axis.ticks.y = element_blank(),
+        axis.ticks.length = unit(-0.15, "cm"))
+p7d = sens_dot_plot(sens_dta_econ_panel4, title = "\nTechnology", figmap_leep_timeseries, config, 
+                    ymin = 0, ymax = 4100)
+p7d$plot = p7d$plot +
+  theme(axis.ticks.x = element_line(color = "black"),
+        axis.ticks.y = element_blank(),
+        axis.ticks.length = unit(-0.15, "cm"))
+p7e = sens_dot_plot(sens_dta_econ_panel5, title = "Combined Technology\n + Implementation", figmap_leep_timeseries, config,
+                    ymin = 0, ymax = 4100)
+p7e$plot = p7e$plot +
+  theme(axis.ticks.x = element_line(color = "black"),
+        axis.ticks.y = element_blank(),
+        axis.ticks.length = unit(-0.15, "cm"))
+#p7b$plot
+
+
+p7$plot = p7$plot +
+  scale_shape_manual(breaks = c(-0.9, 0, 0.9), values = c(3,4,8)) +
+  annotate("text", x = 2028.4, y = 4995, size = 2,
+               label = "EPS-EI", color = "#A1A1A1", alpha = 1, hjust = 0) +
+  annotate("text", x = 2028.4, y = 4845, size = 2,
+             label = "GCAM-CGS", color = "#A1A1A1", alpha = 1, hjust = 0) +
+  annotate("text", x = 2028.4, y = 4695, size = 2,
+             label = "REGEN-EPRI", color = "#A1A1A1", alpha = 1, hjust = 0) +
+  annotate("text", x = 2028.4, y = 4545, size = 2,
+             label = "RIO-REPEAT", color = "#A1A1A1", alpha = 1, hjust = 0) +
+  annotate("text", x = 2028.4, y = 4395, size = 2,
+             label = "USREP-ReEDS", color = "#A1A1A1", alpha = 1, hjust = 0)
+
+p7b$plot = p7b$plot +
+  scale_shape_manual(breaks = c(0), values = c(1)) +
+  scale_color_manual(breaks = c("Low", "Mod", "High"), values = c("#2a546c", "black", "#b72467"))
+  # annotate("text", x = 2028.4, y = 4995, size = 2,
+  #              label = "GCAM-PNNL", color = "#A1A1A1", alpha = 1, hjust = 0) #3cb44b
+
+p7c$plot = p7c$plot +
+  scale_shape_manual(breaks = c(0), values = c(1)) +
+  scale_color_manual(breaks = c("Low", "Mod", "High"), values = c("#2a546c", "black", "#b72467"))
+  # annotate("text", x = 2028.4, y = 4995, size = 2,
+  #              label = "GCAM-PNNL", color = "#A1A1A1", alpha = 1, hjust = 0) #3cb44b
+
+p7d$plot = p7d$plot +
+  scale_shape_manual(breaks = c(-0.6, 0.6), values = c(1,0)) +
+  scale_color_manual(breaks = c("All-Adv", "Mod", "Constr"), 
+                     values = c("#f15a22", "black", "#876123"))
+  # annotate("text", x = 2028.4, y = 4995, size = 2,
+  #          label = "GCAM-PNNL (L)", color = "#A1A1A1", alpha = 1, hjust = 0) + 
+  # annotate("text", x = 2028.4, y = 4845, size = 2,
+  #              label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0) #FFF362
+
+p7e$plot = p7e$plot +
+  scale_shape_manual(breaks = c(-0.6, 0.6), values = c(5,0)) +
+  scale_color_manual(breaks = c("Pess-Adv", "Mod", "Opt-Adv"), values = c("#524fa1", "black", "#488C49"))
+  # annotate("text", x = 2028.4, y = 4995, size = 2,
+  #              label = "NEMS-OP (L)", color = "#A1A1A1", alpha = 1, hjust = 0) + #469990
+  # annotate("text", x = 2028.4, y = 4845, size = 2,
+  #            label = "USREP-ReEDS (R)", color = "#A1A1A1", alpha = 1, hjust = 0) #FFF362
+
+fig = (p7$plot | p7d$plot | p7e$plot | p7c$plot | p7b$plot) +
+  plot_annotation(title = "Economy-Wide Emissions",
+                  theme = theme(plot.title = element_blank()))
+fig
+
+dta = bind_rows(sens_dta_econ, sens_dta_econ_panel2,
+                sens_dta_econ_panel3, sens_dta_econ_panel4, sens_dta_econ_panel5)
+dta = dta %>% mutate(figure_num = fig_no) %>%
+  select(-stagger, -datasrc, region)
+
+saveall(fig, dta, fig_no)
+```

@@ -77,30 +77,39 @@ saveall(p4, dta4, fig_no)
 fig_no = "5.2.indco2_breakout"
 
 subpalettes = create_subpalettes(figmap_leep_stackbar, config)
+subpalettes$`Industrial Emissions`[["Light Industry"]] = "#6a959b"
+subpalettes$`Industrial Emissions`[["Heavy Industry"]] = "#25266b"
+
+
+order = c("Chemicals","Refining", "Paper", "Iron and Steel", "Other Heavy Industry", "Cement", "Other Light Industry", "Food Processing")
 
 pie = readxl::read_xlsx("data-extra/industry_piechart.xlsx")
 pie1 = pie %>% filter(Table == 1) %>%
   rename(value = `% Energy-related Emissions`) %>%
-  mutate(value = round(value*100,0))
+  mutate(value = round(value*100,0)) %>%
+  mutate(Industry = factor(Industry, levels = order)) %>%
+  mutate(Type = if_else(Type == "Heavy", "Heavy Industry", "Light Industry")) %>%
+  mutate(Type = factor(Type, levels = c("Light Industry", "Heavy Industry")))
 
 total = sum(pie1$value)
 
-p = pie1 %>% mutate(value = (100 * value) / total) %>% arrange(desc(value)) %>% ggplot() +
-  geom_bar(aes(x = "2021", y = value, fill = fct_reorder(Industry, value)),
+p = pie1 %>% mutate(value = (100 * value) / total) %>% arrange(Industry) %>% ggplot() +
+  geom_bar(aes(x = "2021", y = value, fill = Type),
            position = position_stack(), stat = "identity", width = 0.4,
            color = "white", linewidth = 0.25) +
   geom_text(aes(x = "2021", y = value, label = paste0(Industry,": ", round(value,1), "%")), 
-                position = position_stack(vjust = 0.5), stat = "identity", size = 3) +
+                position = position_stack(vjust = 0.5), stat = "identity", size = 3, color = "white") +
   scale_y_continuous(limits = c(0,100), expand = expansion(add = c(0,5)), 
                      name = expression(paste("Percent of Industrial Energy-Related C", O[2], " Emissions"))) +
   scale_subpalette(subpalettes,"Industrial Emissions") +
   #geom_bar(aes(x = year, y = value, fill = variable_rename), position = position_stack(), stat = "identity")
   theme_emf() + 
-  theme(axis.ticks.x = element_blank(), axis.ticks.y = element_line(color = "black"), axis.ticks.length = unit(-0.15, "cm"),  legend.position = "none",
+  theme(axis.ticks.x = element_blank(), axis.ticks.y = element_line(color = "black"), 
+        axis.ticks.length = unit(-0.15, "cm"),  legend.position = "right",
         axis.title.x = element_blank())
 p
 
-saveall(p, pie1, fig_no, wd=5, ht=5)
+saveall(p, pie1, fig_no, wd=7, ht=5)
 ```
 
 ## 5.3 industry total co2 emissions 

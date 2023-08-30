@@ -146,7 +146,7 @@ color_map <- c(
   "Buildings: Indirect" = "Lbrown",
 
   # industrial emissions
-  "Food Processing" = "Lteal",
+  "Food Processing" = "Lteal", ### light, Lnavy for heavy
   "Other Light Industry" = "Laqua",
   "Cement" = "Lsalmon",
   "Other Heavy Industry" = "Lgold",
@@ -154,6 +154,8 @@ color_map <- c(
   "Paper" = "Lpink",
   "Refining" = "Lindigo",
   "Chemicals" = "Ldarkred",
+  "Light" = "Lteal",
+  "Heavy" = "Lnavy",
 
   # transportation methods
   "Passenger Cars" = "Lblue",

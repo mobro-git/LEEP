@@ -189,7 +189,8 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
     point_code = geom_point(aes(x = year + stagger, y = value, color = scenario, shape = as.factor(stagger)), size = 2)
   } else {
     #point_code = geom_point(aes(x = year + stagger, y = value, color = model), shape = 1, size = 2)
-    point_code = geom_point(aes(x = year + stagger, y = value, shape = as.factor(stagger)), size = 2)
+    point_code = geom_point(aes(x = year + stagger, y = value, color = scenario, shape = as.factor(stagger)), size = 2)
+    #point_code = geom_point(aes(x = year + stagger, y = value, shape = as.factor(stagger)), size = 2, color = "black")
   }
 
   if (far_left) {
@@ -254,7 +255,7 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
     p = p +
       labs(y = ylabel) +
       #scale_subpalette(subpalettes, "Sensitivity Dots") +
-      scale_color_manual(values = c("IRA" = "black", "IRA.Low" = "#0083ca", "IRA.High" = "#6a959b"), guide = "none")
+      scale_color_manual(values = c("IRA" = "black", "IRA.Low" = "#6a959b", "IRA.High" = "#0083ca"), guide = "none")
     opt_label = "Optimistic"
     pes_label = "Pessimistic"
   }
@@ -267,12 +268,12 @@ sens_dot_plot = function(dta, title, figmap, config, far_left = FALSE, single = 
   if(sum(low_coord) != 0) {
     p = p +
       annotate("text", x = low_coord[1], y = low_coord[2], size = 2,
-               label = pes_label, color = "#0083ca", alpha = 1, hjust = -0.2)
+               label = pes_label, color = "#6a959b", alpha = 1, hjust = -0.2)
   }
   if(sum(high_coord) != 0) {
     p = p +
       annotate("text", x = high_coord[1], y = high_coord[2], size = 2,
-               label = opt_label, color = "#6a959b", alpha = 1, hjust = -0.2)
+               label = opt_label, color = "#0083ca", alpha = 1, hjust = -0.2)
   }
 
   return(list(
