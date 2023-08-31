@@ -1891,8 +1891,6 @@ p = print_graph("stacked_bar", config, clean_data15, figmap_leep_stackbar, 18, "
         strip.text.x = element_text(face = "plain", angle = 90, hjust = 1, size = 7),
         axis.text.x = element_text(hjust = 0, vjust = 0.5),
         plot.title = element_blank())
-
-
 p
 
 dta = dta %>% ungroup() %>%
@@ -6228,9 +6226,9 @@ data_table = data_Other %>%
   write.csv(data_table, paste("./output/final_figures/stats_tables/", fig_no, "SummaryTable ",title,".csv",sep=""))
 ```
 
-### F.4 Sensitivity Range Summary
+## F.4 Sensitivity Range Summary
 
-#### All sensitivities
+### All sensitivities
 
 ```{r}
 fig_no = "F.4.1.summary_ranges_sensitivities"
@@ -6405,7 +6403,7 @@ saveall(combined, indicators_all_clean, fig_no)
 #savedata(summary_all, paste(fig_no,"summary",sep="_"))
 ```
 
-#### Core ranges to calculate difference
+### Core ranges to calculate difference
 
 ```{r}
 Elec_data = spg_clean(
@@ -6512,7 +6510,7 @@ summary_NoIRA = indicators_summ %>%
 summary_core = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
 ```
 
-#### Joint table
+### Joint table
 
 ```{r}
 core = summary_core[,1:5] %>%

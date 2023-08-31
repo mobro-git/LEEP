@@ -336,8 +336,8 @@ data_summary = dta_full %>%
   ))
 
 savedata(data_summary, paste(fig_no, "summary_table"))
-fig_no = "F.18.generation_by_model"
-savedata(data_summary, paste(fig_no, "summary_table"))
+# fig_no = "E.18.generation_by_model"
+# savedata(data_summary, paste(fig_no, "summary_table"))
 ```
 
 ## F2.5 capacity additions by technology

@@ -80,7 +80,6 @@ subpalettes = create_subpalettes(figmap_leep_stackbar, config)
 subpalettes$`Industrial Emissions`[["Light Industry"]] = "#6a959b"
 subpalettes$`Industrial Emissions`[["Heavy Industry"]] = "#25266b"
 
-
 order = c("Chemicals","Refining", "Paper", "Iron and Steel", "Other Heavy Industry", "Cement", "Other Light Industry", "Food Processing")
 
 pie = readxl::read_xlsx("data-extra/industry_piechart.xlsx")
@@ -93,7 +92,11 @@ pie1 = pie %>% filter(Table == 1) %>%
 
 total = sum(pie1$value)
 
-p = pie1 %>% mutate(value = (100 * value) / total) %>% arrange(Industry) %>% ggplot() +
+p = pie1 %>% 
+  mutate(value = (100 * value) / total) %>% 
+  mutate(value = round(value,0)) %>%
+  arrange(Industry) %>% 
+  ggplot() +
   geom_bar(aes(x = "2021", y = value, fill = Type),
            position = position_stack(), stat = "identity", width = 0.4,
            color = "white", linewidth = 0.25) +
