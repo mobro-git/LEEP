@@ -553,6 +553,7 @@
 "2.5.avgcapadd_proj","GCAM-PNNL","IRA","Capacity Retirements|Electricity|Coal|w/ CCS|Average 2021-2035","GW/yr",2035,"Coal w/ CCS",0
 "2.5.avgcapadd_proj","GCAM-PNNL","IRA","Capacity Retirements|Electricity|Coal|w/o CCS|Average 2021-2035","GW/yr",2035,"Coal w/o CCS",-3.030464431
 "2.5.avgcapadd_proj","GCAM-PNNL","IRA","Capacity Retirements|Electricity|Gas|w/o CCS|Average 2021-2035","GW/yr",2035,"Gas w/o CCS",-0.127150004666667
+"2.5.avgcapadd_proj","GCAM-PNNL","IRA","Capacity Additions|Electricity|Storage Capacity|Average 2021-2035","GWh/yr",2035,"Storage",0.523363965
 "2.5.avgcapadd_proj","Haiku-RFF","IRA","Capacity Additions|Electricity|Coal|w/ CCS|Average 2021-2035","GW/yr",2035,"Coal w/ CCS",0.0646054626024207
 "2.5.avgcapadd_proj","Haiku-RFF","IRA","Capacity Additions|Electricity|Gas|w/o CCS|Average 2021-2035","GW/yr",2035,"Gas w/o CCS",1.57461155887978
 "2.5.avgcapadd_proj","Haiku-RFF","IRA","Capacity Additions|Electricity|Solar|Average 2021-2035","GW/yr",2035,"Solar",29.3309154778438
@@ -619,7 +620,6 @@
 "2.5.avgcapadd_proj","NEMS-OP","IRA","Capacity Retirements|Electricity|Solar|Average 2021-2035","GW/yr",2035,"Solar",-0.000833333333333333
 "2.5.avgcapadd_proj","NEMS-OP","IRA","Capacity Retirements|Electricity|Storage Capacity|Average 2021-2035","GW/yr",2035,"Storage",-6.66666666666667e-05
 "2.5.avgcapadd_proj","NEMS-OP","IRA","Capacity Retirements|Electricity|Wind|Average 2021-2035","GW/yr",2035,"Wind",-0.1406734
-"2.5.avgcapadd_proj","NEMS-OP","IRA","Capacity Additions|Electricity|Storage Capacity|Average 2021-2035","GWh/yr",2035,"Storage",19.1786364
 "2.5.avgcapadd_proj","NEMS-RHG","IRA","Capacity Additions|Electricity|Gas|w/ CCS|Average 2021-2035","GW/yr",2035,"Gas w/ CCS",0
 "2.5.avgcapadd_proj","NEMS-RHG","IRA","Capacity Additions|Electricity|Gas|w/o CCS|Average 2021-2035","GW/yr",2035,"Gas w/o CCS",20.0373665714286
 "2.5.avgcapadd_proj","NEMS-RHG","IRA","Capacity Additions|Electricity|Solar|Average 2021-2035","GW/yr",2035,"Solar",53.0695395714286

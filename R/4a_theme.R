@@ -129,6 +129,7 @@ color_map <- c(
   "Hydrogen" = "Ldarkred",
   "Nuclear" = "Lsalmon",
   "Oil" = "Lmagenta",
+  "Petroleum" = "Lmagenta",
   "Solar" = "Lgold",
   "Wind" = "Lsky",
   "Storage" = "Lnavy",

@@ -127,7 +127,7 @@ stackbar,140,Hist Generation Mix New,Secondary Energy|Electricity|Other|Sum,0,Ot
 stackbar,140,Hist Generation Mix New,Secondary Energy|Electricity|Nuclear|Sum,0,Nuclear,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,140,Hist Generation Mix New,Secondary Energy|Electricity|Renewables|Sum,0,Renewables,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,140,Hist Generation Mix New,Secondary Energy|Electricity|Coal|Sum,0,Coal,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
-stackbar,140,Hist Generation Mix New,Secondary Energy|Electricity|Oil|Sum,0,Oil,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
+stackbar,140,Hist Generation Mix New,Secondary Energy|Electricity|Oil|Sum,0,Petroleum,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,140,Hist Generation Mix New,Secondary Energy|Electricity|Gas|Sum,0,Natural Gas,usa,models_eia_only,five_twentyone_inclusive,historic_only,single,stack,year,value,,,variable_rename,region,fixed
 stackbar,15,Electricity Capacity,Capacity|Electricity|Geothermal,0,Geothermal,usa,models_leep,ira_2030_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,variable_rename,region,fixed
 stackbar,15,Electricity Capacity,Capacity|Electricity|Hydro,0,Hydro,usa,models_leep,ira_2030_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,variable_rename,region,fixed
@@ -151,8 +151,8 @@ stackbar,18,Electricity Generation,Secondary Energy|Electricity|Coal|w/ CCS,0,Co
 stackbar,18,Electricity Generation,Secondary Energy|Electricity|Coal|w/o CCS,0,Coal w/o CCS,usa,models_leep,ira_2030_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,variable_rename,region,fixed
 stackbar,18,Electricity Generation,Secondary Energy|Electricity|Gas|w/ CCS,0,Gas w/ CCS,usa,models_leep,ira_2030_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,variable_rename,region,fixed
 stackbar,18,Electricity Generation,Secondary Energy|Electricity|Gas|w/o CCS,0,Gas w/o CCS,usa,models_leep,ira_2030_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,variable_rename,region,fixed
-stackbar,18,Electricity Generation,Secondary Energy|Electricity|Oil|w/ CCS,0,Oil,usa,models_leep,ira_2030_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,variable_rename,region,fixed
-stackbar,18,Electricity Generation,Secondary Energy|Electricity|Oil|w/o CCS,0,Oil,usa,models_leep,ira_2030_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,variable_rename,region,fixed
+stackbar,18,Electricity Generation,Secondary Energy|Electricity|Oil|w/ CCS,0,Petroleum,usa,models_leep,ira_2030_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,variable_rename,region,fixed
+stackbar,18,Electricity Generation,Secondary Energy|Electricity|Oil|w/o CCS,0,Petroleum,usa,models_leep,ira_2030_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,variable_rename,region,fixed
 stackbar,18,Electricity Generation,Secondary Energy|Electricity|Hydrogen,0,Hydrogen,usa,models_leep,ira_2030_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,variable_rename,region,fixed
 stackbar,18,Electricity Generation,Secondary Energy|Electricity|Synthetic Gas,0,Synthetic Gas,usa,models_leep,ira_2030_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,variable_rename,region,fixed
 stackbar,18,Electricity Generation,Secondary Energy|Electricity|Synthetic Liquids,0,Synthetic Liquids,usa,models_leep,ira_2030_2035,hist_mod_scenarios2,grid,stack,year,value,scenario,model,variable_rename,region,fixed

@@ -62,7 +62,7 @@ data <- clean_data %>%
     grepl("GHGI", variable) ~ "Other Sectors",
     grepl("Coal", variable) ~ "Coal", 
     grepl("Gas", variable) ~ "Natural Gas", 
-    grepl("Oil", variable) ~ "Oil",
+    grepl("Oil", variable) ~ "Petroleum",
   )) %>%
   group_by(year, variable_rename) %>%
   summarise(value = sum(value)) %>%
@@ -70,7 +70,7 @@ data <- clean_data %>%
     variable_rename == "Other Sectors" ~ 0.5, 
     T ~ 1))
 
-data$variable_rename <- factor(data$variable_rename, level = c("Other Sectors", "Oil", "Natural Gas", "Coal"))
+data$variable_rename <- factor(data$variable_rename, level = c("Other Sectors", "Petroleum", "Natural Gas", "Coal"))
 
 fig = ggplot(data, aes(fill = variable_rename, y = value, alpha = alpha, x = year, color = variable_rename)) + 
   geom_bar(position = "stack", stat = "identity", color = "white", linewidth = 0.25) + 
@@ -82,9 +82,9 @@ fig = ggplot(data, aes(fill = variable_rename, y = value, alpha = alpha, x = yea
     scale_x_continuous(breaks = c(2005, 2021)) + 
     theme(panel.spacing.x = unit(4, "mm"), legend.position = "bottom") +
     scale_alpha(range = c(0.6, 1), guide = F)+
-  scale_color_manual(breaks = c( "Coal", "Natural Gas", "Oil", "Other Sectors"), 
+  scale_color_manual(breaks = c( "Coal", "Natural Gas", "Petroleum", "Other Sectors"), 
                      values = c( "#603913", "#808285", "#af499b", "#DEDEDE")) +
-  scale_fill_manual(breaks = c( "Coal", "Natural Gas", "Oil", "Other Sectors"), 
+  scale_fill_manual(breaks = c( "Coal", "Natural Gas", "Petroleum", "Other Sectors"), 
                      values = c( "#603913", "#808285", "#af499b", "#DEDEDE")) +
   theme(axis.ticks.y = element_line(color = "black"),
         axis.ticks.x = element_blank(),
@@ -119,11 +119,11 @@ sp = subpalettes$`Hist Generation Mix`
 
 
 fig = print_graph("stacked_bar", config, clean_data10, figmap_leep_stackbar, 140, "United States", 
-                  level_var = c("Other", "Renewables", "Nuclear", "Oil", "Natural Gas", "Coal")) +
+                  level_var = c("Other", "Renewables", "Nuclear", "Petroleum", "Natural Gas", "Coal")) +
   labs(y = expression("Electricity Generation (TWh)")) +
   scale_y_continuous(expand = c(0,0), limits = c(0,4500), labels = scales::comma) +
-  scale_fill_manual(labels = c("Coal", "Natural Gas", "Oil", "Nuclear", "Renewables", "Other"),
-                     breaks = c("Coal", "Natural Gas", "Oil", "Nuclear", "Renewables", "Other"),
+  scale_fill_manual(labels = c("Coal", "Natural Gas", "Petroleum", "Nuclear", "Renewables", "Other"),
+                     breaks = c("Coal", "Natural Gas", "Petroleum", "Nuclear", "Renewables", "Other"),
                      values = c(sp[['Coal']], sp[['Natural Gas']], sp[['Oil']], sp[['Nuclear']],
                                 sp[['Renewables']], sp[['Other']])) +
   theme(axis.text.x = element_text(angle = 0, hjust = 0.5), plot.title = element_blank(), axis.ticks.x = element_blank(), 
