@@ -344,10 +344,10 @@ subpalettes$`Sox pct diff`[["OP-NEMS-Adv"]] = "blue"
 tech_renamer = c(
   "Utility-Scale Solar PV" = "Solar PV",
   "Wind Onshore" = "Onshore Wind",
-  "NGCC with CCS" = "NGCC with CCS",
+  "NGCC with CCS" = "New NGCC CCS",
   "NGCC" = "NGCC",
   "Battery Storage (4-Hour)" = "Battery (4-Hour)",
-  "Coal CCS Retrofit" = "Coal with CCS"
+  "Coal CCS Retrofit" = "Coal CCS Retrofits"
 )
 
 dta = dta %>%
@@ -375,7 +375,7 @@ dta_top = dta %>%
 
 dta_bottom = dta %>%
   filter((variable %in% c("NGCC with CCS", "Coal CCS Retrofit"))) %>%
-  filter(!is.na(value))
+  filter(!is.na(value)) 
 
 p = dta_top %>% ggplot() +
   geom_line(aes(x = year, y = value, color = model, linetype = version, group = interaction(model, version)),
