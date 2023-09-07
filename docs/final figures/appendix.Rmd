@@ -2774,6 +2774,7 @@ fig = (NoIRAfigure |
          IRAfigure) / (absdif_figure | pbdif_figure) +
   plot_layout(guides = "collect") +
   plot_annotation(caption = "% Electricity of Final Energy")
+fig
 ```
 
 ### Transportation
@@ -3174,6 +3175,7 @@ fig = (NoIRAfigure |
          IRAfigure) / (absdif_figure | pbdif_figure) +
   plot_layout(guides = "collect") +
   plot_annotation(caption = "% Electricity of Final Energy")
+fig
 ```
 
 ### Buildings 
@@ -3575,6 +3577,7 @@ fig = (NoIRAfigure |
          IRAfigure) / (absdif_figure | pbdif_figure) +
   plot_layout(guides = "collect") +
   plot_annotation(caption = "% Electricity of Final Energy")
+fig
 ```
 
 ### Industry
@@ -3976,7 +3979,9 @@ fig = (NoIRAfigure |
          IRAfigure) / (absdif_figure | pbdif_figure) +
   plot_layout(guides = "collect") +
   plot_annotation(caption = "% Electricity of Final Energy")
+fig
 ```
+
 # Appendix F: Supplemental Results
 
 ## F.1 Electrification
