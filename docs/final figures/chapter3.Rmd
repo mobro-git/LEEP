@@ -254,7 +254,7 @@ figure = output$figure
 ev_share_data = output$data
 ev_share_data = clean_supplemental_data(ev_share_data, fig_no)
 figure_full = dotted(clean_data_evshare, figure, "median", ymin = 0, ymax = 100, 
-                config = config, figmap_leep_timeseries = figmap_leep_timeseries)
+                config = config, figmap_leep_timeseries = figmap_leep_timeseries, ddge = -0.2)
 
 stats = ev_share_data %>%
   filter(year %in% c(2030, 2035)) %>%
