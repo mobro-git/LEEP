@@ -2775,6 +2775,25 @@ fig = (NoIRAfigure |
   plot_layout(guides = "collect") +
   plot_annotation(caption = "% Electricity of Final Energy")
 fig
+
+savefig(fig, fig_no)
+
+ts_df = ts_df %>%
+  mutate(unit = "% Electricity of Final Energy") %>%
+  mutate(figure_num = fig_no) %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+pbdifs = pbdifs %>%
+  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Economy-Wide") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+absdifs = absdifs %>%
+  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "% Difference", variable = "Economy-Wide") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+data = rbind(ts_df, absdifs, pbdifs)
+
+write.csv(data, file =  paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
 ```
 
 ### Transportation
@@ -3176,6 +3195,27 @@ fig = (NoIRAfigure |
   plot_layout(guides = "collect") +
   plot_annotation(caption = "% Electricity of Final Energy")
 fig
+
+savefig(fig, fig_no)
+
+savefig(fig, fig_no)
+
+ts_df = ts_df %>%
+  mutate(unit = "% Electricity of Final Energy") %>%
+  mutate(figure_num = fig_no) %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+pbdifs = pbdifs %>%
+  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Economy-Wide") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+absdifs = absdifs %>%
+  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "% Difference", variable = "Economy-Wide") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+data = rbind(ts_df, absdifs, pbdifs)
+
+write.csv(data, file =  paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
 ```
 
 ### Buildings 
@@ -3578,6 +3618,27 @@ fig = (NoIRAfigure |
   plot_layout(guides = "collect") +
   plot_annotation(caption = "% Electricity of Final Energy")
 fig
+
+savefig(fig, fig_no)
+
+savefig(fig, fig_no)
+
+ts_df = ts_df %>%
+  mutate(unit = "% Electricity of Final Energy") %>%
+  mutate(figure_num = fig_no) %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+pbdifs = pbdifs %>%
+  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Economy-Wide") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+absdifs = absdifs %>%
+  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "% Difference", variable = "Economy-Wide") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+data = rbind(ts_df, absdifs, pbdifs)
+
+write.csv(data, file =  paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
 ```
 
 ### Industry
@@ -3980,6 +4041,27 @@ fig = (NoIRAfigure |
   plot_layout(guides = "collect") +
   plot_annotation(caption = "% Electricity of Final Energy")
 fig
+
+savefig(fig, fig_no)
+
+savefig(fig, fig_no)
+
+ts_df = ts_df %>%
+  mutate(unit = "% Electricity of Final Energy") %>%
+  mutate(figure_num = fig_no) %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+pbdifs = pbdifs %>%
+  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Economy-Wide") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+absdifs = absdifs %>%
+  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "% Difference", variable = "Economy-Wide") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+data = rbind(ts_df, absdifs, pbdifs)
+
+write.csv(data, file =  paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
 ```
 
 # Appendix F: Supplemental Results
