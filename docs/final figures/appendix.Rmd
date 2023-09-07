@@ -302,14 +302,14 @@ figure = ggplot() +
     "text",
     x = 2020,
     y = 10,
-    label = "AEO reference",
+    label = "AEO projections",
     color = "gray"
   ) +
   annotate(
     "text",
     x = 2020,
     y = 9.3,
-    label = "projections (2015-2020)",
+    label = "(2015-2020)",
     color = "gray"
   ) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
@@ -415,7 +415,6 @@ dta_bottom = dta_bottom %>% mutate(figure_num = fig_no, label = variable, variab
 data_combo = bind_rows(dta_top, dta_bottom)
 savedata(data_combo, "FigD.2+3.capitalcosts")
 ```
-
 
 # Appendix E: Results by model
 
@@ -963,8 +962,7 @@ adfigure = ad(diff_ID = ad_map_ID, "", "Generation", "none", drop)
 
 fig = (NoIRAfigure |
          IRAfigure) / (adfigure$figure | plot_spacer()) +
-  plot_layout(guides = "collect") +
-  plot_annotation(caption = "Electricity Generation from Coal with CCS")
+  plot_layout(guides = "collect") 
 
 fig
 
@@ -1221,8 +1219,7 @@ adfigure = ad(diff_ID = ad_map_ID, "", "Generation", "none", drop)
 
 fig = (NoIRAfigure |
          IRAfigure) / (adfigure$figure | plot_spacer()) +
-  plot_layout(guides = "collect") +
-  plot_annotation(caption = "Electricity Generation from Gas with CCS")
+  plot_layout(guides = "collect") 
 
 fig
 
@@ -1683,8 +1680,7 @@ pdfigure = ggplot() +
     )
   
   figure = (NoIRAfigure | IRAfigure) / (adfigure | pdfigure) + 
-    plot_layout(guides = "collect") +
-    plot_annotation(caption = "Electricity Generation from Other")
+    plot_layout(guides = "collect") 
   
   savefig(figure, fig_no)
 
@@ -2080,8 +2076,7 @@ EV_pdif_figure = ggplot() +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035))
 
   figure = (NoIRAfigure | IRAfigure) / (EV_abdif_figure | EV_pdif_figure)+
-    plot_layout(guides = "collect") +
-    plot_annotation(caption = "EV Sales Share")
+    plot_layout(guides = "collect") 
   
   savefig(figure, fig_no)
   

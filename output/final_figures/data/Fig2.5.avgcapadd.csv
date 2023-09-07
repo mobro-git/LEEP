@@ -656,6 +656,7 @@
 "2.5.avgcapadd_proj","ReEDS-NREL","IRA","Capacity Retirements|Electricity|Coal|w/o CCS|Average 2021-2035","GW/yr",2035,"Coal w/o CCS",-13.1582351428571
 "2.5.avgcapadd_proj","ReEDS-NREL","IRA","Capacity Retirements|Electricity|Gas|w/o CCS|Average 2021-2035","GW/yr",2035,"Gas w/o CCS",-0.552769063241197
 "2.5.avgcapadd_proj","ReEDS-NREL","IRA","Capacity Retirements|Electricity|Nuclear|Average 2021-2035","GW/yr",2035,"Nuclear",-0.0798571428571429
+"2.5.avgcapadd_proj","USREP-ReEDS","IRA","Capacity Additions|Electricity|Storage Capacity|Average 2021-2035","GW/yr",2035,"Storage",5.11472756333333
 "2.5.avgcapadd_proj","USREP-ReEDS","IRA","Capacity Additions|Electricity|Coal|w/ CCS|Average 2021-2035","GW/yr",2035,"Coal w/ CCS",5.55e-10
 "2.5.avgcapadd_proj","USREP-ReEDS","IRA","Capacity Additions|Electricity|Coal|w/o CCS|Average 2021-2035","GW/yr",2035,"Coal w/o CCS",1.2385e-09
 "2.5.avgcapadd_proj","USREP-ReEDS","IRA","Capacity Additions|Electricity|Gas|w/ CCS|Average 2021-2035","GW/yr",2035,"Gas w/ CCS",1.217e-09

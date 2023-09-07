@@ -2,8 +2,8 @@ name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iterat
 "%|||%"|function|28bdb9a1b5a6acc2|||||||||||||||
 %forwhich%|function|9320d517f0334dd8|||||||||||||||
 .__DEVTOOLS__|object|4da1907b175080ea|||||||||||||||
-.Random.seed|object|eb53f326d308d041|||||||||||||||
-ad|function|f893c0d303db609e|||||||||||||||
+.Random.seed|object|73dd38454f76403c|||||||||||||||
+ad|function|59e989e6aacfb431|||||||||||||||
 all_blank_or_zero|function|8a29bb3328acf8f3|||||||||||||||
 all_calculated|stem|b3230a12f06fcb82|3bab5870f004d48e|3f3a19a542ff4e6c|677961423||t19601.6735709621s|0db4fe47815ad640|2586|rds|local|vector|||0||
 all_calculated_var|stem|76b8ea22d7c43c0e|7b3f535b03d0e0d2|b8f80786ad1915e1|738427922||t19601.6735723222s|dff923d388a70b81|856|rds|local|vector|||0||
@@ -32,7 +32,7 @@ check_dat_before_plotting|function|cf10600ba99b19a9|||||||||||||||
 check_figure_specification|function|0d0d78e7a57bd609|||||||||||||||
 check_omissions|function|365f5a4a0f324603|||||||||||||||
 check_stop|function|14de8044aa3a03d5|||||||||||||||
-clean_data|stem|a475431841c32493|e2f524dbf215e8c2|6eba88434c594f9b|-1026135149||t19601.6741851702s|f81c2052f8ba90dd|1256036|rds|local|vector|||44.57|1m22mReturning more or less than 1 row per summarise group was deprecated indplyr 1.1.0.36mℹ39m Please use reframe instead.36mℹ39m When switching from summarise to reframe, remember that reframe  always returns an ungrouped data frame and adjust accordingly.36mℹ39m The deprecated feature was likely used in the 34mLEEP39m package.  Please report the issue to the authors.. 1m22mSupplying ... without names was deprecated in tidyr 1.0.0.36mℹ39m Please specify a name for each selection.36mℹ39m Did you want data  cyear, value36mℹ39m The deprecated feature was likely used in the 34mLEEP39m package.  Please report the issue to the authors.|
+clean_data|stem|08a7ce54a2d01714|e2f524dbf215e8c2|e507da97e199de71|-1026135149||t19607.5816598987s|dc11d9ed6478aea3|1256131|rds|local|vector|||94.98|1m22mReturning more or less than 1 row per summarise group was deprecated indplyr 1.1.0.36mℹ39m Please use reframe instead.36mℹ39m When switching from summarise to reframe, remember that reframe  always returns an ungrouped data frame and adjust accordingly.36mℹ39m The deprecated feature was likely used in the 34mLEEP39m package.  Please report the issue to the authors.. 1m22mSupplying ... without names was deprecated in tidyr 1.0.0.36mℹ39m Please specify a name for each selection.36mℹ39m Did you want data  cyear, value36mℹ39m The deprecated feature was likely used in the 34mLEEP39m package.  Please report the issue to the authors.|
 clean_data_index|stem|7d8f079ef12d8592|08bea06ecba10c80|13aaf64f92c8ce3a|2019267802||t19601.6742007308s|93a5c1f09fbc1d25|30196|rds|local|vector|||0.89||
 clean_supplemental_data|function|5c5e99486a3ddda4|||||||||||||||
 clean_text_for_filename|function|6dd0b58802c7735b|||||||||||||||
@@ -61,7 +61,7 @@ cumulate|function|d2a32fcd881895a9|||||||||||||||
 cumulative_var|stem|9e264a76ef5fb161|6f568addbab17bb7|7049f10a873ca00f|-802968985||t19601.673424446s|e8324796932fa831|400|rds|local|vector|||0.03||
 cumulative_var_list|stem|7ff9797507a15215|3f5dd26ad0381bb4|ef46db3751d8e999|-232057156|data-raw/process_data/cumulative_variables.csv|t19487.6458296593s|a60e113d72b0b5b8|248|file|local|vector|||0||
 data_files|stem|77377c08aa522671|ea2c63a76a444ff2|3a1497c311225f1d|31038078|data-raw/model-runs/2023-03-30_data_IAMC_format-IRA_USAonly.xlsx*data-raw/model-runs/AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx*data-raw/model-runs/bistline_ira_tall.csv*data-raw/model-runs/EIA-EPA-bistline_historic.csv*data-raw/model-runs/EIAinEMF37.csv*data-raw/model-runs/EPA-GHGI_wide.csv*data-raw/model-runs/EPA-nonco2.xlsx*data-raw/model-runs/LTS_data_small.xlsx*data-raw/model-runs/OP-NEMS IRA 5cenario outputs w retire 07-19-23 - June cases.xlsx*data-raw/model-runs/PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx*data-raw/model-runs/ReEDS_compiled.csv*data-raw/model-runs/usrep_reeds_allscen.csv|t19601.6728384912s|97bc89dec7573de7|5767072|file|local|vector|||0||
-data_folder|stem|77377c08aa522671|97416003d6084b3e|79bb15b6a98b2097|-1589943188|data-raw/model-runs|t19601.6728384912s|97bc89dec7573de7|5767072|file|local|vector|||0||
+data_folder|stem|77377c08aa522671|97416003d6084b3e|79bb15b6a98b2097|-1589943188|data-raw/model-runs|t19601.6728536242s|c7827d29f759aa2c|8192|file|local|vector|||0||
 data_from_graph|function|ee5b2c612805abc4|||||||||||||||
 data_long|stem|1bfbead7a295fbe1|eab797916025fe48|a3f5f93a926037f5|1053362806||t19601.6736606207s|345fd7edf82a7a87|987676|rds|local|vector|||0.35||
 data_long_read|stem|a6accd222b3120bb|bccb3a0cb7aaa375|1551c76256e5cd38|1127857077||t19601.6736428662s|6ff6c640da8169de|1003912|rds|local|vector|||5.29||
@@ -76,7 +76,7 @@ def_x_from_variable_factory|function|558bdc79a17c46b1|||||||||||||||
 delta|function|289f032fe8dd5df5|||||||||||||||
 delta_msb|function|fb8e3dbfbe87c17c|||||||||||||||
 diff_bar_figure_specific_data_processing|function|738fdd2bd119c37e|||||||||||||||
-diffbar|stem|794be3614d98cc38|c97b121e63a7d26f|e6fc5f56f92adadc|347903424||t19601.6745292551s|a1c456b03adbfbf8|44|rds|local|vector|||28.33|Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.. Unknown or uninitialised column shape.|
+diffbar|object|cd21c69edc622281|||||||||||||||
 distinct_models_in_data|function|89a0baa99e36321b|||||||||||||||
 dot_plots|function|583ffcc7874392eb|||||||||||||||
 dot_plots_but_with_arrows|function|783c50e6a4e80aa6|||||||||||||||
@@ -101,7 +101,7 @@ figmap_list_csv|object|1ac2e8083fb79ae2|||||||||||||||
 filter_sensitivities|function|53b9d13280cbd581|||||||||||||||
 find_color|function|fed7e9254fdc80a8|||||||||||||||
 flatten_units|function|a348e9144396b3f8|||||||||||||||
-four_corners|function|4e2ce568ef65d931|||||||||||||||
+four_corners|function|daac049c8da3904b|||||||||||||||
 get_plot_fn|function|4642ef943da39ede|||||||||||||||
 gt_elec_table|function|7bd1d678f4707d9b|||||||||||||||
 handle_units|function|cd807d5d217e6e57|||||||||||||||
@@ -115,7 +115,7 @@ install_extra_units|function|7b9211507bba1fb1|||||||||||||||
 lts_coneplot_with_dots|function|efd99f1a5003d809|||||||||||||||
 make_agr_variables|function|a896dce4e42d8259|||||||||||||||
 make_calculated_vars|function|cbd8fae996fa04fe|||||||||||||||
-make_clean_data|function|5cdca58e220ec297|||||||||||||||
+make_clean_data|function|c8230eb60ca5b4aa|||||||||||||||
 make_cumulative_variables|function|2ef876e5d094f48d|||||||||||||||
 make_data_long|function|8d53c840ccc98800|||||||||||||||
 make_ipcc_data|function|b255106ddaf93eab|||||||||||||||
@@ -137,7 +137,7 @@ normalize_units|function|bab945d02482f2de|||||||||||||||
 omitted_data|stem|ff98c6ca5028aea8|d814dd858f38eb83|4ccddbb41645076f|1093063698||t19601.6745566682s|70876673f828c712|138552|rds|local|vector|||0.04||
 omitted_var|stem|cb9b4efab2240c8e|f70a4756c5045123|6ced2a91b03a5aac|953232944||t19601.674189741s|6c054e9de2df3f2d|2220|rds|local|vector|||0.34||
 one|function|7d827a448c1c59eb|||||||||||||||
-pd|function|b6d77d3b8c9dbc64|||||||||||||||
+pd|function|ffaf77b99cbb7c13|||||||||||||||
 pdf_plots|function|71c4471da8307e3d|||||||||||||||
 per_diff_var|stem|a697faa8a011c809|013cadb21333701f|d9f764fcd96114bd|943970586||t19601.6734262862s|a164dff66b2c0261|998|rds|local|vector|||0.01||
 per_diff_var_list|stem|0f2c9f3087f3d785|9d4cafcc9bd542b9|ef46db3751d8e999|1905006288|data-raw/process_data/per_diff_variables.csv|t19543.8722069764s|ec34250d10380e30|5262|file|local|vector|||0||

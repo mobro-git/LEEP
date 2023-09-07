@@ -86,6 +86,7 @@
 "E.19.CapacitybyModel","GCAM-PNNL","IRA","GW","Capacity|Electricity|Nuclear","Nuclear",2030,99.22
 "E.19.CapacitybyModel","GCAM-PNNL","IRA","GW","Capacity|Electricity|Oil|w/o CCS","Oil w/o CCS",2030,2.38
 "E.19.CapacitybyModel","GCAM-PNNL","IRA","GW","Capacity|Electricity|Solar","Solar",2030,448.02
+"E.19.CapacitybyModel","GCAM-PNNL","IRA","GW","Capacity|Electricity|Storage Capacity","Storage",2030,0.429308251
 "E.19.CapacitybyModel","GCAM-PNNL","IRA","GW","Capacity|Electricity|Wind","Wind",2030,468.53
 "E.19.CapacitybyModel","GCAM-PNNL","IRA","GW","Capacity|Electricity|Biomass|w/o CCS","Biomass w/o CCS",2035,8.9
 "E.19.CapacitybyModel","GCAM-PNNL","IRA","GW","Capacity|Electricity|Coal|w/ CCS","Coal w/ CCS",2035,29.97
@@ -98,6 +99,7 @@
 "E.19.CapacitybyModel","GCAM-PNNL","IRA","GW","Capacity|Electricity|Nuclear","Nuclear",2035,99.22
 "E.19.CapacitybyModel","GCAM-PNNL","IRA","GW","Capacity|Electricity|Oil|w/o CCS","Oil w/o CCS",2035,3.14
 "E.19.CapacitybyModel","GCAM-PNNL","IRA","GW","Capacity|Electricity|Solar","Solar",2035,551.63
+"E.19.CapacitybyModel","GCAM-PNNL","IRA","GW","Capacity|Electricity|Storage Capacity","Storage",2035,1.592763825
 "E.19.CapacitybyModel","GCAM-PNNL","IRA","GW","Capacity|Electricity|Wind","Wind",2035,586.23
 "E.19.CapacitybyModel","GCAM-PNNL","No IRA","GW","Capacity|Electricity|Biomass|w/o CCS","Biomass w/o CCS",2030,6.13
 "E.19.CapacitybyModel","GCAM-PNNL","No IRA","GW","Capacity|Electricity|Coal|w/ CCS","Coal w/ CCS",2030,0
@@ -110,6 +112,7 @@
 "E.19.CapacitybyModel","GCAM-PNNL","No IRA","GW","Capacity|Electricity|Nuclear","Nuclear",2030,99.22
 "E.19.CapacitybyModel","GCAM-PNNL","No IRA","GW","Capacity|Electricity|Oil|w/o CCS","Oil w/o CCS",2030,2.57
 "E.19.CapacitybyModel","GCAM-PNNL","No IRA","GW","Capacity|Electricity|Solar","Solar",2030,369.37
+"E.19.CapacitybyModel","GCAM-PNNL","No IRA","GW","Capacity|Electricity|Storage Capacity","Storage",2030,0.392641584
 "E.19.CapacitybyModel","GCAM-PNNL","No IRA","GW","Capacity|Electricity|Wind","Wind",2030,349.1
 "E.19.CapacitybyModel","GCAM-PNNL","No IRA","GW","Capacity|Electricity|Biomass|w/o CCS","Biomass w/o CCS",2035,9.07
 "E.19.CapacitybyModel","GCAM-PNNL","No IRA","GW","Capacity|Electricity|Coal|w/ CCS","Coal w/ CCS",2035,0
@@ -122,6 +125,7 @@
 "E.19.CapacitybyModel","GCAM-PNNL","No IRA","GW","Capacity|Electricity|Nuclear","Nuclear",2035,99.22
 "E.19.CapacitybyModel","GCAM-PNNL","No IRA","GW","Capacity|Electricity|Oil|w/o CCS","Oil w/o CCS",2035,3.58
 "E.19.CapacitybyModel","GCAM-PNNL","No IRA","GW","Capacity|Electricity|Solar","Solar",2035,477.06
+"E.19.CapacitybyModel","GCAM-PNNL","No IRA","GW","Capacity|Electricity|Storage Capacity","Storage",2035,1.482358257
 "E.19.CapacitybyModel","GCAM-PNNL","No IRA","GW","Capacity|Electricity|Wind","Wind",2035,456.91
 "E.19.CapacitybyModel","Haiku-RFF","IRA","GW","Capacity|Electricity|Biomass|w/o CCS","Biomass w/o CCS",2030,11.36218
 "E.19.CapacitybyModel","Haiku-RFF","IRA","GW","Capacity|Electricity|Coal|w/ CCS","Coal w/ CCS",2030,0.778224299665497

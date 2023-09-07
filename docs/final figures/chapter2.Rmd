@@ -361,7 +361,7 @@ dta3 = data_from_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 
                                              "Hydro", "Gas w/ CCS", "Gas w/o CCS", "Coal w/ CCS", "Coal w/o CCS", "Other")))
 fig = dta3 %>% ggplot() +
   #print_graph("stacked_bar", config, clean_data, figmap_leep_stackbar, 4, "United States") +
-  geom_bar(aes(x = year, y = value, fill = variable_rename, alpha = temp,
+  geom_bar(aes(x = year, y = value, fill = variable_rename, #alpha = temp,
                group = interaction(variable_rename, temp), width = 0.75),
            position="stack", stat="identity", color = "white", linewidth = 0.1) +
   theme_emf() +
@@ -445,7 +445,7 @@ stats = dta5 %>% group_by(model, temp) %>%
   summarize(sum = sum(value), mean = mean(value), median = median(value))  
 
 fig2 = dta5 %>% ggplot() +
-  geom_bar(aes(x = model, y = value, fill = variable_rename, color = variable_rename, alpha = temp,
+  geom_bar(aes(x = model, y = value, fill = variable_rename, color = variable_rename, #alpha = temp,
                group = interaction(variable_rename, temp), width = 0.75),
            position="stack", stat="identity", linewidth = 0.1, color = "white") +
   theme_emf() +

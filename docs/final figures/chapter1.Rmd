@@ -527,8 +527,10 @@ sens_dta_ind = clean_data %>%
     TRUE ~ 0
   ))
 
+ymin_val = 2000
+
 p7 = sens_dot_plot(sens_dta_econ, title = "\nIRA Implementation", figmap_leep_timeseries, config, 
-                   ymin = 0, ymax = 5000, far_left = TRUE, single = FALSE, ps = FALSE,
+                   ymin = ymin_val, ymax = 5000, far_left = TRUE, single = FALSE, ps = FALSE,
                    ira_coord = c(2031.2,2600), low_coord = c(2031.3, 3760),
                    high_coord = c(2030.4, 4070))
 p7$plot = p7$plot +
@@ -543,26 +545,26 @@ p7$plot = p7$plot +
 #p7$plot
 
 p7b = sens_dot_plot(sens_dta_econ_panel2, title = "\nEconomic Growth", figmap_leep_timeseries, config, 
-                    ymin = 0, ymax = 5000)
+                    ymin = ymin_val, ymax = 5000)
 p7b$plot = p7b$plot +
   theme(axis.ticks.x = element_line(color = "black"),
         axis.ticks.y = element_blank(),
         axis.ticks.length = unit(-0.15, "cm"))
 
 p7c = sens_dot_plot(sens_dta_econ_panel3, title = "\nEnergy Price", figmap_leep_timeseries, config,
-                    ymin = 0, ymax = 5000)
+                    ymin = ymin_val, ymax = 5000)
 p7c$plot = p7c$plot +
   theme(axis.ticks.x = element_line(color = "black"),
         axis.ticks.y = element_blank(),
         axis.ticks.length = unit(-0.15, "cm"))
 p7d = sens_dot_plot(sens_dta_econ_panel4, title = "\nTechnology", figmap_leep_timeseries, config, 
-                    ymin = 0, ymax = 5000)
+                    ymin = ymin_val, ymax = 5000)
 p7d$plot = p7d$plot +
   theme(axis.ticks.x = element_line(color = "black"),
         axis.ticks.y = element_blank(),
         axis.ticks.length = unit(-0.15, "cm"))
 p7e = sens_dot_plot(sens_dta_econ_panel5, title = "Combined Technology\n + Implementation", figmap_leep_timeseries, config,
-                    ymin = 0, ymax = 5000)
+                    ymin = ymin_val, ymax = 5000)
 p7e$plot = p7e$plot +
   theme(axis.ticks.x = element_line(color = "black"),
         axis.ticks.y = element_blank(),
@@ -932,7 +934,8 @@ all_panels_gt %>%
 #all_panels_gt %>% 
 #   gtsave(paste0("./output/final_figures/display_tables/Table",fig_no,"_",metric,".png"), vwidth = 1500, vheight = 1000)
 ```
-## Alternates: economy-wide co2 emissions sensitivities
+
+### Alternates: economy-wide co2 emissions sensitivities
 
 ```{r}
 fig_no = "1.5.ew_sensitivities_COLOR"
@@ -1045,7 +1048,7 @@ sens_dta_ind = clean_data %>%
   ))
 
 p7 = sens_dot_plot(sens_dta_econ, title = "\nIRA Implementation", figmap_leep_timeseries, config, 
-                   ymin = 0, ymax = 4100, far_left = TRUE, single = FALSE, ps = FALSE,
+                   ymin = ymin_val, ymax = 4100, far_left = TRUE, single = FALSE, ps = FALSE,
                    ira_coord = c(2031.2,2600), low_coord = c(2031.3, 3760),
                    high_coord = c(2030.4, 4070))
 p7$plot = p7$plot +
@@ -1060,26 +1063,26 @@ p7$plot = p7$plot +
 #p7$plot
 
 p7b = sens_dot_plot(sens_dta_econ_panel2, title = "\nEconomic Growth", figmap_leep_timeseries, config, 
-                    ymin = 0, ymax = 4100)
+                    ymin = ymin_val, ymax = 4100)
 p7b$plot = p7b$plot +
   theme(axis.ticks.x = element_line(color = "black"),
         axis.ticks.y = element_blank(),
         axis.ticks.length = unit(-0.15, "cm"))
 
 p7c = sens_dot_plot(sens_dta_econ_panel3, title = "\nEnergy Price", figmap_leep_timeseries, config,
-                    ymin = 0, ymax = 4100)
+                    ymin = ymin_val, ymax = 4100)
 p7c$plot = p7c$plot +
   theme(axis.ticks.x = element_line(color = "black"),
         axis.ticks.y = element_blank(),
         axis.ticks.length = unit(-0.15, "cm"))
 p7d = sens_dot_plot(sens_dta_econ_panel4, title = "\nTechnology", figmap_leep_timeseries, config, 
-                    ymin = 0, ymax = 4100)
+                    ymin = ymin_val, ymax = 4100)
 p7d$plot = p7d$plot +
   theme(axis.ticks.x = element_line(color = "black"),
         axis.ticks.y = element_blank(),
         axis.ticks.length = unit(-0.15, "cm"))
 p7e = sens_dot_plot(sens_dta_econ_panel5, title = "Combined Technology\n + Implementation", figmap_leep_timeseries, config,
-                    ymin = 0, ymax = 4100)
+                    ymin = ymin_val, ymax = 4100)
 p7e$plot = p7e$plot +
   theme(axis.ticks.x = element_line(color = "black"),
         axis.ticks.y = element_blank(),

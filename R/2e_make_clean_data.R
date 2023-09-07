@@ -83,8 +83,21 @@ make_clean_data = function(df) {
     mutate(datasrc = "calculated") %>%
     select(model,scenario,unit,year,datasrc,variable,region,value)
 
+  # make aggregate Capacity Additions|Electricity|Storage variable for USREP-ReEDS
+  usrep_storage = df %>%
+    filter(model == "USREP-ReEDS" &
+             variable %in% c("Capacity Additions|Electricity|Storage Capacity|Battery","Capacity Additions|Electricity|Storage Capacity|PSH")) %>%
+    mutate(variable = "Capacity Additions|Electricity|Storage Capacity") %>%
+    group_by(scenario,model,region,unit,year,variable) %>%
+    summarise(value = sum(value)) %>%
+    ungroup() %>%
+    mutate(datasrc = "calculated") %>%
+    select(model,scenario,unit,year,datasrc,variable,region,value)
+
+  df_capadd = rbind(df, usrep_storage)
+
   # calculate average capacity additions 2021-2035 for internal models
-  cap_add_avg = df %>%
+  cap_add_avg = df_capadd %>%
     filter(model %in% c("USREP-ReEDS", "GCAM-PNNL", "NEMS-OP", "NEMS-EIA"),
            (grepl("Capacity Additions", variable) | grepl("Capacity Retirements", variable)),
            (year >= 2021 & year <= 2035)) %>%

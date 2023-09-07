@@ -1130,8 +1130,7 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
   adfigure$ad_df = adfigure$ad_df %>% mutate(figure_num = fig_no)
 
   figure = (NoIRAfigure | IRAfigure) / (adfigure$figure | pdfigure$figure)+
-    plot_layout(guides = "collect") +
-    plot_annotation(caption = title)
+    plot_layout(guides = "collect")
 
   return(list(
     figure = figure,
