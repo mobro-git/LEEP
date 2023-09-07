@@ -139,13 +139,11 @@ delta$df = delta$df %>%
          unit = "%",
          figure_num = paste0(fig_no,"_delta")) %>%
   rename("label" = "variable_rename")
-  
 
 #TranSpg$data = clean_supplemental_data(TranSpg$data, fig_no)
 
 data_combo = bind_rows(TranSpg$data, delta$df)
 savedata(data_combo,fig_no)
-
 
 html(TranSpg$data, "Transportation CO2")
 ```

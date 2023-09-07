@@ -4601,7 +4601,7 @@ fig_no = "F.2.2.trn_projections_direct_indirect"
 
 Dir_data = spg_clean(
   97, 
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),
   "EPA-GHGI", 
   config, 
   clean_data, 
@@ -4630,7 +4630,7 @@ DirTab
 
 IndDir_data = spg_clean(
   18, 
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),
   "EPA-GHGI", 
   config, 
   clean_data, 
@@ -4690,7 +4690,7 @@ fig_no = "F.2.3.bld_projections_direct_indirect"
 
 Dir_data = spg_clean(
   95, 
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),
   "EPA-GHGI", 
   config, 
   clean_data, 
@@ -4719,7 +4719,7 @@ DirTab
 
 IndDir_data = spg_clean(
   22, 
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),
   "EPA-GHGI", 
   config, 
   clean_data, 
@@ -4779,7 +4779,7 @@ fig_no = "F.2.4.ind_projections_direct_indirect"
 
 Dir_data = spg_clean(
   96, 
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),
   "EPA-GHGI", 
   config, 
   clean_data, 
@@ -4808,7 +4808,7 @@ DirTab
 
 IndDir_data = spg_clean(
   20, 
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "MARKAL-NETL", "GCAM-PNNL"),
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),
   "EPA-GHGI", 
   config, 
   clean_data, 

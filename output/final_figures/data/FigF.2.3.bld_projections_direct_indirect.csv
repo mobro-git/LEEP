@@ -20,6 +20,10 @@
 "F.2.3.bld_projections_direct_indirect","EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2021,546.3
 "F.2.3.bld_projections_direct_indirect","GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2021,546.3
 "F.2.3.bld_projections_direct_indirect","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2021,546.3
+"F.2.3.bld_projections_direct_indirect","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2021,546.3
+"F.2.3.bld_projections_direct_indirect","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2021,546.3
+"F.2.3.bld_projections_direct_indirect","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2021,546.3
+"F.2.3.bld_projections_direct_indirect","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2021,546.3
 "F.2.3.bld_projections_direct_indirect","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2021,546.3
 "F.2.3.bld_projections_direct_indirect","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2021,546.3
 "F.2.3.bld_projections_direct_indirect","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2021,546.3
@@ -44,6 +48,18 @@
 "F.2.3.bld_projections_direct_indirect","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2025,542.161635214387
 "F.2.3.bld_projections_direct_indirect","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2030,533.537214700852
 "F.2.3.bld_projections_direct_indirect","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2035,504.038720770186
+"F.2.3.bld_projections_direct_indirect","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2025,412.837344860257
+"F.2.3.bld_projections_direct_indirect","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2030,456.458572855805
+"F.2.3.bld_projections_direct_indirect","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2035,452.958393670429
+"F.2.3.bld_projections_direct_indirect","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2025,429.3793
+"F.2.3.bld_projections_direct_indirect","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2030,451.1881
+"F.2.3.bld_projections_direct_indirect","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2035,445.1777
+"F.2.3.bld_projections_direct_indirect","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2025,295.63
+"F.2.3.bld_projections_direct_indirect","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2030,259.2
+"F.2.3.bld_projections_direct_indirect","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2035,249.28
+"F.2.3.bld_projections_direct_indirect","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2025,327.8
+"F.2.3.bld_projections_direct_indirect","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2030,278.08
+"F.2.3.bld_projections_direct_indirect","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2035,274.45
 "F.2.3.bld_projections_direct_indirect","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2025,568.035919
 "F.2.3.bld_projections_direct_indirect","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2030,574.227325
 "F.2.3.bld_projections_direct_indirect","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings","Mt CO2/yr","Buildings",2035,568.56224
@@ -101,6 +117,10 @@
 "F.2.3.bld_projections_direct_indirect","EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2021,1090.7
 "F.2.3.bld_projections_direct_indirect","GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2021,1090.7
 "F.2.3.bld_projections_direct_indirect","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2021,1090.7
+"F.2.3.bld_projections_direct_indirect","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2021,1090.7
+"F.2.3.bld_projections_direct_indirect","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2021,1090.7
+"F.2.3.bld_projections_direct_indirect","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2021,1090.7
+"F.2.3.bld_projections_direct_indirect","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2021,1090.7
 "F.2.3.bld_projections_direct_indirect","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2021,1090.7
 "F.2.3.bld_projections_direct_indirect","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2021,1090.7
 "F.2.3.bld_projections_direct_indirect","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2021,1090.7
@@ -125,6 +145,18 @@
 "F.2.3.bld_projections_direct_indirect","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2025,1017.52537642602
 "F.2.3.bld_projections_direct_indirect","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2030,945.769046449184
 "F.2.3.bld_projections_direct_indirect","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2035,924.920718941848
+"F.2.3.bld_projections_direct_indirect","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2025,866.457396254488
+"F.2.3.bld_projections_direct_indirect","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2030,582.997007501143
+"F.2.3.bld_projections_direct_indirect","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2035,521.289180940712
+"F.2.3.bld_projections_direct_indirect","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2025,962.1219
+"F.2.3.bld_projections_direct_indirect","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2030,895.0665
+"F.2.3.bld_projections_direct_indirect","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2035,815.8505
+"F.2.3.bld_projections_direct_indirect","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2025,1027.63664606733
+"F.2.3.bld_projections_direct_indirect","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2030,881.732673452674
+"F.2.3.bld_projections_direct_indirect","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2035,528.815057055452
+"F.2.3.bld_projections_direct_indirect","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2025,1021.07089897245
+"F.2.3.bld_projections_direct_indirect","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2030,1018.89444522943
+"F.2.3.bld_projections_direct_indirect","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2035,1061.06215473138
 "F.2.3.bld_projections_direct_indirect","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2025,934.753876
 "F.2.3.bld_projections_direct_indirect","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2030,553.054901
 "F.2.3.bld_projections_direct_indirect","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Buildings|Indirect","Mt CO2/yr","Indirect Building Emissions",2035,508.636246

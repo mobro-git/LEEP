@@ -20,6 +20,10 @@
 "F.2.4.ind_projections_direct_indirect","EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2021,775.6
 "F.2.4.ind_projections_direct_indirect","GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2021,775.6
 "F.2.4.ind_projections_direct_indirect","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2021,775.6
+"F.2.4.ind_projections_direct_indirect","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2021,775.6
+"F.2.4.ind_projections_direct_indirect","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2021,775.6
+"F.2.4.ind_projections_direct_indirect","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2021,775.6
+"F.2.4.ind_projections_direct_indirect","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2021,775.6
 "F.2.4.ind_projections_direct_indirect","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2021,775.6
 "F.2.4.ind_projections_direct_indirect","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2021,775.6
 "F.2.4.ind_projections_direct_indirect","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2021,775.6
@@ -44,6 +48,18 @@
 "F.2.4.ind_projections_direct_indirect","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2025,1180.17816204515
 "F.2.4.ind_projections_direct_indirect","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2030,1208.99411915652
 "F.2.4.ind_projections_direct_indirect","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2035,1222.12174799319
+"F.2.4.ind_projections_direct_indirect","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2025,788.917359830344
+"F.2.4.ind_projections_direct_indirect","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2030,789.92060584739
+"F.2.4.ind_projections_direct_indirect","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2035,773.204942909632
+"F.2.4.ind_projections_direct_indirect","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2025,792.6696540004
+"F.2.4.ind_projections_direct_indirect","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2030,790.95660080117
+"F.2.4.ind_projections_direct_indirect","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2035,774.2846881067
+"F.2.4.ind_projections_direct_indirect","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2025,1048.61
+"F.2.4.ind_projections_direct_indirect","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2030,1076.13
+"F.2.4.ind_projections_direct_indirect","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2035,1074.38
+"F.2.4.ind_projections_direct_indirect","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2025,1063.06
+"F.2.4.ind_projections_direct_indirect","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2030,1080.08
+"F.2.4.ind_projections_direct_indirect","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2035,1107.08
 "F.2.4.ind_projections_direct_indirect","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2025,751.268854528375
 "F.2.4.ind_projections_direct_indirect","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2030,787.106926017752
 "F.2.4.ind_projections_direct_indirect","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production","Mt CO2/yr","Industry",2035,812.867345738861
@@ -101,6 +117,10 @@
 "F.2.4.ind_projections_direct_indirect","EPS-EI","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2021,445.1
 "F.2.4.ind_projections_direct_indirect","GCAM-CGS","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2021,445.1
 "F.2.4.ind_projections_direct_indirect","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2021,445.1
+"F.2.4.ind_projections_direct_indirect","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2021,445.1
+"F.2.4.ind_projections_direct_indirect","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2021,445.1
+"F.2.4.ind_projections_direct_indirect","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2021,445.1
+"F.2.4.ind_projections_direct_indirect","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2021,445.1
 "F.2.4.ind_projections_direct_indirect","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2021,445.1
 "F.2.4.ind_projections_direct_indirect","NEMS-EIA","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2021,445.1
 "F.2.4.ind_projections_direct_indirect","NEMS-OP","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2021,445.1
@@ -125,6 +145,18 @@
 "F.2.4.ind_projections_direct_indirect","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2025,289.409928811074
 "F.2.4.ind_projections_direct_indirect","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2030,289.272237896568
 "F.2.4.ind_projections_direct_indirect","GCAM-CGS","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2035,311.207866617347
+"F.2.4.ind_projections_direct_indirect","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2025,267.847173600304
+"F.2.4.ind_projections_direct_indirect","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2030,189.150660155407
+"F.2.4.ind_projections_direct_indirect","GCAM-PNNL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2035,175.877455452304
+"F.2.4.ind_projections_direct_indirect","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2025,302.9362
+"F.2.4.ind_projections_direct_indirect","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2030,285.6749
+"F.2.4.ind_projections_direct_indirect","GCAM-PNNL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2035,270.63508
+"F.2.4.ind_projections_direct_indirect","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2025,268.207464930093
+"F.2.4.ind_projections_direct_indirect","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2030,238.51620977431
+"F.2.4.ind_projections_direct_indirect","MARKAL-NETL","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2035,147.886662217104
+"F.2.4.ind_projections_direct_indirect","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2025,252.038232940744
+"F.2.4.ind_projections_direct_indirect","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2030,256.044453942984
+"F.2.4.ind_projections_direct_indirect","MARKAL-NETL","No IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2035,260.905783873725
 "F.2.4.ind_projections_direct_indirect","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2025,352.642517
 "F.2.4.ind_projections_direct_indirect","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2030,203.077499
 "F.2.4.ind_projections_direct_indirect","NEMS-EIA","IRA","Emissions|CO2|Energy|Demand|Industry and Fuel Production|Indirect","Mt CO2/yr","Indirect Industry Emissions",2035,187.521576
