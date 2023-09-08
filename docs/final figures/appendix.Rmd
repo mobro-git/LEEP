@@ -4401,7 +4401,7 @@ absdif_figure = ggplot() +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
     labs(title = "",
          x = "",
-         y = expression(paste("Absolute Difference (Emissions (Mt C", O[2], "/yr))"))) 
+         y = expression(paste("Absolute Difference (Mt C", O[2], "/yr)"))) 
 
 fig = (NoIRAfigure |
          IRAfigure) / (absdif_figure | pbdif_figure) +
@@ -4788,7 +4788,7 @@ absdif_figure = ggplot() +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
     labs(title = "",
          x = "",
-         y = expression(paste("Absolute Difference (Emissions (Mt C", O[2], "/yr))"))) 
+         y = expression(paste("Absolute Difference (Mt C", O[2], "/yr)"))) 
 
 fig = (NoIRAfigure |
          IRAfigure) / (absdif_figure | pbdif_figure) +
@@ -5176,7 +5176,7 @@ absdif_figure = ggplot() +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
     labs(title = "",
          x = "",
-         y = expression(paste("Absolute Difference (Emissions (Mt C", O[2], "/yr))"))) 
+         y = expression(paste("Absolute Difference (Mt C", O[2], "/yr)"))) 
 
 fig = (NoIRAfigure |
          IRAfigure) / (absdif_figure | pbdif_figure) +
@@ -5565,7 +5565,7 @@ absdif_figure = ggplot() +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
     labs(title = "",
          x = "",
-         y = expression(paste("Absolute Difference (Emissions (Mt C", O[2], "/yr))"))) 
+         y = expression(paste("Absolute Difference (Mt C", O[2], "/yr)"))) 
 
 fig = (NoIRAfigure |
          IRAfigure) / (absdif_figure | pbdif_figure) +
@@ -5970,7 +5970,7 @@ absdif_figure = ggplot() +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
     labs(title = "",
          x = "",
-         y = expression(paste("Absolute Difference (Emissions (Mt C", O[2], "/yr))"))) 
+         y = expression(paste("Absolute Difference (Mt C", O[2], "/yr)"))) 
 
 fig = (NoIRAfigure |
          IRAfigure) / (absdif_figure | pbdif_figure) +
@@ -5982,7 +5982,8 @@ savefig(fig, fig_no)
 ts_df_data = ts_df %>%
   mutate(variable = "Emissions", 
          label = "Economy-Wide Indirect Emissions",
-         figure_num = fig_no) %>%
+         figure_num = fig_no, 
+         unit = "Mt CO2/yr") %>%
   ungroup() %>%
   select(figure_num, model, scenario, variable, unit, label, year, value)
 
@@ -6357,7 +6358,7 @@ absdif_figure = ggplot() +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
     labs(title = "",
          x = "",
-         y = expression(paste("Absolute Difference (Emissions (Mt C", O[2], "/yr))"))) 
+         y = expression(paste("Absolute Difference (Mt C", O[2], "/yr)"))) 
 
 fig = (NoIRAfigure |
          IRAfigure) / (absdif_figure | pbdif_figure) +
@@ -6745,7 +6746,7 @@ absdif_figure = ggplot() +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
     labs(title = "",
          x = "",
-         y = expression(paste("Absolute Difference (Emissions (Mt C", O[2], "/yr))"))) 
+         y = expression(paste("Absolute Difference (Mt C", O[2], "/yr)"))) 
 
 fig = (NoIRAfigure |
          IRAfigure) / (absdif_figure | pbdif_figure) +
@@ -7134,7 +7135,7 @@ absdif_figure = ggplot() +
     scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
     labs(title = "",
          x = "",
-         y = expression(paste("Absolute Difference (Emissions (Mt C", O[2], "/yr))"))) 
+         y = expression(paste("Absolute Difference (Mt C", O[2], "/yr)"))) 
 
 fig = (NoIRAfigure |
          IRAfigure) / (absdif_figure | pbdif_figure) +
