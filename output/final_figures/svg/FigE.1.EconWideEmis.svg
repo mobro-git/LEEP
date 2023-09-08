@@ -141,7 +141,7 @@
 <text transform='translate(99.12,145.61) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2025</text>
 <text transform='translate(141.54,145.61) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2030</text>
 <text transform='translate(183.97,145.61) rotate(-45)' text-anchor='end' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2035</text>
-<text transform='translate(20.86,85.56) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='30.69px' lengthAdjust='spacingAndGlyphs'>value</text>
+<text transform='translate(19.67,133.58) rotate(-90)' style='font-size: 12.00px; font-family: "Arial";' textLength='96.03px' lengthAdjust='spacingAndGlyphs'>Generation (TWh)</text>
 <text x='120.02' y='23.75' text-anchor='middle' style='font-size: 14.40px; font-family: "Arial";' textLength='46.39px' lengthAdjust='spacingAndGlyphs'>No IRA</text>
 </g>
 <defs>

@@ -1027,6 +1027,7 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
                                      "RIO-REPEAT",
                                      "USREP-ReEDS"))+
     labs(title = "No IRA",
+         y = expression(paste("Generation (TWh)")),
          x = element_blank()) +
     theme(  axis.ticks = element_line(color = "black"),
             axis.ticks.length = unit(-0.15, "cm"),
