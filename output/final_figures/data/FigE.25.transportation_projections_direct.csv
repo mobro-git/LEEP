@@ -1,162 +1,162 @@
-"figure_no","title_name","model","scenario","variable","unit","year","value","figure_num"
-97,"Transportation Direct Emissions","EPA-GHGI","Historic","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","EPS-EI","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","EPS-EI","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1570.042984,NA
-97,"Transportation Direct Emissions","EPS-EI","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1380.345127,NA
-97,"Transportation Direct Emissions","EPS-EI","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1195.014895,NA
-97,"Transportation Direct Emissions","EPS-EI","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","EPS-EI","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1573.981449,NA
-97,"Transportation Direct Emissions","EPS-EI","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1401.480757,NA
-97,"Transportation Direct Emissions","EPS-EI","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1234.004451,NA
-97,"Transportation Direct Emissions","GCAM-CGS","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","GCAM-CGS","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1538.6165656608,NA
-97,"Transportation Direct Emissions","GCAM-CGS","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1357.17964232201,NA
-97,"Transportation Direct Emissions","GCAM-CGS","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1282.9675605035,NA
-97,"Transportation Direct Emissions","GCAM-CGS","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","GCAM-CGS","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1596.66956680078,NA
-97,"Transportation Direct Emissions","GCAM-CGS","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1464.78688682719,NA
-97,"Transportation Direct Emissions","GCAM-CGS","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1306.29323674977,NA
-97,"Transportation Direct Emissions","GCAM-PNNL","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","GCAM-PNNL","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1687.96230783699,NA
-97,"Transportation Direct Emissions","GCAM-PNNL","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1444.91373323989,NA
-97,"Transportation Direct Emissions","GCAM-PNNL","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1195.85113112293,NA
-97,"Transportation Direct Emissions","GCAM-PNNL","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","GCAM-PNNL","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1705.896,NA
-97,"Transportation Direct Emissions","GCAM-PNNL","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1507.175,NA
-97,"Transportation Direct Emissions","GCAM-PNNL","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1280.413,NA
-97,"Transportation Direct Emissions","MARKAL-NETL","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","MARKAL-NETL","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1488.81,NA
-97,"Transportation Direct Emissions","MARKAL-NETL","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1380.98,NA
-97,"Transportation Direct Emissions","MARKAL-NETL","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1283.52,NA
-97,"Transportation Direct Emissions","MARKAL-NETL","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","MARKAL-NETL","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1493.47,NA
-97,"Transportation Direct Emissions","MARKAL-NETL","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1403.91,NA
-97,"Transportation Direct Emissions","MARKAL-NETL","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1322.3,NA
-97,"Transportation Direct Emissions","NEMS-EIA","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","NEMS-EIA","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1723.9024,NA
-97,"Transportation Direct Emissions","NEMS-EIA","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1644.875853,NA
-97,"Transportation Direct Emissions","NEMS-EIA","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1574.929811,NA
-97,"Transportation Direct Emissions","NEMS-EIA","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","NEMS-EIA","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1733.378839,NA
-97,"Transportation Direct Emissions","NEMS-EIA","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1656.898475,NA
-97,"Transportation Direct Emissions","NEMS-EIA","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1593.198601,NA
-97,"Transportation Direct Emissions","NEMS-OP","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","NEMS-OP","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1785.624799,NA
-97,"Transportation Direct Emissions","NEMS-OP","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1606.871304,NA
-97,"Transportation Direct Emissions","NEMS-OP","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1430.762993,NA
-97,"Transportation Direct Emissions","NEMS-OP","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","NEMS-OP","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1789.401327,NA
-97,"Transportation Direct Emissions","NEMS-OP","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1666.071442,NA
-97,"Transportation Direct Emissions","NEMS-OP","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1538.625976,NA
-97,"Transportation Direct Emissions","NEMS-RHG","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","NEMS-RHG","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1636.8052259969,NA
-97,"Transportation Direct Emissions","NEMS-RHG","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1492.66084764101,NA
-97,"Transportation Direct Emissions","NEMS-RHG","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1346.04203961727,NA
-97,"Transportation Direct Emissions","NEMS-RHG","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","NEMS-RHG","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1636.61752751504,NA
-97,"Transportation Direct Emissions","NEMS-RHG","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1511.19953267439,NA
-97,"Transportation Direct Emissions","NEMS-RHG","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1385.12927513821,NA
-97,"Transportation Direct Emissions","REGEN-EPRI","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","REGEN-EPRI","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1686.79559783655,NA
-97,"Transportation Direct Emissions","REGEN-EPRI","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1499.1674052122,NA
-97,"Transportation Direct Emissions","REGEN-EPRI","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1325.66303477685,NA
-97,"Transportation Direct Emissions","REGEN-EPRI","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","REGEN-EPRI","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1692.79635567194,NA
-97,"Transportation Direct Emissions","REGEN-EPRI","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1532.15158500712,NA
-97,"Transportation Direct Emissions","REGEN-EPRI","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1378.55316880469,NA
-97,"Transportation Direct Emissions","RIO-REPEAT","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","RIO-REPEAT","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1790,NA
-97,"Transportation Direct Emissions","RIO-REPEAT","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1519,NA
-97,"Transportation Direct Emissions","RIO-REPEAT","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1141,NA
-97,"Transportation Direct Emissions","RIO-REPEAT","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","RIO-REPEAT","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1805.5,NA
-97,"Transportation Direct Emissions","RIO-REPEAT","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1598,NA
-97,"Transportation Direct Emissions","RIO-REPEAT","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1348,NA
-97,"Transportation Direct Emissions","USREP-ReEDS","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","USREP-ReEDS","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1700.352706,NA
-97,"Transportation Direct Emissions","USREP-ReEDS","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1579.671963,NA
-97,"Transportation Direct Emissions","USREP-ReEDS","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1463.246708,NA
-97,"Transportation Direct Emissions","USREP-ReEDS","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4,NA
-97,"Transportation Direct Emissions","USREP-ReEDS","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1691.376599,NA
-97,"Transportation Direct Emissions","USREP-ReEDS","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1585.987648,NA
-97,"Transportation Direct Emissions","USREP-ReEDS","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1501.130071,NA
-NA,NA,"USREP-ReEDS","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0,"E.25.transportation_projections_direct"
-NA,NA,"USREP-ReEDS","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,8.97610699999996,"E.25.transportation_projections_direct"
-NA,NA,"USREP-ReEDS","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-6.31568500000003,"E.25.transportation_projections_direct"
-NA,NA,"USREP-ReEDS","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-37.8833630000001,"E.25.transportation_projections_direct"
-NA,NA,"EPS-EI","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0,"E.25.transportation_projections_direct"
-NA,NA,"EPS-EI","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,-3.93846500000018,"E.25.transportation_projections_direct"
-NA,NA,"EPS-EI","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-21.13563,"E.25.transportation_projections_direct"
-NA,NA,"EPS-EI","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-38.989556,"E.25.transportation_projections_direct"
-NA,NA,"GCAM-CGS","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0,"E.25.transportation_projections_direct"
-NA,NA,"GCAM-CGS","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,-58.0530011399801,"E.25.transportation_projections_direct"
-NA,NA,"GCAM-CGS","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-107.60724450518,"E.25.transportation_projections_direct"
-NA,NA,"GCAM-CGS","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-23.3256762462699,"E.25.transportation_projections_direct"
-NA,NA,"GCAM-PNNL","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0,"E.25.transportation_projections_direct"
-NA,NA,"GCAM-PNNL","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,-17.9336921630099,"E.25.transportation_projections_direct"
-NA,NA,"GCAM-PNNL","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-62.2612667601099,"E.25.transportation_projections_direct"
-NA,NA,"GCAM-PNNL","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-84.5618688770701,"E.25.transportation_projections_direct"
-NA,NA,"MARKAL-NETL","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0,"E.25.transportation_projections_direct"
-NA,NA,"MARKAL-NETL","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,-4.66000000000008,"E.25.transportation_projections_direct"
-NA,NA,"MARKAL-NETL","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-22.9300000000001,"E.25.transportation_projections_direct"
-NA,NA,"MARKAL-NETL","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-38.78,"E.25.transportation_projections_direct"
-NA,NA,"NEMS-RHG","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0,"E.25.transportation_projections_direct"
-NA,NA,"NEMS-RHG","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,0.187698481860025,"E.25.transportation_projections_direct"
-NA,NA,"NEMS-RHG","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-18.53868503338,"E.25.transportation_projections_direct"
-NA,NA,"NEMS-RHG","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-39.0872355209401,"E.25.transportation_projections_direct"
-NA,NA,"NEMS-OP","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0,"E.25.transportation_projections_direct"
-NA,NA,"NEMS-OP","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,-3.77652799999987,"E.25.transportation_projections_direct"
-NA,NA,"NEMS-OP","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-59.2001380000002,"E.25.transportation_projections_direct"
-NA,NA,"NEMS-OP","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-107.862983,"E.25.transportation_projections_direct"
-NA,NA,"REGEN-EPRI","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0,"E.25.transportation_projections_direct"
-NA,NA,"REGEN-EPRI","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,-6.00075783539,"E.25.transportation_projections_direct"
-NA,NA,"REGEN-EPRI","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-32.98417979492,"E.25.transportation_projections_direct"
-NA,NA,"REGEN-EPRI","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-52.8901340278398,"E.25.transportation_projections_direct"
-NA,NA,"RIO-REPEAT","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0,"E.25.transportation_projections_direct"
-NA,NA,"RIO-REPEAT","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,-15.5,"E.25.transportation_projections_direct"
-NA,NA,"RIO-REPEAT","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-79,"E.25.transportation_projections_direct"
-NA,NA,"RIO-REPEAT","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-207,"E.25.transportation_projections_direct"
-NA,NA,"NEMS-EIA","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0,"E.25.transportation_projections_direct"
-NA,NA,"NEMS-EIA","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,-9.47643900000003,"E.25.transportation_projections_direct"
-NA,NA,"NEMS-EIA","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-12.022622,"E.25.transportation_projections_direct"
-NA,NA,"NEMS-EIA","% Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-18.2687900000001,"E.25.transportation_projections_direct"
-NA,"Transporation Direct Emissions","USREP-ReEDS","% Difference","Transporation Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Transporation Direct Emissions","USREP-ReEDS","% Difference","Transporation Direct Emissions","% Difference from No IRA",2025,0.53069830842563,NA
-NA,"Transporation Direct Emissions","USREP-ReEDS","% Difference","Transporation Direct Emissions","% Difference from No IRA",2030,-0.398217792425079,NA
-NA,"Transporation Direct Emissions","USREP-ReEDS","% Difference","Transporation Direct Emissions","% Difference from No IRA",2035,-2.52365625949813,NA
-NA,"Transporation Direct Emissions","EPS-EI","% Difference","Transporation Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Transporation Direct Emissions","EPS-EI","% Difference","Transporation Direct Emissions","% Difference from No IRA",2025,-0.250223088874549,NA
-NA,"Transporation Direct Emissions","EPS-EI","% Difference","Transporation Direct Emissions","% Difference from No IRA",2030,-1.50809277219352,NA
-NA,"Transporation Direct Emissions","EPS-EI","% Difference","Transporation Direct Emissions","% Difference from No IRA",2035,-3.15959605886381,NA
-NA,"Transporation Direct Emissions","GCAM-CGS","% Difference","Transporation Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Transporation Direct Emissions","GCAM-CGS","% Difference","Transporation Direct Emissions","% Difference from No IRA",2025,-3.63588073243607,NA
-NA,"Transporation Direct Emissions","GCAM-CGS","% Difference","Transporation Direct Emissions","% Difference from No IRA",2030,-7.34627306353508,NA
-NA,"Transporation Direct Emissions","GCAM-CGS","% Difference","Transporation Direct Emissions","% Difference from No IRA",2035,-1.7856385985973,NA
-NA,"Transporation Direct Emissions","GCAM-PNNL","% Difference","Transporation Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Transporation Direct Emissions","GCAM-PNNL","% Difference","Transporation Direct Emissions","% Difference from No IRA",2025,-1.05127699244326,NA
-NA,"Transporation Direct Emissions","GCAM-PNNL","% Difference","Transporation Direct Emissions","% Difference from No IRA",2030,-4.13099120938909,NA
-NA,"Transporation Direct Emissions","GCAM-PNNL","% Difference","Transporation Direct Emissions","% Difference from No IRA",2035,-6.60426509861038,NA
-NA,"Transporation Direct Emissions","MARKAL-NETL","% Difference","Transporation Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Transporation Direct Emissions","MARKAL-NETL","% Difference","Transporation Direct Emissions","% Difference from No IRA",2025,-0.312025015567777,NA
-NA,"Transporation Direct Emissions","MARKAL-NETL","% Difference","Transporation Direct Emissions","% Difference from No IRA",2030,-1.63329558162561,NA
-NA,"Transporation Direct Emissions","MARKAL-NETL","% Difference","Transporation Direct Emissions","% Difference from No IRA",2035,-2.93276866066702,NA
-NA,"Transporation Direct Emissions","NEMS-RHG","% Difference","Transporation Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Transporation Direct Emissions","NEMS-RHG","% Difference","Transporation Direct Emissions","% Difference from No IRA",2025,0.0114686833487001,NA
-NA,"Transporation Direct Emissions","NEMS-RHG","% Difference","Transporation Direct Emissions","% Difference from No IRA",2030,-1.2267529623022,NA
-NA,"Transporation Direct Emissions","NEMS-RHG","% Difference","Transporation Direct Emissions","% Difference from No IRA",2035,-2.82191967367378,NA
-NA,"Transporation Direct Emissions","NEMS-OP","% Difference","Transporation Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Transporation Direct Emissions","NEMS-OP","% Difference","Transporation Direct Emissions","% Difference from No IRA",2025,-0.211049804368446,NA
-NA,"Transporation Direct Emissions","NEMS-OP","% Difference","Transporation Direct Emissions","% Difference from No IRA",2030,-3.55327727897038,NA
-NA,"Transporation Direct Emissions","NEMS-OP","% Difference","Transporation Direct Emissions","% Difference from No IRA",2035,-7.01034459852379,NA
-NA,"Transporation Direct Emissions","REGEN-EPRI","% Difference","Transporation Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Transporation Direct Emissions","REGEN-EPRI","% Difference","Transporation Direct Emissions","% Difference from No IRA",2025,-0.354487875359825,NA
-NA,"Transporation Direct Emissions","REGEN-EPRI","% Difference","Transporation Direct Emissions","% Difference from No IRA",2030,-2.1528013362181,NA
-NA,"Transporation Direct Emissions","REGEN-EPRI","% Difference","Transporation Direct Emissions","% Difference from No IRA",2035,-3.83664085105253,NA
-NA,"Transporation Direct Emissions","RIO-REPEAT","% Difference","Transporation Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Transporation Direct Emissions","RIO-REPEAT","% Difference","Transporation Direct Emissions","% Difference from No IRA",2025,-0.858487953475492,NA
-NA,"Transporation Direct Emissions","RIO-REPEAT","% Difference","Transporation Direct Emissions","% Difference from No IRA",2030,-4.94367959949937,NA
-NA,"Transporation Direct Emissions","RIO-REPEAT","% Difference","Transporation Direct Emissions","% Difference from No IRA",2035,-15.3560830860534,NA
-NA,"Transporation Direct Emissions","NEMS-EIA","% Difference","Transporation Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Transporation Direct Emissions","NEMS-EIA","% Difference","Transporation Direct Emissions","% Difference from No IRA",2025,-0.546703281866938,NA
-NA,"Transporation Direct Emissions","NEMS-EIA","% Difference","Transporation Direct Emissions","% Difference from No IRA",2030,-0.725610058878228,NA
-NA,"Transporation Direct Emissions","NEMS-EIA","% Difference","Transporation Direct Emissions","% Difference from No IRA",2035,-1.1466737410222,NA
+"figure_num","model","scenario","variable","unit","year","value"
+"E.25.transportation_projections_direct","EPA-GHGI","Historic","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","EPS-EI","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","EPS-EI","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1570.042984
+"E.25.transportation_projections_direct","EPS-EI","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1380.345127
+"E.25.transportation_projections_direct","EPS-EI","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1195.014895
+"E.25.transportation_projections_direct","EPS-EI","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","EPS-EI","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1573.981449
+"E.25.transportation_projections_direct","EPS-EI","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1401.480757
+"E.25.transportation_projections_direct","EPS-EI","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1234.004451
+"E.25.transportation_projections_direct","GCAM-CGS","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","GCAM-CGS","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1538.6165656608
+"E.25.transportation_projections_direct","GCAM-CGS","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1357.17964232201
+"E.25.transportation_projections_direct","GCAM-CGS","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1282.9675605035
+"E.25.transportation_projections_direct","GCAM-CGS","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","GCAM-CGS","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1596.66956680078
+"E.25.transportation_projections_direct","GCAM-CGS","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1464.78688682719
+"E.25.transportation_projections_direct","GCAM-CGS","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1306.29323674977
+"E.25.transportation_projections_direct","GCAM-PNNL","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","GCAM-PNNL","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1687.96230783699
+"E.25.transportation_projections_direct","GCAM-PNNL","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1444.91373323989
+"E.25.transportation_projections_direct","GCAM-PNNL","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1195.85113112293
+"E.25.transportation_projections_direct","GCAM-PNNL","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","GCAM-PNNL","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1705.896
+"E.25.transportation_projections_direct","GCAM-PNNL","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1507.175
+"E.25.transportation_projections_direct","GCAM-PNNL","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1280.413
+"E.25.transportation_projections_direct","MARKAL-NETL","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","MARKAL-NETL","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1488.81
+"E.25.transportation_projections_direct","MARKAL-NETL","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1380.98
+"E.25.transportation_projections_direct","MARKAL-NETL","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1283.52
+"E.25.transportation_projections_direct","MARKAL-NETL","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","MARKAL-NETL","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1493.47
+"E.25.transportation_projections_direct","MARKAL-NETL","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1403.91
+"E.25.transportation_projections_direct","MARKAL-NETL","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1322.3
+"E.25.transportation_projections_direct","NEMS-EIA","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","NEMS-EIA","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1723.9024
+"E.25.transportation_projections_direct","NEMS-EIA","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1644.875853
+"E.25.transportation_projections_direct","NEMS-EIA","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1574.929811
+"E.25.transportation_projections_direct","NEMS-EIA","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","NEMS-EIA","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1733.378839
+"E.25.transportation_projections_direct","NEMS-EIA","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1656.898475
+"E.25.transportation_projections_direct","NEMS-EIA","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1593.198601
+"E.25.transportation_projections_direct","NEMS-OP","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","NEMS-OP","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1785.624799
+"E.25.transportation_projections_direct","NEMS-OP","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1606.871304
+"E.25.transportation_projections_direct","NEMS-OP","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1430.762993
+"E.25.transportation_projections_direct","NEMS-OP","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","NEMS-OP","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1789.401327
+"E.25.transportation_projections_direct","NEMS-OP","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1666.071442
+"E.25.transportation_projections_direct","NEMS-OP","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1538.625976
+"E.25.transportation_projections_direct","NEMS-RHG","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","NEMS-RHG","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1636.8052259969
+"E.25.transportation_projections_direct","NEMS-RHG","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1492.66084764101
+"E.25.transportation_projections_direct","NEMS-RHG","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1346.04203961727
+"E.25.transportation_projections_direct","NEMS-RHG","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","NEMS-RHG","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1636.61752751504
+"E.25.transportation_projections_direct","NEMS-RHG","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1511.19953267439
+"E.25.transportation_projections_direct","NEMS-RHG","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1385.12927513821
+"E.25.transportation_projections_direct","REGEN-EPRI","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","REGEN-EPRI","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1686.79559783655
+"E.25.transportation_projections_direct","REGEN-EPRI","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1499.1674052122
+"E.25.transportation_projections_direct","REGEN-EPRI","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1325.66303477685
+"E.25.transportation_projections_direct","REGEN-EPRI","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","REGEN-EPRI","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1692.79635567194
+"E.25.transportation_projections_direct","REGEN-EPRI","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1532.15158500712
+"E.25.transportation_projections_direct","REGEN-EPRI","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1378.55316880469
+"E.25.transportation_projections_direct","RIO-REPEAT","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","RIO-REPEAT","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1790
+"E.25.transportation_projections_direct","RIO-REPEAT","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1519
+"E.25.transportation_projections_direct","RIO-REPEAT","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1141
+"E.25.transportation_projections_direct","RIO-REPEAT","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","RIO-REPEAT","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1805.5
+"E.25.transportation_projections_direct","RIO-REPEAT","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1598
+"E.25.transportation_projections_direct","RIO-REPEAT","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1348
+"E.25.transportation_projections_direct","USREP-ReEDS","IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","USREP-ReEDS","IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1700.352706
+"E.25.transportation_projections_direct","USREP-ReEDS","IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1579.671963
+"E.25.transportation_projections_direct","USREP-ReEDS","IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1463.246708
+"E.25.transportation_projections_direct","USREP-ReEDS","No IRA","Transportation Direct Emissions","Mt CO2/yr",2021,1752.4
+"E.25.transportation_projections_direct","USREP-ReEDS","No IRA","Transportation Direct Emissions","Mt CO2/yr",2025,1691.376599
+"E.25.transportation_projections_direct","USREP-ReEDS","No IRA","Transportation Direct Emissions","Mt CO2/yr",2030,1585.987648
+"E.25.transportation_projections_direct","USREP-ReEDS","No IRA","Transportation Direct Emissions","Mt CO2/yr",2035,1501.130071
+"E.25.transportation_projections_direct","USREP-ReEDS","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","USREP-ReEDS","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,8.97610699999996
+"E.25.transportation_projections_direct","USREP-ReEDS","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-6.31568500000003
+"E.25.transportation_projections_direct","USREP-ReEDS","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-37.8833630000001
+"E.25.transportation_projections_direct","EPS-EI","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","EPS-EI","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,-3.93846500000018
+"E.25.transportation_projections_direct","EPS-EI","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-21.13563
+"E.25.transportation_projections_direct","EPS-EI","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-38.989556
+"E.25.transportation_projections_direct","GCAM-CGS","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","GCAM-CGS","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,-58.0530011399801
+"E.25.transportation_projections_direct","GCAM-CGS","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-107.60724450518
+"E.25.transportation_projections_direct","GCAM-CGS","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-23.3256762462699
+"E.25.transportation_projections_direct","GCAM-PNNL","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","GCAM-PNNL","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,-17.9336921630099
+"E.25.transportation_projections_direct","GCAM-PNNL","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-62.2612667601099
+"E.25.transportation_projections_direct","GCAM-PNNL","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-84.5618688770701
+"E.25.transportation_projections_direct","MARKAL-NETL","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","MARKAL-NETL","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,-4.66000000000008
+"E.25.transportation_projections_direct","MARKAL-NETL","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-22.9300000000001
+"E.25.transportation_projections_direct","MARKAL-NETL","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-38.78
+"E.25.transportation_projections_direct","NEMS-RHG","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","NEMS-RHG","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,0.187698481860025
+"E.25.transportation_projections_direct","NEMS-RHG","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-18.53868503338
+"E.25.transportation_projections_direct","NEMS-RHG","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-39.0872355209401
+"E.25.transportation_projections_direct","NEMS-OP","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","NEMS-OP","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,-3.77652799999987
+"E.25.transportation_projections_direct","NEMS-OP","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-59.2001380000002
+"E.25.transportation_projections_direct","NEMS-OP","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-107.862983
+"E.25.transportation_projections_direct","REGEN-EPRI","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","REGEN-EPRI","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,-6.00075783539
+"E.25.transportation_projections_direct","REGEN-EPRI","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-32.98417979492
+"E.25.transportation_projections_direct","REGEN-EPRI","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-52.8901340278398
+"E.25.transportation_projections_direct","RIO-REPEAT","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","RIO-REPEAT","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,-15.5
+"E.25.transportation_projections_direct","RIO-REPEAT","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-79
+"E.25.transportation_projections_direct","RIO-REPEAT","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-207
+"E.25.transportation_projections_direct","NEMS-EIA","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","NEMS-EIA","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2025,-9.47643900000003
+"E.25.transportation_projections_direct","NEMS-EIA","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2030,-12.022622
+"E.25.transportation_projections_direct","NEMS-EIA","Absolute Difference","Transportation Direct Emissions","Absolute Difference from No IRA",2035,-18.2687900000001
+"E.25.transportation_projections_direct","USREP-ReEDS","% Difference","Transportation Direct Emissions","% Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","USREP-ReEDS","% Difference","Transportation Direct Emissions","% Difference from No IRA",2025,0.53069830842563
+"E.25.transportation_projections_direct","USREP-ReEDS","% Difference","Transportation Direct Emissions","% Difference from No IRA",2030,-0.398217792425079
+"E.25.transportation_projections_direct","USREP-ReEDS","% Difference","Transportation Direct Emissions","% Difference from No IRA",2035,-2.52365625949813
+"E.25.transportation_projections_direct","EPS-EI","% Difference","Transportation Direct Emissions","% Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","EPS-EI","% Difference","Transportation Direct Emissions","% Difference from No IRA",2025,-0.250223088874549
+"E.25.transportation_projections_direct","EPS-EI","% Difference","Transportation Direct Emissions","% Difference from No IRA",2030,-1.50809277219352
+"E.25.transportation_projections_direct","EPS-EI","% Difference","Transportation Direct Emissions","% Difference from No IRA",2035,-3.15959605886381
+"E.25.transportation_projections_direct","GCAM-CGS","% Difference","Transportation Direct Emissions","% Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","GCAM-CGS","% Difference","Transportation Direct Emissions","% Difference from No IRA",2025,-3.63588073243607
+"E.25.transportation_projections_direct","GCAM-CGS","% Difference","Transportation Direct Emissions","% Difference from No IRA",2030,-7.34627306353508
+"E.25.transportation_projections_direct","GCAM-CGS","% Difference","Transportation Direct Emissions","% Difference from No IRA",2035,-1.7856385985973
+"E.25.transportation_projections_direct","GCAM-PNNL","% Difference","Transportation Direct Emissions","% Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","GCAM-PNNL","% Difference","Transportation Direct Emissions","% Difference from No IRA",2025,-1.05127699244326
+"E.25.transportation_projections_direct","GCAM-PNNL","% Difference","Transportation Direct Emissions","% Difference from No IRA",2030,-4.13099120938909
+"E.25.transportation_projections_direct","GCAM-PNNL","% Difference","Transportation Direct Emissions","% Difference from No IRA",2035,-6.60426509861038
+"E.25.transportation_projections_direct","MARKAL-NETL","% Difference","Transportation Direct Emissions","% Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","MARKAL-NETL","% Difference","Transportation Direct Emissions","% Difference from No IRA",2025,-0.312025015567777
+"E.25.transportation_projections_direct","MARKAL-NETL","% Difference","Transportation Direct Emissions","% Difference from No IRA",2030,-1.63329558162561
+"E.25.transportation_projections_direct","MARKAL-NETL","% Difference","Transportation Direct Emissions","% Difference from No IRA",2035,-2.93276866066702
+"E.25.transportation_projections_direct","NEMS-RHG","% Difference","Transportation Direct Emissions","% Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","NEMS-RHG","% Difference","Transportation Direct Emissions","% Difference from No IRA",2025,0.0114686833487001
+"E.25.transportation_projections_direct","NEMS-RHG","% Difference","Transportation Direct Emissions","% Difference from No IRA",2030,-1.2267529623022
+"E.25.transportation_projections_direct","NEMS-RHG","% Difference","Transportation Direct Emissions","% Difference from No IRA",2035,-2.82191967367378
+"E.25.transportation_projections_direct","NEMS-OP","% Difference","Transportation Direct Emissions","% Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","NEMS-OP","% Difference","Transportation Direct Emissions","% Difference from No IRA",2025,-0.211049804368446
+"E.25.transportation_projections_direct","NEMS-OP","% Difference","Transportation Direct Emissions","% Difference from No IRA",2030,-3.55327727897038
+"E.25.transportation_projections_direct","NEMS-OP","% Difference","Transportation Direct Emissions","% Difference from No IRA",2035,-7.01034459852379
+"E.25.transportation_projections_direct","REGEN-EPRI","% Difference","Transportation Direct Emissions","% Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","REGEN-EPRI","% Difference","Transportation Direct Emissions","% Difference from No IRA",2025,-0.354487875359825
+"E.25.transportation_projections_direct","REGEN-EPRI","% Difference","Transportation Direct Emissions","% Difference from No IRA",2030,-2.1528013362181
+"E.25.transportation_projections_direct","REGEN-EPRI","% Difference","Transportation Direct Emissions","% Difference from No IRA",2035,-3.83664085105253
+"E.25.transportation_projections_direct","RIO-REPEAT","% Difference","Transportation Direct Emissions","% Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","RIO-REPEAT","% Difference","Transportation Direct Emissions","% Difference from No IRA",2025,-0.858487953475492
+"E.25.transportation_projections_direct","RIO-REPEAT","% Difference","Transportation Direct Emissions","% Difference from No IRA",2030,-4.94367959949937
+"E.25.transportation_projections_direct","RIO-REPEAT","% Difference","Transportation Direct Emissions","% Difference from No IRA",2035,-15.3560830860534
+"E.25.transportation_projections_direct","NEMS-EIA","% Difference","Transportation Direct Emissions","% Difference from No IRA",2021,0
+"E.25.transportation_projections_direct","NEMS-EIA","% Difference","Transportation Direct Emissions","% Difference from No IRA",2025,-0.546703281866938
+"E.25.transportation_projections_direct","NEMS-EIA","% Difference","Transportation Direct Emissions","% Difference from No IRA",2030,-0.725610058878228
+"E.25.transportation_projections_direct","NEMS-EIA","% Difference","Transportation Direct Emissions","% Difference from No IRA",2035,-1.1466737410222

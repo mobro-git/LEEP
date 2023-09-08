@@ -2778,7 +2778,7 @@ fig
 savefig(fig, fig_no)
 
 ts_df = ts_df %>%
-  mutate(unit = "% Electricity of Final Energy") %>%
+  mutate(unit = "Mt C02/yr") %>%
   mutate(figure_num = fig_no) %>%
   select(figure_num, model, scenario, variable, unit, year, value)
 
@@ -2787,7 +2787,7 @@ pbdifs = pbdifs %>%
   select(figure_num, model, scenario, variable, unit, year, value)
 
 absdifs = absdifs %>%
-  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "% Difference", variable = "Economy-Wide") %>%
+  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Economy-Wide") %>%
   select(figure_num, model, scenario, variable, unit, year, value)
 
 data = rbind(ts_df, absdifs, pbdifs)
@@ -4059,6 +4059,2970 @@ data = rbind(ts_df, absdifs, pbdifs)
 
 write.csv(data, file =  paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
 ```
+
+## Direct Emissions
+
+### EconWide
+
+```{r}
+fig_no = "E.24.ew_projections_direct"
+
+test2 = c("EPS-EI" = "#DD614A",
+            "GCAM-CGS" = "#6a959b",
+            "GCAM-PNNL" = "#2A546C",
+            "Haiku-RFF" = "#AE7F2C",
+            "IPM-EPA" = "#8B507E",
+            "IPM-NRDC" = "#488C49",
+            "MARKAL-NETL" = "#af499b",
+            "NEMS-EIA" = NA,
+            "NEMS-OP" = "#11897d",
+            "NEMS-RHG" = "#25266b",
+            "ReEDS-NREL" = "#b72467",
+            "REGEN-EPRI" = "#f15a22",
+            "RIO-REPEAT" = "#524fa1",
+            "USREP-ReEDS" = "#0083ca")
+
+ts_df = spg_clean(
+  99,
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+  "EPA-GHGI",
+  config,
+  clean_data,
+  figmap_leep_timeseries
+) %>%
+  filter(year == 2021 | year == 2025 | year == 2030 | year == 2035) %>%
+  select(model, scenario, unit, title_name, year, value) %>%
+  mutate(title_name = "Economy-Wide Direct Emissions")
+
+noIRAmedians = ts_df[ts_df$scenario == "No IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+IRAmedians = ts_df[ts_df$scenario == "IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA",], aes(year, value, color = model)) +
+  geom_line(aes(linetype = model), size = 0.75) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+  theme_emf()+
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+  scale_y_continuous(limits = c(2500, 5500), breaks = c(2500, 4000, 5500), labels = scales::comma) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS")) +
+  labs(title = "No IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) + 
+  theme(axis.ticks = element_line(color = "black"),
+           axis.ticks.length = unit(-0.15, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = noIRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA",], aes(year, value, color = model)) +
+  geom_line(aes(linetype = model),size = 0.75) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+  theme_emf() +
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) + 
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS")) +
+  scale_y_continuous(limits = c(2500, 5500), breaks = c(2500, 4000, 5500), labels = scales::comma) +
+  labs(title = "IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) +
+  theme(axis.ticks = element_line(color = "black"),
+           axis.ticks.length = unit(-0.15, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = IRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+#Absolute Difference
+difs = ts_df %>%
+  group_by(model, year) %>%
+  summarize(absdif = (value[scenario == "IRA"] - value[scenario == "No IRA"]), 
+          pbdif = (value[scenario == "IRA"] - value[scenario == "No IRA"])/value[scenario=="No IRA"]) %>%
+  mutate(pbdif = pbdif * 100)
+
+pbdifs = difs %>%
+  select(-absdif)
+
+medians = pbdifs %>%
+  group_by(year) %>%
+  filter(!year == 2025) %>%
+  summarize(median = median(pbdif))
+
+pbdif_figure = ggplot() +
+    geom_line(data = pbdifs,
+              aes(
+                x = year,
+                y = pbdif,
+                group = model,
+                color = model, 
+                linetype = model
+              ),
+              size = 0.75) +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS"))+
+    theme_emf() +
+    theme(axis.ticks = element_line(color = "black"), 
+          axis.ticks.length = unit(-0.15, "cm"),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = expression(paste("Percent Difference (%)"))) 
+
+absdifs = difs %>%
+  select(-pbdif)
+
+medians = absdifs %>%
+  group_by(year) %>%
+  filter(!year == 2025) %>%
+  summarize(median = median(absdif))
+
+absdif_figure = ggplot() +
+    geom_line(data = absdifs,
+              aes(
+                x = year,
+                y = absdif,
+                group = model,
+                color = model, 
+                linetype = model
+              ),
+              size = 0.75) +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS"))+
+    theme_emf() +
+    theme(axis.ticks = element_line(color = "black"), 
+          axis.ticks.length = unit(-0.15, "cm"),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = expression(paste("Absolute Difference (Emissions (Mt C", O[2], "/yr))"))) 
+
+fig = (NoIRAfigure |
+         IRAfigure) / (absdif_figure | pbdif_figure) +
+  plot_layout(guides = "collect")
+fig
+
+savefig(fig, fig_no)
+
+ts_df_data = ts_df %>%
+  mutate(variable = "Economy-Wide Direct Emissions", figure_num = fig_no) %>%
+  ungroup() %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+pbdifs_data = pbdifs %>%
+  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Economy-Wide Direct Emissions") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+absdifs_data = absdifs %>%
+  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Economy-Wide Direct Emissions") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+data = rbind(ts_df_data, absdifs_data, pbdifs_data)
+
+write.csv(data, file =  paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+
+```
+
+### Transportation
+
+```{r}
+fig_no = "E.25.transportation_projections_direct"
+
+test2 = c("EPS-EI" = "#DD614A",
+            "GCAM-CGS" = "#6a959b",
+            "GCAM-PNNL" = "#2A546C",
+            "Haiku-RFF" = "#AE7F2C",
+            "IPM-EPA" = "#8B507E",
+            "IPM-NRDC" = "#488C49",
+            "MARKAL-NETL" = "#af499b",
+            "NEMS-EIA" = NA,
+            "NEMS-OP" = "#11897d",
+            "NEMS-RHG" = "#25266b",
+            "ReEDS-NREL" = "#b72467",
+            "REGEN-EPRI" = "#f15a22",
+            "RIO-REPEAT" = "#524fa1",
+            "USREP-ReEDS" = "#0083ca")
+
+ts_df = spg_clean(
+  97,
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+  "EPA-GHGI",
+  config,
+  clean_data,
+  figmap_leep_timeseries
+) %>%
+  filter(year == 2021 | year == 2025 | year == 2030 | year == 2035) %>%
+  select(model, scenario, unit, title_name, year, value) %>%
+  mutate(title_name = "Transportation Direct Emissions")
+
+noIRAmedians = ts_df[ts_df$scenario == "No IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+IRAmedians = ts_df[ts_df$scenario == "IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA",], aes(year, value, color = model)) +
+  geom_line(aes(linetype = model), size = 0.75) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+  theme_emf()+
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+  scale_y_continuous(limits = c(1000, 2000), breaks = c(1000, 1500, 2000), labels = scales::comma) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS")) +
+  labs(title = "No IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) + 
+  theme(axis.ticks = element_line(color = "black"),
+           axis.ticks.length = unit(-0.15, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = noIRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA",], aes(year, value, color = model)) +
+  geom_line(aes(linetype = model),size = 0.75) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+  theme_emf() +
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) + 
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS")) +
+  scale_y_continuous(limits = c(1000, 2000), breaks = c(1000, 1500, 2000), labels = scales::comma) +
+  labs(title = "IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) +
+  theme(axis.ticks = element_line(color = "black"),
+           axis.ticks.length = unit(-0.15, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = IRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+#Absolute Difference
+difs = ts_df %>%
+  group_by(model, year) %>%
+  summarize(absdif = (value[scenario == "IRA"] - value[scenario == "No IRA"]), 
+          pbdif = (value[scenario == "IRA"] - value[scenario == "No IRA"])/value[scenario=="No IRA"]) %>%
+  mutate(pbdif = pbdif * 100)
+
+pbdifs = difs %>%
+  select(-absdif)
+
+medians = pbdifs %>%
+  group_by(year) %>%
+  filter(!year == 2025) %>%
+  summarize(median = median(pbdif))
+
+pbdif_figure = ggplot() +
+    geom_line(data = pbdifs,
+              aes(
+                x = year,
+                y = pbdif,
+                group = model,
+                color = model, 
+                linetype = model
+              ),
+              size = 0.75) +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS"))+
+    theme_emf() +
+    theme(axis.ticks = element_line(color = "black"), 
+          axis.ticks.length = unit(-0.15, "cm"),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = expression(paste("Percent Difference (%)"))) 
+
+absdifs = difs %>%
+  select(-pbdif)
+
+medians = absdifs %>%
+  group_by(year) %>%
+  filter(!year == 2025) %>%
+  summarize(median = median(absdif))
+
+absdif_figure = ggplot() +
+    geom_line(data = absdifs,
+              aes(
+                x = year,
+                y = absdif,
+                group = model,
+                color = model, 
+                linetype = model
+              ),
+              size = 0.75) +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS"))+
+    theme_emf() +
+    theme(axis.ticks = element_line(color = "black"), 
+          axis.ticks.length = unit(-0.15, "cm"),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = expression(paste("Absolute Difference (Emissions (Mt C", O[2], "/yr))"))) 
+
+fig = (NoIRAfigure |
+         IRAfigure) / (absdif_figure | pbdif_figure) +
+  plot_layout(guides = "collect")
+fig
+
+savefig(fig, fig_no)
+
+ts_df_data = ts_df %>%
+  mutate(variable = "Transportation Direct Emissions", figure_num = fig_no) %>%
+  ungroup() %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+pbdifs_data = pbdifs %>%
+  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Transportation Direct Emissions") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+absdifs_data = absdifs %>%
+  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Transportation Direct Emissions") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+data = rbind(ts_df_data, absdifs_data, pbdifs_data)
+
+write.csv(data, file =  paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+
+```
+
+### Buildings
+
+
+```{r}
+fig_no = "E.26.buildings_projections_direct"
+
+test2 = c("EPS-EI" = "#DD614A",
+            "GCAM-CGS" = "#6a959b",
+            "GCAM-PNNL" = "#2A546C",
+            "Haiku-RFF" = "#AE7F2C",
+            "IPM-EPA" = "#8B507E",
+            "IPM-NRDC" = "#488C49",
+            "MARKAL-NETL" = "#af499b",
+            "NEMS-EIA" = NA,
+            "NEMS-OP" = "#11897d",
+            "NEMS-RHG" = "#25266b",
+            "ReEDS-NREL" = "#b72467",
+            "REGEN-EPRI" = "#f15a22",
+            "RIO-REPEAT" = "#524fa1",
+            "USREP-ReEDS" = "#0083ca")
+
+ts_df = spg_clean(
+  95,
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+  "EPA-GHGI",
+  config,
+  clean_data,
+  figmap_leep_timeseries
+) %>%
+  filter(year == 2021 | year == 2025 | year == 2030 | year == 2035) %>%
+  select(model, scenario, unit, title_name, year, value) %>%
+  mutate(title_name = "Buildings Direct Emissions")
+
+noIRAmedians = ts_df[ts_df$scenario == "No IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+IRAmedians = ts_df[ts_df$scenario == "IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA",], aes(year, value, color = model)) +
+  geom_line(aes(linetype = model), size = 0.75) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+  theme_emf()+
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+  scale_y_continuous(limits = c(200, 700), breaks = c(200, 450, 700), labels = scales::comma) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS")) +
+  labs(title = "No IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) + 
+  theme(axis.ticks = element_line(color = "black"),
+           axis.ticks.length = unit(-0.15, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = noIRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA",], aes(year, value, color = model)) +
+  geom_line(aes(linetype = model),size = 0.75) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+  theme_emf() +
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) + 
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS")) +
+  scale_y_continuous(limits = c(200, 700), breaks = c(200, 450, 700), labels = scales::comma) +
+  labs(title = "IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) +
+  theme(axis.ticks = element_line(color = "black"),
+           axis.ticks.length = unit(-0.15, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = IRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+#Absolute Difference
+difs = ts_df %>%
+  group_by(model, year) %>%
+  summarize(absdif = (value[scenario == "IRA"] - value[scenario == "No IRA"]), 
+          pbdif = (value[scenario == "IRA"] - value[scenario == "No IRA"])/value[scenario=="No IRA"]) %>%
+  mutate(pbdif = pbdif * 100)
+
+pbdifs = difs %>%
+  select(-absdif)
+
+medians = pbdifs %>%
+  group_by(year) %>%
+  filter(!year == 2025) %>%
+  summarize(median = median(pbdif))
+
+pbdif_figure = ggplot() +
+    geom_line(data = pbdifs,
+              aes(
+                x = year,
+                y = pbdif,
+                group = model,
+                color = model, 
+                linetype = model
+              ),
+              size = 0.75) +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS"))+
+    theme_emf() +
+    theme(axis.ticks = element_line(color = "black"), 
+          axis.ticks.length = unit(-0.15, "cm"),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = expression(paste("Percent Difference (%)"))) 
+
+absdifs = difs %>%
+  select(-pbdif)
+
+medians = absdifs %>%
+  group_by(year) %>%
+  filter(!year == 2025) %>%
+  summarize(median = median(absdif))
+
+absdif_figure = ggplot() +
+    geom_line(data = absdifs,
+              aes(
+                x = year,
+                y = absdif,
+                group = model,
+                color = model, 
+                linetype = model
+              ),
+              size = 0.75) +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS"))+
+    theme_emf() +
+    theme(axis.ticks = element_line(color = "black"), 
+          axis.ticks.length = unit(-0.15, "cm"),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = expression(paste("Absolute Difference (Emissions (Mt C", O[2], "/yr))"))) 
+
+fig = (NoIRAfigure |
+         IRAfigure) / (absdif_figure | pbdif_figure) +
+  plot_layout(guides = "collect")
+fig
+
+savefig(fig, fig_no)
+
+ts_df_data = ts_df %>%
+  mutate(variable = "Buildings Direct Emissions", figure_num = fig_no) %>%
+  ungroup() %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+pbdifs_data = pbdifs %>%
+  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Buildings Direct Emissions") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+absdifs_data = absdifs %>%
+  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Buildings Direct Emissions") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+data = rbind(ts_df_data, absdifs_data, pbdifs_data)
+
+write.csv(data, file =  paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+
+```
+
+
+### Industry
+
+
+```{r}
+fig_no = "E.27.industry_projections_direct"
+
+test2 = c("EPS-EI" = "#DD614A",
+            "GCAM-CGS" = "#6a959b",
+            "GCAM-PNNL" = "#2A546C",
+            "Haiku-RFF" = "#AE7F2C",
+            "IPM-EPA" = "#8B507E",
+            "IPM-NRDC" = "#488C49",
+            "MARKAL-NETL" = "#af499b",
+            "NEMS-EIA" = NA,
+            "NEMS-OP" = "#11897d",
+            "NEMS-RHG" = "#25266b",
+            "ReEDS-NREL" = "#b72467",
+            "REGEN-EPRI" = "#f15a22",
+            "RIO-REPEAT" = "#524fa1",
+            "USREP-ReEDS" = "#0083ca")
+
+ts_df = spg_clean(
+  96,
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+  "EPA-GHGI",
+  config,
+  clean_data,
+  figmap_leep_timeseries
+) %>%
+  filter(year == 2021 | year == 2025 | year == 2030 | year == 2035) %>%
+  select(model, scenario, unit, title_name, year, value) %>%
+  mutate(title_name = "Industry Direct Emissions")
+
+noIRAmedians = ts_df[ts_df$scenario == "No IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+IRAmedians = ts_df[ts_df$scenario == "IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA",], aes(year, value, color = model)) +
+  geom_line(aes(linetype = model), size = 0.75) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+  theme_emf()+
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+  scale_y_continuous(limits = c(600, 1250), breaks = c(600, 800, 1000, 1200), labels = scales::comma) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS")) +
+  labs(title = "No IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) + 
+  theme(axis.ticks = element_line(color = "black"),
+           axis.ticks.length = unit(-0.15, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = noIRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA",], aes(year, value, color = model)) +
+  geom_line(aes(linetype = model),size = 0.75) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+  theme_emf() +
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) + 
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS")) +
+  scale_y_continuous(limits = c(600, 1250), breaks = c(600, 800, 1000, 1200), labels = scales::comma) +
+  labs(title = "IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) +
+  theme(axis.ticks = element_line(color = "black"),
+           axis.ticks.length = unit(-0.15, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = IRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+#Absolute Difference
+difs = ts_df %>%
+  group_by(model, year) %>%
+  summarize(absdif = (value[scenario == "IRA"] - value[scenario == "No IRA"]), 
+          pbdif = (value[scenario == "IRA"] - value[scenario == "No IRA"])/value[scenario=="No IRA"]) %>%
+  mutate(pbdif = pbdif * 100)
+
+pbdifs = difs %>%
+  select(-absdif)
+
+medians = pbdifs %>%
+  group_by(year) %>%
+  filter(!year == 2025) %>%
+  summarize(median = median(pbdif))
+
+pbdif_figure = ggplot() +
+    geom_line(data = pbdifs,
+              aes(
+                x = year,
+                y = pbdif,
+                group = model,
+                color = model, 
+                linetype = model
+              ),
+              size = 0.75) +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS"))+
+    theme_emf() +
+    theme(axis.ticks = element_line(color = "black"), 
+          axis.ticks.length = unit(-0.15, "cm"),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = expression(paste("Percent Difference (%)"))) 
+
+absdifs = difs %>%
+  select(-pbdif)
+
+medians = absdifs %>%
+  group_by(year) %>%
+  filter(!year == 2025) %>%
+  summarize(median = median(absdif))
+
+absdif_figure = ggplot() +
+    geom_line(data = absdifs,
+              aes(
+                x = year,
+                y = absdif,
+                group = model,
+                color = model, 
+                linetype = model
+              ),
+              size = 0.75) +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS"))+
+    theme_emf() +
+    theme(axis.ticks = element_line(color = "black"), 
+          axis.ticks.length = unit(-0.15, "cm"),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = expression(paste("Absolute Difference (Emissions (Mt C", O[2], "/yr))"))) 
+
+fig = (NoIRAfigure |
+         IRAfigure) / (absdif_figure | pbdif_figure) +
+  plot_layout(guides = "collect")
+fig
+
+savefig(fig, fig_no)
+
+ts_df_data = ts_df %>%
+  mutate(variable = "Industry Direct Emissions", figure_num = fig_no) %>%
+  ungroup() %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+pbdifs_data = pbdifs %>%
+  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Industry Direct Emissions") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+absdifs_data = absdifs %>%
+  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Industry Direct Emissions") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+data = rbind(ts_df_data, absdifs_data, pbdifs_data)
+
+write.csv(data, file =  paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+
+```
+
+
+## Indirect Emissions
+
+### EconWide
+
+```{r}
+fig_no = "E.28.ew_projections_indirect"
+
+test2 = c("EPS-EI" = "#DD614A",
+            "GCAM-CGS" = "#6a959b",
+            "GCAM-PNNL" = "#2A546C",
+            "Haiku-RFF" = "#AE7F2C",
+            "IPM-EPA" = "#8B507E",
+            "IPM-NRDC" = "#488C49",
+            "MARKAL-NETL" = "#af499b",
+            "NEMS-EIA" = NA,
+            "NEMS-OP" = "#11897d",
+            "NEMS-RHG" = "#25266b",
+            "ReEDS-NREL" = "#b72467",
+            "REGEN-EPRI" = "#f15a22",
+            "RIO-REPEAT" = "#524fa1",
+            "USREP-ReEDS" = "#0083ca")
+
+Econ_data = spg_clean(
+  99,
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+  "EPA-GHGI",
+  config,
+  clean_data,
+  figmap_leep_timeseries
+)
+
+Elec_data = spg_clean(
+  98,
+  c("Scout-LEEP"),
+  "EPA-GHGI",
+  config,
+  clean_data,
+  figmap_leep_timeseries
+)
+
+ts_df = merge(Econ_data, Elec_data, by = c("model", "scenario", "year")) %>%
+  select(model, scenario, year, 
+         Econ = value.x, 
+         Power = value.y) %>%
+  mutate(value = Econ - Power) %>%
+  select(model, scenario, year, value) %>%
+  mutate(alpha = 1) %>%
+  mutate(variable_rename = "Non-Electricity")
+
+noIRAmedians = ts_df[ts_df$scenario == "No IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+IRAmedians = ts_df[ts_df$scenario == "IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA",], aes(year, value, color = model)) +
+  geom_line(aes(linetype = model), size = 0.75) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+  theme_emf()+
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+  scale_y_continuous(limits = c(2000, 4000), breaks = c(2000, 3000, 4000), labels = scales::comma) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS")) +
+  labs(title = "No IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) + 
+  theme(axis.ticks = element_line(color = "black"),
+           axis.ticks.length = unit(-0.15, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = noIRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA",], aes(year, value, color = model)) +
+  geom_line(aes(linetype = model),size = 0.75) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+  theme_emf() +
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) + 
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS")) +
+  scale_y_continuous(limits = c(2000, 4000), breaks = c(2000, 3000, 4000), labels = scales::comma) +
+  labs(title = "IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) +
+  theme(axis.ticks = element_line(color = "black"),
+           axis.ticks.length = unit(-0.15, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = IRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+#Absolute Difference
+difs = ts_df %>%
+  group_by(model, year) %>%
+  summarize(absdif = (value[scenario == "IRA"] - value[scenario == "No IRA"]), 
+          pbdif = (value[scenario == "IRA"] - value[scenario == "No IRA"])/value[scenario=="No IRA"]) %>%
+  mutate(pbdif = pbdif * 100)
+
+pbdifs = difs %>%
+  select(-absdif)
+
+medians = pbdifs %>%
+  group_by(year) %>%
+  filter(!year == 2025) %>%
+  summarize(median = median(pbdif))
+
+pbdif_figure = ggplot() +
+    geom_line(data = pbdifs,
+              aes(
+                x = year,
+                y = pbdif,
+                group = model,
+                color = model, 
+                linetype = model
+              ),
+              size = 0.75) +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS"))+
+    theme_emf() +
+    theme(axis.ticks = element_line(color = "black"), 
+          axis.ticks.length = unit(-0.15, "cm"),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = expression(paste("Percent Difference (%)"))) 
+
+absdifs = difs %>%
+  select(-pbdif)
+
+medians = absdifs %>%
+  group_by(year) %>%
+  filter(!year == 2025) %>%
+  summarize(median = median(absdif))
+
+absdif_figure = ggplot() +
+    geom_line(data = absdifs,
+              aes(
+                x = year,
+                y = absdif,
+                group = model,
+                color = model, 
+                linetype = model
+              ),
+              size = 0.75) +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS"))+
+    theme_emf() +
+    theme(axis.ticks = element_line(color = "black"), 
+          axis.ticks.length = unit(-0.15, "cm"),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = expression(paste("Absolute Difference (Emissions (Mt C", O[2], "/yr))"))) 
+
+fig = (NoIRAfigure |
+         IRAfigure) / (absdif_figure | pbdif_figure) +
+  plot_layout(guides = "collect")
+fig
+
+savefig(fig, fig_no)
+
+ts_df_data = ts_df %>%
+  mutate(variable = "Economy-Wide Indirect Emissions", figure_num = fig_no, unit = "Mt CO2/yr") %>%
+  ungroup() %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+pbdifs_data = pbdifs %>%
+  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Economy-Wide Indirect Emissions") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+absdifs_data = absdifs %>%
+  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Economy-Wide Indirect Emissions") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+data = rbind(ts_df_data, absdifs_data, pbdifs_data)
+
+write.csv(data, file =  paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+
+```
+
+### Transportation
+
+```{r}
+fig_no = "E.29.transportation_projections_indirect"
+
+test2 = c("EPS-EI" = "#DD614A",
+            "GCAM-CGS" = "#6a959b",
+            "GCAM-PNNL" = "#2A546C",
+            "Haiku-RFF" = "#AE7F2C",
+            "IPM-EPA" = "#8B507E",
+            "IPM-NRDC" = "#488C49",
+            "MARKAL-NETL" = "#af499b",
+            "NEMS-EIA" = NA,
+            "NEMS-OP" = "#11897d",
+            "NEMS-RHG" = "#25266b",
+            "ReEDS-NREL" = "#b72467",
+            "REGEN-EPRI" = "#f15a22",
+            "RIO-REPEAT" = "#524fa1",
+            "USREP-ReEDS" = "#0083ca")
+
+ts_df = spg_clean(
+  18,
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+  "EPA-GHGI",
+  config,
+  clean_data,
+  figmap_leep_timeseries
+) %>%
+  filter(year == 2021 | year == 2025 | year == 2030 | year == 2035) %>%
+  select(model, scenario, unit, title_name, year, value) %>%
+  mutate(title_name = "Transportation Direct Emissions")
+
+noIRAmedians = ts_df[ts_df$scenario == "No IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+IRAmedians = ts_df[ts_df$scenario == "IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA",], aes(year, value, color = model)) +
+  geom_line(aes(linetype = model), size = 0.75) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+  theme_emf()+
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+  scale_y_continuous(limits = c(0, 125), breaks = c(0, 30, 60, 90, 120), labels = scales::comma) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS")) +
+  labs(title = "No IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) + 
+  theme(axis.ticks = element_line(color = "black"),
+           axis.ticks.length = unit(-0.15, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = noIRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA",], aes(year, value, color = model)) +
+  geom_line(aes(linetype = model),size = 0.75) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+  theme_emf() +
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) + 
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS")) +
+  scale_y_continuous(limits = c(0, 125), breaks = c(0, 30, 60, 90, 120), labels = scales::comma) +
+  labs(title = "IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) +
+  theme(axis.ticks = element_line(color = "black"),
+           axis.ticks.length = unit(-0.15, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = IRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+#Absolute Difference
+difs = ts_df %>%
+  group_by(model, year) %>%
+  summarize(absdif = (value[scenario == "IRA"] - value[scenario == "No IRA"]), 
+          pbdif = (value[scenario == "IRA"] - value[scenario == "No IRA"])/value[scenario=="No IRA"]) %>%
+  mutate(pbdif = pbdif * 100)
+
+pbdifs = difs %>%
+  select(-absdif)
+
+medians = pbdifs %>%
+  group_by(year) %>%
+  filter(!year == 2025) %>%
+  summarize(median = median(pbdif))
+
+pbdif_figure = ggplot() +
+    geom_line(data = pbdifs,
+              aes(
+                x = year,
+                y = pbdif,
+                group = model,
+                color = model, 
+                linetype = model
+              ),
+              size = 0.75) +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS"))+
+    theme_emf() +
+    theme(axis.ticks = element_line(color = "black"), 
+          axis.ticks.length = unit(-0.15, "cm"),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = expression(paste("Percent Difference (%)"))) 
+
+absdifs = difs %>%
+  select(-pbdif)
+
+medians = absdifs %>%
+  group_by(year) %>%
+  filter(!year == 2025) %>%
+  summarize(median = median(absdif))
+
+absdif_figure = ggplot() +
+    geom_line(data = absdifs,
+              aes(
+                x = year,
+                y = absdif,
+                group = model,
+                color = model, 
+                linetype = model
+              ),
+              size = 0.75) +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS"))+
+    theme_emf() +
+    theme(axis.ticks = element_line(color = "black"), 
+          axis.ticks.length = unit(-0.15, "cm"),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = expression(paste("Absolute Difference (Emissions (Mt C", O[2], "/yr))"))) 
+
+fig = (NoIRAfigure |
+         IRAfigure) / (absdif_figure | pbdif_figure) +
+  plot_layout(guides = "collect")
+fig
+
+savefig(fig, fig_no)
+
+ts_df_data = ts_df %>%
+  mutate(variable = "Transportation Indirect Emissions", figure_num = fig_no) %>%
+  ungroup() %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+pbdifs_data = pbdifs %>%
+  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Transportation Indirect Emissions") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+absdifs_data = absdifs %>%
+  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Transportation Indirect Emissions") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+data = rbind(ts_df_data, absdifs_data, pbdifs_data)
+
+write.csv(data, file =  paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+
+```
+
+### Buildings
+
+
+```{r}
+fig_no = "E.30.buildings_projections_indirect"
+
+test2 = c("EPS-EI" = "#DD614A",
+            "GCAM-CGS" = "#6a959b",
+            "GCAM-PNNL" = "#2A546C",
+            "Haiku-RFF" = "#AE7F2C",
+            "IPM-EPA" = "#8B507E",
+            "IPM-NRDC" = "#488C49",
+            "MARKAL-NETL" = "#af499b",
+            "NEMS-EIA" = NA,
+            "NEMS-OP" = "#11897d",
+            "NEMS-RHG" = "#25266b",
+            "ReEDS-NREL" = "#b72467",
+            "REGEN-EPRI" = "#f15a22",
+            "RIO-REPEAT" = "#524fa1",
+            "USREP-ReEDS" = "#0083ca")
+
+ts_df = spg_clean(
+  22,
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+  "EPA-GHGI",
+  config,
+  clean_data,
+  figmap_leep_timeseries
+) %>%
+  filter(year == 2021 | year == 2025 | year == 2030 | year == 2035) %>%
+  select(model, scenario, unit, title_name, year, value) %>%
+  mutate(title_name = "Buildings Direct Emissions")
+
+noIRAmedians = ts_df[ts_df$scenario == "No IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+IRAmedians = ts_df[ts_df$scenario == "IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA",], aes(year, value, color = model)) +
+  geom_line(aes(linetype = model), size = 0.75) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+  theme_emf()+
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+  scale_y_continuous(limits = c(200, 1200), breaks = c(200, 700, 1200), labels = scales::comma) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS")) +
+  labs(title = "No IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) + 
+  theme(axis.ticks = element_line(color = "black"),
+           axis.ticks.length = unit(-0.15, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = noIRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA",], aes(year, value, color = model)) +
+  geom_line(aes(linetype = model),size = 0.75) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+  theme_emf() +
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) + 
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS")) +
+  scale_y_continuous(limits = c(200, 1200), breaks = c(200, 700, 1200), labels = scales::comma) +
+  labs(title = "IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) +
+  theme(axis.ticks = element_line(color = "black"),
+           axis.ticks.length = unit(-0.15, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = IRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+#Absolute Difference
+difs = ts_df %>%
+  group_by(model, year) %>%
+  summarize(absdif = (value[scenario == "IRA"] - value[scenario == "No IRA"]), 
+          pbdif = (value[scenario == "IRA"] - value[scenario == "No IRA"])/value[scenario=="No IRA"]) %>%
+  mutate(pbdif = pbdif * 100)
+
+pbdifs = difs %>%
+  select(-absdif)
+
+medians = pbdifs %>%
+  group_by(year) %>%
+  filter(!year == 2025) %>%
+  summarize(median = median(pbdif))
+
+pbdif_figure = ggplot() +
+    geom_line(data = pbdifs,
+              aes(
+                x = year,
+                y = pbdif,
+                group = model,
+                color = model, 
+                linetype = model
+              ),
+              size = 0.75) +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS"))+
+    theme_emf() +
+    theme(axis.ticks = element_line(color = "black"), 
+          axis.ticks.length = unit(-0.15, "cm"),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = expression(paste("Percent Difference (%)"))) 
+
+absdifs = difs %>%
+  select(-pbdif)
+
+medians = absdifs %>%
+  group_by(year) %>%
+  filter(!year == 2025) %>%
+  summarize(median = median(absdif))
+
+absdif_figure = ggplot() +
+    geom_line(data = absdifs,
+              aes(
+                x = year,
+                y = absdif,
+                group = model,
+                color = model, 
+                linetype = model
+              ),
+              size = 0.75) +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS"))+
+    theme_emf() +
+    theme(axis.ticks = element_line(color = "black"), 
+          axis.ticks.length = unit(-0.15, "cm"),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = expression(paste("Absolute Difference (Emissions (Mt C", O[2], "/yr))"))) 
+
+fig = (NoIRAfigure |
+         IRAfigure) / (absdif_figure | pbdif_figure) +
+  plot_layout(guides = "collect")
+fig
+
+savefig(fig, fig_no)
+
+ts_df_data = ts_df %>%
+  mutate(variable = "Buildings Indirect Emissions", figure_num = fig_no) %>%
+  ungroup() %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+pbdifs_data = pbdifs %>%
+  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Buildings Indirect Emissions") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+absdifs_data = absdifs %>%
+  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Buildings Indirect Emissions") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+data = rbind(ts_df_data, absdifs_data, pbdifs_data)
+
+write.csv(data, file =  paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+
+```
+
+
+### Industry
+
+
+```{r}
+fig_no = "E.31.industry_projections_indirect"
+
+test2 = c("EPS-EI" = "#DD614A",
+            "GCAM-CGS" = "#6a959b",
+            "GCAM-PNNL" = "#2A546C",
+            "Haiku-RFF" = "#AE7F2C",
+            "IPM-EPA" = "#8B507E",
+            "IPM-NRDC" = "#488C49",
+            "MARKAL-NETL" = "#af499b",
+            "NEMS-EIA" = NA,
+            "NEMS-OP" = "#11897d",
+            "NEMS-RHG" = "#25266b",
+            "ReEDS-NREL" = "#b72467",
+            "REGEN-EPRI" = "#f15a22",
+            "RIO-REPEAT" = "#524fa1",
+            "USREP-ReEDS" = "#0083ca")
+
+ts_df = spg_clean(
+  20,
+  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+  "EPA-GHGI",
+  config,
+  clean_data,
+  figmap_leep_timeseries
+) %>%
+  filter(year == 2021 | year == 2025 | year == 2030 | year == 2035) %>%
+  select(model, scenario, unit, title_name, year, value) %>%
+  mutate(title_name = "Industry Direct Emissions")
+
+noIRAmedians = ts_df[ts_df$scenario == "No IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+IRAmedians = ts_df[ts_df$scenario == "IRA", ] %>%
+  filter(year == 2030 | year == 2035) %>%
+  group_by(year) %>%
+  summarize(median = median(value))
+
+NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA",], aes(year, value, color = model)) +
+  geom_line(aes(linetype = model), size = 0.75) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+  theme_emf()+
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+  scale_y_continuous(limits = c(0, 500), breaks = c(0, 250, 500), labels = scales::comma) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS")) +
+  labs(title = "No IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) + 
+  theme(axis.ticks = element_line(color = "black"),
+           axis.ticks.length = unit(-0.15, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = noIRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA",], aes(year, value, color = model)) +
+  geom_line(aes(linetype = model),size = 0.75) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+  theme_emf() +
+  scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) + 
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS")) +
+  scale_y_continuous(limits = c(0, 500), breaks = c(0, 250, 500), labels = scales::comma) +
+  labs(title = "IRA",
+       y = expression(paste("Emissions (Mt C", O[2], "/yr)")),
+       x = element_blank()) +
+  theme(axis.ticks = element_line(color = "black"),
+           axis.ticks.length = unit(-0.15, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+  geom_point(
+    data = IRAmedians,
+    aes(x = year, y = median),
+    color = "black",
+    shape = 16,
+    size = 2
+  )
+
+#Absolute Difference
+difs = ts_df %>%
+  group_by(model, year) %>%
+  summarize(absdif = (value[scenario == "IRA"] - value[scenario == "No IRA"]), 
+          pbdif = (value[scenario == "IRA"] - value[scenario == "No IRA"])/value[scenario=="No IRA"]) %>%
+  mutate(pbdif = pbdif * 100)
+
+pbdifs = difs %>%
+  select(-absdif)
+
+medians = pbdifs %>%
+  group_by(year) %>%
+  filter(!year == 2025) %>%
+  summarize(median = median(pbdif))
+
+pbdif_figure = ggplot() +
+    geom_line(data = pbdifs,
+              aes(
+                x = year,
+                y = pbdif,
+                group = model,
+                color = model, 
+                linetype = model
+              ),
+              size = 0.75) +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS"))+
+    theme_emf() +
+    theme(axis.ticks = element_line(color = "black"), 
+          axis.ticks.length = unit(-0.15, "cm"),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = expression(paste("Percent Difference (%)"))) 
+
+absdifs = difs %>%
+  select(-pbdif)
+
+medians = absdifs %>%
+  group_by(year) %>%
+  filter(!year == 2025) %>%
+  summarize(median = median(absdif))
+
+absdif_figure = ggplot() +
+    geom_line(data = absdifs,
+              aes(
+                x = year,
+                y = absdif,
+                group = model,
+                color = model, 
+                linetype = model
+              ),
+              size = 0.75) +
+    geom_point(
+      data = medians,
+      aes(x = year, y = median),
+      color = "black",
+      shape = 16,
+      size = 2
+    ) +
+    scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                  "GCAM-CGS",
+                                                  "GCAM-PNNL",
+                                                  "Haiku-RFF",
+                                                  "IPM-EPA",
+                                                  "IPM-NRDC",
+                                                  "MARKAL-NETL",
+                                                  "NEMS-EIA",
+                                                  "NEMS-OP",
+                                                  "NEMS-RHG",
+                                                  "ReEDS-NREL",
+                                                  "REGEN-EPRI",
+                                                  "RIO-REPEAT",
+                                                  "USREP-ReEDS")) +
+    scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                     "GCAM-CGS" = "solid",
+                                     "GCAM-PNNL" = "solid",
+                                     "Haiku-RFF" = "solid",
+                                     "IPM-EPA" = "solid",
+                                     "IPM-NRDC" = "solid",
+                                     "MARKAL-NETL" = "solid",
+                                     "NEMS-EIA" = "dotdash",
+                                     "NEMS-OP" = "twodash",
+                                     "NEMS-RHG" = "solid",
+                                     "ReEDS-NREL" = "longdash",
+                                     "REGEN-EPRI" = "dashed",
+                                     "RIO-REPEAT" = "dotted",
+                                     "USREP-ReEDS" = "solid"),
+
+                          breaks = c("EPS-EI",
+                                     "GCAM-CGS",
+                                     "GCAM-PNNL",
+                                     "Haiku-RFF",
+                                     "IPM-EPA",
+                                     "IPM-NRDC",
+                                     "MARKAL-NETL",
+                                     "NEMS-EIA",
+                                     "NEMS-OP",
+                                     "NEMS-RHG",
+                                     "ReEDS-NREL",
+                                     "REGEN-EPRI",
+                                     "RIO-REPEAT",
+                                     "USREP-ReEDS"))+
+    theme_emf() +
+    theme(axis.ticks = element_line(color = "black"), 
+          axis.ticks.length = unit(-0.15, "cm"),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      panel.spacing.x = unit(4, "mm"),
+      legend.position = "none"
+    ) +
+    scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+    labs(title = "",
+         x = "",
+         y = expression(paste("Absolute Difference (Emissions (Mt C", O[2], "/yr))"))) 
+
+fig = (NoIRAfigure |
+         IRAfigure) / (absdif_figure | pbdif_figure) +
+  plot_layout(guides = "collect")
+fig
+
+savefig(fig, fig_no)
+
+ts_df_data = ts_df %>%
+  mutate(variable = "Industry Indirect Emissions", figure_num = fig_no) %>%
+  ungroup() %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+pbdifs_data = pbdifs %>%
+  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Industry Indirect Emissions") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+absdifs_data = absdifs %>%
+  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Industry Indirect Emissions") %>%
+  select(figure_num, model, scenario, variable, unit, year, value)
+
+data = rbind(ts_df_data, absdifs_data, pbdifs_data)
+
+write.csv(data, file =  paste0("output/final_figures/data/Fig",fig_no,".csv"), row.names = FALSE)
+
+```
+
+
 
 # Appendix F: Supplemental Results
 

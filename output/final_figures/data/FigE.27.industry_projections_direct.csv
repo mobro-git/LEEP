@@ -1,162 +1,162 @@
-"figure_no","title_name","model","scenario","variable","unit","year","value","figure_num"
-96,"Industry Direct Emissions","EPA-GHGI","Historic","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","EPS-EI","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","EPS-EI","IRA","Industry Direct Emissions","Mt CO2/yr",2025,850.04476039527,NA
-96,"Industry Direct Emissions","EPS-EI","IRA","Industry Direct Emissions","Mt CO2/yr",2030,803.0638230478,NA
-96,"Industry Direct Emissions","EPS-EI","IRA","Industry Direct Emissions","Mt CO2/yr",2035,777.01532772733,NA
-96,"Industry Direct Emissions","EPS-EI","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","EPS-EI","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,872.540360894,NA
-96,"Industry Direct Emissions","EPS-EI","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,867.8453321512,NA
-96,"Industry Direct Emissions","EPS-EI","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,859.5106171641,NA
-96,"Industry Direct Emissions","GCAM-CGS","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","GCAM-CGS","IRA","Industry Direct Emissions","Mt CO2/yr",2025,1072.28115139338,NA
-96,"Industry Direct Emissions","GCAM-CGS","IRA","Industry Direct Emissions","Mt CO2/yr",2030,1015.73661606983,NA
-96,"Industry Direct Emissions","GCAM-CGS","IRA","Industry Direct Emissions","Mt CO2/yr",2035,1063.6926035448,NA
-96,"Industry Direct Emissions","GCAM-CGS","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","GCAM-CGS","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,1180.17816204515,NA
-96,"Industry Direct Emissions","GCAM-CGS","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,1208.99411915652,NA
-96,"Industry Direct Emissions","GCAM-CGS","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,1222.12174799319,NA
-96,"Industry Direct Emissions","GCAM-PNNL","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","GCAM-PNNL","IRA","Industry Direct Emissions","Mt CO2/yr",2025,788.917359830344,NA
-96,"Industry Direct Emissions","GCAM-PNNL","IRA","Industry Direct Emissions","Mt CO2/yr",2030,789.92060584739,NA
-96,"Industry Direct Emissions","GCAM-PNNL","IRA","Industry Direct Emissions","Mt CO2/yr",2035,773.204942909632,NA
-96,"Industry Direct Emissions","GCAM-PNNL","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","GCAM-PNNL","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,792.6696540004,NA
-96,"Industry Direct Emissions","GCAM-PNNL","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,790.95660080117,NA
-96,"Industry Direct Emissions","GCAM-PNNL","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,774.2846881067,NA
-96,"Industry Direct Emissions","MARKAL-NETL","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","MARKAL-NETL","IRA","Industry Direct Emissions","Mt CO2/yr",2025,1048.61,NA
-96,"Industry Direct Emissions","MARKAL-NETL","IRA","Industry Direct Emissions","Mt CO2/yr",2030,1076.13,NA
-96,"Industry Direct Emissions","MARKAL-NETL","IRA","Industry Direct Emissions","Mt CO2/yr",2035,1074.38,NA
-96,"Industry Direct Emissions","MARKAL-NETL","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","MARKAL-NETL","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,1063.06,NA
-96,"Industry Direct Emissions","MARKAL-NETL","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,1080.08,NA
-96,"Industry Direct Emissions","MARKAL-NETL","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,1107.08,NA
-96,"Industry Direct Emissions","NEMS-EIA","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","NEMS-EIA","IRA","Industry Direct Emissions","Mt CO2/yr",2025,751.268854528375,NA
-96,"Industry Direct Emissions","NEMS-EIA","IRA","Industry Direct Emissions","Mt CO2/yr",2030,787.106926017752,NA
-96,"Industry Direct Emissions","NEMS-EIA","IRA","Industry Direct Emissions","Mt CO2/yr",2035,812.867345738861,NA
-96,"Industry Direct Emissions","NEMS-EIA","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","NEMS-EIA","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,764.154848660645,NA
-96,"Industry Direct Emissions","NEMS-EIA","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,794.125901927798,NA
-96,"Industry Direct Emissions","NEMS-EIA","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,819.041004492983,NA
-96,"Industry Direct Emissions","NEMS-OP","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","NEMS-OP","IRA","Industry Direct Emissions","Mt CO2/yr",2025,957.695221,NA
-96,"Industry Direct Emissions","NEMS-OP","IRA","Industry Direct Emissions","Mt CO2/yr",2030,942.791809,NA
-96,"Industry Direct Emissions","NEMS-OP","IRA","Industry Direct Emissions","Mt CO2/yr",2035,943.156929,NA
-96,"Industry Direct Emissions","NEMS-OP","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","NEMS-OP","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,974.757325,NA
-96,"Industry Direct Emissions","NEMS-OP","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,984.914094,NA
-96,"Industry Direct Emissions","NEMS-OP","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,988.499573,NA
-96,"Industry Direct Emissions","NEMS-RHG","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","NEMS-RHG","IRA","Industry Direct Emissions","Mt CO2/yr",2025,813.925096343283,NA
-96,"Industry Direct Emissions","NEMS-RHG","IRA","Industry Direct Emissions","Mt CO2/yr",2030,815.411926078259,NA
-96,"Industry Direct Emissions","NEMS-RHG","IRA","Industry Direct Emissions","Mt CO2/yr",2035,702.814265742925,NA
-96,"Industry Direct Emissions","NEMS-RHG","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","NEMS-RHG","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,813.895126709715,NA
-96,"Industry Direct Emissions","NEMS-RHG","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,822.693681875426,NA
-96,"Industry Direct Emissions","NEMS-RHG","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,827.112770846044,NA
-96,"Industry Direct Emissions","REGEN-EPRI","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","REGEN-EPRI","IRA","Industry Direct Emissions","Mt CO2/yr",2025,923.515706821811,NA
-96,"Industry Direct Emissions","REGEN-EPRI","IRA","Industry Direct Emissions","Mt CO2/yr",2030,929.877799699341,NA
-96,"Industry Direct Emissions","REGEN-EPRI","IRA","Industry Direct Emissions","Mt CO2/yr",2035,863.950637741897,NA
-96,"Industry Direct Emissions","REGEN-EPRI","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","REGEN-EPRI","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,933.812450317082,NA
-96,"Industry Direct Emissions","REGEN-EPRI","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,945.371637378423,NA
-96,"Industry Direct Emissions","REGEN-EPRI","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,912.419258683739,NA
-96,"Industry Direct Emissions","RIO-REPEAT","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","RIO-REPEAT","IRA","Industry Direct Emissions","Mt CO2/yr",2025,777,NA
-96,"Industry Direct Emissions","RIO-REPEAT","IRA","Industry Direct Emissions","Mt CO2/yr",2030,737,NA
-96,"Industry Direct Emissions","RIO-REPEAT","IRA","Industry Direct Emissions","Mt CO2/yr",2035,611,NA
-96,"Industry Direct Emissions","RIO-REPEAT","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","RIO-REPEAT","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,815.5,NA
-96,"Industry Direct Emissions","RIO-REPEAT","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,833,NA
-96,"Industry Direct Emissions","RIO-REPEAT","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,847,NA
-96,"Industry Direct Emissions","USREP-ReEDS","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","USREP-ReEDS","IRA","Industry Direct Emissions","Mt CO2/yr",2025,901.94058101,NA
-96,"Industry Direct Emissions","USREP-ReEDS","IRA","Industry Direct Emissions","Mt CO2/yr",2030,902.40854633,NA
-96,"Industry Direct Emissions","USREP-ReEDS","IRA","Industry Direct Emissions","Mt CO2/yr",2035,938.20098279,NA
-96,"Industry Direct Emissions","USREP-ReEDS","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6,NA
-96,"Industry Direct Emissions","USREP-ReEDS","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,937.41448769,NA
-96,"Industry Direct Emissions","USREP-ReEDS","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,951.62160827,NA
-96,"Industry Direct Emissions","USREP-ReEDS","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,946.46016115,NA
-NA,NA,"USREP-ReEDS","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0,"E.27.industry_projections_direct"
-NA,NA,"USREP-ReEDS","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-35.4739066799999,"E.27.industry_projections_direct"
-NA,NA,"USREP-ReEDS","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-49.21306194,"E.27.industry_projections_direct"
-NA,NA,"USREP-ReEDS","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-8.25917836000008,"E.27.industry_projections_direct"
-NA,NA,"EPS-EI","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0,"E.27.industry_projections_direct"
-NA,NA,"EPS-EI","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-22.4956004987299,"E.27.industry_projections_direct"
-NA,NA,"EPS-EI","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-64.7815091033999,"E.27.industry_projections_direct"
-NA,NA,"EPS-EI","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-82.49528943677,"E.27.industry_projections_direct"
-NA,NA,"GCAM-CGS","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0,"E.27.industry_projections_direct"
-NA,NA,"GCAM-CGS","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-107.89701065177,"E.27.industry_projections_direct"
-NA,NA,"GCAM-CGS","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-193.25750308669,"E.27.industry_projections_direct"
-NA,NA,"GCAM-CGS","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-158.42914444839,"E.27.industry_projections_direct"
-NA,NA,"GCAM-PNNL","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0,"E.27.industry_projections_direct"
-NA,NA,"GCAM-PNNL","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-3.75229417005642,"E.27.industry_projections_direct"
-NA,NA,"GCAM-PNNL","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-1.03599495378035,"E.27.industry_projections_direct"
-NA,NA,"GCAM-PNNL","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-1.07974519706772,"E.27.industry_projections_direct"
-NA,NA,"MARKAL-NETL","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0,"E.27.industry_projections_direct"
-NA,NA,"MARKAL-NETL","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-14.45,"E.27.industry_projections_direct"
-NA,NA,"MARKAL-NETL","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-3.94999999999982,"E.27.industry_projections_direct"
-NA,NA,"MARKAL-NETL","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-32.6999999999998,"E.27.industry_projections_direct"
-NA,NA,"NEMS-RHG","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0,"E.27.industry_projections_direct"
-NA,NA,"NEMS-RHG","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,0.0299696335680437,"E.27.industry_projections_direct"
-NA,NA,"NEMS-RHG","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-7.28175579716708,"E.27.industry_projections_direct"
-NA,NA,"NEMS-RHG","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-124.298505103119,"E.27.industry_projections_direct"
-NA,NA,"NEMS-OP","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0,"E.27.industry_projections_direct"
-NA,NA,"NEMS-OP","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-17.0621040000001,"E.27.industry_projections_direct"
-NA,NA,"NEMS-OP","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-42.1222849999999,"E.27.industry_projections_direct"
-NA,NA,"NEMS-OP","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-45.3426439999998,"E.27.industry_projections_direct"
-NA,NA,"REGEN-EPRI","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0,"E.27.industry_projections_direct"
-NA,NA,"REGEN-EPRI","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-10.296743495271,"E.27.industry_projections_direct"
-NA,NA,"REGEN-EPRI","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-15.4938376790819,"E.27.industry_projections_direct"
-NA,NA,"REGEN-EPRI","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-48.468620941842,"E.27.industry_projections_direct"
-NA,NA,"RIO-REPEAT","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0,"E.27.industry_projections_direct"
-NA,NA,"RIO-REPEAT","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-38.5,"E.27.industry_projections_direct"
-NA,NA,"RIO-REPEAT","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-96,"E.27.industry_projections_direct"
-NA,NA,"RIO-REPEAT","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-236,"E.27.industry_projections_direct"
-NA,NA,"NEMS-EIA","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0,"E.27.industry_projections_direct"
-NA,NA,"NEMS-EIA","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-12.8859941322698,"E.27.industry_projections_direct"
-NA,NA,"NEMS-EIA","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-7.01897591004627,"E.27.industry_projections_direct"
-NA,NA,"NEMS-EIA","% Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-6.17365875412236,"E.27.industry_projections_direct"
-NA,"Industry Direct Emissions","USREP-ReEDS","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Industry Direct Emissions","USREP-ReEDS","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-3.78422855053324,NA
-NA,"Industry Direct Emissions","USREP-ReEDS","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-5.17149479502329,NA
-NA,"Industry Direct Emissions","USREP-ReEDS","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-0.872638775409705,NA
-NA,"Industry Direct Emissions","EPS-EI","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Industry Direct Emissions","EPS-EI","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-2.57817305731062,NA
-NA,"Industry Direct Emissions","EPS-EI","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-7.46463761495619,NA
-NA,"Industry Direct Emissions","EPS-EI","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-9.59793722024725,NA
-NA,"Industry Direct Emissions","GCAM-CGS","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Industry Direct Emissions","GCAM-CGS","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-9.14243409357732,NA
-NA,"Industry Direct Emissions","GCAM-CGS","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-15.9849828898688,NA
-NA,"Industry Direct Emissions","GCAM-CGS","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-12.9634502215955,NA
-NA,"Industry Direct Emissions","GCAM-PNNL","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Industry Direct Emissions","GCAM-PNNL","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-0.473374267719163,NA
-NA,"Industry Direct Emissions","GCAM-PNNL","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-0.130979999753586,NA
-NA,"Industry Direct Emissions","GCAM-PNNL","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-0.139450671523409,NA
-NA,"Industry Direct Emissions","MARKAL-NETL","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Industry Direct Emissions","MARKAL-NETL","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-1.35928357759675,NA
-NA,"Industry Direct Emissions","MARKAL-NETL","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-0.365713650840662,NA
-NA,"Industry Direct Emissions","MARKAL-NETL","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-2.95371608194528,NA
-NA,"Industry Direct Emissions","NEMS-RHG","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Industry Direct Emissions","NEMS-RHG","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,0.00368224757521281,NA
-NA,"Industry Direct Emissions","NEMS-RHG","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-0.885111428176702,NA
-NA,"Industry Direct Emissions","NEMS-RHG","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-15.0279997461501,NA
-NA,"Industry Direct Emissions","NEMS-OP","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Industry Direct Emissions","NEMS-OP","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-1.75039505345601,NA
-NA,"Industry Direct Emissions","NEMS-OP","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-4.27674710480891,NA
-NA,"Industry Direct Emissions","NEMS-OP","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-4.58701705478631,NA
-NA,"Industry Direct Emissions","REGEN-EPRI","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Industry Direct Emissions","REGEN-EPRI","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-1.10265648008598,NA
-NA,"Industry Direct Emissions","REGEN-EPRI","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-1.63891501146019,NA
-NA,"Industry Direct Emissions","REGEN-EPRI","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-5.31209972614597,NA
-NA,"Industry Direct Emissions","RIO-REPEAT","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Industry Direct Emissions","RIO-REPEAT","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-4.72103004291846,NA
-NA,"Industry Direct Emissions","RIO-REPEAT","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-11.5246098439376,NA
-NA,"Industry Direct Emissions","RIO-REPEAT","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-27.8630460448642,NA
-NA,"Industry Direct Emissions","NEMS-EIA","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0,NA
-NA,"Industry Direct Emissions","NEMS-EIA","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-1.68630666347998,NA
-NA,"Industry Direct Emissions","NEMS-EIA","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-0.883861852762539,NA
-NA,"Industry Direct Emissions","NEMS-EIA","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-0.753766749192744,NA
+"figure_num","model","scenario","variable","unit","year","value"
+"E.27.industry_projections_direct","EPA-GHGI","Historic","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","EPS-EI","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","EPS-EI","IRA","Industry Direct Emissions","Mt CO2/yr",2025,850.04476039527
+"E.27.industry_projections_direct","EPS-EI","IRA","Industry Direct Emissions","Mt CO2/yr",2030,803.0638230478
+"E.27.industry_projections_direct","EPS-EI","IRA","Industry Direct Emissions","Mt CO2/yr",2035,777.01532772733
+"E.27.industry_projections_direct","EPS-EI","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","EPS-EI","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,872.540360894
+"E.27.industry_projections_direct","EPS-EI","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,867.8453321512
+"E.27.industry_projections_direct","EPS-EI","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,859.5106171641
+"E.27.industry_projections_direct","GCAM-CGS","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","GCAM-CGS","IRA","Industry Direct Emissions","Mt CO2/yr",2025,1072.28115139338
+"E.27.industry_projections_direct","GCAM-CGS","IRA","Industry Direct Emissions","Mt CO2/yr",2030,1015.73661606983
+"E.27.industry_projections_direct","GCAM-CGS","IRA","Industry Direct Emissions","Mt CO2/yr",2035,1063.6926035448
+"E.27.industry_projections_direct","GCAM-CGS","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","GCAM-CGS","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,1180.17816204515
+"E.27.industry_projections_direct","GCAM-CGS","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,1208.99411915652
+"E.27.industry_projections_direct","GCAM-CGS","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,1222.12174799319
+"E.27.industry_projections_direct","GCAM-PNNL","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","GCAM-PNNL","IRA","Industry Direct Emissions","Mt CO2/yr",2025,788.917359830344
+"E.27.industry_projections_direct","GCAM-PNNL","IRA","Industry Direct Emissions","Mt CO2/yr",2030,789.92060584739
+"E.27.industry_projections_direct","GCAM-PNNL","IRA","Industry Direct Emissions","Mt CO2/yr",2035,773.204942909632
+"E.27.industry_projections_direct","GCAM-PNNL","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","GCAM-PNNL","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,792.6696540004
+"E.27.industry_projections_direct","GCAM-PNNL","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,790.95660080117
+"E.27.industry_projections_direct","GCAM-PNNL","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,774.2846881067
+"E.27.industry_projections_direct","MARKAL-NETL","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","MARKAL-NETL","IRA","Industry Direct Emissions","Mt CO2/yr",2025,1048.61
+"E.27.industry_projections_direct","MARKAL-NETL","IRA","Industry Direct Emissions","Mt CO2/yr",2030,1076.13
+"E.27.industry_projections_direct","MARKAL-NETL","IRA","Industry Direct Emissions","Mt CO2/yr",2035,1074.38
+"E.27.industry_projections_direct","MARKAL-NETL","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","MARKAL-NETL","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,1063.06
+"E.27.industry_projections_direct","MARKAL-NETL","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,1080.08
+"E.27.industry_projections_direct","MARKAL-NETL","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,1107.08
+"E.27.industry_projections_direct","NEMS-EIA","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","NEMS-EIA","IRA","Industry Direct Emissions","Mt CO2/yr",2025,751.268854528375
+"E.27.industry_projections_direct","NEMS-EIA","IRA","Industry Direct Emissions","Mt CO2/yr",2030,787.106926017752
+"E.27.industry_projections_direct","NEMS-EIA","IRA","Industry Direct Emissions","Mt CO2/yr",2035,812.867345738861
+"E.27.industry_projections_direct","NEMS-EIA","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","NEMS-EIA","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,764.154848660645
+"E.27.industry_projections_direct","NEMS-EIA","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,794.125901927798
+"E.27.industry_projections_direct","NEMS-EIA","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,819.041004492983
+"E.27.industry_projections_direct","NEMS-OP","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","NEMS-OP","IRA","Industry Direct Emissions","Mt CO2/yr",2025,957.695221
+"E.27.industry_projections_direct","NEMS-OP","IRA","Industry Direct Emissions","Mt CO2/yr",2030,942.791809
+"E.27.industry_projections_direct","NEMS-OP","IRA","Industry Direct Emissions","Mt CO2/yr",2035,943.156929
+"E.27.industry_projections_direct","NEMS-OP","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","NEMS-OP","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,974.757325
+"E.27.industry_projections_direct","NEMS-OP","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,984.914094
+"E.27.industry_projections_direct","NEMS-OP","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,988.499573
+"E.27.industry_projections_direct","NEMS-RHG","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","NEMS-RHG","IRA","Industry Direct Emissions","Mt CO2/yr",2025,813.925096343283
+"E.27.industry_projections_direct","NEMS-RHG","IRA","Industry Direct Emissions","Mt CO2/yr",2030,815.411926078259
+"E.27.industry_projections_direct","NEMS-RHG","IRA","Industry Direct Emissions","Mt CO2/yr",2035,702.814265742925
+"E.27.industry_projections_direct","NEMS-RHG","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","NEMS-RHG","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,813.895126709715
+"E.27.industry_projections_direct","NEMS-RHG","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,822.693681875426
+"E.27.industry_projections_direct","NEMS-RHG","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,827.112770846044
+"E.27.industry_projections_direct","REGEN-EPRI","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","REGEN-EPRI","IRA","Industry Direct Emissions","Mt CO2/yr",2025,923.515706821811
+"E.27.industry_projections_direct","REGEN-EPRI","IRA","Industry Direct Emissions","Mt CO2/yr",2030,929.877799699341
+"E.27.industry_projections_direct","REGEN-EPRI","IRA","Industry Direct Emissions","Mt CO2/yr",2035,863.950637741897
+"E.27.industry_projections_direct","REGEN-EPRI","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","REGEN-EPRI","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,933.812450317082
+"E.27.industry_projections_direct","REGEN-EPRI","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,945.371637378423
+"E.27.industry_projections_direct","REGEN-EPRI","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,912.419258683739
+"E.27.industry_projections_direct","RIO-REPEAT","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","RIO-REPEAT","IRA","Industry Direct Emissions","Mt CO2/yr",2025,777
+"E.27.industry_projections_direct","RIO-REPEAT","IRA","Industry Direct Emissions","Mt CO2/yr",2030,737
+"E.27.industry_projections_direct","RIO-REPEAT","IRA","Industry Direct Emissions","Mt CO2/yr",2035,611
+"E.27.industry_projections_direct","RIO-REPEAT","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","RIO-REPEAT","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,815.5
+"E.27.industry_projections_direct","RIO-REPEAT","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,833
+"E.27.industry_projections_direct","RIO-REPEAT","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,847
+"E.27.industry_projections_direct","USREP-ReEDS","IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","USREP-ReEDS","IRA","Industry Direct Emissions","Mt CO2/yr",2025,901.94058101
+"E.27.industry_projections_direct","USREP-ReEDS","IRA","Industry Direct Emissions","Mt CO2/yr",2030,902.40854633
+"E.27.industry_projections_direct","USREP-ReEDS","IRA","Industry Direct Emissions","Mt CO2/yr",2035,938.20098279
+"E.27.industry_projections_direct","USREP-ReEDS","No IRA","Industry Direct Emissions","Mt CO2/yr",2021,775.6
+"E.27.industry_projections_direct","USREP-ReEDS","No IRA","Industry Direct Emissions","Mt CO2/yr",2025,937.41448769
+"E.27.industry_projections_direct","USREP-ReEDS","No IRA","Industry Direct Emissions","Mt CO2/yr",2030,951.62160827
+"E.27.industry_projections_direct","USREP-ReEDS","No IRA","Industry Direct Emissions","Mt CO2/yr",2035,946.46016115
+"E.27.industry_projections_direct","USREP-ReEDS","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.27.industry_projections_direct","USREP-ReEDS","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-35.4739066799999
+"E.27.industry_projections_direct","USREP-ReEDS","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-49.21306194
+"E.27.industry_projections_direct","USREP-ReEDS","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-8.25917836000008
+"E.27.industry_projections_direct","EPS-EI","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.27.industry_projections_direct","EPS-EI","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-22.4956004987299
+"E.27.industry_projections_direct","EPS-EI","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-64.7815091033999
+"E.27.industry_projections_direct","EPS-EI","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-82.49528943677
+"E.27.industry_projections_direct","GCAM-CGS","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.27.industry_projections_direct","GCAM-CGS","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-107.89701065177
+"E.27.industry_projections_direct","GCAM-CGS","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-193.25750308669
+"E.27.industry_projections_direct","GCAM-CGS","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-158.42914444839
+"E.27.industry_projections_direct","GCAM-PNNL","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.27.industry_projections_direct","GCAM-PNNL","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-3.75229417005642
+"E.27.industry_projections_direct","GCAM-PNNL","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-1.03599495378035
+"E.27.industry_projections_direct","GCAM-PNNL","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-1.07974519706772
+"E.27.industry_projections_direct","MARKAL-NETL","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.27.industry_projections_direct","MARKAL-NETL","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-14.45
+"E.27.industry_projections_direct","MARKAL-NETL","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-3.94999999999982
+"E.27.industry_projections_direct","MARKAL-NETL","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-32.6999999999998
+"E.27.industry_projections_direct","NEMS-RHG","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.27.industry_projections_direct","NEMS-RHG","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,0.0299696335680437
+"E.27.industry_projections_direct","NEMS-RHG","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-7.28175579716708
+"E.27.industry_projections_direct","NEMS-RHG","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-124.298505103119
+"E.27.industry_projections_direct","NEMS-OP","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.27.industry_projections_direct","NEMS-OP","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-17.0621040000001
+"E.27.industry_projections_direct","NEMS-OP","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-42.1222849999999
+"E.27.industry_projections_direct","NEMS-OP","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-45.3426439999998
+"E.27.industry_projections_direct","REGEN-EPRI","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.27.industry_projections_direct","REGEN-EPRI","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-10.296743495271
+"E.27.industry_projections_direct","REGEN-EPRI","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-15.4938376790819
+"E.27.industry_projections_direct","REGEN-EPRI","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-48.468620941842
+"E.27.industry_projections_direct","RIO-REPEAT","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.27.industry_projections_direct","RIO-REPEAT","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-38.5
+"E.27.industry_projections_direct","RIO-REPEAT","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-96
+"E.27.industry_projections_direct","RIO-REPEAT","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-236
+"E.27.industry_projections_direct","NEMS-EIA","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2021,0
+"E.27.industry_projections_direct","NEMS-EIA","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2025,-12.8859941322698
+"E.27.industry_projections_direct","NEMS-EIA","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2030,-7.01897591004627
+"E.27.industry_projections_direct","NEMS-EIA","Absolute Difference","Industry Direct Emissions","Absolute Difference from No IRA",2035,-6.17365875412236
+"E.27.industry_projections_direct","USREP-ReEDS","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0
+"E.27.industry_projections_direct","USREP-ReEDS","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-3.78422855053324
+"E.27.industry_projections_direct","USREP-ReEDS","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-5.17149479502329
+"E.27.industry_projections_direct","USREP-ReEDS","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-0.872638775409705
+"E.27.industry_projections_direct","EPS-EI","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0
+"E.27.industry_projections_direct","EPS-EI","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-2.57817305731062
+"E.27.industry_projections_direct","EPS-EI","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-7.46463761495619
+"E.27.industry_projections_direct","EPS-EI","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-9.59793722024725
+"E.27.industry_projections_direct","GCAM-CGS","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0
+"E.27.industry_projections_direct","GCAM-CGS","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-9.14243409357732
+"E.27.industry_projections_direct","GCAM-CGS","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-15.9849828898688
+"E.27.industry_projections_direct","GCAM-CGS","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-12.9634502215955
+"E.27.industry_projections_direct","GCAM-PNNL","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0
+"E.27.industry_projections_direct","GCAM-PNNL","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-0.473374267719163
+"E.27.industry_projections_direct","GCAM-PNNL","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-0.130979999753586
+"E.27.industry_projections_direct","GCAM-PNNL","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-0.139450671523409
+"E.27.industry_projections_direct","MARKAL-NETL","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0
+"E.27.industry_projections_direct","MARKAL-NETL","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-1.35928357759675
+"E.27.industry_projections_direct","MARKAL-NETL","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-0.365713650840662
+"E.27.industry_projections_direct","MARKAL-NETL","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-2.95371608194528
+"E.27.industry_projections_direct","NEMS-RHG","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0
+"E.27.industry_projections_direct","NEMS-RHG","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,0.00368224757521281
+"E.27.industry_projections_direct","NEMS-RHG","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-0.885111428176702
+"E.27.industry_projections_direct","NEMS-RHG","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-15.0279997461501
+"E.27.industry_projections_direct","NEMS-OP","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0
+"E.27.industry_projections_direct","NEMS-OP","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-1.75039505345601
+"E.27.industry_projections_direct","NEMS-OP","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-4.27674710480891
+"E.27.industry_projections_direct","NEMS-OP","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-4.58701705478631
+"E.27.industry_projections_direct","REGEN-EPRI","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0
+"E.27.industry_projections_direct","REGEN-EPRI","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-1.10265648008598
+"E.27.industry_projections_direct","REGEN-EPRI","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-1.63891501146019
+"E.27.industry_projections_direct","REGEN-EPRI","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-5.31209972614597
+"E.27.industry_projections_direct","RIO-REPEAT","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0
+"E.27.industry_projections_direct","RIO-REPEAT","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-4.72103004291846
+"E.27.industry_projections_direct","RIO-REPEAT","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-11.5246098439376
+"E.27.industry_projections_direct","RIO-REPEAT","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-27.8630460448642
+"E.27.industry_projections_direct","NEMS-EIA","% Difference","Industry Direct Emissions","% Difference from No IRA",2021,0
+"E.27.industry_projections_direct","NEMS-EIA","% Difference","Industry Direct Emissions","% Difference from No IRA",2025,-1.68630666347998
+"E.27.industry_projections_direct","NEMS-EIA","% Difference","Industry Direct Emissions","% Difference from No IRA",2030,-0.883861852762539
+"E.27.industry_projections_direct","NEMS-EIA","% Difference","Industry Direct Emissions","% Difference from No IRA",2035,-0.753766749192744
