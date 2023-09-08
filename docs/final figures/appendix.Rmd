@@ -4411,17 +4411,37 @@ fig
 savefig(fig, fig_no)
 
 ts_df_data = ts_df %>%
-  mutate(variable = "Economy-Wide Direct Emissions", figure_num = fig_no) %>%
+  mutate(variable = "Emissions", 
+         label = "Economy-Wide Direct Emissions",
+         figure_num = fig_no) %>%
   ungroup() %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 pbdifs_data = pbdifs %>%
-  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Economy-Wide Direct Emissions") %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  mutate(unit = "% ", 
+         value = pbdif, 
+         figure_num = fig_no, 
+         scenario = "IRA", 
+         variable = "Emissions", 
+         label = "Economy-Wide Direct Emissions") %>%
+  mutate(scenario = case_when(
+    year == 2021 ~ "Historic", 
+    T ~ scenario
+  )) %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 absdifs_data = absdifs %>%
-  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Economy-Wide Direct Emissions") %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  mutate(unit = "Mt CO2/yr", 
+         value = absdif, 
+         figure_num = fig_no, 
+         scenario = "IRA", 
+         variable = "Emissions", 
+         label = "Economy-Wide Direct Emissions") %>%
+  mutate(scenario = case_when(
+    year == 2021 ~ "Historic", 
+    T ~ scenario
+  )) %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 data = rbind(ts_df_data, absdifs_data, pbdifs_data)
 
@@ -4778,17 +4798,37 @@ fig
 savefig(fig, fig_no)
 
 ts_df_data = ts_df %>%
-  mutate(variable = "Transportation Direct Emissions", figure_num = fig_no) %>%
+  mutate(variable = "Emissions", 
+         label = "Transportation Direct Emissions",
+         figure_num = fig_no) %>%
   ungroup() %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 pbdifs_data = pbdifs %>%
-  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Transportation Direct Emissions") %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  mutate(unit = "% ", 
+         value = pbdif, 
+         figure_num = fig_no, 
+         scenario = "IRA", 
+         variable = "Emissions", 
+         label = "Transportation Direct Emissions") %>%
+  mutate(scenario = case_when(
+    year == 2021 ~ "Historic", 
+    T ~ scenario
+  )) %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 absdifs_data = absdifs %>%
-  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Transportation Direct Emissions") %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  mutate(unit = "Mt CO2/yr", 
+         value = absdif, 
+         figure_num = fig_no, 
+         scenario = "IRA", 
+         variable = "Emissions", 
+         label = "Transportation Direct Emissions") %>%
+  mutate(scenario = case_when(
+    year == 2021 ~ "Historic", 
+    T ~ scenario
+  )) %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 data = rbind(ts_df_data, absdifs_data, pbdifs_data)
 
@@ -5146,17 +5186,37 @@ fig
 savefig(fig, fig_no)
 
 ts_df_data = ts_df %>%
-  mutate(variable = "Buildings Direct Emissions", figure_num = fig_no) %>%
+  mutate(variable = "Emissions", 
+         label = "Buildings Direct Emissions",
+         figure_num = fig_no) %>%
   ungroup() %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 pbdifs_data = pbdifs %>%
-  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Buildings Direct Emissions") %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  mutate(unit = "% ", 
+         value = pbdif, 
+         figure_num = fig_no, 
+         scenario = "IRA", 
+         variable = "Emissions", 
+         label = "Buildings Direct Emissions") %>%
+  mutate(scenario = case_when(
+    year == 2021 ~ "Historic", 
+    T ~ scenario
+  )) %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 absdifs_data = absdifs %>%
-  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Buildings Direct Emissions") %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  mutate(unit = "Mt CO2/yr", 
+         value = absdif, 
+         figure_num = fig_no, 
+         scenario = "IRA", 
+         variable = "Emissions", 
+         label = "Buildings Direct Emissions") %>%
+  mutate(scenario = case_when(
+    year == 2021 ~ "Historic", 
+    T ~ scenario
+  )) %>%
+  select(figure_num, model, scenario, variable, unit, label,  year, value)
 
 data = rbind(ts_df_data, absdifs_data, pbdifs_data)
 
@@ -5515,17 +5575,37 @@ fig
 savefig(fig, fig_no)
 
 ts_df_data = ts_df %>%
-  mutate(variable = "Industry Direct Emissions", figure_num = fig_no) %>%
+  mutate(variable = "Emissions", 
+         label = "Industry Direct Emissions",
+         figure_num = fig_no) %>%
   ungroup() %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 pbdifs_data = pbdifs %>%
-  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Industry Direct Emissions") %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  mutate(unit = "% ", 
+         value = pbdif, 
+         figure_num = fig_no, 
+         scenario = "IRA", 
+         variable = "Emissions", 
+         label = "Industry Direct Emissions") %>%
+  mutate(scenario = case_when(
+    year == 2021 ~ "Historic", 
+    T ~ scenario
+  )) %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 absdifs_data = absdifs %>%
-  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Industry Direct Emissions") %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  mutate(unit = "Mt CO2/yr", 
+         value = absdif, 
+         figure_num = fig_no, 
+         scenario = "IRA", 
+         variable = "Emissions", 
+         label = "Industry Direct Emissions") %>%
+  mutate(scenario = case_when(
+    year == 2021 ~ "Historic", 
+    T ~ scenario
+  )) %>%
+  select(figure_num, model, scenario, variable, unit, label,  year, value)
 
 data = rbind(ts_df_data, absdifs_data, pbdifs_data)
 
@@ -5900,17 +5980,37 @@ fig
 savefig(fig, fig_no)
 
 ts_df_data = ts_df %>%
-  mutate(variable = "Economy-Wide Indirect Emissions", figure_num = fig_no, unit = "Mt CO2/yr") %>%
+  mutate(variable = "Emissions", 
+         label = "Economy-Wide Indirect Emissions",
+         figure_num = fig_no) %>%
   ungroup() %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 pbdifs_data = pbdifs %>%
-  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Economy-Wide Indirect Emissions") %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  mutate(unit = "% ", 
+         value = pbdif, 
+         figure_num = fig_no, 
+         scenario = "IRA", 
+         variable = "Emissions", 
+         label = "Economy-Wide Indirect Emissions") %>%
+  mutate(scenario = case_when(
+    year == 2021 ~ "Historic", 
+    T ~ scenario
+  )) %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 absdifs_data = absdifs %>%
-  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Economy-Wide Indirect Emissions") %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  mutate(unit = "Mt CO2/yr", 
+         value = absdif, 
+         figure_num = fig_no, 
+         scenario = "IRA", 
+         variable = "Emissions", 
+         label = "Economy-Wide Indirect Emissions") %>%
+  mutate(scenario = case_when(
+    year == 2021 ~ "Historic", 
+    T ~ scenario
+  )) %>%
+  select(figure_num, model, scenario, variable, unit, label,  year, value)
 
 data = rbind(ts_df_data, absdifs_data, pbdifs_data)
 
@@ -6267,17 +6367,37 @@ fig
 savefig(fig, fig_no)
 
 ts_df_data = ts_df %>%
-  mutate(variable = "Transportation Indirect Emissions", figure_num = fig_no) %>%
+  mutate(variable = "Emissions", 
+         label = "Transportation Indirect Emissions",
+         figure_num = fig_no) %>%
   ungroup() %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 pbdifs_data = pbdifs %>%
-  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Transportation Indirect Emissions") %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  mutate(unit = "% ", 
+         value = pbdif, 
+         figure_num = fig_no, 
+         scenario = "IRA", 
+         variable = "Emissions", 
+         label = "Transportation Indirect Emissions") %>%
+  mutate(scenario = case_when(
+    year == 2021 ~ "Historic", 
+    T ~ scenario
+  )) %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 absdifs_data = absdifs %>%
-  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Transportation Indirect Emissions") %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  mutate(unit = "Mt CO2/yr", 
+         value = absdif, 
+         figure_num = fig_no, 
+         scenario = "IRA", 
+         variable = "Emissions", 
+         label = "Transportation Indirect Emissions") %>%
+  mutate(scenario = case_when(
+    year == 2021 ~ "Historic", 
+    T ~ scenario
+  )) %>%
+  select(figure_num, model, scenario, variable, unit, label,  year, value)
 
 data = rbind(ts_df_data, absdifs_data, pbdifs_data)
 
@@ -6635,17 +6755,37 @@ fig
 savefig(fig, fig_no)
 
 ts_df_data = ts_df %>%
-  mutate(variable = "Buildings Indirect Emissions", figure_num = fig_no) %>%
+  mutate(variable = "Emissions", 
+         label = "Buildings Indirect Emissions",
+         figure_num = fig_no) %>%
   ungroup() %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 pbdifs_data = pbdifs %>%
-  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Buildings Indirect Emissions") %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  mutate(unit = "% ", 
+         value = pbdif, 
+         figure_num = fig_no, 
+         scenario = "IRA", 
+         variable = "Emissions", 
+         label = "Buildings Indirect Emissions") %>%
+  mutate(scenario = case_when(
+    year == 2021 ~ "Historic", 
+    T ~ scenario
+  )) %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 absdifs_data = absdifs %>%
-  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Buildings Indirect Emissions") %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  mutate(unit = "Mt CO2/yr", 
+         value = absdif, 
+         figure_num = fig_no, 
+         scenario = "IRA", 
+         variable = "Emissions", 
+         label = "Buildings Indirect Emissions") %>%
+  mutate(scenario = case_when(
+    year == 2021 ~ "Historic", 
+    T ~ scenario
+  )) %>%
+  select(figure_num, model, scenario, variable, unit, label,  year, value)
 
 data = rbind(ts_df_data, absdifs_data, pbdifs_data)
 
@@ -7004,17 +7144,37 @@ fig
 savefig(fig, fig_no)
 
 ts_df_data = ts_df %>%
-  mutate(variable = "Industry Indirect Emissions", figure_num = fig_no) %>%
+  mutate(variable = "Emissions", 
+         label = "Industry Indirect Emissions",
+         figure_num = fig_no) %>%
   ungroup() %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 pbdifs_data = pbdifs %>%
-  mutate(unit = "% Difference from No IRA", value = pbdif, figure_num = fig_no, scenario = "% Difference", variable = "Industry Indirect Emissions") %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  mutate(unit = "% ", 
+         value = pbdif, 
+         figure_num = fig_no, 
+         scenario = "IRA", 
+         variable = "Emissions", 
+         label = "Industry Indirect Emissions") %>%
+  mutate(scenario = case_when(
+    year == 2021 ~ "Historic", 
+    T ~ scenario
+  )) %>%
+  select(figure_num, model, scenario, variable, unit, label, year, value)
 
 absdifs_data = absdifs %>%
-  mutate(unit = "Absolute Difference from No IRA", value = absdif, figure_num = fig_no, scenario = "Absolute Difference", variable = "Industry Indirect Emissions") %>%
-  select(figure_num, model, scenario, variable, unit, year, value)
+  mutate(unit = "Mt CO2/yr", 
+         value = absdif, 
+         figure_num = fig_no, 
+         scenario = "IRA", 
+         variable = "Emissions", 
+         label = "Industry Indirect Emissions") %>%
+  mutate(scenario = case_when(
+    year == 2021 ~ "Historic", 
+    T ~ scenario
+  )) %>%
+  select(figure_num, model, scenario, variable, unit, label,  year, value)
 
 data = rbind(ts_df_data, absdifs_data, pbdifs_data)
 
