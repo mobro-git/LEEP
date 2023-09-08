@@ -1,0 +1,162 @@
+"figure_no","title_name","model","scenario","variable","unit","year","value","figure_num"
+22,"Buildings Direct Emissions","EPA-GHGI","Historic","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","EPS-EI","IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","EPS-EI","IRA","Buildings Direct Emissions","Mt CO2/yr",2025,836.795749895031,NA
+22,"Buildings Direct Emissions","EPS-EI","IRA","Buildings Direct Emissions","Mt CO2/yr",2030,394.008219686818,NA
+22,"Buildings Direct Emissions","EPS-EI","IRA","Buildings Direct Emissions","Mt CO2/yr",2035,211.398579489139,NA
+22,"Buildings Direct Emissions","EPS-EI","No IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","EPS-EI","No IRA","Buildings Direct Emissions","Mt CO2/yr",2025,972.176529056011,NA
+22,"Buildings Direct Emissions","EPS-EI","No IRA","Buildings Direct Emissions","Mt CO2/yr",2030,838.937018187428,NA
+22,"Buildings Direct Emissions","EPS-EI","No IRA","Buildings Direct Emissions","Mt CO2/yr",2035,807.914798716169,NA
+22,"Buildings Direct Emissions","GCAM-CGS","IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","GCAM-CGS","IRA","Buildings Direct Emissions","Mt CO2/yr",2025,750.183210613742,NA
+22,"Buildings Direct Emissions","GCAM-CGS","IRA","Buildings Direct Emissions","Mt CO2/yr",2030,470.094832516353,NA
+22,"Buildings Direct Emissions","GCAM-CGS","IRA","Buildings Direct Emissions","Mt CO2/yr",2035,306.67990759026,NA
+22,"Buildings Direct Emissions","GCAM-CGS","No IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","GCAM-CGS","No IRA","Buildings Direct Emissions","Mt CO2/yr",2025,1017.52537642602,NA
+22,"Buildings Direct Emissions","GCAM-CGS","No IRA","Buildings Direct Emissions","Mt CO2/yr",2030,945.769046449184,NA
+22,"Buildings Direct Emissions","GCAM-CGS","No IRA","Buildings Direct Emissions","Mt CO2/yr",2035,924.920718941848,NA
+22,"Buildings Direct Emissions","GCAM-PNNL","IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","GCAM-PNNL","IRA","Buildings Direct Emissions","Mt CO2/yr",2025,866.457396254488,NA
+22,"Buildings Direct Emissions","GCAM-PNNL","IRA","Buildings Direct Emissions","Mt CO2/yr",2030,582.997007501143,NA
+22,"Buildings Direct Emissions","GCAM-PNNL","IRA","Buildings Direct Emissions","Mt CO2/yr",2035,521.289180940712,NA
+22,"Buildings Direct Emissions","GCAM-PNNL","No IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","GCAM-PNNL","No IRA","Buildings Direct Emissions","Mt CO2/yr",2025,962.1219,NA
+22,"Buildings Direct Emissions","GCAM-PNNL","No IRA","Buildings Direct Emissions","Mt CO2/yr",2030,895.0665,NA
+22,"Buildings Direct Emissions","GCAM-PNNL","No IRA","Buildings Direct Emissions","Mt CO2/yr",2035,815.8505,NA
+22,"Buildings Direct Emissions","MARKAL-NETL","IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","MARKAL-NETL","IRA","Buildings Direct Emissions","Mt CO2/yr",2025,1027.63664606733,NA
+22,"Buildings Direct Emissions","MARKAL-NETL","IRA","Buildings Direct Emissions","Mt CO2/yr",2030,881.732673452674,NA
+22,"Buildings Direct Emissions","MARKAL-NETL","IRA","Buildings Direct Emissions","Mt CO2/yr",2035,528.815057055452,NA
+22,"Buildings Direct Emissions","MARKAL-NETL","No IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","MARKAL-NETL","No IRA","Buildings Direct Emissions","Mt CO2/yr",2025,1021.07089897245,NA
+22,"Buildings Direct Emissions","MARKAL-NETL","No IRA","Buildings Direct Emissions","Mt CO2/yr",2030,1018.89444522943,NA
+22,"Buildings Direct Emissions","MARKAL-NETL","No IRA","Buildings Direct Emissions","Mt CO2/yr",2035,1061.06215473138,NA
+22,"Buildings Direct Emissions","NEMS-EIA","IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","NEMS-EIA","IRA","Buildings Direct Emissions","Mt CO2/yr",2025,934.753876,NA
+22,"Buildings Direct Emissions","NEMS-EIA","IRA","Buildings Direct Emissions","Mt CO2/yr",2030,553.054901,NA
+22,"Buildings Direct Emissions","NEMS-EIA","IRA","Buildings Direct Emissions","Mt CO2/yr",2035,508.636246,NA
+22,"Buildings Direct Emissions","NEMS-EIA","No IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","NEMS-EIA","No IRA","Buildings Direct Emissions","Mt CO2/yr",2025,957.376983,NA
+22,"Buildings Direct Emissions","NEMS-EIA","No IRA","Buildings Direct Emissions","Mt CO2/yr",2030,845.905151,NA
+22,"Buildings Direct Emissions","NEMS-EIA","No IRA","Buildings Direct Emissions","Mt CO2/yr",2035,782.459839,NA
+22,"Buildings Direct Emissions","NEMS-OP","IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","NEMS-OP","IRA","Buildings Direct Emissions","Mt CO2/yr",2025,831.389832,NA
+22,"Buildings Direct Emissions","NEMS-OP","IRA","Buildings Direct Emissions","Mt CO2/yr",2030,440.272782,NA
+22,"Buildings Direct Emissions","NEMS-OP","IRA","Buildings Direct Emissions","Mt CO2/yr",2035,264.106384,NA
+22,"Buildings Direct Emissions","NEMS-OP","No IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","NEMS-OP","No IRA","Buildings Direct Emissions","Mt CO2/yr",2025,883.837433,NA
+22,"Buildings Direct Emissions","NEMS-OP","No IRA","Buildings Direct Emissions","Mt CO2/yr",2030,727.183715,NA
+22,"Buildings Direct Emissions","NEMS-OP","No IRA","Buildings Direct Emissions","Mt CO2/yr",2035,651.387726,NA
+22,"Buildings Direct Emissions","NEMS-RHG","IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","NEMS-RHG","IRA","Buildings Direct Emissions","Mt CO2/yr",2025,875.91779864821,NA
+22,"Buildings Direct Emissions","NEMS-RHG","IRA","Buildings Direct Emissions","Mt CO2/yr",2030,344.611136291211,NA
+22,"Buildings Direct Emissions","NEMS-RHG","IRA","Buildings Direct Emissions","Mt CO2/yr",2035,405.56068690778,NA
+22,"Buildings Direct Emissions","NEMS-RHG","No IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","NEMS-RHG","No IRA","Buildings Direct Emissions","Mt CO2/yr",2025,801.322636226549,NA
+22,"Buildings Direct Emissions","NEMS-RHG","No IRA","Buildings Direct Emissions","Mt CO2/yr",2030,709.560409783125,NA
+22,"Buildings Direct Emissions","NEMS-RHG","No IRA","Buildings Direct Emissions","Mt CO2/yr",2035,645.214057553604,NA
+22,"Buildings Direct Emissions","REGEN-EPRI","IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","REGEN-EPRI","IRA","Buildings Direct Emissions","Mt CO2/yr",2025,813.833086429274,NA
+22,"Buildings Direct Emissions","REGEN-EPRI","IRA","Buildings Direct Emissions","Mt CO2/yr",2030,579.929352266475,NA
+22,"Buildings Direct Emissions","REGEN-EPRI","IRA","Buildings Direct Emissions","Mt CO2/yr",2035,269.279583343547,NA
+22,"Buildings Direct Emissions","REGEN-EPRI","No IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","REGEN-EPRI","No IRA","Buildings Direct Emissions","Mt CO2/yr",2025,828.310108649055,NA
+22,"Buildings Direct Emissions","REGEN-EPRI","No IRA","Buildings Direct Emissions","Mt CO2/yr",2030,664.076594078289,NA
+22,"Buildings Direct Emissions","REGEN-EPRI","No IRA","Buildings Direct Emissions","Mt CO2/yr",2035,609.663194593061,NA
+22,"Buildings Direct Emissions","RIO-REPEAT","IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","RIO-REPEAT","IRA","Buildings Direct Emissions","Mt CO2/yr",2025,1054.01194750526,NA
+22,"Buildings Direct Emissions","RIO-REPEAT","IRA","Buildings Direct Emissions","Mt CO2/yr",2030,501.908866995074,NA
+22,"Buildings Direct Emissions","RIO-REPEAT","IRA","Buildings Direct Emissions","Mt CO2/yr",2035,228.975704567541,NA
+22,"Buildings Direct Emissions","RIO-REPEAT","No IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","RIO-REPEAT","No IRA","Buildings Direct Emissions","Mt CO2/yr",2025,1042.67096412556,NA
+22,"Buildings Direct Emissions","RIO-REPEAT","No IRA","Buildings Direct Emissions","Mt CO2/yr",2030,679.48643006263,NA
+22,"Buildings Direct Emissions","RIO-REPEAT","No IRA","Buildings Direct Emissions","Mt CO2/yr",2035,503.37568248635,NA
+22,"Buildings Direct Emissions","USREP-ReEDS","IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","USREP-ReEDS","IRA","Buildings Direct Emissions","Mt CO2/yr",2025,781.660269,NA
+22,"Buildings Direct Emissions","USREP-ReEDS","IRA","Buildings Direct Emissions","Mt CO2/yr",2030,437.9385418,NA
+22,"Buildings Direct Emissions","USREP-ReEDS","IRA","Buildings Direct Emissions","Mt CO2/yr",2035,336.2144028,NA
+22,"Buildings Direct Emissions","USREP-ReEDS","No IRA","Buildings Direct Emissions","Mt CO2/yr",2021,1090.7,NA
+22,"Buildings Direct Emissions","USREP-ReEDS","No IRA","Buildings Direct Emissions","Mt CO2/yr",2025,986.672396,NA
+22,"Buildings Direct Emissions","USREP-ReEDS","No IRA","Buildings Direct Emissions","Mt CO2/yr",2030,839.9577307,NA
+22,"Buildings Direct Emissions","USREP-ReEDS","No IRA","Buildings Direct Emissions","Mt CO2/yr",2035,754.62242,NA
+NA,NA,"USREP-ReEDS","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2021,0,"E.30.buildings_projections_indirect"
+NA,NA,"USREP-ReEDS","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2025,-205.012127,"E.30.buildings_projections_indirect"
+NA,NA,"USREP-ReEDS","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2030,-402.0191889,"E.30.buildings_projections_indirect"
+NA,NA,"USREP-ReEDS","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2035,-418.4080172,"E.30.buildings_projections_indirect"
+NA,NA,"EPS-EI","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2021,0,"E.30.buildings_projections_indirect"
+NA,NA,"EPS-EI","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2025,-135.38077916098,"E.30.buildings_projections_indirect"
+NA,NA,"EPS-EI","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2030,-444.92879850061,"E.30.buildings_projections_indirect"
+NA,NA,"EPS-EI","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2035,-596.51621922703,"E.30.buildings_projections_indirect"
+NA,NA,"GCAM-CGS","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2021,0,"E.30.buildings_projections_indirect"
+NA,NA,"GCAM-CGS","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2025,-267.342165812278,"E.30.buildings_projections_indirect"
+NA,NA,"GCAM-CGS","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2030,-475.674213932831,"E.30.buildings_projections_indirect"
+NA,NA,"GCAM-CGS","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2035,-618.240811351588,"E.30.buildings_projections_indirect"
+NA,NA,"GCAM-PNNL","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2021,0,"E.30.buildings_projections_indirect"
+NA,NA,"GCAM-PNNL","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2025,-95.664503745512,"E.30.buildings_projections_indirect"
+NA,NA,"GCAM-PNNL","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2030,-312.069492498857,"E.30.buildings_projections_indirect"
+NA,NA,"GCAM-PNNL","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2035,-294.561319059288,"E.30.buildings_projections_indirect"
+NA,NA,"MARKAL-NETL","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2021,0,"E.30.buildings_projections_indirect"
+NA,NA,"MARKAL-NETL","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2025,6.56574709488007,"E.30.buildings_projections_indirect"
+NA,NA,"MARKAL-NETL","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2030,-137.161771776756,"E.30.buildings_projections_indirect"
+NA,NA,"MARKAL-NETL","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2035,-532.247097675928,"E.30.buildings_projections_indirect"
+NA,NA,"NEMS-RHG","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2021,0,"E.30.buildings_projections_indirect"
+NA,NA,"NEMS-RHG","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2025,74.595162421661,"E.30.buildings_projections_indirect"
+NA,NA,"NEMS-RHG","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2030,-364.949273491914,"E.30.buildings_projections_indirect"
+NA,NA,"NEMS-RHG","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2035,-239.653370645824,"E.30.buildings_projections_indirect"
+NA,NA,"NEMS-OP","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2021,0,"E.30.buildings_projections_indirect"
+NA,NA,"NEMS-OP","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2025,-52.4476009999998,"E.30.buildings_projections_indirect"
+NA,NA,"NEMS-OP","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2030,-286.910933,"E.30.buildings_projections_indirect"
+NA,NA,"NEMS-OP","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2035,-387.281342,"E.30.buildings_projections_indirect"
+NA,NA,"REGEN-EPRI","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2021,0,"E.30.buildings_projections_indirect"
+NA,NA,"REGEN-EPRI","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2025,-14.477022219781,"E.30.buildings_projections_indirect"
+NA,NA,"REGEN-EPRI","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2030,-84.147241811814,"E.30.buildings_projections_indirect"
+NA,NA,"REGEN-EPRI","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2035,-340.383611249514,"E.30.buildings_projections_indirect"
+NA,NA,"RIO-REPEAT","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2021,0,"E.30.buildings_projections_indirect"
+NA,NA,"RIO-REPEAT","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2025,11.3409833797,"E.30.buildings_projections_indirect"
+NA,NA,"RIO-REPEAT","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2030,-177.577563067556,"E.30.buildings_projections_indirect"
+NA,NA,"RIO-REPEAT","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2035,-274.399977918809,"E.30.buildings_projections_indirect"
+NA,NA,"NEMS-EIA","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2021,0,"E.30.buildings_projections_indirect"
+NA,NA,"NEMS-EIA","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2025,-22.6231070000001,"E.30.buildings_projections_indirect"
+NA,NA,"NEMS-EIA","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2030,-292.85025,"E.30.buildings_projections_indirect"
+NA,NA,"NEMS-EIA","% Difference","Buildings Direct Emissions","Absolute Difference from No IRA",2035,-273.823593,"E.30.buildings_projections_indirect"
+NA,"Buildings Direct Emissions","USREP-ReEDS","% Difference","Buildings Direct Emissions","% Difference from No IRA",2021,0,NA
+NA,"Buildings Direct Emissions","USREP-ReEDS","% Difference","Buildings Direct Emissions","% Difference from No IRA",2025,-20.7781354612864,NA
+NA,"Buildings Direct Emissions","USREP-ReEDS","% Difference","Buildings Direct Emissions","% Difference from No IRA",2030,-47.8618356860609,NA
+NA,"Buildings Direct Emissions","USREP-ReEDS","% Difference","Buildings Direct Emissions","% Difference from No IRA",2035,-55.4460093035667,NA
+NA,"Buildings Direct Emissions","EPS-EI","% Difference","Buildings Direct Emissions","% Difference from No IRA",2021,0,NA
+NA,"Buildings Direct Emissions","EPS-EI","% Difference","Buildings Direct Emissions","% Difference from No IRA",2025,-13.9255346240909,NA
+NA,"Buildings Direct Emissions","EPS-EI","% Difference","Buildings Direct Emissions","% Difference from No IRA",2030,-53.0348272700976,NA
+NA,"Buildings Direct Emissions","EPS-EI","% Difference","Buildings Direct Emissions","% Difference from No IRA",2035,-73.8340503447807,NA
+NA,"Buildings Direct Emissions","GCAM-CGS","% Difference","Buildings Direct Emissions","% Difference from No IRA",2021,0,NA
+NA,"Buildings Direct Emissions","GCAM-CGS","% Difference","Buildings Direct Emissions","% Difference from No IRA",2025,-26.2737590635132,NA
+NA,"Buildings Direct Emissions","GCAM-CGS","% Difference","Buildings Direct Emissions","% Difference from No IRA",2030,-50.2949653214717,NA
+NA,"Buildings Direct Emissions","GCAM-CGS","% Difference","Buildings Direct Emissions","% Difference from No IRA",2035,-66.8425734974219,NA
+NA,"Buildings Direct Emissions","GCAM-PNNL","% Difference","Buildings Direct Emissions","% Difference from No IRA",2021,0,NA
+NA,"Buildings Direct Emissions","GCAM-PNNL","% Difference","Buildings Direct Emissions","% Difference from No IRA",2025,-9.9430751701538,NA
+NA,"Buildings Direct Emissions","GCAM-PNNL","% Difference","Buildings Direct Emissions","% Difference from No IRA",2030,-34.8655091547787,NA
+NA,"Buildings Direct Emissions","GCAM-PNNL","% Difference","Buildings Direct Emissions","% Difference from No IRA",2035,-36.1048156567028,NA
+NA,"Buildings Direct Emissions","MARKAL-NETL","% Difference","Buildings Direct Emissions","% Difference from No IRA",2021,0,NA
+NA,"Buildings Direct Emissions","MARKAL-NETL","% Difference","Buildings Direct Emissions","% Difference from No IRA",2025,0.643025582404461,NA
+NA,"Buildings Direct Emissions","MARKAL-NETL","% Difference","Buildings Direct Emissions","% Difference from No IRA",2030,-13.461823491036,NA
+NA,"Buildings Direct Emissions","MARKAL-NETL","% Difference","Buildings Direct Emissions","% Difference from No IRA",2035,-50.1617266531076,NA
+NA,"Buildings Direct Emissions","NEMS-RHG","% Difference","Buildings Direct Emissions","% Difference from No IRA",2021,0,NA
+NA,"Buildings Direct Emissions","NEMS-RHG","% Difference","Buildings Direct Emissions","% Difference from No IRA",2025,9.30900476903183,NA
+NA,"Buildings Direct Emissions","NEMS-RHG","% Difference","Buildings Direct Emissions","% Difference from No IRA",2030,-51.433150505601,NA
+NA,"Buildings Direct Emissions","NEMS-RHG","% Difference","Buildings Direct Emissions","% Difference from No IRA",2035,-37.1432345343644,NA
+NA,"Buildings Direct Emissions","NEMS-OP","% Difference","Buildings Direct Emissions","% Difference from No IRA",2021,0,NA
+NA,"Buildings Direct Emissions","NEMS-OP","% Difference","Buildings Direct Emissions","% Difference from No IRA",2025,-5.93407781134337,NA
+NA,"Buildings Direct Emissions","NEMS-OP","% Difference","Buildings Direct Emissions","% Difference from No IRA",2030,-39.4550822689972,NA
+NA,"Buildings Direct Emissions","NEMS-OP","% Difference","Buildings Direct Emissions","% Difference from No IRA",2035,-59.4548110966402,NA
+NA,"Buildings Direct Emissions","REGEN-EPRI","% Difference","Buildings Direct Emissions","% Difference from No IRA",2021,0,NA
+NA,"Buildings Direct Emissions","REGEN-EPRI","% Difference","Buildings Direct Emissions","% Difference from No IRA",2025,-1.74777804455297,NA
+NA,"Buildings Direct Emissions","REGEN-EPRI","% Difference","Buildings Direct Emissions","% Difference from No IRA",2030,-12.6713157130025,NA
+NA,"Buildings Direct Emissions","REGEN-EPRI","% Difference","Buildings Direct Emissions","% Difference from No IRA",2035,-55.8314187683109,NA
+NA,"Buildings Direct Emissions","RIO-REPEAT","% Difference","Buildings Direct Emissions","% Difference from No IRA",2021,0,NA
+NA,"Buildings Direct Emissions","RIO-REPEAT","% Difference","Buildings Direct Emissions","% Difference from No IRA",2025,1.08768573882856,NA
+NA,"Buildings Direct Emissions","RIO-REPEAT","% Difference","Buildings Direct Emissions","% Difference from No IRA",2030,-26.1340852754319,NA
+NA,"Buildings Direct Emissions","RIO-REPEAT","% Difference","Buildings Direct Emissions","% Difference from No IRA",2035,-54.5119654099004,NA
+NA,"Buildings Direct Emissions","NEMS-EIA","% Difference","Buildings Direct Emissions","% Difference from No IRA",2021,0,NA
+NA,"Buildings Direct Emissions","NEMS-EIA","% Difference","Buildings Direct Emissions","% Difference from No IRA",2025,-2.36303017533482,NA
+NA,"Buildings Direct Emissions","NEMS-EIA","% Difference","Buildings Direct Emissions","% Difference from No IRA",2030,-34.6197501757499,NA
+NA,"Buildings Direct Emissions","NEMS-EIA","% Difference","Buildings Direct Emissions","% Difference from No IRA",2035,-34.9952265089991,NA

@@ -541,7 +541,8 @@ pd = function(ts_map_ID, title, yname, gd, drop) {
     filter(year > 2021) %>%
     filter(!model %in% drop) %>%
     group_by(model, year, scenario, variable_rename) %>%
-    summarize(value= sum(value))
+    summarize(value= sum(value)) %>%
+    filter(year == 2025 | year == 2030 | year == 2035)
 
   medians = df %>%
     filter(year %in% c(2030, 2035)) %>%
@@ -682,7 +683,8 @@ ad = function(diff_ID, title, metric, gd, drop) {
     filter(!model %in% drop)%>%
     filter(year > 2021) %>%
     group_by(model, year, scenario, variable_rename) %>%
-    summarize(diff = sum(diff))
+    summarize(diff = sum(diff))%>%
+    filter(year == 2025 | year == 2030 | year == 2035)
 
   medians = df %>%
     filter(year %in% c(2030, 2035)) %>%
@@ -966,7 +968,8 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
                  values_to = "value") %>%
     filter(!is.na(value)) %>%
     mutate(year = as.numeric(year)) %>%
-    mutate(figure_num = fig_no)
+    mutate(figure_num = fig_no)%>%
+    filter(year == 2021 | year == 2025 | year == 2030 | year == 2035)
 
   noIRAmedians = ts_df[ts_df$scenario == "No IRA",] %>%
     filter(year == 2030 | year == 2035) %>%
