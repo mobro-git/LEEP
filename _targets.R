@@ -221,20 +221,21 @@ tar_plan(
 
   # Final Figures
 
-  # tar_render(
-  #   chapter1,
-  #   "docs/final figures/chapter1.Rmd",
-  #   output_dir = "output/final_figures/rmd",
-  #   output_file = "chapter1",
-  #   params = list(
-  #     mode = "targets"),
-  # ),
+  tar_render(
+    chapter4,
+    "docs/final figures/chapter4.Rmd",
+    output_dir = "output/final_figures/rmd",
+    output_file = "chapter4",
+    envir = rlang::global_env(), ## hacky way to get rmarkdown to render in the global environ and not create its own
+    params = list(
+      mode = "targets"),
+  ),
 
   # Plot maps
 
-  # ts = create_graph("leep", "time_series", config, clean_data, figmap_leep_timeseries),
-  # cone = create_graph("leep", "cone_uncertainty", config, clean_data, figmap_leep_cone),
-  # stackbar = create_graph("leep", "stacked_bar", config, clean_data, figmap_leep_stackbar),
+  ts = create_graph("leep", "time_series", config, clean_data, figmap_leep_timeseries),
+  cone = create_graph("leep", "cone_uncertainty", config, clean_data, figmap_leep_cone),
+  stackbar = create_graph("leep", "stacked_bar", config, clean_data, figmap_leep_stackbar),
   diffbar = create_graph("leep", "diff_bar", config, clean_data, figmap_leep_diffbar)
 
 )

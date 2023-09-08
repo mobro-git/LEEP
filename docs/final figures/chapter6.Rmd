@@ -268,7 +268,7 @@ final = fin + dots_30 + dots_35 +
     theme(plot.margin = margin(0,0,0,0))
 final
 
-savefig(final, fig_no)
+ggsave("output/BR/fig_ew_net.png")
 ```
 
 ### Morgan's Stats
@@ -283,7 +283,7 @@ table1 = IRA %>%
     per_diff = diff_2005/baseline * 100) %>%
   mutate_if(is.numeric, round, 2)
 
-write.csv(table1, "output/final_figures/data/6.1_allstats.csv", row.names = FALSE)
+write.csv(table1, "output/BR/6.1_allstats.csv", row.names = FALSE)
 
 table2 = table1 %>%
   group_by(year,scenario) %>%
@@ -297,7 +297,7 @@ table2 = table1 %>%
             ) %>%
   mutate_if(is.numeric, round, 2)
 
-write.csv(table2, "output/final_figures/data/6.1_smallstats.csv", row.names = FALSE)
+write.csv(table2, "output/BR/6.1_smallstats.csv", row.names = FALSE)
 ```
 
 ### Table 6.1
@@ -420,11 +420,12 @@ mid = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 23, 24, "Unit
 mid
 
 # transportation cone
-left = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 21, 22, "United States", -100, 2500, "Transportation", 8, "median", facet = TRUE)
+df = clean_data %>% filter(!model %in% c("IPM-EPA","IPM-NRDC"))
+left = lts_coneplot_with_dots(config, df, figmap_leep_cone, 21, 22, "United States", -100, 2500, "Transportation", 8, "median", facet = TRUE)
 left
 
 # industry cone
-right = lts_coneplot_with_dots(config, clean_data, figmap_leep_cone, 25, 26, "United States", -100, 2500, "Industrial", 8, "median", facet = TRUE) +
+right = lts_coneplot_with_dots(config, df, figmap_leep_cone, 25, 26, "United States", -100, 2500, "Industrial", 8, "median", facet = TRUE) +
   theme(axis.title.y = element_blank(), axis.text.y = element_blank())
 right
 
@@ -439,9 +440,9 @@ bottom
 combined = (wrap_elements(top) / wrap_elements(bottom))
 combined
 
-ggsave(filename = "output/final_figures/svg/Fig6.2_LTS_cone_indirect_emissions_TOTAL.svg", 
+ggsave(filename = "output/BR/Fig6.2_LTS_cone_indirect_emissions_TOTAL.svg", 
        combined, width = 7, height = 5, units = "in")
-ggsave(filename = "output/final_figures/png/Fig6.2_LTS_cone_indirect_emissions_TOTAL.png", 
+ggsave(filename = "output/BR/Fig6.2_LTS_cone_indirect_emissions_TOTAL.png", 
        combined, width = 7, height = 5, units = "in")
 
 # supporting data
@@ -449,7 +450,7 @@ dta = data.frame()
 for (i in c(seq(19,26,by = 1))) {
   dta = rbind(dta, data_from_graph("cone_uncertainty", config, clean_data, figmap_leep_cone, i, "United States"))
 }
-dta %>% write.csv("output/final_figures/data/Fig6.2_LTS_cone_indirect_emissions_TOTAL.csv", row.names = FALSE)
+dta %>% write.csv("output/BR/Fig6.2_LTS_cone_indirect_emissions_TOTAL.csv", row.names = FALSE)
 
 ```
 

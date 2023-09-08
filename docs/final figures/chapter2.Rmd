@@ -324,6 +324,7 @@ p = dta_full %>% ggplot() +
 p
 
 saveall(p, dta_full, fig_no, wd = 7, ht = 9)
+saveall(p, dta_full, paste(fig_no,"wide",sep="_"), wd = 7, ht = 6)
 
 data_summary = dta_full %>%
   pivot_wider(names_from = variable_rename) %>%
@@ -484,7 +485,8 @@ combined =
   theme(plot.margin = margin(0,0,0,0))
 combined
 
-savefig(combined, fig_no)
+savefig(combined, fig_no, ht = 8, wd = 7)
+savefig(combined, paste(fig_no,"wide",sep="_"))
 
 print(stats)
 
