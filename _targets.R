@@ -222,10 +222,60 @@ tar_plan(
   # Final Figures
 
   tar_render(
+    chapter1,
+    "docs/final figures/chapter1.Rmd",
+    output_dir = "output/final_figures/rmd",
+    output_file = "chapter1",
+    envir = rlang::global_env(), ## hacky way to get rmarkdown to render in the global environ and not create its own
+    params = list(
+      mode = "targets"),
+  ),
+
+  tar_render(
+    chapter2,
+    "docs/final figures/chapter2.Rmd",
+    output_dir = "output/final_figures/rmd",
+    output_file = "chapter2",
+    envir = rlang::global_env(), ## hacky way to get rmarkdown to render in the global environ and not create its own
+    params = list(
+      mode = "targets"),
+  ),
+
+  tar_render(
+    chapter3,
+    "docs/final figures/chapter3.Rmd",
+    output_dir = "output/final_figures/rmd",
+    output_file = "chapter3",
+    envir = rlang::global_env(), ## hacky way to get rmarkdown to render in the global environ and not create its own
+    params = list(
+      mode = "targets"),
+  ),
+
+  tar_render(
     chapter4,
     "docs/final figures/chapter4.Rmd",
     output_dir = "output/final_figures/rmd",
     output_file = "chapter4",
+    envir = rlang::global_env(), ## hacky way to get rmarkdown to render in the global environ and not create its own
+    params = list(
+      mode = "targets"),
+  ),
+
+  tar_render(
+    chapter5,
+    "docs/final figures/chapter5.Rmd",
+    output_dir = "output/final_figures/rmd",
+    output_file = "chapter5",
+    envir = rlang::global_env(), ## hacky way to get rmarkdown to render in the global environ and not create its own
+    params = list(
+      mode = "targets"),
+  ),
+
+  tar_render(
+    appendix,
+    "docs/final figures/appendix.Rmd",
+    output_dir = "output/final_figures/rmd",
+    output_file = "appendix",
     envir = rlang::global_env(), ## hacky way to get rmarkdown to render in the global environ and not create its own
     params = list(
       mode = "targets"),

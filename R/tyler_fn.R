@@ -981,6 +981,8 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
     group_by(year) %>%
     summarize(median = median(value))
 
+
+  if (metric == "Generation" | metric == "Primary Energy") {
   NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA", ], aes(year, value, color = model)) +
     geom_line(aes(linetype = model),size = 0.75) +
     scale_color_manual(values = test2, breaks = c("EPS-EI",
@@ -1111,6 +1113,140 @@ four_corners = function(title, ts_map_ID, pd_map_ID, ad_map_ID, drop, histsrc, m
       shape = 16,
       size = 2
     )
+  }
+
+  if (metric == "Emissions") {
+    NoIRAfigure = ggplot(ts_df[ts_df$scenario == "No IRA", ], aes(year, value, color = model)) +
+      geom_line(aes(linetype = model),size = 0.75) +
+      scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                    "GCAM-CGS",
+                                                    "GCAM-PNNL",
+                                                    "Haiku-RFF",
+                                                    "IPM-EPA",
+                                                    "IPM-NRDC",
+                                                    "MARKAL-NETL",
+                                                    "NEMS-EIA",
+                                                    "NEMS-OP",
+                                                    "NEMS-RHG",
+                                                    "ReEDS-NREL",
+                                                    "REGEN-EPRI",
+                                                    "RIO-REPEAT",
+                                                    "USREP-ReEDS")) +
+      theme_emf() +
+      scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+      scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
+      scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                       "GCAM-CGS" = "solid",
+                                       "GCAM-PNNL" = "solid",
+                                       "Haiku-RFF" = "solid",
+                                       "IPM-EPA" = "solid",
+                                       "IPM-NRDC" = "solid",
+                                       "MARKAL-NETL" = "solid",
+                                       "NEMS-EIA" = "dotdash",
+                                       "NEMS-OP" = "twodash",
+                                       "NEMS-RHG" = "solid",
+                                       "ReEDS-NREL" = "longdash",
+                                       "REGEN-EPRI" = "dashed",
+                                       "RIO-REPEAT" = "dotted",
+                                       "USREP-ReEDS" = "solid"),
+
+                            breaks = c("EPS-EI",
+                                       "GCAM-CGS",
+                                       "GCAM-PNNL",
+                                       "Haiku-RFF",
+                                       "IPM-EPA",
+                                       "IPM-NRDC",
+                                       "MARKAL-NETL",
+                                       "NEMS-EIA",
+                                       "NEMS-OP",
+                                       "NEMS-RHG",
+                                       "ReEDS-NREL",
+                                       "REGEN-EPRI",
+                                       "RIO-REPEAT",
+                                       "USREP-ReEDS"))+
+      labs(title = "No IRA",
+           y = expression(paste("Emissions (Mt C",O[2],"/yr)")),
+           x = element_blank()) +
+      theme(  axis.ticks = element_line(color = "black"),
+              axis.ticks.length = unit(-0.15, "cm"),
+              legend.position = "right",
+              plot.title = element_text(hjust = 0.5),
+              axis.text.x = element_text(angle = 45, hjust = 1)) +
+      geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+      geom_point(
+        data = noIRAmedians,
+        aes(x = year, y = median),
+        color = "black",
+        shape = 16,
+        size = 2
+      )
+
+    IRAfigure = ggplot(ts_df[ts_df$scenario == "IRA", ], aes(year, value, color = model)) +
+      geom_line(aes(linetype = model),size = 0.75) +
+      scale_color_manual(values = test2, breaks = c("EPS-EI",
+                                                    "GCAM-CGS",
+                                                    "GCAM-PNNL",
+                                                    "Haiku-RFF",
+                                                    "IPM-EPA",
+                                                    "IPM-NRDC",
+                                                    "MARKAL-NETL",
+                                                    "NEMS-EIA",
+                                                    "NEMS-OP",
+                                                    "NEMS-RHG",
+                                                    "ReEDS-NREL",
+                                                    "REGEN-EPRI",
+                                                    "RIO-REPEAT",
+                                                    "USREP-ReEDS")) +
+      theme_emf() +
+      scale_x_continuous(breaks = c(2021, 2025, 2030, 2035)) +
+      scale_y_continuous(limits = c(ymin, ymax), breaks = brk, labels = scales::comma) +
+      labs(title = "IRA",
+           y = expression(paste("Emissions (Mt C",O[2],"/yr)")),
+           x = element_blank()) +
+      scale_linetype_manual(values = c("EPS-EI" = "solid",
+                                       "GCAM-CGS" = "solid",
+                                       "GCAM-PNNL" = "solid",
+                                       "Haiku-RFF" = "solid",
+                                       "IPM-EPA" = "solid",
+                                       "IPM-NRDC" = "solid",
+                                       "MARKAL-NETL" = "solid",
+                                       "NEMS-EIA" = "dotdash",
+                                       "NEMS-OP" = "twodash",
+                                       "NEMS-RHG" = "solid",
+                                       "ReEDS-NREL" = "longdash",
+                                       "REGEN-EPRI" = "dashed",
+                                       "RIO-REPEAT" = "dotted",
+                                       "USREP-ReEDS" = "solid"),
+
+                            breaks = c("EPS-EI",
+                                       "GCAM-CGS",
+                                       "GCAM-PNNL",
+                                       "Haiku-RFF",
+                                       "IPM-EPA",
+                                       "IPM-NRDC",
+                                       "MARKAL-NETL",
+                                       "NEMS-EIA",
+                                       "NEMS-OP",
+                                       "NEMS-RHG",
+                                       "ReEDS-NREL",
+                                       "REGEN-EPRI",
+                                       "RIO-REPEAT",
+                                       "USREP-ReEDS"))+
+
+      theme(  axis.ticks = element_line(color = "black"),
+              axis.ticks.length = unit(-0.15, "cm"),
+              legend.position = "right",
+              plot.title = element_text(hjust = 0.5),
+              axis.text.x = element_text(angle = 45, hjust = 1)) +
+      geom_point(aes(x = 2021, y = ts_df$value[ts_df$year == 2021][1]), color = "black") +
+      geom_point(
+        data = IRAmedians,
+        aes(x = year, y = median),
+        color = "black",
+        shape = 16,
+        size = 2
+      )
+  }
 
   if(metric == "Generation") {
     NoIRAfigure = NoIRAfigure + labs(y = expression(paste("Generation (TWh)")))

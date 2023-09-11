@@ -72,32 +72,10 @@
 "E.11.WindGen","NEMS-OP","No IRA","Generation","TWh","Wind",2025,563.344884038219
 "E.11.WindGen","NEMS-OP","No IRA","Generation","TWh","Wind",2030,675.430401115615
 "E.11.WindGen","NEMS-OP","No IRA","Generation","TWh","Wind",2035,774.50252977707
-"E.11.WindGen","NEMS-OP","No IRA","Generation","TWh","Wind",2022,422.294265934269
-"E.11.WindGen","NEMS-OP","No IRA","Generation","TWh","Wind",2023,439.586096444391
-"E.11.WindGen","NEMS-OP","No IRA","Generation","TWh","Wind",2024,466.097819745726
-"E.11.WindGen","NEMS-OP","No IRA","Generation","TWh","Wind",2026,605.524143121026
-"E.11.WindGen","NEMS-OP","No IRA","Generation","TWh","Wind",2027,618.680474432982
-"E.11.WindGen","NEMS-OP","No IRA","Generation","TWh","Wind",2028,635.266906260746
-"E.11.WindGen","NEMS-OP","No IRA","Generation","TWh","Wind",2029,644.538310933385
-"E.11.WindGen","NEMS-OP","No IRA","Generation","TWh","Wind",2031,688.093823131033
-"E.11.WindGen","NEMS-OP","No IRA","Generation","TWh","Wind",2032,696.762335895392
-"E.11.WindGen","NEMS-OP","No IRA","Generation","TWh","Wind",2033,708.772390098608
-"E.11.WindGen","NEMS-OP","No IRA","Generation","TWh","Wind",2034,737.175764322986
 "E.11.WindGen","NEMS-OP","No IRA","Generation","TWh","Wind",2021,379.759000526537
 "E.11.WindGen","NEMS-OP","IRA","Generation","TWh","Wind",2025,575.989140469815
 "E.11.WindGen","NEMS-OP","IRA","Generation","TWh","Wind",2030,970.665812116596
 "E.11.WindGen","NEMS-OP","IRA","Generation","TWh","Wind",2035,1239.48712269637
-"E.11.WindGen","NEMS-OP","IRA","Generation","TWh","Wind",2022,417.649591792772
-"E.11.WindGen","NEMS-OP","IRA","Generation","TWh","Wind",2023,439.539893447683
-"E.11.WindGen","NEMS-OP","IRA","Generation","TWh","Wind",2024,511.061778359141
-"E.11.WindGen","NEMS-OP","IRA","Generation","TWh","Wind",2026,623.007894463612
-"E.11.WindGen","NEMS-OP","IRA","Generation","TWh","Wind",2027,709.119122569357
-"E.11.WindGen","NEMS-OP","IRA","Generation","TWh","Wind",2028,775.871030060262
-"E.11.WindGen","NEMS-OP","IRA","Generation","TWh","Wind",2029,893.674197979605
-"E.11.WindGen","NEMS-OP","IRA","Generation","TWh","Wind",2031,1005.88257638908
-"E.11.WindGen","NEMS-OP","IRA","Generation","TWh","Wind",2032,1026.55815242161
-"E.11.WindGen","NEMS-OP","IRA","Generation","TWh","Wind",2033,1139.10429249663
-"E.11.WindGen","NEMS-OP","IRA","Generation","TWh","Wind",2034,1203.58800024121
 "E.11.WindGen","NEMS-OP","IRA","Generation","TWh","Wind",2021,379.759000526537
 "E.11.WindGen","REGEN-EPRI","No IRA","Generation","TWh","Wind",2025,537.982919697146
 "E.11.WindGen","REGEN-EPRI","No IRA","Generation","TWh","Wind",2030,630.904546585187
@@ -126,32 +104,10 @@
 "E.11.WindGen","NEMS-EIA","No IRA","Generation","TWh","Wind",2025,514.347229016002
 "E.11.WindGen","NEMS-EIA","No IRA","Generation","TWh","Wind",2030,596.855081368589
 "E.11.WindGen","NEMS-EIA","No IRA","Generation","TWh","Wind",2035,671.93645898612
-"E.11.WindGen","NEMS-EIA","No IRA","Generation","TWh","Wind",2022,439.612676867201
-"E.11.WindGen","NEMS-EIA","No IRA","Generation","TWh","Wind",2023,466.401402153473
-"E.11.WindGen","NEMS-EIA","No IRA","Generation","TWh","Wind",2024,471.916052403551
-"E.11.WindGen","NEMS-EIA","No IRA","Generation","TWh","Wind",2026,542.09796941224
-"E.11.WindGen","NEMS-EIA","No IRA","Generation","TWh","Wind",2027,551.349111524878
-"E.11.WindGen","NEMS-EIA","No IRA","Generation","TWh","Wind",2028,559.2462790389
-"E.11.WindGen","NEMS-EIA","No IRA","Generation","TWh","Wind",2029,567.585025964081
-"E.11.WindGen","NEMS-EIA","No IRA","Generation","TWh","Wind",2031,608.832055290139
-"E.11.WindGen","NEMS-EIA","No IRA","Generation","TWh","Wind",2032,617.647964853795
-"E.11.WindGen","NEMS-EIA","No IRA","Generation","TWh","Wind",2033,623.84210534883
-"E.11.WindGen","NEMS-EIA","No IRA","Generation","TWh","Wind",2034,643.980706041703
 "E.11.WindGen","NEMS-EIA","No IRA","Generation","TWh","Wind",2021,379.759000526537
 "E.11.WindGen","NEMS-EIA","IRA","Generation","TWh","Wind",2025,512.585915262704
 "E.11.WindGen","NEMS-EIA","IRA","Generation","TWh","Wind",2030,978.421685698797
 "E.11.WindGen","NEMS-EIA","IRA","Generation","TWh","Wind",2035,1135.01441530779
-"E.11.WindGen","NEMS-EIA","IRA","Generation","TWh","Wind",2022,439.659367853312
-"E.11.WindGen","NEMS-EIA","IRA","Generation","TWh","Wind",2023,466.810145277669
-"E.11.WindGen","NEMS-EIA","IRA","Generation","TWh","Wind",2024,472.462915528489
-"E.11.WindGen","NEMS-EIA","IRA","Generation","TWh","Wind",2026,582.537399275216
-"E.11.WindGen","NEMS-EIA","IRA","Generation","TWh","Wind",2027,670.4541301747
-"E.11.WindGen","NEMS-EIA","IRA","Generation","TWh","Wind",2028,781.228457724408
-"E.11.WindGen","NEMS-EIA","IRA","Generation","TWh","Wind",2029,887.638867036041
-"E.11.WindGen","NEMS-EIA","IRA","Generation","TWh","Wind",2031,1015.61527504478
-"E.11.WindGen","NEMS-EIA","IRA","Generation","TWh","Wind",2032,1027.02591626418
-"E.11.WindGen","NEMS-EIA","IRA","Generation","TWh","Wind",2033,1075.94355502393
-"E.11.WindGen","NEMS-EIA","IRA","Generation","TWh","Wind",2034,1104.76836809682
 "E.11.WindGen","NEMS-EIA","IRA","Generation","TWh","Wind",2021,379.759000526537
 "E.11.WindGen","EIA","Historic","Generation","TWh","Wind",2021,379.759000526537
 "E.11.WindGen","USREP-ReEDS","IRA","Percent Difference from No IRA","%","Wind",2025,28.3244414894087
@@ -180,19 +136,8 @@
 "E.11.WindGen","NEMS-RHG","IRA","Percent Difference from No IRA","%","Wind",2025,-18.4089317976948
 "E.11.WindGen","NEMS-RHG","IRA","Percent Difference from No IRA","%","Wind",2030,58.1244415774308
 "E.11.WindGen","NEMS-RHG","IRA","Percent Difference from No IRA","%","Wind",2035,81.2792310824242
-"E.11.WindGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Wind",2022,-1.09986673184443
-"E.11.WindGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Wind",2023,-0.0105105682553619
-"E.11.WindGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Wind",2024,9.64689314314857
 "E.11.WindGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Wind",2025,2.24449654019372
-"E.11.WindGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Wind",2026,2.88737477129652
-"E.11.WindGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Wind",2027,14.6179897174323
-"E.11.WindGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Wind",2028,22.1330786184232
-"E.11.WindGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Wind",2029,38.6533869003745
 "E.11.WindGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Wind",2030,43.7107080926972
-"E.11.WindGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Wind",2031,46.1839276237093
-"E.11.WindGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Wind",2032,47.3326125044348
-"E.11.WindGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Wind",2033,60.7151052170861
-"E.11.WindGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Wind",2034,63.2701532648142
 "E.11.WindGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Wind",2035,60.03654927417
 "E.11.WindGen","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Wind",2025,1.61319134910214
 "E.11.WindGen","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Wind",2030,-0.550984734957194
@@ -203,19 +148,8 @@
 "E.11.WindGen","ReEDS-NREL","IRA","Percent Difference from No IRA","%","Wind",2025,23.2265589722148
 "E.11.WindGen","ReEDS-NREL","IRA","Percent Difference from No IRA","%","Wind",2030,85.6633759472658
 "E.11.WindGen","ReEDS-NREL","IRA","Percent Difference from No IRA","%","Wind",2035,89.4326664301214
-"E.11.WindGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Wind",2022,0.0106209371494748
-"E.11.WindGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Wind",2023,0.0876376276546909
-"E.11.WindGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Wind",2024,0.115881441657306
 "E.11.WindGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Wind",2025,-0.34243671472044
-"E.11.WindGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Wind",2026,7.459801022096
-"E.11.WindGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Wind",2027,21.6024685920706
-"E.11.WindGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Wind",2028,39.6930989093033
-"E.11.WindGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Wind",2029,56.3887041467183
 "E.11.WindGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Wind",2030,63.9295226330781
-"E.11.WindGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Wind",2031,66.8136994792089
-"E.11.WindGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Wind",2032,66.2801425254084
-"E.11.WindGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Wind",2033,72.4704930620714
-"E.11.WindGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Wind",2034,71.553022898372
 "E.11.WindGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Wind",2035,68.9169266124371
 "E.11.WindGen","USREP-ReEDS","Historic","Percent Difference from No IRA","%","Wind",2021,0
 "E.11.WindGen","EPS-EI","Historic","Percent Difference from No IRA","%","Wind",2021,0
@@ -257,19 +191,8 @@
 "E.11.WindGen","NEMS-RHG","IRA","Absolute Difference from No IRA","TWh","Wind",2025,-122.957105002262
 "E.11.WindGen","NEMS-RHG","IRA","Absolute Difference from No IRA","TWh","Wind",2030,453.125720433196
 "E.11.WindGen","NEMS-RHG","IRA","Absolute Difference from No IRA","TWh","Wind",2035,665.051422493803
-"E.11.WindGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Wind",2022,-4.64467414149772
-"E.11.WindGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Wind",2023,-0.0462029967079047
-"E.11.WindGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Wind",2024,44.9639586134154
 "E.11.WindGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Wind",2025,12.6442564315961
-"E.11.WindGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Wind",2026,17.4837513425859
-"E.11.WindGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Wind",2027,90.4386481363748
-"E.11.WindGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Wind",2028,140.604123799516
-"E.11.WindGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Wind",2029,249.13588704622
 "E.11.WindGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Wind",2030,295.23541100098
-"E.11.WindGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Wind",2031,317.788753258051
-"E.11.WindGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Wind",2032,329.795816526214
-"E.11.WindGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Wind",2033,430.331902398026
-"E.11.WindGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Wind",2034,466.412235918219
 "E.11.WindGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Wind",2035,464.984592919304
 "E.11.WindGen","REGEN-EPRI","IRA","Absolute Difference from No IRA","TWh","Wind",2025,8.67869392020145
 "E.11.WindGen","REGEN-EPRI","IRA","Absolute Difference from No IRA","TWh","Wind",2030,-3.47618774383523
@@ -280,19 +203,8 @@
 "E.11.WindGen","ReEDS-NREL","IRA","Absolute Difference from No IRA","TWh","Wind",2025,139.449895117282
 "E.11.WindGen","ReEDS-NREL","IRA","Absolute Difference from No IRA","TWh","Wind",2030,587.752573990189
 "E.11.WindGen","ReEDS-NREL","IRA","Absolute Difference from No IRA","TWh","Wind",2035,743.447921445775
-"E.11.WindGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Wind",2022,0.0466909861111731
-"E.11.WindGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Wind",2023,0.408743124195553
-"E.11.WindGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Wind",2024,0.546863124937488
 "E.11.WindGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Wind",2025,-1.76131375329794
-"E.11.WindGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Wind",2026,40.4394298629759
-"E.11.WindGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Wind",2027,119.105018649822
-"E.11.WindGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Wind",2028,221.982178685509
-"E.11.WindGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Wind",2029,320.05384107196
 "E.11.WindGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Wind",2030,381.566604330209
-"E.11.WindGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Wind",2031,406.783219754644
-"E.11.WindGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Wind",2032,409.37795141038
-"E.11.WindGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Wind",2033,452.101449675104
-"E.11.WindGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Wind",2034,460.787662055118
 "E.11.WindGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Wind",2035,463.077956321672
 "E.11.WindGen","USREP-ReEDS","Historic","Absolute Difference from No IRA","TWh","Wind",2021,0
 "E.11.WindGen","EPS-EI","Historic","Absolute Difference from No IRA","TWh","Wind",2021,0

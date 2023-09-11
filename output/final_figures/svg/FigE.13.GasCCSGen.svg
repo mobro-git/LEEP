@@ -322,10 +322,10 @@
 <polyline points='54.28,305.34 94.87,295.68 145.61,271.73 196.35,256.41 ' style='stroke-width: 1.60; stroke: #2A546C; stroke-linecap: butt;' />
 <polyline points='54.28,305.34 145.61,299.94 196.35,294.02 ' style='stroke-width: 1.60; stroke: #8B507E; stroke-linecap: butt;' />
 <polyline points='54.28,305.34 94.87,305.34 145.61,284.53 196.35,284.53 ' style='stroke-width: 1.60; stroke: #AF499B; stroke-linecap: butt;' />
-<polyline points='54.28,305.34 64.43,305.34 74.57,305.34 84.72,305.34 94.87,305.34 105.02,305.34 115.17,304.47 125.31,303.74 135.46,303.44 145.61,303.30 155.76,303.22 165.91,303.24 176.05,303.45 186.20,303.63 196.35,303.75 ' style='stroke-width: 1.60; stroke: #11897D; stroke-dasharray: 4.27,4.27,12.80,4.27; stroke-linecap: butt;' />
+<polyline points='54.28,305.34 94.87,305.34 145.61,303.30 196.35,303.75 ' style='stroke-width: 1.60; stroke: #11897D; stroke-dasharray: 4.27,4.27,12.80,4.27; stroke-linecap: butt;' />
 <polyline points='54.28,305.34 94.87,303.59 145.61,305.22 196.35,305.22 ' style='stroke-width: 1.60; stroke: #F15A22; stroke-dasharray: 8.54,8.54; stroke-linecap: butt;' />
 <polyline points='54.28,305.34 94.87,304.91 145.61,305.12 196.35,305.55 ' style='stroke-width: 1.60; stroke: #524FA1; stroke-dasharray: 2.13,6.40; stroke-linecap: butt;' />
-<polyline points='54.28,305.34 64.43,305.34 74.57,305.34 84.72,305.34 94.87,305.34 105.02,305.34 115.17,305.28 125.31,305.21 135.46,305.19 145.61,305.19 155.76,305.13 165.91,305.14 176.05,305.20 186.20,305.20 196.35,305.27 ' style='stroke-width: 1.60; stroke: #7F7F7F; stroke-dasharray: 2.13,6.40,8.54,6.40; stroke-linecap: butt;' />
+<polyline points='54.28,305.34 94.87,305.34 145.61,305.19 196.35,305.27 ' style='stroke-width: 1.60; stroke: #7F7F7F; stroke-dasharray: 2.13,6.40,8.54,6.40; stroke-linecap: butt;' />
 <circle cx='54.28' cy='305.34' r='1.95' style='stroke-width: 0.71; fill: #000000;' />
 <circle cx='145.61' cy='303.30' r='2.49' style='stroke-width: 0.71; stroke: none; fill: #000000;' />
 <circle cx='196.35' cy='303.75' r='2.49' style='stroke-width: 0.71; stroke: none; fill: #000000;' />

@@ -72,32 +72,10 @@
 "E.15.GasNoCCSGen","NEMS-OP","No IRA","Generation","TWh","Natural Gas",2025,1539.18740174332
 "E.15.GasNoCCSGen","NEMS-OP","No IRA","Generation","TWh","Natural Gas",2030,1456.3604653196
 "E.15.GasNoCCSGen","NEMS-OP","No IRA","Generation","TWh","Natural Gas",2035,1427.36231601069
-"E.15.GasNoCCSGen","NEMS-OP","No IRA","Generation","TWh","Natural Gas",2022,1514.14314557612
-"E.15.GasNoCCSGen","NEMS-OP","No IRA","Generation","TWh","Natural Gas",2023,1552.16368296504
-"E.15.GasNoCCSGen","NEMS-OP","No IRA","Generation","TWh","Natural Gas",2024,1547.25802749072
-"E.15.GasNoCCSGen","NEMS-OP","No IRA","Generation","TWh","Natural Gas",2026,1527.41653934608
-"E.15.GasNoCCSGen","NEMS-OP","No IRA","Generation","TWh","Natural Gas",2027,1493.71194923693
-"E.15.GasNoCCSGen","NEMS-OP","No IRA","Generation","TWh","Natural Gas",2028,1517.1091461698
-"E.15.GasNoCCSGen","NEMS-OP","No IRA","Generation","TWh","Natural Gas",2029,1491.66450769686
-"E.15.GasNoCCSGen","NEMS-OP","No IRA","Generation","TWh","Natural Gas",2031,1429.28036436051
-"E.15.GasNoCCSGen","NEMS-OP","No IRA","Generation","TWh","Natural Gas",2032,1430.98699230131
-"E.15.GasNoCCSGen","NEMS-OP","No IRA","Generation","TWh","Natural Gas",2033,1430.02070528411
-"E.15.GasNoCCSGen","NEMS-OP","No IRA","Generation","TWh","Natural Gas",2034,1442.37224307205
 "E.15.GasNoCCSGen","NEMS-OP","No IRA","Generation","TWh","Natural Gas",2021,1575.19560288541
 "E.15.GasNoCCSGen","NEMS-OP","IRA","Generation","TWh","Natural Gas",2025,1436.80534795646
 "E.15.GasNoCCSGen","NEMS-OP","IRA","Generation","TWh","Natural Gas",2030,1038.73816793413
 "E.15.GasNoCCSGen","NEMS-OP","IRA","Generation","TWh","Natural Gas",2035,774.963623764473
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Generation","TWh","Natural Gas",2022,1516.73403231535
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Generation","TWh","Natural Gas",2023,1535.33970729551
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Generation","TWh","Natural Gas",2024,1473.95358928717
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Generation","TWh","Natural Gas",2026,1400.14513302832
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Generation","TWh","Natural Gas",2027,1322.17439615285
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Generation","TWh","Natural Gas",2028,1240.62667795108
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Generation","TWh","Natural Gas",2029,1129.16126240826
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Generation","TWh","Natural Gas",2031,996.612657684178
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Generation","TWh","Natural Gas",2032,976.409082402219
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Generation","TWh","Natural Gas",2033,877.202454661395
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Generation","TWh","Natural Gas",2034,817.846604566054
 "E.15.GasNoCCSGen","NEMS-OP","IRA","Generation","TWh","Natural Gas",2021,1575.19560288541
 "E.15.GasNoCCSGen","REGEN-EPRI","No IRA","Generation","TWh","Natural Gas",2025,1051.10862697929
 "E.15.GasNoCCSGen","REGEN-EPRI","No IRA","Generation","TWh","Natural Gas",2030,1191.6894571638
@@ -150,19 +128,8 @@
 "E.15.GasNoCCSGen","NEMS-RHG","IRA","Percent Difference from No IRA","%","Natural Gas",2025,16.5051479086612
 "E.15.GasNoCCSGen","NEMS-RHG","IRA","Percent Difference from No IRA","%","Natural Gas",2030,-34.8192935299983
 "E.15.GasNoCCSGen","NEMS-RHG","IRA","Percent Difference from No IRA","%","Natural Gas",2035,-20.0645154036631
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Natural Gas",2022,0.171112404186946
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Natural Gas",2023,-1.08390473596132
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Natural Gas",2024,-4.73769965326498
 "E.15.GasNoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Natural Gas",2025,-6.65169515231838
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Natural Gas",2026,-8.33246223536707
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Natural Gas",2027,-11.4839780970959
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Natural Gas",2028,-18.2242964467488
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Natural Gas",2029,-24.3019287123959
 "E.15.GasNoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Natural Gas",2030,-28.6757507725821
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Natural Gas",2031,-30.2717169748512
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Natural Gas",2032,-31.7667394843358
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Natural Gas",2033,-38.6580591861347
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Natural Gas",2034,-43.2985064365801
 "E.15.GasNoCCSGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Natural Gas",2035,-45.7065935486929
 "E.15.GasNoCCSGen","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Natural Gas",2025,-1.1429325454592
 "E.15.GasNoCCSGen","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Natural Gas",2030,10.9851851884066
@@ -212,19 +179,8 @@
 "E.15.GasNoCCSGen","NEMS-RHG","IRA","Absolute Difference from No IRA","TWh","Gas",2025,202.804484126682
 "E.15.GasNoCCSGen","NEMS-RHG","IRA","Absolute Difference from No IRA","TWh","Gas",2030,-438.665744429717
 "E.15.GasNoCCSGen","NEMS-RHG","IRA","Absolute Difference from No IRA","TWh","Gas",2035,-237.737595558655
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Gas",2022,2.59088673922724
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Gas",2023,-16.8239756695298
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Gas",2024,-73.3044382035421
 "E.15.GasNoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Gas",2025,-102.382053786855
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Gas",2026,-127.271406317763
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Gas",2027,-171.537553084073
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Gas",2028,-276.482468218724
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Gas",2029,-362.503245288601
 "E.15.GasNoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Gas",2030,-417.622297385466
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Gas",2031,-432.667706676336
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Gas",2032,-454.577909899088
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Gas",2033,-552.818250622711
-"E.15.GasNoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Gas",2034,-624.525638505996
 "E.15.GasNoCCSGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Gas",2035,-652.398692246215
 "E.15.GasNoCCSGen","REGEN-EPRI","IRA","Absolute Difference from No IRA","TWh","Gas",2025,-12.0134625858755
 "E.15.GasNoCCSGen","REGEN-EPRI","IRA","Absolute Difference from No IRA","TWh","Gas",2030,130.909293740161
