@@ -1184,6 +1184,7 @@ indicator_smallX = function(all_data, summary_data, filter_variable, subtitle = 
     geom_point(data = summ_small, aes(x = median, y = scenario, color = scenario),
                shape = "|", size = 1.5, stroke = 3.5) +
     geom_vline(xintercept = 50, color = "black", linewidth = 0.1, alpha = 0.4) +
+    geom_vline(xintercept = 0, color = "black", linewidth = 0.1, alpha = 0.4) +
     # scale_y_discrete(name = filter_variable) +
     ggtitle(subtitle) +
     scale_color_manual(values = c(subpalettes$`Economy-Wide Emissions`[['No IRA']],
@@ -1212,16 +1213,16 @@ indicator_smallX = function(all_data, summary_data, filter_variable, subtitle = 
 
   if (!(bottom)){
     p = p + theme(axis.title.x = element_blank()) +
-      scale_x_continuous(limits = c(0,100), expand = c(0,0), position = "top",
+      scale_x_continuous(limits = c(-5,100), expand = c(0,0), position = "top",
                          name = expression("Percent Reduction from No IRA Scenario (%)"))
   }
   if (!(top) & !(bottom)) {
     p = p + theme(axis.text.x = element_blank()) +
-      scale_x_continuous(limits = c(0,100), expand = c(0,0), position = "bottom",
+      scale_x_continuous(limits = c(-5,100), expand = c(0,0), position = "bottom",
                          name = expression("Percent Reduction from No IRA Scenario (%)"))
   }
   if (bottom) {
-    p = p + scale_x_continuous(limits = c(0,100), expand = c(0,0), position = "bottom",
+    p = p + scale_x_continuous(limits = c(-5,100), expand = c(0,0), position = "bottom",
                                name = expression("Percent Reduction from No IRA Scenario (%)"))
   }
 
