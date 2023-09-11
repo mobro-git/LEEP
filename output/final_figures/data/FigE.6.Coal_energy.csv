@@ -50,32 +50,10 @@
 "E.6.Coal_energy","NEMS-OP","No IRA","Primary Energy","Quads","Coal",2025,7.79938370149932
 "E.6.Coal_energy","NEMS-OP","No IRA","Primary Energy","Quads","Coal",2030,6.32688255455155
 "E.6.Coal_energy","NEMS-OP","No IRA","Primary Energy","Quads","Coal",2035,5.5986739436502
-"E.6.Coal_energy","NEMS-OP","No IRA","Primary Energy","Quads","Coal",2022,10.489584181248
-"E.6.Coal_energy","NEMS-OP","No IRA","Primary Energy","Quads","Coal",2023,9.84395118603796
-"E.6.Coal_energy","NEMS-OP","No IRA","Primary Energy","Quads","Coal",2024,8.45396665505607
-"E.6.Coal_energy","NEMS-OP","No IRA","Primary Energy","Quads","Coal",2026,7.37437567949586
-"E.6.Coal_energy","NEMS-OP","No IRA","Primary Energy","Quads","Coal",2027,7.20813345319078
-"E.6.Coal_energy","NEMS-OP","No IRA","Primary Energy","Quads","Coal",2028,6.90971884201885
-"E.6.Coal_energy","NEMS-OP","No IRA","Primary Energy","Quads","Coal",2029,6.53563858299647
-"E.6.Coal_energy","NEMS-OP","No IRA","Primary Energy","Quads","Coal",2031,6.40567418785358
-"E.6.Coal_energy","NEMS-OP","No IRA","Primary Energy","Quads","Coal",2032,6.33300152607373
-"E.6.Coal_energy","NEMS-OP","No IRA","Primary Energy","Quads","Coal",2033,6.26543284053985
-"E.6.Coal_energy","NEMS-OP","No IRA","Primary Energy","Quads","Coal",2034,5.88716960098516
 "E.6.Coal_energy","NEMS-OP","No IRA","Primary Energy","Quads","Coal",2021,10.54709148248
 "E.6.Coal_energy","NEMS-OP","IRA","Primary Energy","Quads","Coal",2025,7.5593888184407
 "E.6.Coal_energy","NEMS-OP","IRA","Primary Energy","Quads","Coal",2030,3.92558773022968
 "E.6.Coal_energy","NEMS-OP","IRA","Primary Energy","Quads","Coal",2035,2.28334237327514
-"E.6.Coal_energy","NEMS-OP","IRA","Primary Energy","Quads","Coal",2022,10.4895461814249
-"E.6.Coal_energy","NEMS-OP","IRA","Primary Energy","Quads","Coal",2023,9.92648480192473
-"E.6.Coal_energy","NEMS-OP","IRA","Primary Energy","Quads","Coal",2024,8.56568713510654
-"E.6.Coal_energy","NEMS-OP","IRA","Primary Energy","Quads","Coal",2026,6.77803045489945
-"E.6.Coal_energy","NEMS-OP","IRA","Primary Energy","Quads","Coal",2027,6.11751252896418
-"E.6.Coal_energy","NEMS-OP","IRA","Primary Energy","Quads","Coal",2028,5.25135456008213
-"E.6.Coal_energy","NEMS-OP","IRA","Primary Energy","Quads","Coal",2029,4.38584758817033
-"E.6.Coal_energy","NEMS-OP","IRA","Primary Energy","Quads","Coal",2031,3.70928673689918
-"E.6.Coal_energy","NEMS-OP","IRA","Primary Energy","Quads","Coal",2032,3.58314932394544
-"E.6.Coal_energy","NEMS-OP","IRA","Primary Energy","Quads","Coal",2033,3.01022399035235
-"E.6.Coal_energy","NEMS-OP","IRA","Primary Energy","Quads","Coal",2034,2.64769767755766
 "E.6.Coal_energy","NEMS-OP","IRA","Primary Energy","Quads","Coal",2021,10.54709148248
 "E.6.Coal_energy","REGEN-EPRI","No IRA","Primary Energy","Quads","Coal",2025,10.2698144941529
 "E.6.Coal_energy","REGEN-EPRI","No IRA","Primary Energy","Quads","Coal",2030,8.04985459376155
@@ -96,32 +74,10 @@
 "E.6.Coal_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Coal",2025,8.68282658993698
 "E.6.Coal_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Coal",2030,6.94282668793421
 "E.6.Coal_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Coal",2035,6.50886670759336
-"E.6.Coal_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Coal",2022,9.69727986864945
-"E.6.Coal_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Coal",2023,9.08387672344097
-"E.6.Coal_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Coal",2024,9.38588331789574
-"E.6.Coal_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Coal",2026,8.11236024489971
-"E.6.Coal_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Coal",2027,7.70775312794999
-"E.6.Coal_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Coal",2028,7.37924865681692
-"E.6.Coal_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Coal",2029,7.18544855876677
-"E.6.Coal_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Coal",2031,6.82615823091174
-"E.6.Coal_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Coal",2032,6.77649146206196
-"E.6.Coal_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Coal",2033,6.73737564410782
-"E.6.Coal_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Coal",2034,6.62171618238946
 "E.6.Coal_energy","NEMS-EIA","No IRA","Primary Energy","Quads","Coal",2021,10.54709148248
 "E.6.Coal_energy","NEMS-EIA","IRA","Primary Energy","Quads","Coal",2025,8.64630675990106
 "E.6.Coal_energy","NEMS-EIA","IRA","Primary Energy","Quads","Coal",2030,4.33517682399316
 "E.6.Coal_energy","NEMS-EIA","IRA","Primary Energy","Quads","Coal",2035,4.23307529917587
-"E.6.Coal_energy","NEMS-EIA","IRA","Primary Energy","Quads","Coal",2022,9.69441388198781
-"E.6.Coal_energy","NEMS-EIA","IRA","Primary Energy","Quads","Coal",2023,9.04048092540596
-"E.6.Coal_energy","NEMS-EIA","IRA","Primary Energy","Quads","Coal",2024,9.39934925522498
-"E.6.Coal_energy","NEMS-EIA","IRA","Primary Energy","Quads","Coal",2026,7.51931000496837
-"E.6.Coal_energy","NEMS-EIA","IRA","Primary Energy","Quads","Coal",2027,6.49484077287037
-"E.6.Coal_energy","NEMS-EIA","IRA","Primary Energy","Quads","Coal",2028,5.53267625080489
-"E.6.Coal_energy","NEMS-EIA","IRA","Primary Energy","Quads","Coal",2029,4.78605072561626
-"E.6.Coal_energy","NEMS-EIA","IRA","Primary Energy","Quads","Coal",2031,4.2660801455706
-"E.6.Coal_energy","NEMS-EIA","IRA","Primary Energy","Quads","Coal",2032,4.27906408514306
-"E.6.Coal_energy","NEMS-EIA","IRA","Primary Energy","Quads","Coal",2033,4.38192160644193
-"E.6.Coal_energy","NEMS-EIA","IRA","Primary Energy","Quads","Coal",2034,4.27628909805791
 "E.6.Coal_energy","NEMS-EIA","IRA","Primary Energy","Quads","Coal",2021,10.54709148248
 "E.6.Coal_energy","EIA","Historic","Primary Energy","Quads","Coal",2021,10.54709148248
 "E.6.Coal_energy","USREP-ReEDS","IRA","Percent Difference from No IRA","%","Coal",2025,-19.746672135677
@@ -142,19 +98,8 @@
 "E.6.Coal_energy","NEMS-RHG","IRA","Percent Difference from No IRA","%","Coal",2025,4.19540242273491
 "E.6.Coal_energy","NEMS-RHG","IRA","Percent Difference from No IRA","%","Coal",2030,-59.5662602864771
 "E.6.Coal_energy","NEMS-RHG","IRA","Percent Difference from No IRA","%","Coal",2035,-44.819159308095
-"E.6.Coal_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2022,-0.000362262435682492
-"E.6.Coal_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2023,0.83841959724289
-"E.6.Coal_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2024,1.32151550401078
 "E.6.Coal_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2025,-3.07710060491675
-"E.6.Coal_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2026,-8.0867215139923
-"E.6.Coal_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2027,-15.1304208129473
-"E.6.Coal_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2028,-24.0004596402967
-"E.6.Coal_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2029,-32.893357971464
 "E.6.Coal_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2030,-37.9538390924356
-"E.6.Coal_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2031,-42.0937339596085
-"E.6.Coal_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2032,-43.4209938337583
-"E.6.Coal_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2033,-51.9550513593411
-"E.6.Coal_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2034,-55.0259656675324
 "E.6.Coal_energy","NEMS-OP","IRA","Percent Difference from No IRA","%","Coal",2035,-59.2163716577063
 "E.6.Coal_energy","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Coal",2025,1.26582278481013
 "E.6.Coal_energy","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Coal",2030,6.83229813664596
@@ -162,19 +107,8 @@
 "E.6.Coal_energy","RIO-REPEAT","IRA","Percent Difference from No IRA","%","Coal",2025,0
 "E.6.Coal_energy","RIO-REPEAT","IRA","Percent Difference from No IRA","%","Coal",2030,0
 "E.6.Coal_energy","RIO-REPEAT","IRA","Percent Difference from No IRA","%","Coal",2035,0
-"E.6.Coal_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2022,-0.0295545421031052
-"E.6.Coal_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2023,-0.477723326242785
-"E.6.Coal_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2024,0.143470112222266
 "E.6.Coal_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2025,-0.420598403729999
-"E.6.Coal_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2026,-7.31045247040395
-"E.6.Coal_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2027,-15.73626366783
-"E.6.Coal_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2028,-25.0238539435335
-"E.6.Coal_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2029,-33.3924571796297
 "E.6.Coal_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2030,-37.5589076488519
-"E.6.Coal_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2031,-37.503937042479
-"E.6.Coal_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2032,-36.8542835315397
-"E.6.Coal_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2033,-34.9610020591008
-"E.6.Coal_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2034,-35.4202297369561
 "E.6.Coal_energy","NEMS-EIA","IRA","Percent Difference from No IRA","%","Coal",2035,-34.9644801569298
 "E.6.Coal_energy","USREP-ReEDS","Historic","Percent Difference from No IRA","%","Coal",2021,0
 "E.6.Coal_energy","EPS-EI","Historic","Percent Difference from No IRA","%","Coal",2021,0
@@ -204,19 +138,8 @@
 "E.6.Coal_energy","NEMS-RHG","IRA","Absolute Difference from No IRA","Quads","CO2",2025,0.291938726648592
 "E.6.Coal_energy","NEMS-RHG","IRA","Absolute Difference from No IRA","Quads","CO2",2030,-3.46366543507336
 "E.6.Coal_energy","NEMS-RHG","IRA","Absolute Difference from No IRA","Quads","CO2",2035,-2.41661034825246
-"E.6.Coal_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2022,-3.79998231476719e-05
-"E.6.Coal_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2023,0.0825336158867653
-"E.6.Coal_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2024,0.111720480050469
 "E.6.Coal_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2025,-0.239994883058614
-"E.6.Coal_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2026,-0.596345224596408
-"E.6.Coal_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2027,-1.0906209242266
-"E.6.Coal_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2028,-1.65836428193671
-"E.6.Coal_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2029,-2.14979099482615
 "E.6.Coal_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2030,-2.40129482432188
-"E.6.Coal_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2031,-2.6963874509544
-"E.6.Coal_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2032,-2.74985220212829
-"E.6.Coal_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2033,-3.2552088501875
-"E.6.Coal_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2034,-3.2394719234275
 "E.6.Coal_energy","NEMS-OP","IRA","Absolute Difference from No IRA","Quads","CO2",2035,-3.31533157037506
 "E.6.Coal_energy","REGEN-EPRI","IRA","Absolute Difference from No IRA","Quads","CO2",2025,0.129997651824722
 "E.6.Coal_energy","REGEN-EPRI","IRA","Absolute Difference from No IRA","Quads","CO2",2030,0.549990065412279
@@ -224,19 +147,8 @@
 "E.6.Coal_energy","RIO-REPEAT","IRA","Absolute Difference from No IRA","Quads","CO2",2025,0
 "E.6.Coal_energy","RIO-REPEAT","IRA","Absolute Difference from No IRA","Quads","CO2",2030,0
 "E.6.Coal_energy","RIO-REPEAT","IRA","Absolute Difference from No IRA","Quads","CO2",2035,0
-"E.6.Coal_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2022,-0.00286598666163584
-"E.6.Coal_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2023,-0.0433957980350161
-"E.6.Coal_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2024,0.0134659373292365
 "E.6.Coal_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2025,-0.0365198300359193
-"E.6.Coal_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2026,-0.593050239931339
-"E.6.Coal_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2027,-1.21291235507963
-"E.6.Coal_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2028,-1.84657240601203
-"E.6.Coal_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2029,-2.39939783315051
 "E.6.Coal_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2030,-2.60764986394105
-"E.6.Coal_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2031,-2.56007808534114
-"E.6.Coal_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2032,-2.49742737691889
-"E.6.Coal_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2033,-2.35545403766589
-"E.6.Coal_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2034,-2.34542708433155
 "E.6.Coal_energy","NEMS-EIA","IRA","Absolute Difference from No IRA","Quads","CO2",2035,-2.27579140841749
 "E.6.Coal_energy","USREP-ReEDS","Historic","Absolute Difference from No IRA","Quads","CO2",2021,0
 "E.6.Coal_energy","EPS-EI","Historic","Absolute Difference from No IRA","Quads","CO2",2021,0

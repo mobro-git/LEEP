@@ -74,32 +74,10 @@
 "E.1.EconWideEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Total Emissions",2025,4611.531392
 "E.1.EconWideEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Total Emissions",2030,4436.179517
 "E.1.EconWideEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Total Emissions",2035,4318.532851
-"E.1.EconWideEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Total Emissions",2022,4865.180775
-"E.1.EconWideEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Total Emissions",2023,4762.544168
-"E.1.EconWideEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Total Emissions",2024,4695.384851
-"E.1.EconWideEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Total Emissions",2026,4569.350617
-"E.1.EconWideEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Total Emissions",2027,4530.883054
-"E.1.EconWideEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Total Emissions",2028,4505.279414
-"E.1.EconWideEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Total Emissions",2029,4479.968831
-"E.1.EconWideEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Total Emissions",2031,4386.062221
-"E.1.EconWideEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Total Emissions",2032,4352.935342
-"E.1.EconWideEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Total Emissions",2033,4341.0706
-"E.1.EconWideEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Total Emissions",2034,4332.899565
 "E.1.EconWideEmis","NEMS-EIA","No IRA","Emissions","Mt CO2/yr","Total Emissions",2021,5032.212819
 "E.1.EconWideEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Total Emissions",2025,4564.102887
 "E.1.EconWideEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Total Emissions",2030,4007.489174
 "E.1.EconWideEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Total Emissions",2035,3904.675421
-"E.1.EconWideEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Total Emissions",2022,4864.683788
-"E.1.EconWideEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Total Emissions",2023,4726.210791
-"E.1.EconWideEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Total Emissions",2024,4674.84384
-"E.1.EconWideEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Total Emissions",2026,4432.465355
-"E.1.EconWideEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Total Emissions",2027,4290.476542
-"E.1.EconWideEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Total Emissions",2028,4181.976375
-"E.1.EconWideEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Total Emissions",2029,4084.330757
-"E.1.EconWideEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Total Emissions",2031,3972.299928
-"E.1.EconWideEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Total Emissions",2032,3958.617367
-"E.1.EconWideEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Total Emissions",2033,3944.804209
-"E.1.EconWideEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Total Emissions",2034,3921.258781
 "E.1.EconWideEmis","NEMS-EIA","IRA","Emissions","Mt CO2/yr","Total Emissions",2021,5032.212819
 "E.1.EconWideEmis","EPA-GHGI","Historic","Emissions","Mt CO2/yr","Total Emissions",2021,5032.212819
 "E.1.EconWideEmis","USREP-ReEDS","IRA","Percent Difference from No IRA","%","CO2",2025,-9.09330845937907
@@ -129,19 +107,8 @@
 "E.1.EconWideEmis","RIO-REPEAT","IRA","Percent Difference from No IRA","%","CO2",2025,-0.790102921301594
 "E.1.EconWideEmis","RIO-REPEAT","IRA","Percent Difference from No IRA","%","CO2",2030,-11.1405197305101
 "E.1.EconWideEmis","RIO-REPEAT","IRA","Percent Difference from No IRA","%","CO2",2035,-25.5256064690027
-"E.1.EconWideEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2022,-0.010215180544848
-"E.1.EconWideEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2023,-0.762898478593188
-"E.1.EconWideEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2024,-0.437472361730384
 "E.1.EconWideEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2025,-1.02847624722403
-"E.1.EconWideEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2026,-2.99572682145962
-"E.1.EconWideEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2027,-5.30595270579234
-"E.1.EconWideEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2028,-7.17609296318773
-"E.1.EconWideEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2029,-8.83126845129607
 "E.1.EconWideEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2030,-9.66350305160567
-"E.1.EconWideEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2031,-9.43357098353392
-"E.1.EconWideEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2032,-9.05866832423074
-"E.1.EconWideEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2033,-9.12831021453556
-"E.1.EconWideEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2034,-9.50035369675133
 "E.1.EconWideEmis","NEMS-EIA","IRA","Percent Difference from No IRA","%","CO2",2035,-9.58328775718742
 "E.1.EconWideEmis","USREP-ReEDS","Historic","Percent Difference from No IRA","%","CO2",2021,0
 "E.1.EconWideEmis","EPS-EI","Historic","Percent Difference from No IRA","%","CO2",2021,0
@@ -180,19 +147,8 @@
 "E.1.EconWideEmis","RIO-REPEAT","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2025,-38
 "E.1.EconWideEmis","RIO-REPEAT","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2030,-463
 "E.1.EconWideEmis","RIO-REPEAT","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2035,-947
-"E.1.EconWideEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2022,-0.496986999999535
-"E.1.EconWideEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2023,-36.3333770000008
-"E.1.EconWideEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2024,-20.5410110000003
 "E.1.EconWideEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2025,-47.4285049999999
-"E.1.EconWideEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2026,-136.885262
-"E.1.EconWideEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2027,-240.406512
-"E.1.EconWideEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2028,-323.303038999999
-"E.1.EconWideEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2029,-395.638074
 "E.1.EconWideEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2030,-428.690343000001
-"E.1.EconWideEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2031,-413.762292999999
-"E.1.EconWideEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2032,-394.317974999999
-"E.1.EconWideEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2033,-396.266391
-"E.1.EconWideEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2034,-411.640784
 "E.1.EconWideEmis","NEMS-EIA","IRA","Absolute Difference from No IRA","Mt CO2/yr","CO2",2035,-413.85743
 "E.1.EconWideEmis","USREP-ReEDS","Historic","Absolute Difference from No IRA","Mt CO2/yr","CO2",2021,0
 "E.1.EconWideEmis","EPS-EI","Historic","Absolute Difference from No IRA","Mt CO2/yr","CO2",2021,0

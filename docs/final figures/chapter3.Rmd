@@ -264,7 +264,6 @@ stats = ev_share_data %>%
 stats
 
 saveall(figure_full, ev_share_data, fig_no)
-
 ```
 
 

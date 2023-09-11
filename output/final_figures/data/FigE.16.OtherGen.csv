@@ -72,32 +72,10 @@
 "E.16.OtherGen","NEMS-OP","No IRA","Generation","TWh","Other Generation",2025,366.877653298893
 "E.16.OtherGen","NEMS-OP","No IRA","Generation","TWh","Other Generation",2030,366.218149619931
 "E.16.OtherGen","NEMS-OP","No IRA","Generation","TWh","Other Generation",2035,362.574891732808
-"E.16.OtherGen","NEMS-OP","No IRA","Generation","TWh","Other Generation",2022,337.898398579686
-"E.16.OtherGen","NEMS-OP","No IRA","Generation","TWh","Other Generation",2023,352.651038228012
-"E.16.OtherGen","NEMS-OP","No IRA","Generation","TWh","Other Generation",2024,365.646780027148
-"E.16.OtherGen","NEMS-OP","No IRA","Generation","TWh","Other Generation",2026,367.12013103352
-"E.16.OtherGen","NEMS-OP","No IRA","Generation","TWh","Other Generation",2027,367.338899282996
-"E.16.OtherGen","NEMS-OP","No IRA","Generation","TWh","Other Generation",2028,366.891157005662
-"E.16.OtherGen","NEMS-OP","No IRA","Generation","TWh","Other Generation",2029,366.962607454124
-"E.16.OtherGen","NEMS-OP","No IRA","Generation","TWh","Other Generation",2031,366.191289203201
-"E.16.OtherGen","NEMS-OP","No IRA","Generation","TWh","Other Generation",2032,365.352061426924
-"E.16.OtherGen","NEMS-OP","No IRA","Generation","TWh","Other Generation",2033,364.558712654391
-"E.16.OtherGen","NEMS-OP","No IRA","Generation","TWh","Other Generation",2034,364.32620570325
 "E.16.OtherGen","NEMS-OP","No IRA","Generation","TWh","Other Generation",2021,295.238139775059
 "E.16.OtherGen","NEMS-OP","IRA","Generation","TWh","Other Generation",2025,368.291907588543
 "E.16.OtherGen","NEMS-OP","IRA","Generation","TWh","Other Generation",2030,363.679992735681
 "E.16.OtherGen","NEMS-OP","IRA","Generation","TWh","Other Generation",2035,359.75928987324
-"E.16.OtherGen","NEMS-OP","IRA","Generation","TWh","Other Generation",2022,337.463065032898
-"E.16.OtherGen","NEMS-OP","IRA","Generation","TWh","Other Generation",2023,352.860130687596
-"E.16.OtherGen","NEMS-OP","IRA","Generation","TWh","Other Generation",2024,365.540811328245
-"E.16.OtherGen","NEMS-OP","IRA","Generation","TWh","Other Generation",2026,368.930309725722
-"E.16.OtherGen","NEMS-OP","IRA","Generation","TWh","Other Generation",2027,368.673453303327
-"E.16.OtherGen","NEMS-OP","IRA","Generation","TWh","Other Generation",2028,367.084695802992
-"E.16.OtherGen","NEMS-OP","IRA","Generation","TWh","Other Generation",2029,365.790036916343
-"E.16.OtherGen","NEMS-OP","IRA","Generation","TWh","Other Generation",2031,361.692490894029
-"E.16.OtherGen","NEMS-OP","IRA","Generation","TWh","Other Generation",2032,362.53992249216
-"E.16.OtherGen","NEMS-OP","IRA","Generation","TWh","Other Generation",2033,360.317957741839
-"E.16.OtherGen","NEMS-OP","IRA","Generation","TWh","Other Generation",2034,359.936418026925
 "E.16.OtherGen","NEMS-OP","IRA","Generation","TWh","Other Generation",2021,295.238139775059
 "E.16.OtherGen","REGEN-EPRI","No IRA","Generation","TWh","Other Generation",2025,282.11528495159
 "E.16.OtherGen","REGEN-EPRI","No IRA","Generation","TWh","Other Generation",2030,258.545355389761
@@ -126,32 +104,10 @@
 "E.16.OtherGen","NEMS-EIA","No IRA","Generation","TWh","Other Generation",2025,366.340159970492
 "E.16.OtherGen","NEMS-EIA","No IRA","Generation","TWh","Other Generation",2030,372.967836051357
 "E.16.OtherGen","NEMS-EIA","No IRA","Generation","TWh","Other Generation",2035,378.279478709719
-"E.16.OtherGen","NEMS-EIA","No IRA","Generation","TWh","Other Generation",2022,342.389627053237
-"E.16.OtherGen","NEMS-EIA","No IRA","Generation","TWh","Other Generation",2023,346.646796609347
-"E.16.OtherGen","NEMS-EIA","No IRA","Generation","TWh","Other Generation",2024,357.183516805822
-"E.16.OtherGen","NEMS-EIA","No IRA","Generation","TWh","Other Generation",2026,367.509915569399
-"E.16.OtherGen","NEMS-EIA","No IRA","Generation","TWh","Other Generation",2027,368.899172401865
-"E.16.OtherGen","NEMS-EIA","No IRA","Generation","TWh","Other Generation",2028,369.731257333248
-"E.16.OtherGen","NEMS-EIA","No IRA","Generation","TWh","Other Generation",2029,371.207349280101
-"E.16.OtherGen","NEMS-EIA","No IRA","Generation","TWh","Other Generation",2031,374.549611703302
-"E.16.OtherGen","NEMS-EIA","No IRA","Generation","TWh","Other Generation",2032,376.012562935504
-"E.16.OtherGen","NEMS-EIA","No IRA","Generation","TWh","Other Generation",2033,377.271086606824
-"E.16.OtherGen","NEMS-EIA","No IRA","Generation","TWh","Other Generation",2034,377.866092686344
 "E.16.OtherGen","NEMS-EIA","No IRA","Generation","TWh","Other Generation",2021,295.238139775059
 "E.16.OtherGen","NEMS-EIA","IRA","Generation","TWh","Other Generation",2025,365.343253618185
 "E.16.OtherGen","NEMS-EIA","IRA","Generation","TWh","Other Generation",2030,362.65632796443
 "E.16.OtherGen","NEMS-EIA","IRA","Generation","TWh","Other Generation",2035,362.285603014675
-"E.16.OtherGen","NEMS-EIA","IRA","Generation","TWh","Other Generation",2022,342.637150678293
-"E.16.OtherGen","NEMS-EIA","IRA","Generation","TWh","Other Generation",2023,348.049047159656
-"E.16.OtherGen","NEMS-EIA","IRA","Generation","TWh","Other Generation",2024,356.849217065097
-"E.16.OtherGen","NEMS-EIA","IRA","Generation","TWh","Other Generation",2026,366.080617606421
-"E.16.OtherGen","NEMS-EIA","IRA","Generation","TWh","Other Generation",2027,366.403456596014
-"E.16.OtherGen","NEMS-EIA","IRA","Generation","TWh","Other Generation",2028,364.589663982287
-"E.16.OtherGen","NEMS-EIA","IRA","Generation","TWh","Other Generation",2029,362.160348734556
-"E.16.OtherGen","NEMS-EIA","IRA","Generation","TWh","Other Generation",2031,362.686538308417
-"E.16.OtherGen","NEMS-EIA","IRA","Generation","TWh","Other Generation",2032,361.186087890505
-"E.16.OtherGen","NEMS-EIA","IRA","Generation","TWh","Other Generation",2033,361.137742940309
-"E.16.OtherGen","NEMS-EIA","IRA","Generation","TWh","Other Generation",2034,360.94789006294
 "E.16.OtherGen","NEMS-EIA","IRA","Generation","TWh","Other Generation",2021,295.238139775059
 "E.16.OtherGen","EIA","Historic","Generation","TWh","Other Generation",2021,295.238139775059
 "E.16.OtherGen","USREP-ReEDS",NA,"Percent Difference from No IRA","%","Other Generation",2021,NA
@@ -190,19 +146,8 @@
 "E.16.OtherGen","NEMS-RHG",NA,"Percent Difference from No IRA","%","Other Generation",2030,NA
 "E.16.OtherGen","NEMS-RHG",NA,"Percent Difference from No IRA","%","Other Generation",2035,NA
 "E.16.OtherGen","NEMS-OP",NA,"Percent Difference from No IRA","%","Other Generation",2021,NA
-"E.16.OtherGen","NEMS-OP",NA,"Percent Difference from No IRA","%","Other Generation",2022,NA
-"E.16.OtherGen","NEMS-OP",NA,"Percent Difference from No IRA","%","Other Generation",2023,NA
-"E.16.OtherGen","NEMS-OP",NA,"Percent Difference from No IRA","%","Other Generation",2024,NA
 "E.16.OtherGen","NEMS-OP",NA,"Percent Difference from No IRA","%","Other Generation",2025,NA
-"E.16.OtherGen","NEMS-OP",NA,"Percent Difference from No IRA","%","Other Generation",2026,NA
-"E.16.OtherGen","NEMS-OP",NA,"Percent Difference from No IRA","%","Other Generation",2027,NA
-"E.16.OtherGen","NEMS-OP",NA,"Percent Difference from No IRA","%","Other Generation",2028,NA
-"E.16.OtherGen","NEMS-OP",NA,"Percent Difference from No IRA","%","Other Generation",2029,NA
 "E.16.OtherGen","NEMS-OP",NA,"Percent Difference from No IRA","%","Other Generation",2030,NA
-"E.16.OtherGen","NEMS-OP",NA,"Percent Difference from No IRA","%","Other Generation",2031,NA
-"E.16.OtherGen","NEMS-OP",NA,"Percent Difference from No IRA","%","Other Generation",2032,NA
-"E.16.OtherGen","NEMS-OP",NA,"Percent Difference from No IRA","%","Other Generation",2033,NA
-"E.16.OtherGen","NEMS-OP",NA,"Percent Difference from No IRA","%","Other Generation",2034,NA
 "E.16.OtherGen","NEMS-OP",NA,"Percent Difference from No IRA","%","Other Generation",2035,NA
 "E.16.OtherGen","REGEN-EPRI",NA,"Percent Difference from No IRA","%","Other Generation",2021,NA
 "E.16.OtherGen","REGEN-EPRI",NA,"Percent Difference from No IRA","%","Other Generation",2025,NA
@@ -217,19 +162,8 @@
 "E.16.OtherGen","ReEDS-NREL",NA,"Percent Difference from No IRA","%","Other Generation",2030,NA
 "E.16.OtherGen","ReEDS-NREL",NA,"Percent Difference from No IRA","%","Other Generation",2035,NA
 "E.16.OtherGen","NEMS-EIA",NA,"Percent Difference from No IRA","%","Other Generation",2021,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Percent Difference from No IRA","%","Other Generation",2022,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Percent Difference from No IRA","%","Other Generation",2023,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Percent Difference from No IRA","%","Other Generation",2024,NA
 "E.16.OtherGen","NEMS-EIA",NA,"Percent Difference from No IRA","%","Other Generation",2025,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Percent Difference from No IRA","%","Other Generation",2026,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Percent Difference from No IRA","%","Other Generation",2027,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Percent Difference from No IRA","%","Other Generation",2028,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Percent Difference from No IRA","%","Other Generation",2029,NA
 "E.16.OtherGen","NEMS-EIA",NA,"Percent Difference from No IRA","%","Other Generation",2030,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Percent Difference from No IRA","%","Other Generation",2031,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Percent Difference from No IRA","%","Other Generation",2032,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Percent Difference from No IRA","%","Other Generation",2033,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Percent Difference from No IRA","%","Other Generation",2034,NA
 "E.16.OtherGen","NEMS-EIA",NA,"Percent Difference from No IRA","%","Other Generation",2035,NA
 "E.16.OtherGen","USREP-ReEDS","Historic","Percent Difference from No IRA","%","Other Generation",2021,NA
 "E.16.OtherGen","EPS-EI","Historic","Percent Difference from No IRA","%","Other Generation",2021,NA
@@ -281,19 +215,8 @@
 "E.16.OtherGen","NEMS-RHG",NA,"Absolute Difference from No IRA","TWh","Other Generation",2030,NA
 "E.16.OtherGen","NEMS-RHG",NA,"Absolute Difference from No IRA","TWh","Other Generation",2035,NA
 "E.16.OtherGen","NEMS-OP",NA,"Absolute Difference from No IRA","TWh","Other Generation",2021,NA
-"E.16.OtherGen","NEMS-OP",NA,"Absolute Difference from No IRA","TWh","Other Generation",2022,NA
-"E.16.OtherGen","NEMS-OP",NA,"Absolute Difference from No IRA","TWh","Other Generation",2023,NA
-"E.16.OtherGen","NEMS-OP",NA,"Absolute Difference from No IRA","TWh","Other Generation",2024,NA
 "E.16.OtherGen","NEMS-OP",NA,"Absolute Difference from No IRA","TWh","Other Generation",2025,NA
-"E.16.OtherGen","NEMS-OP",NA,"Absolute Difference from No IRA","TWh","Other Generation",2026,NA
-"E.16.OtherGen","NEMS-OP",NA,"Absolute Difference from No IRA","TWh","Other Generation",2027,NA
-"E.16.OtherGen","NEMS-OP",NA,"Absolute Difference from No IRA","TWh","Other Generation",2028,NA
-"E.16.OtherGen","NEMS-OP",NA,"Absolute Difference from No IRA","TWh","Other Generation",2029,NA
 "E.16.OtherGen","NEMS-OP",NA,"Absolute Difference from No IRA","TWh","Other Generation",2030,NA
-"E.16.OtherGen","NEMS-OP",NA,"Absolute Difference from No IRA","TWh","Other Generation",2031,NA
-"E.16.OtherGen","NEMS-OP",NA,"Absolute Difference from No IRA","TWh","Other Generation",2032,NA
-"E.16.OtherGen","NEMS-OP",NA,"Absolute Difference from No IRA","TWh","Other Generation",2033,NA
-"E.16.OtherGen","NEMS-OP",NA,"Absolute Difference from No IRA","TWh","Other Generation",2034,NA
 "E.16.OtherGen","NEMS-OP",NA,"Absolute Difference from No IRA","TWh","Other Generation",2035,NA
 "E.16.OtherGen","REGEN-EPRI",NA,"Absolute Difference from No IRA","TWh","Other Generation",2021,NA
 "E.16.OtherGen","REGEN-EPRI",NA,"Absolute Difference from No IRA","TWh","Other Generation",2025,NA
@@ -308,19 +231,8 @@
 "E.16.OtherGen","ReEDS-NREL",NA,"Absolute Difference from No IRA","TWh","Other Generation",2030,NA
 "E.16.OtherGen","ReEDS-NREL",NA,"Absolute Difference from No IRA","TWh","Other Generation",2035,NA
 "E.16.OtherGen","NEMS-EIA",NA,"Absolute Difference from No IRA","TWh","Other Generation",2021,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Absolute Difference from No IRA","TWh","Other Generation",2022,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Absolute Difference from No IRA","TWh","Other Generation",2023,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Absolute Difference from No IRA","TWh","Other Generation",2024,NA
 "E.16.OtherGen","NEMS-EIA",NA,"Absolute Difference from No IRA","TWh","Other Generation",2025,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Absolute Difference from No IRA","TWh","Other Generation",2026,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Absolute Difference from No IRA","TWh","Other Generation",2027,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Absolute Difference from No IRA","TWh","Other Generation",2028,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Absolute Difference from No IRA","TWh","Other Generation",2029,NA
 "E.16.OtherGen","NEMS-EIA",NA,"Absolute Difference from No IRA","TWh","Other Generation",2030,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Absolute Difference from No IRA","TWh","Other Generation",2031,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Absolute Difference from No IRA","TWh","Other Generation",2032,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Absolute Difference from No IRA","TWh","Other Generation",2033,NA
-"E.16.OtherGen","NEMS-EIA",NA,"Absolute Difference from No IRA","TWh","Other Generation",2034,NA
 "E.16.OtherGen","NEMS-EIA",NA,"Absolute Difference from No IRA","TWh","Other Generation",2035,NA
 "E.16.OtherGen","USREP-ReEDS","Historic","Absolute Difference from No IRA","TWh","Other Generation",2021,0
 "E.16.OtherGen","EPS-EI","Historic","Absolute Difference from No IRA","TWh","Other Generation",2021,0

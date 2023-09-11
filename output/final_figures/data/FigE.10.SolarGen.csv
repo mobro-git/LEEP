@@ -72,32 +72,10 @@
 "E.10.SolarGen","NEMS-OP","No IRA","Generation","TWh","Solar",2025,404.401527472786
 "E.10.SolarGen","NEMS-OP","No IRA","Generation","TWh","Solar",2030,775.977534747526
 "E.10.SolarGen","NEMS-OP","No IRA","Generation","TWh","Solar",2035,1083.42154164042
-"E.10.SolarGen","NEMS-OP","No IRA","Generation","TWh","Solar",2022,203.579685293289
-"E.10.SolarGen","NEMS-OP","No IRA","Generation","TWh","Solar",2023,257.71754869654
-"E.10.SolarGen","NEMS-OP","No IRA","Generation","TWh","Solar",2024,366.394204796915
-"E.10.SolarGen","NEMS-OP","No IRA","Generation","TWh","Solar",2026,448.421994573999
-"E.10.SolarGen","NEMS-OP","No IRA","Generation","TWh","Solar",2027,522.08998088314
-"E.10.SolarGen","NEMS-OP","No IRA","Generation","TWh","Solar",2028,593.089843130253
-"E.10.SolarGen","NEMS-OP","No IRA","Generation","TWh","Solar",2029,698.488433413406
-"E.10.SolarGen","NEMS-OP","No IRA","Generation","TWh","Solar",2031,832.820111418277
-"E.10.SolarGen","NEMS-OP","No IRA","Generation","TWh","Solar",2032,892.073768732721
-"E.10.SolarGen","NEMS-OP","No IRA","Generation","TWh","Solar",2033,960.43703023328
-"E.10.SolarGen","NEMS-OP","No IRA","Generation","TWh","Solar",2034,1018.84030301372
 "E.10.SolarGen","NEMS-OP","No IRA","Generation","TWh","Solar",2021,114.675748719738
 "E.10.SolarGen","NEMS-OP","IRA","Generation","TWh","Solar",2025,508.255870289075
 "E.10.SolarGen","NEMS-OP","IRA","Generation","TWh","Solar",2030,1166.27106157373
 "E.10.SolarGen","NEMS-OP","IRA","Generation","TWh","Solar",2035,1757.12724920753
-"E.10.SolarGen","NEMS-OP","IRA","Generation","TWh","Solar",2022,206.498780905502
-"E.10.SolarGen","NEMS-OP","IRA","Generation","TWh","Solar",2023,258.722164881429
-"E.10.SolarGen","NEMS-OP","IRA","Generation","TWh","Solar",2024,367.388720201141
-"E.10.SolarGen","NEMS-OP","IRA","Generation","TWh","Solar",2026,625.361725350477
-"E.10.SolarGen","NEMS-OP","IRA","Generation","TWh","Solar",2027,728.451344772636
-"E.10.SolarGen","NEMS-OP","IRA","Generation","TWh","Solar",2028,886.368569620387
-"E.10.SolarGen","NEMS-OP","IRA","Generation","TWh","Solar",2029,1039.10951587036
-"E.10.SolarGen","NEMS-OP","IRA","Generation","TWh","Solar",2031,1265.17833781494
-"E.10.SolarGen","NEMS-OP","IRA","Generation","TWh","Solar",2032,1351.96551524253
-"E.10.SolarGen","NEMS-OP","IRA","Generation","TWh","Solar",2033,1468.49350285225
-"E.10.SolarGen","NEMS-OP","IRA","Generation","TWh","Solar",2034,1594.62919083199
 "E.10.SolarGen","NEMS-OP","IRA","Generation","TWh","Solar",2021,114.675748719738
 "E.10.SolarGen","REGEN-EPRI","No IRA","Generation","TWh","Solar",2025,417.790217786749
 "E.10.SolarGen","REGEN-EPRI","No IRA","Generation","TWh","Solar",2030,527.003075054346
@@ -126,32 +104,10 @@
 "E.10.SolarGen","NEMS-EIA","No IRA","Generation","TWh","Solar",2025,390.953058504562
 "E.10.SolarGen","NEMS-EIA","No IRA","Generation","TWh","Solar",2030,569.46828606933
 "E.10.SolarGen","NEMS-EIA","No IRA","Generation","TWh","Solar",2035,804.43095688512
-"E.10.SolarGen","NEMS-EIA","No IRA","Generation","TWh","Solar",2022,204.945012645381
-"E.10.SolarGen","NEMS-EIA","No IRA","Generation","TWh","Solar",2023,256.649242894663
-"E.10.SolarGen","NEMS-EIA","No IRA","Generation","TWh","Solar",2024,338.8534208415
-"E.10.SolarGen","NEMS-EIA","No IRA","Generation","TWh","Solar",2026,437.022126120678
-"E.10.SolarGen","NEMS-EIA","No IRA","Generation","TWh","Solar",2027,482.269007590459
-"E.10.SolarGen","NEMS-EIA","No IRA","Generation","TWh","Solar",2028,517.039614551196
-"E.10.SolarGen","NEMS-EIA","No IRA","Generation","TWh","Solar",2029,544.433001707314
-"E.10.SolarGen","NEMS-EIA","No IRA","Generation","TWh","Solar",2031,646.728815366862
-"E.10.SolarGen","NEMS-EIA","No IRA","Generation","TWh","Solar",2032,725.519462438084
-"E.10.SolarGen","NEMS-EIA","No IRA","Generation","TWh","Solar",2033,758.663701715186
-"E.10.SolarGen","NEMS-EIA","No IRA","Generation","TWh","Solar",2034,779.318709194352
 "E.10.SolarGen","NEMS-EIA","No IRA","Generation","TWh","Solar",2021,114.675748719738
 "E.10.SolarGen","NEMS-EIA","IRA","Generation","TWh","Solar",2025,467.7257743949
 "E.10.SolarGen","NEMS-EIA","IRA","Generation","TWh","Solar",2030,921.116106082096
 "E.10.SolarGen","NEMS-EIA","IRA","Generation","TWh","Solar",2035,1150.39652828718
-"E.10.SolarGen","NEMS-EIA","IRA","Generation","TWh","Solar",2022,204.94397466792
-"E.10.SolarGen","NEMS-EIA","IRA","Generation","TWh","Solar",2023,256.839393765562
-"E.10.SolarGen","NEMS-EIA","IRA","Generation","TWh","Solar",2024,340.94733837235
-"E.10.SolarGen","NEMS-EIA","IRA","Generation","TWh","Solar",2026,609.931457416763
-"E.10.SolarGen","NEMS-EIA","IRA","Generation","TWh","Solar",2027,741.504711320458
-"E.10.SolarGen","NEMS-EIA","IRA","Generation","TWh","Solar",2028,825.987434788972
-"E.10.SolarGen","NEMS-EIA","IRA","Generation","TWh","Solar",2029,884.081998272989
-"E.10.SolarGen","NEMS-EIA","IRA","Generation","TWh","Solar",2031,963.075644936101
-"E.10.SolarGen","NEMS-EIA","IRA","Generation","TWh","Solar",2032,1009.04406773771
-"E.10.SolarGen","NEMS-EIA","IRA","Generation","TWh","Solar",2033,1063.89706361195
-"E.10.SolarGen","NEMS-EIA","IRA","Generation","TWh","Solar",2034,1112.81018646977
 "E.10.SolarGen","NEMS-EIA","IRA","Generation","TWh","Solar",2021,114.675748719738
 "E.10.SolarGen","EIA","Historic","Generation","TWh","Solar",2021,114.675748719738
 "E.10.SolarGen","USREP-ReEDS","IRA","Percent Difference from No IRA","%","Solar",2025,85.9093998331202
@@ -180,19 +136,8 @@
 "E.10.SolarGen","NEMS-RHG","IRA","Percent Difference from No IRA","%","Solar",2025,-24.4959854599665
 "E.10.SolarGen","NEMS-RHG","IRA","Percent Difference from No IRA","%","Solar",2030,42.5943880603804
 "E.10.SolarGen","NEMS-RHG","IRA","Percent Difference from No IRA","%","Solar",2035,39.2919008739876
-"E.10.SolarGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Solar",2022,1.43388354688159
-"E.10.SolarGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Solar",2023,0.389812874586792
-"E.10.SolarGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Solar",2024,0.271433169849677
 "E.10.SolarGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Solar",2025,25.6809966731091
-"E.10.SolarGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Solar",2026,39.4583077809489
-"E.10.SolarGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Solar",2027,39.5260149486924
-"E.10.SolarGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Solar",2028,49.4492916861036
-"E.10.SolarGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Solar",2029,48.765457831906
 "E.10.SolarGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Solar",2030,50.2970136826441
-"E.10.SolarGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Solar",2031,51.9149598417314
-"E.10.SolarGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Solar",2032,51.5531072237592
-"E.10.SolarGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Solar",2033,52.8984677418745
-"E.10.SolarGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Solar",2034,56.5141451624067
 "E.10.SolarGen","NEMS-OP","IRA","Percent Difference from No IRA","%","Solar",2035,62.1831560176524
 "E.10.SolarGen","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Solar",2025,0.808536854635045
 "E.10.SolarGen","REGEN-EPRI","IRA","Percent Difference from No IRA","%","Solar",2030,4.0827041844026
@@ -203,19 +148,8 @@
 "E.10.SolarGen","ReEDS-NREL","IRA","Percent Difference from No IRA","%","Solar",2025,27.4298900735059
 "E.10.SolarGen","ReEDS-NREL","IRA","Percent Difference from No IRA","%","Solar",2030,97.5142727461259
 "E.10.SolarGen","ReEDS-NREL","IRA","Percent Difference from No IRA","%","Solar",2035,116.455704860825
-"E.10.SolarGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Solar",2022,-0.000506466318483945
-"E.10.SolarGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Solar",2023,0.0740897844675681
-"E.10.SolarGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Solar",2024,0.617941977876435
 "E.10.SolarGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Solar",2025,19.6373232592173
-"E.10.SolarGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Solar",2026,39.5653494322937
-"E.10.SolarGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Solar",2027,53.7533409051532
-"E.10.SolarGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Solar",2028,59.753220361258
-"E.10.SolarGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Solar",2029,62.3858207530686
 "E.10.SolarGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Solar",2030,61.7502025336587
-"E.10.SolarGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Solar",2031,48.9149117918595
-"E.10.SolarGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Solar",2032,39.0788421232487
-"E.10.SolarGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Solar",2033,40.2330256748398
-"E.10.SolarGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Solar",2034,42.7926948680822
 "E.10.SolarGen","NEMS-EIA","IRA","Percent Difference from No IRA","%","Solar",2035,43.0074910022976
 "E.10.SolarGen","USREP-ReEDS","Historic","Percent Difference from No IRA","%","Solar",2021,0
 "E.10.SolarGen","EPS-EI","Historic","Percent Difference from No IRA","%","Solar",2021,0
@@ -257,19 +191,8 @@
 "E.10.SolarGen","NEMS-RHG","IRA","Absolute Difference from No IRA","TWh","Solar",2025,-130.095828985788
 "E.10.SolarGen","NEMS-RHG","IRA","Absolute Difference from No IRA","TWh","Solar",2030,299.943191772126
 "E.10.SolarGen","NEMS-RHG","IRA","Absolute Difference from No IRA","TWh","Solar",2035,397.504585239001
-"E.10.SolarGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Solar",2022,2.91909561221377
-"E.10.SolarGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Solar",2023,1.00461618488862
-"E.10.SolarGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Solar",2024,0.994515404225751
 "E.10.SolarGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Solar",2025,103.854342816288
-"E.10.SolarGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Solar",2026,176.939730776479
-"E.10.SolarGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Solar",2027,206.361363889495
-"E.10.SolarGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Solar",2028,293.278726490133
-"E.10.SolarGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Solar",2029,340.621082456956
 "E.10.SolarGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Solar",2030,390.293526826208
-"E.10.SolarGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Solar",2031,432.358226396661
-"E.10.SolarGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Solar",2032,459.891746509809
-"E.10.SolarGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Solar",2033,508.056472618969
-"E.10.SolarGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Solar",2034,575.788887818275
 "E.10.SolarGen","NEMS-OP","IRA","Absolute Difference from No IRA","TWh","Solar",2035,673.705707567114
 "E.10.SolarGen","REGEN-EPRI","IRA","Absolute Difference from No IRA","TWh","Solar",2025,3.37798788586593
 "E.10.SolarGen","REGEN-EPRI","IRA","Absolute Difference from No IRA","TWh","Solar",2030,21.5159765971741
@@ -280,19 +203,8 @@
 "E.10.SolarGen","ReEDS-NREL","IRA","Absolute Difference from No IRA","TWh","Solar",2025,87.9301977047758
 "E.10.SolarGen","ReEDS-NREL","IRA","Absolute Difference from No IRA","TWh","Solar",2030,491.847545695946
 "E.10.SolarGen","ReEDS-NREL","IRA","Absolute Difference from No IRA","TWh","Solar",2035,686.196658283808
-"E.10.SolarGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Solar",2022,-0.00103797746047007
-"E.10.SolarGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Solar",2023,0.190150870898265
-"E.10.SolarGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Solar",2024,2.09391753084986
 "E.10.SolarGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Solar",2025,76.7727158903378
-"E.10.SolarGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Solar",2026,172.909331296085
-"E.10.SolarGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Solar",2027,259.235703729999
-"E.10.SolarGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Solar",2028,308.947820237775
-"E.10.SolarGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Solar",2029,339.648996565676
 "E.10.SolarGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Solar",2030,351.647820012766
-"E.10.SolarGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Solar",2031,316.346829569239
-"E.10.SolarGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Solar",2032,283.524605299622
-"E.10.SolarGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Solar",2033,305.233361896761
-"E.10.SolarGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Solar",2034,333.491477275416
 "E.10.SolarGen","NEMS-EIA","IRA","Absolute Difference from No IRA","TWh","Solar",2035,345.965571402065
 "E.10.SolarGen","USREP-ReEDS","Historic","Absolute Difference from No IRA","TWh","Solar",2021,0
 "E.10.SolarGen","EPS-EI","Historic","Absolute Difference from No IRA","TWh","Solar",2021,0

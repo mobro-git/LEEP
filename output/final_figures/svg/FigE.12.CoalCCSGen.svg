@@ -348,10 +348,10 @@
 <polyline points='61.61,305.45 101.23,303.62 150.75,296.43 200.27,296.43 ' style='stroke-width: 1.60; stroke: #488C49; stroke-linecap: butt;' />
 <polyline points='61.61,305.45 150.75,300.71 200.27,300.00 ' style='stroke-width: 1.60; stroke: #8B507E; stroke-linecap: butt;' />
 <polyline points='61.61,305.45 101.23,305.45 150.75,295.24 200.27,207.39 ' style='stroke-width: 1.60; stroke: #AF499B; stroke-linecap: butt;' />
-<polyline points='61.61,305.45 71.51,305.45 81.42,305.45 91.32,305.45 101.23,305.45 111.13,305.45 121.04,305.45 130.94,305.34 140.85,305.12 150.75,305.13 160.65,305.12 170.56,305.13 180.46,305.15 190.37,305.16 200.27,305.21 ' style='stroke-width: 1.60; stroke: #11897D; stroke-dasharray: 4.27,4.27,12.80,4.27; stroke-linecap: butt;' />
+<polyline points='61.61,305.45 101.23,305.45 150.75,305.13 200.27,305.21 ' style='stroke-width: 1.60; stroke: #11897D; stroke-dasharray: 4.27,4.27,12.80,4.27; stroke-linecap: butt;' />
 <polyline points='61.61,305.45 101.23,295.76 150.75,291.99 200.27,292.01 ' style='stroke-width: 1.60; stroke: #F15A22; stroke-dasharray: 8.54,8.54; stroke-linecap: butt;' />
 <polyline points='61.61,305.45 101.23,305.45 150.75,284.91 200.27,283.32 ' style='stroke-width: 1.60; stroke: #B72467; stroke-dasharray: 14.94,6.40; stroke-linecap: butt;' />
-<polyline points='61.61,305.45 71.51,305.45 81.42,305.45 91.32,305.45 101.23,305.45 111.13,305.45 121.04,305.35 130.94,305.33 140.85,305.30 150.75,305.28 160.65,305.27 170.56,305.26 180.46,305.23 190.37,305.22 200.27,305.19 ' style='stroke-width: 1.60; stroke: #7F7F7F; stroke-dasharray: 2.13,6.40,8.54,6.40; stroke-linecap: butt;' />
+<polyline points='61.61,305.45 101.23,305.45 150.75,305.28 200.27,305.19 ' style='stroke-width: 1.60; stroke: #7F7F7F; stroke-dasharray: 2.13,6.40,8.54,6.40; stroke-linecap: butt;' />
 <circle cx='61.61' cy='305.45' r='1.95' style='stroke-width: 0.71; fill: #000000;' />
 <circle cx='150.75' cy='300.71' r='2.49' style='stroke-width: 0.71; stroke: none; fill: #000000;' />
 <circle cx='200.27' cy='300.00' r='2.49' style='stroke-width: 0.71; stroke: none; fill: #000000;' />
