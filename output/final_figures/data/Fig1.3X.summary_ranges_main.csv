@@ -1,0 +1,109 @@
+"figure_num","model","scenario","variable","unit","year","label","value","pct_diff"
+"1.3X.summary_ranges_main","EPS-EI","IRA","Economy-Wide","Mt CO2/yr",2030,"Total Emissions",3683.07333616727,17.5882539135112
+"1.3X.summary_ranges_main","EPS-EI","IRA","Economy-Wide","Mt CO2/yr",2035,"Total Emissions",3181.23945999667,25.5071056806331
+"1.3X.summary_ranges_main","GCAM-CGS","IRA","Economy-Wide","Mt CO2/yr",2030,"Total Emissions",3535.15117247745,21.7130291250754
+"1.3X.summary_ranges_main","GCAM-CGS","IRA","Economy-Wide","Mt CO2/yr",2035,"Total Emissions",3265.13939647775,25.0828410628367
+"1.3X.summary_ranges_main","GCAM-PNNL","IRA","Economy-Wide","Mt CO2/yr",2030,"Total Emissions",3631.81913612816,11.2813151116756
+"1.3X.summary_ranges_main","GCAM-PNNL","IRA","Economy-Wide","Mt CO2/yr",2035,"Total Emissions",3310.10805031081,12.6159437615942
+"1.3X.summary_ranges_main","MARKAL-NETL","IRA","Economy-Wide","Mt CO2/yr",2030,"Total Emissions",3978.59,4.61761603375527
+"1.3X.summary_ranges_main","MARKAL-NETL","IRA","Economy-Wide","Mt CO2/yr",2035,"Total Emissions",3385.68,18.6801203820906
+"1.3X.summary_ranges_main","NEMS-EIA","IRA","Economy-Wide","Mt CO2/yr",2030,"Total Emissions",4007.489174,9.66350305160567
+"1.3X.summary_ranges_main","NEMS-EIA","IRA","Economy-Wide","Mt CO2/yr",2035,"Total Emissions",3904.675421,9.58328775718742
+"1.3X.summary_ranges_main","NEMS-RHG","IRA","Economy-Wide","Mt CO2/yr",2030,"Total Emissions",3731.42341620699,12.5585206348424
+"1.3X.summary_ranges_main","NEMS-RHG","IRA","Economy-Wide","Mt CO2/yr",2035,"Total Emissions",3572.57563575272,12.2047981945572
+"1.3X.summary_ranges_main","RIO-REPEAT","IRA","Economy-Wide","Mt CO2/yr",2030,"Total Emissions",3693,11.1405197305101
+"1.3X.summary_ranges_main","RIO-REPEAT","IRA","Economy-Wide","Mt CO2/yr",2035,"Total Emissions",2763,25.5256064690027
+"1.3X.summary_ranges_main","USREP-ReEDS","IRA","Economy-Wide","Mt CO2/yr",2030,"Total Emissions",3493.680895,17.4406374324874
+"1.3X.summary_ranges_main","USREP-ReEDS","IRA","Economy-Wide","Mt CO2/yr",2035,"Total Emissions",3231.66939,19.4597560277351
+"1.3X.summary_ranges_main","NEMS-OP","IRA","Economy-Wide","Mt CO2/yr",2030,"Total Emissions",3836.38348433595,11.4093086091542
+"1.3X.summary_ranges_main","NEMS-OP","IRA","Economy-Wide","Mt CO2/yr",2035,"Total Emissions",3402.58860082152,17.294121697499
+"1.3X.summary_ranges_main","REGEN-EPRI","IRA","Economy-Wide","Mt CO2/yr",2030,"Total Emissions",3990.38178732904,4.71454181235389
+"1.3X.summary_ranges_main","REGEN-EPRI","IRA","Economy-Wide","Mt CO2/yr",2035,"Total Emissions",3224.40184675108,18.3298143430981
+"1.3X.summary_ranges_main","EPS-EI","IRA","Electricity","Mt CO2/yr",2030,"Electricity",602.7,49.8364503483233
+"1.3X.summary_ranges_main","EPS-EI","IRA","Electricity","Mt CO2/yr",2035,"Electricity",336.702,71.9108359959623
+"1.3X.summary_ranges_main","GCAM-CGS","IRA","Electricity","Mt CO2/yr",2030,"Electricity",679.659054813217,46.6896562016787
+"1.3X.summary_ranges_main","GCAM-CGS","IRA","Electricity","Mt CO2/yr",2035,"Electricity",445.580298326782,65.5421057105099
+"1.3X.summary_ranges_main","GCAM-PNNL","IRA","Electricity","Mt CO2/yr",2030,"Electricity",831.998710072543,32.6165152906854
+"1.3X.summary_ranges_main","GCAM-PNNL","IRA","Electricity","Mt CO2/yr",2035,"Electricity",784.368180921919,33.6907465147411
+"1.3X.summary_ranges_main","Haiku-RFF","IRA","Electricity","Mt CO2/yr",2030,"Electricity",852.658725492053,33.5199137160065
+"1.3X.summary_ranges_main","Haiku-RFF","IRA","Electricity","Mt CO2/yr",2035,"Electricity",767.701065402758,34.6227543605328
+"1.3X.summary_ranges_main","IPM-EPA","IRA","Electricity","Mt CO2/yr",2030,"Electricity",971.719363965523,25.4577974639099
+"1.3X.summary_ranges_main","IPM-EPA","IRA","Electricity","Mt CO2/yr",2035,"Electricity",608.299102727081,51.2302488684525
+"1.3X.summary_ranges_main","IPM-NRDC","IRA","Electricity","Mt CO2/yr",2030,"Electricity",827.389198560903,23.0995419875933
+"1.3X.summary_ranges_main","IPM-NRDC","IRA","Electricity","Mt CO2/yr",2035,"Electricity",772.508012550513,28.4635352433196
+"1.3X.summary_ranges_main","MARKAL-NETL","IRA","Electricity","Mt CO2/yr",2030,"Electricity",1232.67,10.6495408056017
+"1.3X.summary_ranges_main","MARKAL-NETL","IRA","Electricity","Mt CO2/yr",2035,"Electricity",749.4,47.5962378937799
+"1.3X.summary_ranges_main","NEMS-EIA","IRA","Electricity","Mt CO2/yr",2030,"Electricity",768.311584,34.7318118381692
+"1.3X.summary_ranges_main","NEMS-EIA","IRA","Electricity","Mt CO2/yr",2035,"Electricity",714.001099,35.1198897448368
+"1.3X.summary_ranges_main","NEMS-OP","IRA","Electricity","Mt CO2/yr",2030,"Electricity",660.642334,36.5310813255065
+"1.3X.summary_ranges_main","NEMS-OP","IRA","Electricity","Mt CO2/yr",2035,"Electricity",417.400726,56.4654754376663
+"1.3X.summary_ranges_main","NEMS-RHG","IRA","Electricity","Mt CO2/yr",2030,"Electricity",482.81984665288,50.7124795368825
+"1.3X.summary_ranges_main","NEMS-RHG","IRA","Electricity","Mt CO2/yr",2035,"Electricity",588.535589412373,35.0577282217598
+"1.3X.summary_ranges_main","REGEN-EPRI","IRA","Electricity","Mt CO2/yr",2030,"Electricity",999.666254194768,11.1453121219054
+"1.3X.summary_ranges_main","REGEN-EPRI","IRA","Electricity","Mt CO2/yr",2035,"Electricity",500.03751964597,54.4239750287369
+"1.3X.summary_ranges_main","RIO-REPEAT","IRA","Electricity","Mt CO2/yr",2030,"Electricity",741,24.4648318042813
+"1.3X.summary_ranges_main","RIO-REPEAT","IRA","Electricity","Mt CO2/yr",2035,"Electricity",370,52.258064516129
+"1.3X.summary_ranges_main","ReEDS-NREL","IRA","Electricity","Mt CO2/yr",2030,"Electricity",413.513524771282,66.6027253251275
+"1.3X.summary_ranges_main","ReEDS-NREL","IRA","Electricity","Mt CO2/yr",2035,"Electricity",323.38378502023,72.245975396822
+"1.3X.summary_ranges_main","USREP-ReEDS","IRA","Electricity","Mt CO2/yr",2030,"Electricity",616.834498,46.5760592915483
+"1.3X.summary_ranges_main","USREP-ReEDS","IRA","Electricity","Mt CO2/yr",2035,"Electricity",488.0122266,53.9735895435165
+"1.3X.summary_ranges_main","EPS-EI","IRA","Transportation","Mt CO2/yr",2030,"Total Transportation Emissions",1417.94385151708,3.02503102681992
+"1.3X.summary_ranges_main","EPS-EI","IRA","Transportation","Mt CO2/yr",2035,"Total Transportation Emissions",1229.5350411901,8.17117788574557
+"1.3X.summary_ranges_main","GCAM-CGS","IRA","Transportation","Mt CO2/yr",2030,"Total Transportation Emissions",1396.9307216309,7.15945516756046
+"1.3X.summary_ranges_main","GCAM-CGS","IRA","Transportation","Mt CO2/yr",2035,"Total Transportation Emissions",1310.87256817385,3.8442118662915
+"1.3X.summary_ranges_main","GCAM-PNNL","IRA","Transportation","Mt CO2/yr",2030,"Total Transportation Emissions",1504.76477565588,3.61211821479961
+"1.3X.summary_ranges_main","GCAM-PNNL","IRA","Transportation","Mt CO2/yr",2035,"Total Transportation Emissions",1283.05267565183,6.81050101783142
+"1.3X.summary_ranges_main","MARKAL-NETL","IRA","Transportation","Mt CO2/yr",2030,"Total Transportation Emissions",1493.40111677302,1.00493006522915
+"1.3X.summary_ranges_main","MARKAL-NETL","IRA","Transportation","Mt CO2/yr",2035,"Total Transportation Emissions",1356.21828072744,5.18489309039053
+"1.3X.summary_ranges_main","NEMS-EIA","IRA","Transportation","Mt CO2/yr",2030,"Total Transportation Emissions",1657.054932,0.900507331735775
+"1.3X.summary_ranges_main","NEMS-EIA","IRA","Transportation","Mt CO2/yr",2035,"Total Transportation Emissions",1592.773071,1.40152237632846
+"1.3X.summary_ranges_main","NEMS-OP","IRA","Transportation","Mt CO2/yr",2030,"Total Transportation Emissions",1641.628418,3.50887453710909
+"1.3X.summary_ranges_main","NEMS-OP","IRA","Transportation","Mt CO2/yr",2035,"Total Transportation Emissions",1471.571655,8.08941873379686
+"1.3X.summary_ranges_main","NEMS-RHG","IRA","Transportation","Mt CO2/yr",2030,"Total Transportation Emissions",1508.59734546816,1.60399406885081
+"1.3X.summary_ranges_main","NEMS-RHG","IRA","Transportation","Mt CO2/yr",2035,"Total Transportation Emissions",1387.05900584666,2.55430429259645
+"1.3X.summary_ranges_main","REGEN-EPRI","IRA","Transportation","Mt CO2/yr",2030,"Total Transportation Emissions",1569.14666069388,1.66204203927099
+"1.3X.summary_ranges_main","REGEN-EPRI","IRA","Transportation","Mt CO2/yr",2035,"Total Transportation Emissions",1376.14761897839,6.56602546743665
+"1.3X.summary_ranges_main","RIO-REPEAT","IRA","Transportation","Mt CO2/yr",2030,"Total Transportation Emissions",1583.87483206449,4.7626403990267
+"1.3X.summary_ranges_main","RIO-REPEAT","IRA","Transportation","Mt CO2/yr",2035,"Total Transportation Emissions",1204.93197278912,16.6792242617583
+"1.3X.summary_ranges_main","USREP-ReEDS","IRA","Transportation","Mt CO2/yr",2030,"Total Transportation Emissions",1599.23476078,1.36847981827439
+"1.3X.summary_ranges_main","USREP-ReEDS","IRA","Transportation","Mt CO2/yr",2035,"Total Transportation Emissions",1495.21077201,4.4555399388352
+"1.3X.summary_ranges_main","EPS-EI","IRA","Industry","Mt CO2/yr",2030,"Total Industry Emissions",939.539060262288,19.3419637509801
+"1.3X.summary_ranges_main","EPS-EI","IRA","Industry","Mt CO2/yr",2035,"Total Industry Emissions",849.980886540497,25.4985040943615
+"1.3X.summary_ranges_main","GCAM-CGS","IRA","Industry","Mt CO2/yr",2030,"Total Industry Emissions",1185.5497590578,20.8718961433776
+"1.3X.summary_ranges_main","GCAM-CGS","IRA","Industry","Mt CO2/yr",2035,"Total Industry Emissions",1174.68798661098,23.3897281173073
+"1.3X.summary_ranges_main","GCAM-PNNL","IRA","Industry","Mt CO2/yr",2030,"Total Industry Emissions",979.071266002796,9.06161808620449
+"1.3X.summary_ranges_main","GCAM-PNNL","IRA","Industry","Mt CO2/yr",2035,"Total Industry Emissions",949.082398361937,9.17174434534931
+"1.3X.summary_ranges_main","MARKAL-NETL","IRA","Industry","Mt CO2/yr",2030,"Total Industry Emissions",1314.64620977431,1.60750326103907
+"1.3X.summary_ranges_main","MARKAL-NETL","IRA","Industry","Mt CO2/yr",2035,"Total Industry Emissions",1222.2666622171,10.6520932727815
+"1.3X.summary_ranges_main","NEMS-EIA","IRA","Industry","Mt CO2/yr",2030,"Total Industry Emissions",990.184425017752,10.8076573932948
+"1.3X.summary_ranges_main","NEMS-EIA","IRA","Industry","Mt CO2/yr",2035,"Total Industry Emissions",1000.38892173886,10.2677024118516
+"1.3X.summary_ranges_main","NEMS-OP","IRA","Industry","Mt CO2/yr",2030,"Total Industry Emissions",1128.404297,10.6827921669911
+"1.3X.summary_ranges_main","NEMS-OP","IRA","Industry","Mt CO2/yr",2035,"Total Industry Emissions",1055.642578,14.4139433235589
+"1.3X.summary_ranges_main","NEMS-RHG","IRA","Industry","Mt CO2/yr",2030,"Total Industry Emissions",937.684138612776,12.4266771963464
+"1.3X.summary_ranges_main","NEMS-RHG","IRA","Industry","Mt CO2/yr",2035,"Total Industry Emissions",844.772202018129,19.5343771859101
+"1.3X.summary_ranges_main","REGEN-EPRI","IRA","Industry","Mt CO2/yr",2030,"Total Industry Emissions",1279.63544614596,4.70654945607076
+"1.3X.summary_ranges_main","REGEN-EPRI","IRA","Industry","Mt CO2/yr",2035,"Total Industry Emissions",1044.22398984278,20.0198468179501
+"1.3X.summary_ranges_main","RIO-REPEAT","IRA","Industry","Mt CO2/yr",2030,"Total Industry Emissions",911.216300940439,14.7943793653842
+"1.3X.summary_ranges_main","RIO-REPEAT","IRA","Industry","Mt CO2/yr",2035,"Total Industry Emissions",688.092322643343,32.5722299278783
+"1.3X.summary_ranges_main","USREP-ReEDS","IRA","Industry","Mt CO2/yr",2030,"Total Industry Emissions",1037.57958193,15.1170906988733
+"1.3X.summary_ranges_main","USREP-ReEDS","IRA","Industry","Mt CO2/yr",2035,"Total Industry Emissions",1037.94050988,12.2808997131637
+"1.3X.summary_ranges_main","EPS-EI","IRA","Buildings","Mt CO2/yr",2030,"Total Building Emissions",919.184219686818,34.181978805244
+"1.3X.summary_ranges_main","EPS-EI","IRA","Buildings","Mt CO2/yr",2035,"Total Building Emissions",723.352579489139,46.7659966985562
+"1.3X.summary_ranges_main","GCAM-CGS","IRA","Buildings","Mt CO2/yr",2030,"Total Building Emissions",924.91011011443,37.4767663461797
+"1.3X.summary_ranges_main","GCAM-CGS","IRA","Buildings","Mt CO2/yr",2035,"Total Building Emissions",752.928841692926,47.3092922886141
+"1.3X.summary_ranges_main","GCAM-PNNL","IRA","Buildings","Mt CO2/yr",2030,"Total Building Emissions",1039.45558035695,22.7890786514714
+"1.3X.summary_ranges_main","GCAM-PNNL","IRA","Buildings","Mt CO2/yr",2035,"Total Building Emissions",974.247574611141,22.7418090562018
+"1.3X.summary_ranges_main","MARKAL-NETL","IRA","Buildings","Mt CO2/yr",2030,"Total Building Emissions",1140.93267345267,12.03121405751
+"1.3X.summary_ranges_main","MARKAL-NETL","IRA","Buildings","Mt CO2/yr",2035,"Total Building Emissions",778.095057055452,41.7380774634765
+"1.3X.summary_ranges_main","NEMS-EIA","IRA","Buildings","Mt CO2/yr",2030,"Total Building Emissions",1127.282226,20.656485931154
+"1.3X.summary_ranges_main","NEMS-EIA","IRA","Buildings","Mt CO2/yr",2035,"Total Building Emissions",1077.198486,20.3866014624428
+"1.3X.summary_ranges_main","NEMS-OP","IRA","Buildings","Mt CO2/yr",2030,"Total Building Emissions",996.583252,23.1655635782356
+"1.3X.summary_ranges_main","NEMS-OP","IRA","Buildings","Mt CO2/yr",2035,"Total Building Emissions",809.16452,33.3762562641097
+"1.3X.summary_ranges_main","NEMS-RHG","IRA","Buildings","Mt CO2/yr",2030,"Total Building Emissions",915.68476129121,28.5214427616163
+"1.3X.summary_ranges_main","NEMS-RHG","IRA","Buildings","Mt CO2/yr",2035,"Total Building Emissions",967.475102907779,20.1013581798574
+"1.3X.summary_ranges_main","REGEN-EPRI","IRA","Buildings","Mt CO2/yr",2030,"Total Building Emissions",1071.83240715325,9.2129762047499
+"1.3X.summary_ranges_main","REGEN-EPRI","IRA","Buildings","Mt CO2/yr",2035,"Total Building Emissions",737.820543108383,33.203636938896
+"1.3X.summary_ranges_main","RIO-REPEAT","IRA","Buildings","Mt CO2/yr",2030,"Total Building Emissions",1091.90886699507,17.1218130160804
+"1.3X.summary_ranges_main","RIO-REPEAT","IRA","Buildings","Mt CO2/yr",2035,"Total Building Emissions",759.975704567541,32.9458257918204
+"1.3X.summary_ranges_main","USREP-ReEDS","IRA","Buildings","Mt CO2/yr",2030,"Total Building Emissions",826.8316008,35.229920056105
+"1.3X.summary_ranges_main","USREP-ReEDS","IRA","Buildings","Mt CO2/yr",2035,"Total Building Emissions",666.1815082,41.3976172508619

@@ -1147,45 +1147,110 @@ saveall(fig, dta, fig_no)
 ### Alternates: 1.3
 
 ```{r}
-fig_no = "1.3X.summary_ranges"
+SENSITIVITIES = FALSE
+if (SENSITIVITIES) {
+  fig_no = "1.3X.summary_ranges_sens"
+} else {
+  fig_no = "1.3X.summary_ranges_main"
+}
 
-Elec_data = spg_clean(
-  98,
-  c("Scout-LEEP"),
-  "EPA-GHGI",
-  config,
-  clean_data,
-  figmap_leep_timeseries
-)
-ElecTab = html(Elec_data, "Electricity CO2")
+if (SENSITIVITIES) {
+  clean_data1 = clean_data1 = filter_sensitivities(clean_data)
+} else {
+  clean_data1 = clean_data
+}
 
-Tran_data = spg_clean(
-  19,
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),  
-  "EPA-GHGI",
-  config,
-  clean_data,
-  figmap_leep_timeseries
-)
-TranTab = html(Tran_data, "Transportation CO2")
+if (SENSITIVITIES) {
+  Econ_data = spg_clean(
+    1000,
+    c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP", "Haiku-RFF"),
+    "EPA-GHGI",
+    config,
+    clean_data1,
+    figmap_leep_timeseries
+  )
+}
 
-Ind_data = spg_clean(
-  21, 
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),
-  "EPA-GHGI", 
-  config,
-  clean_data, 
-  figmap_leep_timeseries)
-IndTab = html(Ind_data, "Industry CO2")
+if (SENSITIVITIES) {
+  Elec_data = spg_clean(
+    1001,
+    c("Scout-LEEP"),
+    "EPA-GHGI",
+    config,
+    clean_data1,
+    figmap_leep_timeseries
+  )
+} else {
+  Elec_data = spg_clean(
+    98,
+    c("Scout-LEEP"),
+    "EPA-GHGI",
+    config,
+    clean_data1,
+    figmap_leep_timeseries
+  )
+  ElecTab = html(Elec_data, "Electricity CO2")
+}
 
-Buil_data = spg_clean(
-  23, 
-  c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL"), 
-  "EPA-GHGI", 
-  config, 
-  clean_data, 
-  figmap_leep_timeseries)
-BuilTab = html(Buil_data, "Building CO2")
+if (SENSITIVITIES) {
+  Tran_data = spg_clean(
+    1002,
+    c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),  
+    "EPA-GHGI",
+    config,
+    clean_data1,
+    figmap_leep_timeseries
+  )
+} else {
+  Tran_data = spg_clean(
+    19,
+    c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),  
+    "EPA-GHGI",
+    config,
+    clean_data1,
+    figmap_leep_timeseries
+  )
+  TranTab = html(Tran_data, "Transportation CO2")
+}
+
+if (SENSITIVITIES) {
+  Ind_data = spg_clean(
+    1003, 
+    c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),
+    "EPA-GHGI", 
+    config,
+    clean_data1, 
+    figmap_leep_timeseries)
+} else {
+  Ind_data = spg_clean(
+    21, 
+    c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL", "Scout-LEEP"),
+    "EPA-GHGI", 
+    config,
+    clean_data1, 
+    figmap_leep_timeseries)
+  IndTab = html(Ind_data, "Industry CO2")
+}
+
+if (SENSITIVITIES) {
+  Buil_data = spg_clean(
+    1004, 
+    c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL"), 
+    "EPA-GHGI", 
+    config, 
+    clean_data1, 
+    figmap_leep_timeseries)  
+} else {
+  Buil_data = spg_clean(
+    23, 
+    c("IPM-NRDC", "IPM-EPA", "ReEDS-NREL"), 
+    "EPA-GHGI", 
+    config, 
+    clean_data1, 
+    figmap_leep_timeseries)
+  BuilTab = html(Buil_data, "Building CO2")
+}
+
 
 # EconSpg$data = clean_supplemental_data(EconSpg$data, fig_no)
 # Elec_data = clean_supplemental_data(Elec_data, fig_no)
@@ -1222,7 +1287,12 @@ indicators_all = bind_rows(indicators_econ, indicators_elec,
 indicators_all_baseline = bind_rows(indicators_econ_baseline, 
                                     indicators_elec_baseline, indicators_tran_baseline,
                                     indicators_ind_baseline, indicators_buil_baseline)
-indicators_all_ira = indicators_all %>% filter(scenario == "IRA")
+
+if (SENSITIVITIES) {
+  indicators_all_ira = indicators_all %>% filter(!(grepl("No IRA", scenario)))
+} else {
+  indicators_all_ira = indicators_all %>% filter(scenario == "IRA")
+}
 indicators_all_noira = indicators_all %>% filter(scenario == "No IRA")
 
 variable_rename = data.frame("variable" = c("Emissions|CO2", "Emissions|CO2|Energy|Demand|Transportation|Total",
@@ -1238,22 +1308,30 @@ indicators_all_ira = indicators_all_ira %>%
     by = c("model", "variable", "year")) %>%
   mutate(pct_diff = -100 * (value - value_noira) / value_noira) %>%
   left_join(variable_rename, by = "variable") %>%
-    select(-variable) %>%
-    mutate(category = interaction(sector, scenario)) %>%
-    mutate(category = factor(category, levels = c(
+    select(-variable)
+
+data_extract = indicators_all_ira %>% 
+  rename("variable" = "sector") %>% 
+  clean_supplemental_data(fig_no) %>% 
+  mutate(pct_diff = indicators_all_ira$pct_diff)
+
+indicators_summ = indicators_all_ira %>% 
+  mutate(scenario = "IRA") %>%
+  mutate(scenario = factor(scenario, levels = c("IRA"))) %>%
+  mutate(category = interaction(sector, scenario)) %>%
+  mutate(category = factor(category, levels = c(
       "Industry.IRA",
       "Buildings.IRA",
       "Transportation.IRA",
       "Electricity.IRA",
       "Economy-Wide.IRA"
     ))) %>%
-    mutate(scenario = factor(scenario, levels = c("IRA")))
-
-indicators_summ = indicators_all_ira %>% 
   group_by(category, year, sector, scenario) %>%
   summarize(min = min(pct_diff),
             max = max(pct_diff),
             median = median(pct_diff))
+
+indicators_all_ira = indicators_all_ira %>% mutate(scenario = "IRA")
 
 p1 = indicator_smallX(indicators_all_ira, indicators_summ, "Economy-Wide", bottom = TRUE, top = FALSE,
                      subtitle = expression(paste("Economy-Wide")))
@@ -1273,42 +1351,42 @@ combined = (p2 / p3 / p4 / p5 / p1) +
   theme(plot.margin = margin(0, 0, 0, 0), legend.position = "none")
 combined
 
-indicators_all_clean = indicators_all %>% 
-  select(model,scenario,unit,region,title_name.y,year,value,value_2005,pct_diff) %>% 
-  rename(`percent diff 2005` = pct_diff)
+# indicators_all_clean = indicators_all %>% 
+#   select(model,scenario,unit,region,title_name.y,year,value,value_2005,pct_diff) %>% 
+#   rename(`percent diff 2005` = pct_diff)
+# 
+# EconTab
+# ElecTab
+# TranTab
+# BuilTab
+# IndTab
+# 
+# summary_IRA = indicators_summ %>%
+#   ungroup() %>%
+#   select(sector, scenario, year, min, median, max) %>%
+#   filter(scenario == "IRA") %>%
+#   select(sector, year,
+#          `IRA Min` = min, `IRA Median` = median, `IRA Max` = max)
+# 
+# summary_NoIRA = indicators_summ %>%
+#   ungroup() %>%
+#   select(sector, scenario, year, min, median, max) %>%
+#   filter(scenario == "No IRA")%>%
+#   select(sector, year,
+#          `No IRA Min` = min, `No IRA Median` = median, `No IRA Max` = max)
+# 
+# summary = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
+# 
+# data_combo = bind_rows(Elec_data, Tran_data, Buil_data, Ind_data, EconSpg$data)
+# savedata(data_combo, paste0(fig_no,"_alldata"))
+# saveall(combined, summary, fig_no)
+# #savedata(summary, fig_no)
+# 
+# fig_no = "ES.2.summary_ranges"
+# savedata(data_combo, paste0(fig_no,"_alldata"))
+# saveall(combined, summary, fig_no)
+# #savedata(summary, fig_no)
 
-EconTab
-ElecTab
-TranTab
-BuilTab
-IndTab
 
-summary_IRA = indicators_summ %>%
-  ungroup() %>%
-  select(sector, scenario, year, min, median, max) %>%
-  filter(scenario == "IRA") %>%
-  select(sector, year,
-         `IRA Min` = min, `IRA Median` = median, `IRA Max` = max)
-
-summary_NoIRA = indicators_summ %>%
-  ungroup() %>%
-  select(sector, scenario, year, min, median, max) %>%
-  filter(scenario == "No IRA")%>%
-  select(sector, year,
-         `No IRA Min` = min, `No IRA Median` = median, `No IRA Max` = max)
-
-summary = merge(summary_IRA, summary_NoIRA, by = c("sector", "year"))
-
-data_combo = bind_rows(Elec_data, Tran_data, Buil_data, Ind_data, EconSpg$data)
-savedata(data_combo, paste0(fig_no,"_alldata"))
-saveall(combined, summary, fig_no)
-#savedata(summary, fig_no)
-
-fig_no = "ES.2.summary_ranges"
-savedata(data_combo, paste0(fig_no,"_alldata"))
-saveall(combined, summary, fig_no)
-#savedata(summary, fig_no)
-
-data_extract = indicators_all_ira %>% rename("variable" = "sector") %>% clean_supplemental_data(fig_no)
 saveall(combined, data_extract, fig_no)
 ```
