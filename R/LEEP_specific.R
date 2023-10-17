@@ -463,12 +463,13 @@ duplicate_historical_data <- function(data_long, hist_model, hist_year, criteria
 # function for coneplot with dots overlaid
 lts_coneplot_with_dots = function(config, data, figmap, lts_fignum, leep_fignum, region, ymin, ymax, title, titlesize = 8, metric = "mean", facet = FALSE) {
   # update the historical data (is this even necessary anymore?)
-  data = data %>% duplicate_historical_data("EIA-LTS",2020)
+  data = data %>% duplicate_historical_data("EIA-LTS",2020) %>% filter(year <= 2035)
 
   # make the LTS cone plot
   fig1 = print_graph("cone_uncertainty", config, data, figmap, lts_fignum, region) +
     scale_y_continuous(limits = c(ymin, ymax)) +
-    scale_x_continuous(breaks = c(2005, 2021, 2030, 2035, 2050), labels = c(2005, 2021, 2030, 2035, 2050)) +
+    # scale_x_continuous(breaks = c(2005, 2021, 2030, 2035, 2050), labels = c(2005, 2021, 2030, 2035, 2050)) +
+    scale_x_continuous(breaks = c(2005, 2021, 2030, 2035), labels = c(2005, 2021, 2030, 2035)) +
     #again
     theme(axis.text.x = element_text(angle = 45, hjust = 1), axis.ticks = element_blank(), plot.title = element_text(hjust = 0.5, size = titlesize))
 

@@ -1,0 +1,301 @@
+"model","scenario","unit","year","datasrc","variable","region","value"
+"EPS-EI","IRA","Mt CO2/yr",2025,"bistline_ira_tall.csv","Emissions|CO2","United States",4549.81011733888
+"EPS-EI","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",3683.07333616727
+"EPS-EI","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",3181.23945999667
+"EPS-EI","No IRA","Mt CO2/yr",2025,"bistline_ira_tall.csv","Emissions|CO2","United States",4811.12269086155
+"EPS-EI","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",4469.11212426198
+"EPS-EI","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",4270.52739601984
+"GCAM-CGS","IRA","Mt CO2/yr",2025,"bistline_ira_tall.csv","Emissions|CO2","United States",4143.32131119463
+"GCAM-CGS","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",3535.15117247745
+"GCAM-CGS","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",3265.13939647775
+"GCAM-CGS","No IRA","Mt CO2/yr",2025,"bistline_ira_tall.csv","Emissions|CO2","United States",4678.3428009427
+"GCAM-CGS","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",4515.63157057819
+"GCAM-CGS","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",4358.33318134285
+"GCAM-PNNL","IRA","Mt CO2/yr",2025,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2","United States",4150.86876799247
+"GCAM-PNNL","IRA","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2","United States",3631.81913612816
+"GCAM-PNNL","IRA","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2","United States",3310.10805031081
+"GCAM-PNNL","IRA","Mt CO2e/yr",2025,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CH4","United States",667.794113606721
+"GCAM-PNNL","IRA","Mt CO2e/yr",2025,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|F-Gases","United States",151.8226542893
+"GCAM-PNNL","IRA","Mt CO2e/yr",2025,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|N2O","United States",461.96707697953
+"GCAM-PNNL","IRA","Mt CO2e/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CH4","United States",673.654898899377
+"GCAM-PNNL","IRA","Mt CO2e/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|F-Gases","United States",154.472057078
+"GCAM-PNNL","IRA","Mt CO2e/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|N2O","United States",479.299149903039
+"GCAM-PNNL","IRA","Mt CO2e/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CH4","United States",689.908493534008
+"GCAM-PNNL","IRA","Mt CO2e/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|F-Gases","United States",154.2515895613
+"GCAM-PNNL","IRA","Mt CO2e/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|N2O","United States",489.201053069681
+"GCAM-PNNL","No IRA","Mt CO2/yr",2025,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2","United States",4313.135
+"GCAM-PNNL","No IRA","Mt CO2/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2","United States",4093.635
+"GCAM-PNNL","No IRA","Mt CO2/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CO2","United States",3788
+"GCAM-PNNL","No IRA","Mt CO2e/yr",2025,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CH4","United States",707.41776
+"GCAM-PNNL","No IRA","Mt CO2e/yr",2025,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|F-Gases","United States",151.0801
+"GCAM-PNNL","No IRA","Mt CO2e/yr",2025,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|N2O","United States",463.861565
+"GCAM-PNNL","No IRA","Mt CO2e/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CH4","United States",714.57736
+"GCAM-PNNL","No IRA","Mt CO2e/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|F-Gases","United States",154.2386
+"GCAM-PNNL","No IRA","Mt CO2e/yr",2030,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|N2O","United States",483.68224
+"GCAM-PNNL","No IRA","Mt CO2e/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|CH4","United States",715.4266
+"GCAM-PNNL","No IRA","Mt CO2e/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|F-Gases","United States",153.9737
+"GCAM-PNNL","No IRA","Mt CO2e/yr",2035,"PNNL_GCAM6_IRA_EPA_LEEP_6_30_23.xlsx","Emissions|N2O","United States",493.45862
+"MARKAL-NETL","IRA","Mt CO2/yr",2025,"bistline_ira_tall.csv","Emissions|CO2","United States",4265.25
+"MARKAL-NETL","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",3978.59
+"MARKAL-NETL","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",3385.68
+"MARKAL-NETL","No IRA","Mt CO2/yr",2025,"bistline_ira_tall.csv","Emissions|CO2","United States",4284.46
+"MARKAL-NETL","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",4171.2
+"MARKAL-NETL","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",4163.41
+"NEMS-EIA","IRA","Mt CO2/yr",2025,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2","United States",4564.102887
+"NEMS-EIA","IRA","Mt CO2/yr",2030,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2","United States",4007.489174
+"NEMS-EIA","IRA","Mt CO2/yr",2035,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2","United States",3904.675421
+"NEMS-EIA","No IRA","Mt CO2/yr",2025,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2","United States",4611.531392
+"NEMS-EIA","No IRA","Mt CO2/yr",2030,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2","United States",4436.179517
+"NEMS-EIA","No IRA","Mt CO2/yr",2035,"AEO2023 IRA 5cenario outputs by OnL 07-25-23.xlsx","Emissions|CO2","United States",4318.532851
+"NEMS-RHG","IRA","Mt CO2/yr",2025,"bistline_ira_tall.csv","Emissions|CO2","United States",4617.66277995179
+"NEMS-RHG","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",3731.42341620699
+"NEMS-RHG","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",3572.57563575272
+"NEMS-RHG","No IRA","Mt CO2/yr",2025,"bistline_ira_tall.csv","Emissions|CO2","United States",4516.98988352657
+"NEMS-RHG","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",4267.33793080568
+"NEMS-RHG","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",4069.21513053717
+"RIO-REPEAT","IRA","Mt CO2/yr",2025,"bistline_ira_tall.csv","Emissions|CO2","United States",4771.5
+"RIO-REPEAT","IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",3693
+"RIO-REPEAT","IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",2763
+"RIO-REPEAT","No IRA","Mt CO2/yr",2025,"bistline_ira_tall.csv","Emissions|CO2","United States",4809.5
+"RIO-REPEAT","No IRA","Mt CO2/yr",2030,"bistline_ira_tall.csv","Emissions|CO2","United States",4156
+"RIO-REPEAT","No IRA","Mt CO2/yr",2035,"bistline_ira_tall.csv","Emissions|CO2","United States",3710
+"USREP-ReEDS","IRA","Mt CO2/yr",2025,"usrep_reeds_allscen.csv","Emissions|CO2","United States",4127.409674
+"USREP-ReEDS","IRA","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2","United States",3493.680895
+"USREP-ReEDS","IRA","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2","United States",3231.66939
+"USREP-ReEDS","IRA","Mt CO2e/yr",2025,"usrep_reeds_allscen.csv","Emissions|CH4","United States",653
+"USREP-ReEDS","IRA","Mt CO2e/yr",2025,"usrep_reeds_allscen.csv","Emissions|N2O","United States",417
+"USREP-ReEDS","IRA","Mt CO2e/yr",2030,"usrep_reeds_allscen.csv","Emissions|CH4","United States",653
+"USREP-ReEDS","IRA","Mt CO2e/yr",2030,"usrep_reeds_allscen.csv","Emissions|N2O","United States",413
+"USREP-ReEDS","IRA","Mt CO2e/yr",2035,"usrep_reeds_allscen.csv","Emissions|CH4","United States",651
+"USREP-ReEDS","IRA","Mt CO2e/yr",2035,"usrep_reeds_allscen.csv","Emissions|N2O","United States",410
+"USREP-ReEDS","No IRA","Mt CO2/yr",2025,"usrep_reeds_allscen.csv","Emissions|CO2","United States",4540.270473
+"USREP-ReEDS","No IRA","Mt CO2/yr",2030,"usrep_reeds_allscen.csv","Emissions|CO2","United States",4231.719803
+"USREP-ReEDS","No IRA","Mt CO2/yr",2035,"usrep_reeds_allscen.csv","Emissions|CO2","United States",4012.490192
+"USREP-ReEDS","No IRA","Mt CO2e/yr",2025,"usrep_reeds_allscen.csv","Emissions|CH4","United States",653
+"USREP-ReEDS","No IRA","Mt CO2e/yr",2025,"usrep_reeds_allscen.csv","Emissions|N2O","United States",417
+"USREP-ReEDS","No IRA","Mt CO2e/yr",2030,"usrep_reeds_allscen.csv","Emissions|CH4","United States",653
+"USREP-ReEDS","No IRA","Mt CO2e/yr",2030,"usrep_reeds_allscen.csv","Emissions|N2O","United States",413
+"USREP-ReEDS","No IRA","Mt CO2e/yr",2035,"usrep_reeds_allscen.csv","Emissions|CH4","United States",651
+"USREP-ReEDS","No IRA","Mt CO2e/yr",2035,"usrep_reeds_allscen.csv","Emissions|N2O","United States",410
+"NEMS-OP","IRA","Mt CO2/yr",2025,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",4547.97323704377
+"NEMS-OP","IRA","Mt CO2/yr",2030,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",3836.38348433595
+"NEMS-OP","IRA","Mt CO2/yr",2035,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",3402.58860082152
+"NEMS-OP","No IRA","Mt CO2/yr",2025,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",4635.118241
+"NEMS-OP","No IRA","Mt CO2/yr",2030,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",4330.458905
+"NEMS-OP","No IRA","Mt CO2/yr",2035,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",4114.083147
+"REGEN-EPRI","IRA","Mt CO2/yr",2025,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",4523.30792416533
+"REGEN-EPRI","IRA","Mt CO2/yr",2030,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",3990.38178732904
+"REGEN-EPRI","IRA","Mt CO2/yr",2035,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",3224.40184675108
+"REGEN-EPRI","No IRA","Mt CO2/yr",2025,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",4563.70101682317
+"REGEN-EPRI","No IRA","Mt CO2/yr",2030,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",4187.81822874878
+"REGEN-EPRI","No IRA","Mt CO2/yr",2035,"calculated w/ GCAM-PNNL values","Emissions|CO2","United States",3948.07703792527
+"EPS-EI","IRA",NA,2025,NA,"Emissions|CH4",NA,653
+"EPS-EI","IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"EPS-EI","IRA",NA,2025,NA,"Emissions|N2O",NA,417
+"EPS-EI","IRA",NA,2030,NA,"Emissions|CH4",NA,653
+"EPS-EI","IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"EPS-EI","IRA",NA,2030,NA,"Emissions|N2O",NA,413
+"EPS-EI","IRA",NA,2035,NA,"Emissions|CH4",NA,651
+"EPS-EI","IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"EPS-EI","IRA",NA,2035,NA,"Emissions|N2O",NA,410
+"EPS-EI","No IRA",NA,2025,NA,"Emissions|CH4",NA,653
+"EPS-EI","No IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"EPS-EI","No IRA",NA,2025,NA,"Emissions|N2O",NA,417
+"EPS-EI","No IRA",NA,2030,NA,"Emissions|CH4",NA,653
+"EPS-EI","No IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"EPS-EI","No IRA",NA,2030,NA,"Emissions|N2O",NA,413
+"EPS-EI","No IRA",NA,2035,NA,"Emissions|CH4",NA,651
+"EPS-EI","No IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"EPS-EI","No IRA",NA,2035,NA,"Emissions|N2O",NA,410
+"GCAM-CGS","IRA",NA,2025,NA,"Emissions|CH4",NA,653
+"GCAM-CGS","IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"GCAM-CGS","IRA",NA,2025,NA,"Emissions|N2O",NA,417
+"GCAM-CGS","IRA",NA,2030,NA,"Emissions|CH4",NA,653
+"GCAM-CGS","IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"GCAM-CGS","IRA",NA,2030,NA,"Emissions|N2O",NA,413
+"GCAM-CGS","IRA",NA,2035,NA,"Emissions|CH4",NA,651
+"GCAM-CGS","IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"GCAM-CGS","IRA",NA,2035,NA,"Emissions|N2O",NA,410
+"GCAM-CGS","No IRA",NA,2025,NA,"Emissions|CH4",NA,653
+"GCAM-CGS","No IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"GCAM-CGS","No IRA",NA,2025,NA,"Emissions|N2O",NA,417
+"GCAM-CGS","No IRA",NA,2030,NA,"Emissions|CH4",NA,653
+"GCAM-CGS","No IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"GCAM-CGS","No IRA",NA,2030,NA,"Emissions|N2O",NA,413
+"GCAM-CGS","No IRA",NA,2035,NA,"Emissions|CH4",NA,651
+"GCAM-CGS","No IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"GCAM-CGS","No IRA",NA,2035,NA,"Emissions|N2O",NA,410
+"MARKAL-NETL","IRA",NA,2025,NA,"Emissions|CH4",NA,653
+"MARKAL-NETL","IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"MARKAL-NETL","IRA",NA,2025,NA,"Emissions|N2O",NA,417
+"MARKAL-NETL","IRA",NA,2030,NA,"Emissions|CH4",NA,653
+"MARKAL-NETL","IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"MARKAL-NETL","IRA",NA,2030,NA,"Emissions|N2O",NA,413
+"MARKAL-NETL","IRA",NA,2035,NA,"Emissions|CH4",NA,651
+"MARKAL-NETL","IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"MARKAL-NETL","IRA",NA,2035,NA,"Emissions|N2O",NA,410
+"MARKAL-NETL","No IRA",NA,2025,NA,"Emissions|CH4",NA,653
+"MARKAL-NETL","No IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"MARKAL-NETL","No IRA",NA,2025,NA,"Emissions|N2O",NA,417
+"MARKAL-NETL","No IRA",NA,2030,NA,"Emissions|CH4",NA,653
+"MARKAL-NETL","No IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"MARKAL-NETL","No IRA",NA,2030,NA,"Emissions|N2O",NA,413
+"MARKAL-NETL","No IRA",NA,2035,NA,"Emissions|CH4",NA,651
+"MARKAL-NETL","No IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"MARKAL-NETL","No IRA",NA,2035,NA,"Emissions|N2O",NA,410
+"NEMS-EIA","IRA",NA,2025,NA,"Emissions|CH4",NA,653
+"NEMS-EIA","IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"NEMS-EIA","IRA",NA,2025,NA,"Emissions|N2O",NA,417
+"NEMS-EIA","IRA",NA,2030,NA,"Emissions|CH4",NA,653
+"NEMS-EIA","IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"NEMS-EIA","IRA",NA,2030,NA,"Emissions|N2O",NA,413
+"NEMS-EIA","IRA",NA,2035,NA,"Emissions|CH4",NA,651
+"NEMS-EIA","IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"NEMS-EIA","IRA",NA,2035,NA,"Emissions|N2O",NA,410
+"NEMS-EIA","No IRA",NA,2025,NA,"Emissions|CH4",NA,653
+"NEMS-EIA","No IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"NEMS-EIA","No IRA",NA,2025,NA,"Emissions|N2O",NA,417
+"NEMS-EIA","No IRA",NA,2030,NA,"Emissions|CH4",NA,653
+"NEMS-EIA","No IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"NEMS-EIA","No IRA",NA,2030,NA,"Emissions|N2O",NA,413
+"NEMS-EIA","No IRA",NA,2035,NA,"Emissions|CH4",NA,651
+"NEMS-EIA","No IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"NEMS-EIA","No IRA",NA,2035,NA,"Emissions|N2O",NA,410
+"NEMS-OP","IRA",NA,2025,NA,"Emissions|CH4",NA,653
+"NEMS-OP","IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"NEMS-OP","IRA",NA,2025,NA,"Emissions|N2O",NA,417
+"NEMS-OP","IRA",NA,2030,NA,"Emissions|CH4",NA,653
+"NEMS-OP","IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"NEMS-OP","IRA",NA,2030,NA,"Emissions|N2O",NA,413
+"NEMS-OP","IRA",NA,2035,NA,"Emissions|CH4",NA,651
+"NEMS-OP","IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"NEMS-OP","IRA",NA,2035,NA,"Emissions|N2O",NA,410
+"NEMS-OP","No IRA",NA,2025,NA,"Emissions|CH4",NA,653
+"NEMS-OP","No IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"NEMS-OP","No IRA",NA,2025,NA,"Emissions|N2O",NA,417
+"NEMS-OP","No IRA",NA,2030,NA,"Emissions|CH4",NA,653
+"NEMS-OP","No IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"NEMS-OP","No IRA",NA,2030,NA,"Emissions|N2O",NA,413
+"NEMS-OP","No IRA",NA,2035,NA,"Emissions|CH4",NA,651
+"NEMS-OP","No IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"NEMS-OP","No IRA",NA,2035,NA,"Emissions|N2O",NA,410
+"NEMS-RHG","IRA",NA,2025,NA,"Emissions|CH4",NA,653
+"NEMS-RHG","IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"NEMS-RHG","IRA",NA,2025,NA,"Emissions|N2O",NA,417
+"NEMS-RHG","IRA",NA,2030,NA,"Emissions|CH4",NA,653
+"NEMS-RHG","IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"NEMS-RHG","IRA",NA,2030,NA,"Emissions|N2O",NA,413
+"NEMS-RHG","IRA",NA,2035,NA,"Emissions|CH4",NA,651
+"NEMS-RHG","IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"NEMS-RHG","IRA",NA,2035,NA,"Emissions|N2O",NA,410
+"NEMS-RHG","No IRA",NA,2025,NA,"Emissions|CH4",NA,653
+"NEMS-RHG","No IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"NEMS-RHG","No IRA",NA,2025,NA,"Emissions|N2O",NA,417
+"NEMS-RHG","No IRA",NA,2030,NA,"Emissions|CH4",NA,653
+"NEMS-RHG","No IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"NEMS-RHG","No IRA",NA,2030,NA,"Emissions|N2O",NA,413
+"NEMS-RHG","No IRA",NA,2035,NA,"Emissions|CH4",NA,651
+"NEMS-RHG","No IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"NEMS-RHG","No IRA",NA,2035,NA,"Emissions|N2O",NA,410
+"REGEN-EPRI","IRA",NA,2025,NA,"Emissions|CH4",NA,653
+"REGEN-EPRI","IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"REGEN-EPRI","IRA",NA,2025,NA,"Emissions|N2O",NA,417
+"REGEN-EPRI","IRA",NA,2030,NA,"Emissions|CH4",NA,653
+"REGEN-EPRI","IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"REGEN-EPRI","IRA",NA,2030,NA,"Emissions|N2O",NA,413
+"REGEN-EPRI","IRA",NA,2035,NA,"Emissions|CH4",NA,651
+"REGEN-EPRI","IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"REGEN-EPRI","IRA",NA,2035,NA,"Emissions|N2O",NA,410
+"REGEN-EPRI","No IRA",NA,2025,NA,"Emissions|CH4",NA,653
+"REGEN-EPRI","No IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"REGEN-EPRI","No IRA",NA,2025,NA,"Emissions|N2O",NA,417
+"REGEN-EPRI","No IRA",NA,2030,NA,"Emissions|CH4",NA,653
+"REGEN-EPRI","No IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"REGEN-EPRI","No IRA",NA,2030,NA,"Emissions|N2O",NA,413
+"REGEN-EPRI","No IRA",NA,2035,NA,"Emissions|CH4",NA,651
+"REGEN-EPRI","No IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"REGEN-EPRI","No IRA",NA,2035,NA,"Emissions|N2O",NA,410
+"RIO-REPEAT","IRA",NA,2025,NA,"Emissions|CH4",NA,653
+"RIO-REPEAT","IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"RIO-REPEAT","IRA",NA,2025,NA,"Emissions|N2O",NA,417
+"RIO-REPEAT","IRA",NA,2030,NA,"Emissions|CH4",NA,653
+"RIO-REPEAT","IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"RIO-REPEAT","IRA",NA,2030,NA,"Emissions|N2O",NA,413
+"RIO-REPEAT","IRA",NA,2035,NA,"Emissions|CH4",NA,651
+"RIO-REPEAT","IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"RIO-REPEAT","IRA",NA,2035,NA,"Emissions|N2O",NA,410
+"RIO-REPEAT","No IRA",NA,2025,NA,"Emissions|CH4",NA,653
+"RIO-REPEAT","No IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"RIO-REPEAT","No IRA",NA,2025,NA,"Emissions|N2O",NA,417
+"RIO-REPEAT","No IRA",NA,2030,NA,"Emissions|CH4",NA,653
+"RIO-REPEAT","No IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"RIO-REPEAT","No IRA",NA,2030,NA,"Emissions|N2O",NA,413
+"RIO-REPEAT","No IRA",NA,2035,NA,"Emissions|CH4",NA,651
+"RIO-REPEAT","No IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"RIO-REPEAT","No IRA",NA,2035,NA,"Emissions|N2O",NA,410
+"USREP-ReEDS","IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"USREP-ReEDS","IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"USREP-ReEDS","IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"USREP-ReEDS","No IRA",NA,2025,NA,"Emissions|F-Gases",NA,171
+"USREP-ReEDS","No IRA",NA,2030,NA,"Emissions|F-Gases",NA,175
+"USREP-ReEDS","No IRA",NA,2035,NA,"Emissions|F-Gases",NA,142
+"EPS-EI","IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"EPS-EI","No IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"GCAM-CGS","IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"GCAM-CGS","No IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"GCAM-PNNL","IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"GCAM-PNNL","No IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"MARKAL-NETL","IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"MARKAL-NETL","No IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"NEMS-EIA","IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"NEMS-EIA","No IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"NEMS-OP","IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"NEMS-OP","No IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"NEMS-RHG","IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"NEMS-RHG","No IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"REGEN-EPRI","IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"REGEN-EPRI","No IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"RIO-REPEAT","IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"RIO-REPEAT","No IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"USREP-ReEDS","IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"USREP-ReEDS","No IRA",NA,2025,NA,"Emissions|LULUCF",NA,-672
+"EPS-EI","IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"EPS-EI","No IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"GCAM-CGS","IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"GCAM-CGS","No IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"GCAM-PNNL","IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"GCAM-PNNL","No IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"MARKAL-NETL","IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"MARKAL-NETL","No IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"NEMS-EIA","IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"NEMS-EIA","No IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"NEMS-OP","IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"NEMS-OP","No IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"NEMS-RHG","IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"NEMS-RHG","No IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"REGEN-EPRI","IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"REGEN-EPRI","No IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"RIO-REPEAT","IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"RIO-REPEAT","No IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"USREP-ReEDS","IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"USREP-ReEDS","No IRA",NA,2030,NA,"Emissions|LULUCF",NA,-604
+"EPS-EI","IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"EPS-EI","No IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"GCAM-CGS","IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"GCAM-CGS","No IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"GCAM-PNNL","IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"GCAM-PNNL","No IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"MARKAL-NETL","IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"MARKAL-NETL","No IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"NEMS-EIA","IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"NEMS-EIA","No IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"NEMS-OP","IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"NEMS-OP","No IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"NEMS-RHG","IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"NEMS-RHG","No IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"REGEN-EPRI","IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"REGEN-EPRI","No IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"RIO-REPEAT","IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"RIO-REPEAT","No IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"USREP-ReEDS","IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
+"USREP-ReEDS","No IRA",NA,2035,NA,"Emissions|LULUCF",NA,-602
