@@ -31,7 +31,7 @@ tar_plan(
 
     # models
     # "models" list should include ALL individual model names included in the full clean_data set
-    models = c("AEO2020","AEO2021","AEO2022",
+    all_models = c("AEO2020","AEO2021","AEO2022",
                "EIA_Historic","EIA_STEO","EPA-GHGI","NCS-GHGI",
                "GCAM-CGS","EPS-EI","Haiky-RFF","IPM-NRDC","MARKAL-NETL","NEMS-RHG","ReEDS-NREL","REGEN-EPRI","RIO-REPEAT", #bistline paper
                "GCAM-PNNL"
@@ -72,7 +72,7 @@ tar_plan(
 
     leep_sens = c("IRA.Low","IRA.High", "Historic"),
 
-    all_sens = c("Historic","No IRA","IRA","Core",
+    all_scenarios = c("Historic","No IRA","IRA","Core",
                  "IRA.Low","IRA.High",
                  "High Energy Price","High Growth","Low Energy Price","Low Growth",
                  "All Advanced","Opt-IRA.Adv","Constrained Deployment","Pess-IRA.Adv",

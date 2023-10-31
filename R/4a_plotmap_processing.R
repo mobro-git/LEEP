@@ -23,6 +23,7 @@ import_figure_csv <- function(plot_list, figure_type, config) {
     assert_models_in_config(config) %>%
     assert_scenarios_in_config(config) %>%
     assert_regions_in_config(config) %>%
+    assert_years_in_config_or_numeric(config) %>%
     assert_valid_page_filter(figure_type) %>%
     check_figure_specification(figure_type)
 
@@ -79,17 +80,17 @@ standard_corrplot_cols <- c("figure_no", "title_name", "variable", "variable_ren
 #' assert_figure_csv_has_standard_columns
 #'
 #' This function checks if all of the standard columns for a specific plot type is present in the mapping list
-#' @param df for the plot list
+#' @param status for the plot list
 #' @param figure_type please make sure figure_type only takes on the value stacked, diff, or ts
 #'
 #' @return
 
-assert_figure_csv_has_standard_columns <- function(df, figure_type) {
-  if(! all(get(paste("standard_", figure_type, "_cols", sep = "")) %in% names(df))) {
+assert_figure_csv_has_standard_columns <- function(status, figure_type) {
+  if(! all(get(paste("standard_", figure_type, "_cols", sep = "")) %in% names(status))) {
     rlang::abort(paste("Missing at least one standard column in the ", figure_type, " plot mapping csv.", sep = ""),
                  class = 'plot_mapping_csv')
   }
-  invisible(df)
+  invisible(status)
 }
 
 
@@ -101,21 +102,21 @@ assert_figure_csv_has_standard_columns <- function(df, figure_type) {
 #' assert_vars_in_template_or_calculated
 #'
 #' check if all vars are present in the template
-#' @param df for plot list
+#' @param status for plot list
 #'
 #' @return TRUE or abort
 
-assert_vars_in_template_or_calculated <- function(df, figure_type, config) {
+assert_vars_in_template_or_calculated <- function(status, figure_type, config) {
 
   if (figure_type != "sankey") {
-    plot_vars = unique(df$variable)
+    plot_vars = unique(status$variable)
   }
 
   else if (figure_type == "sankey") {
     plot_vars = c(
-      unique(df$source_var),
-      unique(df$link_var),
-      unique(df$target_var))
+      unique(status$source_var),
+      unique(status$link_var),
+      unique(status$target_var))
   }
 
     template_vars = unique(config$template$variable)
@@ -135,7 +136,7 @@ assert_vars_in_template_or_calculated <- function(df, figure_type, config) {
                    class = 'plot_variable')
     }
 
-  invisible(df)
+  invisible(status)
 
 }
 
@@ -147,19 +148,19 @@ assert_vars_in_template_or_calculated <- function(df, figure_type, config) {
 #' assert_models_in_config
 #'
 #' make sure all the values in the 'models' column exist in config
-#' @param df for plot list
+#' @param status for plot list
 #'
-#' @return df or abort
+#' @return status or abort
 
-assert_models_in_config <- function(df, config) {
+assert_models_in_config <- function(status, config) {
 
   not_present = c()
 
-  unique_model_config = unique(df$models)
+  unique_model_config = unique(status$models)
 
   for(item in unique_model_config) {
 
-    present = (item %in% names(config) | (item %in% config$models))
+    present = (item %in% names(config) | (item %in% config$all_models))
 
     if(! all(present)) {not_present = append(not_present, item)}
 
@@ -169,91 +170,108 @@ assert_models_in_config <- function(df, config) {
     rlang::abort(message = paste("The following item in the 'models' column NOT in config: ",not_present),
                  class = 'plot_mapping_csv models')
   }
-  invisible(df)
+  invisible(status)
+
 }
 
 #' assert_scenarios_in_config or valid
 #'
 #' make sure all the values in the 'scenarios' column exist in config
-#' @param df
+#' @param status
 #'
-#' @return df or abort
+#' @return status or abort
 #' @export
-assert_scenarios_in_config <- function(df, config) {
+assert_scenarios_in_config <- function(status, config) {
 
-  unique_scenario_config = unique(df$scenarios)
+  not_present = c()
 
-  present = ((unique_scenario_config %in% names(config)) || unique_scenario_config %in% config$all_scenarios)
+  unique_scenario_config = unique(status$scenarios)
 
+  for(item in unique_scenario_config) {
 
-  if(! all(present)) {
-    rlang::abort(message = paste("\"", df$scenarios[!present], "\" in the 'scenarios' column NOT in config.", sep = ""),
+    present = (item %in% names(config) | (item %in% config$all_scenarios))
+
+    if(! all(present)) {not_present = append(not_present, item)}
+
+  }
+
+  if(length(not_present) > 0) {
+    rlang::abort(message = paste("The following item in the 'scenarios' column NOT in config: ",not_present),
                  class = 'plot_mapping_csv scenarios')
   }
-  invisible(df)
+  invisible(status)
 }
 
 #' assert_regions_in_config
 #'
 #' make sure all the values in the 'regions' column exist in config
-#' @param df
+#' @param status
 #'
-#' @return df or abort
+#' @return status or abort
 #' @export
-assert_regions_in_config <- function(df, config) {
+assert_regions_in_config <- function(status, config) {
 
-  present = unique(df$regions) %in% names(config)
+  present = unique(status$regions) %in% names(config)
 
   if(! all(present)) {
-    rlang::abort(message = paste("\"", df$regions[!present], "\" in the 'regions' column NOT in config.", sep = ""),
+    rlang::abort(message = paste("\"", status$regions[!present], "\" in the 'regions' column NOT in config.", sep = ""),
                  class = 'plot_mapping_csv regions')
   }
-  invisible(df)
+  invisible(status)
 }
 
 #' assert_years_in_config_or_numeric
 #'
 #' make sure all the values in the 'years' column either exist in config or
 #' are numeric
-#' @param df
+#' @param status
 #'
-#' @return df or abort
+#' @return status or abort
 #' @export
-assert_years_in_config_or_numeric <- function(df, config) {
+assert_years_in_config_or_numeric <- function(status, config) {
 
-  unique_year_config = unique(df$years)
+  not_present = c()
 
-  present = ((unique_year_config %in% names(config)) || is.numeric(unique_year_config))
+  unique_years_config = unique(status$years)
 
-  if(! all(present)) {
-    rlang::abort(message = paste("\"", df$regions[!present], "\" in the 'years' column NOT in config.", sep = ""),
-                 class = 'plot_mapping_csv regions')
+  for(item in unique_years_config) {
+
+    present = (item %in% names(config) | is.numeric(item))
+
+    if(! all(present)) {not_present = append(not_present, item)}
+
   }
-  invisible(df)
+
+  if(length(not_present) > 0) {
+    rlang::abort(message = paste("The following item in the 'years' column NOT in config: ",not_present),
+                 class = 'plot_mapping_csv years')
+  }
+
+  invisible(status)
 }
 
 #' assert_valid_page_filter
 #'
 #' make sure all the values in the 'page_filter' column refer to valid column names
-#' @param df
+#' @param status
 #'
-#' @return df or abort
+#' @return status or abort
 #' @export
-assert_valid_page_filter <- function(df, figure_type) {
+assert_valid_page_filter <- function(status, figure_type) {
 
   if(figure_type != "sankey") {
 
-    unique_page_filter = unique(df$page_filter)
+    unique_page_filter = unique(status$page_filter)
 
     present = (unique_page_filter %in% c("region", "year", "scenario", "model")) || is.na(unique_page_filter)
 
     if(! all(present)) {
-      rlang::abort(message = paste("\"", df$page_filter[!present], "\" in the 'page_filter' column need to be region, year, scenario, or model.", sep = ""),
-                   class = 'plot_mapping_csv regions')
+      rlang::abort(message = paste("\"", status$page_filter[!present], "\" in the 'page_filter' column need to be region, year, scenario, or model.", sep = ""),
+                   class = 'plot_mapping_csv page_filter')
     }
   }
 
-  invisible(df)
+  invisible(status)
 }
 
 
@@ -317,21 +335,21 @@ sankey <- c("title_name",
 corrplot <- c("title_name","regions","models","years","scenarios","page_filter","use","method_cor","method_corrplot","type","diag")
 
 
-#' check_figure_csv
+#' check_figure_specification
 #'
 #' This function checks if each figure number corresponds to only one set of specification
-#' @param df
+#' @param status
 #' @param figure_type
 #'
 #' @return TRUE or kill the process
 #' @export
 #'
-check_figure_specification <- function(df, figure_type) {
+check_figure_specification <- function(status, figure_type) {
 
   if(figure_type != "sankey") {
 
     ###  check if the figure number corresponds to only one set of specification -----
-    summary_list = df %>%
+    summary_list = status %>%
       group_by(figure_no) %>%
       summarise(across(.cols = get(figure_type), .fns = n_distinct))
 
