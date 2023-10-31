@@ -17,7 +17,7 @@ if(is.null(params$mode)) {
   library(patchwork)
   library(egg)
   library(ggbreak)
-  devtools::load_all()
+  tar_source()
 }
 ```
 

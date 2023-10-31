@@ -13,7 +13,7 @@ duplicates_compare_unit = duplicates %>%
 
 vartest = hist %>% filter(variable == "Emissions|CO2|Energy|Coal")
 
-devtools::load_all()
+tar_source()
 library(targets)
 library(tidyverse)
 tar_load(data_raw)

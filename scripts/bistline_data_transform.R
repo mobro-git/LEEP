@@ -8,7 +8,7 @@
 library(tidyverse)
 library(readxl)
 library(xlsx)
-devtools::load_all()
+tar_source()
 
 bistline_wrkbk = "data-extra/ira_comparison_raw/ira_comparison_updated_08082023.xlsx"
 historic_wrkbk = "data-extra/ira_comparison_raw/bistline-historic.xlsx"

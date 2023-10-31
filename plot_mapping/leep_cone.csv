@@ -61,3 +61,4 @@ coneplot,23,Mid,Emissions|CO2|Energy|Demand|Buildings|TotalDI,Buildings,0,usa,mo
 coneplot,24,Mid2,Emissions|CO2|Energy|Demand|Buildings|Total,Buildings,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
 coneplot,25,Right,Emissions|CO2|Energy|Demand|Industry|TotalDI,Industry,0,usa,models_lts,fives,scenarios_lts,single,year,value,scenario,,,region,variable_rename,fixed
 coneplot,26,Right2,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total,Industry,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed
+coneplot,27,Right2,Emissions|CO2,CO2,0,usa,models_leep,fives,ira_only,single,year,value,scenario,,,region,variable_rename,fixed

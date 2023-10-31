@@ -17,7 +17,7 @@ The data pipeline is managed via targets. The overall plan is listed in _targets
 
 TO run the project interactively:
 1) Load packages: ```source("packages.R")```
-2) Load custom functions: ```devtools::load_all(".")```
+2) Load custom functions: ```tar_source()```
 3) Load cached intermediate objects: ```targets::tar_load(everything())``` (or specify names of particular targets to load). ```targets::tar_load(everything())``` will take a long while to load everything into the environment. Loading particular targets is advised. 
 
 From there, individual functions or targets can be run interactively. The targets package also provides customized debugging tools beyond the scope of this document.
@@ -36,7 +36,7 @@ The `_targets.R` file details the entire pipeline, including the steps to loadin
 
 ### 1) Targets File Structure 
 
-The majority of the `_targets.R` file is nested within the `tar_plan()` function. This is a comma-separated large list of all of the targets, aka tracked action items, for the pipeline to run and is what the targets package looks to to calculate dependencies. Items in the `_targets.R` script before `tar_plan()` are automatically run before anything in `tar_plan()` every time the pipeline is run. It is where you can put items that are not action items that you want to track, and should always include `library(targets)`, `library(tarchetypes)`, `source("packages.R")`, and `devtools::load_all(".")`.
+The majority of the `_targets.R` file is nested within the `tar_plan()` function. This is a comma-separated large list of all of the targets, aka tracked action items, for the pipeline to run and is what the targets package looks to to calculate dependencies. Items in the `_targets.R` script before `tar_plan()` are automatically run before anything in `tar_plan()` every time the pipeline is run. It is where you can put items that are not action items that you want to track, and should always include `library(targets)`, `library(tarchetypes)`, `source("packages.R")`, and `tar_source()`.
 
 The `tar_plan()` list contains roughly four types of objects: 
 

@@ -14,7 +14,7 @@ Negative values in tables reflect an increase relative to "2005 Baseline" or "No
 #Lib
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 source("packages.R")
-devtools::load_all(here())
+tar_source()
 library(cowplot)
 library(tableHTML)
 

@@ -8,8 +8,7 @@ tar_source()
 
 # Set target-specific options such as packages.
 tar_option_set(
-  packages = c("dplyr","readr","tidyverse","datasets"), # packages to make available to targets
-  imports = "LEEP" # watch changes in these functions to invalidate targets
+  packages = c("dplyr","readr","tidyverse","datasets") # packages to make available to targets
 )
 
 # Plotmapping: plot subject and figure type table. Cannot be used by tar_map unless outside of tar_plan()

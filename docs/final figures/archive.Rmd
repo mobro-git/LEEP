@@ -21,7 +21,7 @@ knitr::opts_knit$set(root.dir = here::here())
 ```{r}
 if(is.null(params$mode)) {
   source("packages.R")
-  devtools::load_all(here())
+  tar_source()
 }
 
 # load data from targets pipeline

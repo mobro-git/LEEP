@@ -11,8 +11,7 @@ knitr::opts_chunk$set(echo=FALSE, fig.height=5, fig.width=7, message=FALSE, warn
 
 ```{r Library, include=FALSE}
 source("packages.R")
-devtools::load_all(here())
-
+tar_source()
 tar_load(config)
 tar_load(clean_data)
 tar_load(figmap_leep_timeseries)

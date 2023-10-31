@@ -1,6 +1,6 @@
 library(targets)
 library(tidyverse)
-devtools::load_all()
+tar_source()
 
 tar_load(data_raw)
 tar_load(template_original)

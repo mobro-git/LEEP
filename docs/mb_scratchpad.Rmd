@@ -15,7 +15,7 @@ library(ggplot2)
 library(tidyverse)
 library(ggh4x)
 source("packages.R")
-devtools::load_all(here())
+tar_source()
 
 tar_load(config)
 tar_load(clean_data)
