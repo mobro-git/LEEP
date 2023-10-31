@@ -31,6 +31,7 @@ tar_plan(
     calculated_var = all_calculated,
 
     # models
+    # "models" list should include ALL individual model names included in the full clean_data set
     models = c("AEO2020","AEO2021","AEO2022",
                "EIA_Historic","EIA_STEO","EPA-GHGI","NCS-GHGI",
                "GCAM-CGS","EPS-EI","Haiky-RFF","IPM-NRDC","MARKAL-NETL","NEMS-RHG","ReEDS-NREL","REGEN-EPRI","RIO-REPEAT", #bistline paper

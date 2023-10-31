@@ -153,12 +153,20 @@ assert_vars_in_template_or_calculated <- function(df, figure_type, config) {
 
 assert_models_in_config <- function(df, config) {
 
+  not_present = c()
+
   unique_model_config = unique(df$models)
 
-  present = ((unique_model_config %in% names(config)) || unique_model_config %in% config$models)
+  for(item in unique_model_config) {
 
-  if(! all(present)) {
-    rlang::abort(message = paste("\"", df$models[!present], "\" in the 'models' column NOT in config.", sep = ""),
+    present = (item %in% names(config) | (item %in% config$models))
+
+    if(! all(present)) {not_present = append(not_present, item)}
+
+  }
+
+  if(length(not_present) > 0) {
+    rlang::abort(message = paste("The following item in the 'models' column NOT in config: ",not_present),
                  class = 'plot_mapping_csv models')
   }
   invisible(df)
