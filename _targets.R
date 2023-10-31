@@ -4,7 +4,7 @@ library(tarchetypes)
 
 source("packages.R")
 
-devtools::load_all(".") # load all function definitions in /R
+tar_source()
 
 # Set target-specific options such as packages.
 tar_option_set(
