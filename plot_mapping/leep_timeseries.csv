@@ -128,9 +128,9 @@ timeseries,300,GasCCSpDiff,Secondary Energy|Electricity|Gas|w/ CCS|Percent diffe
 timeseries,301,CoalCCSpDiff,Secondary Energy|Electricity|Coal|w/ CCS|Percent differnce from No IRA,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,302,GasCCS,Secondary Energy|Electricity|Gas|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
 timeseries,303,CoalCCS,Secondary Energy|Electricity|Coal|w/ CCS,CCS,0,usa,models_leep,historic,hist_mod_scenarios2,single,year,value,variable_rename,region,variable_rename,region,fixed
-timeseries,1000,summary ew,Emissions|CO2,Total Emissions,0,usa,models_leep1,historic,all_sens,single,year,value,variable_rename,region,scenario,region,fixed
-timeseries,1001,summary elc,Emissions|CO2|Energy|Supply|Electricity,Electricity,0,usa,models_leep1,historic,all_sens,single,year,value,variable_rename,region,scenario,region,fixed
-timeseries,1002,summary trn,Emissions|CO2|Energy|Demand|Transportation|Total,Total Transportation Emissions,0,usa,models_leep1,historic,all_sens,single,year,value,,,scenario,region,fixed
-timeseries,1003,summary ind,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total,Total Industry Emissions,0,usa,models_leep1,historic,all_sens,single,year,value,,,scenario,region,fixed
-timeseries,1004,summary bld,Emissions|CO2|Energy|Demand|Buildings|Total,Total Building Emissions,0,usa,models_leep1,historic,all_sens,single,year,value,,,scenario,region,fixed
-timeseries,10005,delta summary ew,Emissions|CO2|Percent difference from No IRA,CO2,0,usa,models_leep1,historic,all_sens,single,year,value,,,scenario,region,fixed
+timeseries,1000,summary ew,Emissions|CO2,Total Emissions,0,usa,models_leep1,historic,all_scenarios,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,1001,summary elc,Emissions|CO2|Energy|Supply|Electricity,Electricity,0,usa,models_leep1,historic,all_scenarios,single,year,value,variable_rename,region,scenario,region,fixed
+timeseries,1002,summary trn,Emissions|CO2|Energy|Demand|Transportation|Total,Total Transportation Emissions,0,usa,models_leep1,historic,all_scenarios,single,year,value,,,scenario,region,fixed
+timeseries,1003,summary ind,Emissions|CO2|Energy|Demand|Industry and Fuel Production|Total,Total Industry Emissions,0,usa,models_leep1,historic,all_scenarios,single,year,value,,,scenario,region,fixed
+timeseries,1004,summary bld,Emissions|CO2|Energy|Demand|Buildings|Total,Total Building Emissions,0,usa,models_leep1,historic,all_scenarios,single,year,value,,,scenario,region,fixed
+timeseries,10005,delta summary ew,Emissions|CO2|Percent difference from No IRA,CO2,0,usa,models_leep1,historic,all_scenarios,single,year,value,,,scenario,region,fixed

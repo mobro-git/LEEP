@@ -201,6 +201,37 @@ variable_rename = data.frame("variable" = c("Emissions|CO2", "Emissions|CO2|Ener
                              "sector" = c("Economy-Wide", "Transportation", 
                                           "Electricity", "Industry", "Buildings"))
 
+# ----------------------------- ranges with a subset of models used for the BR Voluntary Supplement
+brvs = indicators_all %>% 
+  filter(model %in% c("EPS-EI","GCAM-CGS","GCAM-PNNL","MARKAL-NETL","NEMS-OP","NEMS-RHG","REGEN-EPRI","RIO-REPEAT","USREP-ReEDS")) %>%
+  filter(scenario == "IRA")
+brvs_indicators = brvs %>% left_join(
+  (indicators_all_baseline %>%
+     mutate(value_2005 = value) %>%
+     select(variable, value_2005)), 
+  by = c("variable")) %>%
+  # we're plotting reductions - so multiplying this by -1
+  mutate(pct_diff = -100 * (value - value_2005) / value_2005) %>%
+  left_join(variable_rename, by = "variable") %>%
+  select(-variable) %>%
+  mutate(category = interaction(sector, scenario)) %>%
+  mutate(category = factor(category, levels = c(
+    "Industry.No IRA", "Industry.IRA",
+    "Buildings.No IRA", "Buildings.IRA",
+    "Transportation.No IRA", "Transportation.IRA",
+    "Electricity.No IRA", "Electricity.IRA",
+    "Economy-Wide.No IRA", "Economy-Wide.IRA"
+  ))) %>%
+  mutate(scenario = factor(scenario, levels = c("IRA", "No IRA")))
+
+brvs_summ = brvs_indicators %>% 
+  group_by(category, year, sector, scenario) %>%
+  summarize(min = min(pct_diff),
+            max = max(pct_diff),
+            median = median(pct_diff))
+# ------------------------------------------------------------------------------
+
+
 indicators_all = indicators_all %>% left_join(
   (indicators_all_baseline %>%
      mutate(value_2005 = value) %>%
