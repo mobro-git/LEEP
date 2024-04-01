@@ -21,7 +21,7 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpMC4wMHwyMTYuODZ8MC4wMHwyMTYuMDA=)'>
-<rect x='0.000000000000016' y='-0.000000000000057' width='216.86' height='216.00' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
+<rect x='0.00' y='0.00' width='216.86' height='216.00' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
 </g>
 <defs>
   <clipPath id='cpNy45N3wxNzcuMzl8MjYuNzh8MTgzLjY1'>
@@ -58,9 +58,9 @@
 <rect x='7.97' y='26.78' width='169.42' height='156.87' style='stroke-width: 1.07; stroke: #B3B3B3;' />
 </g>
 <g clip-path='url(#cpMC4wMHwyMTYuODZ8MC4wMHwyMTYuMDA=)'>
-<polyline points='177.39,148.13 173.14,148.13 ' style='stroke-width: 0.53; stroke-linecap: butt;' />
-<polyline points='177.39,96.74 173.14,96.74 ' style='stroke-width: 0.53; stroke-linecap: butt;' />
-<polyline points='177.39,45.36 173.14,45.36 ' style='stroke-width: 0.53; stroke-linecap: butt;' />
+<polyline points='173.14,148.13 177.39,148.13 ' style='stroke-width: 0.53; stroke-linecap: butt;' />
+<polyline points='173.14,96.74 177.39,96.74 ' style='stroke-width: 0.53; stroke-linecap: butt;' />
+<polyline points='173.14,45.36 177.39,45.36 ' style='stroke-width: 0.53; stroke-linecap: butt;' />
 <text x='179.58' y='151.35' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='13.00px' lengthAdjust='spacingAndGlyphs'>-20</text>
 <text x='179.58' y='99.97' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='13.00px' lengthAdjust='spacingAndGlyphs'>-10</text>
 <text x='179.58' y='48.58' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='5.00px' lengthAdjust='spacingAndGlyphs'>0</text>
@@ -72,6 +72,6 @@
 <text x='59.68' y='192.29' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2025</text>
 <text x='114.68' y='192.29' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2030</text>
 <text x='169.69' y='192.29' text-anchor='middle' style='font-size: 9.00px;fill: #4D4D4D; font-family: "Arial";' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>2035</text>
-<text transform='translate(195.64,36.29) rotate(90)' style='font-size: 12.00px; font-family: "Arial";' textLength='137.84px' lengthAdjust='spacingAndGlyphs'>% Difference from No IRA</text>
+<text transform='translate(198.16,36.29) rotate(90)' style='font-size: 12.00px; font-family: "Arial";' textLength='137.84px' lengthAdjust='spacingAndGlyphs'>% Difference from No IRA</text>
 </g>
 </svg>

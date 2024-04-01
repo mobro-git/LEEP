@@ -8,7 +8,8 @@ tar_source()
 
 # Set target-specific options such as packages.
 tar_option_set(
-  packages = c("dplyr","readr","tidyverse","datasets") # packages to make available to targets
+  packages = c("dplyr","readr","tidyverse"), # packages to make available to targets
+  error = "abridge" # prevents printing of error traceback when tar_make() errors out for user-defined function
 )
 
 # Plotmapping: plot subject and figure type table. Cannot be used by tar_map unless outside of tar_plan()
@@ -219,6 +220,13 @@ tar_plan(
 
   ### Figures  -------------------
 
+  # Plot maps
+
+  ts = create_graph("leep", "time_series", config, clean_data, figmap_leep_timeseries),
+  cone = create_graph("leep", "cone_uncertainty", config, clean_data, figmap_leep_cone),
+  stackbar = create_graph("leep", "stacked_bar", config, clean_data, figmap_leep_stackbar),
+  diffbar = create_graph("leep", "diff_bar", config, clean_data, figmap_leep_diffbar),
+
   # Final Figures
 
   tar_render(
@@ -279,14 +287,7 @@ tar_plan(
     envir = rlang::global_env(), ## hacky way to get rmarkdown to render in the global environ and not create its own
     params = list(
       mode = "targets"),
-  ),
-
-  # Plot maps
-
-  ts = create_graph("leep", "time_series", config, clean_data, figmap_leep_timeseries),
-  cone = create_graph("leep", "cone_uncertainty", config, clean_data, figmap_leep_cone),
-  stackbar = create_graph("leep", "stacked_bar", config, clean_data, figmap_leep_stackbar),
-  diffbar = create_graph("leep", "diff_bar", config, clean_data, figmap_leep_diffbar)
+  )
 
 )
 
