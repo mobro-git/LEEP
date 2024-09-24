@@ -1,0 +1,48 @@
+title: "Schumer Request"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+date: "`r Sys.time()`"
+params:
+  mode: NULL
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+```{r}
+if(is.null(params$mode)) {
+  source("packages.R")
+  tar_source()
+}
+
+```
+
+```{r}
+tar_load(clean_data)
+
+clean_data = clean_data %>%
+  filter(!(model == "IPM-EPA" & year == 2025),
+         !model %in% c("NEMS-EIA", "RIO-REPEAT"),
+         scenario == 'IRA',
+         year %in% c(2025,2030,2035))
+```
+
+
+```{r}
+var_list <- c('Emissions|CO2|Energy|Demand|Transportation',
+              'Emissions|CO2|Energy|Supply|Electricity',
+              'Emissions|CO2|Energy|Demand|Buildings',
+              'Emissions|CO2|Energy|Demand|Industry and Fuel Production')
+
+directs_emissions_df <- clean_data %>%
+  filter(variable %in% var_list) %>%
+  select(model,year,variable,region,value)
+
+directs_emissions_df <- directs_emissions_df[order(directs_emissions_df$year),]
+
+```
+
