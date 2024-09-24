@@ -91,11 +91,18 @@ proj_data_wide <- proj_data %>%
   pivot_longer(cols = c(max,min,median), names_to = 'stat', values_to = 'value') %>%
   pivot_wider(names_from = year, values_from = value)
 
-proj_data_clean <- proj_data_wide %>%
-  mutate(variable = case_when(str_detect(variable, "Transportation") ~ 'Transportation Direct',
-                              str_detect(variable, "Electricity") ~ 'Electricity',
-                              str_detect(variable, "Buildings") ~ 'Buildings Direct',
-                              str_detect(variable, "Industry") ~ 'Industry Direct'))
+indirect_proj_data_clean <- proj_data_wide %>%
+  mutate(variable = case_when(str_detect(variable, "Transportation") ~ 'Transportation Indirect',
+                              str_detect(variable, "Buildings") ~ 'Buildings Indirect',
+                              str_detect(variable, "Industry") ~ 'Industry Indirect'))
 
 
 ```
+
+```{r}
+proj_data_final <- proj_data_clean %>% rbind(indirect_proj_data_clean)
+
+write_csv(proj_data_final,"output/data/schumer_request/proj_data.csv")
+
+```
+
